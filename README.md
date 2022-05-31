@@ -38,9 +38,10 @@ defnied as a mathematical recursive function:
 F(0) = 0
 F(1) = 1
 F(n) = F(n − 1) + F(n − 2), n > 1
+n ∈ ℕ
 ```
 
-Applied from the FORTH-thinking we have the following operations in the core:
+Applied from the FORTH-thinking we have the following operations at the core:
 
 ```
 TWODUP
@@ -53,6 +54,7 @@ First duplicate what is already on stack, the two top items `TWODUP` (or `2DUP`)
 Next add the two numbers on the stack "1 2" becomes "3", and the first two still are there such that "1 2 3". Then rotation `ROT` would get "2 3 1",
 and we then `DROP` the top, "2 3". That is, the numbers that remain will be added next time. And so on. 
 
-There are added some extra jump instructions, comparation and a storage facility to accomodate interations. Also there is a framework for call/returns.
-The "activation records" are stored on the stack. For local storage not to interfer with the global, some new instructions have been added.
+Not yet applied here, but there are some extensions. There are added some extra jump instructions, also comparations and a storage facility
+to accomodate for some interations. Moreover there is a framework for call/return. The "activation records" associated are stored on the stack.
+For local storage (variables) not to interfer with the global, some new instructions have been added.
 
