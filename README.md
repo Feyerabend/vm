@@ -29,10 +29,25 @@ In `vm1.c` the important functions are:
 *A machine that takes inspiration from the programming language FORTH.
 It can be seen that the language here is very close to both the stack operations
 and the traditional machine/assembly language. Hence, programs can use and be optimized
-in line of being "forthified" (adopted to suit FORTH).*
+in line of being "forthified" (adopted to suit FORTH thinking).*
+
+The sample choosen to illustrate extended from the previous vm1-machine is the Fibonacci series: 1, 1, 2, 3, 5, 8, 13 ... which can be
+defnied as a mathematical recursive function:
 
 ```
-        F(0) = 0
-        F(1) = 1
-        F(n) = F(n − 1) + F(n − 2), n > 1
+F(0) = 0
+F(1) = 1
+F(n) = F(n − 1) + F(n − 2), n > 1
 ```
+
+Applied from the FORTH-thinking we have the following operations in the core:
+
+```
+TWODUP
+ADD
+ROT
+DROP
+```
+
+First duplicate what is already on stack, the two top items `TWODUP` (or `2DUP`), such that if we have "1 2" after would be left with "1 2 1 2".
+Next add the two numbers on the stack "1 2" becomes "3", and the first two still are there such that "1 2 3". The rotate `ROT` we get "2 3 1", and we `DROP` the top, "2 3". That is, the numbers that will be added next time. And so on. 
