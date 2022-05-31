@@ -1,5 +1,7 @@
 # vm
-Virtual machines samples
+Virtual machines samples[^1]
+
+[^1]: My best inspiration for the simple machines here comes from Bartosz Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived most of the code, even though some bugs were corrected.
 
 ### vm1 -- compile with gcc installed; `gcc vm1.c` at the command line, then run with `./a.out`.
 
@@ -54,7 +56,8 @@ First duplicate what is already on stack, the two top items `TWODUP` (or `2DUP`)
 Next add the two numbers on the stack "1 2" becomes "3", and the first two still are there such that "1 2 3". Then rotation `ROT` would get "2 3 1",
 and we then `DROP` the top, "2 3". That is, the numbers that remain will be added next time. And so on. 
 
-Not yet applied here, but there are some extensions. There are added some extra jump instructions, also comparations and a storage facility
-to accomodate for some interations. Moreover there is a framework for call/return. The "activation records" associated are stored on the stack.
-For local storage (variables) not to interfer with the global, some new instructions have been added.
+There are added some extra jump instructions, also comparations and a storage facility to accomodate for iterations (vs. vm1).
+Moreover there is also framework for call/return for which I will return later. The "activation records" usually associated with call/return
+and stack machines are stored on the stack. For local storage (variables) not to interfer with the global ones,
+some new instructions have been added.
 
