@@ -30,3 +30,9 @@ In `vm1.c` the important functions are:
 It can be seen that the language here is very close to both the stack operations
 and the traditional machine/assembly language. Hence, programs can use and be optimized
 in line of being "forthified" (adopted to suit FORTH).*
+
+```
+        F(0) = 0
+        F(1) = 1
+        F(n) = F(n − 1) + F(n − 2), n > 1
+```
