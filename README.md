@@ -50,4 +50,9 @@ DROP
 ```
 
 First duplicate what is already on stack, the two top items `TWODUP` (or `2DUP`), such that if we have "1 2" after would be left with "1 2 1 2".
-Next add the two numbers on the stack "1 2" becomes "3", and the first two still are there such that "1 2 3". The rotate `ROT` we get "2 3 1", and we `DROP` the top, "2 3". That is, the numbers that will be added next time. And so on. 
+Next add the two numbers on the stack "1 2" becomes "3", and the first two still are there such that "1 2 3". Then rotation `ROT` would get "2 3 1",
+and we then `DROP` the top, "2 3". That is, the numbers that remain will be added next time. And so on. 
+
+There are added some extra jump instructions, comparation and a storage facility to accomodate interations. Also there is a framework for call/returns.
+The "activation records" are stored on the stack. For local storage not to interfer with the global, some new instructions have been added.
+
