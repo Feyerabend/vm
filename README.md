@@ -15,13 +15,13 @@ Then add the two numbers. Place the result back on stack. Then print sum.*
         HALT
 };
 
-In vm1.c the important functions are:
-- **VM* newVM(int* code, int pc)** which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp). 
-- **void freeVM(VM* vm)** deallocates vm.
-- **int pop(VM* vm)** moves the pointer (sp) at the array for the stack to pop a value, stack impl. here as a fixed array.
-- **void push(VM* vm, int v)** push a value on stack.
-- **int nextcode(VM* vm)** move the pointer (pc) at the array to the next code in line. Can be value or operation depending on previous code. 
-- **run(VM* vm)** the "processor". Picks a code from the array, and finds out what the operation will do, and execute on it.
+In `vm1.c` the important functions are:
+- `VM* newVM(int* code, int pc)` which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp). 
+- `void freeVM(VM* vm)` deallocates vm.
+- `int pop(VM* vm)` moves the pointer (sp) at the array for the stack to pop a value, stack impl. here as a fixed array.
+- `void push(VM* vm, int v)` push a value on stack.
+- `int nextcode(VM* vm)` move the pointer (pc) at the array to the next code in line. Can be value or operation depending on previous code. 
+- `run(VM* vm)` the "processor". Picks a code from the array, and finds out what the operation will do, and execute on it.
 
 
 ### vm2 -- compile with gcc installed; `make` at the command line, then run `./fib`.
