@@ -26,41 +26,38 @@
 */
 
 
-// native
-
-int fibonacci(n) {
+int fibonacci_recursive(n) {
 	if (n == 0)
 		return 0;
 	if (n < 3)
 		return 1;
 	else
-		return fibonacci(n - 1) + fibonacci(n - 2);
+		return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+}
+
+int fibonacci_iterative(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+
+    int n1 = 0, n2 = 1, n3;
+
+    for (int i = 2; i <= n; i++) {
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+    }
+    return n3;
 }
 
 void native() {
 	clock_t t;
 	t = clock();
-	printf("native: %d\n", fibonacci(20));
+	printf("native: %d\n", fibonacci_recursive(20));
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
   	printf("%f seconds\n", time_taken);
 };
 
-// alternative non-recursive
-
-int fibonacci2(int n) {
-	if (n == 0) return 0;
-	if (n == 1) return 1;
-
-	int n1 = 0, n2 = 1, n3;
-
-	for (int i = 2; i <= n; i++) {
-		n3 = n1 + n2;
-		n1 = n2;
-		n2 = n3;
-	}
-	return n3;
-}
 
 
 // compressed
@@ -288,9 +285,9 @@ void expanded() {
 	}
 }
 
-// test
+// test all
 int main() {
-	// native();
+	native();
 	compressed();
 	expanded();
 	return 0;

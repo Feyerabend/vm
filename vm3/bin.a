@@ -1,0 +1,22 @@
+# "input" a decimal number to get the corresponding binary
+
+START:
+	SET 16		# number of bits
+	STORE R0
+
+LOOP:
+	SET 51966	# decimal input
+	LOAD R0
+	DEC
+	RSH
+	SET 1
+	AND
+	PRNT
+
+	LOAD R0
+	DEC
+	DUP
+	STORE R0
+
+	JPNZ :LOOP
+	HALT

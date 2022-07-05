@@ -15,38 +15,35 @@ typedef struct {
 } VM;
 
 enum {
-	NA,
-	NOP,
-	RET,
 	ADD,
-	SUB,
-	MUL,
-	LT,
+	DEC,
 	EQ,
+	EQZ,
+	HALT,
+	INC,
 	JP,
 	JPNZ,
 	JPZ,
-	SET,
 	LD,
 	LOAD,
+	LT,
+	MUL,
+	NA,
+	NOP,
+	PRINT,
+	SET,
+	SETZ,
 	ST,
 	STORE,
-	PRINT,
-	HALT,
-	CALL,
-	EQZ,
-	SETZ,
-	LDARG,
-	INC,
-	DEC,
+	SUB,
 
 // "forthified"
 	DROP,
-	SWAP,
 	DUP,
-	TWODUP,
+	OVER,
 	ROT,
-	OVER
+	SWAP,
+	TWODUP
 };
 
 VM* newVM(int* code, int pc, int datasize);

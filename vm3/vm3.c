@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "vm2.h"
+#include "vm3.h"
 
 
 VM* newVM(int* code, int pc, int datasize) {
@@ -15,6 +15,9 @@ VM* newVM(int* code, int pc, int datasize) {
 	vm->vars = (int*) malloc(sizeof(int) * datasize);
 	if (vm->vars == NULL)
 		return NULL;
+	vm->args = (int*) malloc(sizeof(int) * datasize);
+	if (vm->args == NULL)
+		return NULL;
 
 	// init
 	vm->code = code;
@@ -27,6 +30,7 @@ VM* newVM(int* code, int pc, int datasize) {
 
 void freeVM(VM* vm){
 	if (vm != NULL) {
+		free(vm->args);
 		free(vm->vars);
 		free(vm->stack);
 		free(vm);
@@ -48,14 +52,12 @@ int nextcode(VM* vm) {
 	return vm->code[pc];
 }
 
-void run(VM* vm) {
-	int v, addr, offset, a, b, c;
+void run(VM* vm){
+	int v, addr, offset, a, b, rval;
 
 	do {
-		// fetch next code ..
 		int opcode = nextcode(vm);
 
-		// .. execute
 		switch (opcode) {
 
 			case NA:
@@ -63,7 +65,7 @@ void run(VM* vm) {
 				break;				
 
 			case HALT:
-				return;		
+				return;
 
 			case SET:
 				v = nextcode(vm);
@@ -92,6 +94,12 @@ void run(VM* vm) {
 				push(vm, a * b);
 				break;
 
+			case MOD:
+				b = pop(vm);
+				a = pop(vm);
+				push(vm, a % b);
+				break;
+
 			case INC:
 				a = pop(vm);
 				push(vm, a + 1);
@@ -100,6 +108,30 @@ void run(VM* vm) {
 			case DEC:
 				a = pop(vm);
 				push(vm, a - 1);
+				break;
+
+			case AND:
+				b = pop(vm);
+				a = pop(vm);
+				push(vm, a & b);
+				break;
+
+			case OR:
+				b = pop(vm);
+				a = pop(vm);
+				push(vm, a | b);
+				break;
+
+			case LSH:
+				b = pop(vm);
+				a = pop(vm);
+				push(vm, a << b);
+				break;
+
+			case RSH:
+				b = pop(vm);
+				a = pop(vm);
+				push(vm, a >> b);
 				break;
 
 			case LT:
@@ -139,6 +171,18 @@ void run(VM* vm) {
 				}
 				break;
 
+			case STARG:
+				v = pop(vm);
+				addr = nextcode(vm);
+				vm->args[addr] = v;
+				break;
+
+			case LDARG:
+				addr = nextcode(vm);
+				v = vm->args[addr];
+				push(vm, v);
+				break;
+
 			case LD:
 				offset = nextcode(vm);
 				v = vm->vars[vm->fp + offset];
@@ -163,52 +207,36 @@ void run(VM* vm) {
 				vm->vars[addr] = v;
 				break;
 
-			case DROP:
-				pop(vm);
-				break;
-
-			case SWAP:
-				b = pop(vm);
-				a = pop(vm); 
-				push(vm, b);
-				push(vm, a);
-				break;
-
-			case TWODUP:
-				b = pop(vm);
-				a = pop(vm); 
-				push(vm, a);
-				push(vm, b);
-				push(vm, a);
-				push(vm, b);
-				break;
-
-			case ROT:
-				c = pop(vm);
-				b = pop(vm);
-				a = pop(vm); 
-				push(vm, b);
-				push(vm, c);
-				push(vm, a);
-				break;
-
 			case DUP:
 				a = pop(vm);
 				push(vm, a);
 				push(vm, a);
 				break;
 
-			case OVER:
-				b = pop(vm);
-				a = pop(vm);
-				push(vm, b);
-				push(vm, a);
-				push(vm, b);
+			case CALL:
+				addr = nextcode(vm);
+				push(vm, vm->fp);
+				push(vm, vm->pc);
+				vm->fp = vm->sp;
+				vm->pc = addr;
+				break;
+
+			case RET:
+				rval = pop(vm);
+				vm->sp = vm->fp;
+				vm->pc = pop(vm);
+				vm->fp = pop(vm);
+				push(vm, rval);
 				break;
 
 			case PRINT:
 				v = pop(vm);
 				printf("%d\n", v);
+				break;
+
+			case PRNT:
+				v = pop(vm);
+				printf("%d", v);
 				break;
 
 			default:
@@ -217,6 +245,7 @@ void run(VM* vm) {
 
 	} while (TRUE);
 }
+
 
 
 /* EOF */

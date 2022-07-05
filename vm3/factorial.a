@@ -1,0 +1,25 @@
+# factorial
+
+START:
+
+	SET 15		# n = 15
+	DUP
+	STORE R0	# i = 15
+	SET 1
+	STORE R1	# fact = 1
+
+LOOP:
+
+	LOAD R0		# i
+	LOAD R1		# fact
+	MUL			# i * fact ->
+	STORE R1	# -> fact
+	LOAD R0		# i
+	DEC			# --i
+	DUP
+	STORE R0	# -> i
+	JPNZ :LOOP	# i ≠ 0 ?
+
+	LOAD R1		# fact
+	PRINT
+	HALT

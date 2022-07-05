@@ -60,9 +60,53 @@ Next add the two numbers on the stack "1 2" becomes "3", and the first two still
 are there such that "1 2 3". Then rotation `ROT` would get "2 3 1", and we then `DROP` the top,
 "2 3". That is, the numbers that remain will be added next time. And so on. 
 
+### vm3 -- compile with gcc installed; sample `make bin` at the command line, then run by `./bin`.
+
+The VM has been extended with some new features, which makes it a little bit more powerful.
 There are added some extra jump instructions to the vm, also comparations and a storage facility to
-accomodate for iterations (vs. vm1). Moreover there is also a framework for call/return.
-The "activation records", usually associated with call/return and stack machines, are stored on the stack.
-These are alternatives to the heap solution for memory allocation. The most obvious problem with activation
-records (vs. heap) are that memory allocations have to be known at compile time. There are also both global
-variables and local variables.
+accomodate for iterations (vs. vm1). Moreover there is also a small framework for call/return.
+You can store arguments which can be retrieved, use local variables in the function / procedure,
+and return value. The "activation records", usually associated with call/return and stack machines,
+are stored on the stack, with the exception for arguments used with the call. These "records" are
+alternatives to the heap solution for memory allocation. The most obvious problem with activation
+records (vs. heap) are that memory allocations have to be known at compile time. Futher, there are
+also both global variables and local variables.
+
+Besides the VM there is also an assembler to simplify programming. It is written in Python3 which
+ease the handling of strings, and have some nice features for list processing. Using C would be
+a bit longer and perhaps harder to read code.
+
+To test this new VM, try a program named `bin` for translating decimal numbers to binary.
+First start with the assembly text in `bin.a` and convert it to the appropiate machine code:
+
+```
+> python3 ./asm.py bin.a bin.b
+```
+
+which convert the assembly code in `bin.a` to the machine code for VM3. Then copy the code produced
+either from screen or in the generated file from the assembler as `bin.b`. Open the c-file `bin.c`
+and paste the code (replace) in the array "program". Save the c-file `bin.c` with your changes. Now,
+
+```
+> make clean
+> make bin
+```
+
+if everything worked, no errors were produced, then run it by
+
+```
+> ./bin
+```
+
+A binary number should appear on the screen.
+
+The same procedure goes for the other samples `factorial` and `prime` (numbers).
+
+
+
+
+
+
+make clean
+> 
+
