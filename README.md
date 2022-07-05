@@ -73,8 +73,11 @@ records (vs. heap) are that memory allocations have to be known at compile time.
 also both global variables and local variables.
 
 Besides the VM there is also an assembler to simplify programming. It is written in Python3 which
-ease the handling of strings, and have some nice features for list processing. Using C would be
+ease the handling of strings, and have some nice features for list processing.[^2] Using C would be
 a bit longer and perhaps harder to read code.
+
+[^2]: Here I borrowed some useful but confusing code from
+https://github.com/amsanei/Assembler-with-python.
 
 To test this new VM, try a program named `bin` for translating decimal numbers to binary.
 First start with the assembly text in `bin.a` and convert it to the appropiate machine code:
@@ -103,10 +106,4 @@ A binary number should appear on the screen.
 The same procedure goes for the other samples `factorial` and `prime` (numbers).
 
 
-
-
-
-
-make clean
-> 
 
