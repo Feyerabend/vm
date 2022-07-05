@@ -58,7 +58,7 @@ NEXT:
 	STORE R1	# i global reg
 
 	STARG 1 	# i arg for call
-	CALL :INIT 	# call with 1 argument on stack
+	CALL :INIT 	# call with 1 argument
 
 	LOAD R1		# i
 	LOAD R0		# n
