@@ -78,6 +78,7 @@ with activation records (vs. heap) are that memory allocations have to be known 
 Futher, there are also both global variables and local variables.
 
 [^2]: More on "activation records" can be found e.g.: https://ruslanspivak.com/lsbasi-part17/.
+See also: https://en.wikipedia.org/wiki/Call_stack#Structure.
 One exception in the implementation of vm3 is that the parameters passed together with the procedure call
 are only *transferred* to the procedure, and can not be relied upon inside the procedure. They
 will be invalid in case of nested procedure calls, e.g. The parameters used should therefore only
