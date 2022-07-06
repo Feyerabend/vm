@@ -1,8 +1,8 @@
-CC			= gcc
+CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
-OBJFILES	= bin.o factorial.o prime.o demo.o vm3.o
-TARGET		= bin factorial prime demo
+OBJFILES	= bin.o factorial.o prime.o vm3.o
+TARGET		= bin factorial prime
 
 all: $(TARGET)
 
@@ -14,9 +14,6 @@ bin: bin.o vm3.o
 
 prime: prime.o vm3.o
 	$(CC) $(CFLAGS) -o prime prime.o vm3.o $(LDFLAGS)
-
-demo: demo.o vm3.o
-	$(CC) $(CFLAGS) -o demo demo.o vm3.o $(LDFLAGS)
 
 clean:
 	rm -f $(OBJFILES) $(TARGET) *~
