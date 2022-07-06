@@ -22,33 +22,33 @@ enum {
 	DEC,	// 3
 	DROP,	// 4
 	DUP,	// 5
-	EQ,		// 6
+	EQ,	// 6
 	EQZ,	// 7
 	HALT,	// 8
 	INC,	// 9
-	JP,		// 10
+	JP,	// 10
 	JPNZ,	// 11
 	JPZ,	// 12
-	LD,		// 13
+	LD,	// 13
 	LDARG,	// 14
 	LOAD,	// 15
 	LSH,	// 16
-	LT,		// 17
+	LT,	// 17
 	MOD,	// 18
 	MUL,	// 19
-	NA,		// 20
+	NA,	// 20
 	NOP,	// 21
-	OR,		// 22
+	OR,	// 22
 	PRINT,	// 23
 	PRNT,	// 24
 	RET,	// 25
 	RSH,	// 26
 	SET,	// 27
 	SETZ,	// 28
-	ST,		// 29
+	ST,	// 29
 	STARG,	// 30
 	STORE,	// 31
-	SUB		// 32
+	SUB	// 32
 };
 
 VM* newVM(int* code, int pc, int datasize);
