@@ -40,7 +40,7 @@ and the traditional machine/assembly language. Hence, programs can use and be op
 in line of being "forthified" (adopted to suit FORTH thinking).*
 
 The sample choosen to illustrate extended from the previous vm1-machine is the Fibonacci series:
-1, 1, 2, 3, 5, 8, 13 ... which can be defnied as a mathematical recursive function:
+1, 1, 2, 3, 5, 8, 13 ... which can be defined as a mathematical recursive function:
 
 ```
 F(0) = 0
