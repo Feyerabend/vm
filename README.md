@@ -1,4 +1,4 @@
-# Virual Machines
+# Virtual Machines
 Virtual machines samples[^1]. A collection of virual machines to teach or understand some
 ideas and inner workings of virtual machines. They are solely intended for show of principles,
 and not for uses in any other way.
