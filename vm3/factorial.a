@@ -12,10 +12,10 @@ LOOP:
 
 	LOAD R0		# i
 	LOAD R1		# fact
-	MUL		# i * fact ->
+	MUL			# i * fact ->
 	STORE R1	# -> fact
 	LOAD R0		# i
-	DEC		# --i
+	DEC			# --i
 	DUP
 	STORE R0	# -> i
 	JPNZ :LOOP	# i ≠ 0 ?

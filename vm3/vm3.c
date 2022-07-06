@@ -213,6 +213,10 @@ void run(VM* vm){
 				push(vm, a);
 				break;
 
+			case DROP:
+				a = pop(vm);
+				break;
+
 			case CALL:
 				addr = nextcode(vm);
 				push(vm, vm->fp);

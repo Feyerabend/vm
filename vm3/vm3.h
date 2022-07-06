@@ -20,34 +20,35 @@ enum {
 	AND,	// 1
 	CALL,	// 2
 	DEC,	// 3
-	DUP,	// 4
-	EQ,		// 5
-	EQZ,	// 6
-	HALT,	// 7
-	INC,	// 8
-	JP,		// 9
-	JPNZ,	// 10
-	JPZ,	// 11
-	LD,		// 12
-	LDARG,	// 13
-	LOAD,	// 14
-	LSH,	// 15
-	LT,		// 16
-	MOD,	// 17
-	MUL,	// 18
-	NA,		// 19
-	NOP,	// 20
-	OR,		// 21
-	PRINT,	// 22
-	PRNT,	// 23
-	RET,	// 24
-	RSH,	// 25
-	SET,	// 26
-	SETZ,	// 27
-	ST,		// 28
-	STARG,	// 29
-	STORE,	// 30
-	SUB		// 31
+	DROP,	// 4
+	DUP,	// 5
+	EQ,		// 6
+	EQZ,	// 7
+	HALT,	// 8
+	INC,	// 9
+	JP,		// 10
+	JPNZ,	// 11
+	JPZ,	// 12
+	LD,		// 13
+	LDARG,	// 14
+	LOAD,	// 15
+	LSH,	// 16
+	LT,		// 17
+	MOD,	// 18
+	MUL,	// 19
+	NA,		// 20
+	NOP,	// 21
+	OR,		// 22
+	PRINT,	// 23
+	PRNT,	// 24
+	RET,	// 25
+	RSH,	// 26
+	SET,	// 27
+	SETZ,	// 28
+	ST,		// 29
+	STARG,	// 30
+	STORE,	// 31
+	SUB		// 32
 };
 
 VM* newVM(int* code, int pc, int datasize);

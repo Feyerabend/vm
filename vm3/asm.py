@@ -31,6 +31,7 @@ ops = [
     'AND',
     'CALL',
     'DEC',
+    'DROP',
     'DUP',
     'EQ',
     'EQZ',
@@ -65,6 +66,7 @@ ary = [
     0,      # AND
     1,      # CALL addr
     0,      # DEC
+    0,      # DROP
     0,      # DUP
     0,      # EQ
     0,      # EQZ
