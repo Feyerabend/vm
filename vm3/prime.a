@@ -1,4 +1,6 @@
 # prime numbers
+# faithfully following impl in C
+# but can be optimized in many ways
 
 INIT:
 	SETZ
