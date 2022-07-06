@@ -1,5 +1,7 @@
-# vm
-Virtual machines samples[^1]
+# Virual Machines
+Virtual machines samples[^1]. A collection of virual machines to teach or understand some
+ideas and inner workings of virtual machines. They are solely intended for principles,
+and not for use in any other way.
 
 [^1]: My best inspiration for the simple machines here comes from Bartosz Sypytowski:
 https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived most of the code,
