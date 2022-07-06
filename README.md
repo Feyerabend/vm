@@ -86,7 +86,9 @@ corresponing system. The purpose here is to be as clear as possible to what goes
 to the machine rather than other stuff. It is thus NOT for use with any other purpose than to teach
 and understand som simple principles of what a VM could be.
 
-[^2]: Here I borrowed some useful but confusing code from
+[^2]: Here I borrowed some useful code from
+https://github.com/vladris/pixie/wiki/Dust-Assembler,
+and looked at some confusing code from
 https://github.com/amsanei/Assembler-with-python.
 
 #### Sample
