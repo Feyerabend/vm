@@ -9,13 +9,13 @@ INIT:
 LOOP:
 	LDARG 1		# i
 	LD R1		# j
-	MOD			# i % j
-	EQZ			# = 0 ?
+	MOD		# i % j
+	EQZ		# = 0 ?
 
 	JPZ :NOINC	# jump if = 0 false
 
 	LD R0		# c ->
-	INC			# c++
+	INC		# c++
 	ST R0		# -> c
 
 NOINC:
@@ -25,17 +25,17 @@ NOINC:
 
 	LD R1		# j
 	LDARG 1		# i
-	LT			# j < i ?
+	LT		# j < i ?
 	JPNZ :LOOP	# true, loop
 
 	LD R1		# j
 	LDARG 1 	# i
-	EQ			# j = i ?
+	EQ		# j = i ?
 	JPNZ :LOOP	# true, loop
 
 	LD R0		# c
 	SET 2
-	EQ			# c = 2 ?
+	EQ		# c = 2 ?
 	JPZ :EXIT	# no? exit call
 
 	LDARG 1 	# prime arg
@@ -54,8 +54,8 @@ START:
 
 NEXT:
 	LOAD R1		# i
-	INC			# i++
-	DUP			# i i
+	INC		# i++
+	DUP		# i i
 	STORE R1	# i global reg
 
 	STARG 1 	# i arg for call
@@ -63,12 +63,12 @@ NEXT:
 
 	LOAD R1		# i
 	LOAD R0		# n
-	LT 			# i < n ?
+	LT 		# i < n ?
 	JPNZ :NEXT	# true, next
 
 	LOAD R0
 	LOAD R1
-	EQ 			# i = n ?
+	EQ 		# i = n ?
 	JPNZ :NEXT	# true, next
 
 	HALT
