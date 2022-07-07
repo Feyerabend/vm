@@ -127,9 +127,33 @@ Then, if everything worked, no errors were produced, then run it by:
 
 A binary number should appear on the screen.
 
-
-
 The same procedure goes for the other samples `factorial` and `prime` (numbers).
 
 
+## chip8
+
+This implementation by Dustin Roepsch (among the many thousands there are) of Chip 8 in C, only depends
+on Ncurses: https://github.com/dustinroepsch/Chip8-curses. Ncurses is a library dating back into the
+80-ties, starting as a "clone" of Curses.[^3] This version by Roepsch has the benefit of being rather simple
+to understand and also few dependencies, i.e. easy to get up and running on many environments.
+
+[^3]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
+
+To get going, after downloading, try:
+
+```
+> mkdir build
+> cd build
+> cmake ../
+> make
+```
+
+If all went well, you will find in the `build/bin` the compiled binary of Chip8. Start up:
+
+```
+> ./Chip8 <rom_file>
+```
+
+Where you provide your binary sample Chip-8 file. You can find some at: https://github.com/kripod/chip8-roms,
+or search the web.
 
