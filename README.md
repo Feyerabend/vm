@@ -133,21 +133,23 @@ The same procedure goes for the other samples `factorial` and `prime` (numbers).
 ## chip8
 
 Next a virtual machine (or interpreter) that has been wildspread and used in many computers, even
-calculators. It started its life running on a processor RCA1802, and systems such as COSMAC VIP
+calculators. It started its life running on a processor RCA1802[^4], and systems such as COSMAC VIP
 from the late 70-ties. Joseph Weisbecker which both invented the physical processor (before Intel 4004
 he designed the processor with only discrete logic) and the application of a virtual "processor"
 CHIP-8, also had a daughter Joyce which is considered as the first female video game programmer/designer.
 
+[^4]: https://en.wikipedia.org/wiki/RCA_1802.
+
 There is a much larger story here, but we limit the focus to the virtual machine: __*CHIP-8*__.
 This implementation here by Dustin Roepsch (among the many thousands there are) of Chip 8 in C, only depends
 on Ncurses: https://github.com/dustinroepsch/Chip8-curses. Ncurses is a library dating back into the
-80-ties, starting as a "clone" of Curses.[^4] This implies that it can be run in a *terminal window* with
+80-ties, starting as a "clone" of Curses.[^5] This implies that it can be run in a *terminal window* with
 very, very simplified graphics, i.e. text, and also has a nice keyboard connection to C.
 
 This version by Roepsch has the benefit of being rather simple to understand and also few dependencies,
 i.e. easy to get up and running on many environments.
 
-[^4]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
+[^5]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
 
 To get going, after downloading, try:
 
