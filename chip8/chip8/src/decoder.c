@@ -42,9 +42,6 @@ void decoder_execute_instruction(chip8_state_t *state,
   case 0x0:
     switch (instruction.full_opcode) {
     case 0x00E0:
-
-      // debug_printf("clearscr\n");
-
       memset(state->screen, false,
              sizeof(bool) * CHIP8_SCREEN_HEIGHT * CHIP8_SCREEN_WIDTH);
       state->pc = state->pc + 2;
