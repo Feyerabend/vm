@@ -134,8 +134,8 @@ The same procedure goes for the other samples `factorial` and `prime` (numbers).
 
 Next a virtual machine (or interpreter) that has been wildspread and used in many computers, even
 calculators. It started its life running on a processor RCA1802, and systems such as COSMAC VIP
-from the late 70-ties. Joseph Weisbecker which both invented the physical processor (or rather the
-foundation RCA 1800, as he had some help with RCA 1802) and the application of a virtual "processor"
+from the late 70-ties. Joseph Weisbecker which both invented the physical processor (before Intel 4004
+he designed the processor with only discrete logic) and the application of a virtual "processor"
 CHIP-8, also had a daughter Joyce which is considered as the first female video game programmer/designer.
 
 There is a much larger story here, but we limit the focus to the virtual machine: __*CHIP-8*__.
