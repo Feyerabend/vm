@@ -134,10 +134,10 @@ The same procedure goes for the other samples `factorial` and `prime` (numbers).
 
 This implementation by Dustin Roepsch (among the many thousands there are) of Chip 8 in C, only depends
 on Ncurses: https://github.com/dustinroepsch/Chip8-curses. Ncurses is a library dating back into the
-80-ties, starting as a "clone" of Curses.[^3] This version by Roepsch has the benefit of being rather simple
+80-ties, starting as a "clone" of Curses.[^4] This version by Roepsch has the benefit of being rather simple
 to understand and also few dependencies, i.e. easy to get up and running on many environments.
 
-[^3]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
+[^4]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
 
 To get going, after downloading, try:
 
