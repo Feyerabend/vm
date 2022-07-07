@@ -134,22 +134,28 @@ The same procedure goes for the other samples `factorial` and `prime` (numbers).
 
 Next a virtual machine (or interpreter) that has been wildspread and used in many computers, even
 calculators. It started its life running on a processor RCA1802[^4], and systems such as COSMAC VIP
-from the late 70-ties. Joseph Weisbecker which both invented the physical processor (before Intel 4004
-he designed the processor with only discrete logic) and the application of a virtual "processor"
-CHIP-8, also had a daughter Joyce which is considered as the first female video game programmer/designer.
+from the late 70-ties. Joseph Weisbecker which both invented the physical processor[^5] and the
+application of a virtual "processor" CHIP-8, also had a daughter Joyce which is considered as the
+first female video game programmer/designer.
 
 [^4]: https://en.wikipedia.org/wiki/RCA_1802.
 
-There is a much larger story here, but we limit the focus to the virtual machine: __*CHIP-8*__.
+[^5]: Even before the Intel 4004 (around 1970/1971) Joseph Weisbecker concieved and designed the
+processor FRED with only discrete logic. Intel is considered to be the first commercial company
+with a processor to the market. However both RCA and Intel didn't at first understand the importance
+of this idea what was to become the microprocessor. As a sidenote the 4004 was first used in
+Busicom calculators, but the japanese software was adapted through a mechanism close to "virtual machine".
+
+There is a much larger story here, much to unpack, but we limit the focus to the virtual machine __*CHIP-8*__.
 This implementation here by Dustin Roepsch (among the many thousands there are) of Chip 8 in C, only depends
 on Ncurses: https://github.com/dustinroepsch/Chip8-curses. Ncurses is a library dating back into the
-80-ties, starting as a "clone" of Curses.[^5] This implies that it can be run in a *terminal window* with
+80-ties, starting as a "clone" of Curses.[^6] This implies that it can be run in a *terminal window* with
 very, very simplified graphics, i.e. text, and also has a nice keyboard connection to C.
 
 This version by Roepsch has the benefit of being rather simple to understand and also few dependencies,
 i.e. easy to get up and running on many environments.
 
-[^5]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
+[^6]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
 
 To get going, after downloading, try:
 
