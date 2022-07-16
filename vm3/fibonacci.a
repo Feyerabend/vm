@@ -1,0 +1,39 @@
+# fibonacci 1, 1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, [610], 987 ...
+
+START:
+	SET 15		# 15th number in serie [610]
+	STARG 1
+	CALL :FIB
+	PRINT
+	HALT
+
+FIB:			# if (n == 0) return 0;
+	LDARG 1
+	DUP
+	EQZ
+	JPZ :NEXT
+	RET
+
+NEXT:			# if (n == 1) return 1;
+	DUP
+	SET 1
+	EQ
+	JPZ :ELSE
+	RET
+
+ELSE:			# else return fib(n-1) + fib(n-2);
+	SET 1
+	SUB
+	DUP
+	ST R1
+	STARG 1
+	CALL :FIB
+	ST R0
+	LD R1
+	SET 1
+	SUB
+	STARG 1
+	CALL :FIB
+	LD R0
+	ADD
+	RET
