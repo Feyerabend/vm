@@ -22,16 +22,14 @@ NEXT:			# if (n == 1) return 1;
 	RET
 
 ELSE:			# else return fib(n-1) + fib(n-2);
-	SET 1
-	SUB
+	DEC
 	DUP
 	ST R1
 	STARG 1
 	CALL :FIB
 	ST R0
 	LD R1
-	SET 1
-	SUB
+	DEC
 	STARG 1
 	CALL :FIB
 	LD R0
