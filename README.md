@@ -127,7 +127,7 @@ Then, if everything worked, no errors were produced, then run it by:
 
 A binary number should appear on the screen.
 
-The same procedure goes for the other samples `factorial` and `prime` (numbers).
+The same procedure goes for the other samples `factorial`, `fibonacci` (recursive version) and `prime` (numbers).
 
 
 ## chip8
