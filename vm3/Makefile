@@ -1,4 +1,4 @@
-CC			= gcc
+CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
 OBJFILES	= bin.o factorial.o prime.o demo.o fibonacci.o vm3.o
