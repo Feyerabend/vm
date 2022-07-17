@@ -21,13 +21,26 @@ int fibonacci_program[] = {
 void fibonacci() {
 	VM* vm = newVM(fibonacci_program, 0, 100);
 	if (vm != NULL) {
+		clock_t t;
+		t = clock();
 		run(vm);
+		t = clock() - t;
+		double duration = ((double) t) / CLOCKS_PER_SEC;
+		printf("%f seconds\n", duration);
 		freeVM(vm);
 	}
 };
 
 int main() {
 	fibonacci();
-	printf("%d\n", fib(15));
+
+	clock_t t;
+	t = clock();
+	int x = fib(15);
+	t = clock() - t;
+	double duration = ((double) t) / CLOCKS_PER_SEC;
+	printf("%d\n", x);
+	printf("%f seconds\n", duration);
+
 	return 0;
 }
