@@ -1,5 +1,5 @@
 # Virtual Machines
-Virtual machines samples[^1]. A collection of virual machines to teach or understand some
+Virtual machines samples[^1]. A collection of virtual machines to teach or understand some
 ideas and inner workings of virtual machines. They are solely intended for show of principles,
 and not for uses in any other way.
 
@@ -39,7 +39,7 @@ It can be seen that the language here is very close to both the stack operations
 and the traditional machine/assembly language. Hence, programs can use and be optimized
 in line of being "forthified" (adopted to suit FORTH thinking).*
 
-The sample choosen to illustrate extended from the previous vm1-machine is the Fibonacci series:
+The sample chosen to illustrate extended from the previous vm1-machine is the Fibonacci series:
 1, 1, 2, 3, 5, 8, 13 ... which can be defined as a mathematical recursive function:
 
 ```
@@ -68,22 +68,22 @@ are there such that "1 2 3". Then rotation `ROT` would get "2 3 1", and we then 
 ### compile with gcc installed; sample `make bin` at the command line, then run by `./bin`.
 
 The VM has been extended with some new features, which makes it a little bit more powerful.
-There are added some extra jump instructions to the vm, also comparations and a storage facility to
-accomodate for iterations (vs. vm1). Moreover there is also a small framework for call/return.
+There are added some extra jump instructions to the vm, also comparison and a storage facility to
+accommodate for iterations (vs. vm1). Moreover there is also a small framework for call/return.
 You can store arguments which can be retrieved, use local variables in the function / procedure,
 and return value. The "activation records", usually associated with call/return and stack machines,
 are stored on the stack, with the exception for arguments used with the call (parameters).[^2] These
 "records" are alternatives to the heap solution for memory allocation. The most obvious problem
 with activation records (vs. heap) are that memory allocations have to be known at compile time.
-Futher, there are also both global variables and local variables.
+Further, there are also both global variables and local variables.
 
 [^2]: More on "activation records" can be found e.g.: https://ruslanspivak.com/lsbasi-part17/.
-See also: https://en.wikipedia.org/wiki/Call_stack#Structure.
+See also: https://en.wikipedia.org/wiki/Call_stack#Structure and https://en.wikipedia.org/wiki/Calling_convention.
 One exception in the implementation of vm3 is that the parameters passed together with the procedure call
 are only *transferred* to the procedure, and can not be relied upon inside the procedure. They
 will be invalid in case of nested procedure calls, e.g. The parameters used should therefore only
 be regarded stored as "scratch registers". The parameters should therefore be copied to local variables,
-if they have any permenancy inside the procedure.
+if they have any permanency inside the procedure.
 
 Besides the VM there is also an assembler to simplify programming. It is written in *Python3* which
 ease the handling of strings, and have some nice features for list processing.[^3] Using C would be
@@ -95,15 +95,15 @@ and looked at some confusing code from
 https://github.com/amsanei/Assembler-with-python.
 
 Still we have no debugging support, error messaging, file handling, etc. you can find in any
-corresponing system. The purpose here is to be as clear as possible to what goes on with regard
+corresponding system. The purpose here is to be as clear as possible to what goes on with regard
 to the machine rather than other stuff. It is thus NOT for use with any other purpose than to teach
 and understand som simple principles of what a VM could be.
 
 
 #### Sample
 
-To test this VM, try a program named `bin` for translating decimal numbers to binary.
-First start with the assembly text in `bin.a` and convert it to the appropiate machine code:
+To test this VM, try a program named `bin` for translating decimal numbers into binary.
+First start with the assembly text in `bin.a` and convert it to the appropriate machine code:
 
 ```
 > python3 ./asm.py bin.a bin.b
@@ -132,7 +132,7 @@ The same procedure goes for the other samples `factorial`, `fibonacci` (recursiv
 
 ## chip8
 
-Next a virtual machine (or interpreter) that has been wildspread and used in many computers, even
+Next a virtual machine (or interpreter) that has been widespread and used in many computers, even
 calculators. It started its life running on a processor RCA1802[^4], and systems such as COSMAC VIP
 from the late 70-ties. Joseph Weisbecker which both invented the physical processor[^5] and the
 application of a virtual "processor" CHIP-8, also had a daughter Joyce which is considered as the
@@ -140,10 +140,10 @@ first female video game programmer/designer.
 
 [^4]: https://en.wikipedia.org/wiki/RCA_1802.
 
-[^5]: Even before the Intel 4004 (around 1970/1971) Joseph Weisbecker concieved and designed the
+[^5]: Even before the Intel 4004 (around 1970/1971) Joseph Weisbecker conceived and designed the
 processor FRED with only discrete logic. Intel is considered to be the first commercial company
 with a processor to the market. However both RCA and Intel didn't at first understand the importance
-of this idea what was to become the microprocessor. As a sidenote the 4004 was first used in
+of this idea what was to become the microprocessor. As a side note the 4004 was first used in
 Busicom calculators, but the japanese software was adapted through a mechanism close to "virtual machine".
 
 There is a much larger story here, much to unpack, but we limit the focus to the virtual machine __*CHIP-8*__.
