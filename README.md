@@ -189,10 +189,13 @@ constructions, syntactical analysis and other closeby research.
 
 In the file `cmp1.c` you will find a sort of introduction to how we could look at a semantic contruction or abstraction
 in the form of a tree. Some nodes are representation of constants, or numbers, if you prefer. One other node represent
-addition and another multiplication. These nodes are nested together to represent a "sematic" view of the arithmetical
+addition and another multiplication. These nodes are nested together to represent a "semantic" view of the arithmetical
 sample: "(32 + 53) * 90". In this way we could build trees that represent more artithmetical expressions, or control
 structures, assignments of variables, procedures, etc. That is, we could represent *programs* in this way (cf. abstract
-syntax tree, AST).
+syntax tree, AST).[^7]
+
+[^7]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
+
 
 From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
 
@@ -223,10 +226,10 @@ MUL
 ## cmp2
 
 We'll now make a jump from the *sematics* (abstractions) to *syntax* of programs. In this case we will chose the syntax
-from the famous educational PL/0 language by Niklaus Wirth which has been around for mayn years.[^7] Maybe you will find
+from the famous educational PL/0 language by Niklaus Wirth which has been around for mayn years.[^8] Maybe you will find
 it very close resemblance to Pascal, which is no surprise, as Wirth also is behind Pascal, but PL/0 is much more limited:
 
-[^7]: https://en.wikipedia.org/wiki/PL/0
+[^8]: https://en.wikipedia.org/wiki/PL/0
 
 
 ```
