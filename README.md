@@ -175,3 +175,85 @@ If all went well, you will find in the `build/bin` the compiled binary of Chip8.
 Where you provide your binary sample Chip-8 file. You can find some at: https://github.com/kripod/chip8-roms,
 or search the web.
 
+
+## cmp1
+
+To make the previous virtual machines more practical, we could add a compiler for some high-level language. But we
+will take the unusual step here to begin from the machine, and work our way upwards, to the language. There is a
+rather long history of syntactical analysis and compiler constructions that at least starts with Noam Chomsky and
+his attempts at formalizing and recognizing structures in (natural) languages.[^7] Then individuals such as Peter Naur,
+John Backus, Niklaus Wirth and many, many, many others in the 60'ties and 70'ties advanced the techniques for compiler
+constructions, syntactical analysis and other closeby research.
+
+[^6]: One such interesting book from the late 50'ties is Chomsky, Noam, *Syntactic structures*, Mouton, The Hague, 1957.
+
+In the file `cmp1.c` you will find a sort of introduction to how we could look at a semantic contruction or abstraction
+in the form of a tree. Some nodes are representation of constants, or numbers, if you prefer. One other node represent
+addition and another multiplication. These nodes are nested together to represent a "sematic" view of the arithmetical
+sample: "(32 + 53) * 90". In this way we could build trees that represent more artithmetical expressions, or control
+structures, assignments of variables, procedures, etc. That is, we could represent *programs* in this way (cp. abstract
+syntax tree, AST).
+
+From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
+
+Test the sample with:
+
+```
+> make clean
+> make cmp1
+```
+
+Then, if everything worked, no errors were produced, then run it by:
+
+```
+> ./cmp1
+```
+
+
+## cmp2
+
+We'll now make a jump from the sematics (abstractions) to syntax. In this case will chose the syntax from the
+famous educational PL/0 language by Niklaus Wirth.[^7] Maybe you will find it very close to Pascal, which is no
+surprise, as Wirth also is behind Pascal, but PL/0 is much more limited:
+
+```
+var x, squ, answer;
+
+procedure square;
+begin
+   squ := x * x
+end;
+
+begin
+   x := 1;
+   while x <= 10 do
+   begin
+      call square;
+      answer := squ;
+      x := x + 1
+   end
+end.
+````
+
+There is a wikipage which also gives part implementation of the syntactical analysis for PL/0:
+https://en.wikipedia.org/wiki/Recursive_descent_parser as an example of recursive decent parsing.
+
+[^7]: https://en.wikipedia.org/wiki/PL/0
+
+What is lacking is a scanner that checks for tokens in a stream, and gives the parser each "comprehensive" element
+here added as `scan.c` and `scan.h`.
+
+To run `sample1.pas` compile the parser (and scanner):
+
+```
+> make clean
+> make par1
+```
+
+Then run the parser by:
+
+```
+> ./par1 < sample1.pas
+```
+
+At this stage our interest is only with the syntax and not if the program is correct in any other way.
