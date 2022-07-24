@@ -16,8 +16,8 @@
     SLASH,      // /
     PLUS,       // +
     MINUS,      // -
-    EQL,        // ==   =
-    NEQ,        // !=   #
+    EQL,        // =
+    NEQ,        // #
     LSS,        // <
     LEQ,        // <=
     GTR,        // >
