@@ -191,7 +191,7 @@ In the file `cmp1.c` you will find a sort of introduction to how we could look a
 in the form of a tree. Some nodes are representation of constants, or numbers, if you prefer. One other node represent
 addition and another multiplication. These nodes are nested together to represent a "sematic" view of the arithmetical
 sample: "(32 + 53) * 90". In this way we could build trees that represent more artithmetical expressions, or control
-structures, assignments of variables, procedures, etc. That is, we could represent *programs* in this way (cp. abstract
+structures, assignments of variables, procedures, etc. That is, we could represent *programs* in this way (cf. abstract
 syntax tree, AST).
 
 From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
