@@ -209,6 +209,16 @@ Then, if everything worked, no errors were produced, then run it by:
 > ./cmp1
 ```
 
+The result should be:
+
+```
+SET 32
+SET 53
+ADD
+SET 90
+MUL
+```
+
 
 ## cmp2
 
@@ -233,7 +243,11 @@ begin
       x := x + 1
    end
 end.
-````
+```
+
+The above program calculates square x * x or x² of a given number. Right now there is no way to print the result,
+but also there is no semantics at all. So there is only for you to inspect the syntactical structures, and what
+parsing does.
 
 There is a wikipage which also gives part implementation of the syntactical analysis for PL/0:
 https://en.wikipedia.org/wiki/Recursive_descent_parser as an example of recursive decent parsing.
@@ -256,4 +270,8 @@ Then run the parser by:
 > ./par1 < sample1.pas
 ```
 
-At this stage our interest is only with the syntax and not if the program is correct in any other way.
+This will give a long list of parsed elements. There are some very poor error checking and warnings. But unless
+you are wery well acquainted with the program you test, you will probably not guess correctly what the problem
+(syntax error) will be or indicate from the parsing. Again, this is not how parsers should be written, but some
+code that will hopwfully show what parsing in a very general way looks like.
+At this stage our interest is only with the *syntax* and not if the program is correct in any other way.
