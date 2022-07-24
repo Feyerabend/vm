@@ -1,5 +1,5 @@
 
-CC			= gcc
+CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
 OBJFILES	= par1.o scan.o
