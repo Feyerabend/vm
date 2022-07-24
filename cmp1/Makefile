@@ -1,5 +1,5 @@
 
-CC			= gcc
+CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
 OBJFILES	= cmp1.o
