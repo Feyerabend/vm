@@ -272,6 +272,6 @@ Then run the parser by:
 
 This will give a long list of parsed elements. There are some very poor error checking and warnings. But unless
 you are wery well acquainted with the program you test, you will probably not guess correctly what the problem
-(syntax error) will be or indicate from the parsing. Again, this is not how parsers should be written, but some
-code that will hopwfully show what parsing in a very general way looks like.
+(syntax error) will be or what is indicated from the parsing. Again, this is not how parsers should be written,
+but some code that will hopwfully show what parsing in a very general way looks like.
 At this stage our interest is only with the *syntax* and not if the program is correct in any other way.
