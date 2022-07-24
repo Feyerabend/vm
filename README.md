@@ -222,9 +222,9 @@ MUL
 
 ## cmp2
 
-We'll now make a jump from the sematics (abstractions) to syntax. In this case will chose the syntax from the
-famous educational PL/0 language by Niklaus Wirth.[^7] Maybe you will find it very close to Pascal, which is no
-surprise, as Wirth also is behind Pascal, but PL/0 is much more limited:
+We'll now make a jump from the *sematics* (abstractions) to *syntax* of programs. In this case we will chose the syntax
+from the famous educational PL/0 language by Niklaus Wirth which has been around for mayn years.[^7] Maybe you will find
+it very close resemblance to Pascal, which is no surprise, as Wirth also is behind Pascal, but PL/0 is much more limited:
 
 ```
 var x, squ, answer;
@@ -245,9 +245,9 @@ begin
 end.
 ```
 
-The above program calculates square x * x or x² of a given number. Right now there is no way to print the result,
-but also there is no semantics at all. So there is only for you to inspect the syntactical structures, and what
-parsing does.
+The above program calculates square of x, x * x or x² of a given number. Right now there is no way to print the
+result, but also there is no semantics at all. So you will not be able to run the program. It is for you to inspect
+the syntactical structures, and what parsing does from the side of a text representation of simple program.
 
 There is a wikipage which also gives part implementation of the syntactical analysis for PL/0:
 https://en.wikipedia.org/wiki/Recursive_descent_parser as an example of recursive decent parsing.
