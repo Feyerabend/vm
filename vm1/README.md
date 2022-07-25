@@ -6,11 +6,8 @@ Then add the two numbers. Place the result back on stack. Then
 print sum. Halt.
 
 ## vm1
- ...
 
-## run
-
-Compile with gcc installed; `gcc vm1.c` at the command line, then run with `./a.out`.
+A representation of a sample program is hard coded into `vm1.c`:
 
 > int program[] = {
         SET, 33,
@@ -27,3 +24,21 @@ In `vm1.c` the important functions are:
 - `void push(VM* vm, int v)` push a value on stack.
 - `int nextcode(VM* vm)` move the pointer (pc) at the array to the next code in line. Can be value or operation depending on previous code. 
 - `run(VM* vm)` the "processor". Picks a code from the array, and finds out what the operation will do, and execute on it.
+
+## run
+
+Compile with gcc installed, e.g.:
+
+```
+> gcc vm1.c
+> ./a.out
+```
+
+Or if not gcc installed:
+
+```
+cc vm1.c -o vm1
+./vm1
+```
+
+You should be able to see what 33 + 44 is ...
