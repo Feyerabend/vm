@@ -8,13 +8,13 @@ and not for uses in any other way.
 https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived basically the code,
 even though some bugs were corrected and many more additions has been made.
 
-My interest in virtual machines started long time ago, first with USCD Pascal on the Apple II
+My interest in virtual machines started long time ago, first with *USCD Pascal* on the *Apple II*
 ...
 
-*NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter" etc. and
+__NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter" etc. and
 perhaps should not be restricted or qualified too much. The idea of an abstraction that separates
 the underlying mechanics from the levels above is what should be observed, not a deepend confusion
-of concepts which already are ambigious and not very well definied.*
+of concepts which already are ambigious and not very well definied anyway.__
 
 ## *From virtual machines to compilers*
 
