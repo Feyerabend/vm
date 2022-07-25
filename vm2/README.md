@@ -1,13 +1,13 @@
 # Virtual Machines
 
+A machine that takes inspiration from the programming language FORTH.
+It can be seen that the language here is very close to both the stack operations
+and the traditional machine/assembly language. Hence, programs can use and be optimized
+in line of being "forthified" (adopted to suit FORTH thinking).
+
 ## vm2
 
 Compile with gcc installed; `make` at the command line, then run `./fib`.
-
-*A machine that takes inspiration from the programming language FORTH.
-It can be seen that the language here is very close to both the stack operations
-and the traditional machine/assembly language. Hence, programs can use and be optimized
-in line of being "forthified" (adopted to suit FORTH thinking).*
 
 The sample chosen to illustrate extended from the previous vm1-machine is the Fibonacci series:
 1, 1, 2, 3, 5, 8, 13 ... which can be defined as a mathematical recursive function:
