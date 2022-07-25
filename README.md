@@ -4,9 +4,9 @@ Virtual machines samples[^1]. A collection of virtual machines to teach or under
 ideas and inner workings of virtual machines. They are solely intended for show of principles,
 and not for uses in any other way.
 
-[^1]: My best inspiration for the code of simple machines here comes from Bartosz Sypytowski:
-https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived basically the code,
-even though some bugs were corrected and many more additions has been made.
+[^1]: My best inspiration for the code of simple machines *here* comes from Bartosz Sypytowski:
+https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived basically the main
+code, even though some bugs were corrected and many more additions has been made.
 
 My interest in virtual machines started long time ago, first with *USCD Pascal* on the *Apple II*
 ...
@@ -20,7 +20,7 @@ of concepts which already are ambigious and not very well definied anyway.__
 
 ### 1. vm1
 
-We start off with a simple virtual stack machine. To not be confused to much, it has been simplified
+We start off with a simple virtual stack machine. To not be confused too much, it has been simplified
 in many ways. There is no error checking, no warnings, you have to compile the machine if you only
 slightly change the program, etc. The idea is to grasp what happends inside the virtual machine
 and use code as the main instructive part.
@@ -30,6 +30,8 @@ and use code as the main instructive part.
 ### 3. vm3
 
 ### 4. chip8
+
+We have alook at an early virtual machine used for games starting in the late 70'ties: CHIP-8. 
 
 ### 5. cmp1
 

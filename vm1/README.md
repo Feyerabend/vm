@@ -25,9 +25,10 @@ A representation of a sample program is hard coded into `vm1.c`:
         HALT            <- halt the program
 ```
 
-Everything in the program is represented as integers (positive integers). For instance `SET` is internally represented
-by a number (5), `ADD` is represented by another number (2), and so on. A switch statement selects each "instruction"
-and executes the corresponding routine.
+Everything in the program is represented as integers (positive integers).
+For instance `SET` is internally represented by a number (5), `ADD` is
+represented by another number (2), and so on. A switch statement selects
+each "instruction" and executes the corresponding routine.
 
 ```
 ...
@@ -38,9 +39,10 @@ and executes the corresponding routine.
 ...
 ```
 
-The instruction for storing numbers on the stack is `SET`. When executed, the next instruction in line (a number), will be put on stack
-`push(vm, v)` where *vm* represents the main structure for the virtual machine (program counter, stack pointer ...) and *v* is the value
-to be put on the stack.
+The instruction for storing numbers on the stack is `SET`. When executed,
+the next instruction in line (a number), will be put on stack `push(vm, v)`
+where *vm* represents the main structure for the virtual machine (program
+counter, stack pointer ...) and *v* is the value to be put on the stack.
 
 In `vm1.c` the important functions are:
 - `VM* newVM(int* code, int pc)` which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp). 
