@@ -16,7 +16,7 @@ perhaps should not be restricted or qualified too much. The idea of an abstracti
 the underlying mechanics from the levels above is what should be observed, not a deepend confusion
 of concepts which already are ambigious and not very well definied anyway.__
 
-The term "virtual machine" and also "interpreter" has been used for such diverse code as from the
+The term "virtual machine" and also "interpreter" has been used for such diverse fields as from the
 Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on Intel 4004,
 and Steve Wozniack routines in SWEET16[^4].
 
