@@ -234,12 +234,12 @@ void compile(node *n) {
 }
 
 int main() {
-    file = fopen("sample.a", "w");
+	file = fopen("sample.a", "w");
 
-    fprintf(file, "START:\n");
-    compile(program());
-    fprintf(file, "\tPRINT\n");
-    fclose(file);
+	fprintf(file, "START:\n");
+	compile(program());
+	fprintf(file, "\tPRINT\n");
+	fclose(file);
 
 	return 0;
 }
