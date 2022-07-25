@@ -14,7 +14,7 @@ sometime around 1980 or 1981 ...
 __NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter" etc. and
 perhaps should not be restricted or qualified too much. The idea of an abstraction that separates
 the underlying mechanics from the levels above is what should be observed, not a deepend confusion
-of concepts which already are ambigious and not very well definied anyway.__
+of concepts which already are ambiguous and not very well definied anyway.__
 
 The term "virtual machine" and also "interpreter" has been used for such diverse fields as from the
 Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on Intel 4004,
@@ -37,6 +37,12 @@ slightly change the program, etc. The idea is to grasp what happends inside the 
 and use code as the main instructive part.
 
 ### 2. vm2
+
+Next, the machine has been expanded with unconditional and conditional jumps, some storage facilities,
+but also adding some concepts deriving from FORTH, such as e.g. DROP, DUP, or SWAP. The algorithm
+of Fibonaccci is used archetypically with different implementations, where the concepts used from
+FORTH can be seen. FORTH is also a language which can use a virtual machine and, as in C, it is often
+close to the real machine on which it runs (often denoted by "low level languages").
 
 ### 3. vm3
 
