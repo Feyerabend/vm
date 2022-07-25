@@ -9,7 +9,7 @@ https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived basic
 code, even though some bugs were corrected and many more additions has been made.
 
 My interest in virtual machines started long time ago, first with *USCD Pascal* on the *Apple II*
-...
+sometime around 1980 or 1981 ...
 
 __NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter" etc. and
 perhaps should not be restricted or qualified too much. The idea of an abstraction that separates
