@@ -1,5 +1,6 @@
 # Virtual machines
 
+A fragment of a compiler. Starts with an abstract tree and gives an assembled program.
 
 ## cmp1
 
@@ -22,6 +23,25 @@ syntax tree, AST[^2]).
 [^2]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
 
 From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
+
+```
+typedef struct node {
+    int type;
+    int value;
+    struct node *node1, *node2;
+} node;
+```
+
+A node consists of a type which is CONSTANT, ADD or MULTIPLY. To the node we can add an integer value. Only the CONSTANT
+type in our case has an integer value. A node can point to other nodes. Thus, a "tree" of nodes can be built.
+
+```
+ q MULTIPLY
+ ├── p CONSTANT 90
+ └─┬ x ADD
+   ├── y CONSTANT 32
+   └── z CONSTANT 53
+```
 
 ## run
 
