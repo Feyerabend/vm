@@ -16,6 +16,17 @@ perhaps should not be restricted or qualified too much. The idea of an abstracti
 the underlying mechanics from the levels above is what should be observed, not a deepend confusion
 of concepts which already are ambigious and not very well definied anyway.__
 
+The term "virtual machine" and also "interpreter" has been used for such diverse code as from the
+Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on Intel 4004,
+and Steve Wozniack routines in SWEET16[^4].
+
+[^2]: This does not verify the reference, but gives general info on AGC,
+https://en.wikipedia.org/wiki/Apollo_Guidance_Computer 
+[^3]: Neither this verify reference to VM, but general info on Intel 4004,
+https://en.wikipedia.org/wiki/Intel_4004
+[^4]: SWEET16, https://en.wikipedia.org/wiki/SWEET16 but also in Byte no 11, 1977:
+https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up
+
 ## *From virtual machines to compilers*
 
 ### 1. vm1
