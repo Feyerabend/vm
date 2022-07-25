@@ -1,17 +1,18 @@
 # Virtual Machines
 
 Simple compiler from parsed text to assembly for the virtual machine.
+This is a restricted version which only does some compilation of artithmetical expressions.
+
 
 ## cmp3
 
 In the file `cmp3.c` you will find a "marriage" between the previous compiler which starts from the outset of an abstract tree
 representation of a program, to the previous parsing of programs as text.
 
-This is a restricted version which only does some compilation of artithmetical expressions.
-
 The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with all tokens recognized. (However they are not all used or
 recognized by the parser in `cmp3.c`.)
 
+The file `par2.c` is included here to illustrate, but not to compile, how arithmetic expressions are parsed.
 
 ## run
 
