@@ -131,7 +131,6 @@ node* factor() {
     } else if (accept(NUMBER)) {
         n = nnode(CONSTANT);
         n->value = atoi(buf);
-        ;
     } else if (accept(LPAREN)) {
         n = expression();
         expect(RPAREN);
