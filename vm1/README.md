@@ -17,6 +17,18 @@ A representation of a sample program is hard coded into `vm1.c`:
         HALT
 };
 
+```
+        SET, 33,        <- store 33 on the stack, 33 on the top
+        SET, 44,        <- next, store 44 on the stack, top now 44
+        ADD,            <- add the two numbers on the stack, 33 + 44 = 77
+        PRINT,          <- print the sum (77)
+        HALT            <- halt the program
+```
+
+Everything in the program is represented as integers (natural numbers). For instance `SET` is internally represented
+by a number (5), `ADD` is represented by another number (2), and so on. A switch statement selects each "instruction"
+and executes the corresponding routine.
+
 In `vm1.c` the important functions are:
 - `VM* newVM(int* code, int pc)` which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp). 
 - `void freeVM(VM* vm)` deallocates vm.
@@ -27,7 +39,7 @@ In `vm1.c` the important functions are:
 
 ## run
 
-Compile with gcc installed, e.g.:
+Compile with gcc installed, and the run, e.g.:
 
 ```
 > gcc vm1.c
@@ -37,8 +49,8 @@ Compile with gcc installed, e.g.:
 Or if not gcc installed:
 
 ```
-cc vm1.c -o vm1
-./vm1
+> cc vm1.c -o vm1
+> ./vm1
 ```
 
 You should be able to see what 33 + 44 is ...
