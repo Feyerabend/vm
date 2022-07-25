@@ -2,6 +2,7 @@
 
 Simple compiler from parsed text to assembly for the virtual machine.
 This is a restricted version which only does some compilation of artithmetical expressions.
+(No assignments or variables.)
 
 
 ## cmp3
@@ -12,7 +13,7 @@ representation of a program, to the previous parsing of programs as text.
 The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with all tokens recognized. (However they are not all used or
 recognized by the parser in `cmp3.c`.)
 
-The file `par2.c` is included here to illustrate, but not to compile, how arithmetic expressions are parsed.
+(The file `par2.c` is included here to illustrate, but not to compile, how arithmetic expressions are parsed.)
 
 ## run
 
@@ -49,6 +50,9 @@ The program as text in `sample.p` is:
 12 * (1000 + (3 * 5))
 .
 ```
+
+The period at the end marks the end of the program (originally from PL/0).
+
 
 ## note
 
