@@ -24,7 +24,7 @@ syntax tree, AST[^2]).
 
 From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
 
-### building or construct
+### build or construct
 
 ```
 typedef struct node {
