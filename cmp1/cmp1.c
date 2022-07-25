@@ -66,5 +66,5 @@ void compile(node *n) {
 
 int main() {
     compile(sample());
-	return 0;
+    return 0;
 }
