@@ -32,8 +32,9 @@ typedef struct node {
 } node;
 ```
 
-A node consists of a type which is CONSTANT, ADD or MULTIPLY. To the node we can add an integer value. Only the CONSTANT
-type in our case has an integer value. A node can point to other nodes. Thus, a "tree" of nodes can be built.
+A node consists of a type which is CONSTANT, ADD or MULTIPLY. To the node we can also add an integer value. Only the
+CONSTANT type in our case has an integer value (and then *interpreted* as an integer value). A node can point to other
+nodes. Thus, a "tree" of nodes can be built.
 
 ```
  q MULTIPLY
@@ -42,6 +43,8 @@ type in our case has an integer value. A node can point to other nodes. Thus, a 
    ├── y CONSTANT 32
    └── z CONSTANT 53
 ```
+
+Then when we compile we break down the elements to translate them into our vm-instructions. 
 
 ## run
 
