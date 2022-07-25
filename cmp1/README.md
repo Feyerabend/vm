@@ -52,11 +52,17 @@ Then when we compile we break down the elements to translate them into our vm-in
 takes both its child nodes (recursively) for futher break down:
 
 ```
+ void compile(node *n) {
+    switch (n->type) {
+
+    	...
+
         case ADD:
             compile(n->node1);
             compile(n->node2);
             printf("ADD\n"); 
             break;
+
 ```
 
 ## run
@@ -74,7 +80,7 @@ Then, if everything worked, no errors were produced, then run it by:
 > ./cmp1
 ```
 
-The result should be:
+The result should be in print:
 
 ```
 SET 32
