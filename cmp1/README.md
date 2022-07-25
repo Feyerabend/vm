@@ -24,6 +24,8 @@ syntax tree, AST[^2]).
 
 From the tree we can compile it to the representation in assembly that can eventually be used by the virtual machine.
 
+### building or construct
+
 ```
 typedef struct node {
     int type;
@@ -44,7 +46,18 @@ nodes. Thus, a "tree" of nodes can be built.
    └── z CONSTANT 53
 ```
 
-Then when we compile we break down the elements to translate them into our vm-instructions. 
+### deconstruct or analyze
+
+Then when we compile we break down the elements to translate them into our vm-instructions. For example the ADD instruction
+takes both its child nodes (recursively) for futher break down:
+
+```
+        case ADD:
+            compile(n->node1);
+            compile(n->node2);
+            printf("ADD\n"); 
+            break;
+```
 
 ## run
 
