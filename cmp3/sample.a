@@ -7,4 +7,3 @@ START:
 	ADD
 	MUL
 	HALT
-	PRINT

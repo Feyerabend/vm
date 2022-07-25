@@ -48,13 +48,11 @@ int expect(Symbol s) {
 
 typedef enum {
     ADD,
-    ASSIGN,
     CONSTANT,
     DIVIDE,
     MULTIPLY,
     PROG,
-    SUB,
-    VALUE
+    SUB
 } Instr;
 
 #define LABEL_MAX 6
@@ -191,15 +189,6 @@ void compile(node *n) {
             fprintf(file, "\tSET %d\n", n->value);
             break;
 
-        case VALUE:
-            fprintf(file, "\tLOAD %d\n", n->value);
-            break;
-
-        case ASSIGN:
-            compile(n->node2);
-            fprintf(file, "\tSTORE %d\n", n->node1->value);
-            break;
-
         case ADD:
             compile(n->node1);
             compile(n->node2);
@@ -222,6 +211,8 @@ void compile(node *n) {
             compile(n->node1);
             fprintf(file, "\tHALT\n");
             break;
+
+        // case DIVIDE: not impl! in vm
     }
 }
 
@@ -230,7 +221,6 @@ int main() {
 
 	fprintf(file, "START:\n");
 	compile(program());
-	fprintf(file, "\tPRINT\n");
 	fclose(file);
 
 	return 0;
