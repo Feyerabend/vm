@@ -51,17 +51,10 @@ typedef enum {
     ASSIGN,
     CONSTANT,
     DIVIDE,
-    DO,
-    EXPR,
-    IF,
-    IFELSE,
-    LESS,
     MULTIPLY,
     PROG,
-    SEQ,
     SUB,
-    VALUE,
-    WHILE
+    VALUE
 } Instr;
 
 #define LABEL_MAX 6
