@@ -1,9 +1,11 @@
 # Virtual Machines
 
-A machine that takes inspiration from the programming language FORTH.
+A machine that takes inspiration from the programming language FORTH[^1].
 It can be seen that the language here is very close to both the stack operations
 and the traditional machine/assembly language. Hence, programs can use and be optimized
 in line of being "forthified" (adopted to suit FORTH thinking).
+
+[^1]: See https://en.wikipedia.org/wiki/Forth_(programming_language).
 
 ## vm2
 
@@ -41,7 +43,18 @@ with the RISC vs. CISC debate (even if it is on a virtual machine which introduc
 aspects that doesn't make it fully comparable). Here RISC (reduced instruction set) indicate
 microprocessors which have a few (simple, powerful), compared to the CISC (complex
 instruction set) which have many (complex, "slow") instructions. (A machine with even less
-instructions, in fact only one, use only the SUBLEQ instruction.)
+instructions, in fact only one, use only the SUBLEQ instruction.)[^2]
 
-Another observation is that there exist hardware, instruction sets, that implements e.g. the
-virtual machine of Java: *JVM* (at least ints early history for embeded use).
+[^2]:
+RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer,
+CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
+
+Another observation is that there exist hardware, processors with instruction sets that implements the
+virtual machine of Java: *JVM* (at least ints early iterations for embeded use).
+
+Building from the "bottom up" was also something that could be claimed happened to Lisp
+Machines, that had *Lisp Machine Lisp* at the hardware level.[^3]
+
+[^3]:
+https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and 
+https://en.wikipedia.org/wiki/Lisp_machine
