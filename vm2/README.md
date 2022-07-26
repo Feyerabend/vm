@@ -39,20 +39,21 @@ are there such that "1 2 3". Then rotation `ROT` would get "2 3 1", and we then 
 ## some observations
 
 The experimental enlargement of the machine capacities through new instructions maybe also be compared
-with the RISC vs. CISC debate (even if it is on a virtual machine which introduces new
+with the RISC vs. CISC debate[^2] (even if it is on a virtual machine which introduces new
 aspects that doesn't make it fully comparable). Here RISC (reduced instruction set) indicate
 microprocessors which have a few (simple, powerful), compared to the CISC (complex
 instruction set) which have many (complex, "slow") instructions. (A machine with even less
-instructions, in fact only one, use only the SUBLEQ instruction.)[^2]
+instructions, in fact only one, use only the SUBLEQ[^3] instruction.)
 
-[^2]: RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer, CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
+[^2]: See RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer, and CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
+[^3]: See https://en.wikipedia.org/wiki/One-instruction_set_computer.
 
 Another observation is that there exist hardware, processors with instruction sets that implements the
-virtual machine of Java: *JVM* (at least in its early iterations for embeded use).[^3]
+virtual machine of Java: *JVM* (at least in its early iterations for embeded use).[^4]
 
-[^3]: https://en.wikipedia.org/wiki/PicoJava
+[^4]: See https://en.wikipedia.org/wiki/PicoJava.
 
 Building from the "bottom up" was also something that could be claimed happened to Lisp
-Machines, that had *Lisp Machine Lisp* at the hardware level.[^4]
+Machines, that had *Lisp Machine Lisp* at the hardware level.[^5]
 
-[^4]: https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine
+[^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine.
