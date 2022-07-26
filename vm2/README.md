@@ -48,9 +48,11 @@ instructions, in fact only one, use only the SUBLEQ instruction.)[^2]
 [^2]: RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer, CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
 
 Another observation is that there exist hardware, processors with instruction sets that implements the
-virtual machine of Java: *JVM* (at least ints early iterations for embeded use).
+virtual machine of Java: *JVM* (at least in its early iterations for embeded use).[^3]
+
+[^3]: https://en.wikipedia.org/wiki/PicoJava
 
 Building from the "bottom up" was also something that could be claimed happened to Lisp
-Machines, that had *Lisp Machine Lisp* at the hardware level.[^3]
+Machines, that had *Lisp Machine Lisp* at the hardware level.[^4]
 
-[^3]: https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine
+[^4]: https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine
