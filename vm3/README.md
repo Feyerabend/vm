@@ -27,11 +27,6 @@ https://github.com/vladris/pixie/wiki/Dust-Assembler,
 and looked at some confusing code from
 https://github.com/amsanei/Assembler-with-python.
 
-Still we have no debugging support, error messaging, file handling, etc. you can find in any
-corresponding system. The purpose here is to be as clear as possible to what goes on with regard
-to the machine rather than other stuff. It is thus __NOT__ for use with any other purpose than to teach
-and understand some simple principles of what a VM could be.
-
 ## vm3
 
 Compile with gcc installed.
