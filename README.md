@@ -36,7 +36,7 @@ in many ways. There is no error checking, no warnings, you have to compile the m
 slightly change the program, etc. The idea is to grasp what happends inside the virtual machine
 and use code as the main instructive part.
 
-### 2. vm2
+### 2. [vm2](/vm2)
 
 Next, the machine has been expanded with unconditional and conditional jumps, some
 storage facilities, but also adding some concepts deriving from FORTH, such as e.g. DROP,
@@ -51,19 +51,19 @@ microprocessors which have a few (simple, powerful), compared to the CISC (compl
 instruction set) which have many (complex, "slow") instructions. (A machine with even less
 instructions, in fact only one, use only the SUBLEQ instruction.)
 
-### 3. vm3
+### 3. [vm3](/vm3)
 
 This time we slim the machine down, get rid of the many extra powerful concepts from FORTH.
 Instead we insert some "standard" concepts of call and return through the use of "activation records".
 
 
-### 4. chip8
+### 4. [chip8](/chip8)
 
 We have alook at an early virtual machine used for games starting in the late 70'ties: CHIP-8. 
 
-### 5. cmp1
+### 5. [cmp1](/cmp1)
 
-### 6. cmp2
+### 6. [cmp2](/cmp2)
 
-### 7. cmp3
+### 7. [cmp3](/cmp3)
 
