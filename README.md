@@ -29,7 +29,7 @@ https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up
 
 ## *From virtual machines to compilers*
 
-### 1. vm1
+### 1. [vm1](/vm1)
 
 We start off with a simple virtual stack machine. To not be confused too much, it has been simplified
 in many ways. There is no error checking, no warnings, you have to compile the machine if you only
