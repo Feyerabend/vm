@@ -29,7 +29,7 @@ https://github.com/amsanei/Assembler-with-python.
 
 Still we have no debugging support, error messaging, file handling, etc. you can find in any
 corresponding system. The purpose here is to be as clear as possible to what goes on with regard
-to the machine rather than other stuff. It is thus NOT for use with any other purpose than to teach
+to the machine rather than other stuff. It is thus __NOT__ for use with any other purpose than to teach
 and understand some simple principles of what a VM could be.
 
 ## vm3
@@ -44,13 +44,44 @@ Compile with gcc installed.
 #### Sample
 
 To test this VM, try a program named `bin` for translating decimal numbers to binary.
-First start with the assembly text in `bin.a` and convert it to the appropriate machine code:
+The sample starts with the arbitrary number 51966, and we chose 16 bits representation.
+
+```
+START:
+	SET 16		# number of bits
+	STORE R0
+
+LOOP:
+	SET 51966	# decimal input
+	LOAD R0
+	DEC
+	RSH
+	SET 1
+	AND
+	PRNT
+
+	LOAD R0
+	DEC
+	DUP
+	STORE R0
+
+	JPNZ :LOOP
+	HALT
+```
+
+First start with the assembly text in `bin.a` and convert it to the appropriate machine code.
 
 ```
 > python3 ./asm.py bin.a bin.b
 ```
 
-Which converts the assembly code in `bin.a` to the machine code for VM3. There is also a file named
+The resulting file `bin.b`will be:
+
+```
+27,16,31,0,27,51966,15,0,3,26,27,1,1,24,15,0,3,5,31,0,11,4,8
+```
+
+Which converts the assembly code in `bin.a` to the machine code for *vm3*. There is also a file named
 `bin.b` which contains the machine code. Then copy the code produced either from screen (if available)
 or from the generated file `bin.b`. Open the c-file `bin.c` with an editor, and paste the code (replace)
 in the array named "program". Save the c-file `bin.c` with your changes. Now:
@@ -66,6 +97,6 @@ Then, if everything worked, no errors were produced, then run it by:
 > ./bin
 ```
 
-A binary number should appear on the screen.
+A binary number should appear on the screen `1100101011111110`.
 
-The same procedure goes for the other samples `factorial` and `prime` (numbers).
+The same procedure on compiling and assembling goes for the other samples `factorial` and `prime` (numbers).
