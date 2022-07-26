@@ -43,13 +43,14 @@ storage facilities, but also adding some concepts deriving from FORTH, such as e
 DUP, or SWAP. The algorithm of Fibonacci is used archetypically with different
 implementations, where the concepts used from FORTH can be seen. FORTH is also a
 language which can use a virtual machine and, as in C, it is often close to the real machine
-on which it runs (often denoted by "low level languages"). The experimental
-enlargement of the machine capacities through new instructions maybe also be compared
+on which it runs (often denoted by "low level languages").
+
+*The experimental enlargement of the machine capacities through new instructions maybe also be compared
 with the RISC vs. CISC debate (even if it is on a virtual machine which introduces new
 aspects that doesn't make it fully comparable). Here RISC (reduced instruction set) indicate
 microprocessors which have a few (simple, powerful), compared to the CISC (complex
 instruction set) which have many (complex, "slow") instructions. (A machine with even less
-instructions, in fact only one, use only the SUBLEQ instruction.)
+instructions, in fact only one, use only the SUBLEQ instruction.)*
 
 ### 3. [vm3](/vm3)
 
