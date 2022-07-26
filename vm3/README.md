@@ -75,16 +75,16 @@ First start with the assembly text in `bin.a` and convert it to the appropriate 
 > python3 ./asm.py bin.a bin.b
 ```
 
-The resulting file `bin.b`will be:
+The resulting file `bin.b` will be:
 
 ```
 27,16,31,0,27,51966,15,0,3,26,27,1,1,24,15,0,3,5,31,0,11,4,8
 ```
 
-Which converts the assembly code in `bin.a` to the machine code for *vm3*. There is also a file named
-`bin.b` which contains the machine code. Then copy the code produced either from screen (if available)
-or from the generated file `bin.b`. Open the c-file `bin.c` with an editor, and paste the code (replace)
-in the array named "program". Save the c-file `bin.c` with your changes. Now:
+Which converts the assembly code in `bin.a` to the machine code for *vm3*. Copy the code produced
+either from screen (if available) or from the generated file `bin.b`. Open the c-file `bin.c` with
+an editor, and paste the code (replace) in the array named "program". Save the c-file `bin.c` with
+your changes. Now:
 
 ```
 > make clean
