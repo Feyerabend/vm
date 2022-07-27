@@ -1,7 +1,5 @@
 # Virtual machines
 
-## Chip by Dustin Ryan-Roepsch
-
 ## chip8
 
 Next a virtual machine (or interpreter) that has been widespread and used in many computers, even
@@ -17,6 +15,8 @@ processor FRED with only discrete logic. Intel is considered to be the first com
 with a processor to the market. However both RCA and Intel didn't at first understand the importance
 of this idea what was to become the microprocessor. As a side note the 4004 was first used in
 Busicom calculators, but the japanese software was adapted through a mechanism close to "virtual machine".
+
+## Chip8 by Dustin Ryan-Roepsch
 
 There is a much larger story here, much to unpack, but we limit the focus to the virtual machine __*CHIP-8*__.
 This implementation here by Dustin Roepsch (among the many thousands there are) of Chip 8 in C, only depends
@@ -44,6 +44,6 @@ If all went well, you will find in the `build/bin` the compiled binary of Chip8.
 > ./Chip8 <rom_file>
 ```
 
-Where you provide your binary sample Chip-8 file. You can find some at: https://github.com/kripod/chip8-roms,
+Where you provide your binary sample of a Chip-8 file `<rom_file>`. You can find some at: https://github.com/kripod/chip8-roms,
 or search the web.
 
