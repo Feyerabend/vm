@@ -43,6 +43,7 @@ The main point of the technique can be described as:
 8. the interpreter goes on to the next instruction, start over from 1 to 8 as long as there are instructions left
 9. when all the instructions have been consumed, the interpreter returns to the main caller
 
+![Principles of an interpreter technique](./interpreter.png)
 
 ## *From virtual machines to compilers*
 
