@@ -31,7 +31,10 @@ https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up
 ### Interpreter technique
 
 Close to "virtual machines" there is in principal a "interpreter technique".
-The main point of the technique can be described as:
+The main point of the technique can be described as:[^5]
+
+[^5]: I main translated excerpt from the Swedish journal *Modern elektronik*, 1981.
+Ideas and facts: Hans Beckman, Johan Finnved, ed. Gunnar Christernin.
 
 1. the interpreter is called, with a list of instructions as argument
 2. the interpreter takes an instruction from the incoming list,
