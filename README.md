@@ -34,7 +34,9 @@ Close to "virtual machines" there is in principal a "interpreter technique".
 The main point of the technique can be described as:[^5]
 
 [^5]: In main translated excerpt from the Swedish journal *Modern elektronik*, no. 8, 1981.
-Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin.
+Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin. In this exact part
+they mention examples of floating point calculation, and compilers should be able to use
+this technique.
 
 1. the interpreter is called, with a list of instructions as argument
 2. the interpreter takes an instruction from the incoming list,
