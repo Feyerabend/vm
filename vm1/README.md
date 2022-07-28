@@ -34,10 +34,10 @@ each "instruction" and executes the corresponding routine.
 
 ```
 ...
-        case SET:
-        v = nextcode(vm);
-        push(vm, v);
-        break;
+     case SET:
+     v = nextcode(vm);
+     push(vm, v);
+     break;
 ...
 ```
 
@@ -56,14 +56,14 @@ In `vm1.c` the important functions are:
 
 ## run
 
-Compile with gcc installed, and the run, e.g.:
+Compile with gcc installed, and then run:
 
 ```
 > gcc vm1.c
 > ./a.out
 ```
 
-Or if not gcc installed:
+Or, if not gcc installed:
 
 ```
 > cc vm1.c -o vm1
