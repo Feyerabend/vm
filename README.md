@@ -30,7 +30,7 @@ https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up
 
 ### Interpreter technique
 
-Close to "virtual machines" there is in principal an "interpreter technique".
+Close to "virtual machines" there is in principal a "interpreter technique".
 The main point of the technique can be described as:
 
 1. the interpreter is called, with a list of instructions as argument
