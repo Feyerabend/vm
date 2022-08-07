@@ -55,5 +55,7 @@ virtual machine of Java: *JVM* (at least in its early iterations for embeded use
 
 Building from the "bottom up" was also something that could be claimed happened to Lisp
 Machines, that had *Lisp Machine Lisp* at the hardware level.[^5]
+Microcode could be used for directly implementing a "high level" language such as PL/I in hardware.[^6]
 
 [^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine.
+[^6]: See https://en.wikipedia.org/wiki/Microcode
