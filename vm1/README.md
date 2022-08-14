@@ -70,4 +70,7 @@ Or, if not gcc installed:
 > ./vm1
 ```
 
-You should be able to see what 33 + 44 is ...
+You should be able to see what 33 + 44 is ... [^1]
+
+[^1]: One of the many features of virtual machines is enabling portability of code.
+Try another version of the machine in "alternate-vm.html" which you can run in your browser.
