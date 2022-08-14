@@ -12,12 +12,12 @@
 	var pc = 0;
 
 	const code = [
-        SET, 33,
-        SET, 44,
-        ADD,
-        PRINT,
-        HALT
-    ];
+        	SET, 33,
+        	SET, 44,
+        	ADD,
+        	PRINT,
+        	HALT
+    	];
 
 	function nextcode() {
 		return code[pc++];
@@ -67,9 +67,9 @@
 
 				default:
 					break;
-			} // switch
+			}
 		} while (true);
-    }
+	}
 
 	run();
 
