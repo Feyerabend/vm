@@ -72,5 +72,8 @@ Or, if not gcc installed:
 
 You should be able to see what 33 + 44 is ... [^1]
 
-[^1]: One of the many features of virtual machines is enabling portability of code.
-Try another version of the machine in "alternate-vm.html" which you can run in your browser.
+[^1]: One of the many features of virtual machines is enabling *portability of code*.
+Try another version of the machine in "alternate-vm.html", which you can run in your browser.
+You will notice the program is the same in *principle*, as the opcodes could also be, so we only
+implement a new virtual machine each time we would like to run the program on another
+system, operating system, hardware, etc.
