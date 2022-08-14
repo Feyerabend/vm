@@ -1,0 +1,76 @@
+<script type="module">
+
+	const NA = 0
+	const HALT = 1
+	const ADD = 2
+	const SUB = 3
+	const MUL = 4
+	const SET = 5
+	const PRINT = 6
+
+	var stack = [];
+	var pc = 0;
+
+	const code = [
+        SET, 33,
+        SET, 44,
+        ADD,
+        PRINT,
+        HALT
+    ];
+
+	function nextcode() {
+		return code[pc++];
+	}
+
+	function run() {
+		var opcode, a, b, c;
+
+		do {
+			opcode = nextcode();
+
+			switch (opcode) {
+
+				case HALT:
+					return;
+
+				case SET:
+					c = nextcode();
+					stack.push(c);
+					break;
+
+				case ADD:
+					b = stack.pop();
+					a = stack.pop();
+					c = a + b;
+					stack.push(c);
+					break;
+      
+				case SUB:
+					b = stack.pop();
+					a = stack.pop();
+					c = a - b; 
+					stack.push(c);
+					break;
+
+				case MUL:
+					b = stack.pop();
+					a = stack.pop();
+					c = a * b;
+					stack.push(c);
+					break;
+
+				case PRINT:
+					c = stack.pop();
+					console.log("answer is ", c);
+					break;
+
+				default:
+					break;
+			} // switch
+		} while (true);
+    }
+
+	run();
+
+</script>
