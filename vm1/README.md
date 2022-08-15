@@ -84,4 +84,4 @@ system, operating system, hardware, etc. Sun Microsystems Inc., the company orig
 behind the programming language Java, once had a slogan: "Write Once, Run Anywhere"[^1],
 that kind of illustrated that idea.
 
-[^1] https://en.wikipedia.org/wiki/Write_once,_run_anywhere
+[^1]: https://en.wikipedia.org/wiki/Write_once,_run_anywhere
