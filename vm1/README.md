@@ -70,10 +70,18 @@ Or, if not gcc installed:
 > ./vm1
 ```
 
-You should be able to see what 33 + 44 is ... [^1]
+You should be able to see what 33 + 44 is ... (hint 77)
 
-[^1]: One of the many features of virtual machines is enabling *portability of code*.
-Try another version of the machine in "alternate-vm.html", which you can run in your browser.
-You will notice the program is the same in *principle*, as the opcodes could also be, so we only
+
+## portability
+
+One of the many praised features of virtual machines is enabling *portability of code*.
+You can try another version of the virtual machine in "alternate-vm.html", which you
+can run in your browser. (Copy to the desktop and double-click.)
+You will notice the program is the same in *principle* (as the opcodes can also be) so we only
 implement a new virtual machine each time we would like to run the program on another
-system, operating system, hardware, etc.
+system, operating system, hardware, etc. Sun Microsystems Inc., the company originally
+behind the programming language Java, once had a slogan: "Write Once, Run Anywhere"[^1],
+that kind of illustrated that idea.
+
+[^1] https://en.wikipedia.org/wiki/Write_once,_run_anywhere
