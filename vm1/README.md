@@ -81,8 +81,9 @@ can run in your browser. (Copy to the desktop and double-click, check through th
 option in your browser the output from "console.log".)
 You will notice the program is the same in *principle* (as the opcodes can also be) so we only
 implement a new virtual machine each time we would like to run the program on another
-system, operating system, hardware, etc. Sun Microsystems Inc., the company originally
+system, operating system, hardware, etc. *The code for the program then can remain the same.*
+Sun Microsystems Inc., the company originally
 behind the programming language Java, once had a slogan: "Write Once, Run Anywhere"[^1],
-that kind of illustrated that idea.
+that kind of illustrates that idea.
 
 [^1]: https://en.wikipedia.org/wiki/Write_once,_run_anywhere
