@@ -8,9 +8,9 @@ Simple compiler from parsed text to assembly, to running code on a virtual machi
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
 The language inherits and have similarities with PL/0. Let's make some preliminary
-observations of features of *enkel/0*.
+observations of some features from *enkel/0*.
 
-A program could be written as:
+A simple program could be written as:
 
 ```
 var x;
@@ -58,7 +58,7 @@ end.
 
 From here we call factorial above with the argument 10. From the returning procedure we
 then print the returning value. The returning value is stored in the fixed predefined global
-variable _rval_.
+variable _rval_ (which always holds the current return value).
 
 The procedure factorial is defined with an argument _n_:
 
