@@ -86,7 +86,7 @@ described. Actually the vm is still very small, although the language has grown 
 but in a way that *we* understand programming easier.
 
 
-### insert sort
+### insertion sort
 
 ```
 array A:10;
@@ -117,7 +117,7 @@ procedure write[n];
     call nl[]
   end;
 
-procedure select[n];
+procedure insert[n];
   var i, j, m;
   begin
     i is 0;
@@ -150,9 +150,36 @@ begin
   A.9 is 10;
 
   call write[10];
-  call select[10];
+  call insert[10];
   call write[10]
 end.
+```
+
+``` Result
+- - - - - - - - - - - -
+90
+45
+4
+56
+1
+99
+8
+50
+32
+10
+
+1
+4
+8
+10
+32
+45
+50
+56
+90
+99
+
+- - - - - - - - - - - -
 ```
 
 ...
