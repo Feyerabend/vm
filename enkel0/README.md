@@ -23,9 +23,9 @@ end.
 ```
 
 Programs always ends with a period. Statements are *seperated* by a semicolon, and not as
-in C *terminated* with a semicolon. Several statements are grouped by "begin" and "end".
-Global variables are set at the beginning af the program. Assignments is done by "is"
-(and not as in Algol or Pascal with ":="). You can "print" a variable (new line at the end).
+in C *terminated* with a semicolon. Several statements are grouped by _begin_ and _end_.
+Global variables are set at the beginning af the program. Assignments is done by _is_
+(and not as in Algol or Pascal with ":="). You can _print_ a variable (new line at the end).
 
 Let's look at a little more complicated program, factorial:
 
@@ -45,7 +45,7 @@ begin
 end.
 ```
 
-The main calling part of the program is at the bottom surrounded by "begin" and "end":
+The main calling part of the program is at the bottom surrounded by _begin_ and _end_:
 
 ```
 ...
@@ -77,7 +77,13 @@ procedure factorial[n];
 
 Local variables are declared thereafter, here _m_. A group of statements seperated by semicolon
 is the core of the program. First compare the incomming argument _n_ with 1, if true then return
-from procedure to the previous caller with the value 1 (stored in _rval_.
+from procedure to the previous caller with the value 1 (stored in _rval_).
+
+The local Variable _m_ is set to incomming _n_ minus 1. Another call recursively to factorial
+with m as argument is done. Then from returning calls, the returning value in _rval_ is multiplied
+with _n_ and returned. This is all done through the stack, and using the basics from the vm already
+described. Actually the vm is still very small, although the language has grown in complexity,
+but in a way that *we* understand programming easier.
 
 ...
 
