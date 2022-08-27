@@ -118,7 +118,7 @@ procedure write[n];
   end;
 
 procedure select[n];
-  var i, j, m, t;
+  var i, j, m;
   begin
     i is 0;
     do
