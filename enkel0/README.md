@@ -155,7 +155,9 @@ begin
 end.
 ```
 
-``` Result
+Result from compiling, assembling and running:
+
+```
 - - - - - - - - - - - -
 90
 45
