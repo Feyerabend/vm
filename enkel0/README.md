@@ -57,8 +57,8 @@ end.
 ```
 
 From here we call factorial above with the argument 10. From the returning procedure we
-then print the returning value. The returning value is stored in the fixed predefined global
-variable _rval_ (which always holds the current return value).
+then print the returning value. The returning value is stored in the fixed predefined
+global variable _rval_ (which always holds the current return value).
 
 The procedure factorial is defined with an argument _n_:
 
@@ -75,15 +75,85 @@ procedure factorial[n];
 ...
 ```
 
-Local variables are declared thereafter, here _m_. A group of statements seperated by semicolon
-is the core of the program. First compare the incomming argument _n_ with 1, if true then return
-from procedure to the previous caller with the value 1 (stored in _rval_).
+Local variables are declared thereafter, here _m_. A group of statements seperated by
+semicolon is the core of the program. First compare the incomming argument _n_ with 1,
+if true then return from procedure to the previous caller with the value 1 (stored in _rval_).
 
 The local Variable _m_ is set to incomming _n_ minus 1. Another call recursively to factorial
 with m as argument is done. Then from returning calls, the returning value in _rval_ is multiplied
 with _n_ and returned. This is all done through the stack, and using the basics from the vm already
 described. Actually the vm is still very small, although the language has grown in complexity,
 but in a way that *we* understand programming easier.
+
+
+### insert sort
+
+```
+array A:10;
+
+procedure nl[];
+  begin
+    emit 13; emit 10
+  end;
+
+procedure swap[a, b];
+  var u;
+  begin
+    u is A.a;
+    A.a is A.b;
+    A.b is u
+  end;
+
+procedure write[n];
+  var j;
+  begin
+    j is 0;
+    do
+      begin
+        print A.j;
+        j is j + 1
+      end
+    while j < n;
+    call nl[]
+  end;
+
+procedure select[n];
+  var i, j, m, t;
+  begin
+    i is 0;
+    do
+      begin
+        j is i;
+        m is i;
+        do
+          begin
+            if A.j < A.m then m is j;
+            j is j + 1
+          end
+        while j < n;
+        call swap[i, m];
+        i is i + 1
+      end
+    while i < n
+  end;
+
+begin
+  A.0 is 90;
+  A.1 is 45;
+  A.2 is 4;
+  A.3 is 56;
+  A.4 is 1;
+  A.5 is 99;
+  A.6 is 8;
+  A.7 is 50;
+  A.8 is 32;
+  A.9 is 10;
+
+  call write[10];
+  call select[10];
+  call write[10]
+end.
+```
 
 ...
 
