@@ -21,7 +21,12 @@ duration.
 
 ## vmenkel
 
-The virtual machine has in main been described earlier, and not much have changed
-in this version.
+The virtual machine has in main been described earlier, and not much have changed.
+One thing that has changed is the invention of a "file format".
 
+![File format for enkel/0](/assets/images/fileformat.png)
+
+A header of 1 integer (separeted with a comma before the body) signals where to start.
+The rest is read in an array to be executed, starting at the postition where the START
+label was poiting before the assembler did its thing.
 ...
