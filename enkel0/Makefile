@@ -2,7 +2,7 @@
 CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
-OBJFILES		= enkel.o error.o scan.o symbol.o vmenkel.o runvm.o
+OBJFILES	= enkel.o error.o scan.o symbol.o vmenkel.o runvm.o
 TARGET		= enkel runvm
 
 all: $(TARGET)
