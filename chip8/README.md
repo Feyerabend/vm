@@ -28,6 +28,7 @@ This version by Roepsch has the benefit of being rather simple to understand and
 i.e. easy to get up and running on many environments.
 
 [^3]: See: https://en.wikipedia.org/wiki/Curses_(programming_library) and https://en.wikipedia.org/wiki/Ncurses.
+Also have a look at ANSI escape codes: https://en.wikipedia.org/wiki/ANSI_escape_code.
 
 To get going, after downloading, try:
 
