@@ -39,20 +39,19 @@ enum {
 	MUL,	// 19
 	NEQ,	// 20
 	NOP,	// 21
-	NOT,	// 22 // skip?
-	OR,	// 23
-	PRINT,	// 24
-	PRNT,	// 25
-	RET,	// 26
-	RLOAD,	// 27
-	RSTORE,	// 28
-	SET,	// 29
-	ST,	// 30
-	STARG,	// 31
-	STORE,	// 32
-	SUB,	// 33
-	UMIN,	// 34
-	XOR	// 35
+	OR,	// 22
+	PRINT,	// 23
+	PRNT,	// 24
+	RET,	// 25
+	RLOAD,	// 26
+	RSTORE,	// 27
+	SET,	// 28
+	ST,	// 29
+	STARG,	// 30
+	STORE,	// 31
+	SUB,	// 32
+	UMIN,	// 33
+	XOR	// 34
 };
 
 VM* newVM(int* code, int pc, int vars, int args, int arrs);

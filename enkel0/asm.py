@@ -2,7 +2,7 @@ import sys
 import re
 
 if len(sys.argv) != 3:
-    print("Usage: asm <input> <output>")
+    print("Usage: asm.py <input> <output>")
     exit()
 
 with open(sys.argv[1]) as f:
@@ -49,7 +49,6 @@ ops = [
     'MUL',
     'NEQ',
     'NOP',
-    'NOT',  # skip?
     'OR',
     'PRINT',
     'PRNT',
@@ -86,7 +85,6 @@ ary = [
     0,      # MUL
     0,      # NEQ
     0,      # NOP
-    0,      # NOT       skip?
     0,      # OR
     0,      # PRINT
     0,      # PRNT

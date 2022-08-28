@@ -189,11 +189,6 @@ void run(VM* vm){
 				push(vm, (a != b) ? TRUE : FALSE);
 				break;
 
-			case NOT: // skip?
-				a = pop(vm);
-				push(vm, !a);
-				break;
-
 			case NOP:
 				break;				
 
