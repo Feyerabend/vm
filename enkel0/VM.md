@@ -16,17 +16,18 @@ the limits might be changed by you.
 Before loading, the length of the input file is measured. The "binary" have integers
 seperated by commas, throughout. It also in a certain format, where the first number
 points to where the *vm* should start. The rest of the file is the program itself.
-It measures the time from when the program starts until it finishes, and prints the
-duration.
-
-## vmenkel
-
-The virtual machine has in main been described earlier, and not much have changed.
-One thing that has changed is the invention of a "file format".
 
 ![File format for enkel/0](assets/images/fileformat.png)
 
 A header of 1 integer (separeted with a comma before the body) signals where to start.
 The rest is read in an array to be executed, starting at the postition where the START
 label was poiting before the assembler did its thing.
+
+The runner measures the time from when the program starts until it finishes, and prints
+the duration.
+
 ...
+
+## vmenkel
+
+The virtual machine has in main been described earlier, and not much have changed.
