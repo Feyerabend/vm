@@ -26,7 +26,7 @@ this technique.
 ## Metcalfe machine
 
 __call &lt;label&gt;__
-: (possibly recursive calls)
+: call some subprogram at label (possibly recursive calls)
 
 __false &lt;label&gt;__
 : conditional jump, if flag *false* then jump to label
