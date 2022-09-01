@@ -25,34 +25,34 @@ this technique.
 
 ## Metcalfe machine
 
-call <label>
+_call <label>_
 : (possibly recursive)
 
-false <label>
+_false <label>_
 : conditional jump, if flag false then jump to label
 
-flag false
+_flag false_
 : set flag to false
 
-flag true
+_flag true_
 : set flag to true
 
-match <item>
+_match <item>_
 : compare one item with the (non visible) input. if match the set flag true, else set to false
 
-print <item>
+_print <item>_
 : print current item to output
 
-return
+_return_
 : return from call (pop from stack address and set the pc)
 
-stop
+_stop_
 : stop the machine
 
-then <item>
-:compare the next item (after match) on input. make a logical and with current flag, i.e. if previous set of flag is true and the current, then they both are true, otherwise set flag false
+_then <item>_
+: compare the next item (after match) on input. make a logical and with current flag, i.e. if previous set of flag is true and the current, then they both are true, otherwise set flag false
 
-true <label>
+_true <label>_
 : conditional jump, if flag is true
 
 
