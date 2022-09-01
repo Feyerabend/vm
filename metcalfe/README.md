@@ -32,10 +32,10 @@ __false &lt;label&gt;__
 : conditional jump, if flag *false* then jump to label
 
 __flag *false*__
-: set flag to false
+: set flag to *false*
 
 __flag *true*__
-: set flag to true
+: set flag to *true*
 
 __match &lt;item&gt;__
 : compare one item with the (non visible) input.
@@ -51,9 +51,9 @@ __stop__
 : stop the machine
 
 __then &lt;item&gt;__
-: compare the next item (after match) on input. make a logical and with current flag,
+: compare the next item (after match) on input. make a logical *and* with current flag,
 i.e. if previous set of flag is *true* and the current, then they both are *true*,
-otherwise set *flag* false (*instr. added by me*)
+otherwise set flag *false* (*instr. added by me*)
 
 __true &lt;label&gt;__
 : conditional jump, if flag is *true*
