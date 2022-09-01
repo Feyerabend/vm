@@ -25,10 +25,10 @@ this technique.
 
 ## Metcalfe machine
 
-__call <label>__
+__call &lt;label&gt;__
 : (possibly recursive calls)
 
-__false <label>__
+__false &lt;label&gt;__
 : conditional jump, if flag false then jump to label
 
 __flag false__
@@ -37,11 +37,11 @@ __flag false__
 __flag true__
 : set flag to true
 
-__match <item>__
+__match &lt;item&gt;__
 : compare one item with the (non visible) input.
 if match the set flag true, else set to false
 
-__print <item>__
+__print &lt;item&gt;__
 : print current item to output
 
 __return__
@@ -50,11 +50,11 @@ __return__
 __stop__
 : stop the machine
 
-__then <item>__
+__then &lt;item&gt;__
 : compare the next item (after match) on input. make a logical and with current flag,
 i.e. if previous set of flag is true and the current, then they both are true,
 otherwise set flag false (*instr. added by me*)
 
-__true <label>__
+__true &lt;label&gt;__
 : conditional jump, if flag is true
 
