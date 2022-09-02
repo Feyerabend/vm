@@ -23,7 +23,7 @@ this technique.
 ![Principles of "interpreter technique"](../assets/images/interpreter.png)
 
 
-## Metcalfe machine
+## Metcalfe machine[^2]
 
 __call &lt;label&gt;__
 : Push current position of input and output on stack.
@@ -59,4 +59,10 @@ otherwise set `flag` *false* (*instr. added by me*). (NEEDED?)
 
 __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
+
+
+[^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
+*Annual Review in Automatic Programming: International Tracts in Computer Science
+and Technology and Their Application*, Vol. 4, ed. Richard Goodman, The Macmillan
+Company, New York, 1964. Reprinted Pergamon Press, 2014.
 
