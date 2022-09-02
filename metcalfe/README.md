@@ -26,7 +26,8 @@ this technique.
 ## Metcalfe machine
 
 __call &lt;label&gt;__
-: call some subprogram at label (possibly recursive calls)
+: push current position of input and output on stack.
+call some subprogram at label (possibly recursive calls).
 
 __false &lt;label&gt;__
 : conditional jump, if flag *false* then jump to label
@@ -38,7 +39,7 @@ __flag *true*__
 : set flag to *true*
 
 __match &lt;item&gt;__
-: compare one item with the (non visible) input.
+: compare one item with the input. move input pointer forward.
 if match the set flag *true*, else set to *false*
 
 __print &lt;item&gt;__
@@ -48,7 +49,7 @@ __return__
 : return from call (pop from stack address and set the pc)
 
 __stop__
-: stop the machine
+: stop the machine. print all of output
 
 __then &lt;item&gt;__
 : compare the next item (after match) on input. make a logical *and* with current flag,
