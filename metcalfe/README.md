@@ -26,36 +26,37 @@ this technique.
 ## Metcalfe machine
 
 __call &lt;label&gt;__
-: push current position of input and output on stack.
-call some subprogram at label (possibly recursive calls).
+: Push current position of input and output on stack.
+Call some subprogram/-routine at label (possibly recursive calls).
 
 __false &lt;label&gt;__
-: conditional jump, if flag *false* then jump to label
+: Conditional jump, if flag *false* then jump to label.
 
 __flag *false*__
-: set flag to *false*
+: Set flag to *false*.
 
 __flag *true*__
-: set flag to *true*
+: Set flag to *true*.
 
 __match &lt;item&gt;__
-: compare one item with the input. move input pointer forward.
-if match the set flag *true*, else set to *false*
+: Compare one item with the input. move input pointer forward.
+If match the set flag *true*, else set to *false*.
 
 __print &lt;item&gt;__
-: print current item to output
+: Print current item to output.
 
 __return__
-: return from call (pop from stack address and set the pc)
+: Return from call (pop from stack address and set the program counter).
+Also pop positions of input and output pointers from stack.
 
 __stop__
-: stop the machine. print all of output
+: Stop the machine. print all of output.
 
 __then &lt;item&gt;__
-: compare the next item (after match) on input. make a logical *and* with current flag,
+: Compare the next item (after match) on input. Make a logical *and* with current flag,
 i.e. if previous set of flag is *true* and the current, then they both are *true*,
-otherwise set flag *false* (*instr. added by me*)
+otherwise set flag *false* (*instr. added by me*). (NEEDED?)
 
 __true &lt;label&gt;__
-: conditional jump, if flag is *true*
+: Conditional jump, if flag is *true*.
 
