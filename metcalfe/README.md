@@ -3,9 +3,9 @@
 ## Interpreter technique
 
 Close to "virtual machines" there is in principal an "interpreter technique".
-The main point of the technique can be described as:[^5]
+The main point of the technique can be described as:[^1]
 
-[^5]: In main translated excerpt from the Swedish journal *Modern elektronik*, no. 8, 1981.
+[^1]: In main translated excerpt from the Swedish journal *Modern elektronik*, no. 8, 1981.
 Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin. In this exact part
 they mention examples of floating point calculation, and that compilers should be able to use
 this technique.
@@ -30,17 +30,17 @@ __call &lt;label&gt;__
 Call some subprogram/-routine at label (possibly recursive calls).
 
 __false &lt;label&gt;__
-: Conditional jump, if flag *false* then jump to label.
+: Conditional jump, if `flag` *false* then jump to label.
 
 __flag *false*__
-: Set flag to *false*.
+: Set `flag` to *false*.
 
 __flag *true*__
-: Set flag to *true*.
+: Set `flag` to *true*.
 
 __match &lt;item&gt;__
-: Compare one item with the input. move input pointer forward.
-If match the set flag *true*, else set to *false*.
+: Compare one item with the input. Move input pointer forward.
+If match the set `flag` *true*, else set `flag` to *false*.
 
 __print &lt;item&gt;__
 : Print current item to output.
@@ -50,13 +50,13 @@ __return__
 Also pop positions of input and output pointers from stack.
 
 __stop__
-: Stop the machine. print all of output.
+: Stop the machine, print all of output.
 
 __then &lt;item&gt;__
-: Compare the next item (after match) on input. Make a logical *and* with current flag,
-i.e. if previous set of flag is *true* and the current, then they both are *true*,
-otherwise set flag *false* (*instr. added by me*). (NEEDED?)
+: Compare the next item (after match) on input. Make a logical *and* with current `flag`,
+i.e. if previous set of `flag` is *true* and the current, then they both are *true*,
+otherwise set `flag` *false* (*instr. added by me*). (NEEDED?)
 
 __true &lt;label&gt;__
-: Conditional jump, if flag is *true*.
+: Conditional jump, if `flag` is *true*.
 
