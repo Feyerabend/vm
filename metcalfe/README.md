@@ -2,12 +2,12 @@
 
 ## Interpreter technique
 
-Close to "virtual machines" there is in principal a "interpreter technique".
+Close to "virtual machines" there is in principal an "interpreter technique".
 The main point of the technique can be described as:[^5]
 
 [^5]: In main translated excerpt from the Swedish journal *Modern elektronik*, no. 8, 1981.
 Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin. In this exact part
-they mention examples of floating point calculation, and compilers should be able to use
+they mention examples of floating point calculation, and that compilers should be able to use
 this technique.
 
 1. the interpreter is called, with a list of instructions as argument
@@ -20,7 +20,7 @@ this technique.
 8. the interpreter goes on to the next instruction, start over from 1 to 8 as long as there are instructions left
 9. when all the instructions have been consumed, the interpreter returns to the main caller
 
-![Principles of an interpreter technique](../assets/images/interpreter.png)
+![Principles of "interpreter technique"](../assets/images/interpreter.png)
 
 
 ## Metcalfe machine
