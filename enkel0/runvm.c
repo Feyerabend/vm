@@ -5,24 +5,17 @@
 
 #include "vmenkel.h"
 
-
-// enough for the samples? if not, change!
+// enough for the samples?
 int VARS = 2048;
 int ARGS = 2048;
 int ARRAYS = 2048;
 int MAXPROGLEN = 32768;
 int* program;
 
-// allocate array for the incoming program
 void allocateprogram() {
 	program = (int*) malloc(MAXPROGLEN * sizeof(int));
-	if (program == NULL) {
-		fprintf(stderr, "Runtime: unable to allocate memory for loading program.");
-	    exit(EXIT_FAILURE);
-	}
 }
 
-// seek the end of file, return size
 long fsize(FILE* file) {
     fseek(file, 0L, SEEK_END);
     long size = ftell(file);
@@ -30,7 +23,6 @@ long fsize(FILE* file) {
     return size;
 }
 
-// read all of the program, return buffer
 char* read(char *path) {
     FILE* file;
     file = fopen(path, "rb");
@@ -41,7 +33,6 @@ char* read(char *path) {
     return buf;
 }
 
-// run the vm with paramerters
 void exec(int* code, int start) {
 	VM* vm = newVM(code, start, VARS, ARGS, ARRAYS);
 	if (vm != NULL) {
@@ -50,7 +41,6 @@ void exec(int* code, int start) {
 	}
 }
 
-// 
 int main(int argc, char *argv[]) {
 	printf("loading ..\n");
 
@@ -84,7 +74,6 @@ int main(int argc, char *argv[]) {
 	}
 	while (j < i);
 
-	// show print from running program, and timing
 	printf("running ..\n");
 	printf("- - - - - - - - - - - -\n");
 	clock_t t;

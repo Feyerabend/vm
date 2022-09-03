@@ -80,7 +80,7 @@ Local variables are declared thereafter, here _m_. A group of statements seperat
 semicolon is the core of the program. First compare the incomming argument _n_ with 1,
 if true then return from procedure to the previous caller with the value 1 (stored in _rval_).
 
-The local Variable _m_ is set to incomming _n_ minus 1. Another call recursively to factorial
+The local variable _m_ is set to incomming _n_ minus 1. Another call recursively to factorial
 with m as argument is done. Then from returning calls, the returning value in _rval_ is multiplied
 with _n_ and returned. This is all done through the stack, and using the basics from the vm already
 described. Actually the vm is still very small, although the language has grown in complexity,

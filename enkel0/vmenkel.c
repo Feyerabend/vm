@@ -268,7 +268,6 @@ void run(VM* vm){
 
 			default:
 				break;
-
 		}
 
 	} while (TRUE);
