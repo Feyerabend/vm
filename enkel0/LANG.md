@@ -31,7 +31,7 @@ term = factor { (*|/|%|and) factor }
 
 factor = ident[. index] | number | ( expression )
 
-index = (ident|number)
+index = (ident | number)
 ```
 
 
@@ -42,7 +42,10 @@ index = (ident|number)
 
 
 
-## ASCII
+## ASCII and emit
+
+In order to get printed text, there is an option of putting out letters each at a time.
+Using the code table for ASCII we can emit a character at a time.
 
 ```text
        0 nul    1 soh    2 stx    3 etx    4 eot    5 enq    6 ack    7 bel
@@ -62,3 +65,14 @@ index = (ident|number)
      112  p   113  q   114  r   115  s   116  t   117  u   118  v   119  w
      120  x   121  y   122  z   123  {   124  |   125  }   126  ~   127 del
 ```
+
+To print "Hello" emit 'H', 'e', 'l', 'l', and 'o' with a new line at the end
+(carridge return 13 and line feed 10), a statement can look like:
+
+```text
+emit 72; emit 101; emit 108; emit 108; emit 111; emit 13; emit 10
+```
+
+
+
+
