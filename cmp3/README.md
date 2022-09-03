@@ -1,19 +1,22 @@
 # Virtual Machines
 
 Simple compiler from parsed text to assembly for the virtual machine.
-This is a restricted version which only does some compilation of artithmetical expressions.
-(No assignments or variables.)
+This is a restricted version which only does some compilation of
+artithmetical expressions. (No assignments or variables.)
 
 
 ## cmp3
 
-In the file `cmp3.c` you will find a "marriage" (merge) between the previous compiler which starts from the outset of an
-abstract tree representation of a program, to the previous parsing of programs as text.
+In the file `cmp3.c` you will find a "marriage" (merge) between the
+previous compiler which starts from the outset of an abstract tree
+representation of a program, to the previous parsing of programs as text.
 
-The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with all tokens recognized. (However they are not
-all used or recognized by the parser in `cmp3.c`.)
+The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with
+all tokens recognized. (However they are not all used or recognized by
+the parser in `cmp3.c`.)
 
-(The file `par2.c` is included here to illustrate, but not to compile, how arithmetic expressions are parsed. All essential code
+(The file `par2.c` is included here to illustrate, but not to compile,
+how arithmetic expressions are parsed. All essential code
 have already been moved to `cmp3.c`.)
 
 ## run
@@ -25,7 +28,8 @@ Test the sample with:
 > make cmp3
 ```
 
-Then, if everything worked, no errors were produced, then run it by letting the text from `sample.p` be parsed:
+Then, if everything worked, no errors were produced, then run it by
+letting the text from `sample.p` be parsed:
 
 ```
 > ./cmp3 < sample.p
@@ -59,10 +63,11 @@ The period at the end marks the end of the program (originally from PL/0).
 
 We have avoided going into the theory of parsing and grammars here. Instead we already start with a finished parser,
 just to add some root at which we build a tree with parsed leafs. Also some not too conflicting concepts with the
-existing solution in e.g. arrays will be added in the future. However this is *not really* the solution if you want
-to build a compiler/parser. This has been donw only for the learning experience. There are many pitfalls with the
-construction of grammars, which can end up with an endless recursion in worst case. There are tons of literature
-on this, but just a short notice on the problem you can start with can be read here:
+existing solution in e.g. arrays will be added in the future. Hopefully the grammar was not to disturbed by these
+moves. However this is *not really* the solution if you want to build a compiler/parser. This has been done only
+for the *learning experience* of what a compiler does and is. There are many pitfalls with the construction of grammars,
+which can end up with an endless recursion in worst case. There are tons of literature
+on this, but just a short notice on the problem you can start with, can e.g. be read here:
 https://ycpcs.github.io/cs340-fall2016/lectures/lecture05.html.
 
 
