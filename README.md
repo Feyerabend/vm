@@ -20,8 +20,8 @@ not a deepend confusion of concepts which already are ambiguous and not very wel
 defined anyway.__
 
 The term "virtual machine" and also "interpreter" has been used for such diverse fields as
-from the Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on
-Intel 4004, and Steve Wozniack routines in SWEET16[^4].
+from the Apollo Guidance Computer,[^2] code from Busicom interpreted[^3] to run on
+Intel 4004, and Steve Wozniack routines in SWEET16.[^4]
 
 [^2]: This does not verify the reference, but gives general info on AGC,
 https://en.wikipedia.org/wiki/Apollo_Guidance_Computer 
@@ -64,4 +64,12 @@ We have alook at an early virtual machine used for games starting in the late 70
 ### 6. [cmp2](/cmp2)
 
 ### 7. [cmp3](/cmp3)
+
+### 8. [cmp4](/cmp4)
+
+### 9. [enkel/0](/enkel0)
+
+A more complete compiler for our own language, with some similarities to PL/0 and other procedual
+langauges. It runs on its own virtual machine, and thus programs written in enkel/0 can be
+relatively easy ported to other environments.
 
