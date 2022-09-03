@@ -14,6 +14,14 @@ Test the sample with:
 > make cmp4
 ```
 
+```ebnf
+expression	= term { (+|-) term }
+
+term		= factor { (*|/) factor }
+
+factor		= ident | number | ( expression )
+```
+
 
 Expression:
 ![expression ..](https://user-images.githubusercontent.com/271797/188278982-1ff42147-4e27-490e-ad9f-1b465ed131be.svg)
