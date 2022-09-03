@@ -1,24 +1,27 @@
 # Virtual Machines
 
-Virtual machines samples[^1]. A collection of virtual machines to teach or understand some
-ideas and inner workings of virtual machines. They are solely intended for show of principles,
-and not for uses in any other way.
+Virtual machines samples.[^1] A collection of virtual machines to teach or understand
+some ideas and inner workings of virtual machines. They are solely intended for show of principles, and not for uses in any other way. The second objective is to downplay the
+separation between system programmers and application programmers. Or even
+in some cases down to the hardware level, programming of FPGA. More on this later on.
 
-[^1]: My best inspiration for the code of simple machines *here* comes from Bartosz Sypytowski:
-https://bartoszsypytkowski.com/simple-virtual-machine/ from whom I derived basically the main
-code, even though some bugs were corrected and many more additions has been made.
+[^1]: My best inspiration for the code of simple machines *here* comes from Bartosz
+Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
+from whom I derived basically the main code, even though some bugs were corrected
+and many more additions have been made along the way.
 
-My interest in virtual machines started long time ago, first with *USCD Pascal* on the *Apple II*
-sometime around 1980 or 1981 ...
+My interest in virtual machines started long time ago, first with *USCD Pascal*
+on the *Apple II* sometime around 1980 or 1981 ...
 
-__NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter" etc. and
-perhaps should not be restricted or qualified too much. The idea of an abstraction that separates
-the underlying mechanics from the levels above is what should be observed, not a deepend confusion
-of concepts which already are ambiguous and not very well definied anyway.__
+__NOTE: The term "virtual machine" can often be replaced by "emulator", "interpreter"
+etc. and perhaps should not be restricted or qualified too much. The idea of an abstraction
+that separates the underlying mechanics from the levels above is what should be observed,
+not a deepend confusion of concepts which already are ambiguous and not very well
+defined anyway.__
 
-The term "virtual machine" and also "interpreter" has been used for such diverse fields as from the
-Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on Intel 4004,
-and Steve Wozniack routines in SWEET16[^4].
+The term "virtual machine" and also "interpreter" has been used for such diverse fields as
+from the Apollo Guidance Computer[^2], code from Busicom interpreted[^3] to run on
+Intel 4004, and Steve Wozniack routines in SWEET16[^4].
 
 [^2]: This does not verify the reference, but gives general info on AGC,
 https://en.wikipedia.org/wiki/Apollo_Guidance_Computer 
