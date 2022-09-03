@@ -24,7 +24,7 @@ have already been moved to `cmp3.c`.)
 
 Test the sample with:
 
-```
+```shell
 > make clean
 > make cmp3
 ```
@@ -32,13 +32,13 @@ Test the sample with:
 Then, if everything worked, no errors were produced, then run it by
 letting the text from `sample.p` be parsed:
 
-```
+```shell
 > ./cmp3 < sample.p
 ```
 
 The result should be a file `sample.a`, the assembled version of the program:
 
-```
+```assembly
 START:
    SET 12
    SET 1000
@@ -52,7 +52,7 @@ START:
 
 The program as text in `sample.p` is:
 
-```
+```shell
 12 * (1000 + (3 * 5))
 .
 ```

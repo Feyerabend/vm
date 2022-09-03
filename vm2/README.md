@@ -14,7 +14,7 @@ Compile with gcc installed; `make` at the command line, then run `./fib`.
 The sample chosen to illustrate extended from the previous vm1-machine is the Fibonacci series:
 1, 1, 2, 3, 5, 8, 13 ... which can be defined as a mathematical recursive function:
 
-```
+```math
 F(0) = 0
 F(1) = 1
 F(n) = F(n − 1) + F(n − 2), n > 1
@@ -23,7 +23,7 @@ n ∈ ℕ
 
 Applied from the FORTH-thinking we have the following operations at the core:
 
-```
+```forth
 TWODUP
 ADD
 ROT
@@ -45,17 +45,23 @@ microprocessors which have a few (simple, powerful), compared to the CISC (compl
 instruction set) which have many (complex, "slow") instructions. (A machine with even less
 instructions, in fact only one, use only the SUBLEQ[^3] instruction.)
 
-[^2]: See RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer, and CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
+[^2]: See RISC https://en.wikipedia.org/wiki/Reduced_instruction_set_computer,
+and CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
+
 [^3]: See https://en.wikipedia.org/wiki/One-instruction_set_computer.
+
 
 Another observation is that there exist hardware, processors with instruction sets that implements the
 virtual machine of Java: *JVM* (at least in its early iterations for embeded use).[^4]
 
 [^4]: See https://en.wikipedia.org/wiki/PicoJava.
 
+
 Building from the "bottom up" was also something that could be claimed happened to Lisp
 Machines, that had *Lisp Machine Lisp* at the hardware level.[^5]
 Microcode could be used for directly implementing a "high level" language such as PL/I in hardware.[^6]
 
-[^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp, and https://en.wikipedia.org/wiki/Lisp_machine.
+[^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp,
+and https://en.wikipedia.org/wiki/Lisp_machine.
+
 [^6]: See https://en.wikipedia.org/wiki/Microcode

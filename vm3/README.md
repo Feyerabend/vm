@@ -31,7 +31,7 @@ https://github.com/amsanei/Assembler-with-python.
 
 Compile with gcc installed.
 
-```
+```shell
 > make bin
 > ./bin
 ```
@@ -41,7 +41,7 @@ Compile with gcc installed.
 To test this VM, try a program named `bin` for translating decimal numbers to binary.
 The sample starts with the arbitrary number 51966, and we chose 16 bits representation.
 
-```
+```assembly
 START:
 	SET 16		# number of bits
 	STORE R0
@@ -66,13 +66,13 @@ LOOP:
 
 First start with the assembly text in `bin.a` and convert it to the appropriate machine code.
 
-```
+```shell
 > python3 ./asm.py bin.a bin.b
 ```
 
 The resulting file `bin.b` will be:
 
-```
+```shell
 27,16,31,0,27,51966,15,0,3,26,27,1,1,24,15,0,3,5,31,0,11,4,8
 ```
 
@@ -81,14 +81,14 @@ either from screen (if available) or from the generated file `bin.b`. Open the c
 an editor, and paste the code (replace) in the array named "program". Save the c-file `bin.c` with
 your changes. Now:
 
-```
+```shell
 > make clean
 > make bin
 ```
 
 Then, if everything worked, no errors were produced, then run it by:
 
-```
+```shell
 > ./bin
 ```
 

@@ -7,7 +7,7 @@ Simple compiler from parsed text to assembly, to running code on a virtual machi
 
 There is already a file `sample.p` in the main directory, which you can compile and run:
 
-```
+```shell
 > make all
 > ./compile.sh
 ```
@@ -25,7 +25,7 @@ observations of some features from *enkel/0*.
 
 A simple program could be written as:
 
-```
+```pascal
 var x;
 
 begin
@@ -42,7 +42,7 @@ Global variables are set at the beginning af the program. Assignments is done by
 
 Let's look at a little more complicated program, factorial:
 
-```
+```pascal
 procedure factorial[n];
   var m;
   begin
@@ -60,7 +60,7 @@ end.
 
 The main calling part of the program is at the bottom surrounded by _begin_ and _end_:
 
-```
+```pascal
 ...
 
 begin
@@ -75,7 +75,7 @@ global variable _rval_ (which always holds the current return value).
 
 The procedure factorial is defined with an argument _n_:
 
-```
+```pascal
 procedure factorial[n];
   var m;
   begin
@@ -101,7 +101,7 @@ but in a way that *we* understand programming easier.
 
 ### insertion sort
 
-```
+```pascal
 array A:10;
 
 procedure nl[];
@@ -170,7 +170,7 @@ end.
 
 Result from compiling, assembling and running:
 
-```
+```shell
 - - - - - - - - - - - -
 90
 45

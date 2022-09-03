@@ -28,7 +28,7 @@ From the tree we can compile it to the representation in assembly that can event
 
 ### build or construct
 
-```
+```c
 typedef struct node {
     int type;
     int value;
@@ -40,7 +40,7 @@ A node consists of a type which is CONSTANT, ADD or MULTIPLY. To the node we can
 CONSTANT type in our case has an integer value (and then *interpreted* as an integer value). A node can point to other
 nodes. Thus, a "tree" of nodes can be built.
 
-```
+```math
  q MULTIPLY
  ├── p CONSTANT 90
  └─┬ x ADD
@@ -53,7 +53,7 @@ nodes. Thus, a "tree" of nodes can be built.
 Then when we compile we break down the elements to translate them into our vm-instructions. For example the ADD instruction
 takes both its child nodes (recursively) for futher break down:
 
-```
+```c
  void compile(node *n) {
     switch (n->type) {
 
@@ -71,20 +71,20 @@ takes both its child nodes (recursively) for futher break down:
 
 Test the sample with:
 
-```
+```shell
 > make clean
 > make cmp1
 ```
 
 Then, if everything worked, no errors were produced, then run it by:
 
-```
+```shell
 > ./cmp1
 ```
 
 The result should be in print:
 
-```
+```assembly
 SET 32
 SET 53
 ADD

@@ -19,7 +19,7 @@ int program[] = {
 };
 ~~~~
 
-```asm
+```assembly
    SET, 33,        <- store 33 on the stack, 33 on the top
    SET, 44,        <- next, store 44 on the stack, top now 44
    ADD,            <- add the two numbers on the stack, 33 + 44 = 77, and put the result on stack

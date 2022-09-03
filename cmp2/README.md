@@ -47,7 +47,7 @@ program = block "." .
 
 ## run
 
-```
+```pascal
 var x, squ, answer;
 
 procedure square;
@@ -78,14 +78,14 @@ here added as `scan.c` and `scan.h`.
 
 To run `sample1.pas` compile the parser (and scanner):
 
-```
+```shell
 > make clean
 > make par1
 ```
 
 Then run the parser:
 
-```
+```shell
 > ./par1 < sample1.pas
 ```
 
