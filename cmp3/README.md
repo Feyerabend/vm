@@ -55,14 +55,15 @@ The program as text in `sample.p` is:
 The period at the end marks the end of the program (originally from PL/0).
 
 
-## ambuguities in parsing
+## ambiguities in parsing
 
-We have avioded going into the theory of parsing and grammars here. Instead we already start with a finished parser,
-just to add some root at which we build at tree with parsed leafs. Also some not too conflicting concepts with the
+We have avoided going into the theory of parsing and grammars here. Instead we already start with a finished parser,
+just to add some root at which we build a tree with parsed leafs. Also some not too conflicting concepts with the
 existing solution in e.g. arrays. However this is *not really* the solution if you want to build a compiler/parser.
 There are many pitfalls with the construction of grammars, which can end up with an endless recursion in
 worst case. There are tons of literature on this, but just a short notice on the problem you can start with can be read here:
 https://ycpcs.github.io/cs340-fall2016/lectures/lecture05.html
+
 
 
 ## division by zero
