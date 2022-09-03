@@ -24,14 +24,19 @@ from the Apollo Guidance Computer,[^2] code from Busicom interpreted[^3] to run 
 Intel 4004, and Steve Wozniack routines in SWEET16.[^4]
 
 [^2]: This does not verify the reference, but gives general info on AGC,
-https://en.wikipedia.org/wiki/Apollo_Guidance_Computer 
+https://en.wikipedia.org/wiki/Apollo_Guidance_Computer.
+Also see manual https://www.ibiblio.org/apollo/assembly_language_manual.html.
+
 [^3]: Neither this verify reference to VM, but general info on Intel 4004,
-https://en.wikipedia.org/wiki/Intel_4004
+https://en.wikipedia.org/wiki/Intel_4004.
+
 [^4]: SWEET16, https://en.wikipedia.org/wiki/SWEET16 but also in Byte no 11, 1977:
-https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up
+https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up.
+
 
 
 ## *From virtual machines to compilers*
+
 
 ### 1. [vm1](/vm1)
 
@@ -39,6 +44,7 @@ We start off with a simple virtual stack machine. To not be confused too much, i
 in many ways. There is no error checking, no warnings, you have to compile the machine if you only
 slightly change the program, etc. The idea is to grasp what happends inside the virtual machine
 and use code as the main instructive part.
+
 
 ### 2. [vm2](/vm2)
 
@@ -49,27 +55,34 @@ implementations, where the concepts used from FORTH can be seen. FORTH is also a
 language which can use a virtual machine and, as in C, it is often close to the real machine
 on which it runs (often denoted by "low level languages").
 
+
 ### 3. [vm3](/vm3)
 
 This time we slim the machine down, get rid of the many extra powerful concepts from FORTH.
-Instead we insert some "standard" concepts of call and return through the use of "activation records".
+Instead we insert some "standard" concepts of call and return through the use of "activation
+records".
 
 
 ### 4. [chip8](/chip8)
 
-We have alook at an early virtual machine used for games starting in the late 70'ties: CHIP-8. 
+We have a look at an early virtual machine used for games starting in the late 70'ties: CHIP-8. 
+
 
 ### 5. [cmp1](/cmp1)
 
+
 ### 6. [cmp2](/cmp2)
+
 
 ### 7. [cmp3](/cmp3)
 
+
 ### 8. [cmp4](/cmp4)
+
 
 ### 9. [enkel/0](/enkel0)
 
-A more complete compiler for our own language, with some similarities to PL/0 and other procedual
-langauges. It runs on its own virtual machine, and thus programs written in enkel/0 can be
-relatively easy ported to other environments.
+A more complete compiler for our own language, with some similarities to [PL/0](https://en.wikipedia.org/wiki/PL/0)
+and other procedual langauges. It runs on its own virtual machine. Thus programs written in *enkel/0*
+can be ported to other environments without too much effort.
 
