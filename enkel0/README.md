@@ -17,7 +17,7 @@ The result should be the classical `Hello world`.
 
 ## enkel0
 
-![Simplified BNF for enkel/0, a simple compiler](assets/images/enkel0.png)
+![Simplified EBNF for enkel/0, a simple compiler](assets/images/enkel0.png)
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
 The language inherits and have similarities with PL/0. Let's make some preliminary
