@@ -5,6 +5,18 @@ Simple compiler from parsed text to assembly, to running code on a virtual machi
 ![Simplified BNF for enkel/0, a simple compiler](assets/images/enkel0.png)
 
 
+## compile and run
+
+There is already a file `sample.p` in the main directory, which you can compile and run:
+
+```
+> make all
+> ./compile.sh
+```
+
+The result should be the classical `Hello world`.
+
+
 ## enkel0
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
