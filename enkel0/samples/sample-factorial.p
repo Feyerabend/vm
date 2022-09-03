@@ -1,4 +1,3 @@
-
 procedure factorial[n];
 	var m, o;
 	begin
