@@ -30,5 +30,4 @@ enum {
 } ERROR;
 
 extern void errnum(int error);
-//extern void errcall(int error, int (* callback)(int), int arg, int bail);
 extern int printsymbol(int s);

@@ -63,26 +63,6 @@ void errnum(int error) {
     fprintf(stderr, "error:%d:%s\n", error, errorstring(error));
 }
 
-/*
-void errcall(int error, int (* callback)(int), int arg, int bail) {
-    fprintf(stderr, "error:%d:%s\n", error, errorstring(error));
-
-    int ignore;
-    if (callback != NULL)
-        ignore = callback(arg);
-
-    if (!bail)
-        return;
-
-    exit(EXIT_FAILURE);
-}*/
-
-/*
-// scan.c
-int maxbuf(int a) {
-    fprintf(stderr, "MAX=%d", MAXSYMB);
-    return 0;
-}*/
 
 void printsymb(Symbol s) {
     switch (s) {
