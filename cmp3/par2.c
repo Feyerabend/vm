@@ -45,7 +45,7 @@ void term();
 void factor();
 
 
-// <factor> = <ident> | <number> | "(" <expression> ")";
+// <factor> = <ident> | <number> | "(" <expression> ")"
 void factor() {
     if (accept(IDENT)) {
         ;
@@ -62,7 +62,7 @@ void factor() {
     }
 }
 
-// <term> = <factor> {("*"|"/") <factor>};
+// <term> = <factor> {("*"|"/") <factor>}
 void term() {
     factor();
     while (sym == TIMES || sym == SLASH) {
@@ -76,7 +76,7 @@ void term() {
     }
 }
 
-// <expression> = [ "+"|"-"] <term> { ("+"|"-") <term>};
+// <expression> = [ "+"|"-"] <term> { ("+"|"-") <term>}
 void expression() {
     if (sym == PLUS || sym == MINUS)
         nextsym();
@@ -92,7 +92,7 @@ void expression() {
     }
 }
 
-// <program> = <expression> "." ;
+// <program> = <expression> "."
 void program() {
     // node *x = nnode(PROG);
     nextsym();

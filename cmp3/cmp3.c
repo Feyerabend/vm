@@ -119,7 +119,7 @@ node* sample() {
 node* expression();
 
 
-// <factor> = <ident> | <number> | "(" <expression> ")";
+// <factor> = <ident> | <number> | "(" <expression> ")"
 node* factor() {
     node *n;
     n = NULL;
@@ -139,7 +139,7 @@ node* factor() {
     return n;
 }
 
-// <term> = <factor> {("*"|"/") <factor>};
+// <term> = <factor> {("*"|"/") <factor>}
 node* term() {
     node *m, *n;
     n = factor();
@@ -155,7 +155,7 @@ node* term() {
     return n;
 }
 
-// <expression> = [ "+"|"-"] <term> { ("+"|"-") <term>};
+// <expression> = [ "+"|"-"] <term> { ("+"|"-") <term>}
 node* expression() {
     node *m, *n;
     n = term();
@@ -171,7 +171,7 @@ node* expression() {
     return n;
 }
 
-// <program> = <expression> "." ;
+// <program> = <expression> "." 
 node* program() {
     node *n = nnode(PROG);
     nextsym();
