@@ -32,3 +32,4 @@ factor		= ident | number | ( expression )
 #### Factor:
 ![factor](https://user-images.githubusercontent.com/271797/188279057-9cc5ec8d-0c7e-4af0-a579-10491d51caf2.svg)
 
+__NOTE: we do not have any identifiers yet, so the "IDENT" in the diagram is not relevant for now.__

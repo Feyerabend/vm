@@ -12,10 +12,31 @@ There is already a file `sample.p` in the main directory, which you can compile 
 > ./compile.sh
 ```
 
-The result should be the classical `Hello world`.
+The result should be the classical `Hello world`. All the program does is emit ASCII characters:
+
+```pascal
+begin
+  emit 72;
+  emit 101;
+  emit 108;
+  emit 108;
+  emit 111;
+  emit 32;
+  emit 119;
+  emit 111;
+  emit 114;
+  emit 108;
+  emit 100;
+  emit 13;
+  emit 10
+end.
+```
+
+The simplest way to run the samples is to copy them to the "local root" directory and change the
+name to `sample.p`. Then no change of script `compile.sh` is needed.
 
 
-## enkel0
+## enkel/0
 
 ![Simplified EBNF for enkel/0, a simple compiler](assets/images/enkel0.png)
 
