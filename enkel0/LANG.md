@@ -83,8 +83,13 @@ A *`<statement>`* may consist of:
 
 ### Condition
 
+* The *`<condition>`* occurs mostly together with some jump instruction, if-else-statements, while-do,
+    or do-while. *Anyting else than 0 is taken as true.* It also departures from expressions which are
+    compared with relative operations such as `<` less than or equal `=`. A special symbol `#` stands
+    for "not equal" (other notations could be e.g. "<>"" or "!=").
 
 ### Expression
+
 
 
 ### Term
@@ -93,10 +98,7 @@ A *`<statement>`* may consist of:
 ### Factor
 
 
-
-![Simplified BNF for enkel/0, a simple compiler](assets/images/enkel0.png)
-
-
+### Index
 
 
 
