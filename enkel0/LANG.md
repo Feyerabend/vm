@@ -1,10 +1,10 @@
 # Virtual Machines
 
-## vmenkel
+## enkel/0
 
 ![enkel/0](assets/images/logo.png)
 
-Description of the language *enkel/0*. ...
+A more formal ENBF like description of the language *enkel/0*:
 
 ```ebnf
 program = block .
@@ -88,7 +88,7 @@ A *`<statement>`* may consist of:
 * The *`<condition>`* occurs mostly together with some jump instruction, if-else-statements, while-do,
     or do-while. *Anyting else than 0 is taken as true.* It also departures from expressions which are
     compared with relative operations such as `<` less than or equal `=`. A special symbol `#` stands
-    for "not equal" (other notations could be e.g. "<>"" or "!=").
+    for "not equal" (other notations could be e.g. "<>" or "!=").
 
 ### Expression
 
