@@ -11,6 +11,7 @@ typedef struct {
 	int* arrs;
 	int* code;
 	int* stack;
+
 	int pc;
 	int sp;
 	int fp;

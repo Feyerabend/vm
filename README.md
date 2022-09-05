@@ -2,8 +2,8 @@
 
 Virtual machines samples.[^1] A collection of virtual machines to teach or understand
 some ideas and inner workings of virtual machines. They are solely intended for show
-of principles, and not for uses in any other way. The second objective is to downplay the
-separation between system programmers and application programmers. Or even
+of principles, and not for uses in any other way. The second objective is to downplay
+the separation between system programmers and application programmers. Or even
 in some cases down to the hardware level, programming of FPGA. More on this later on.
 
 [^1]: My best inspiration for the code of simple machines *here* comes from Bartosz
@@ -86,4 +86,6 @@ We have a look at an early virtual machine used for games starting in the late 7
 A more complete compiler for our own language, with some similarities to [PL/0](https://en.wikipedia.org/wiki/PL/0)
 and other procedual langauges. It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be ported to other environments without too much effort.
+
+
 

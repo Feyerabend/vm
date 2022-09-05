@@ -97,7 +97,8 @@ def prepare(content):
 def to_decimal(number):
     return int(number)
 
-# replace the corresponing opcodes with numbers, and arguments
+# replace the corresponing opcodes with numbers,
+# and possible arguments
 def parse(line):
     if (line[0] in ops):
         nline = []

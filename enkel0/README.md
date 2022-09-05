@@ -12,16 +12,68 @@ There is already a file `sample.p` in the main directory, which you can compile 
 > ./compile.sh
 ```
 
-The result should be the classical `Hello world`.
+The result should be the classical `Hello world`. All the program does is emit ASCII characters:
+
+```pascal
+begin
+  emit 72;
+  emit 101;
+  emit 108;
+  emit 108;
+  emit 111;
+  emit 32;
+  emit 119;
+  emit 111;
+  emit 114;
+  emit 108;
+  emit 100;
+  emit 13;
+  emit 10
+end.
+```
+
+The simplest way to run the samples is to copy them to the "local root" directory and change the
+name to `sample.p`. Then no change of script `compile.sh` is needed.
 
 
-## enkel0
+## enkel/0
 
-![Simplified EBNF for enkel/0, a simple compiler](assets/images/enkel0.png)
+![enkel/0](assets/images/logo.png)
+
+```ebnf
+program = block .
+
+block = [ const ident = number {, ident = number} ; ]
+        [ array ident : number {, ident : number} ; ]
+        [ var ident {, ident} ; ]
+        { procedure ident[ [ident {, ident}] ] ; block ; }
+          statement
+
+statement = [ ident[. index] is expression
+            | call ident[ [factor {, factor}] ]
+            | begin statement {; statement } end 
+            | if condition then statement { else statement }
+            | while condition do statement
+            | do statement while condition
+            | return [factor]
+            | print factor
+            | emit factor ]
+
+condition = expression (=|#|<|<=|>|<=) expression
+
+expression = [-] term { (+|-|or|xor) term }
+
+term = factor { (*|/|%|and) factor }
+
+factor = ident[. index] | number | ( expression )
+
+index = (ident | number)
+```
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
-The language inherits and have similarities with PL/0. Let's make some preliminary
-observations of some features from *enkel/0*.
+The language inherits and have similarities with [PL/0](). Let's make some preliminary
+observations of some features from *enkel/0*. A more detailed description can be found in
+[LANG.md](LANG.md).
 
 A simple program could be written as:
 

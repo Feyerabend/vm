@@ -1,9 +1,10 @@
 # Virtual Machines
 
-## vmenkel
+## enkel/0
 
+![enkel/0](assets/images/logo.png)
 
-Description of the language *enkel/0*. ...
+A more formal ENBF like description of the language *enkel/0*:
 
 ```ebnf
 program = block .
@@ -19,6 +20,7 @@ statement = [ ident[. index] is expression
             | begin statement {; statement } end 
             | if condition then statement { else statement }
             | while condition do statement
+            | do statement while condition
             | return [factor]
             | print factor
             | emit factor ]
@@ -35,10 +37,70 @@ index = (ident | number)
 ```
 
 
+### Program and Block
 
-![Simplified BNF for enkel/0, a simple compiler](assets/images/enkel0.png)
+If we start with how the structure of a program looks like, it consists of a *`<block>`* and `.`.
+All programs ends with a period.
+
+The *`<block>`* may have a `const` definition at the start, an `array`, or global variables `var`.
+Constants are global and may not be changed, only assigned once at the start. Arrays are also
+global (also have no checks for out of index adressing). Global variables may be assigned and
+reassigned throughout the program.
+
+After the initialisation there are an optional list of `procedure`s. The procedure is recognized
+by a program unique identifier *`<ident>`*. Then there is an optional list of arguments that comes
+from the call to the procedure. The arguments (values) are copied from the call to the procedure.
+Each argument *`<ident>`* is separated with a `,` comma. The arguments work as local variables
+throughout the procedure. The procedure *`<block>`* is ended with a `;` semicolon.
+
+Then at last there are statements that are the first to be called, and contain the main code of
+the program. A program might thus only consists of *`<statement>`* (in a *`<block>`*).
 
 
+### Statement
+
+A *`<statement>`* may consist of:
+
+* An identifier *`<ident>`*, assigned by `is` to the value of an evaluated *`<expression>`*.
+    The identifier might be in the form of an array which is treated as "two variables glued
+    together by a period".
+* A `call` with an identifier `<ident>` and possible arguments in the format of *`<factor>`*,
+    separated by a `,` comma.
+* A group of statements starting with `begin` and ending with `end`. The statements themselves
+    are separated by a `;` (semicolon). This might be one of the thing you might want to change,
+    e.g. with curly brackets, as in c, instead.
+* A conditional jump, with `if` and `then`. This statement may include optional `else`. Thus
+    if a *`<condition>`* has been made (true), then *`<statement>`* that follow will be executed,
+    else if the condition was false, other *`<statement>`* might be executed instead.
+* Two conditional jump structures are `while` *`<condition>`* `do` *`<statement>`*,
+    and the reverse `do` *`<statement>`* `while` *`<condition>`*. As long as the *`<condition>`*'
+    is met, the *`<statement>`*  will be exectuted continously. The latter do-while executes at
+    least one *`<statement>`*, which the former while-do does not.
+* A `return`statement with optional return value. All return values are also copied to a special
+    `rval` global variable. Therefore `rval` can also be treated as a ordinary global variable,
+    although storing a value will be overwritten as soon as a call with returning value is made.
+* There is a `print` of integer values.
+* And `emit`can be used to display an ASCII character.
+
+
+### Condition
+
+* The *`<condition>`* occurs mostly together with some jump instruction, if-else-statements, while-do,
+    or do-while. *Anyting else than 0 is taken as true.* It also departures from expressions which are
+    compared with relative operations such as `<` less than or equal `=`. A special symbol `#` stands
+    for "not equal" (other notations could be e.g. "<>" or "!=").
+
+### Expression
+
+
+
+### Term
+
+
+### Factor
+
+
+### Index
 
 
 
@@ -69,8 +131,8 @@ Using the code table for ASCII we can emit a character at a time.
 To print "Hello" emit 'H', 'e', 'l', 'l', and 'o' with a new line at the end
 (carridge return 13 and line feed 10), a statement can look like:
 
-```text
-emit 72; emit 101; emit 108; emit 108; emit 111; emit 13; emit 10
+```pascal
+begin emit 72; emit 101; emit 108; emit 108; emit 111; emit 13; emit 10 end
 ```
 
 
