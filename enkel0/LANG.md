@@ -127,8 +127,8 @@ Using the code table for ASCII we can emit a character at a time.
 To print "Hello" emit 'H', 'e', 'l', 'l', and 'o' with a new line at the end
 (carridge return 13 and line feed 10), a statement can look like:
 
-```text
-emit 72; emit 101; emit 108; emit 108; emit 111; emit 13; emit 10
+```pascal
+begin emit 72; emit 101; emit 108; emit 108; emit 111; emit 13; emit 10 end
 ```
 
 
