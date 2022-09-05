@@ -2,6 +2,8 @@
 
 ## vmenkel
 
+![enkel/0](assets/images/logo.png)
+
 Description of the language *enkel/0*. ...
 
 ```ebnf
