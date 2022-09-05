@@ -12,7 +12,7 @@ There is already a file `sample.p` in the main directory, which you can compile 
 > ./compile.sh
 ```
 
-The result should be the classical `Hello world`. All the program does is emit ASCII charaters:
+The result should be the classical `Hello world`. All the program does is emit ASCII characters:
 
 ```pascal
 begin
@@ -31,6 +31,10 @@ begin
   emit 10
 end.
 ```
+
+The simplest way to run the samples is to copy them to the "local root" directory and change the
+name to `sample.p`. Then no change of script `compile.sh` is needed.
+
 
 ## enkel/0
 
