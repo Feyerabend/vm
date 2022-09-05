@@ -18,6 +18,7 @@ statement = [ ident[. index] is expression
             | begin statement {; statement } end 
             | if condition then statement { else statement }
             | while condition do statement
+            | do statement while condition
             | return [factor]
             | print factor
             | emit factor ]
@@ -43,24 +44,47 @@ Constants are global and may not be changed, only assigned once at the start. Ar
 global (also have no checks for out of index adressing). Global variables may be assigned and
 reassigned throughout the program.
 
-After the initialisation there are an optional list of `procedure`s.
+After the initialisation there are an optional list of `procedure`s. The procedure is recognized
+by a program unique identifier *`<ident>`*. Then there is an optional list of arguments that comes
+from the call to the procedure. The arguments (values) are copied from the call to the procedure.
+Each argument *`<ident>`* is separated with a `,` comma. The arguments work as local variables
+throughout the procedure. The procedure *`<block>`* is ended with a `;` semicolon.
 
 Then at last there are statements that are the first to be called, and contain the main code of
-the program.
+the program. A program might thus only consists of *`<statement>`*s (in a *`<block>`*).
 
 
 ### Statement
 
-A *`<statment>`* may consist of:
+A *`<statement>`* may consist of:
 
 * An identifier *`<ident>`*, assigned by `is` to the value of an evaluated *`<expression>`*.
     The identifier might be in the form of an array which is treated as "two variables glued
     together by a period".
-* A `call` with an identifier `ident` and possible arguments in the format of `factor`,
+* A `call` with an identifier `<ident>` and possible arguments in the format of *`<factor>`*,
     separated by a `,` comma.
 * A group of statements starting with `begin` and ending with `end`. The statements themselves are
     separated by a `;` (semicolon). This might be one of the thing you might want to change,
-    e.g. with curly brackets as in c, instead.
+    e.g. with curly brackets, as in c, instead.
+* A conditional jump, with `if` and `then`. This statement may include optional `else`. Thus if a
+    *`<condition>`* has been made (true), then *`<statment>`*s that follow will be executed, else if
+    the condition was false, other *`<statment>`*s might be executed instead.
+* while do
+* do while
+* return
+* print
+* emit
+
+### Condition
+
+
+### Expression
+
+
+### Term
+
+
+### Factor
 
 
 
