@@ -51,7 +51,7 @@ Each argument *`<ident>`* is separated with a `,` comma. The arguments work as l
 throughout the procedure. The procedure *`<block>`* is ended with a `;` semicolon.
 
 Then at last there are statements that are the first to be called, and contain the main code of
-the program. A program might thus only consists of *`<statement>`*s (in a *`<block>`*).
+the program. A program might thus only consists of *`<statement>`* (in a *`<block>`*).
 
 
 ### Statement
@@ -67,13 +67,18 @@ A *`<statement>`* may consist of:
     separated by a `;` (semicolon). This might be one of the thing you might want to change,
     e.g. with curly brackets, as in c, instead.
 * A conditional jump, with `if` and `then`. This statement may include optional `else`. Thus if a
-    *`<condition>`* has been made (true), then *`<statment>`*s that follow will be executed, else if
-    the condition was false, other *`<statment>`*s might be executed instead.
-* while do
-* do while
-* return
-* print
-* emit
+    *`<condition>`* has been made (true), then *`<statement>`* that follow will be executed, else if
+    the condition was false, other *`<statement>`* might be executed instead.
+* Two conditional jump structures are `while` *`<condition>`* `do` *`<statement>`*,
+    and the reverse `do` *`<statement>`* `while` *`<condition>`*. As long as the *`<condition>`*'
+    is met, the *`<statement>`*  will be exectuted continously.
+* A `return`statement with optional return value. All return values are also copied to a special
+    `rval` global variable. Therefore `rval` can also be treated as a ordinary global variable,
+    although storing a value will be overwritten as soon as a call with returning value is made.
+* There is a `print` of integer values,
+* And `emit`can be used to display a character.
+
+
 
 ### Condition
 
