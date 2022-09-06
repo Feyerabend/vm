@@ -2,7 +2,7 @@
 
 ## enkel/0
 
-![enkel/0](assets/images/logo.png)
+![enkel/0](../assets/images/logo.png)
 
 A more formal ENBF like description of the language *enkel/0*:
 

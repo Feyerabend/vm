@@ -38,7 +38,7 @@ name to `sample.p`. Then no change of script `compile.sh` is needed.
 
 ## enkel/0
 
-![enkel/0](assets/images/logo.png)
+![enkel/0](../assets/images/logo.png)
 
 ```ebnf
 program = block .

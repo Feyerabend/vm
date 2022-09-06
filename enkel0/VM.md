@@ -18,7 +18,7 @@ Before loading, the length of the input file is measured. The "binary" have inte
 seperated by commas, throughout. It also in a certain format, where the first number
 points to where the *vm* should start. The rest of the file is the program itself.
 
-![File format for enkel/0](assets/images/fileformat.png)
+![File format for enkel/0](../assets/images/fileformat.png)
 
 A header of 1 integer (separeted with a comma before the body) signals where to
 start. The rest is read in an array to be executed, starting at the postition where
