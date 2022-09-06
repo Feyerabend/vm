@@ -80,12 +80,13 @@ We have a look at an early virtual machine used for games starting in the late 7
 
 ### 8. [cmp4](/cmp4)
 
+A compiler and vm for a simple calculator with no memory.
+
 
 ### 9. [enkel/0](/enkel0)
 
-A more complete compiler for our own language, with some similarities to [PL/0](https://en.wikipedia.org/wiki/PL/0)
-and other procedual langauges. It runs on its own virtual machine. Thus programs written in *enkel/0*
+A more complete compiler for our own language, with some similarities to
+[PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedual langauges.
+It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be ported to other environments without too much effort.
-
-
 
