@@ -85,23 +85,38 @@ A *`<statement>`* may consist of:
 
 ### Condition
 
-* The *`<condition>`* occurs mostly together with some jump instruction, if-else-statements, while-do,
-    or do-while. *Anyting else than 0 is taken as true.* It also departures from expressions which are
-    compared with relative operations such as `<` less than or equal `=`. A special symbol `#` stands
-    for "not equal" (other notations could be e.g. "<>" or "!=").
+* The *`<condition>`* occurs mostly together with some jump instruction, if-else-statements,
+    while-do, or do-while. *Anyting else than 0 is taken as true.* It also departures from
+    expressions which are compared with relative operations such as `<` less than or equal `=`.
+    A special symbol `#` stands for "not equal" (other notations could be e.g. "<>" or "!=").
+
 
 ### Expression
 
+* The *`<expression>`* can be a *`<term>`* with an optionary unary minus before. Or it (also)
+    could be addition with a plus sign `+`, or subtractions with a minus sign `-`, or a logical
+    `or` or `xor`.
 
 
 ### Term
 
+* The *`<term>`* can be a *`<factor>`*. It can also be a *`<factor>`* with operators `*`, `/`, `%`
+    or `and` connecting to the other *`<factor>`*.
+
 
 ### Factor
+
+* The *`<factor>`* takes an ordinary *`<ident>`* or an identifier with an index i.e. an array,
+    or it is a *`<number>`*, or it is an *`<expression>`* with parantheses around it.
 
 
 ### Index
 
+* The implementation of arrays has been very restricted to only care for global arrays.
+    In that way they are easy to handle. Arrays are basically global variables poiting to an
+    array in the vm, with an attached *`<index>`* which points out where the value is, or the
+    slot that will be assigned with a value. Also to keep the implementation small only a *`<number>`*
+    (integer) or an identifier *`<ident>`* is allowed.
 
 
 ## ASCII and emit
