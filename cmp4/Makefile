@@ -2,7 +2,7 @@
 CC		= gcc
 CFLAGS		= -Wall
 LDFLAGS		=
-OBJFILES		= cmp4.o scan.o error.o vm4.o runvm.o
+OBJFILES	= cmp4.o scan.o error.o vm4.o runvm.o
 TARGET		= cmp4 runvm
 
 all: $(TARGET)
