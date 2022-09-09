@@ -13,6 +13,7 @@ especially designed for education (parsers / compilers).
 
 [^1]: https://en.wikipedia.org/wiki/PL/0
 
+![enkel/0](../assets/images/scan-parser.png)
 
 ### parser
 
