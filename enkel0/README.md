@@ -144,11 +144,44 @@ Local variables are declared thereafter, here _m_. A group of statements seperat
 semicolon is the core of the program. First compare the incomming argument _n_ with 1,
 if true then return from procedure to the previous caller with the value 1 (stored in _rval_).
 
-The local variable _m_ is set to incomming _n_ minus 1. Another call recursively to factorial
-with m as argument is done. Then from returning calls, the returning value in _rval_ is multiplied
-with _n_ and returned. This is all done through the stack, and using the basics from the vm already
-described. Actually the vm is still very small, although the language has grown in complexity,
-but in a way that *we* understand programming easier.
+The local variable _m_ is set to incomming _n_ minus 1. Another call recursively to
+factorial with m as argument is done. Then from returning calls, the returning value in
+_rval_ is multiplied with _n_ and returned. This is all done through the stack, and using
+the basics from the vm already described. Actually the vm is still very small, although
+the language has grown in complexity, but in a way that *we* understand programming easier.
+
+
+#### note
+
+We could also write the program as:
+
+```pascal
+procedure factorial[n];
+  var m, o;
+  begin
+    if n = 1 then return 1;
+    o is n - 1;
+    call factorial[o];
+    return (n * rval)
+  end;
+
+begin
+  call factorial[10];
+  print rval
+end.
+```
+
+This will however generate an assembler file which have two consecutive returns, due to how
+the code is generated:
+
+```text
+RET
+RET
+```
+
+Now you can choose how to eliminate this. Should a flag be inserted which flags for when
+a `RET` has been generated, or should the assembler take care of the double `RET`? Or do
+you have another solution that could take care of this unnecessary extra?
 
 
 ### insertion sort
