@@ -7,7 +7,7 @@ artithmetical expressions. (No assignments or variables.)
 
 ## cmp3
 
-In the file `cmp3.c` you will find a "marriage" (merge) between the
+In the file `cmp3.c` you will find a "marriage" (or merge) between the
 previous compiler which starts from the outset of an abstract tree
 representation of a program, to the previous parsing of programs as text.
 
@@ -15,9 +15,9 @@ The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with
 all tokens recognized. (However they are not all used or recognized by
 the parser in `cmp3.c`.)
 
-(The file `par2.c` is included here to illustrate, but not to compile,
-how arithmetic expressions are parsed. All essential code
-have already been moved to `cmp3.c`.)
+The file `par2.c` is included here to illustrate, but not to compile,
+how arithmetic expressions are parsed. All essential code have already
+been moved to `cmp3.c`.
 
 
 ## run

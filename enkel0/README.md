@@ -5,14 +5,16 @@ Simple compiler from parsed text to assembly, to running code on a virtual machi
 
 ## compile and run
 
-There is already a file `sample.p` in the main directory, which you can compile and run:
+There is already a file `sample.p` in the main directory, which you can compile and
+run:
 
 ```shell
 > make all
 > ./compile.sh
 ```
 
-The result should be the classical `Hello world`. All the program does is emit ASCII characters:
+The result should be the classical `Hello world`. All the program does is emit ASCII
+characters:
 
 ```pascal
 begin
@@ -32,8 +34,8 @@ begin
 end.
 ```
 
-The simplest way to run the samples is to copy them to the "local root" directory and change the
-name to `sample.p`. Then no change of script `compile.sh` is needed.
+The simplest way to run the samples is to copy them to the "local root" directory and
+change the name to `sample.p`. Then no change of script `compile.sh` is needed.
 
 
 ## enkel/0
@@ -72,8 +74,8 @@ index = (ident | number)
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
 The language inherits and have similarities with [PL/0](). Let's make some preliminary
-observations of some features from *enkel/0*. A more detailed description can be found in
-[LANG.md](LANG.md).
+observations of some features from *enkel/0*. A more detailed description can be found
+in [LANG.md](LANG.md).
 
 A simple program could be written as:
 
@@ -90,7 +92,7 @@ end.
 Programs always ends with a period. Statements are *seperated* by a semicolon, and not as
 in C *terminated* with a semicolon. Several statements are grouped by _begin_ and _end_.
 Global variables are set at the beginning af the program. Assignments is done by _is_
-(and not as in Algol or Pascal with ":="). You can _print_ a variable (new line at the end).
+(and not as in Algol or Pascal with *":="*). You can _print_ a variable (new line at the end).
 
 Let's look at a little more complicated program, factorial:
 
@@ -142,16 +144,18 @@ procedure factorial[n];
 
 Local variables are declared thereafter, here _m_. A group of statements seperated by
 semicolon is the core of the program. First compare the incomming argument _n_ with 1,
-if true then return from procedure to the previous caller with the value 1 (stored in _rval_).
+if true then return from procedure to the previous caller with the value 1 (stored in
+_rval_).
 
 The local variable _m_ is set to incomming _n_ minus 1. Another call recursively to
-factorial with m as argument is done. Then from returning calls, the returning value in
-_rval_ is multiplied with _n_ and returned. This is all done through the stack, and using
-the basics from the vm already described. Actually the vm is still very small, although
-the language has grown in complexity, but in a way that *we* understand programming easier.
+factorial with m as argument is done. Then from returning calls, the returning value
+in _rval_ is multiplied with _n_ and returned. This is all done through the stack,
+and using the basics from the vm already described. Actually the vm is still very small,
+although the language has grown in complexity, but in a way that *we* understand
+programming easier.
 
 
-#### note
+#### note: exercise
 
 We could also write the program as:
 
@@ -171,17 +175,19 @@ begin
 end.
 ```
 
-This will however generate an assembler file which have two consecutive returns, due to how
-the code is generated:
+This will however generate an assembler file which have two consecutive returns, due
+to how the code is generated:
 
 ```text
+...
 RET
 RET
+...
 ```
 
-Now you can choose how to eliminate this. Should a flag be inserted which flags for when
-a `RET` has been generated, or should the assembler take care of the double `RET`? Or do
-you have another solution that could take care of this unnecessary extra?
+Now you can choose how to eliminate this. Should a flag be inserted which flags for
+when a `RET` has been generated, or should the assembler take care of the double
+`RET`? Or do you have another solution that could take care of this unnecessary extra?
 
 
 ### insertion sort
