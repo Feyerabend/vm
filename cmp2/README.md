@@ -18,7 +18,7 @@ especially designed for education (parsers / compilers).
 
 The syntax of PL/0 formalized:
 
-```enbf
+```ebnf
 program = block "." .
  
  block =
