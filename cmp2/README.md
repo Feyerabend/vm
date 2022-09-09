@@ -13,7 +13,6 @@ especially designed for education (parsers / compilers).
 
 [^1]: https://en.wikipedia.org/wiki/PL/0
 
-![enkel/0](../assets/images/scan-parser.png)
 
 ### parser
 
@@ -85,6 +84,8 @@ make sense for the parser.
 
 (Again, there are many holes in this parsing, and warnings and errors are far from being
 detected as they should be built into a *real* parser.)
+
+![enkel/0](../assets/images/scan-parser.png)
 
 
 ## run
