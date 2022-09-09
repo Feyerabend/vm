@@ -49,7 +49,9 @@ program = block "." .
 ```
 
 The core of the parser can be found in the file `par1.c`. There are some small additions to the
-one that can be found at the wikipedia page, to have it running.
+one that can be found at the wikipedia page on
+[recursive decent parsing](https://en.wikipedia.org/wiki/Recursive_descent_parser),
+to have it running.
 
 
 ### scanner
