@@ -478,6 +478,7 @@ node* procedure() {
         p->node1 = s;
 
         popcurrent();
+        // return RET can inadvertently be duplicated, how to handle? flag?
 
         if (n == NULL)
             n = nnode(BLANK);
@@ -502,7 +503,7 @@ int initflagset = FALSE;
 
 node* block() {
     node *k, *l, *m, *n;
-    n = nnode(BLANK);;
+    n = nnode(BLANK);
     int address;
 
     if (accept(CONSTSYM)) {
@@ -522,9 +523,9 @@ node* block() {
             k = nnode(INUMBER);
             k->value = atoi(buf);
 
-            m = nnode(ASSIGN);
-            m->value = address;
-            m->node1 = k;
+            m = nnode(ASSIGN);      // STORE ..
+            m->value = address;     // .. address
+            m->node1 = k;           // SET number (on stack)
 
             l = n;
             n = nnode(SEQ);
@@ -600,15 +601,13 @@ node* block() {
         expect(SEMICOLON);
     }
 
-    if (n != NULL) {
-        if (initflag == TRUE) {
-            l = n;
-            n = nnode(INIT);
-            n->node1 = l;
+    if (initflag == TRUE) {
+        l = n;
+        n = nnode(INIT);
+        n->node1 = l;
 
-            initflag = FALSE;
-            initflagset = TRUE;
-        }
+        initflag = FALSE;
+        initflagset = TRUE;
     }
 
     if (recognize(PROCSYM)) {
@@ -652,13 +651,13 @@ node* program() {
     n = nnode(PROG);
     nextsym();
     n->node1 = block();
-    if (startflagset == FALSE) {
+    if (startflagset == FALSE) { // no procedures
         m = n;
         n = nnode(SEQ);
         if (initflagset == TRUE)
             n->node1 = nnode(STARTWC);
         else
-            n->node1 = nnode(START);
+            n->node1 = nnode(START); // no inits
         n->node2 = m;
     }
     expect(PERIOD);
