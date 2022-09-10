@@ -35,7 +35,7 @@ void nextsym() {
 
     if (options.verbose != 0) {
         printf("> ");
-        printsymb(sym);
+        printsymbol(sym);
     }
 }
 
