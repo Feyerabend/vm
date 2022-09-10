@@ -12,15 +12,15 @@ Further, there are also both global variables and local variables.
 
 [^2]: More on "activation records" can be found e.g.: https://ruslanspivak.com/lsbasi-part17/.
 See also: https://en.wikipedia.org/wiki/Call_stack#Structure.
-One exception in the implementation of vm3 is that the parameters passed together with the procedure call
-are only *transferred* to the procedure, and can not be relied upon inside the procedure. They
-will be invalid in case of nested procedure calls, e.g. The parameters used should therefore only
-be regarded as stored as "scratch registers". The parameters should therefore be copied to local variables,
-if they have any permanency inside the procedure.
+One exception in the implementation of vm3 is that the parameters passed together with the
+procedure call are only *transferred* to the procedure, and can not be relied upon inside the
+procedure. They will be invalid in case of nested procedure calls, e.g. The parameters used
+should therefore only be regarded as stored as "scratch registers". The parameters should
+therefore be copied to local variables, if they have any permanency inside the procedure.
 
-Besides the VM there is also an assembler to simplify programming. It is written in *Python3* which
-ease the handling of strings, and have some nice features for list processing.[^3] Using C would be
-a bit longer and perhaps harder to read code.
+Besides the VM there is also an assembler to simplify programming. It is written in *Python3*
+which ease the handling of strings, and have some nice features for list processing.[^3]
+Using C would be a bit longer and perhaps harder to read code.
 
 [^3]: Here I borrowed some useful code from
 https://github.com/vladris/pixie/wiki/Dust-Assembler,

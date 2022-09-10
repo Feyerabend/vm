@@ -7,8 +7,8 @@ artithmetical expressions. (No assignments or variables.)
 
 ## cmp3
 
-In the file `cmp3.c` you will find a "marriage" (or merge) between the
-previous compiler which starts from the outset of an abstract tree
+In the file `cmp3.c` you will find a merge between the previous
+compiler which starts from the outset of an abstract tree
 representation of a program, to the previous parsing of programs as text.
 
 The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with
