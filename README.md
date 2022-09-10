@@ -1,14 +1,14 @@
 # Virtual Machines
 
-Virtual machines samples.[^1] A collection of virtual machines to teach
+Virtual machine samples.[^1] A collection of virtual machines to teach
 or understand some ideas and inner workings of virtual machines. They are
 solely intended for show of principles, and not for uses in any other way.
 The second objective is to downplay the separation between system programmers
 and application programmers. Or even in some cases down to the hardware level,
 programming of FPGA. More on this later on.
 
-[^1]: My best inspiration for the code of simple machines *here* comes from Bartosz
-Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
+[^1]: My best inspiration for the code of simple machines *here* comes from
+Bartosz Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
 from whom I derived basically the main code, even though some bugs
 were corrected and many more additions have been made along the way.
 
