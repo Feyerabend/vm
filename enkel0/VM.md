@@ -70,17 +70,17 @@ Passing arguments ..
 
 ```
 	case STARG:
-		v = pop(vm);			// pop the value
+		v = pop(vm);		// pop the value
 		addr = nextcode(vm);	// STARG "<address>"
-		vm->args[addr] = v;		// store the value at address
+		vm->args[addr] = v;	// store the value at address
 		break;
 ```
 
 ```
 	case LDARG:
 		addr = nextcode(vm);	// LDARG "<address>"
-		v = vm->args[addr];		// load value from where the address points
-		push(vm, v);			// push the value
+		v = vm->args[addr];	// load value from where the address points
+		push(vm, v);		// push the value
 		break;
 ```
 
@@ -135,17 +135,17 @@ Jumping
 
 	case JPNZ:
 		addr = nextcode(vm);	// JPNZ "<address>"
-		v = pop(vm);			// pop value
-		if (v != 0) {			// if value not zero, ..
-			vm->pc = addr;		// .. then go to address
+		v = pop(vm);		// pop value
+		if (v != 0) {		// if value not zero, ..
+			vm->pc = addr;	// .. then go to address
 		}
 		break;
 
 	case JPZ:
 		addr = nextcode(vm);	// JPZ "<address>"
-		v = pop(vm);			// pop value
-		if (v == 0) {			// if value is zero, ..
-			vm->pc = addr;		// .. then go to address
+		v = pop(vm);		// pop value
+		if (v == 0) {		// if value is zero, ..
+			vm->pc = addr;	// .. then go to address
 		}
 		break;
 ```
