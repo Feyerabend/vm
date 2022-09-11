@@ -69,19 +69,19 @@ Activation records ..
 Passing arguments ..
 
 ```
-			case STARG:
-				v = pop(vm);
-				addr = nextcode(vm);
-				vm->args[addr] = v;
-				break;
+	case STARG:
+		v = pop(vm);			// pop the value
+		addr = nextcode(vm);	// STARG "<address>"
+		vm->args[addr] = v;		// store the value at address
+		break;
 ```
 
 ```
-			case LDARG:
-				addr = nextcode(vm);
-				v = vm->args[addr];
-				push(vm, v);
-				break;
+	case LDARG:
+		addr = nextcode(vm);	// LDARG "<address>"
+		v = vm->args[addr];		// load value from where the address points
+		push(vm, v);			// push the value
+		break;
 ```
 
 ### local variables
@@ -89,19 +89,19 @@ Passing arguments ..
 Local storage ..
 
 ```
-			case ST:
-				v = pop(vm);
-				offset = nextcode(vm);
-				vm->vars[vm->fp + offset] = v;
-				break;
+	case ST:
+		v = pop(vm);
+		offset = nextcode(vm);
+		vm->vars[vm->fp + offset] = v;
+		break;
 ```
 
 ```
-			case LD:
-				offset = nextcode(vm);
-				v = vm->vars[vm->fp + offset];
-				push(vm, v);
-				break;
+	case LD:
+		offset = nextcode(vm);
+		v = vm->vars[vm->fp + offset];
+		push(vm, v);
+		break;
 ```
 
 ### global variables
@@ -109,19 +109,19 @@ Local storage ..
 Global storage ..
 
 ```
-			case LOAD:
-				addr = nextcode(vm);
-				v = vm->vars[addr];
-				push(vm, v);
-				break;
+	case LOAD:
+		addr = nextcode(vm);
+		v = vm->vars[addr];
+		push(vm, v);
+		break;
 ```
 
 ```
-			case ST:
-				v = pop(vm);
-				offset = nextcode(vm);
-				vm->vars[vm->fp + offset] = v;
-				break;
+	case ST:
+		v = pop(vm);
+		offset = nextcode(vm);
+		vm->vars[vm->fp + offset] = v;
+		break;
 ```
 
 ### jump
@@ -129,23 +129,24 @@ Global storage ..
 Jumping
 
 ```
-			case JP:
-				vm->pc = nextcode(vm);
-				break;
+	case JP:
+		vm->pc = nextcode(vm);	// unconditional jump
+		break;
 
-			case JPNZ:
-				addr = nextcode(vm);
-				v = pop(vm);
-				if (v != 0) {
-					vm->pc = addr;
-				}
-				break;
+	case JPNZ:
+		addr = nextcode(vm);	// JPNZ "<address>"
+		v = pop(vm);			// pop value
+		if (v != 0) {			// if value not zero, ..
+			vm->pc = addr;		// .. then go to address
+		}
+		break;
 
-			case JPZ:
-				addr = nextcode(vm);
-				v = pop(vm);
-				if (v == 0) {
-					vm->pc = addr;
-				}
-				break;
+	case JPZ:
+		addr = nextcode(vm);	// JPZ "<address>"
+		v = pop(vm);			// pop value
+		if (v == 0) {			// if value is zero, ..
+			vm->pc = addr;		// .. then go to address
+		}
+		break;
 ```
+
