@@ -145,8 +145,8 @@ which give the address from which to get a value or to store a given value.
 A general scheme is used for accessing values in arrays.
 
 ```assembly
-	LOAD <address> // get the value from a global variable
-    ADD	// add what comes from stack (index) and global var
+LOAD <address> // get the value from a global variable
+ADD	// add what comes from stack (index) and global var
     ...
 ```
 
