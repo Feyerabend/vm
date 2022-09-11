@@ -137,7 +137,7 @@ case STORE:
 
 The arrays might seem to have an odd implementation. A base address is stored in an
 array at runtime which resembles how globals work. When the arrays is used an index
-will point to the offset given the base. So a global variable is used for the abse,
+will point to the offset given the base. So a global variable is used for the base,
 and an index given at runtime is added to the base, which give the address from
 which to get a value or to store a given value.
 
