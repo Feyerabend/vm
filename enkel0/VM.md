@@ -40,30 +40,31 @@ The virtual machine has in main been described earlier, and not much have change
 
 
 
-## call/return
+### call/return
 
 Activation records ..
 
 ```
 			case CALL:
-				addr = nextcode(vm);
-				push(vm, vm->fp);
-				push(vm, vm->pc);
-				vm->fp = vm->sp;
-				vm->pc = addr;
+				addr = nextcode(vm);	// "CALL <address>"
+				push(vm, vm->fp);		// push the frame pointer to stack
+				push(vm, vm->pc);		// push the program counter to stack
+				vm->fp = vm->sp;		// set the fram pointer to what the stack pointer is
+				vm->pc = addr;			// set the program counter to the what the argument is: addr
 				break;
 ```
 
 
 ```
 			case RET:
-				vm->sp = vm->fp;
-				vm->pc = pop(vm);
-				vm->fp = pop(vm);
+				vm->sp = vm->fp;		// reset the stackpointer from the frame pointer
+				vm->pc = pop(vm);		// pop the top element as the new program counter
+				vm->fp = pop(vm);		// pop the (new) top and set the frame pointer
 				break;
 ```
 
 
+### passing parameters
 
 Passing arguments ..
 
@@ -83,6 +84,7 @@ Passing arguments ..
 				break;
 ```
 
+### local variables
 
 Local storage ..
 
@@ -102,6 +104,7 @@ Local storage ..
 				break;
 ```
 
+### global variables
 
 Global storage ..
 
@@ -121,6 +124,7 @@ Global storage ..
 				break;
 ```
 
+### jump
 
 Jumping
 
