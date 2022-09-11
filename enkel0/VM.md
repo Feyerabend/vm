@@ -135,13 +135,16 @@ case STORE:
 
 ### arrays
 
-The arrays might seem to have an odd implementation. A base address is stored in an
-array at runtime which resembles how globals work. When the arrays is used an index
-will point to the offset given the base. So a global variable is used for the base,
-and an index given at runtime is added to the base, which give the address from
-which to get a value or to store a given value.
+The arrays might seem to have an odd implementation. As the others it does not use
+an argument for address. Instead it uses the stack. A base address is stored in an
+array at runtime, which resembles how globals work, and is actually a global. When
+the arrays is used an index will point to the offset given the base. So a global
+variable is used for the base, and an index given at runtime is *added to the base*,
+which give the address from which to get a value or to store a given value.
 
-```
+The arrays uses parts in their own long single array `arrs[]` at runtime.
+
+```assembly
 case RLOAD:
 	a = pop(vm);		// get an address from the stack
 	v = vm->arrs[a];	// get the value at the address
@@ -150,8 +153,7 @@ case RLOAD:
 ```
 
 
-
-```
+```assembly
 case RSTORE:
 	a = pop(vm);		// pop for (calculated) address
 	b = pop(vm);		// pop for value to be stored
