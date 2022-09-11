@@ -46,7 +46,7 @@ Activation records ..
 
 ```
 case CALL:
-	addr = nextcode(vm);	// "CALL <address>"
+	addr = nextcode(vm);	// CALL <address>
 	push(vm, vm->fp);	// push the frame pointer to stack
 	push(vm, vm->pc);	// push the program counter to stack
 	vm->fp = vm->sp;	// set the fram pointer to what the stack pointer is
@@ -71,14 +71,14 @@ Passing arguments ..
 ```
 case STARG:
 	v = pop(vm);		// pop the value
-	addr = nextcode(vm);	// STARG "<address>"
+	addr = nextcode(vm);	// STARG <address>
 	vm->args[addr] = v;	// store the value at address
 	break;
 ```
 
 ```
 case LDARG:
-	addr = nextcode(vm);	// LDARG "<address>"
+	addr = nextcode(vm);	// LDARG <address>
 	v = vm->args[addr];	// load value from where the address points
 	push(vm, v);		// push the value
 	break;
@@ -159,7 +159,7 @@ case JP:
 	break;
 
 case JPNZ:
-	addr = nextcode(vm);	// JPNZ "<address>"
+	addr = nextcode(vm);	// JPNZ <address>
 	v = pop(vm);		// pop value
 	if (v != 0) {		// if value not zero, ..
 		vm->pc = addr;	// .. then go to address
@@ -167,7 +167,7 @@ case JPNZ:
 	break;
 
 case JPZ:
-	addr = nextcode(vm);	// JPZ "<address>"
+	addr = nextcode(vm);	// JPZ <address>
 	v = pop(vm);		// pop value
 	if (v == 0) {		// if value is zero, ..
 		vm->pc = addr;	// .. then go to address
