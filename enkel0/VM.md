@@ -44,7 +44,7 @@ The virtual machine has in main been described earlier, and not much have change
 
 Activation records ..
 
-```
+```c
 case CALL:
 	addr = nextcode(vm);	// CALL <address>
 	push(vm, vm->fp);	// push the frame pointer to stack
@@ -55,7 +55,7 @@ case CALL:
 ```
 
 
-```
+```c
 case RET:
 	vm->sp = vm->fp;	// reset the stackpointer from the frame pointer
 	vm->pc = pop(vm);	// pop the top element as the new program counter
@@ -69,7 +69,7 @@ case RET:
 
 Passing arguments ..
 
-```
+```c
 case STARG:
 	v = pop(vm);		// pop the value
 	addr = nextcode(vm);	// STARG <address>
@@ -77,7 +77,7 @@ case STARG:
 	break;
 ```
 
-```
+```c
 case LDARG:
 	addr = nextcode(vm);	// LDARG <address>
 	v = vm->args[addr];	// load value from where the address points
@@ -92,7 +92,7 @@ case LDARG:
 
 Local storage ..
 
-```
+```c
 case ST:
 	v = pop(vm);
 	offset = nextcode(vm);
@@ -100,7 +100,7 @@ case ST:
 	break;
 ```
 
-```
+```c
 case LD:
 	offset = nextcode(vm);
 	v = vm->vars[vm->fp + offset];
@@ -114,7 +114,7 @@ case LD:
 
 Global storage ..
 
-```
+```c
 case LOAD:
 	addr = nextcode(vm);
 	v = vm->vars[addr];
@@ -122,7 +122,7 @@ case LOAD:
 	break;
 ```
 
-```
+```c
 case STORE:
 	v = pop(vm);
 	addr = nextcode(vm);
@@ -144,7 +144,7 @@ which give the address from which to get a value or to store a given value.
 
 The arrays uses parts in their own long single array `arrs[]` at runtime.
 
-```assembly
+```c
 case RLOAD:
 	a = pop(vm);		// get an address from the stack
 	v = vm->arrs[a];	// get the value at the address
@@ -153,7 +153,7 @@ case RLOAD:
 ```
 
 
-```assembly
+```c
 case RSTORE:
 	a = pop(vm);		// pop for (calculated) address
 	b = pop(vm);		// pop for value to be stored
@@ -170,7 +170,7 @@ case RSTORE:
 
 Jumping
 
-```
+```c
 case JP:
 	vm->pc = nextcode(vm);	// unconditional jump
 	break;
