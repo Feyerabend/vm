@@ -142,7 +142,17 @@ the arrays is used an index will point to the offset given the base. So a global
 variable is used for the base, and an index given at runtime is *added to the base*,
 which give the address from which to get a value or to store a given value.
 
-The arrays uses parts in their own long single array `arrs[]` at runtime.
+A general scheme is used for accessing values in arrays.
+
+```assembly
+	LOAD <address> // get the value from a global variable
+    ADD	// add what comes from stack (index) and global var
+    ...
+```
+
+This will put an absolute address for the array on the stack. Thereafter either a
+`RLOAD` or `RSTORE` can be used. The arrays uses parts in their own long single
+array `arrs[]` at runtime.
 
 ```c
 case RLOAD:
