@@ -34,3 +34,114 @@ prints the duration.
 ## vmenkel
 
 The virtual machine has in main been described earlier, and not much have changed.
+
+
+
+
+
+
+## call/return
+
+Activation records ..
+
+```
+			case CALL:
+				addr = nextcode(vm);
+				push(vm, vm->fp);
+				push(vm, vm->pc);
+				vm->fp = vm->sp;
+				vm->pc = addr;
+				break;
+```
+
+
+```
+			case RET:
+				vm->sp = vm->fp;
+				vm->pc = pop(vm);
+				vm->fp = pop(vm);
+				break;
+```
+
+
+
+Passing arguments ..
+
+```
+			case STARG:
+				v = pop(vm);
+				addr = nextcode(vm);
+				vm->args[addr] = v;
+				break;
+```
+
+```
+			case LDARG:
+				addr = nextcode(vm);
+				v = vm->args[addr];
+				push(vm, v);
+				break;
+```
+
+
+Local storage ..
+
+```
+			case ST:
+				v = pop(vm);
+				offset = nextcode(vm);
+				vm->vars[vm->fp + offset] = v;
+				break;
+```
+
+```
+			case LD:
+				offset = nextcode(vm);
+				v = vm->vars[vm->fp + offset];
+				push(vm, v);
+				break;
+```
+
+
+Global storage ..
+
+```
+			case LOAD:
+				addr = nextcode(vm);
+				v = vm->vars[addr];
+				push(vm, v);
+				break;
+```
+
+```
+			case ST:
+				v = pop(vm);
+				offset = nextcode(vm);
+				vm->vars[vm->fp + offset] = v;
+				break;
+```
+
+
+Jumping
+
+```
+			case JP:
+				vm->pc = nextcode(vm);
+				break;
+
+			case JPNZ:
+				addr = nextcode(vm);
+				v = pop(vm);
+				if (v != 0) {
+					vm->pc = addr;
+				}
+				break;
+
+			case JPZ:
+				addr = nextcode(vm);
+				v = pop(vm);
+				if (v == 0) {
+					vm->pc = addr;
+				}
+				break;
+```
