@@ -145,7 +145,7 @@ which to get a value or to store a given value.
 case RLOAD:
 	a = pop(vm);		// get an address from the stack
 	v = vm->arrs[a];	// get the value at the address
-	push(vm, v);	// push the value to stack
+	push(vm, v);		// push the value to stack
 	break;
 ```
 
@@ -153,11 +153,10 @@ case RLOAD:
 
 ```
 case RSTORE:
-	a = pop(vm);	// pop for (calculated) address
-	b = pop(vm);	// pop for value to be stored
+	a = pop(vm);		// pop for (calculated) address
+	b = pop(vm);		// pop for value to be stored
 	vm->arrs[a] = b;	// store in array
 	break;
-
 ```
 
 
