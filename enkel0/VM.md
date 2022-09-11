@@ -117,12 +117,37 @@ case LOAD:
 ```
 
 ```
-case ST:
+case STORE:
 	v = pop(vm);
-	offset = nextcode(vm);
-	vm->vars[vm->fp + offset] = v;
+	addr = nextcode(vm);
+	vm->vars[addr] = v;
 	break;
 ```
+
+
+### arrays
+
+
+```
+case RLOAD:
+	a = pop(vm);
+	v = vm->arrs[a];
+	push(vm, v);
+	break;
+```
+```
+case RSTORE:
+	a = pop(vm);
+	b = pop(vm);
+	vm->arrs[a] = b;
+	break;
+
+```
+
+
+
+
+
 
 ### jump
 
