@@ -135,19 +135,27 @@ case STORE:
 
 ### arrays
 
+The arrays might seem to have an odd implementation. A base address is stored in an
+array at runtime which resembles how globals work. When the arrays is used an index
+will point to the offset given the base. So a global variable is used for the abse,
+and an index given at runtime is added to the base, which give the address from
+which to get a value or to store a given value.
 
 ```
 case RLOAD:
-	a = pop(vm);
-	v = vm->arrs[a];
-	push(vm, v);
+	a = pop(vm);		// get an address from the stack
+	v = vm->arrs[a];	// get the value at the address
+	push(vm, v);	// push the value to stack
 	break;
 ```
+
+
+
 ```
 case RSTORE:
-	a = pop(vm);
-	b = pop(vm);
-	vm->arrs[a] = b;
+	a = pop(vm);	// pop for (calculated) address
+	b = pop(vm);	// pop for value to be stored
+	vm->arrs[a] = b;	// store in array
 	break;
 
 ```
