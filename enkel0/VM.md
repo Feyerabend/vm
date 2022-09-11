@@ -64,6 +64,7 @@ case RET:
 ```
 
 
+
 ### passing parameters
 
 Passing arguments ..
@@ -83,6 +84,9 @@ case LDARG:
 	push(vm, v);		// push the value
 	break;
 ```
+
+
+
 
 ### local variables
 
@@ -104,6 +108,8 @@ case LD:
 	break;
 ```
 
+
+
 ### global variables
 
 Global storage ..
@@ -123,6 +129,8 @@ case STORE:
 	vm->vars[addr] = v;
 	break;
 ```
+
+
 
 
 ### arrays

@@ -1,3 +1,5 @@
+#ifndef _SCAN_H
+#define _SCAN_H
 
 typedef enum {
     IDENT,
@@ -54,3 +56,5 @@ extern char buf[MAXSYMB];
 
 extern Symbol scan();
 extern void printsymb(Symbol s);
+
+#endif

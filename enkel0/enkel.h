@@ -1,3 +1,5 @@
+#ifndef _ENKEL_H
+#define _ENKEL_H
 
 #define FALSE 0
 #define TRUE 1
@@ -79,3 +81,6 @@ extern void setinput(FILE* inputfile);
 extern int errno;
 extern char* optarg;
 extern int opterr, optind;
+
+#endif
+

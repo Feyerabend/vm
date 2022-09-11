@@ -1,3 +1,6 @@
+#ifndef _SYMBOL_H
+#define _SYMBOL_H
+
 #define TRUE 1
 #define FALSE 0
 
@@ -64,3 +67,4 @@ extern void printlocal();
 // when we leave ...
 extern void destroysymbols();
 
+#endif
