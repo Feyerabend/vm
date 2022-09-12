@@ -6,9 +6,9 @@
 #include "vmenkel.h"
 
 // enough for the samples?
-int VARS = 2048;
+int VARS = 8192;
 int ARGS = 2048;
-int ARRAYS = 2048;
+int ARRAYS = 4096;
 int MAXPROGLEN = 32768;
 int* program;
 

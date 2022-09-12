@@ -39,22 +39,22 @@ index = (ident | number)
 
 ### Program and Block
 
-If we start with how the structure of a program looks like, it consists of a *`<block>`* and `.`.
-All programs ends with a period.
+* If we start with how the structure of a program looks like, it consists of a *`<block>`* and `.`.
+    All programs ends with a period.
 
-The *`<block>`* may have a `const` definition at the start, an `array`, or global variables `var`.
-Constants are global and may not be changed, only assigned once at the start. Arrays are also
-global (also have no checks for out of index adressing). Global variables may be assigned and
-reassigned throughout the program.
+* The *`<block>`* may have a `const` definition at the start, an `array`, or global variables `var`.
+    Constants are global and may not be changed, only assigned once at the start. Arrays are also
+    global (also have no checks for out of index adressing). Global variables may be assigned and
+    reassigned throughout the program.
 
-After the initialisation there are an optional list of `procedure`s. The procedure is recognized
-by a program unique identifier *`<ident>`*. Then there is an optional list of arguments that comes
-from the call to the procedure. The arguments (values) are copied from the call to the procedure.
-Each argument *`<ident>`* is separated with a `,` comma. The arguments work as local variables
-throughout the procedure. The procedure *`<block>`* is ended with a `;` semicolon.
+* After the initialisation there are an optional list of `procedure`s. The procedure is recognized
+    by a program unique identifier *`<ident>`*. Then there is an optional list of arguments that
+    comes from the call to the procedure. The arguments (values) are copied from the call to the
+    procedure. Each argument *`<ident>`* is separated with a `,` comma. The arguments work as
+    local variables throughout the procedure. The procedure *`<block>`* is ended with a `;` semicolon.
 
-Then at last there are statements that are the first to be called, and contain the main code of
-the program. A program might thus only consists of *`<statement>`* (in a *`<block>`*).
+* Then at last there are statements that are the first to be called, and contain the main code of
+    the program. A program might thus only consists of *`<statement>`* (in a *`<block>`*).
 
 
 ### Statement
