@@ -43,33 +43,43 @@ change the name to `sample.p`. Then no change of script `compile.sh` is needed.
 ![enkel/0](../assets/images/logo.png)
 
 ```ebnf
-program = block .
+ program = block "." .
+ 
+ block =
+     ["const" ident "=" number {"," ident "=" number} ";"]
+     ["array" ident "=" number {"," ident "=" number} ";"]
+     ["var" ident {"," ident} ";"]
+     {"procedure" ident "[" ident {"," ident} "]" ";" block ";"}
+      statement .
+ 
+ statement =
+     ident ["." index] "is" expression
+     | "call" ident "[" ident {"," ident} "]"
+     | "begin" statement {";" statement } "end"
+     | "if" condition "then" statement { "else" statement }
+     | "while" condition "do" statement
+     | "do" statement "while" condition
+     | return [factor]
+     | print factor
+     | emit factor .
+ 
+ condition =
+     expression ("="|"#"|"<"|"<="|">"|">=") expression .
+ 
+ expression = ["-"] term {("+"|"-"|"or"|"xor") term} .
+ 
+ term = factor {("*"|"/"|"%"|"and") factor} .
+ 
+ factor =
+     ident ["." index]
+     | number
+     | "(" expression ")" .
 
-block = [ const ident = number {, ident = number} ; ]
-        [ array ident : number {, ident : number} ; ]
-        [ var ident {, ident} ; ]
-        { procedure ident[ [ident {, ident}] ] ; block ; }
-          statement
+ index =
+     ident
+     | number .
+```
 
-statement = [ ident[. index] is expression
-            | call ident[ [factor {, factor}] ]
-            | begin statement {; statement } end 
-            | if condition then statement { else statement }
-            | while condition do statement
-            | do statement while condition
-            | return [factor]
-            | print factor
-            | emit factor ]
-
-condition = expression (=|#|<|<=|>|<=) expression
-
-expression = [-] term { (+|-|or|xor) term }
-
-term = factor { (*|/|%|and) factor }
-
-factor = ident[. index] | number | ( expression )
-
-index = (ident | number)
 ```
 
 The language is called *enkel/0* which is Swedish for "simple/0" in the spirit of PL/0.
