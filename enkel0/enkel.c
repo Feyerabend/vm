@@ -97,7 +97,6 @@ void dnode(node* n) {
 // --------------------------
 // helpers AST
 
-// fetch the address of the corresponding variable (identifier)
 node* load() {
     node *n;
     n = NULL;
@@ -119,21 +118,20 @@ node* load() {
     return n;
 }
 
-// get the address (of the array in vm) for storing (some value) at the variable
 node* store() {
     node* n;
     n = NULL;
 
     if (peekcurrent() != NULL) {
         if (localexist(buf, peekcurrent())) {
-            n = nnode(LOCALASSIGN); // ST
+            n = nnode(LOCALASSIGN);
             n->value = getlocal(buf, peekcurrent());
             return n;
         }
     }
 
     if (globalexist(buf)) {
-        n = nnode(ASSIGN); // STORE
+        n = nnode(ASSIGN);
         n->value = getglobal(buf);
         return n;
     }
@@ -284,17 +282,17 @@ node* condition() {
     int h = BLANK;
 
     if (sym == EQL)
-        h = EQUAL;          // =
+        h = EQUAL;
     else if (sym == NEQ)
-        h = NOTEQUAL;       // #
+        h = NOTEQUAL;
     else if (sym == LSS)
-        h = LESS;           // <
+        h = LESS;
     else if (sym == GTR)
-        h = GREATER;        // >
+        h = GREATER;
     else if (sym == LEQ)
-        h = LESSEQUAL;      // <= ≤
+        h = LESSEQUAL;
     else if (sym == GEQ)
-        h = GREATEEQUAL;    // >= ≥
+        h = GREATEEQUAL;
     else {
         errnum(ERROR_CONDITION_RELATIONAL_INVALID_OPERATOR);
         nextsym();
@@ -650,13 +648,13 @@ node* program() {
     n = nnode(PROG);
     nextsym();
     n->node1 = block();
-    if (startflagset == FALSE) { // no procedures
+    if (startflagset == FALSE) {
         m = n;
         n = nnode(SEQ);
         if (initflagset == TRUE)
             n->node1 = nnode(STARTWC);
         else
-            n->node1 = nnode(START); // no inits
+            n->node1 = nnode(START);
         n->node2 = m;
     }
     expect(PERIOD);
@@ -954,9 +952,9 @@ int compiling(options_t *options) {
     if (options->verbose)
         printf("done compiling.\n");
 
-    if (options->flags == 0x01)
+    if (options->flags & 0x01)
         printglobal();
-    if (options->flags == 0x02)
+    if (options->flags & 0x02)
         printlocal();
 
     destroysymbols();
@@ -987,7 +985,7 @@ int main(int argc, char *argv[]) {
                 }
                 break;
 
-            case 'f': // limit error messages?
+            case 'f':
                 options.flags = (uint32_t) strtoul(optarg, NULL, 16);
                 break;
 
@@ -1002,7 +1000,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // pointer for starting at input file at 0
     if (options.input)
         fseek(options.input, 0, SEEK_SET);
 
