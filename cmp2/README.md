@@ -23,7 +23,7 @@ especially designed for education (parsers / compilers).
 The syntax of PL/0 formalized:
 
 ```ebnf
-program = block "." .
+ program = block "." .
  
  block =
      ["const" ident "=" num {"," ident "=" num} ";"]
