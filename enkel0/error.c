@@ -26,6 +26,10 @@ char* errorstring(int ERROR) {
             return "invalid operator in expression";
         case ERROR_CONDITION_RELATIONAL_INVALID_OPERATOR:
             return "invalid relational operator in condition";
+        case ERROR_INPUT_OPTIONS:
+            return "input options from command line invalid";
+        case ERROR_FILE_OPTIONS:
+            return "file options from command line invalid";
 // scan.c
         case ERROR_EXCEEDED_BUFFER_LENGTH:
             return "buffer length for storage of token exceeded";
@@ -59,6 +63,7 @@ char* errorstring(int ERROR) {
     }
 }
 
+// use by several ..
 void errnum(int error) {
     fprintf(stderr, "error:%d:%s\n", error, errorstring(error));
 }

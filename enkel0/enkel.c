@@ -80,14 +80,14 @@ node* nnode(int type) {
 }
 
 // free tree
-void dnode(node* n) {
+void deletenodes(node* n) {
     if (n == NULL)
         return;
   
     // branches
-    dnode(n->node1);
-    dnode(n->node2);
-    dnode(n->node3);
+    deletenodes(n->node1);
+    deletenodes(n->node2);
+    deletenodes(n->node3);
     
     // leaf
     free(n);
@@ -914,7 +914,7 @@ void compile(node *n) {
             break;
 
         default:
-            // errnum(compile: unknown node identifier);
+            //errnum(compile: unknown node identifier);
             break;
     }
 }
@@ -927,12 +927,12 @@ void usage(char *progname, int opt) {
 int compiling(options_t *options) {
 
     if (!options) {
-        //errno = EINVAL;
+        errnum(ERROR_INPUT_OPTIONS);
         return EXIT_FAILURE;
     }
 
     if (!options->input || !options->output) {
-        //errno = ENOENT;
+        errnum(ERROR_FILE_OPTIONS);
         return EXIT_FAILURE;
     }
 
@@ -958,7 +958,7 @@ int compiling(options_t *options) {
         printlocal();
 
     destroysymbols();
-    dnode(n);
+    deletenodes(n);
 
     return EXIT_SUCCESS;
 }
