@@ -12,8 +12,8 @@ code for the program.
 ## runvm
 
 The limits of the machine are defined in the runner `runvm.c`. Variables, globals, 
-stack, etc. are set from the start. Will it hit a wall, and you have the hardware,
-the limits might be changed by you.
+stack, etc. are set from the start. Will it hit a wall concerning memory, and you
+have the hardware, the limits might be changed by you.
 
 Before loading, the length of the input file is measured. The "binary" have integers
 seperated by commas, throughout. It also in a certain format, where the first number
@@ -21,7 +21,7 @@ points to where the *vm* should start. The rest of the file is the program itsel
 
 ![File format for enkel/0](../assets/images/fileformat.png)
 
-A header of one (1) integer (separeted with a comma before the body) signals
+A header of one (1) integer (separated with a comma before the body) signals
 where to start. The rest is read in an array to be executed, starting at the
 postition where the `START` label was poiting before the assembler did its thing.
 

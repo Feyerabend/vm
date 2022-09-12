@@ -31,9 +31,9 @@ A more formal ENBF like description of the language *enkel/0*:
  condition =
      expression ("="|"#"|"<"|"<="|">"|">=") expression .
  
- expression = ["-"] term {("+"|"-"|"or"|"xor") term} .
+ expression = ["-"] term {("+"|"-"|"or"|"xor") term } .
  
- term = factor {("*"|"/"|"%"|"and") factor} .
+ term = factor {("*"|"/"|"%"|"and") factor } .
  
  factor =
      ident ["." index]
