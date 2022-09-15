@@ -341,14 +341,49 @@ case NEQ:
 	a = pop(vm);
 	push(vm, (a != b) ? TRUE : FALSE);
 	break;
-
 ```
 
 
 ### print
 
-emit print prnt
+```c
+case EMIT:
+	v = pop(vm);
+	printf("%c", (char)v);
+	break;
+```
+
+```c
+case PRINT:
+	v = pop(vm);
+	printf("%d\n", v);
+	break;
+```
+
+```c
+case PRNT:
+	v = pop(vm);
+	printf("%d", v);
+	break;
+```
+
 
 ### misc
 
-halt nop set
+
+```c
+case HALT:
+	return;
+```
+
+```c
+case NOP:
+	break;				
+```
+
+```c
+case SET:
+	v = nextcode(vm);
+	push(vm, v);
+	break;
+```
