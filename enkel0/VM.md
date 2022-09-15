@@ -37,7 +37,7 @@ prints the duration.
 ### addition, subtraction, division, multiplication
 
 The virtual machine has in main been described earlier, and not much have changed
-concerning the familiar arithmetical operations. The implemetation should be
+concerning the familiar arithmetical operations. The implementation should be
 recognized as strait forward.
 
 ```c
@@ -81,6 +81,12 @@ error is raised when a division by zero occurs (rather than have C to work this 
 
 ### modulus, and, or, xor
 
+Some convenient or useful operations have been added. You might change the implementation
+here to better fit your purpose, such as `|` to `||` or `&` to `&&` etc.
+
+Fell free to add your own operator, or delete existing ones. Remember though that changes
+have a cascading effect in that headers have to change, enumerations, and parsing
+(even scanning sometimes depending, if new character is added not now presently in scanner).
 
 ```c
 case MOD:
@@ -124,7 +130,7 @@ case CALL:
 	push(vm, vm->fp);	// push the frame pointer to stack
 	push(vm, vm->pc);	// push the program counter to stack
 	vm->fp = vm->sp;	// set the fram pointer to what the stack pointer is
-	vm->pc = addr;		// set the program counter to the what the argument is: addr
+	vm->pc = addr;		// set the program counter to the address: addr
 	break;
 ```
 
