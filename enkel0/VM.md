@@ -349,4 +349,4 @@ emit print prnt
 
 ### misc
 
-halt
+halt nop set
