@@ -299,3 +299,54 @@ case JPZ:
 	break;
 ```
 
+
+### condition
+
+
+```c
+case EQ:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a == b) ? TRUE : FALSE);
+	break;
+
+case GT:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a > b) ? TRUE : FALSE);
+	break;
+
+case GQ:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a >= b) ? TRUE : FALSE);
+	break;
+
+case LT:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a < b) ? TRUE : FALSE);
+	break;
+
+case LQ:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a <= b) ? TRUE : FALSE);
+	break;
+
+case NEQ:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, (a != b) ? TRUE : FALSE);
+	break;
+
+```
+
+
+### print
+
+emit print prnt
+
+### misc
+
+halt
