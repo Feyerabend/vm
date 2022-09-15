@@ -163,7 +163,7 @@ although the language has grown in complexity, but in a way that *we* understand
 programming easier.
 
 
-#### note: exercise
+#### note: exercise for optimization
 
 We could also write the program as:
 
@@ -196,6 +196,13 @@ RET
 Now you can choose how to eliminate this. Should a flag be inserted which flags for
 when a `RET` has been generated, or should the assembler take care of the double
 `RET`? Or do you have another solution that could take care of this unnecessary extra?
+
+In fact this could be seen as a "peephole optimization".[^1] These kind of "fixes" are
+among the easiest optimizations to implement during a compilation. And you could simply
+find more for *enkel/0*.
+
+[^1]: https://www.wikiwand.com/en/Peephole_optimizations
+
 
 
 ### insertion sort
