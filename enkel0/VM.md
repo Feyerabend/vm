@@ -9,6 +9,8 @@ the machine is done through `runvm.c`. The only thing to be added is the "binary
 code for the program.
 
 
+![runvm.c](../assets/images/runvmc.png)
+
 ## runvm
 
 The limits of the machine are defined in the runner `runvm.c`. Variables, globals, 
