@@ -28,7 +28,19 @@ postition where the `START` label was poiting before the assembler did its thing
 The runner measures the time from when the program starts until it finishes, and
 prints the duration.
 
-...
+
+### exercise: add version
+
+It is useful sometimes to think about the future when you program. An addition
+to the header could be to add some *version* of the current machine. Then when
+updating, in the future, you could check for if a certain version can be run
+at the present machine or not.
+
+Then one way to amend future problems is to have a conversion script which
+converts the previous machine instructions to the (future) current one --
+if possible. Or if they can not be translated, have some information of what
+has changed and what to do about it.
+
 
 
 ## vmenkel
