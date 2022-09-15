@@ -252,7 +252,12 @@ case RSTORE:
 
 ### jump
 
-Jumping
+Jumping or branching is done through altering the address of the programcounter
+(pointing to the next instruction to be executed). A simple check before branching
+if true, can decide if to jump. Here are two alternatives for the check, if what
+is on stack equal to zero, or if it is not equal to zero.
+
+There is also a jump without a condition.
 
 ```c
 case JP:
