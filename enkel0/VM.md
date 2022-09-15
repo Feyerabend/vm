@@ -41,38 +41,38 @@ concerning the familiar arithmetical operations. The implemetation should be
 recognized as strait forward.
 
 ```c
-	case ADD:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a + b);
-		break;
+case ADD:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a + b);
+	break;
 
-	case DIV:
-		b = pop(vm);
-		a = pop(vm);
-		if (b == 0) {
-			fprintf(stderr, "Runtime error: division by zero.\n");
-			exit(EXIT_FAILURE);
-		}
-		push(vm, a / b);
-		break;
+case DIV:
+	b = pop(vm);
+	a = pop(vm);
+	if (b == 0) {
+		fprintf(stderr, "Runtime error: division by zero.\n");
+		exit(EXIT_FAILURE);
+	}
+	push(vm, a / b);
+	break;
 
-	case MUL:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a * b);
-		break;
+case MUL:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a * b);
+	break;
 
-	case SUB:
-		b = pop(vm);
-		a = pop(vm); 
-		push(vm, a - b);
-		break;
+case SUB:
+	b = pop(vm);
+	a = pop(vm); 
+	push(vm, a - b);
+	break;
 
-	case UMIN:
-		a = pop(vm);
-		push(vm, -a);
-		break;
+case UMIN:
+	a = pop(vm);
+	push(vm, -a);
+	break;
 ```
 
 We have added a unary minus which have an easy implemetation in C. Also a runtime
@@ -83,29 +83,29 @@ error is raised when a division by zero occurs (rather than have C to work this 
 
 
 ```c
-	case MOD:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a % b);
-		break;
+case MOD:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a % b);
+	break;
 
-	case OR:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a | b);
-		break;
+case OR:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a | b);
+	break;
 
-	case AND:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a & b);
-		break;
+case AND:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a & b);
+	break;
 
-	case XOR:
-		b = pop(vm);
-		a = pop(vm);
-		push(vm, a ^ b);
-		break;
+case XOR:
+	b = pop(vm);
+	a = pop(vm);
+	push(vm, a ^ b);
+	break;
 ```
 
 
