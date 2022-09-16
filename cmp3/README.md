@@ -9,7 +9,8 @@ artithmetical expressions. (No assignments or variables.)
 
 In the file `cmp3.c` you will find a merge between the previous
 compiler which starts from the outset of an abstract tree
-representation of a program, to the previous parsing of programs as text.
+representation of a program, with the previous parsing of programs
+as text.
 
 The scanner `scan.c` and `scan.h` are copied from the PL/0 parser with
 all tokens recognized. (However they are not all used or recognized by

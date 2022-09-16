@@ -45,6 +45,6 @@ If all went well, you will find in the `build/bin` the compiled binary of Chip8.
 > ./Chip8 <rom_file>
 ```
 
-Where you provide your binary sample of a Chip-8 file `<rom_file>`. You can find some at: https://github.com/kripod/chip8-roms,
-or search the web.
+Where you provide your binary sample of a Chip-8 file `<rom_file>`. You can find some at:
+https://github.com/kripod/chip8-roms, or search the web.
 

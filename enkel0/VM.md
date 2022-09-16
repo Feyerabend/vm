@@ -1,7 +1,7 @@
 # Virtual Machines
 
 The virtual machine consists of essentially two files plus header files. The real
-point of the virtual machine is to seperate running from the construction of the
+point of the virtual machine is to separate running from the construction of the
 runnable.
 
 We have a machine in `enkelvm.c` and `enkelvm.h`, and loading code and directing
@@ -17,15 +17,16 @@ The limits of the machine are defined in the runner `runvm.c`. Variables, global
 stack, etc. are set from the start. Will it hit a wall concerning memory, and you
 have the hardware, the limits might be changed by you.
 
-Before loading, the length of the input file is measured. The "binary" have integers
-seperated by commas, throughout. It also in a certain format, where the first number
-points to where the *vm* should start. The rest of the file is the program itself.
+Before loading, the length of the input file is measured. The point being to allocate
+the array for the code correctly. The "binary" file have integers separated by commas,
+throughout. It also in a certain format, where the first number points to where the
+*vm* should start. The rest of the file is the program itself.
 
 ![File format for enkel/0](../assets/images/fileformat.png)
 
 A header of one (1) integer (separated with a comma before the body) signals
 where to start. The rest is read in an array to be executed, starting at the
-postition where the `START` label was poiting before the assembler did its thing.
+position where the `START` label was pointing before the assembler did its thing.
 
 The runner measures the time from when the program starts until it finishes, and
 prints the duration.
@@ -52,7 +53,7 @@ has changed and what to do about it.
 
 The virtual machine has in main been described earlier, and not much have changed
 concerning the familiar arithmetical operations. The implementation should be
-recognized as strait forward.
+recognized as straightforward.
 
 ```c
 case ADD:
@@ -89,7 +90,7 @@ case UMIN:
 	break;
 ```
 
-We have added a unary minus which have an easy implemetation in C. Also a runtime
+We have added a unary minus which has an easy implementation in C. Also a runtime
 error is raised when a division by zero occurs (rather than have C to work this out).
 
 
@@ -98,9 +99,9 @@ error is raised when a division by zero occurs (rather than have C to work this 
 Some convenient or useful operations have been added. You might change the implementation
 here to better fit your purpose, such as `|` to `||` or `&` to `&&` etc.
 
-Fell free to add your own operator, or delete existing ones. Remember though that changes
+Feel free to add your own operator, or delete existing ones. Remember though that changes
 have a cascading effect in that headers have to change, enumerations, and parsing
-(even scanning sometimes depending, if new character is added not now presently in scanner).
+(even scanning sometimes depending, if a new character is added not presently in the scanner).
 
 ```c
 case MOD:
@@ -143,7 +144,7 @@ case CALL:
 	addr = nextcode(vm);	// CALL <address>
 	push(vm, vm->fp);	// push the frame pointer to stack
 	push(vm, vm->pc);	// push the program counter to stack
-	vm->fp = vm->sp;	// set the fram pointer to what the stack pointer is
+	vm->fp = vm->sp;	// set the frame pointer to what the stack pointer is
 	vm->pc = addr;		// set the program counter to the address: addr
 	break;
 ```
@@ -151,7 +152,7 @@ case CALL:
 
 ```c
 case RET:
-	vm->sp = vm->fp;	// reset the stackpointer from the frame pointer
+	vm->sp = vm->fp;	// reset the stack pointer from the frame pointer
 	vm->pc = pop(vm);	// pop the top element as the new program counter
 	vm->fp = pop(vm);	// pop the (new) top and set the frame pointer
 	break;
@@ -232,7 +233,7 @@ case STORE:
 The arrays might seem to have an odd implementation. As the others it does not use
 an argument for address. Instead it uses the stack. A base address is stored in an
 array at runtime, which resembles how globals work, and is actually a global. When
-the arrays is used an index will point to the offset given the base. So a global
+the arrays is used and an index will point to the offset given the base. So a global
 variable is used for the base, and an index given at runtime is *added to the base*,
 which give the address from which to get a value or to store a given value.
 
@@ -272,7 +273,7 @@ case RSTORE:
 
 ### jump
 
-Jumping or branching is done through altering the address of the programcounter
+Jumping or branching is done through altering the address of the program counter
 (pointing to the next instruction to be executed). A simple check before branching
 if true, can decide if to jump. Here are two alternatives for the check, if what
 is on stack equal to zero, or if it is not equal to zero.
@@ -287,7 +288,7 @@ case JP:
 case JPNZ:
 	addr = nextcode(vm);	// JPNZ <address>
 	v = pop(vm);		// pop value
-	if (v != 0) {		// if value not zero, ..
+	if (v != 0) {		// if the value not zero, ..
 		vm->pc = addr;	// .. then go to address
 	}
 	break;
@@ -295,7 +296,7 @@ case JPNZ:
 case JPZ:
 	addr = nextcode(vm);	// JPZ <address>
 	v = pop(vm);		// pop value
-	if (v == 0) {		// if value is zero, ..
+	if (v == 0) {		// if the value is zero, ..
 		vm->pc = addr;	// .. then go to address
 	}
 	break;
@@ -387,3 +388,4 @@ case SET:
 	push(vm, v);
 	break;
 ```
+
