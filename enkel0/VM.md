@@ -24,9 +24,9 @@ throughout. It also in a certain format, where the first number points to where 
 
 ![File format for enkel/0](../assets/images/fileformat.png)
 
-A header of one (1) integer (separated with a comma before the body) signals
-where to start. The rest is read in an array to be executed, starting at the
-position where the `START` label was pointing before the assembler did its thing.
+A header of one (1) integer (separated with a comma before the body) signals where to
+start. The rest is read in an array to be executed, starting at the position where the
+`START` label was pointing before the assembler did its thing.
 
 The runner measures the time from when the program starts until it finishes, and
 prints the duration.
@@ -47,7 +47,6 @@ has changed and what to do about it.
 
 
 ## vmenkel
-
 
 ### addition, subtraction, division, multiplication
 
@@ -99,9 +98,10 @@ error is raised when a division by zero occurs (rather than have C to work this 
 Some convenient or useful operations have been added. You might change the implementation
 here to better fit your purpose, such as `|` to `||` or `&` to `&&` etc.
 
-Feel free to add your own operator, or delete existing ones. Remember though that changes
-have a cascading effect in that headers have to change, enumerations, and parsing
-(even scanning sometimes depending, if a new character is added not presently in the scanner).
+Feel free to add your own operator, or delete existing ones. Remember though that
+changes have a cascading effect in that headers have to change, enumerations, and
+parsing (even scanning sometimes depending, if a new character is added not presently
+in the scanner).
 
 ```c
 case MOD:
@@ -347,6 +347,13 @@ case NEQ:
 
 ### print
 
+There are three ways to show results from the programs: *emit*, *print with a newline* and
+*print without a newline*.
+
+To print the characters that correspond to ASCII codes, you can "EMIT" the code.
+For instance a uppercase "A" use number 65 as its ASCII code. Thus, a "string" of
+characters can consist of putting out series of codes.
+
 ```c
 case EMIT:
 	v = pop(vm);
@@ -354,12 +361,18 @@ case EMIT:
 	break;
 ```
 
+Another way to show results can be print with a new line at the end. As *enkel/0*
+really only can represent positive integers, a number from the top of the stack
+is printed with "PRINT".
+
 ```c
 case PRINT:
 	v = pop(vm);
 	printf("%d\n", v);
 	break;
 ```
+
+The same goes for "PRNT", but without a new line at the end.
 
 ```c
 case PRNT:
@@ -371,15 +384,14 @@ case PRNT:
 
 ### misc
 
+```c
+case NOP:
+	break;				
+```
 
 ```c
 case HALT:
 	return;
-```
-
-```c
-case NOP:
-	break;				
 ```
 
 ```c

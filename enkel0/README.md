@@ -1,6 +1,6 @@
 # Virtual Machines
 
-Simple compiler from parsed text to assembly, to running code on a virtual machine.
+*Simple compiler from parsed text to assembly, to running code on a virtual machine.*
 
 
 ## compile and run
