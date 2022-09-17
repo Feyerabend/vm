@@ -68,7 +68,8 @@ case DIV:
 		fprintf(stderr, "Runtime error: division by zero.\n");
 		exit(EXIT_FAILURE);
 	}
-	push(vm, a / b);
+	div_t c = div(a, b);
+	push(vm, (int) c.quot);
 	break;
 
 case MUL:
