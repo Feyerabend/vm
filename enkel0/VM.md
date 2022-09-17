@@ -391,7 +391,7 @@ as a possible extension for you to implement.
 case NOP:
 	break;				
 ```
-This operation does nothing. It just been left here.
+This "NOP" operation does nothing. It just been left here.
 
 ```c
 case HALT:
@@ -407,5 +407,5 @@ case SET:
 	break;
 ```
 
-This operator pushes a value directly after the operation,
+This operator "SET" pushes a value directly after the operation,
 to the stack. Quite essential in out vm as it is stack based.
