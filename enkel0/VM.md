@@ -381,6 +381,8 @@ case PRNT:
 	printf("%d", v);
 	break;
 ```
+But "PRNT" has not been used in the compiler, so it stands left
+as a possible extension for you to implement.
 
 
 ### misc
@@ -389,11 +391,14 @@ case PRNT:
 case NOP:
 	break;				
 ```
+This operation does nothing. It just been left here.
 
 ```c
 case HALT:
 	return;
 ```
+The "HALT" is actually essential to stop the program and to return
+to a higer level from which the program started.
 
 ```c
 case SET:
@@ -402,3 +407,5 @@ case SET:
 	break;
 ```
 
+This operator pushes a value directly after the operation,
+to the stack. Quite essential in out vm as it is stack based.
