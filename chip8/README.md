@@ -32,7 +32,7 @@ Also have a look at ANSI escape codes: https://en.wikipedia.org/wiki/ANSI_escape
 
 To get going, after downloading, try:
 
-```
+```shell
 > mkdir build
 > cd build
 > cmake ../
@@ -41,7 +41,7 @@ To get going, after downloading, try:
 
 If all went well, you will find in the `build/bin` the compiled binary of Chip8. Start up:
 
-```
+```shell
 > ./Chip8 <rom_file>
 ```
 
