@@ -34,7 +34,7 @@ each "instruction" and executes the corresponding routine.
 
 ```c
 ...
-     case SET:
+case SET:
      v = nextcode(vm);
      push(vm, v);
      break;
