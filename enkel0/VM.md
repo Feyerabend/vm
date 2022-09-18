@@ -131,18 +131,13 @@ case XOR:
 ```
 
 
-
-
-
-
 ### call/return
 
+#### activation records
 
-#### activation Records
-
-An activation record is a "private" block of memory, here on the stack. The activation record
-is used when there is an invocation of a procedure. It is also a runtime structure to manage
-procedure calls.
+An activation record is a "private" block of memory, here placed on the stack. The activation
+record is used when there is an invocation of a procedure. It is also recognized as a runtime
+structure to manage procedure calls.
 
 ```c
 case CALL:
@@ -155,7 +150,9 @@ case CALL:
 ```
 
 An activation record includes a mechanism to return control to the caller and continue
-execution at the point immediately after the call.
+execution at the point immediately after the call. Also the mechanism is responsible
+for restoring the previous stack pointer, frame pointer and discard any remains on the
+stack.
 
 ```c
 case RET:
@@ -165,9 +162,9 @@ case RET:
 	break;
 ```
 
-Here also the procedure return one value to the caller which is stored in the
-`rval` global variable.
-
+Here also the procedure in connection with the language will return one value to the caller
+which is stored in the `rval` global variable. Thus it is not the vm that handles this
+feature in any special instructions, but rather it is done through the compiler.
 
 #### passing parameters
 
@@ -193,8 +190,6 @@ case LDARG:
 	push(vm, v);		// push the value
 	break;
 ```
-
-
 
 
 ### local variables
