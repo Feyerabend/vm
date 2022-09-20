@@ -2,6 +2,9 @@
 
 
 
+## strip
+
+
 ## enkel
 
 
