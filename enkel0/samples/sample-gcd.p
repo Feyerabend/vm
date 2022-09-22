@@ -10,6 +10,6 @@ procedure gcd[a, b];
   end;
 
 begin
-    call gcd[15, 6];
-    print rval
+  call gcd[15, 6];
+   print rval
 end.
