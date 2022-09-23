@@ -3,7 +3,6 @@
 
 import sys
 
-
 class Stack:
     def __init__(self):
         self.stack = []
@@ -13,7 +12,6 @@ class Stack:
     
     def pop(self):
         return self.stack.pop()
-
 
 class VM:
     def __init__(self):
@@ -77,7 +75,6 @@ class VM:
             command = opcode.strip()
             self.parse(command)
 
-
 class Runner:
     def __init__(self):
         self.vm = VM()
@@ -90,6 +87,6 @@ class Runner:
         f.close()
         self.vm.run(self.contents)
 
-
+# get sample from file
 run = Runner()
 run.readsample('sample.txt')
