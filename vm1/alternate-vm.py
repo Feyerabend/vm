@@ -3,7 +3,6 @@
 
 import sys
 
-
 class Stack:
     def __init__(self):
         self.stack = []
@@ -16,7 +15,6 @@ class Stack:
 
 
 class Emulator:
-
     def __init__(self):
         self.stack = Stack()
 
@@ -47,7 +45,6 @@ class Emulator:
 
 
     def parse(self, command):
-    
         match command.split():
 
             case ['MUL']:
@@ -73,7 +70,6 @@ class Emulator:
 
 
 class Runner:
-
     def __init__(self):
         self.emu = Emulator()
 
@@ -85,7 +81,6 @@ class Runner:
                 command = line.strip()
                 self.emu.parse(command)
         f.close()
-
 
 run = Runner()
 run.read('sample.txt')
