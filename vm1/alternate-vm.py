@@ -3,6 +3,7 @@
 
 import sys
 
+
 class Stack:
     def __init__(self):
         self.stack = []
@@ -14,9 +15,11 @@ class Stack:
         return self.stack.pop()
 
 
-class Emulator:
+class VM:
     def __init__(self):
+        self.code = []
         self.stack = Stack()
+        self.pc = -1
 
     def mul(self):
         b = self.stack.pop()
@@ -43,44 +46,50 @@ class Emulator:
         a = self.stack.pop()
         print(a)
 
+    def setcode(self, contents):
+        self.code = contents
+
+    def nextcode(self):
+        self.pc = self.pc + 1
+        return self.code[self.pc]
 
     def parse(self, command):
         match command.split():
-
             case ['MUL']:
                 self.mul()
-
             case ['ADD']:
                 self.add()
-
             case ['SUB']:
                 self.sub()
-
             case ['SET', number]:
                 self.set(number)
-
             case ['PRINT']:
                 self.printn()
-
             case ['HALT']:
                 sys.exit(0)
-
             case _:  # catch all
                 print(f"{command!r}?")
+
+    def run(self, contents):
+        self.setcode(contents)
+        while (True):
+            opcode = self.nextcode()
+            command = opcode.strip()
+            self.parse(command)
 
 
 class Runner:
     def __init__(self):
-        self.emu = Emulator()
+        self.vm = VM()
+        self.contents = []
 
-    def read(self, file):
+    def readsample(self, file):
         with open(file) as f:
-            contents = f.readlines()
-            print(contents)
-            for line in contents:
-                command = line.strip()
-                self.emu.parse(command)
+            self.contents = f.readlines()
+            print(self.contents)
         f.close()
+        self.vm.run(self.contents)
+
 
 run = Runner()
-run.read('sample.txt')
+run.readsample('sample.txt')
