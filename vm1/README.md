@@ -1,9 +1,28 @@
 # Virtual Machines
 
-A very simple virtual machine implemented as a stack machine.
+*A very simple virtual machine implemented as a stack machine.*
 As an example: Push two numbers on the stack. Each at a time.
-Then add the two numbers. Place the result back on stack. Then
-print sum. Halt.
+Then add the two numbers. Place the result back on the stack. Take
+the value of the top of stack. Then print this sum. Halt.
+
+It might look odd with first pushing two numbers on stack then
+have an operation on them after. Instead of "3 + 4" most of us
+use daily, we could have written this expression as "+ 3 4".
+Here the add sign is taken before the operands. This is actually
+very ingenious[^1]. We could get rid of parentheses, as the notation
+easily allows for priorities of operations, without a previous
+convention for priorities. In this case we however reverse the
+notation such that the operand comes last "3 4 +".
+This is called RPN.
+
+[^1]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html
+
+You might already be familiar with RPN or "reverse polish notation"
+which has been used by Hewlett Packard with their calculators.
+Or you might have experience with some programming language
+(e.g. FORTH) which uses this notation.
+
+
 
 ## vm1
 
@@ -84,6 +103,6 @@ You will notice the program is the same in *principle* (as the opcodes can also 
 implement a new virtual machine each time we would like to run the program on another
 system, operating system, hardware, etc. *The code for the program then can remain the same.*
 Sun Microsystems Inc., the company originally behind the programming language Java,
-once had a slogan: "Write Once, Run Anywhere"[^1], that kind of illustrates that idea.
+once had a slogan: "Write Once, Run Anywhere"[^any], that kind of illustrates that idea.
 
-[^1]: https://en.wikipedia.org/wiki/Write_once,_run_anywhere
+[^any]: https://en.wikipedia.org/wiki/Write_once,_run_anywhere
