@@ -17,7 +17,7 @@ class VM:
     def __init__(self):
         self.code = []
         self.stack = Stack()
-        self.pc = -1
+        self.pc = 0
 
     def mul(self):
         b = self.stack.pop()
@@ -48,8 +48,9 @@ class VM:
         self.code = contents
 
     def nextcode(self):
+        c = self.code[self.pc]
         self.pc = self.pc + 1
-        return self.code[self.pc]
+        return c
 
     def parse(self, command):
         match command.split():
