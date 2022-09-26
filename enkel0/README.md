@@ -196,7 +196,9 @@ RET
 Now you can choose how to eliminate this. Should a flag be inserted which flags for
 when a `RET` has been generated, or should the assembler take care of the double
 `RET`? Or do you have another solution that could take care of this unnecessary extra?
-(Suggestion: take care of it through a "filter" *after* the assembly.)
+Suggestion: take care of it through a "filter" *before* turning assembly code into machine
+code. Otherwise you have to take care of such things as absolute addressing as the
+references changed with shortening the list of codes.
 
 In fact this could be seen as a "peephole optimization".[^1] These kind of "fixes" are
 among the easiest optimizations to implement during a compilation. And you could simply
