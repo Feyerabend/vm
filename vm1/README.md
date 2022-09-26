@@ -13,7 +13,7 @@ It might look odd with first pushing two numbers on stack then
 have an operation on them after. Instead of "3 + 4" most of us
 use daily, we could have written this expression as "+ 3 4".
 Here the add sign is taken before the operands. This is actually
-very ingenious[^1]. We could get rid of parentheses, as the notation
+very ingenious.[^1] We could get rid of parentheses, as the notation
 easily allows for priorities of operations, without a previous
 convention for priorities. In this case we however reverse the
 notation such that the operand comes last "3 4 +".
@@ -23,7 +23,8 @@ This is called RPN.
 This is actually a reference to the origin in logic, esp. propositional
 logic. But from a formal standpoint it works equally well with simple
 aritmetical expressions with '+', '-', '*' and '/' instead of
-logical connectives as e.g. '&', '.', '->' etc.
+logical connectives as e.g. '&', '.', '->' or as with Łukasiewicz
+'C', 'K', 'A' etc.
 
 You might already be familiar with RPN or "reverse polish notation"
 which has been used by Hewlett Packard with their calculators.
@@ -111,6 +112,6 @@ You will notice the program is the same in *principle* (as the opcodes can also 
 implement a new virtual machine each time we would like to run the program on another
 system, operating system, hardware, etc. *The code for the program then can remain the same.*
 Sun Microsystems Inc., the company originally behind the programming language Java,
-once had a slogan: "Write Once, Run Anywhere"[^any], that kind of illustrates that idea.
+once had a slogan: "Write Once, Run Anywhere,"[^any] that kind of illustrates that idea.
 
 [^any]: See https://en.wikipedia.org/wiki/Write_once,_run_anywhere
