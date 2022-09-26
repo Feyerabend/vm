@@ -1,9 +1,12 @@
 # Virtual Machines
 
-*A very simple virtual machine implemented as a stack machine.*
+*A very simple virtual machine implemented as a stack machine.*[^stackmachine]
 As an example: Push two numbers on the stack. Each at a time.
 Then add the two numbers. Place the result back on the stack. Take
 the value of the top of stack. Then print this sum. Halt.
+
+[^stackmachine]: See e.g. https://www.cp.eng.chula.ac.th/~prabhas//teaching/ca/stack.htm
+or (at present not very well organized) https://en.wikipedia.org/wiki/Stack_machine.
 
 It might look odd with first pushing two numbers on stack then
 have an operation on them after. Instead of "3 + 4" most of us
@@ -15,7 +18,11 @@ convention for priorities. In this case we however reverse the
 notation such that the operand comes last "3 4 +".
 This is called RPN.
 
-[^1]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html
+[^1]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html.
+This is actually a reference to the origin in logic, esp. propositional
+logic. But from a formal standpoint it works equally well with simple
+aritmetical expressions with '+', '-', '*' and '/' instead of
+logical connectives as e.g. '&', '.', '->' etc.
 
 You might already be familiar with RPN or "reverse polish notation"
 which has been used by Hewlett Packard with their calculators.
@@ -28,7 +35,7 @@ Or you might have experience with some programming language
 
 A representation of a sample program is hard coded into `vm1.c`:
 
-~~~~c
+```c
 int program[] = {
      SET, 33,
      SET, 44,
@@ -36,7 +43,7 @@ int program[] = {
      PRINT,
      HALT
 };
-~~~~
+```
 
 ```assembly
    SET, 33,        <- store 33 on the stack, 33 on the top
@@ -105,4 +112,4 @@ system, operating system, hardware, etc. *The code for the program then can rema
 Sun Microsystems Inc., the company originally behind the programming language Java,
 once had a slogan: "Write Once, Run Anywhere"[^any], that kind of illustrates that idea.
 
-[^any]: https://en.wikipedia.org/wiki/Write_once,_run_anywhere
+[^any]: See https://en.wikipedia.org/wiki/Write_once,_run_anywhere
