@@ -1,6 +1,7 @@
 # Virtual Machines
 
 *A very simple virtual machine implemented as a stack machine.*[^stackmachine]
+
 As an example: Push two numbers on the stack. Each at a time.
 Then add the two numbers. Place the result back on the stack. Take
 the value of the top of stack. Then print this sum. Halt.
