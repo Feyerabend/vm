@@ -1,6 +1,6 @@
-
-#     ETF grammar
-
+#  production rules
+#  of an ETF grammar
+#  (expression-term-factor)
 
       call    :S
       stop
@@ -26,7 +26,6 @@ E2:
       tflag
 EX:
       return
-
 
 T:
       call    :F

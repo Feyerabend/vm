@@ -1,7 +1,6 @@
-
-#     S -> c A d
-#     A -> a b | a
-
+#  production rules
+#  S -> c A d
+#  A -> a b | a
 
       call    :S
       stop

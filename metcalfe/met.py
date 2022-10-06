@@ -3,19 +3,20 @@ import re
 import sys
 import getopt
 
-
-CALL =      0
-FALSE =     1
-FFALSE =    2
-FTRUE =     3
-MATCH =     4
-PRINT =     5
-RETURN =    6
-STOP =      7
-TRUE =      8
-
 # must be in sync with calfe.py
+NOP =       0
+CALL =      1
+FALSE =     2
+FFALSE =    3
+FTRUE =     4
+MATCH =     5
+PRINT =     6
+RETURN =    7
+STOP =      8
+TRUE =      9
+
 ops = {
+    NOP:    'nop',
     CALL:   'call',
     FALSE:  'false',
     FFALSE: 'fflag',
@@ -27,6 +28,7 @@ ops = {
     TRUE:   'true'}
 
 ary = [
+    0,      # no operand
     1,      # call addr
     1,      # false addr
     0,      # fflag
@@ -37,6 +39,7 @@ ary = [
     0,      # stop
     1]      # true addr
 
+# no comments on no comments
 def no_comments(content):
     ncontent = []
     for line in content:

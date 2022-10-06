@@ -1,7 +1,7 @@
-
-#     S -> A c
-#     A -> a | B
-#     B -> a b
+#  production rules
+#  S -> A c
+#  A -> a | B
+#  B -> a b
 
 
       call    :S
