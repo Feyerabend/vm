@@ -49,6 +49,7 @@ class Machine:
         self.inp = 0 # input pointer
         self.OUTPUT = []
         self.outp = 0 # output pointer
+        self.verbose = 0
 
     def setcode(self, contents):
         self.code = contents
@@ -123,7 +124,7 @@ class Machine:
         # pop address from stack
         # jump to address
         elif (op == RETURN):
-            # print("return")
+
             # pop address, set pc
             address = self.stack.pop()
             self.pc = address
@@ -156,7 +157,8 @@ class Machine:
         print("OUTPUT=", self.getoutput())
 
     # running code
-    def run(self, contents):
+    def run(self, contents, verbose):
+        self.verbose = verbose
         self.setcode(contents)
         while (True):
             opcode = self.nextcode()
@@ -164,7 +166,8 @@ class Machine:
                 return
             endflag = self.parse(opcode)
             if (endflag == DONE): # explicit stop
-                self.printout()
+                if verbose == 1:
+                    self.printout()
                 return self.getoutput()
 
 
@@ -174,10 +177,12 @@ class Runner:
         self.m = Machine()
         self.contents = []
 
-    def readsample(self, infile, outfile, input):
+    def readsample(self, infile, outfile, input, verbose):
         self.m.setinput(input + '$') # if not already mark $ end
-        print("INPUT=", self.m.INPUT)
+        if verbose == 1:
+            print("INPUT=", self.m.INPUT)
 
+        # processing input file = program
         with open(infile, 'r') as f:
             for line in f.readlines():
                 chars = line.strip().split(',')
@@ -185,8 +190,10 @@ class Runner:
                 self.contents.extend([int(i) if i.isdigit() else i for i in chars])
         f.close()
 
-        out = self.m.run(self.contents)
+        # run, get output from program
+        out = self.m.run(self.contents, verbose)
 
+        # save the output
         with open(outfile, 'w') as f:
             f.write(out)
         f.close()
@@ -219,7 +226,7 @@ def main(argv):
     if verbose == 1:
         print("running ..")
     run = Runner()
-    run.readsample(inputfile, outputfile, '(i+i)') # ((i+i)*i+(i*i*i))
+    run.readsample(inputfile, outputfile, '(i+i)', verbose) # ((i+i)*i+(i*i*i))
     if verbose == 1:
         print("done.")
 

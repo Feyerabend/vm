@@ -5,10 +5,10 @@
 Close to "virtual machines" there is in principal an "interpreter technique".
 The main point of the technique can be described as:[^1]
 
-[^1]: In main translated excerpt from the Swedish journal *Modern elektronik*, no. 8, 1981.
-Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin. In this exact part
-they mention examples of floating point calculation, and that compilers should be able to use
-this technique.
+[^1]: In main translated excerpt from the Swedish journal *Modern elektronik*,
+no. 8, 1981. Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin.
+In this exact part they mention examples of floating point calculation, and that
+compilers should be able to use this technique.
 
 1. the interpreter is called, with a list of instructions as argument
 2. the interpreter takes an instruction from the incoming list,
@@ -62,11 +62,17 @@ binary. The the latter `calfe.py` interpret the program and applies a given form
 string. It can be altered to a more productive program by changing the characters to be
 recognized into tokens instead (using arrays e.g.).
 
+### sample etf (expression, term, factor)
+
+First "compile" the program 'etf.mc' (source code) to 'etf.b' (binary).
+Then run the binary with a sample such as '(i+i)'.
+
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
 > python3 calfe.py -v -i etf.b -o prefix.txt
 ```
-
+In the program `calfe.py` there is a line at the end which reads:
+'(i+i)'. Change that expression to reflect your tests.
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
