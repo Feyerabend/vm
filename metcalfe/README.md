@@ -63,8 +63,8 @@ string. It can be altered to a more productive program by changing the character
 recognized into tokens instead (using arrays e.g.).
 
 ```shell
-python3 met.py -v -i etf.mc -o etf.b
-python3 calfe.py
+> python3 met.py -v -i etf.mc -o etf.b
+> python3 calfe.py
 ```
 
 
