@@ -62,17 +62,27 @@ binary. The the latter `calfe.py` interpret the program and applies a given form
 string. It can be altered to a more productive program by changing the characters to be
 recognized into tokens instead (using arrays e.g.).
 
-### sample etf (expression, term, factor)
+### run
 
-First "compile" the program 'etf.mc' (source code) to 'etf.b' (binary).
+A sample 'etf.mc' (simple text) which is an abbreviation for
+'expression, term, factor' is a program for converting infix
+expressions to prefix expressions. One such expression could be
+e.g. '(45+89)' which translates into '+ 45 89'. If we allow for
+a simple abstraction, we can put 'i' as placeholder for numbers
+or variables. This machine can thus be used for simple parsing.
+
+First "compile" the program 'etf.mc' (source code) into 'etf.b' (binary).
 Then run the binary with a sample such as '(i+i)'.
 
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
 > python3 calfe.py -v -i etf.b -o prefix.txt
 ```
+
+The result should be '+ i i'.
+
 In the program `calfe.py` there is a line at the end which reads:
-'(i+i)'. Change that expression to reflect your tests.
+'(i+i)'. Change that expression to reflect *your* tests.
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
