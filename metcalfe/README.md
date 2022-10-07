@@ -56,11 +56,12 @@ __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
 
 
-I've given an attempt at creating a machine from the above description in `met.py` and
-`calfe.py`. The former `met.py` translate a program in the language above to a corresponding
-binary. The the latter `calfe.py` interpret the program and applies a given formula as a
-string. It can be altered to a more productive program by changing the characters to be
-recognized into tokens instead (using arrays e.g.).
+I've given an attempt at creating a machine from the above description in
+`met.py` and `calfe.py`. The former `met.py` translate a program in the language
+above to a corresponding binary. The the latter `calfe.py` interpret the program
+and applies a given formula as a string. It can be altered to a more productive
+program by changing the characters to be recognized into tokens instead
+(using arrays e.g.).
 
 ### run
 
