@@ -62,6 +62,10 @@ binary. The the latter `calfe.py` interpret the program and applies a given form
 string. It can be altered to a more productive program by changing the characters to be
 recognized into tokens instead (using arrays e.g.).
 
+```shell
+python3 met.py -v -i etf.mc -o etf.b
+python3 calfe.py
+```
 
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
