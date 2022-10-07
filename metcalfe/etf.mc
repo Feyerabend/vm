@@ -1,6 +1,8 @@
-#  production rules
-#  of an ETF grammar
-#  (expression-term-factor)
+#  production rules of an ETF grammar
+#  (expression-term-factor).
+#  take as input (from a wff)
+#  infix representation, then translate to
+#  the corresponding prefix expression
 
       call    :S
       stop
