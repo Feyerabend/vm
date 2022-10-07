@@ -52,13 +52,16 @@ Also pop positions of input and output pointers from stack.
 __stop__
 : Stop the machine, print all of output.
 
-__then &lt;item&gt;__
-: Compare the next item (after match) on input. Make a logical *and* with current `flag`,
-i.e. if previous set of `flag` is *true* and the current, then they both are *true*,
-otherwise set `flag` *false* (*instr. added by me*). (NEEDED?)
-
 __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
+
+
+I've given an attempt at creating a machine from the above description in `met.py` and
+`calfe.py`. The former `met.py` translate a program in the language above to a corresponding
+binary. The the latter `calfe.py` interpret the program and applies a given formula as a
+string. It can be altered to a more productive program by changing the characters to be
+recognized into tokens instead (using arrays e.g.).
+
 
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
