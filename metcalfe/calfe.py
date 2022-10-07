@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import sys
+import getopt
 from collections import deque
 
 # internal
@@ -164,7 +165,7 @@ class Machine:
             endflag = self.parse(opcode)
             if (endflag == DONE): # explicit stop
                 self.printout()
-                return
+                return self.getoutput()
 
 
 class Runner:
@@ -173,18 +174,55 @@ class Runner:
         self.m = Machine()
         self.contents = []
 
-    def readsample(self, input, file):
+    def readsample(self, infile, outfile, input):
         self.m.setinput(input + '$') # if not already mark $ end
         print("INPUT=", self.m.INPUT)
 
-        with open(file, 'r') as f:
+        with open(infile, 'r') as f:
             for line in f.readlines():
                 chars = line.strip().split(',')
                 # if not a digit assume a character for matching, assemble in array
                 self.contents.extend([int(i) if i.isdigit() else i for i in chars])
         f.close()
-        self.m.run(self.contents)
+
+        out = self.m.run(self.contents)
+
+        with open(outfile, 'w') as f:
+            f.write(out)
+        f.close()
 
 
-run = Runner()
-run.readsample('(i+i)', 'etf.b') # ((i+i)*i+(i*i*i))
+
+# call with parsing of args to assembler
+def main(argv):
+    inputfile = ''
+    outputfile = ''
+    verbose = 0
+
+    try:
+        opts, args = getopt.getopt(argv,"vhi:o:",["ifile=","ofile="])
+    except getopt.GetoptError:
+        print('calfe.py -i <inputfile> -o <outputfile>')
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt == '-v':
+            verbose = 1
+        if opt == '-h':
+            print('usage: calfe.py -i <inputfile> -o <outputfile>')
+            sys.exit()
+        elif opt in ("-i", "--ifile"):
+            inputfile = arg
+        elif opt in ("-o", "--ofile"):
+            outputfile = arg
+
+    if verbose == 1:
+        print("running ..")
+    run = Runner()
+    run.readsample(inputfile, outputfile, '(i+i)') # ((i+i)*i+(i*i*i))
+    if verbose == 1:
+        print("done.")
+
+
+if __name__ == "__main__":
+   main(sys.argv[1:])

@@ -64,7 +64,7 @@ recognized into tokens instead (using arrays e.g.).
 
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
-> python3 calfe.py
+> python3 calfe.py -v -i etf.b -o prefix.txt
 ```
 
 
@@ -72,4 +72,3 @@ recognized into tokens instead (using arrays e.g.).
 *Annual Review in Automatic Programming: International Tracts in Computer Science
 and Technology and Their Application*, Vol. 4, ed. Richard Goodman, The Macmillan
 Company, New York, 1964. Reprinted Pergamon Press, 2014.
-
