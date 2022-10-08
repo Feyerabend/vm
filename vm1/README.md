@@ -34,6 +34,8 @@ Or you might have experience with some programming language
 ## stack
 
 
+![Stack sample](../assets/images/stack.png)
+
 ## vm1
 
 A representation of a sample program is hard coded into `vm1.c`:
