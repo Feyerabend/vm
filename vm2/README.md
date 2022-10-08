@@ -66,7 +66,7 @@ for embeded use).[^4]
 Building from the "bottom up" was also something that could be claimed happened to
 Lisp Machines, that had *Lisp Machine Lisp* at the hardware level.[^5]
 Microcode could be used for directly implementing a "high level" language such
-as PL/I in hardware.[^6] Or indeeed in Forth.[^7]
+as PL/I in hardware.[^6] Or indeed in Forth.[^7]
 
 [^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp,
 and https://en.wikipedia.org/wiki/Lisp_machine.
