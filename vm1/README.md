@@ -122,17 +122,21 @@ compilers should be able to use this technique.
 
 ![Principles of "interpreter technique"](../assets/images/interpreter.png)
 
-In the application here, the core of the interpreter in the vm is in principle:
+In the application here, the core of the interpreter in the vm is in principle
+in some kind of pseudo code, which have similarities to C:
 
 ```c
+A: { `handler a` return }
+B: { `handler b` return }
+
 do {
   opcode = `next instruction`
   switch (opcode) {
-    case `some instruction`:
-      `handler`
+    case `alpha`:
+      `call A:`
       break;
-    case `some other instruction`:
-      `some other handler`
+    case `beta`:
+      `call B:`
       break;
 
       ...
@@ -146,16 +150,21 @@ do {
 
 ## portability
 
-One of the many praised features of virtual machines is enabling *portability of code*.
-You can try another version of the virtual machine in "alternate-vm.html", which you
-can run in your browser. Copy to the desktop and double-click, check through the developer
-option in your browser the output from "console.log". (Another stripped and rudimentary
-implementation is in "alternate-vm.py", which you can run if Python >3.10 is installed; or
-"alternate-vm.php" in PHP.)
-You will notice the program is the same in *principle* (as the opcodes can also be) so we only
-implement a new virtual machine each time we would like to run the program on another
-system, operating system, hardware, etc. *The code for the program then can remain the same.*
-Sun Microsystems Inc., the company originally behind the programming language Java,
-once had a slogan: "Write Once, Run Anywhere,"[^any] that kind of illustrates that idea.
+One of the many praised features of virtual machines is enabling *portability of
+code*. You can try another version of the virtual machine in
+
+1. "alternate-vm.html", which you can run in your browser. Copy to the desktop
+and double-click, check through the developer option in your browser the output
+from "console.log".
+2. Another stripped and rudimentary implementation is in "alternate-vm.py", which
+you can run if Python >3.10 is installed
+3. Or use "alternate-vm.php" in PHP.
+
+You will notice the program is the same in *principle* (as the opcodes can also be)
+so we only implement a new virtual machine each time we would like to run the
+program on another system, operating system, hardware, etc. *The code for the
+program then can remain the same.* Sun Microsystems Inc., the company originally
+behind the programming language Java, once had a slogan: "Write Once, Run Anywhere,"[^any]
+that kind of illustrates that idea.
 
 [^any]: See https://en.wikipedia.org/wiki/Write_once,_run_anywhere
