@@ -94,7 +94,7 @@ for parsing programming languages.
 
 ### 7. [cmp2](/cmp2)
 
-We focus on parsing, and look at parsing PL/0 programs. Also a scanner
+We continue focus on parsing, and look at parsing PL/0 programs. Also a scanner
 is added for dealing with each "word" for input to a meaningful grammar.
 
 
