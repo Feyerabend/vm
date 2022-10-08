@@ -133,10 +133,10 @@ B: { `handler b` return }
 do {
   opcode = `next instruction`
   switch (opcode) {
-    case `alpha`:
+    case `α`:
       `call A:`
       break;
-    case `beta`:
+    case `β`:
       `call B:`
       break;
 
