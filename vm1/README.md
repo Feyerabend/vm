@@ -10,13 +10,13 @@ the value of the top of stack. Then print this sum. Halt.
 or (at present not very well organized) https://en.wikipedia.org/wiki/Stack_machine.
 
 It might look odd with first pushing two numbers on stack then
-have an operation on them after. Instead of "3 + 4" most of us
-use daily, we could have written this expression as "+ 3 4".
+have an operation on them after. Instead of "5 + 9" most of us
+use daily, we could have written this expression as "+ 5 9".
 Here the add sign is taken before the operands. This is actually
-very ingenious.[^polish] We could get rid of parentheses, as the notation
-easily allows for priorities of operations, without a previous
-convention for priorities. In this case we however reverse the
-notation such that the operand comes last "3 4 +".
+very ingenious.[^polish] We could get rid of parentheses, as the
+notation easily allows for priorities of operations, without a
+previous convention for priorities. In this case we however
+reverse the notation such that the operand comes last "5 9 +".
 This is called RPN.
 
 [^polish]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html.
@@ -31,10 +31,13 @@ which has been used by Hewlett Packard with their calculators.
 Or you might have experience with some programming language
 (e.g. FORTH) which uses this notation.
 
+
 ## stack
 
 
+
 ![Stack sample](../assets/images/stack.png)
+
 
 ## vm1
 
