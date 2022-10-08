@@ -13,13 +13,13 @@ It might look odd with first pushing two numbers on stack then
 have an operation on them after. Instead of "3 + 4" most of us
 use daily, we could have written this expression as "+ 3 4".
 Here the add sign is taken before the operands. This is actually
-very ingenious.[^1] We could get rid of parentheses, as the notation
+very ingenious.[^polish] We could get rid of parentheses, as the notation
 easily allows for priorities of operations, without a previous
 convention for priorities. In this case we however reverse the
 notation such that the operand comes last "3 4 +".
 This is called RPN.
 
-[^1]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html.
+[^polish]: See https://plato.stanford.edu/entries/lukasiewicz/polish-notation.html.
 This is actually a reference to the origin in logic, esp. propositional
 logic. But from a formal standpoint it works equally well with simple
 aritmetical expressions with '+', '-', '*' and '/' instead of
@@ -103,9 +103,9 @@ You should be able to see what 33 + 44 is ... (hint 77)
 ## Interpreter technique
 
 Close to "virtual machines" there is in principal an "interpreter technique".
-The main point of the technique can be described as:[^1]
+The main point of the technique can be described as:[^interpret]
 
-[^1]: In main translated excerpt from the Swedish journal *Modern elektronik*,
+[^interpret]: In main translated excerpt from the Swedish journal *Modern elektronik*,
 no. 8, 1981. Ideas and facts by Hans Beckman, Johan Finnved, ed. Gunnar Christernin.
 In this exact part they mention examples of floating point calculation, and that
 compilers should be able to use this technique.
