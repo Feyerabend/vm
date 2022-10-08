@@ -63,9 +63,9 @@ each "instruction" and executes the corresponding routine.
 ```c
 ...
 case SET:
-     v = nextcode(vm);
-     push(vm, v);
-     break;
+  v = nextcode(vm);
+  push(vm, v);
+  break;
 ...
 ```
 
@@ -75,11 +75,11 @@ where *vm* represents the main structure for the virtual machine (program
 counter, stack pointer ...) and *v* is the value to be put on the stack.
 
 In `vm1.c` the important functions are:
-- `VM* newVM(int* code, int pc)` which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp). 
+- `VM* newVM(int* code, int pc)` which allocates vm, struct for the stack, code array, program counter (pc) and stack pointer (sp).
 - `void freeVM(VM* vm)` deallocates vm.
 - `int pop(VM* vm)` moves the pointer (sp) at the array for the stack to pop a value, stack impl. here as a fixed array.
 - `void push(VM* vm, int v)` push a value on stack.
-- `int nextcode(VM* vm)` move the pointer (pc) at the array to the next code in line. Can be value or operation depending on previous code. 
+- `int nextcode(VM* vm)` move the pointer (pc) at the array to the next code in line. Can be value or operation depending on previous code.
 - `run(VM* vm)` the "processor". Picks a code from the array, and finds out what the operation will do, and execute on it.
 
 ## run
@@ -121,6 +121,26 @@ compilers should be able to use this technique.
 9. when all the instructions have been consumed, the interpreter returns to the main caller
 
 ![Principles of "interpreter technique"](../assets/images/interpreter.png)
+
+In the application here, the core of the interpreter in the vm is in principle:
+
+```c
+do {
+  opcode = `next instruction`
+  switch (opcode) {
+    case `some instruction`:
+      `handler`
+      break;
+    case `some other instruction`:
+      `some other handler`
+      break;
+
+      ...
+  }
+} while (TRUE);
+
+```
+
 
 
 
