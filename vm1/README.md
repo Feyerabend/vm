@@ -151,12 +151,12 @@ do {
 One of the many praised features of virtual machines is enabling *portability of
 code*. You can try another version of the virtual machine in:
 
-1. "alternate-vm.html", which you can run in your browser. Copy to the desktop
+1. *alternate-vm.html*, which you can run in your browser. Copy to the desktop
 and double-click, check through the developer option in your browser the output
 from "console.log".
-2. Another stripped and rudimentary implementation is in "alternate-vm.py", which
+2. Another stripped and rudimentary implementation is in *alternate-vm.py*, which
 you can run if Python >3.10 is installed
-3. Or use "alternate-vm.php" in PHP.
+3. Or use *alternate-vm.php* in PHP.
 
 You will notice the program is the same in *principle* (as the opcodes can also be)
 so we only implement a new virtual machine each time we would like to run the
