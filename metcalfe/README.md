@@ -1,9 +1,17 @@
 # Virtual Machines
 
-## Metcalfe machine[^2]
+*Some explorations in syntax analysis*. As an example of how to parse
+text, here we use an implementation of a "machine" picking out characters
+(or tokens) from an input "tape", matching expected characters and acting
+accordingly (as a program). There is also an output "tape" where we can
+store results.
+
+## *Metcalfe machine*[^2]
+
+In short here are the instructions the machine can use:
 
 __call &lt;label&gt;__
-: Push current position of input and output on stack.
+: Push current position of input and output on a stack.
 Call some subprogram/-routine at label (possibly recursive calls).
 
 __false &lt;label&gt;__
@@ -24,7 +32,7 @@ __print &lt;item&gt;__
 
 __return__
 : Return from call (pop from stack address and set the program counter).
-Also pop positions of input and output pointers from stack.
+Also pop positions of input and output pointers from a separate stack.
 
 __stop__
 : Stop the machine, print all of output.
