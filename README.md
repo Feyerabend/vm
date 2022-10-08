@@ -75,33 +75,35 @@ and return through the use of "activation records".
 ### 4. [chip8](/chip8)
 
 We have a look at an early virtual machine used for games starting
-in the late 70'ties: CHIP-8. 
+in the late 70'ties: CHIP-8.
 
 
 ### 5. [cmp1](/cmp1)
 
 
-### 6. [cmp2](/cmp2)
+### 6. [metcalfe][/metcalfe]
+
+
+### 7. [cmp2](/cmp2)
 
 We focus on parsing, and look at parsing PL/0 programs. Also a scanner
 is added for dealing with each "word" for input to a meaningful grammar.
 
 
-### 7. [cmp3](/cmp3)
+### 8. [cmp3](/cmp3)
 
 
 
 
-### 8. [cmp4](/cmp4)
+### 9. [cmp4](/cmp4)
 
 A compiler and vm for a simple calculator with no memory. No way to store
 or fetch numbers through some mechanics for variables.
 
 
-### 9. [enkel/0](/enkel0)
+### 10. [enkel/0](/enkel0)
 
 A more complete compiler for our own language, with some similarities to
 [PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedual langauges.
 It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be ported to other environments without much effort.
-
