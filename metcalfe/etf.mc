@@ -3,6 +3,11 @@
 #  take as input (from a wff)
 #  infix representation, then translate to
 #  the corresponding prefix expression
+#
+#  <expression> ::= <term> | <expression> + <term>
+#        <term> ::= <factor> | <term> * <factor>
+#      <factor> ::= i | ( <expression> )
+
 
       call    :S
       stop
