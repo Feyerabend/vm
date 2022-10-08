@@ -31,6 +31,7 @@ which has been used by Hewlett Packard with their calculators.
 Or you might have experience with some programming language
 (e.g. FORTH) which uses this notation.
 
+## stack
 
 
 ## vm1
@@ -39,20 +40,20 @@ A representation of a sample program is hard coded into `vm1.c`:
 
 ```c
 int program[] = {
-     SET, 33,
-     SET, 44,
-     ADD,
-     PRINT,
-     HALT
+  SET, 33,
+  SET, 44,
+  ADD,
+  PRINT,
+  HALT
 };
 ```
 
 ```assembly
-   SET, 33,        <- store 33 on the stack, 33 on the top
-   SET, 44,        <- next, store 44 on the stack, top now 44
-   ADD,            <- add the two numbers on the stack, 33 + 44 = 77, and put the result on stack
-   PRINT,          <- take what is on the stack and print (77)
-   HALT            <- halt the program
+  SET, 33,        <- store 33 on the stack, 33 on the top
+  SET, 44,        <- next, store 44 on the stack, top now 44
+  ADD,            <- add the two numbers on the stack, 33 + 44 = 77, and put the result on stack
+  PRINT,          <- take what is on the stack and print (77)
+  HALT            <- halt the program
 ```
 
 Everything in the program is represented as integers (positive integers).
@@ -98,9 +99,9 @@ Or, if not gcc installed:
 > ./vm1
 ```
 
-You should be able to see what 33 + 44 is ... (hint 77)
+You should be able to see what 33 + 44 is ... (hint 77).
 
-## Interpreter technique
+## interpreter technique
 
 Close to "virtual machines" there is in principal an "interpreter technique".
 The main point of the technique can be described as:[^interpret]
@@ -144,9 +145,6 @@ do {
   }
 } while (TRUE);
 ```
-
-
-
 
 ## portability
 
