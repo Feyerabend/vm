@@ -88,8 +88,9 @@ languages and formalisations, an introduction to a simple syntax analyser
 the "Metcalfe machine" is introduced for exploration. Even if the "machine"
 never have had any lasting impact on parsing in general, the flexibility, as
 you might make a separate small program, is an interesting path. Usually
-descriptive languages (e.g. regular expressions) are used for generating parsers,
-that are used today for parsing programming languages.
+descriptive languages, or near descriptive, are used for generating parsers,
+that are used today for parsing programming languages. Even simpler methods
+can be adapted such as using e.g. regular expressions.
 
 
 ### 7. [cmp2](/cmp2)
