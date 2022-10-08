@@ -81,7 +81,7 @@ in the late 70'ties: CHIP-8.
 ### 5. [cmp1](/cmp1)
 
 
-### 6. [metcalfe][/metcalfe]
+### 6. [metcalfe](/metcalfe)
 
 
 ### 7. [cmp2](/cmp2)
