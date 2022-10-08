@@ -39,7 +39,7 @@ are there such that "1 2 3". Then rotation `ROT` would get "2 3 1", and we then
 `DROP` the top, "2 3". That is, the numbers that remain will be added next time.
 And so on.
 
-## some observations
+## CISC vs. RISC
 
 The experimental enlargement of the machine capacities through new instructions
 maybe also be compared with the RISC vs. CISC debate[^2] (even if it is on a
@@ -54,6 +54,7 @@ and CISC https://en.wikipedia.org/wiki/Complex_instruction_set_computer.
 
 [^3]: See https://en.wikipedia.org/wiki/One-instruction_set_computer.
 
+## hardware
 
 Another observation is that there exist hardware, processors with instruction sets
 that implements the virtual machine of Java: *JVM* (at least in its early iterations
@@ -65,9 +66,11 @@ for embeded use).[^4]
 Building from the "bottom up" was also something that could be claimed happened to
 Lisp Machines, that had *Lisp Machine Lisp* at the hardware level.[^5]
 Microcode could be used for directly implementing a "high level" language such
-as PL/I in hardware.[^6]
+as PL/I in hardware.[^6] Or indeeed in Forth.[^7]
 
 [^5]: See https://en.wikipedia.org/wiki/Lisp_Machine_Lisp,
 and https://en.wikipedia.org/wiki/Lisp_machine.
 
 [^6]: See https://en.wikipedia.org/wiki/Microcode
+
+[^7]: See http://users.ece.cmu.edu/~koopman/stack_computers/sec4_4.html
