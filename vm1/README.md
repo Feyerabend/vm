@@ -128,6 +128,7 @@ in some kind of pseudo code, which have similarities to C:
 ```c
 A: { `handler a` return }
 B: { `handler b` return }
+...
 
 do {
   opcode = `next instruction`
@@ -142,7 +143,6 @@ do {
       ...
   }
 } while (TRUE);
-
 ```
 
 
@@ -151,7 +151,7 @@ do {
 ## portability
 
 One of the many praised features of virtual machines is enabling *portability of
-code*. You can try another version of the virtual machine in
+code*. You can try another version of the virtual machine in:
 
 1. "alternate-vm.html", which you can run in your browser. Copy to the desktop
 and double-click, check through the developer option in your browser the output
