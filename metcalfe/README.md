@@ -37,12 +37,6 @@ Also pop positions of input and output pointers from a separate stack.
 __stop__
 : Stop the machine, print all of output.
 
-__then &lt;item&gt;__
-: Compare next item (after match) on input. Make a logical *and* with
-current `flag`, i.e. if previous set of `flag` is *true* and the current,
-then they both are *true*, otherwise set `flag` *false*.
-(*Instruction added by me -- should really work without.*)
-
 __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
 
@@ -61,11 +55,11 @@ e.g. '(45+89)' which translates into '+ 45 89'. If we allow for
 a simple abstraction, we can put 'i' as placeholder for numbers
 or variables. This machine can thus be used for simple parsing.
 
-First "compile" the program 'etf.mc' (source code) into 'etf.b'
-(binary). Then run the binary with a sample file 'etf.test' such
-as `(,i,+,i,)`. This is then parsed into a list
+First compile or assemble the program 'etf.mc' (source code) into
+'etf.b' (binary). Then run the binary with a sample file 'etf.test'
+such as `(,i,+,i,)`. This is then parsed into a list
 `['(', 'i', '+', 'i', ')']` for easier handling of cases where
-matching is done with concatenated charaters into their own
+matching is done with concatenated characters into their own
 tokens, e.g. 'ab'.
 
 ```shell
