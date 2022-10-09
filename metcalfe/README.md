@@ -11,7 +11,7 @@ Production rules are an old concept used in such theories
 on parsing (other uses are e.g. expert systems). A simple
 block of production rules are:
 
-```
+```text
   S → A B
   A → a | ac
   B → b | cb
@@ -19,7 +19,7 @@ block of production rules are:
 
 From this we can generate a limited set of products.
 
-```
+```text
 S → AB → aB → ab
 S → AB → aB → acb
 S → AB → acB → acb
