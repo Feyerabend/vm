@@ -74,7 +74,7 @@ The result should be '+ i i'.
 
 In the test file 'etf.test' there is a line at the end which reads:
 '(i+i)'. Change that expression to reflect *your* tests.
-E.g. '((i+i)*i+(i*i*i))'
+E.g. '((i+i)\*i+(i\*i\*i))'
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
