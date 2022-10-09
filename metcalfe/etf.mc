@@ -14,7 +14,11 @@
 #  <expression> ::= <term> | <expression> + <term>
 #        <term> ::= <factor> | <term> * <factor>
 #      <factor> ::= i | ( <expression> )
+<<<<<<< HEAD
 
+=======
+#  
+>>>>>>> 81da41d1716f6092739b5598736330fc7e16c2bf
 
       call    :S
       stop

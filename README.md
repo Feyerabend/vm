@@ -84,12 +84,14 @@ in the late 70'ties: CHIP-8.
 ### 6. [metcalfe](/metcalfe)
 
 To explore some of the discoveries made early in the evolution of programming
-languages and formalisations, an introduction to a simple syntax analyser
+languages and formalisations, an introduction to a simple token analyser
 the "Metcalfe machine" is introduced for exploration. Even if the "machine"
 never have had any lasting impact on parsing in general, the flexibility, as
 you might make a separate small program, is an interesting path. Usually
-descriptive languages are used for generating parsers, that are used today
-for parsing programming languages.
+descriptive languages, or near descriptive, are used for generating tokenizers/parsers,
+that are used today for parsing programming languages. Even simpler methods
+can be adapted such as using e.g. regular expressions for separating "words" in
+a programming language.
 
 
 ### 7. [cmp2](/cmp2)
