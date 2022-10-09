@@ -34,6 +34,7 @@ Or you might have experience with some programming language
 
 ## stack
 
+The stack works as a 'LIFO' memory: 'last in first out'.
 We begin with a stack of numbers, starting with 1 at the bottom and stacked
 right over is number 2. Then we put 5 at the stack, now it is on top.
 Another number 9 is stacked on top of number 5. To use the stack we start
@@ -42,6 +43,11 @@ and then 5, and make the addition. The answer 14 we stack on top again,
 ready for further steps.
 
 ![Stack sample](../assets/images/stack.png)
+
+This works as you can see very well with RPN. As computers often
+are built on simple foundational operations like addition, and
+these can be used through the stack, stack machines can often be a
+useful concept.
 
 
 ## vm1
