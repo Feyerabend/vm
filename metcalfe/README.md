@@ -20,11 +20,12 @@ block of production rules are:
 From this we can generate a limited set of "products".
 
 ```text
-S → AB → aB → ab
-S → AB → aB → acb
-S → AB → acB → acb
-S → AB → acB → accb
+  S → AB → aB → ab
+  S → AB → aB → acb
+  S → AB → acB → acb
+  S → AB → acB → accb
 ```
+
 You can probably easily follow the substitutions for each
 step where finite terms in lower case replace the upper
 case placeholders.
