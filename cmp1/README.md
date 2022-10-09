@@ -30,7 +30,7 @@ more artithmetical expressions, or control structures, assignments of variables,
 procedures, etc. That is, we could represent *programs* in this way (cf. abstract
 syntax tree, AST[^4]).
 
-[^4]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
+[^4]: See https://en.wikipedia.org/wiki/Abstract_syntax_tree
 
 From the tree we can compile it to the representation in assembly that can eventually
 be used by the virtual machine.
