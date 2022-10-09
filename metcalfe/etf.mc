@@ -1,5 +1,19 @@
-
-#     ETF grammar
+#  production rules of an ETF grammar
+#  Expression-Term-Factor:
+#
+#  S -> E $
+#  E -> T | E + T
+#  T -> F | T * F
+#  F -> i | ( E )
+#
+#  take as input (from a wff)
+#  infix representation, then translate to
+#  the corresponding prefix expression
+#  <expression>-grammar:
+#
+#  <expression> ::= <term> | <expression> + <term>
+#        <term> ::= <factor> | <term> * <factor>
+#      <factor> ::= i | ( <expression> )
 
 
       call    :S
