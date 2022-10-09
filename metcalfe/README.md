@@ -1,10 +1,34 @@
 # Virtual Machines
 
-*Some explorations in syntax analysis*. As an example of how to parse
-text, here we use an implementation of a "machine" picking out characters
-(or tokens) from an input "tape", matching expected characters and acting
-accordingly (as a program). There is also an output "tape" where we can
-store results.
+*Some explorations in syntax analysis*. As an example of
+how to parse text, here we use an implementation of a
+"machine" picking out characters (or tokens) from an input
+"tape", matching expected characters and acting
+accordingly (as a program). There is also an output "tape"
+where we can store results.
+
+Production rules are an old concept used in such theories
+on parsing (other uses are e.g. expert systems). A simple
+block of production rules are:
+
+```
+  S → A B
+  A → a | ac
+  B → b | cb
+```
+
+From this we can generate a limited set of products.
+
+```
+S → AB → aB → ab
+S → AB → aB → acb
+S → AB → acB → acb
+S → AB → acB → accb
+```
+You can probably easily follow the substitutions for each
+step where finite terms in lower case replace the upper
+case placeholders.
+
 
 ## *Metcalfe machine*[^2]
 
@@ -72,6 +96,8 @@ The result should be `+ i i`.
 In the test file 'etf.test' there is a line at the end which reads:
 `(,i,+,i,)`. Change that expression to reflect *your* tests
 (or e.g. `(,(,i,+,i,),*,i,+,(,i,*,i,*,i,),)`).
+
+
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
