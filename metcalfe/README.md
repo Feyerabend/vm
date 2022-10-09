@@ -63,7 +63,9 @@ or variables. This machine can thus be used for simple parsing.
 
 First "compile" the program 'etf.mc' (source code) into 'etf.b'
 (binary). Then run the binary with a sample file 'etf.test' such
-as `(,i,+,i,)`.
+as `(,i,+,i,)`. This is then parsed into a list
+`['(', 'i', '+', 'i', ')']` for easier handling of cases where
+matching is done with concatenated tokens, e.g. 'ab'.
 
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
