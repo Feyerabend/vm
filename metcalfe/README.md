@@ -40,7 +40,8 @@ __stop__
 __then &lt;item&gt;__
 : Compare next item (after match) on input. Make a logical *and* with
 current `flag`, i.e. if previous set of `flag` is *true* and the current,
-then they both are *true*, otherwise set `flag` *false* (*instr. added by me*).
+then they both are *true*, otherwise set `flag` *false*.
+(*Instruction added by me -- should really work without.*)
 
 __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
@@ -73,8 +74,8 @@ Then run the binary with a sample file 'etf.test' such as '(i+i)'.
 The result should be '+ i i'.
 
 In the test file 'etf.test' there is a line at the end which reads:
-'(i+i)'. Change that expression to reflect *your* tests.
-E.g. '((i+i)*i+(i*i*i))'
+'(i+i)'. Change that expression to reflect *your* tests
+(or e.g. '((i+i)*i+(i*i*i))').
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
