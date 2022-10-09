@@ -20,9 +20,9 @@ block of production rules are:
 From this we can generate a limited set of "products".
 
 ```text
-  S → AB → aB → ab
-  S → AB → aB → acb
-  S → AB → acB → acb
+  S → AB →  aB →   ab
+  S → AB →  aB →  acb
+  S → AB → acB →  acb
   S → AB → acB → accb
 ```
 
