@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import re
 import sys
 import getopt
 from collections import deque
@@ -46,7 +47,7 @@ class Machine:
         self.tape = Stack()
         self.pc = 0
         self.FLAG = False # global flag
-        self.INPUT = ""
+        self.INPUT = deque() # [] # ""
         self.inp = 0 # input pointer
         self.OUTPUT = []
         self.outp = 0 # output pointer
@@ -193,19 +194,31 @@ class Runner:
         self.m = Machine()
         self.contents = []
 
-    def readsample(self, infile, outfile, input, verbose):
-        # erase whitespace, add end
-        self.m.setinput(input.strip() + '$')
+    # loading files
+    def load(self, file):
+        content = []
+        with open(file, 'r') as f:
+            for line in f.readlines():
+                chars = line.strip().split(',')
+                # if not a digit assume a character for matching, assemble in array
+                content.extend([int(i) if i.isdigit() else i for i in chars])
+        f.close()
+        return content
+
+    # loading and saving
+    def readsample(self, infile, outfile, testfile, verbose):
+
+        if verbose == 1:
+            print("testfile=", testfile)
+
+        input = self.load(testfile) + ['$'] # end just in case
+        self.m.setinput(input)
         if verbose == 1:
             print("INPUT=", self.m.INPUT)
 
         # processing input file = program
-        with open(infile, 'r') as f:
-            for line in f.readlines():
-                chars = line.strip().split(',')
-                # if not a digit assume a character for matching, assemble in array
-                self.contents.extend([int(i) if i.isdigit() else i for i in chars])
-        f.close()
+        print("infile=", infile)
+        self.contents = self.load(infile)
 
         # run, get output from program
         out = self.m.run(self.contents, verbose)
@@ -221,8 +234,8 @@ class Runner:
 def main(argv):
     inputfile = ''
     outputfile = ''
+    testfile = ''
     verbose = 0
-    text = ''
 
     try:
         opts, args = getopt.getopt(argv, "vht:i:o:", ["tfile", "ifile=", "ofile="])
@@ -243,16 +256,12 @@ def main(argv):
         elif opt in ("-o", "--ofile"):
             outputfile = arg
 
-    with open(testfile, 'r') as f:
-        text = f.readline()
-    f.close()
     if verbose == 1:
         print("running ..")
     run = Runner()
-    run.readsample(inputfile, outputfile, text, verbose)
+    run.readsample(inputfile, outputfile, testfile, verbose)
     if verbose == 1:
         print("done.")
-
 
 if __name__ == "__main__":
    main(sys.argv[1:])

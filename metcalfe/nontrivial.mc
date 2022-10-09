@@ -20,6 +20,5 @@ A:
       true    :AX
       match   a
       then    b
-      false   AX:
 AX:
       return

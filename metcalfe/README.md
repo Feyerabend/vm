@@ -48,11 +48,9 @@ __true &lt;label&gt;__
 
 
 I've given an attempt at creating a machine from the above description in
-`met.py` and `calfe.py`. The former `met.py` translate a program in the language
-above to a corresponding binary. The the latter `calfe.py` interpret the program
-and applies a given formula as a string. It can be altered to a more productive
-program by changing the characters to be recognized into tokens instead
-(using arrays e.g.).
+`met.py` and `calfe.py`. The former `met.py` translate a program in the
+language above to a corresponding binary. The the latter `calfe.py` interpret
+the program and applies a given formula as an array.
 
 ### run
 
@@ -63,19 +61,20 @@ e.g. '(45+89)' which translates into '+ 45 89'. If we allow for
 a simple abstraction, we can put 'i' as placeholder for numbers
 or variables. This machine can thus be used for simple parsing.
 
-First "compile" the program 'etf.mc' (source code) into 'etf.b' (binary).
-Then run the binary with a sample file 'etf.test' such as '(i+i)'.
+First "compile" the program 'etf.mc' (source code) into 'etf.b'
+(binary). Then run the binary with a sample file 'etf.test' such
+as `(,i,+,i,),`.
 
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
 > python3 calfe.py -v -t etf.test -i etf.b -o etf.out
 ```
 
-The result should be '+ i i'.
+The result should be `+ i i`.
 
 In the test file 'etf.test' there is a line at the end which reads:
-'(i+i)'. Change that expression to reflect *your* tests
-(or e.g. '((i+i)*i+(i*i*i))').
+`(,i,+,i,),`. Change that expression to reflect *your* tests
+(or e.g. `(,(,i,+,i,),*,i,+,(,i,*,i,*,i,),)`).
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science
