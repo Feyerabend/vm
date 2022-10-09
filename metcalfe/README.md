@@ -17,7 +17,7 @@ block of production rules are:
   B → b | cb
 ```
 
-From this we can generate a limited set of products.
+From this we can generate a limited set of "products".
 
 ```text
 S → AB → aB → ab
@@ -70,6 +70,7 @@ I've given an attempt at creating a machine from the above description in
 language above to a corresponding binary. The the latter `calfe.py` interpret
 the program and applies a given formula as an array.
 
+
 ### run
 
 A sample 'etf.mc' (simple text) which is an abbreviation for
@@ -95,7 +96,7 @@ The result should be `+ i i`.
 
 In the test file 'etf.test' there is a line at the end which reads:
 `(,i,+,i,)`. Change that expression to reflect *your* tests
-(or e.g. `(,(,i,+,i,),*,i,+,(,i,*,i,*,i,),)`).
+or e.g. `(,(,i,+,i,),*,i,+,(,i,*,i,*,i,),)`.
 
 
 
