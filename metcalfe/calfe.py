@@ -20,7 +20,8 @@ MATCH =     5
 PRINT =     6
 RETURN =    7
 STOP =      8
-TRUE =      9
+THEN =      9
+TRUE =     10
 
 # stack
 class Stack:
@@ -143,6 +144,20 @@ class Machine:
         elif (op == STOP):
             return DONE
 
+        # match next item in input
+        elif (op == THEN):
+            item = self.nextcode()
+            c = self.INPUT[self.inp]
+            if (c == '$'):
+                return DONE
+            if (c == item):
+                if (self.FLAG == True):
+                    self.inp = self.inp + 1
+                else:
+                    self.FLAG = False
+            else:
+                self.FLAG = False
+
         # if flag is then, then jump address
         # always consume address
         elif (op == TRUE):
@@ -155,6 +170,7 @@ class Machine:
     # at last a print out
     def printout(self):
         print("OUTPUT=", self.getoutput())
+        print("FLAG=", self.FLAG)
 
     # running code
     def run(self, contents, verbose):
@@ -178,7 +194,8 @@ class Runner:
         self.contents = []
 
     def readsample(self, infile, outfile, input, verbose):
-        self.m.setinput(input + '$') # if not already mark $ end
+        # erase whitespace, add end
+        self.m.setinput(input.strip() + '$')
         if verbose == 1:
             print("INPUT=", self.m.INPUT)
 
@@ -205,28 +222,34 @@ def main(argv):
     inputfile = ''
     outputfile = ''
     verbose = 0
+    text = ''
 
     try:
-        opts, args = getopt.getopt(argv,"vhi:o:",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv, "vht:i:o:", ["tfile", "ifile=", "ofile="])
     except getopt.GetoptError:
-        print('calfe.py -i <inputfile> -o <outputfile>')
+        print('calfe.py -t <testfile> -i <inputfile> -o <outputfile>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-v':
             verbose = 1
         if opt == '-h':
-            print('usage: calfe.py -i <inputfile> -o <outputfile>')
+            print('usage: calfe.py -t <testfile> -i <inputfile> -o <outputfile>')
             sys.exit()
+        elif opt in ("-t", "--tfile"):
+            testfile = arg
         elif opt in ("-i", "--ifile"):
             inputfile = arg
         elif opt in ("-o", "--ofile"):
             outputfile = arg
 
+    with open(testfile, 'r') as f:
+        text = f.readline()
+    f.close()
     if verbose == 1:
         print("running ..")
     run = Runner()
-    run.readsample(inputfile, outputfile, '(i+i)', verbose) # ((i+i)*i+(i*i*i))
+    run.readsample(inputfile, outputfile, text, verbose)
     if verbose == 1:
         print("done.")
 

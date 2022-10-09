@@ -37,6 +37,11 @@ Also pop positions of input and output pointers from a separate stack.
 __stop__
 : Stop the machine, print all of output.
 
+__then &lt;item&gt;__
+: Compare next item (after match) on input. Make a logical *and* with
+current `flag`, i.e. if previous set of `flag` is *true* and the current,
+then they both are *true*, otherwise set `flag` *false* (*instr. added by me*).
+
 __true &lt;label&gt;__
 : Conditional jump, if `flag` is *true*.
 
@@ -58,17 +63,18 @@ a simple abstraction, we can put 'i' as placeholder for numbers
 or variables. This machine can thus be used for simple parsing.
 
 First "compile" the program 'etf.mc' (source code) into 'etf.b' (binary).
-Then run the binary with a sample such as '(i+i)'.
+Then run the binary with a sample file 'etf.test' such as '(i+i)'.
 
 ```shell
 > python3 met.py -v -i etf.mc -o etf.b
-> python3 calfe.py -v -i etf.b -o prefix.txt
+> python3 calfe.py -v -t etf.test -i etf.b -o etf.out
 ```
 
 The result should be '+ i i'.
 
-In the program `calfe.py` there is a line at the end which reads:
+In the test file 'etf.test' there is a line at the end which reads:
 '(i+i)'. Change that expression to reflect *your* tests.
+E.g. '((i+i)*i+(i*i*i))'
 
 [^2]:Howard H. Metcalfe, "A Parametrized Compiler based on Machanical Linguistics",
 *Annual Review in Automatic Programming: International Tracts in Computer Science

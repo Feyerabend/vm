@@ -1,8 +1,7 @@
 #  production rules
-#  S -> A c
-#  A -> a | B
-#  B -> a b
-
+#  S -> abc | ac
+#  A -> a | D
+#  D -> a b
 
       call    :S
       stop
@@ -16,11 +15,11 @@ SX:
 
 A:
       match   a
+      then    b
+      then    c
       true    :AX
-      call    :B
+      match   a
+      then    b
+      false   AX:
 AX:
-      return
-
-B:
-      match   ab
       return
