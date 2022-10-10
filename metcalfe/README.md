@@ -105,5 +105,5 @@ or e.g. `(,(,i,+,i,),*,i,+,(,i,*,i,*,i,),)`.
 *Annual Review in Automatic Programming: International Tracts in Computer Science
 and Technology and Their Application*, Vol. 4, ed. Richard Goodman, The Macmillan
 Company, New York, 1964. Reprinted Pergamon Press, 2014.
-Also see Farmer, Mick, *Compiler physiology for beginners*, Chartwell-Bratt,
+Also see Mick Farmer, *Compiler physiology for beginners*, Chartwell-Bratt,
 Bromley, 1985.
