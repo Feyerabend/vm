@@ -8,7 +8,7 @@ accordingly (as a program). There is also an output "tape"
 where we can store results.
 
 Production rules are an old concept used in such theories
-on parsing (other uses are e.g. expert systems). A simple
+as parsing (other uses are e.g. expert systems). A simple
 block of production rules are:
 
 ```text
