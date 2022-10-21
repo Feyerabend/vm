@@ -1,24 +1,26 @@
 #  production rules
-#  S -> abc | ac
-#  A -> a | D
-#  D -> a b
+#  S -> a | xA
+#  A -> Sz | SyA
 
       call    :S
       stop
 
 S:
+      match   a
+      true    :SX
+      match   x
       call    :A
-      false   :SX
-      match   c
 SX:
       return
 
 A:
-      match   a
-      then    b
-      then    c
+      call    :S
+      false   :AX
+      match   z
       true    :AX
-      match   a
-      then    b
+      call    :S
+      false   :AX
+      match   y
+      call    :A
 AX:
       return
