@@ -11,6 +11,8 @@ programming of FPGA. More on this later on.
 Bartosz Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
 from whom I derived basically the main code, even though some bugs
 were corrected and many more additions have been made along the way.
+You also might have a look at the Wikipedia page on VMs:
+https://en.wikipedia.org/wiki/Virtual_machine
 
 My interest in virtual machines started long time ago, first with
 *USCD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
