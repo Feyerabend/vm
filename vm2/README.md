@@ -17,9 +17,9 @@ the Fibonacci series: 1, 1, 2, 3, 5, 8, 13 ... which can be defined as a
 mathematical recursive function:
 
 ```math
-F(0) = 0,
-F(1) = 1,
-F(n) = F(n − 1) + F(n − 2) where n > 1,
+F(0) = 0, \;
+F(1) = 1, \;
+F(n) = F(n − 1) + F(n − 2) \; where \; n > 1, \;
 n ∈ ℕ
 ```
 
