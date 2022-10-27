@@ -18,8 +18,11 @@ mathematical recursive function:
 
 ```math
 F(0) = 0
+
 F(1) = 1
+
 F(n) = F(n − 1) + F(n − 2), n > 1
+
 n ∈ ℕ
 ```
 
