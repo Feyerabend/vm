@@ -58,6 +58,9 @@ and *enkel/0*. The language inherits and have similarities with BASIC. The main 
 here is to illustrate how a compiler can address manipulation of tokens, in this case,
 to enhance the language. Also BASIC has a relatively simple syntax to build from.
 
+
+## sample
+
 A simple program could be written as:
 
 ```basic
@@ -77,6 +80,33 @@ END:
   HALT
 ```
 
+The intermediary file `tokens.csv` looks like:
+
+```csv
+"type"|"text"
+"0"|"
+"
+"0"|"
+"
+"504"|"LET"
+"2"|"x"
+"200"|"="
+"1"|"5"
+"0"|"
+"
+"502"|"PRINT"
+"2"|"x"
+"0"|"
+"
+"0"|"
+"
+"511"|"END"
+"0"|"
+"
+"0"|"
+"
+```
+
 The order in which compilation and running is also in principal as previously:
 
 ```shell
@@ -89,8 +119,9 @@ The main chain of events is in `compiler.py` itself. Here first tokens are picke
 Then the result is stored as a Python dictionary to a text file `tokens.csv`. The textfile is then put through a "filter" where
 syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tokens that are equivalent but comprehensible to
 the compiler `parse.py`. From the compilation a pass through the assembler `asm.py` give the binary to the running vm.
-There is thus a possibility to compile without the extra filter, and thus not extra sugar.
+There is thus a possibility to compile without the extra filter, and thus not have access to extra sugar.
 
 There are many (intensional) limits to this language. One limit is how `FOR-NEXT` works. No expressions are allowed, 
 only numbers, to keep things simple. This allows for looping "downwards" from a higher number to a lower, negative
 numbers (not expressions) had to be added to `STEP`.
+
