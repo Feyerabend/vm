@@ -77,7 +77,7 @@ END:
 
 The order in which compilation and running is also in principal as previously:
 
-```
+```shell
 > python3 compiler.py -i sample.bas -o sample.a
 > python3 asm.py -i sample.a -o sample.b
 > ./runvm sample.b
