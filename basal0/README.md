@@ -65,7 +65,7 @@ PRINT x
 
 This translates, as previously, to:
 
-```
+```assembly
 START:
 	SET	5
 	STORE	0
