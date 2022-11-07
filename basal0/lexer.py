@@ -61,21 +61,7 @@ class Lexer:
         self.prepare()
         token = None
 
-        if self.curr == '+':
-            token = Token(self.curr, TType.PLUS)
-            if self.ahead().isdigit():
-                self.advance()
-                num = self.consume('0123456789')
-                token = Token(num, TType.NUMBER)
-
-        elif self.curr == '-':
-            token = Token(self.curr, TType.MINUS)
-            if self.ahead().isdigit():
-                self.advance()
-                num = self.consume('0123456789')
-                token = Token(str(-int(num)), TType.NUMBER)
-
-        elif self.curr == '*':
+        if self.curr == '*':
             token = Token(self.curr, TType.ASTERISK)
 
         elif self.curr == '/':
@@ -115,6 +101,20 @@ class Lexer:
                 token = Token('<>', TType.NEQ)
             else:
                 token = Token(self.curr, TType.LT)
+
+        elif self.curr == '+':
+            token = Token(self.curr, TType.PLUS)
+            if self.ahead().isdigit():
+                self.advance()
+                num = self.consume('0123456789')
+                token = Token(num, TType.NUMBER)
+
+        elif self.curr == '-':
+            token = Token(self.curr, TType.MINUS)
+            if self.ahead().isdigit():
+                self.advance()
+                num = self.consume('0123456789')
+                token = Token(str(-int(num)), TType.NUMBER)
 
         elif self.curr == '\"':
             self.advance()

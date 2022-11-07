@@ -91,6 +91,7 @@ class Parser:
         while self.recognize(TType.NEWLINE):
             self.advance()
 
+    # entry and exit
     def program(self):
         self.out.append("START:")
         self.eatspace()
@@ -100,6 +101,7 @@ class Parser:
         self.out.append("\tHALT")
         return self.out
 
+    # spend most time looping through the stmts
     def statement(self):
 
         # LET identifier = expression
