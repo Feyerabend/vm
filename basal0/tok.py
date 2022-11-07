@@ -48,7 +48,3 @@ class ParseError(Exception):
     def __str__(self):
         return '%s at position %s' % (self.msg % self.args, self.pos)
 
-#try:
-#    raise(ParseError(2, 3 * 2, "Not Allowed"))
-#except ParseError as Arg:
-#    print('Exception occurred: ', Arg)
