@@ -116,18 +116,19 @@ or fetch numbers through some mechanics for variables.
 ### 10. [enkel/0](/enkel0)
 
 A more complete compiler for our own language, with some similarities to
-"Pascal" [PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedual langauges.
+"[Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))"
+[PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedual langauges.
 It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be ported to other environments without much effort.
 
 ### 10. [basal/0](/basal0)
 
-A compiler for a variant of "BASIC" which uses the previous vm (in C).
-The compiler is now written in the "rich" high-level language Python3.
-The many features of Python make it much easier to write certain tasks,
-but also thus hides some internal mechanism, which can be useful to
-understand details in practice. This addition of a compiler *basal/0*
-illustrates, together with *enkel/0*, how *different* languages
+A compiler for a variant of "[BASIC](https://en.wikipedia.org/wiki/BASIC)"
+which uses the previous vm (in C). The compiler is now written in the "rich"
+high-level language Python3. The many features of Python make it much
+easier to write certain tasks, but also thus hides some internal mechanism,
+which can be useful to understand details in practice. This addition of a
+compiler *basal/0* illustrates, together with *enkel/0*, how *different* languages
 can be supported by the __same vm__. There are also some additional
 remarks on how to look at extending a language, near "syntactic sugar".
 I.e. a rewrite of the for us convenient language idioms to a, for the
