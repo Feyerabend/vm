@@ -30,10 +30,11 @@ run
      "LET" ident "=" expression
      | "GOTO" label
      | "GOSUB" label
+     | "ON" ident "GOTO" label {, label}
      | "!" label
      | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
-     | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
+*    | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
      | "RETURN"
      | "END"
      | "PRINT" [number | string[";"]] .
