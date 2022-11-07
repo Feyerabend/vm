@@ -2,5 +2,3 @@
 
 LET x = 5
 PRINT x
-
-END
