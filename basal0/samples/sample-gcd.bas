@@ -1,4 +1,4 @@
-# GCD (as per usual) %
+# GCD (as per usual)
 LET a = 15
 LET b = 6
 

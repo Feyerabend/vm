@@ -7,7 +7,7 @@
 
 There is already a file `sample.bas` in the main directory, which you can compile and
 run ...
-
+(BUT NOT YET, FILES REMAINS ..)
 
 
 
@@ -17,21 +17,21 @@ run ...
  newline = NL
 
  program =
-      statement NL .
+      statements NL .
 
  statements =
      statement NL statements
-     | statement
+     | statement NL .
 
  statement =
-     LET ident "=" expression NL
-     | "GOTO" label NL
-     | "GOSUB" label NL
-     | "IF" condition "THEN" "NL" statement NL { "ELSE" statement NL } NL "ENDIF"
+     "LET" ident "=" expression
+     | "GOTO" label
+     | "GOSUB" label
+     | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
-     | "FOR" ident = number "TO" number {STEP number} NL statement "NEXT" number
-     | "RETURN" NL
-     | "PRINT" [number | string[";"]] "NL"
+     | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
+     | "RETURN"
+     | "PRINT" [number | string[";"]] .
 
  condition =
      expression ("="|"<>"|"<"|"<="|">"|">=") expression .
@@ -47,7 +47,9 @@ run ...
 ```
 
 The language is called *basal/0* which is Swedish for "basic/0" in the spirit of PL/0
-and enkel/0. The language inherits and have similarities with BASIC.
+and enkel/0. The language inherits and have similarities with BASIC. The main point
+here is to illustrate how a compiler can address manipulation of tokens, in this case,
+to enhance the language. Also BASIC has a relatively simple syntax to build from.
 
 A simple program could be written as:
 
