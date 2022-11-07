@@ -6,7 +6,7 @@
 ## compile and run
 
 There is already a file `sample.bas` in the main directory, which you can compile and
-run
+run:
 
 ```shell
 > make all
@@ -56,7 +56,8 @@ run
 The language is called *basal/0* which is Swedish for "basic/0" in the spirit of *PL/0*
 and *enkel/0*. The language inherits and have similarities with BASIC. The main point
 here is to illustrate how a compiler can address manipulation of tokens, in this case,
-to enhance the language. Also BASIC has a relatively simple syntax to build from.
+to enhance the language. Also BASIC has a relatively simple syntax to build from, as
+it mostly relies on simple statements that do not require to much energy to parse.
 
 
 ## sample
