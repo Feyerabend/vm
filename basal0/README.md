@@ -35,7 +35,7 @@ run
      | "LET" ident "=" expression
      | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
-*    | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
+*    | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" ident
      | "RETURN"
      | "END"
      | "PRINT" [number | string[";"]] .
@@ -69,12 +69,12 @@ This translates, as previously, to:
 
 ```assembly
 START:
-	SET	5
-	STORE	0
-	LOAD	0
-	PRINT
+  SET	5
+  STORE	0
+  LOAD	0
+  PRINT
 END:
-	HALT
+  HALT
 ```
 
 The order in which compilation and running is also in principal as previously:
@@ -91,3 +91,6 @@ syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tok
 the compiler `parse.py`. From the compilation a pass through the assembler `asm.py` give the binary to the running vm.
 There is thus a possibility to compile without the extra filter, and thus not extra sugar.
 
+There are many (intensional) limits to this language. One limit is how `FOR-NEXT` works. There are no expression allowed but
+only numbers to keep things simple, and to allow for looping downwards from a higher number to a lower, negative numbers
+(not expressions) had to be added.
