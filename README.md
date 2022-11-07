@@ -77,10 +77,16 @@ and return through the use of "activation records".
 ### 4. [chip8](/chip8)
 
 We have a look at an early virtual machine used for games starting
-in the late 70'ties: CHIP-8.
+in the late 70'ties: CHIP-8. (*Not my code.*)
 
 
 ### 5. [cmp1](/cmp1)
+
+Starting from the bottom, working our way up, here we take aim at the abstraction
+of languages in a "tree". By getting an understanding of the language from pure
+syntax to "abstract syntax tree" (AST), we lean toward the semantics. Especially
+with formal languages such as in programming, this gets rather strait forward,
+with some possible caveats.
 
 
 ### 6. [metcalfe](/metcalfe)
