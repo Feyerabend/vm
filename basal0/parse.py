@@ -275,8 +275,6 @@ class Parser:
 
         elif self.recognize(TType.IDENT):
             if self.curr.text not in self.vars:
-                # petty?
-                # self.err("Referencing variable before assignment: " + self.curr.text)
                 self.vars.append(self.curr.text)
                 self.out.append("\tSET\t0")
                 store = str(self.vars.index(self.curr.text))
