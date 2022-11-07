@@ -38,7 +38,7 @@ run:
 *    | "FOR" ident "=" number "TO" number {"STEP" number} NL statements "NEXT" ident
      | "RETURN"
      | "END"
-     | "PRINT" [number | string[";"]] .
+     | "PRINT" (number | string[";"]) .
 
  condition =
      expression ("="|"<>"|"<"|"<="|">"|">=") expression .
