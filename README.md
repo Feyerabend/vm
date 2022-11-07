@@ -52,7 +52,7 @@ and view certain aspects on coding/programming and to hide others.__
 
 We start off with a simple virtual stack machine. There is no error checking,
 no warnings, you have to compile the machine if you only slightly change
-the program, etc. The idea is to grasp what happends inside the virtual
+the program, etc. The idea is to grasp what happens inside the virtual
 machine and use code as the main instructive part.
 
 
@@ -77,7 +77,7 @@ and return through the use of "activation records".
 ### 4. [chip8](/chip8)
 
 We have a look at an early virtual machine used for games starting
-in the late 70'ties: CHIP-8. (*Not my code.*)
+in the late 70'ties: CHIP-8. (*Not my code. Much better.*)
 
 
 ### 5. [cmp1](/cmp1)
@@ -127,6 +127,7 @@ A more complete compiler for our own language, with some similarities to
 It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be ported to other environments without much effort.
 
+
 ### 10. [basal/0](/basal0)
 
 A compiler for a variant of "[BASIC](https://en.wikipedia.org/wiki/BASIC)"
@@ -134,8 +135,8 @@ which uses the previous vm (in C). The compiler is now written in the "rich"
 high-level language Python3. The many features of Python make it much
 easier to write certain tasks, but also thus hides some internal mechanism,
 which can be useful to understand details in practice. This addition of a
-compiler *basal/0* illustrates, together with *enkel/0*, how *different* languages
-can be supported by the __same vm__. There are also some additional
+compiler *basal/0* illustrates, together with *enkel/0*, how *different*
+languages can be supported by the __same vm__. There are also some additional
 remarks on how to look at extending a language, near "syntactic sugar".
 I.e. a rewrite of the for us convenient language idioms to a, for the
 machine, more suitable dressing.
