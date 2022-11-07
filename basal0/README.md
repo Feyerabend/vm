@@ -30,16 +30,18 @@ run
      "LET" ident "=" expression
      | "GOTO" label
      | "GOSUB" label
+     | "!" label
      | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
      | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
      | "RETURN"
+     | "END"
      | "PRINT" [number | string[";"]] .
 
  condition =
      expression ("="|"<>"|"<"|"<="|">"|">=") expression .
 
- expression =  term {("+"|"-"|"or"|"xor") term} .
+ expression =  term {("+"|"-") term} .
 
  term = factor {("*"|"/") factor} .
 
