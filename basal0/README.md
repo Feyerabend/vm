@@ -16,6 +16,8 @@ run:
 
 ## basal/0
 
+![basal/0](../assets/images/logo2.png)
+
 ```ebnf
  newline = NL
 
@@ -27,7 +29,7 @@ run:
      | statement NL .
 
  statement =
-     "!" label 
+     "!" label
      | "GOTO" label
      | "GOSUB" label
 *    | "ON" ident "GOTO" label {, label}
@@ -122,7 +124,6 @@ syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tok
 the compiler `parse.py`. From the compilation a pass through the assembler `asm.py` give the binary to the running vm.
 There is thus a possibility to compile without the extra filter, and thus not have access to extra sugar.
 
-There are many (intensional) limits to this language. One limit is how `FOR-NEXT` works. No expressions are allowed, 
+There are many (intensional) limits to this language. One limit is how `FOR-NEXT` works. No expressions are allowed,
 only numbers, to keep things simple. This allows for looping "downwards" from a higher number to a lower, negative
 numbers (not expressions) had to be added to `STEP`.
-
