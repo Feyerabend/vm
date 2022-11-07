@@ -30,7 +30,8 @@ run
      "LET" ident "=" expression
      | "GOTO" label
      | "GOSUB" label
-     | "ON" ident "GOTO" label {, label}
+*    | "ON" ident "GOTO" label {, label}
+*    | "ON" ident "GOSUB" label {, label}
      | "!" label
      | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
