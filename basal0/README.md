@@ -51,8 +51,8 @@ run
      | "(" expression ")" .
 ```
 
-The language is called *basal/0* which is Swedish for "basic/0" in the spirit of PL/0
-and enkel/0. The language inherits and have similarities with BASIC. The main point
+The language is called *basal/0* which is Swedish for "basic/0" in the spirit of *PL/0*
+and *enkel/0*. The language inherits and have similarities with BASIC. The main point
 here is to illustrate how a compiler can address manipulation of tokens, in this case,
 to enhance the language. Also BASIC has a relatively simple syntax to build from.
 
@@ -62,3 +62,30 @@ A simple program could be written as:
 LET x = 5
 PRINT x
 ```
+
+This translates, as previously, to:
+
+```
+START:
+	SET	5
+	STORE	0
+	LOAD	0
+	PRINT
+END:
+	HALT
+```
+
+The order in which compilation and running is also in principal as previously:
+
+```
+> python3 compiler.py -i sample.bas -o sample.a
+> python3 asm.py -i sample.a -o sample.b
+> ./runvm sample.b
+```
+
+The main chain of events is in `compiler.py` itself. Here first tokens are picked from the input text `tok.py` and `lexer.py`.
+Then the result is stored as a Python dictionary to a text file `tokens.csv`. The textfile is then put through a "filter" where
+syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tokens that are equivalent but comprehensible to
+the compiler `parse.py`. From the compilation a pass through the assembler `asm.py` give the binary to the running vm.
+There is thus a possibility to compile without the extra filter, and thus not extra sugar.
+
