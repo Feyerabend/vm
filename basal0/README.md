@@ -27,12 +27,12 @@ run
      | statement NL .
 
  statement =
-     "LET" ident "=" expression
+     "!" label 
      | "GOTO" label
      | "GOSUB" label
 *    | "ON" ident "GOTO" label {, label}
 *    | "ON" ident "GOSUB" label {, label}
-     | "!" label
+     | "LET" ident "=" expression
      | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
      | "WHILE" condition "DO" NL statement NL "ENDWHILE"
 *    | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" number
