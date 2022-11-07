@@ -33,9 +33,9 @@ run:
 *    | "ON" ident "GOTO" label {, label}
 *    | "ON" ident "GOSUB" label {, label}
      | "LET" ident "=" expression
-     | "IF" condition "THEN" NL statement NL { "ELSE" statement NL } "ENDIF"
-     | "WHILE" condition "DO" NL statement NL "ENDWHILE"
-*    | "FOR" ident "=" number "TO" number {"STEP" number} NL statement "NEXT" ident
+     | "IF" condition "THEN" NL statements NL { "ELSE" statements NL } "ENDIF"
+     | "WHILE" condition "DO" NL statements NL "ENDWHILE"
+*    | "FOR" ident "=" number "TO" number {"STEP" number} NL statements "NEXT" ident
      | "RETURN"
      | "END"
      | "PRINT" [number | string[";"]] .
