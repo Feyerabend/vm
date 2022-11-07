@@ -6,9 +6,12 @@
 ## compile and run
 
 There is already a file `sample.bas` in the main directory, which you can compile and
-run ...
-(BUT NOT YET, FILES REMAINS ..)
+run
 
+```shell
+> make all
+> ./build.sh
+```
 
 
 ## basal/0
