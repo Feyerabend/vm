@@ -50,7 +50,7 @@ add an integer value. Only the CONSTANT type in our case has an integer value (a
 *interpreted* as an integer value). A node can point to other nodes. Thus, a "tree" of
 nodes can be built.
 
-```math
+```text
  q MULTIPLY
  ├── p CONSTANT 90
  └─┬ x ADD
