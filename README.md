@@ -134,7 +134,7 @@ A more complete compiler for our own language, with some similarities to
 "[Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))"
 [PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedural languages.
 It runs on its own virtual machine. Thus programs written in *enkel/0*
-can be __ported to other environments__ (other implementation of the vm)
+can be __ported to other environments__ (other implementations of the vm)
 without much effort.
 
 
