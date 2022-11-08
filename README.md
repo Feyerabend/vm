@@ -20,7 +20,7 @@ also presumed to be interesting for those who want to go further than the
 elementary.
 
 My interest in virtual machines started long time ago, first with
-*USCD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
+*UCSD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
 
 
 ### A note on concepts
@@ -84,7 +84,7 @@ and return through the use of "activation records".
 ### 4. [chip8](/chip8)
 
 We have a look at an early virtual machine used for games starting
-in the late 70'ties: CHIP-8. (*Not my code. Much better.*)
+in the late 70's: CHIP-8. (*Not my code. Much better.*)
 
 
 ### 5. [cmp1](/cmp1)
@@ -92,7 +92,7 @@ in the late 70'ties: CHIP-8. (*Not my code. Much better.*)
 Starting from the bottom, working our way up, here we take aim at the abstraction
 of languages in a "tree". By getting an understanding of the language from pure
 syntax to "abstract syntax tree" (AST), we lean toward the semantics. Especially
-with formal languages such as in programming, this gets rather strait forward,
+with formal languages such as in programming, this gets rather straightforward,
 with some possible caveats.
 
 
@@ -102,7 +102,7 @@ To explore some of the discoveries made early in the evolution of programming
 languages and formalisations, an introduction to a simple token analyser
 the "Metcalfe machine" is introduced for exploration. Even if the "machine"
 never have had any lasting impact on parsing in general, the flexibility, as
-you might make a separate small program, is an interesting path. Usually
+you might make a separate small program, it is an interesting path. Usually
 descriptive languages, or near descriptive, are used for generating tokenizers/parsers,
 that are used today for parsing programming languages. Even simpler methods
 can be adapted such as using e.g. regular expressions for separating "words" in
@@ -111,7 +111,7 @@ a programming language.
 
 ### 7. [cmp2](/cmp2)
 
-We continue focus on parsing, and look at parsing PL/0 programs. Also a scanner
+We continue to focus on parsing, and look at parsing PL/0 programs. Also a scanner
 is added for dealing with each "word" for input to a meaningful grammar.
 
 
@@ -132,7 +132,7 @@ or fetch numbers through some mechanics for variables.
 
 A more complete compiler for our own language, with some similarities to
 "[Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))"
-[PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedual langauges.
+[PL/0](https://en.wikipedia.org/wiki/PL/0) and other procedural languages.
 It runs on its own virtual machine. Thus programs written in *enkel/0*
 can be __ported to other environments__ (other implementation of the vm)
 without much effort.
