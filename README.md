@@ -31,7 +31,7 @@ to run on Intel 4004, and Steve Wozniack routines in SWEET16.[^4]
 https://en.wikipedia.org/wiki/Apollo_Guidance_Computer.
 Also see manual https://www.ibiblio.org/apollo/assembly_language_manual.html.
 
-[^3]: Neither this verify reference to VM, but general info on Intel 4004,
+[^3]: Nor this verify reference to VM, but general info on Intel 4004,
 https://en.wikipedia.org/wiki/Intel_4004.
 
 [^4]: SWEET16, https://en.wikipedia.org/wiki/SWEET16 but also in Byte no 11, 1977:
@@ -42,7 +42,10 @@ in any way. There are many missing necessary features and code that
 should be amended were it written for real purposes. The idea is to show
 and view certain aspects on coding/programming and to hide others.__
 
-
+These samples assume some understanding of elementary computer science,
+as you would get from an introductory course in e.g. programming. They are
+also presumed to be interesting for those who want to go further than the
+elementary.
 
 
 ## *From virtual machines to compilers*
@@ -110,7 +113,9 @@ is added for dealing with each "word" for input to a meaningful grammar.
 
 ### 8. [cmp3](/cmp3)
 
-
+Arithmetical expressions can be compiled to bytecode/binary for the vm.
+Mentions some, but do go into what, potential problems with parsing,
+and division by zero as an example of runtime error.
 
 
 ### 9. [cmp4](/cmp4)
