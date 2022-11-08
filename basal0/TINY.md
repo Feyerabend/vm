@@ -1,11 +1,23 @@
 # Virtual Machines
 
-TODO:
+## TODO:
+
+This BASIC basal/0 takes it inspiration from TinyBasic.
+But TinyBasic has a very interesting history of its own.
 
 Tiny Basic, some comments on code, and the "vm".
 Tiny Basic as a start of the open source movement,
 and why it started: as a reply to Bill Gates intensions
 and the problem with piracy (or "piracy").
+
+On IL
+https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
+
+More verbatim implementation of IL:
+http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
+
+
+#### MOREOVER
 
 Bill Gates "protection" in e.g. C64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
@@ -21,7 +33,7 @@ https://www.pagetable.com/?p=774
 
 
 
-MAYBE
+#### MAYBE
 
 Wozniack Integer BASIC 1976:
 https://en.wikipedia.org/wiki/Integer_BASIC
