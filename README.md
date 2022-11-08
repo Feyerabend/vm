@@ -14,8 +14,16 @@ were corrected and many more additions have been made along the way.
 You also might have a look at the Wikipedia page on VMs:
 https://en.wikipedia.org/wiki/Virtual_machine
 
+These samples assume some understanding of elementary computer science,
+as you would get from an introductory course in e.g. programming. They are
+also presumed to be interesting for those who want to go further than the
+elementary.
+
 My interest in virtual machines started long time ago, first with
 *USCD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
+
+
+### concepts
 
 __NOTE: The term "virtual machine" can often be replaced by "emulator",
 "interpreter" etc. and perhaps should not be restricted or qualified too much
@@ -42,10 +50,6 @@ in any way. There are many missing necessary features and code that
 should be amended were it written for real purposes. The idea is to show
 and view certain aspects on coding/programming and to hide others.__
 
-These samples assume some understanding of elementary computer science,
-as you would get from an introductory course in e.g. programming. They are
-also presumed to be interesting for those who want to go further than the
-elementary.
 
 
 ## *From virtual machines to compilers*
