@@ -23,13 +23,13 @@ My interest in virtual machines started long time ago, first with
 *USCD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
 
 
-### concepts
+### A note on concepts
 
-__NOTE: The term "virtual machine" can often be replaced by "emulator",
+The term "virtual machine" can often be replaced by "emulator",
 "interpreter" etc. and perhaps should not be restricted or qualified too much
 right here. The idea of an abstraction that separates the underlying mechanics
 from the levels above is what should be observed, not a deepend confusion of
-concepts which already are often ambiguous.__
+concepts which already are often ambiguous.
 
 The term "virtual machine" and also "interpreter" has been used for such diverse
 fields as from the Apollo Guidance Computer,[^2] code from Busicom interpreted[^3]
