@@ -99,7 +99,7 @@
       GOTO TOOLONG
     ENDIF
     PRINT "You have taken ";
-    PRINT M
+    PRINT M;
     PRINT " turns so far."
     GOTO AGAIN
 
@@ -108,7 +108,7 @@
 !   RIGHT # here
     PRINT "...RIGHT HERE!"
     PRINT "You took ";
-    PRINT M
+    PRINT M;
     PRINT " turns to find it."
     END
 

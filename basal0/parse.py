@@ -124,7 +124,8 @@ class Parser:
                 self.out.append(self.printstr(string))
             else:
                 self.expression()
-                self.out.append('\tPRINT')
+                # self.out.append('\tPRINT')
+                self.printnum()
 
         # GOTO label
         elif self.recognize(TType.GOTO):
@@ -210,6 +211,13 @@ class Parser:
 
         self.expect(TType.NEWLINE)
         self.eatspace()
+
+    def printnum(self):
+        if not self.recognize(TType.SEMI):
+            self.out.append('\tPRINT')
+        else:
+            self.advance()
+            self.out.append('\tPRNT')
 
     # helper: print string through emit
     def printstr(self, item):
