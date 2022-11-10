@@ -2,6 +2,11 @@
 # https://github.com/cyningstan/TinyBASIC/blob/master/bas/hurkle.bas
 # in public domain
 
+# Intended here to illustrate the language structure of a basal/0/BASIC
+# program, not as any useful program as it doesn't really do what is
+# intended. I.e. to play a game.
+
+
 #   Initialise the random number generator
     PRINT "Think of a number."
 #   INPUT R
