@@ -9,7 +9,7 @@
 
 #   Initialise the random number generator
     PRINT "Think of a number."
-#   INPUT R
+#   INPUT R # not implemented
     LET R = 512 # simulate input
     IF R < 0 THEN
       LET R = 0
@@ -30,7 +30,7 @@
 #   Input player guess
 !   AGAIN
     PRINT "Where is the hurkle? Enter column then row."
-#   INPUT X, Y
+#   INPUT X, Y # not implemented
     LET X = 2 # simulate
     LET Y = 1 # simulate
 
