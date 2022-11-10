@@ -124,7 +124,6 @@ class Parser:
                 self.out.append(self.printstr(string))
             else:
                 self.expression()
-                # self.out.append('\tPRINT')
                 self.printnum()
 
         # GOTO label
@@ -212,6 +211,7 @@ class Parser:
         self.expect(TType.NEWLINE)
         self.eatspace()
 
+    # helper: print number with or without NL
     def printnum(self):
         if not self.recognize(TType.SEMI):
             self.out.append('\tPRINT')
