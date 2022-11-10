@@ -118,7 +118,7 @@ is added for dealing with each "word" for input to a meaningful grammar.
 ### 8. [cmp3](/cmp3)
 
 Arithmetical expressions can be compiled to bytecode/binary for the vm.
-Mentions some, but do go into what, potential problems with parsing,
+Mentions some, but do go into what, potential problems there are with parsing,
 and division by zero as an example of runtime error.
 
 
@@ -140,7 +140,7 @@ without much effort.
 
 ### 10. [basal/0](/basal0)
 
-A compiler for a variant of "[BASIC](https://en.wikipedia.org/wiki/BASIC)"
+A compiler for a poor variant of "[BASIC](https://en.wikipedia.org/wiki/BASIC)"
 which uses the previous vm (in C). The compiler is now written in the "rich"
 high-level language Python3. The many features of Python make it much
 easier to write certain tasks, but also thus hides some internal mechanism,
