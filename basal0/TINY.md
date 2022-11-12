@@ -134,7 +134,8 @@ far from, COPYLEFT.*
 the GNU project in 1983, https://www.gnu.org/gnu/rms-lisp.html
 
 
-### Tiny internals
+## Tiny internals
+
 & vm (or abstract machine) Tiny BASIC
 
 On IL
