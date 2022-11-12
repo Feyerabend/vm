@@ -126,8 +126,8 @@ as they might have been.[^rms]*
 *Today when software is created, there are more than one way to
 go about doing it. Even Microsoft, owning GitHub, acknowledge
 the strong community of developers involved in the evolution of software,
-publishing openly code. Under the once demoted ideas of giving out
-software under the ruling of something similar to, or at least not
+openly publishing code. Code under the once demoted ideas of giving out
+software free under the ruling of something similar to, or at least not
 far from, COPYLEFT.*
 
 [^rms]: Also compare Stallmans experience, who formally started
