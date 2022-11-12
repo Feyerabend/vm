@@ -113,7 +113,8 @@ idea in the preamble of implementation:
 > 10 OCTOBER, 1976 @COPYLEFT ALL WRONGS
 > RESERVED
 
-Li-Chen Wang pinpointed the ideas in the "COPYLEFT"-slogan.
+Li-Chen Wang pinpointed the ideas in the "COPYLEFT"-slogan:
+"ALL WRONGS RESERVED".
 The later addition by Roger Rauskolb also reflects the attitude
 of the upcomming community of adding contributers names.
 
