@@ -39,7 +39,7 @@ of programs and data, or at a cassette tape.
 
 But programs were hard to get when you finally had the machine.
 As hobbyists a need for sharing, buying and selling (inexpensive)
-software arised, so computer clubs were one of the forums.
+software arised, so computer clubs[^homebrew] were one of the forums.
 In a generous atmosphere giving and taking could be done without
 (much or any) money in between, not always, but sometimes.
 Magazines and books had listings of code that could
@@ -59,14 +59,20 @@ time, or had no further use for. It could also be because you didn’t
 want to pay, when you could get it for free (or “free” as some would
 claim).
 
+[^homebrew]: One famous club was the Homebrew Computer Club,
+which had members such as Steve Wozniack and Steve Jobs,
+https://en.wikipedia.org/wiki/Homebrew_Computer_Club
+
 
 ## Altair BASIC
 
 So in this climate reactions from the manufacturers side came to light.
 Bill Gates wrote an open letter to those who stole and copied, without
 permission, code from his company. He, Paul Allen and Monte Davidoff
-had developed Altair BASIC. He got welcomed feedback from hundreds of
-people using his BASIC. But now suddenly he found out something interesting,
+had developed
+[Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC).
+He got welcomed feedback from hundreds of people using his BASIC.
+But now suddenly he found out something interesting,
 but irritating. He formulated his complaint like this in February 3, 1976:
 
 > Two surprising things are apparent, however. 1)
@@ -92,9 +98,10 @@ Nearly the same arguments for and against. Reactions reverbed.
 But there was something else that happend: the start of software
 that *wasn't protected* in the same way in Tiny BASIC. Actually
 Tiny BASIC was pulished as a specification already in September 1975,
-almost half a year before. Li-Chen Wang, who was behind Palo Alto Tiny
-BASIC, described the core contrasting idea in the preamble of
-implementation:
+almost half a year before.
+[Li-Chen Wang](https://en.wikipedia.org/wiki/Li-Chen_Wang),
+who was behind Palo Alto Tiny BASIC, described the core contrasting
+idea in the preamble of implementation:
 
 > TINY BASIC FOR INTEL 8080 VERSION 2.0
 > BY LI-CHEN WANG MODIFIED AND TRANSLATED
