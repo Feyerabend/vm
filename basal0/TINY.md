@@ -135,7 +135,7 @@ http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
 
 ## Microsoft BASIC
 
-MACRO 10 ..
+MACRO 10 .. https://en.wikipedia.org/wiki/MACRO-10
 
 On how Microsoft BASIC works:
 https://www.pagetable.com/?p=774
