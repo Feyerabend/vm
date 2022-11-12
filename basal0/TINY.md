@@ -9,8 +9,8 @@ But Tiny BASIC has a very interesting history of its own.
 
 One interesting controversy was between the computer famous
 [Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates) and
-what Gates understood as piracy of [Micro-Softs']
-(https://en.wikipedia.org/wiki/Microsoft)
+what Gates understood as piracy of
+[Micro-Softs'](https://en.wikipedia.org/wiki/Microsoft)
 BASIC by hobbyists in the early days of microcomputing.
 This might have been a point in history where events highlighted
 larger changes in the software industry. On one hand software
