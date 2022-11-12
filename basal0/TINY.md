@@ -115,11 +115,20 @@ of the upcomming community of adding contributers names.
 
 This was in stark contrast to the followers of Gates and company.
 
+### Note
+
 *These historical events, small but important enough,
 are however not really referenced in later recapitulations
 of background for the
 [free software movement](https://en.wikipedia.org/wiki/Free_software_movement),
 as they might have been.[^rms]*
+
+*Today when software is created, there are more than one way to
+go about doing it. Even Microsoft, owning GitHub, acknowledge
+the strong community of developers involved in the evolution of software,
+publishing openly code. Under the once demoted ideas of giving out
+software under the ruling of something similar to, or at least not
+far from, COPYLEFT.*
 
 [^rms]: Also compare Stallmans experience, who formally started
 the GNU project in 1983, https://www.gnu.org/gnu/rms-lisp.html
