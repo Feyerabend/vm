@@ -151,6 +151,8 @@ https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
 More verbatim implementation of IL:
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
 
+Python impl
+https://github.com/kevinthecheung/tiny-basic
 
 
 ## Microsoft BASIC
