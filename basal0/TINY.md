@@ -67,8 +67,8 @@ from hundered of people using this BASIC. But now suddenly he found
 out something interesting but irritating. He fomulated his complaint
 like this:
 
-> Two surprising things are apparent, however.
-> 1) Most of these "users" never bought BASIC (less than 10% of all
+> Two surprising things are apparent, however. 1)
+> Most of these "users" never bought BASIC (less than 10% of all
 > Altair owners have bought BASIC), and 2) The amount of royalties
 > we have received from sales to hobbyists makes the time spent
 > of Altair BASIC worth less than $2 an hour.[^letter]
