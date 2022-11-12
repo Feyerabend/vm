@@ -23,7 +23,7 @@ learned from just even reading the source code of others. The
 source code itself could improve when there were more people
 involved, it could be extended. This was also what some in the
 business understood, when they wanted feedback from customers
-when they altered things in the delivered code.
+altering things in the delivered code. Thus, improved software.
 
 In the early days of microcomputing, hobbyists made their own
 computers to a large extent themselves. There could be e.g.
@@ -35,25 +35,50 @@ for keyboard, and maybe some perforated paper tape for storage
 of programs and data, or at a cassette tape.
 
 But programs were hard to get when you finally had the machine.
-As hobbyists a need for sharing, buying and selling software arised,
-so computer clubs were one of the forums. In a generous atmosphere
-giving and taking could be done without money in between, not always,
-but sometimes. Magazines and books had listings of code that could
-be entered and run on the computer. But also as software has the
+As hobbyists a need for sharing, buying and selling (inexpensive)
+software arised, so computer clubs were one of the forums.
+In a generous atmosphere giving and taking could be done without
+(much or any) money in between, not always, but sometimes.
+Magazines and books had listings of code that could
+be entered manually through a keyboard (or switches) to
+run on the computer. But also as software has the
 characteristic of being copied without losing quality (as in the
 case of music and cassette tapes e.g.), software could be distributed
 without the consent of the author or authors. This could understandably
-be understood as some kind of piracy of the author. In this case the
-intention was that software was only to be sold, not given away. But
+be understood as some kind of piracy or robbery from the author.
+In this case the intention from the author (programmer) was that
+software was only to be sold, not given away. But
 due to different reasons copies of originally sold software were
 distributed among enthusiasts. There reason could be that it was too
 expensive to buy, if you could not afford it. It could be that you
 only wanted to explore software you didn’t really need for a long
 time, or had no further use for. It could also be because you didn’t
-want to pay, when you could get it for free (or “free”).
+want to pay, when you could get it for free (or “free” as some would
+claim).
 
 
 ## Tiny BASIC
+
+So in this climate reactions from the manufacturers side came to light.
+Bill Gates apparently wrote an open letter to those who stole and
+copied, without permission, code from his company. He, Paul Allen and
+Monte Davidoff had developed Altair BASIC. Now suddenly he found
+out something interesting. He fomulated his complaint like this:
+
+> 1) Most of these "users" never bought BASIC (less than 10% of all
+> Altair owners have bought BASIC), and 2) The amount of royalties
+> we have received from sales to hobbyists makes the time spent
+> of Altair BASIC worth less than $2 an hour.[^letter]
+
+[^letter]: https://en.wikipedia.org/wiki/File:Bill_Gates_Letter_to_Hobbyists_ocr.pdf
+
+He wondered if this was fair, stealing software but paying for hardware.
+
+> As the majority of hobbyists must be aware, most of you steal
+> your software.
+
+Bill Gates lamented.
+
 
 Tiny Basic, some comments on code, and the "vm".
 Tiny Basic as a start of the open source movement,
