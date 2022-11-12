@@ -160,6 +160,9 @@ MACRO 10 .. https://en.wikipedia.org/wiki/MACRO-10
 On how Microsoft BASIC works:
 https://www.pagetable.com/?p=774
 
+Some code:
+https://github.com/mist64/msbasic
+
 Bill Gates "protection" in e.g. C64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
 
