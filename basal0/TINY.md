@@ -2,8 +2,8 @@
 
 ## Background
 
-This BASIC basal/0 takes it inspiration from TinyBasic.
-But TinyBasic has a very interesting history of its own.
+This BASIC basal/0 takes it inspiration from Tiny BASIC.
+But Tiny BASIC has a very interesting history of its own.
 
 
 One interesting controversy was between the computer famous
