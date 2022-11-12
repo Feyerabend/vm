@@ -57,7 +57,7 @@ want to pay, when you could get it for free (or “free” as some would
 claim).
 
 
-## Tiny BASIC
+## Altair BASIC
 
 So in this climate reactions from the manufacturers side came to light.
 Bill Gates apparently wrote an open letter to those who stole and
@@ -65,7 +65,7 @@ copied, without permission, code from his company. He, Paul Allen and
 Monte Davidoff had developed Altair BASIC. He got welcomed feedback
 from hundered of people using this BASIC. But now suddenly he found
 out something interesting but irritating. He fomulated his complaint
-like this:
+like this in February 3, 1976:
 
 > Two surprising things are apparent, however. 1)
 > Most of these "users" never bought BASIC (less than 10% of all
@@ -81,6 +81,9 @@ He wondered if this was fair, stealing software but paying for hardware.
 > your software.
 
 Bill Gates lamented.
+
+
+## Tiny BASIC
 
 Well the aftermath is much in echo still today, as you can imagine.
 Nearly the same arguments for and against. Reactions reverbed.
@@ -107,7 +110,9 @@ More verbatim implementation of IL:
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
 
 
-#### MOREOVER
+## Microsoft BASIC
+
+MACRO 10 ..
 
 Bill Gates "protection" in e.g. C64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
