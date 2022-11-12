@@ -119,8 +119,10 @@ This was in stark contrast to the followers of Gates and company.
 are however not really referenced in later recapitulations
 of background for the
 [free software movement](https://en.wikipedia.org/wiki/Free_software_movement),
-as they might have been.*
+as they might have been.[^rms]*
 
+[^rms]: Also compare Stallmans experience, who formally started
+the GNU project in 1983, https://www.gnu.org/gnu/rms-lisp.html
 
 
 ### Tiny internals
