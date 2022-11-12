@@ -60,7 +60,9 @@ want to pay, when you could get it for free (or “free” as some would
 claim).
 
 [^homebrew]: One famous club was the Homebrew Computer Club,
-which had members such as Steve Wozniack and Steve Jobs,
+which had members such as
+[Steve Wozniak](https://en.wikipedia.org/wiki/Steve_Wozniak) and
+[Steve Jobs](https://en.wikipedia.org/wiki/Steve_Jobs),
 https://en.wikipedia.org/wiki/Homebrew_Computer_Club
 
 
@@ -68,7 +70,9 @@ https://en.wikipedia.org/wiki/Homebrew_Computer_Club
 
 So in this climate reactions from the manufacturers side came to light.
 Bill Gates wrote an open letter to those who stole and copied, without
-permission, code from his company. He, Paul Allen and Monte Davidoff
+permission, code from his company. He,
+[Paul Allen](https://en.wikipedia.org/wiki/Paul_Allen) and
+lesser known [Monte Davidoff](https://en.wikipedia.org/wiki/Monte_Davidoff)
 had developed
 [Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC).
 He got welcomed feedback from hundreds of people using his BASIC.
@@ -130,8 +134,10 @@ openly publishing code. Code under the once demoted ideas of giving out
 software free under the ruling of something similar to, or at least not
 far from, COPYLEFT.*
 
-[^rms]: Also compare Stallmans experience, who formally started
-the GNU project in 1983, https://www.gnu.org/gnu/rms-lisp.html
+[^rms]: Also compare
+[Stallmans](https://en.wikipedia.org/wiki/Richard_Stallman)
+experience, who formally started the GNU project in 1983,
+https://www.gnu.org/gnu/rms-lisp.html.
 
 
 ## Tiny internals
