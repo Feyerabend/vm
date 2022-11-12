@@ -63,12 +63,11 @@ claim).
 ## Altair BASIC
 
 So in this climate reactions from the manufacturers side came to light.
-Bill Gates apparently wrote an open letter to those who stole and
-copied, without permission, code from his company. He, Paul Allen and
-Monte Davidoff had developed Altair BASIC. He got welcomed feedback
-from hundered of people using this BASIC. But now suddenly he found
-out something interesting but irritating. He fomulated his complaint
-like this in February 3, 1976:
+Bill Gates wrote an open letter to those who stole and copied, without
+permission, code from his company. He, Paul Allen and Monte Davidoff
+had developed Altair BASIC. He got welcomed feedback from hundreds of
+people using his BASIC. But now suddenly he found out something interesting,
+but irritating. He formulated his complaint like this in February 3, 1976:
 
 > Two surprising things are apparent, however. 1)
 > Most of these "users" never bought BASIC (less than 10% of all
@@ -78,7 +77,7 @@ like this in February 3, 1976:
 
 [^letter]: https://en.wikipedia.org/wiki/File:Bill_Gates_Letter_to_Hobbyists_ocr.pdf
 
-He wondered if this was fair, stealing software but paying for hardware.
+He wondered if this was fair, stealing software but paying for hardware?
 
 > As the majority of hobbyists must be aware, most of you steal
 > your software.
@@ -91,9 +90,9 @@ Bill Gates lamented.
 Well the aftermath is much in echo still today, as you can imagine.
 Nearly the same arguments for and against. Reactions reverbed.
 But there was something else that happend: the start of software
-that wasn't protected in Tiny BASIC. Actually Tiny BASIC was
-pulished as a specification already in September 1975, almost
-half a year before. Li-Chen Wang, who was behind Palo Alto Tiny
+that *wasn't protected* in the same way in Tiny BASIC. Actually
+Tiny BASIC was pulished as a specification already in September 1975,
+almost half a year before. Li-Chen Wang, who was behind Palo Alto Tiny
 BASIC, described the core contrasting idea in the preamble of
 implementation:
 
@@ -109,9 +108,15 @@ of the upcomming community of adding contributers names.
 
 This was in stark contrast to the followers of Gates and company.
 
+*These historical events, small but important enough,
+are however not really referenced in later recapitulations
+of background for the
+[free software movement](https://en.wikipedia.org/wiki/Free_software_movement),
+as they might have been.*
 
 
-### internal & vm (or abstract machine)
+
+### internal & vm (or abstract machine) Tiny BASIC
 
 On IL
 https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
