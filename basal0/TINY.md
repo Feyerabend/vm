@@ -82,6 +82,18 @@ He wondered if this was fair, stealing software but paying for hardware.
 
 Bill Gates lamented.
 
+Well the aftermath is much in echo still today, as you can imagine.
+Nearly the same arguments for and against. Reactions reverbed.
+But there was something else that happend: the start of software
+that wasn't protected in Tiny BASIC.
+
+> TINY BASIC FOR INTEL 8080 VERSION 2.0
+> BY LI-CHEN WANG MODIFIED AND TRANSLATED
+> TO INTEL MNEMONICS BY ROGER RAUSKOLB
+> 10 OCTOBER, 1976 @COPYLEFT ALL WRONGS
+> RESERVED
+
+
 
 Tiny Basic, some comments on code, and the "vm".
 Tiny Basic as a start of the open source movement,
