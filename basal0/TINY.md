@@ -123,7 +123,8 @@ as they might have been.*
 
 
 
-### internal & vm (or abstract machine) Tiny BASIC
+### Tiny internals
+& vm (or abstract machine) Tiny BASIC
 
 On IL
 https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
