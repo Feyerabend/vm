@@ -2,12 +2,15 @@
 
 ## Background
 
-This BASIC *basal/0* takes it inspiration from Tiny BASIC.
+This BASIC *basal/0* takes it inspiration from
+[Tiny BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC).
 But Tiny BASIC has a very interesting history of its own.
 
 
 One interesting controversy was between the computer famous
-Bill Gates and what Gates understood as piracy of Micro-Softs’
+[Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates) and
+what Gates understood as piracy of [Micro-Softs]
+(https://en.wikipedia.org/wiki/Microsoft)’
 BASIC by hobbyists in the early days of microcomputing.
 This might have been a point in history where events highlighted
 larger changes in the software industry. On one hand software
@@ -88,7 +91,11 @@ Bill Gates lamented.
 Well the aftermath is much in echo still today, as you can imagine.
 Nearly the same arguments for and against. Reactions reverbed.
 But there was something else that happend: the start of software
-that wasn't protected in Tiny BASIC.
+that wasn't protected in Tiny BASIC. Actually Tiny BASIC was
+pulished as a specification already in September 1975, almost
+half a year before. Li-Chen Wang, who was behind Palo Alto Tiny
+BASIC, described the core contrasting idea in the preamble of
+implementation:
 
 > TINY BASIC FOR INTEL 8080 VERSION 2.0
 > BY LI-CHEN WANG MODIFIED AND TRANSLATED
@@ -96,12 +103,15 @@ that wasn't protected in Tiny BASIC.
 > 10 OCTOBER, 1976 @COPYLEFT ALL WRONGS
 > RESERVED
 
+Li-Chen Wang pinpointed the ideas in the "COPYLEFT"-slogan.
+The later addition by Roger Rauskolb also reflects the attitude
+of the upcomming community of adding contributers names.
+
+This was in stark contrast to the followers of Gates and company.
 
 
-Tiny Basic, some comments on code, and the "vm".
-Tiny Basic as a start of the open source movement,
-and why it started: as a reply to Bill Gates intensions
-and the problem with piracy (or "piracy").
+
+### internal & vm (or abstract machine)
 
 On IL
 https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
@@ -110,9 +120,13 @@ More verbatim implementation of IL:
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
 
 
+
 ## Microsoft BASIC
 
 MACRO 10 ..
+
+On how Microsoft BASIC works:
+https://www.pagetable.com/?p=774
 
 Bill Gates "protection" in e.g. C64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
