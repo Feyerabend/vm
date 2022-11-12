@@ -2,7 +2,7 @@
 
 ## Background
 
-This BASIC basal/0 takes it inspiration from Tiny BASIC.
+This BASIC *basal/0* takes it inspiration from Tiny BASIC.
 But Tiny BASIC has a very interesting history of its own.
 
 
