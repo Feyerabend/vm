@@ -105,9 +105,9 @@ Bill Gates lamented.
 Well the aftermath is much in echo still today, as you can imagine.
 Nearly the same arguments for and against. Reactions reverberated.
 But there was something else that happend: the start of software
-that *wasn't protected* in the same way in Tiny BASIC. Actually
-Tiny BASIC was pulished as a specification already in September 1975,
-almost half a year before Gates letter was published.
+that *wasn't protected* in the same way in __Tiny BASIC__. Actually
+Tiny BASIC was published as a specification already in September 1975,
+almost half a year before Gates' letter was published.
 [Li-Chen Wang](https://en.wikipedia.org/wiki/Li-Chen_Wang),
 who was behind Palo Alto Tiny BASIC, described the core contrasting
 idea in the preamble of implementation:
@@ -119,9 +119,9 @@ idea in the preamble of implementation:
 > RESERVED
 
 Li-Chen Wang pinpointed the ideas in the "COPYLEFT"-slogan:
-"ALL WRONGS RESERVED".
-The later addition by Roger Rauskolb also reflects the attitude
-of the upcomming community of adding contributers names.
+"ALL WRONGS RESERVED". The later addition by Roger Rauskolb
+also reflects the attitude of the upcomming community of adding
+contributers names together with what was to become the "license".
 
 This was in stark contrast to the followers of Gates and company.
 
