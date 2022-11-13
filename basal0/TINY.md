@@ -7,8 +7,9 @@ This BASIC *basal/0* takes it inspiration from
 But Tiny BASIC has a very interesting history of its own.
 
 
-One interesting controversy was between the computer famous
-[Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates) and
+One interesting controversy was between
+[Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates) of
+computer fame, and
 what Gates understood as piracy of
 [Micro-Softs'](https://en.wikipedia.org/wiki/Microsoft)
 BASIC by hobbyists in the early days of microcomputing.
