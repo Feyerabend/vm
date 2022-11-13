@@ -98,7 +98,7 @@ Bill Gates lamented.
 ## Tiny BASIC
 
 Well the aftermath is much in echo still today, as you can imagine.
-Nearly the same arguments for and against. Reactions reverbed.
+Nearly the same arguments for and against. Reactions reverberated.
 But there was something else that happend: the start of software
 that *wasn't protected* in the same way in Tiny BASIC. Actually
 Tiny BASIC was pulished as a specification already in September 1975,
