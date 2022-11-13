@@ -42,7 +42,7 @@ But programs were hard to get when you finally had the machine.
 These machines were so small there really was no market for "applications".
 You could make programs yourself, but then you need access to some 
 programming language, if you didn't have a lot of time to write
-assembly code by hand which often was the case.
+assembly/machine code by hand which often was the case.
 As hobbyists, a need for sharing, buying and selling (inexpensive)
 software arised, so computer clubs[^homebrew] were one of the forums,
 where it could happend. In a generous atmosphere giving and
