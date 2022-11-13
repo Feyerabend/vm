@@ -102,7 +102,7 @@ Nearly the same arguments for and against. Reactions reverbed.
 But there was something else that happend: the start of software
 that *wasn't protected* in the same way in Tiny BASIC. Actually
 Tiny BASIC was pulished as a specification already in September 1975,
-almost half a year before.
+almost half a year before Gates letter was published.
 [Li-Chen Wang](https://en.wikipedia.org/wiki/Li-Chen_Wang),
 who was behind Palo Alto Tiny BASIC, described the core contrasting
 idea in the preamble of implementation:
