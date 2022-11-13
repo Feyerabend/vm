@@ -77,13 +77,13 @@ had developed
 [Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC).
 He got welcomed feedback from hundreds of people using his BASIC.
 But now suddenly he found out something interesting,
-but irritating. He formulated his complaint like this in February 3, 1976:
+but irritating. He formulated his complaint like this in February 3, 1976:[^letter]
 
 > Two surprising things are apparent, however. 1)
 > Most of these "users" never bought BASIC (less than 10% of all
 > Altair owners have bought BASIC), and 2) The amount of royalties
 > we have received from sales to hobbyists makes the time spent
-> of Altair BASIC worth less than $2 an hour.[^letter]
+> of Altair BASIC worth less than $2 an hour.
 
 [^letter]: https://en.wikipedia.org/wiki/File:Bill_Gates_Letter_to_Hobbyists_ocr.pdf
 
