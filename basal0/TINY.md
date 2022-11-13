@@ -32,11 +32,11 @@ altering things in the delivered code. Thus, improved software.
 In the early days of microcomputing, hobbyists made their own
 computers to a large extent themselves. There could be e.g.
 schematic for circuits published in a magazine, but then you
-had to buy, solder, etch boards, etc. to manufacture the computer.
-A small industry of computer kits emerged, some even prefabricated
-to the degree you could buy the kit and plug in an old teletype
-for keyboard, and maybe some perforated paper tape for storage
-of programs and data, or at a cassette tape.
+had to buy components, solder, etch boards, etc. to manufacture
+the computer. A small industry of computer kits emerged, some
+even prefabricated to the degree you could buy the kit and plug
+in an old teletype for keyboard, and maybe some perforated paper
+tape for storage of programs and data, or at a cassette tape.
 
 But programs were hard to get when you finally had the machine.
 These machines were so small there really was no market for "applications".
