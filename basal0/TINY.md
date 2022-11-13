@@ -39,26 +39,30 @@ for keyboard, and maybe some perforated paper tape for storage
 of programs and data, or at a cassette tape.
 
 But programs were hard to get when you finally had the machine.
-As hobbyists a need for sharing, buying and selling (inexpensive)
-software arised, so computer clubs[^homebrew] were one of the forums.
-In a generous atmosphere giving and taking could be done without
-(much or any) money in between, not always, but sometimes.
-Magazines and books had listings of code that could
-be entered manually through a keyboard (or switches) to
-run on the computer. But also as software has the
+These machines were so small there really was no market for "applications".
+You could make programs yourself, but then you need access to some 
+programming language, if you didn't have a lot of time to write
+assembly code by hand which often was the case.
+As hobbyists, a need for sharing, buying and selling (inexpensive)
+software arised, so computer clubs[^homebrew] were one of the forums,
+where it could happend. In a generous atmosphere giving and
+taking could be done without (much or any) money in between,
+not always, but sometimes. Magazines and books had listings
+of code that could be entered manually through a keyboard
+(or switches) to run on the computer. But also as software has the
 characteristic of being copied without losing quality (as in the
-case of music and cassette tapes e.g.), software could be distributed
-without the consent of the author or authors. This could understandably
-be understood as some kind of piracy or robbery from the author.
-In this case the intention from the author (programmer) was that
-software was only to be sold, not given away. But
-due to different reasons copies of originally sold software were
-distributed among enthusiasts. There reason could be that it was too
-expensive to buy, if you could not afford it. It could be that you
-only wanted to explore software you didn’t really need for a long
-time, or had no further use for. It could also be because you didn’t
-want to pay, when you could get it for free (or “free” as some would
-claim).
+case of music and cassette tapes e.g.), software could easily be
+distributed without the consent of the author or authors.
+This could understandably be understood as some kind of piracy
+or robbery from the author. In this case the intention from the
+author (programmer) was that software was only to be sold, not
+given away. But due to different reasons copies of originally sold
+software were distributed among enthusiasts. There reason could be
+that it was too expensive to buy, if you could not afford it. It
+could be that you only wanted to explore software you didn’t really
+needed for a long time, or had no further use for. It could also be
+because you didn’t want to pay, when you could get it for free
+(or “free” as some would claim).
 
 [^homebrew]: One famous club was the Homebrew Computer Club,
 which had members such as
