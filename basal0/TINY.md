@@ -199,7 +199,7 @@ To avoid problems with the mentioned piracy, a hidden message
 from the programmers/ the company (read: Gates and Microsoft)
 was embedded in code. This message could be called and showed
 up on screen, establishing from where the code originated,
-if there were any doubt.[^easter]
+if there were any doubts.[^easter]
 
 [^easter]: Also read about the more benign "protection" or
 "easter egg" by Bill Gates on e.g. Commodore 64:
