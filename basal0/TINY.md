@@ -187,8 +187,7 @@ the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
 adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
-and even source code from 1978: https://www.pagetable.com/?p=774.
-Also some code can be found at: https://github.com/mist64/msbasic.
+and even source code from 1978: https://www.pagetable.com/?p=774.[^msbasic]
 As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
 
@@ -201,3 +200,5 @@ Also read about the more benign "protection" by Bill Gates on e.g.
 Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
 
+[^msbasic]: Also some interesting modern code translations for the
+MOS 6502 can be found at: https://github.com/mist64/msbasic.
