@@ -162,36 +162,37 @@ https://github.com/kevinthecheung/tiny-basic
 
 ## Microsoft BASIC
 
-MACRO 10 .. https://en.wikipedia.org/wiki/MACRO-10
+After Altair BASIC, Gates and Allen clearly focused their
+interests to build a company for the rising market of
+BASIC interpreters. The plethora of newly designed
+microcomputers popping up, they needed a software base,
+where BASIC suited perfectly. There were other attempts
+such as word processors, without a start in a system for
+BASIC, but they were relegated to a smaller market.
 
-On how Microsoft BASIC works:
-https://www.pagetable.com/?p=774
+Microsoft BASIC came to dominate the microsystems of the
+time, and was (almost) the de facto standard eventually.
+As an example, Steve Wozniack wrote a
+[Integer BASIC](https://en.wikipedia.org/wiki/Integer_BASIC) for
+the Apple II, but it was later replaced with a new version from
+Microsoft, as Woz din't have the time to complete his floating
+point version.
 
-Some code:
-https://github.com/mist64/msbasic
+At the start Gates and Allen used an assembler
+[MACRO-10](https://en.wikipedia.org/wiki/MACRO-10) on 
+a minicomputer PDP-10 to produce codes for especially
+the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
+processor. As every computer architecture was a bit different,
+adjustments to each variant had to be assembled.
 
-Bill Gates "protection" in e.g. C64:
+To avoid problems with mentioned piracy, a hidden message
+from the programmers/ the company was embedded in code.
+This message could be called and showed up on screen,
+establishing from where the code originated, if in doubt.
+
+There is an article detailing on how Microsoft BASIC works
+and source code: https://www.pagetable.com/?p=774.
+Also read about the protection by Bill Gates in e.g. C64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
-
-Micro-Soft BASIC for M6502:
-https://www.pagetable.com/docs/M6502.MAC.txt
-
-Microsoft BASIC for 6502 Original Source Code [1978]
-2015-01-13 by Michael Steil
-Original 1978 source code of Microsoft BASIC for 6502 with all original comments, documentation and easter eggs:
-https://www.pagetable.com/?p=774
-
-
-
-
-#### MAYBE
-
-Wozniack Integer BASIC 1976:
-https://en.wikipedia.org/wiki/Integer_BASIC
-
-Sample Breakout:
-https://github.com/cmosher01/Apple-II-Source/blob/master/docs/breakout.md
-
-
-MacBasic 1985:
-https://www.folklore.org/StoryView.py?project=Macintosh&story=MacBasic.txt
+Also some code can be found at:
+https://github.com/mist64/msbasic
