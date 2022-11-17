@@ -177,7 +177,7 @@ and was (almost) the de facto standard eventually. As an example
 of spread, Steve Wozniack wrote an
 [Integer BASIC](https://en.wikipedia.org/wiki/Integer_BASIC) for
 his Apple II, but it was later replaced with a new version of BASIC
-from Microsoft, as Woz din't have the time to complete his floating
+from Microsoft, as Woz didn't have the time to complete his floating
 point version and Jobs were impatient.
 
 At the start Gates and Allen used an assembler
@@ -189,7 +189,7 @@ adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
 and even source code from 1978: https://www.pagetable.com/?p=774.
 Also some code can be found at: https://github.com/mist64/msbasic.
-As timed progressed certain companies got the source code from
+As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
 
 To avoid problems with the mentioned piracy, a hidden message
@@ -197,6 +197,7 @@ from the programmers/ the company (read: Gates and Microsoft)
 was embedded in code. This message could be called and showed
 up on screen, establishing from where the code originated,
 if there were any doubt.
-Also read about the protection by Bill Gates on e.g.
+Also read about the more benign "protection" by Bill Gates on e.g.
 Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
+
