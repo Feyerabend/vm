@@ -178,7 +178,7 @@ of spread, Steve Wozniack wrote an
 [Integer BASIC](https://en.wikipedia.org/wiki/Integer_BASIC) for
 his Apple II, but it was later replaced with a new version of BASIC
 from Microsoft, as Woz didn't have the time to complete his floating
-point version and Jobs were impatient.
+point version and Steve Jobs were impatient.
 
 At the start Gates and Allen used an assembler
 [MACRO-10](https://en.wikipedia.org/wiki/MACRO-10) on 
