@@ -187,9 +187,13 @@ the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
 adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
-and even source code from 1978: https://www.pagetable.com/?p=774.[^msbasic]
+and even source code from 1978: https://www.pagetable.com/?p=774.
+[^msbasic]
+
 As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
+Notably [Commodore International](https://en.wikipedia.org/wiki/Commodore_International)
+and [Apple Inc.](https://en.wikipedia.org/wiki/Apple_Inc.).
 
 To avoid problems with the mentioned piracy, a hidden message
 from the programmers/ the company (read: Gates and Microsoft)
