@@ -196,4 +196,7 @@ This message could be called and showed up on screen,
 establishing from where the code originated, if in doubt.
 Also read about the protection by Bill Gates on e.g.
 Commodore 64:
-https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
+https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
+As timed progressed certain companies got source from
+Microsoft, and adopted it to specific computers themselves.
+
