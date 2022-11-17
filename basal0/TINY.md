@@ -193,15 +193,16 @@ and even source code from 1978: https://www.pagetable.com/?p=774.
 As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
 Notably [Commodore International](https://en.wikipedia.org/wiki/Commodore_International)
-and [Apple Inc.](https://en.wikipedia.org/wiki/Apple_Inc.).
+and [Apple Inc.](https://en.wikipedia.org/wiki/Apple_Inc.)
 
 To avoid problems with the mentioned piracy, a hidden message
 from the programmers/ the company (read: Gates and Microsoft)
 was embedded in code. This message could be called and showed
 up on screen, establishing from where the code originated,
-if there were any doubt.
-Also read about the more benign "protection" by Bill Gates on e.g.
-Commodore 64:
+if there were any doubt.[^easter]
+
+[^easter]: Also read about the more benign "protection" or
+"easter egg" by Bill Gates on e.g. Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
 
 [^msbasic]: Also some interesting modern code translations for the
