@@ -165,37 +165,38 @@ https://github.com/kevinthecheung/tiny-basic
 After Altair BASIC, Gates and Allen clearly focused their
 interests to build a company for the rising market of
 BASIC interpreters. The plethora of newly designed
-microcomputers popping up they needed a software base,
-where BASIC suited perfectly. There were other attempts
+microcomputers popping up all the time needed a software base,
+a system, where BASIC suited perfectly. There were other attempts
 such as word processors without a start in a system for
-BASIC, but they were relegated to a smaller market.
+BASIC, but they were relegated to a much smaller market.
+Microsoft actually begun working on a APL-language which
+was very popular at the time, but scrapped it in the end.
 
-Microsoft BASIC came to dominate the microsystems of the
-time, and was (almost) the de facto standard eventually.
-As an example, Steve Wozniack wrote a
+Microsoft BASIC came to dominate the microsystems of the time,
+and was (almost) the de facto standard eventually. As an example
+of spread, Steve Wozniack wrote an
 [Integer BASIC](https://en.wikipedia.org/wiki/Integer_BASIC) for
-the Apple II, but it was later replaced with a new version from
-Microsoft, as Woz din't have the time to complete his floating
-point version.
+his Apple II, but it was later replaced with a new version of BASIC
+from Microsoft, as Woz din't have the time to complete his floating
+point version and Jobs were impatient.
 
 At the start Gates and Allen used an assembler
 [MACRO-10](https://en.wikipedia.org/wiki/MACRO-10) on 
 a minicomputer PDP-10 to produce codes for especially
 the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
-adjustments to each variant had to be assembled.
+adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
 and even source code from 1978: https://www.pagetable.com/?p=774.
-Also some code can be found at:
-https://github.com/mist64/msbasic
-As timed progressed certain companies got source from
-Microsoft, and adopted it to specific computers themselves.
+Also some code can be found at: https://github.com/mist64/msbasic.
+As timed progressed certain companies got the source code from
+Microsoft directly, and adopted it to specific computers themselves.
 
-
-To avoid problems with mentioned piracy, a hidden message
-from the programmers/ the company was embedded in code.
-This message could be called and showed up on screen,
-establishing from where the code originated, if in doubt.
+To avoid problems with the mentioned piracy, a hidden message
+from the programmers/ the company (read: Gates and Microsoft)
+was embedded in code. This message could be called and showed
+up on screen, establishing from where the code originated,
+if there were any doubt.
 Also read about the protection by Bill Gates on e.g.
 Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
