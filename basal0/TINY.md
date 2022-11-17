@@ -165,9 +165,9 @@ https://github.com/kevinthecheung/tiny-basic
 After Altair BASIC, Gates and Allen clearly focused their
 interests to build a company for the rising market of
 BASIC interpreters. The plethora of newly designed
-microcomputers popping up, they needed a software base,
+microcomputers popping up they needed a software base,
 where BASIC suited perfectly. There were other attempts
-such as word processors, without a start in a system for
+such as word processors without a start in a system for
 BASIC, but they were relegated to a smaller market.
 
 Microsoft BASIC came to dominate the microsystems of the
@@ -184,15 +184,16 @@ a minicomputer PDP-10 to produce codes for especially
 the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
 adjustments to each variant had to be assembled.
+There is an article detailing on how Microsoft BASIC works
+and even source code from 1978: https://www.pagetable.com/?p=774.
+Also some code can be found at:
+https://github.com/mist64/msbasic
+
 
 To avoid problems with mentioned piracy, a hidden message
 from the programmers/ the company was embedded in code.
 This message could be called and showed up on screen,
 establishing from where the code originated, if in doubt.
-
-There is an article detailing on how Microsoft BASIC works
-and source code: https://www.pagetable.com/?p=774.
-Also read about the protection by Bill Gates in e.g. C64:
+Also read about the protection by Bill Gates on e.g.
+Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
-Also some code can be found at:
-https://github.com/mist64/msbasic
