@@ -188,6 +188,8 @@ There is an article detailing on how Microsoft BASIC works
 and even source code from 1978: https://www.pagetable.com/?p=774.
 Also some code can be found at:
 https://github.com/mist64/msbasic
+As timed progressed certain companies got source from
+Microsoft, and adopted it to specific computers themselves.
 
 
 To avoid problems with mentioned piracy, a hidden message
@@ -197,6 +199,3 @@ establishing from where the code originated, if in doubt.
 Also read about the protection by Bill Gates on e.g.
 Commodore 64:
 https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
-As timed progressed certain companies got source from
-Microsoft, and adopted it to specific computers themselves.
-
