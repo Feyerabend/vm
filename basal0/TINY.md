@@ -71,7 +71,7 @@ which had members such as
 https://en.wikipedia.org/wiki/Homebrew_Computer_Club
 
 
-## Altair BASIC
+## [Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC)
 
 So in this climate reactions from the manufacturers side came to light.
 Bill Gates wrote an open letter to those who stole and copied, without
