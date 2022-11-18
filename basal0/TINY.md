@@ -169,9 +169,11 @@ microcomputers popping up all the time needed a software base,
 a system, where BASIC suited perfectly. There were other attempts
 such as word processors without a start in a system for
 BASIC, but they were relegated to a much smaller market.
-Microsoft actually begun working on a APL-language which
-was very popular at the time, but scrapped it in the end.
-It wasn't going to be any larger market for this.
+Microsoft actually begun working on a
+[APL](https://en.wikipedia.org/wiki/APL_(programming_language)-language
+interpreter which was very popular at the time, but scrapped it
+at the end. Gates realized it wasn't going to be any larger market
+for this.
 
 Microsoft BASIC came to dominate the microsystems of the time,
 and was (almost) the de facto standard eventually. As an example
