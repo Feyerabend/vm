@@ -177,21 +177,20 @@ to an abstract machine, and then 2) from this machine into the code for the
 actual processor itself. But it admittedly could be done either through compilation,
 or interpretation.
 
-The specification then list the program for Tiny BASIC in an IL-language in
-just 129 lines. Allison's implementation uses this approach through out,
-but he admits it is slow.[^allison]
+The specification then list the program for Tiny BASIC in an IL-language
+(interpretive language) in just 129 lines. Allison's implementation uses
+this approach through out, but he admits it is slow.[^allison] The shown program
+in IL to handle statements in BASIC did have some errors from the beginning.
+Even if some of the errors were corrected at the time, Tiny BASIC was often
+implemented without this extra layer. It was understandably better at the time
+to save memory as well as consider speed.[^il]
 
 [^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
 also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
 
-
-
-
-More verbatim implementation of IL:
-http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
-
-Python impl
-https://github.com/kevinthecheung/tiny-basic
+[^il]: In contrast a more verbatim modern implementation of IL in C:
+http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c,
+and Python: https://github.com/kevinthecheung/tiny-basic
 
 
 ## Microsoft BASIC
