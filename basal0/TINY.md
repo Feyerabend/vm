@@ -82,7 +82,8 @@ had developed
 [Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC).
 He got welcomed feedback from hundreds of people using his BASIC.
 But now suddenly he found out something interesting,
-but irritating. He formulated his complaint like this in February 3, 1976:[^letter]
+but irritating. He formulated his complaint like this in February 3,
+1976:[^letter]
 
 > Two surprising things are apparent, however. 1)
 > Most of these "users" never bought BASIC (less than 10% of all
@@ -158,7 +159,8 @@ well known *Dr. Dobb's journal*. The latter together with *Byte* was gold
 mines for us youngsters in the late 70s and early 80s -- even if they
 were quite expensive imports to Sweden.
 
-In the article which lays out the specification, the authors state:[^pcc]
+In the September 1975 article which lays out the specification,
+the authors state:[^pcc]
 
 > When you write a program in TINY BASIC there is an abstract machine
 > which is necessary to execute it. If you had a compiler it would make
@@ -171,19 +173,19 @@ In the article which lays out the specification, the authors state:[^pcc]
 Peoples Computer Company, Sept. 1975, p. 15.
 
 This was a nice twist, even if the memory footprint of the BASIC overall
-shouldn't exceed 4k byte (not unusual at the time for implementations of BASIC),
-it was to be implemented/run in two steps: 1) translate from BASIC statements
-to an abstract machine, and then 2) from this machine into the code for the
-actual processor itself. But it admittedly could be done either through compilation,
-or interpretation.
+shouldn't exceed 4k byte (not unusual at the time for implementations of
+BASIC), it was to be implemented/run in two steps: 1) translate from BASIC
+statements to an abstract machine, and then 2) from this machine into the
+code for the actual processor itself. But it admittedly could be done either
+through compilation, or interpretation.
 
 The specification then list the program for Tiny BASIC in an IL-language
 (interpretive language) in just 129 lines. Allison's implementation uses
-this approach through out, but he admits it is slow.[^allison] The shown program
-in IL to handle statements in BASIC did have some errors from the beginning.
-Even if some of the errors were corrected at the time, Tiny BASIC was often
-implemented without this extra layer. It was understandably better at the time
-to save memory as well as consider speed.[^il]
+this approach through out, but he admits it is slow.[^allison] The shown
+program in IL to handle statements in BASIC did have some errors from the
+beginning. Even if some of the errors were corrected at the time, Tiny BASIC
+was often implemented without this extra layer. It was understandably better
+at the time to save memory as well as consider speed.[^il]
 
 [^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
 also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
