@@ -158,14 +158,14 @@ well known *Dr. Dobb's journal*. The latter together with *Byte* was gold
 mines for us youngsters in the late 70s and early 80s -- even if they
 were quite expensive imports to Sweden.
 
-In the article which lays out the specification, the authors state:
+In the article which lays out the specification, the authors state:[^pcc]
 
 > When you write a program in TINY BASIC there is an abstract machine
 > which is necessary to execute it. If you had a compiler it would make
 > in the machine language of your computer a program which emulates that
 > abstract machine for your program. An interpreter implements the abstract
 > machine for the entire language and rather than translating the program
-> once to machine code it translates it dynamically as needed.[^pcc]
+> once to machine code it translates it dynamically as needed.
 
 [^pcc]: Dennis Allison, Happy Lady, & friends "Design notes for Tiny BASIC",
 Peoples Computer Company, Sept. 1975, p. 15.
