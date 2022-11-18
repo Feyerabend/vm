@@ -194,6 +194,8 @@ also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c,
 and Python: https://github.com/kevinthecheung/tiny-basic
 
+![Excerpt TINY BASIC IL](../assets/images/il.png)
+
 
 ## Microsoft BASIC
 
