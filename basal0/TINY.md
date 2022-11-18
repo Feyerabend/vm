@@ -71,7 +71,7 @@ which had members such as
 https://en.wikipedia.org/wiki/Homebrew_Computer_Club
 
 
-## [Altair BASIC](https://en.wikipedia.org/wiki/Altair_BASIC)
+## Altair BASIC
 
 So in this climate reactions from the manufacturers side came to light.
 Bill Gates wrote an open letter to those who stole and copied, without
@@ -148,10 +148,44 @@ https://www.gnu.org/gnu/rms-lisp.html.
 
 ## Tiny internals
 
-& vm (or abstract machine) Tiny BASIC
+One of the starting points for open and "freely" developed software
+in the hobbyist community thus begun with Tiny BASIC. But in this case
+it really took off after the open letter from Bill Gates, when
+implementations, variations and applications was published at an
+increasing rate. The journal which launched the Tiny BASIC
+specification, *Peoples Computer Company*, grew and later spawned the
+well known *Dr. Dobb's journal*. The latter together with *Byte* was gold
+mines for us youngsters in the late 70s and early 80s -- even if they
+were quite expensive imports to Sweden.
 
-On IL
-https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
+In the article which lays out the specification, the authors state:
+
+> When you write a program in TINY BASIC there is an abstract machine
+> which is necessary to execute it. If you had a compiler it would make
+> in the machine language of your computer a program which emulates that
+> abstract machine for your program. An interpreter implements the abstract
+> machine for the entire language and rather than translating the program
+> once to machine code it translates it dynamically as needed.[^pcc]
+
+[^pcc]: Dennis Allison, Happy Lady, & friends "Design notes for Tiny BASIC",
+Peoples Computer Company, Sept. 1975, p. 15.
+
+This was a nice twist, even if the memory footprint of the BASIC overall
+shouldn't exceed 4k byte (not unusual at the time for implementations of BASIC),
+it was to be implemented/run in two steps: 1) translate from BASIC statements
+to an abstract machine, and then 2) from this machine into the code for the
+actual processor itself. But it admittedly could be done either through compilation,
+or interpretation.
+
+The specification then list the program for Tiny BASIC in an IL-language in
+just 129 lines. Allison's implementation uses this approach through out,
+but he admits it is slow.[^allison]
+
+[^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
+also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
+
+
+
 
 More verbatim implementation of IL:
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c
