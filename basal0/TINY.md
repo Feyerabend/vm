@@ -181,11 +181,14 @@ through compilation, or interpretation.
 
 The specification then list the program for Tiny BASIC in an IL-language
 (interpretive language) in just 129 lines. Allison's implementation uses
-this approach through out, but he admits it is slow.[^allison] The shown
+this approach throughout, but he admits it is slow.[^allison] The shown
 program in IL to handle statements in BASIC did have some errors from the
 beginning. Even if some of the errors were corrected at the time, Tiny BASIC
-was often implemented without this extra layer. It was understandably better
-at the time to save memory as well as consider speed.[^il]
+was often implemented without this extra layer. It was also hard to build upon,
+hard to extend as it was designed. It was understandably better at the time
+to save memory as well as consider speed. If there were only 4k RAM and much was
+occupied by the interpreter, not much space was left for the programming in
+BASIC.[^il]
 
 [^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
 also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
