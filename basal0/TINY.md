@@ -170,7 +170,9 @@ the authors state:[^pcc]
 > once to machine code it translates it dynamically as needed.
 
 [^pcc]: Dennis Allison, Happy Lady, & friends "Design notes for Tiny BASIC",
-Peoples Computer Company, Sept. 1975, p. 15.
+*Peoples Computer Company*, Sept. 1975, p. 15. URL:
+https://archive.org/details/1975-09-peoples-computer-company
+(retrieved 2022-11-20).
 
 This was a nice twist, even if the memory footprint of the BASIC overall
 shouldn't exceed 4k byte[^4k], it was to be implemented/run in two steps:
