@@ -173,11 +173,10 @@ the authors state:[^pcc]
 Peoples Computer Company, Sept. 1975, p. 15.
 
 This was a nice twist, even if the memory footprint of the BASIC overall
-shouldn't exceed 4k byte (not unusual at the time for implementations of
-BASIC), it was to be implemented/run in two steps: 1) translate from BASIC
-statements to an abstract machine, and then 2) from this machine into the
-code for the actual processor itself. But it admittedly could be done either
-through compilation, or interpretation.
+shouldn't exceed 4k byte[^4k], it was to be implemented/run in two steps:
+1) translate from BASIC statements to an abstract machine, and then
+2) from this machine into the code for the actual processor itself.
+But it admittedly could be done either through compilation, or interpretation.
 
 The specification then list the program for Tiny BASIC in an IL-language
 (interpretive language) in just 129 lines. Allison's implementation uses
@@ -189,6 +188,15 @@ hard to extend as it was designed. It was understandably better at the time
 to save memory as well as consider speed. If there were only 4k RAM and much was
 occupied by the interpreter, not much space was left for the programming in
 BASIC.[^il]
+
+[^4k]: It wasn't unusual at the time for implementations of BASIC to be around
+this for a starter. Some extended BASIC moved up to 8k. This was also at the time
+when BASIC was loaded (by cassette) into RAM. Some bytes could be reserved and 
+used for the actual programming, in the case of Tiny BASIC it could be around
+700k of RAM. Later in 1977 Apple II, Commodore PET and TRS-80 had their
+(Microsoft) BASIC stored in ROM, but the RAM was still at the base 4k.
+Even the Swedish ABC80 in 1978 was suggested to start with 4k, but when
+launched (successfully) had 16k.
 
 [^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
 also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
