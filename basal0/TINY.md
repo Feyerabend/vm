@@ -144,7 +144,7 @@ far from, COPYLEFT.*
 [^rms]: Also compare
 [Stallmans](https://en.wikipedia.org/wiki/Richard_Stallman)
 experience, who formally started the GNU project in 1983,
-https://www.gnu.org/gnu/rms-lisp.html.
+https://www.gnu.org/gnu/rms-lisp.html (retrieved 2022-11-20).
 
 
 ## Tiny internals
@@ -201,11 +201,12 @@ Even the Swedish ABC80 in 1978 was suggested to start with 4k, but when
 launched (successfully) had 16k.
 
 [^allison]: See http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt,
-also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/.
+also https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
+(both retrieved 2022-11-20).
 
 [^il]: In contrast a more verbatim modern implementation of IL in C:
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TinyBasic.c,
-and Python: https://github.com/kevinthecheung/tiny-basic
+and Python: https://github.com/kevinthecheung/tiny-basic (both retrieved 2022-11-20).
 
 ![Excerpt TINY BASIC IL](../assets/images/il.png)
 
@@ -240,8 +241,8 @@ the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
 adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
-and even source code from 1978: https://www.pagetable.com/?p=774.
-[^msbasic]
+and even source code from 1978: https://www.pagetable.com/?p=774
+[^msbasic] (retrieved 2022-11-20).
 
 As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
@@ -256,7 +257,9 @@ if there were any doubts.[^easter]
 
 [^easter]: Also read about the more benign "protection" or
 "easter egg" by Bill Gates on e.g. Commodore 64:
-https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29.
+https://www.c64-wiki.com/wiki/Microsoft#Easter_Egg_.28Microsoft.21.29
+(retrieved 2022-11-20).
 
 [^msbasic]: Also some interesting modern code translations for the
-MOS 6502 can be found at: https://github.com/mist64/msbasic.
+MOS 6502 can be found at: https://github.com/mist64/msbasic
+(retrieved 2022-11-20).
