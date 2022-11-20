@@ -175,7 +175,7 @@ https://archive.org/details/1975-09-peoples-computer-company
 (retrieved 2022-11-20).
 
 This was a nice twist, even if the memory footprint of the BASIC overall
-shouldn't exceed 4k byte[^4k], it was to be implemented/run in two steps:
+shouldn't exceed 4k byte,[^4k] it was to be implemented/run in two steps:
 1) translate from BASIC statements to an abstract machine, and then
 2) from this machine into the code for the actual processor itself.
 But it admittedly could be done either through compilation, or interpretation.
@@ -241,8 +241,8 @@ the [MOS 6502](https://en.wikipedia.org/wiki/MOS_Technology_6502)
 processor. As every computer architecture was a bit different,
 adjustments to each variant had to be assembled separately.
 There is an article detailing on how Microsoft BASIC works
-and even source code from 1978: https://www.pagetable.com/?p=774
-[^msbasic] (retrieved 2022-11-20).
+and even source code from 1978: https://www.pagetable.com/?p=774.
+[^msbasic]
 
 As time progress certain companies got the source code from
 Microsoft directly, and adopted it to specific computers themselves.
