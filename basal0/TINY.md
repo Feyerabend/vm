@@ -54,7 +54,7 @@ characteristic of being copied without losing quality (as in the
 case of music and cassette tapes e.g.), software could easily be
 distributed without the consent of the author or authors.
 This could understandably be understood as some kind of piracy
-or robbery from the author. In this case the intention from the
+or robbery of the author. In this case the intention from the
 author (programmer) was that software was only to be sold, not
 given away. But due to different reasons copies of originally sold
 software were distributed among enthusiasts. There reason could be
