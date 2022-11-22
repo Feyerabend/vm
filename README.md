@@ -151,3 +151,12 @@ languages can be supported by the __same vm__. There are also some additional
 remarks on how to look at extending a language, near "syntactic sugar".
 I.e. a rewrite of the for us convenient language idioms to a, for the
 machine, more suitable dressing.
+
+
+### 11. [vm4](/vm4)
+
+To examplify two virtual machines, a second implementation of the vm has
+been done in Python3. They are not really mirrors of each other, as
+they differ in behaviours. Thus a *specification* is needed of a vm
+that they both implement.
+
