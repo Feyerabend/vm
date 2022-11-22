@@ -56,11 +56,14 @@ run:
 ```
 
 The language is called *basal/0* which is Swedish for "basic/0" in the spirit of *PL/0*
-and *enkel/0*. The language inherits and have similarities with BASIC. The main point
-here is to illustrate how a compiler can address manipulation of tokens, in this case,
-to enhance the language. Also BASIC has a relatively simple syntax to build from, as
-it mostly relies on simple statements that do not require to much energy to parse.
+and *enkel/0*. The language inherits and have similarities with BASIC in general or
+specifically Tiny BASIC. The main point here is to illustrate how a compiler can
+address manipulation of tokens, in this case, to enhance the language. There isn't much
+of a syntax tree here. In almost immediately compiles into assembly, jumping more
+abstractions. This is due to the relatively simple syntax BASIC is built on, as
+it mostly relies on simple statements that do not require to much "energy" to parse.
 
+Read some historical and contextual remarks I have on [Tiny BASIC](TINY.md).
 
 ## sample
 
