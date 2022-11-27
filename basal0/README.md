@@ -122,6 +122,8 @@ The order in which compilation and running is also in principal as previously:
 > ./runvm sample.b
 ```
 
+## [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)
+
 The main chain of events is in `compiler.py` itself. Here first tokens are picked from the input text `tok.py` and `lexer.py`.
 Then the result is stored as a Python dictionary to a text file `tokens.csv`. The textfile is then put through a "filter" where
 syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tokens that are equivalent but comprehensible to
