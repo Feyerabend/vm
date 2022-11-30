@@ -90,10 +90,10 @@ And then the assembler spits out the "binary" file:
 
 Which both machines can handle.
 
-#### problems with different machines
+## problems with different machines
 
-Besides this sample above, it is easy to find samples that simply do not work.
-It depends upon implementation rather than some abstractions. But instead of
-defining our own specification, next we will look at a well known programming
-language and the fact it has a virtual machine:
+Besides this sample above, it is easy to find samples that simply do not work
+on both machines. It depends upon implementations rather than some abstractions.
+But instead of defining our own specification, next we will look at a well known
+programming language, and the fact it already has a virtual machine:
 the *Java Virtual Machine* Specification.
