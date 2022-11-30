@@ -122,11 +122,13 @@ The order in which compilation and running is also in principal as previously:
 > ./runvm sample.b
 ```
 
+## syntactic sugar
+
 The main chain of events is in `compiler.py` itself. Here first tokens are picked from the input text `tok.py` and `lexer.py`.
 Then the result is stored as a Python dictionary to a text file `tokens.csv`. The textfile is then put through a "filter" where
 syntactic extras as `FOR-NEXT`, `ON-GOSUB` and `ON-GOTO` are translated into tokens that are equivalent but comprehensible to
 the compiler `parse.py`. From the compilation a pass through the assembler `asm.py` give the binary to the running vm.
-There is thus a possibility to compile without the extra filter, and thus not have access to extra sugar.
+There is thus a possibility to compile without the extra filter, and thus not have access to extra [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
 There are many (intensional) limits to this language. One limit is how `FOR-NEXT` works. No expressions are allowed,
 only numbers, to keep things simple. This allows for looping "downwards" from a higher number to a lower, negative

@@ -58,11 +58,11 @@ or robbery of the author. In this case the intention from the
 author (programmer) was that software was only to be sold, not
 given away. But due to different reasons copies of originally sold
 software were distributed among enthusiasts. There reason could be
-that it was too expensive to buy, if you could not afford it. It
-could be that you only wanted to explore software you didn’t really
-needed for a long time, or had no further use for. It could also be
-because you didn’t want to pay, when you could get it for free
-(or “free” as some would claim).
+that it was too expensive to buy, if you could not afford it ($150).
+It could be that you only wanted to explore software you didn’t
+really needed for a long time, or had no further use for. It
+could also be because you didn’t want to pay, when you could
+get it for free (or “free” as some would claim).
 
 [^homebrew]: One famous club was the Homebrew Computer Club,
 which had members such as
