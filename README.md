@@ -163,3 +163,10 @@ that they both implement.
 ### 12. [jvm1](/jvm1)
 
 Java Virtual Machine  ..
+
+## License
+
+Every folder with code should be in the main self-contained, and few if any
+dependencies. For each folder, if no other license has been explicitly added
+in that folder, the general *Unlicense* apply. In other cases where a license
+has been added, the added license is applied and valid only to that folder.
