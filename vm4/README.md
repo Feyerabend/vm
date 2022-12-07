@@ -79,7 +79,7 @@ START:
 	HALT
 ```
 
-And then the assembler spits out the "binary" file:
+And then the assembler spits out the "binary" (integer) file:
 
 ```shell
 38,13,0,28,0,12,0,27,1,5,11,16,27,1,30,
