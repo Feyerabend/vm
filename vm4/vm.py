@@ -1,4 +1,3 @@
-
 from enum import Enum, unique
 from collections import deque
 import queue
