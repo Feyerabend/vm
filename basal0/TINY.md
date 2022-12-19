@@ -98,7 +98,7 @@ He wondered if this was fair, stealing software but paying for hardware?
 > As the majority of hobbyists must be aware, most of you steal
 > your software.
 
-Bill Gates lamented.
+Bill Gates lambasted.
 
 
 ## Tiny BASIC
