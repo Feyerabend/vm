@@ -246,6 +246,8 @@ the arrays is used and an index will point to the offset given the base. So a gl
 variable is used for the base, and an index given at runtime is *added to the base*,
 which give the address from which to get a value or to store a given value.
 
+![runvm.c](../assets/images/arrays.png)
+
 A general scheme is used for accessing values in arrays.
 
 ```text
