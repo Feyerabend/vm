@@ -4,7 +4,8 @@
 
 This BASIC *basal/0* takes it inspiration from
 [Tiny BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC).
-But Tiny BASIC has a very interesting history of its own.
+But [Tiny BASIC](tinybasic-1.0.asm) has a very interesting
+history of its own.
 
 
 One interesting controversy was between
