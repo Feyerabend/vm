@@ -177,4 +177,5 @@ the instructions,[^instrwiki] with the above we get a familiar picture:
 
 [^instrwiki]: https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
 
-
+You can find the equivalent core encoded in the class file as '1A 1B 60 AC' in
+hexadecimal.
