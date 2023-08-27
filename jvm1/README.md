@@ -58,10 +58,10 @@ Hi to you!
 
 First we convert the textfile with `javac Sample.java` with the text file as
 argument, to a new file. If we were to list the content of the directory after
-compilation `javac`, an additional file would appear `Sample.class` as the
+compilation `javac`, an additional file would appear 'Sample.class' as the
 result from the compilation.
 
-Running this latter class file (without assigning the extension `.class`) as
+Running this latter class file (without assigning the extension '.class') as
 above would result in a message to the console being printed "Hi to you!".
 
 These are the two elementary steps in building a Java program: compile tool
@@ -79,7 +79,11 @@ understandable source is included in the class file.
 
 And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
 
-```text
+```console
+> javap -c Sample.class
+```
+
+```console
 Compiled from "Sample.java"
 public class Sample {
   public Sample();
