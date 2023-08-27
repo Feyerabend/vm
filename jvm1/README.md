@@ -167,9 +167,7 @@ public class Add {
 
 Especially the last part is instructive:
 
-```console
-  public static int add(int, int);
-    Code:
+```text
        0: iload_0
        1: iload_1
        2: iadd
