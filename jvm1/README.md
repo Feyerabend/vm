@@ -8,6 +8,7 @@ was printed and reprinted in a total of 16.000 ex.[^progjava] It was hot and exc
 And I wasn't the only one absorbed with the future. The web was growing quite fast,
 and Java promised to deliver a way to work with programs across the web.
 Today it's quite another story, and maybe Java will fade as things change.
+But that is another story ...
 
 [^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
 and also https://libris.kb.se/bib/2324301.
