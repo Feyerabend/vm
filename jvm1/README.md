@@ -4,7 +4,10 @@
 of a virtual machine. I started with Java when it first came out as beta in 1995.
 You could then download Java and its tools, if you adhere to it from a educational
 viewpoint. I dived into Java, and wrote a simple introduction to the language which
-was printed and reprinted in a total of 16.000 ex.[^progjava]
+was printed and reprinted in a total of 16.000 ex.[^progjava] It was hot and exciting.
+And I wasn't the only one absorbed with the future. The web was growing quite fast,
+and Java promised to deliver a way to work with programs across the web.
+Today it's quite another story, and maybe Java will fade as things change.
 
 [^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
 and also https://libris.kb.se/bib/2324301.
