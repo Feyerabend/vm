@@ -115,3 +115,51 @@ public class Sample {
        8: return
 }
 ```
+
+### another sample
+
+The sample 'Sample.java' above isn't however delivering much to inform us about the
+byte code instructions, as they mosly refer to invoking calls to procedures (or equivalent)
+in the native machine, and also referes to other classes.
+
+We could use another sample to illustrate how to numbers can be added.
+
+```java
+public class Add {
+    public static void main(String[] args) {
+        System.out.println(add(23, 45));
+    }
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+
+
+```console
+> javap -c Add.java
+Compiled from "Add.java"
+public class Add {
+  public Add();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: bipush        23
+       5: bipush        45
+       7: invokestatic  #13                 // Method add:(II)I
+      10: invokevirtual #19                 // Method java/io/PrintStream.println:(I)V
+      13: return
+
+  public static int add(int, int);
+    Code:
+       0: iload_0
+       1: iload_1
+       2: iadd
+       3: ireturn
+}
+```
