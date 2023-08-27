@@ -192,11 +192,12 @@ hexadecimal. The instruction 'iload_0' is '1A' and so on.
 ### reading class files
 
 Class files are structured in a certain way to ease reading and interpreting
-code. Each file starts with a "magic number" which is in hex 'CAFEBABE', cf.
-the hexdump above. This is a very common way for identifying files.
+code. Each file starts with a "magic number" which is in hexadecimal 'CAFEBABE',
+cf. the hexdump above. This is a very common way for identifying files.
 E.g. PDF can start with 'PDF-1.3', where a version number follows.
-Or, for RTF there is a start with '{\rtf1' and then other instructions of
-the format of text follows.
+Or, for RTF (Rich Text Format) there is a start with '{\rtf1' or something like
+this, and then other instructions of the format for text follows.
+In this way a file can even be identified without an extension to the file.
 
 Here is a small script to show the start of a class file, and
 hardcoded for reading 'Sample.class' to have it short.
