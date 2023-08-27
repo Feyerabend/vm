@@ -42,7 +42,8 @@ public class Sample {
 }
 ```
 We use tools for manipulating this by compiling it with `javac` and then
-running the compiled file with `java`. In this case it might look like this:
+running the compiled file with `java`. In this case an interaction with
+the tools might look like this:
 
 ```
 > javac Sample.java
@@ -50,12 +51,15 @@ running the compiled file with `java`. In this case it might look like this:
 Hi to you!
 ```
 
-We convert the textfile with `javac Sample.java` with the text file as
-argument. If we were to list the content of the directory after compilation,
-an additional file would appear `Sample.class` as the result from compilation.
+First we convert the textfile with `javac Sample.java` with the text file as
+argument to a new file. If we were to list the content of the directory after
+compilation (`javac`), an additional file would appear `Sample.class` as the
+result from compilation.
 
-Running this file (without assigning the extension `.class`) as above would
+Running this class file (without assigning the extension `.class`) as above would
 result in a message to the console being printed "Hi to you!".
+
+These are the two elementary steps in building a Java program.
 
 The class file can be displayed as hex and ASCII:
 
