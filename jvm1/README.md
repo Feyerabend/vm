@@ -39,7 +39,8 @@ Let's take a most simple example to illustrate what takes place when you use Jav
 in programming. The source (code) is written in simple text, here saved as a text
 file 'Sample.java'.[^javaversion]
 
-[^javaversion]: These samples have been compiled and examined with tools from Java 18.
+[^javaversion]: These samples have been compiled and examined with tools from
+version Java 18.0.2.1.
 
 ```java
 public class Sample {
