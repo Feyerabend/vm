@@ -50,7 +50,7 @@ We use tools for manipulating this by compiling it with `javac` and then
 running the compiled file with `java`. In this case an interaction with
 the tools might look like this:
 
-```
+```console
 > javac Sample.java
 > java Sample
 Hi to you!
