@@ -1,6 +1,13 @@
 # Virtual Machines
 
-*Java Virtual Machine*
+*Java Virtual Machine* and/or *Java* might be the best well known implementation
+of a virtual machine. I started with Java when it first came out as beta in 1995.
+You could then download Java and its tools, if you adhere to it from a educational
+viewpoint. I dived into Java, and wrote a simple introduction to the language which
+was printed and reprinted in a total of 16.000 ex.[^progjava]
+
+[^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
+and also https://libris.kb.se/bib/2324301.
 
 
 ## jvm1
