@@ -17,14 +17,19 @@ An assumption here is that Java[^javawiki] is well known for its principals,
 a virtual machine for running bytecodes, a compiler which translate for a
 Java-program to a sequence of bytecodes. *Sound familiar?* Previous samples
 of virtual machines have had a string of *integers* as the minimal information
-encoded and decoded between machine and compiler (or raw code).
+encoded and decoded between machine and compiler (or raw code). Another
+similarity is the separation of language from the machine, which implies
+the benefits of explicit interfaces. There can be different languages that
+can run on the same machine, as there can be different implementations of
+the machine adjusted for different hardwares.
 
 The basis for Java starts with the interface between the virtual machine and
-what comes out of the compiler: the `bytecode`, or its physical representation
-in the `class file`.[^classfilewiki]
+what comes out of the compiler: the `bytecode`,[^bytecodewiki] or its physical
+representation in the `class file`.[^classfilewiki]
 
 [^javawiki]: https://en.wikipedia.org/wiki/Java_(programming_language)
 
+[^bytecodewiki]: https://en.wikipedia.org/wiki/Java_bytecode
 [^classfilewiki]: https://en.wikipedia.org/wiki/Java_class_file
 
 
@@ -59,8 +64,8 @@ result from the compilation.
 Running this latter class file (without assigning the extension `.class`) as
 above would result in a message to the console being printed "Hi to you!".
 
-These are the two elementary steps in building a Java program: compile `javac`
-and run `java`.
+These are the two elementary steps in building a Java program: compile tool
+`javac` and the run tool `java`.
 
 
 ### sample class
