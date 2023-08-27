@@ -122,7 +122,7 @@ The sample 'Sample.java' above isn't however delivering much to inform us about 
 byte code instructions, as they mosly refer to invoking calls to procedures (or equivalent)
 in the native machine, and also referes to other classes.
 
-We could use another sample to illustrate how to numbers can be added.
+We could however use another sample to illustrate how two numbers can be added.
 
 ```java
 public class Add {
@@ -135,6 +135,7 @@ public class Add {
 }
 ```
 
+Disassembly:
 
 ```console
 > javap -c Add.java
@@ -162,4 +163,15 @@ public class Add {
        2: iadd
        3: ireturn
 }
+```
+
+Especially the last part is instructive:
+
+```console
+  public static int add(int, int);
+    Code:
+       0: iload_0
+       1: iload_1
+       2: iadd
+       3: ireturn
 ```
