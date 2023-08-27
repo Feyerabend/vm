@@ -42,7 +42,8 @@ The basis for Java starts with the interface between the virtual machine and
 what comes out of the compiler: the `bytecode`,[^bytecodewiki] or its physical
 representation in the `class file`.[^classfilewiki]
 
-[^javawiki]: https://en.wikipedia.org/wiki/Java_(programming_language)
+[^javawiki]: https://en.wikipedia.org/wiki/Java_(programming_language), and
+https://en.wikipedia.org/wiki/Java_(software_platform).
 
 [^bytecodewiki]: https://en.wikipedia.org/wiki/Java_bytecode
 [^classfilewiki]: https://en.wikipedia.org/wiki/Java_class_file
