@@ -168,8 +168,8 @@ public class Add {
 Especially the last part is instructive:
 
 ```text
-       0: iload_0
-       1: iload_1
-       2: iadd
-       3: ireturn
+       0: iload_0        // load an int value from local variable 0
+       1: iload_1        // load an int value from local variable 1
+       2: iadd           // add two ints
+       3: ireturn        // return an integer from a method
 ```
