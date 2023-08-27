@@ -28,7 +28,7 @@ in the `class file`.[^classfilewiki]
 [^classfilewiki]: https://en.wikipedia.org/wiki/Java_class_file
 
 
-### sample
+### java and javac
 
 Let's take a most simple example to illustrate what takes place when you use Java
 in programming. The source (code) is written in simple text, here saved as a text
@@ -60,6 +60,9 @@ Running this class file (without assigning the extension `.class`) as above woul
 result in a message to the console being printed "Hi to you!".
 
 These are the two elementary steps in building a Java program.
+
+
+### sample class
 
 The class file can be displayed as hex and ASCII:
 
