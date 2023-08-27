@@ -81,9 +81,6 @@ And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
 
 ```console
 > javap -c Sample.class
-```
-
-```console
 Compiled from "Sample.java"
 public class Sample {
   public Sample();
