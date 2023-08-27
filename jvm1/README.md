@@ -15,7 +15,7 @@ the reader/coder of how a reasonable modern virtual machine works in principal.
 
 An assumption here is that Java[^javawiki] is well known for its principals,
 a virtual machine for running bytecodes, a compiler which translate for a
-Java-program to a sequence of bytecodes. *Sound familiar?* Previous samples
+Java-program to a sequence of bytecodes. *Sounds familiar?* Previous samples
 of virtual machines have had a string of *integers* as the minimal information
 encoded and decoded between machine and compiler (or raw code). Another
 similarity is the separation of language from the machine, which implies
@@ -37,7 +37,9 @@ representation in the `class file`.[^classfilewiki]
 
 Let's take a most simple example to illustrate what takes place when you use Java
 in programming. The source (code) is written in simple text, here saved as a text
-file 'Sample.java'.
+file 'Sample.java'.[^javaversion]
+
+[^javaversion]: These samples have been compiled and examined with tools from Java 18.
 
 ```java
 public class Sample {
