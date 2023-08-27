@@ -8,7 +8,7 @@
 To amend problems with different implementations of virtual machines,
 a specification would be helpful. On the other hane, for our purpose as
 a pedagogical tool, the specification for Java is today quite intricate and
-volominous.[^javaspec] However, stripping some details it might enlightend
+voluminous.[^javaspec] However, stripping some details it might enlighten
 the reader/coder of how a reasonable modern virtual machine works in principal.
 
 [^javaspec]: Specifications of versions of JVM: https://docs.oracle.com/javase/specs/index.html
@@ -41,7 +41,7 @@ public class Sample {
 We convert the textfile with `javac Sample.java` with the text file as
 argument. The class file result can be displayed as hex:
 
-![Sample bytecode](assets/images/bytecode-sample.jpeg)
+![Sample bytecode](../assets/images/bytecode-sample.jpeg)
 
 And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
 
