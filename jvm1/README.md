@@ -64,8 +64,9 @@ result from the compilation.
 Running this latter class file (without assigning the extension '.class') as
 above would result in a message to the console being printed "Hi to you!".
 
-These are the two elementary steps in building a Java program: compile tool
-`javac` and the run tool `java`.
+These are the two elementary steps in building a Java program:
+* compile tool `javac`,
+* and the run tool `java`.
 
 
 ### sample class
