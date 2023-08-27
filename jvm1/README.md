@@ -52,14 +52,15 @@ Hi to you!
 ```
 
 First we convert the textfile with `javac Sample.java` with the text file as
-argument to a new file. If we were to list the content of the directory after
-compilation (`javac`), an additional file would appear `Sample.class` as the
-result from compilation.
+argument, to a new file. If we were to list the content of the directory after
+compilation `javac`, an additional file would appear `Sample.class` as the
+result from the compilation.
 
-Running this class file (without assigning the extension `.class`) as above would
-result in a message to the console being printed "Hi to you!".
+Running this latter class file (without assigning the extension `.class`) as
+above would result in a message to the console being printed "Hi to you!".
 
-These are the two elementary steps in building a Java program.
+These are the two elementary steps in building a Java program: compile `javac`
+and run `java`.
 
 
 ### sample class
