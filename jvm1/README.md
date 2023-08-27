@@ -169,10 +169,10 @@ Especially the last part is instructive. If we combine descriptions of
 the instructions,[^instrwiki] with the above we get a familiar picture:
 
 ```text
-       0: iload_0        // load an int value from local variable 0 -- 1A
-       1: iload_1        // load an int value from local variable 1 -- 1B
-       2: iadd           // add two ints                            -- 60
-       3: ireturn        // return an integer from a method         -- AC
+       0: iload_0        // load an int value from local variable 0 --> 1A
+       1: iload_1        // load an int value from local variable 1 --> 1B
+       2: iadd           // add two ints                            --> 60
+       3: ireturn        // return an integer from a method         --> AC
 ```
 
 [^instrwiki]: https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
