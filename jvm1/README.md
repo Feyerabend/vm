@@ -39,9 +39,12 @@ public class Sample {
 ```
 
 We convert the textfile with `javac Sample.java` with the text file as
-argument. The class file result can be displayed as hex:
+argument. The class file result can be displayed as hex and ASCII:
 
 ![Sample bytecode](../assets/images/bytecode-sample.jpeg)
+
+Already here is a lot of information. We can already see that much of the
+understandable source is included in the class file.
 
 And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
 
