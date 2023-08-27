@@ -30,7 +30,9 @@ in the `class file`.[^classfilewiki]
 
 ### sample
 
-If we take a sample source file in text form:
+Let's take a most simple example to illustrate what takes place when you use Java
+in programming. The source (code) is written in simple text, here saved as a text
+file.
 
 ```java
 public class Sample {
@@ -39,9 +41,23 @@ public class Sample {
     }
 }
 ```
+We use tools for manipulating this by compiling it with `javac` and then
+running the compiled file with `java`. In this case it might look like this:
+
+```
+> javac Sample.java
+> java Sample
+Hi to you!
+```
 
 We convert the textfile with `javac Sample.java` with the text file as
-argument. The class file result can be displayed as hex and ASCII:
+argument. If we were to list the content of the directory after compilation,
+an additional file would appear `Sample.class` as the result from compilation.
+
+Running this file (without assigning the extension `.class`) as above would
+result in a message to the console being printed "Hi to you!".
+
+The class file can be displayed as hex and ASCII:
 
 ![Sample bytecode](../assets/images/bytecode-sample.jpeg)
 
