@@ -192,16 +192,18 @@ hexadecimal. The instruction 'iload_0' is '1A' and so on.
 ### reading class files
 
 Class files are structured in a certain way to ease reading and interpreting
-code. Each file starts with a "magic number" which is in hex 'CAFEBABE'. This
-is a very common way of identifying files. E.g. PDF can start with 'PDF-1.3',
-where a version number follows. Or, for RTF '{\rtf1' and then other instructions
-follows.
+code. Each file starts with a "magic number" which is in hex 'CAFEBABE', cf.
+the hexdump above. This is a very common way for identifying files.
+E.g. PDF can start with 'PDF-1.3', where a version number follows.
+Or, for RTF there is a start with '{\rtf1' and then other instructions of
+the format of text follows.
 
 Here is a small script to show a class file, mostly the start, but not analyzing
 the rest. Hardcoded for reading 'Sample.class' to have it short.
 
 ```python
 # reading sample Java class
+# classread-sample.py
 import struct
 
 with open("Sample.class", "rb") as f:
