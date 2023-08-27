@@ -19,7 +19,7 @@ Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance
 (Beginners' All-purpose Symbolic Instruction Code).
 
 
-## jvm1
+## preparation
 
 To amend problems with different implementations of virtual machines,
 a *specification* would be helpful. On the other hand, for our purpose as
@@ -173,13 +173,16 @@ Especially the last part is instructive. If we combine descriptions of
 the instructions,[^instrwiki] with the above we get a familiar picture:
 
 ```text
-       0: iload_0        // load an int value from local variable 0 --> 1A
-       1: iload_1        // load an int value from local variable 1 --> 1B
-       2: iadd           // add two ints                            --> 60
-       3: ireturn        // return an integer from a method         --> AC
+       0: iload_0        // load an int value from local variable 0  --> 1A
+       1: iload_1        // load an int value from local variable 1  --> 1B
+       2: iadd           // add two ints                             --> 60
+       3: ireturn        // return an integer from a method          --> AC
 ```
 
 [^instrwiki]: https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
 
 You can find the equivalent core encoded in the class file as '1A 1B 60 AC' in
 hexadecimal. The instruction 'iload_0' is '1A' and so on.
+
+## jvm1
+
