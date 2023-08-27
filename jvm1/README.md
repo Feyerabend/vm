@@ -15,7 +15,8 @@ But that's another story ...
 [^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
 and also https://libris.kb.se/bib/2324301.
 Unfortunately it is here spelled as 'JAVA' instead of the correct 'Java'.
-Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance is.
+Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance is
+(Beginners' All-purpose Symbolic Instruction Code).
 
 
 ## jvm1
