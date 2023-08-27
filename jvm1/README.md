@@ -71,12 +71,12 @@ These are the two elementary steps in building a Java program:
 
 ### sample class
 
-The class file can be displayed as hex and ASCII:
+The class file can be displayed in 'hexadecimal' and in ASCII:
 
 ![Sample bytecode](../assets/images/bytecode-sample.jpeg)
 
-Already here is a lot of information. We can already see that much of the
-understandable source is included in the class file.
+Already here is a lot of information conveyed in ASCII. We can already see that
+much of the understandable source is included in the class file.
 
 And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
 
