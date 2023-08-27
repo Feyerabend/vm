@@ -198,8 +198,8 @@ E.g. PDF can start with 'PDF-1.3', where a version number follows.
 Or, for RTF there is a start with '{\rtf1' and then other instructions of
 the format of text follows.
 
-Here is a small script to show a class file, mostly the start, but not analyzing
-the rest. Hardcoded for reading 'Sample.class' to have it short.
+Here is a small script to show the start of a class file, and
+hardcoded for reading 'Sample.class' to have it short.
 
 ```python
 # reading sample Java class
@@ -214,12 +214,5 @@ with open("Sample.class", "rb") as f:
     minor_version = struct.unpack("<H", f.read(2))[0]
     major_version = struct.unpack("<H", f.read(2))[0]
     print(f"version: {major_version}.{minor_version}")
-
-    constant_pool_count = struct.unpack("<H", f.read(2))[0]
-    print(f"constant pool count: {constant_pool_count}")
-    constant_pool = f.read()
-    print("constant pool:")
-    for i, entry in enumerate(constant_pool):
-        print(f"  > {i+1}: {entry}")
 ```
 
