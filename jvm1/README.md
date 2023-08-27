@@ -6,7 +6,7 @@
 ## jvm1
 
 To amend problems with different implementations of virtual machines,
-a specification would be helpful. On the other hane, for our purpose as
+a *specification* would be helpful. On the other hand, for our purpose as
 a pedagogical tool, the specification for Java is today quite intricate and
 voluminous.[^javaspec] However, stripping some details it might enlighten
 the reader/coder of how a reasonable modern virtual machine works in principal.
