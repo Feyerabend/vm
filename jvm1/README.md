@@ -37,7 +37,7 @@ representation in the `class file`.[^classfilewiki]
 
 Let's take a most simple example to illustrate what takes place when you use Java
 in programming. The source (code) is written in simple text, here saved as a text
-file.
+file 'Sample.java'.
 
 ```java
 public class Sample {
@@ -46,6 +46,7 @@ public class Sample {
     }
 }
 ```
+
 We use tools for manipulating this by compiling it with `javac` and then
 running the compiled file with `java`. In this case an interaction with
 the tools might look like this:
