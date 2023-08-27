@@ -135,7 +135,7 @@ public class Add {
 }
 ```
 
-Disassembly:
+Disassembled code:
 
 ```console
 > javap -c Add.java
@@ -166,7 +166,7 @@ public class Add {
 ```
 
 Especially the last part is instructive. If we combine descriptions of
-the instructions[^instrwiki], with the above we get a familiar picture:
+the instructions,[^instrwiki] with the above we get a familiar picture:
 
 ```text
        0: iload_0        // load an int value from local variable 0
@@ -176,3 +176,5 @@ the instructions[^instrwiki], with the above we get a familiar picture:
 ```
 
 [^instrwiki]: https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
+
+
