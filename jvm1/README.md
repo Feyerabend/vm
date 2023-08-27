@@ -15,7 +15,9 @@ the reader/coder of how a reasonable modern virtual machine works in principal.
 
 An assumption here is that Java[^javawiki] is well known for its principals,
 a virtual machine for running bytecodes, a compiler which translate for a
-Java-program to a sequence of bytecodes. *Sound familiar?*
+Java-program to a sequence of bytecodes. *Sound familiar?* Previous samples
+of virtual machines have had a string of *integers* as the minimal information
+encoded and decoded between machine and compiler (or raw code).
 
 The basis for Java starts with the interface between the virtual machine and
 what comes out of the compiler: the `bytecode`, or its physical representation
