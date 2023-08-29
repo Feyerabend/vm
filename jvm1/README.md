@@ -208,10 +208,11 @@ hardcoded for reading 'Sample.class' to have it short.
 
 import struct
 
-with open("Sample.class", "rb") as f:
+with open("Sample.class", "rb") as cf:
     # CAFEBABE and version
     magic = struct.unpack('!I', cf.read(4))
     minor, major = struct.unpack('!HH', cf.read(4))
     print(f"version: {major}.{minor}")
+
 ```
 

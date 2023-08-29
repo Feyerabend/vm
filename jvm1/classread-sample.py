@@ -3,7 +3,7 @@
 
 import struct
 
-with open("Sample.class", "rb") as f:
+with open("Sample.class", "rb") as cf:
     # CAFEBABE and version
     magic = struct.unpack('!I', cf.read(4))
     minor, major = struct.unpack('!HH', cf.read(4))
