@@ -4,7 +4,9 @@
 import struct
 
 with open("Sample.class", "rb") as cf:
-    # CAFEBABE and version
+    # cafebabe
     magic = struct.unpack('!I', cf.read(4))
+    print(f"magic: {hex(magic[0])}")
+    # version
     minor, major = struct.unpack('!HH', cf.read(4))
     print(f"version: {major}.{minor}")
