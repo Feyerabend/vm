@@ -249,7 +249,7 @@ public class Mul {
 
 ```console
 > javap -v Mul.class
-Classfile /Users/setlonnert/Documents/svm/jvm/jdk18/Contents/Home/bin/Mul.class
+Classfile /Users/Mul.class
   Last modified 30 aug. 2023; size 236 bytes
   SHA-256 checksum 0beea4fe71e627f6d7acc6a5e49ad233b05fa35aa186a1358e1fe186d7c06900
   Compiled from "Mul.java"
