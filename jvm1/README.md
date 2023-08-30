@@ -223,10 +223,11 @@ We can compare this to what we can find in the specification:[^specmagic]
 
 [^specmagic]: https://docs.oracle.com/javase/specs/jvms/se20/html/jvms-4.html
 
-> magic
->The magic item supplies the magic number identifying the class file format; it has the value 0xCAFEBABE.
+> #### magic
+> The magic item supplies the magic number identifying the class file format; it has the value 0xCAFEBABE.
 
-> minor_version, major_version
+> #### minor_version, major_version
 > The values of the minor_version and major_version items are the minor and major version numbers of this class file. Together, a major and a minor version number determine the version of the class file format. If a class file has major version number M and minor version number m, we denote the version of its class file format as M.m. Thus, class file format versions may be ordered lexicographically, for example, 1.5 < 2.0 < 2.1.
 
 > A Java Virtual Machine implementation can support a class file format of version v if and only if v lies in some contiguous range Mi.0 ≤ v ≤ Mj.m. The release level of the Java SE platform to which a Java Virtual Machine implementation conforms is responsible for determining the range.
+
