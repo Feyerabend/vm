@@ -4,11 +4,11 @@
 of a virtual machine. I started with Java when it first came out as beta in 1995.
 You could then download Java and its tools, if you adhere to it from a educational
 viewpoint. I dived into Java, and wrote a simple introduction in 1997 to the language
-which was printed and reprinted in a total of 16.000 ex.[^progjava] I was invited as
+which was printed and reprinted in a total of 16.000 copies.[^progjava] I was invited as
 a journalist to JavaOne, San Fransisco, in 1999. Java was hot and exciting.
 But I wasn't the only one  absorbed with the apparent future.
-The web was growing quite fast, and Java promised
-to deliver a way to work with programs across the web we didn't see from elsewere.
+The web was growing quite fast, and Java promised to deliver a way to work with
+programs across the web we didn't see from elsewere.
 Today it's quite another story, and maybe Java will fade as things change.
 But that's another story ...
 
@@ -24,8 +24,9 @@ Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance
 To amend problems with different implementations of virtual machines,
 a *specification* would be helpful. On the other hand, for our purpose as
 a pedagogical tool, the specification for Java is today quite intricate and
-voluminous.[^javaspec] However, stripping some details it might enlighten
-the reader/coder of how a reasonable modern virtual machine works in principal.
+voluminous.[^javaspec] However, stripping it down to only some details of
+implementation it might enlighten the reader/coder of how a reasonable
+modern virtual machine works in principal.
 
 [^javaspec]: Specifications of versions of JVM: https://docs.oracle.com/javase/specs/index.html
 
@@ -231,3 +232,5 @@ We can compare this to what we can find in the specification:[^specmagic]
 
 > A Java Virtual Machine implementation can support a class file format of version v if and only if v lies in some contiguous range Mi.0 ≤ v ≤ Mj.m. The release level of the Java SE platform to which a Java Virtual Machine implementation conforms is responsible for determining the range.
 
+Thus we can build in similar ways upon the specification for reading, storing,
+and executing code.
