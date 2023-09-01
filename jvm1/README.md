@@ -340,6 +340,8 @@ The 'constant pool' have some similarities to a symbol table, but it is
 for the 'class'. The constant pool contains e.g. names of classes referenced,
 initial values of strings/numeric constants, and other things. The class loader
 must e.g. identify other referenced classes for loading, which here are explicit
-names (paths) for them. If there is an error, it is helful to have a message where
+names (paths) for them.
+
+If there is an error, it is helful to have a message where
 the error occured through a line number of the source, for instance.
 
