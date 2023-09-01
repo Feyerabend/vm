@@ -330,7 +330,7 @@ representations. This openess or fuzziness is actually not as bad as
 one might think. The specification for JVM is open to different
 implementations, e.g. both as a stack and/or as registers for these local
 variables/arguments. Special hardware could make use of these *conceptual
-specification*, rather than haveing a description of a reference implementation,
+specification*, rather than having a description of a reference implementation,
 for memory or speed considerations.
 
 There is only one method in the class 'Mul', which is called 'mul'.
@@ -340,5 +340,6 @@ The 'constant pool' have some similarities to a symbol table, but it is
 for the 'class'. The constant pool contains e.g. names of classes referenced,
 initial values of strings/numeric constants, and other things. The class loader
 must e.g. identify other referenced classes for loading, which here are explicit
-names for them.
+names (paths) for them. If there is an error, it is helful to have a message where
+the error occured through a line number of the source, for instance.
 
