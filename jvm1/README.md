@@ -235,8 +235,13 @@ We can compare this to what we can find in the specification:[^specmagic]
 Thus we can build in similar ways upon the specification for reading, storing,
 and executing code.
 
-### getting more detail
 
+### getting into some more detail
+
+The file format for classes besides the above, have a large part called the
+'constant pool', additional data fields, methods, and a list of attributes.
+If we limit the sample to just a static method in a class, with a simple
+multiplication operation:
 
 ```java
 public class Mul {
@@ -246,6 +251,7 @@ public class Mul {
 }
 ```
 
+The disassembly might be easier to decode:
 
 ```console
 > javap -v Mul.class
