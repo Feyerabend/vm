@@ -315,7 +315,8 @@ Constant pool:
 SourceFile: "Mul.java"
 ```
 
-Starting at the end, under 'Code' we find the core of what the class
+Starting at the end, we will leave some text unexplained,
+but under 'Code' we find the core of what the class
 does: *multiplies to integers and returns the resulting integer*. We can
 see that primitive types, i.e. here integers, have direct representation
 in the instructions. Multiplications of integers have a special instruction.
