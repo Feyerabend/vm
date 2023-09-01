@@ -16,17 +16,24 @@ But that's another story ...
 and also https://libris.kb.se/bib/2324301.
 Unfortunately it is here spelled as 'JAVA' instead of the correct 'Java'.
 Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance is
-(Beginners' All-purpose Symbolic Instruction Code).
+Beginners' All-purpose Symbolic Instruction Code.
 
 
 ## preparation
 
+First, for obvious reasons, this will not be a full or even partial
+implementation of Java, or even of a proper JVM (Java Virtual Machine).
+The aim here is to illustrate some aspects of the ideas that was introduced
+with the JVM, and hence Java back in 1995. (The prototype will not even be
+called 'JVM' as it is trademarked/copyrighted by Sun/Oracle.)
+
 To amend problems with different implementations of virtual machines,
-a *specification* would be helpful. On the other hand, for our purpose as
+a *specification* will be helpful. On the other hand, for our purpose as
 a pedagogical tool, the specification for Java is today quite intricate and
-voluminous.[^javaspec] However, stripping it down to only some details of
-implementation it might enlighten the reader/coder of how a reasonable
-modern virtual machine works in principal.
+voluminous.[^javaspec] It is simply not practical to write a JVM in this
+context. However, stripping the spec down to only some details for
+implementation, the result might enlighten the reader/coder of how a
+reasonable modern virtual machine works.
 
 [^javaspec]: Specifications of versions of JVM: https://docs.oracle.com/javase/specs/index.html
 
@@ -239,7 +246,7 @@ and executing code.
 ### getting into some more detail
 
 The file format for classes besides the above, have a large part called the
-'constant pool', additional data fields, methods, and a list of attributes.
+'constant pool', data fields, methods, and a list of attributes.
 If we limit the sample to just a static method in a class, with a simple
 multiplication operation:
 
@@ -308,4 +315,27 @@ Constant pool:
 SourceFile: "Mul.java"
 ```
 
+Starting at the end, under 'Code' we find the core of what the class
+does: *multiplies to integers and returns the resulting integer*. We can
+see that primitive types, i.e. here integers, have direct representation
+in the instructions. Multiplications of integers have a special instruction.
+We also find the number of arguments as '2' which should go in the method.
+Futher we can see something for the stack as '2' and also for 'locals' as '2'.
+What is up with that? This could be how to deal with the arguments, store them at
+the stack or set them into local registers (for the method). The primitive
+types can be dealt with more directly or indirect depending on hardware,
+adding not only integers, but also floats or doubles in floting point
+representations. This openess or fuzziness is actually not that bad as
+one might think. The specification for JVM is open to different
+implementations, e.g. both as a stack and/or as registers for these
+variables/arguments. Special hardware could make use of this *conceptual
+specification*, rather than haveing a description of reference implementation,
+for memory or speed considerations.
+
+There is only one method in the class 'Mul', which is called 'mul'.
+... TBD
+
+The 'constant pool' have some similarities to a symbol table, but it is
+for the 'class'. The constant pool contains e.g. names of classes referenced,
+initial values of strings/numeric constants, and other things.
 
