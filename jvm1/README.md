@@ -319,18 +319,18 @@ Starting at the end, we will leave some text unexplained,
 but under 'Code' we find the core of what the class
 does: *multiplies to integers and returns the resulting integer*. We can
 see that primitive types, i.e. here integers, have direct representation
-in the instructions. Multiplications of integers have a special instruction.
+in the instructions. Multiplications of integers have a special single instruction.
 We also find the number of arguments as '2' which should go in the method.
 Futher we can see something for the stack as '2' and also for 'locals' as '2'.
 What is up with that? This could be how to deal with the arguments, store them at
 the stack or set them into local registers (for the method). The primitive
 types can be dealt with more directly or indirect depending on hardware,
 adding not only integers, but also floats or doubles in floting point
-representations. This openess or fuzziness is actually not that bad as
+representations. This openess or fuzziness is actually not as bad as
 one might think. The specification for JVM is open to different
-implementations, e.g. both as a stack and/or as registers for these
-variables/arguments. Special hardware could make use of this *conceptual
-specification*, rather than haveing a description of reference implementation,
+implementations, e.g. both as a stack and/or as registers for these local
+variables/arguments. Special hardware could make use of these *conceptual
+specification*, rather than haveing a description of a reference implementation,
 for memory or speed considerations.
 
 There is only one method in the class 'Mul', which is called 'mul'.
@@ -338,5 +338,7 @@ There is only one method in the class 'Mul', which is called 'mul'.
 
 The 'constant pool' have some similarities to a symbol table, but it is
 for the 'class'. The constant pool contains e.g. names of classes referenced,
-initial values of strings/numeric constants, and other things.
+initial values of strings/numeric constants, and other things. The class loader
+must e.g. identify other referenced classes for loading, which here are explicit
+names for them.
 
