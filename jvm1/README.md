@@ -24,8 +24,12 @@ Beginners' All-purpose Symbolic Instruction Code.
 First, for obvious reasons, this will not be a full or even partial
 implementation of Java, or even of a proper JVM (Java Virtual Machine).
 The aim here is to illustrate some aspects of the ideas that was introduced
-with the JVM, and hence Java back in 1995. (The prototype will not even be
-called 'JVM' as it is trademarked/copyrighted by Sun/Oracle.)
+with the JVM, and hence Java back in 1995.[^copy]
+
+[^copy]: The prototype here will not even be called a 'JVM' as it is
+trademarked/copyrighted by Sun/Oracle.
+There are now adays also proper verifications for these machines to
+guarantee (or be as secure as you can) a proper use.
 
 To amend problems with different implementations of virtual machines,
 a *specification* will be helpful. On the other hand, for our purpose as
@@ -106,8 +110,14 @@ The class file can be displayed in 'hexadecimal' and in ASCII:
 
 Already here is a lot of information conveyed in ASCII. We can already see that
 much of the understandable source is included in the class file.
+If we know about Java we can see other things such as the type of a return value,
+native (library) methods called for printing, etc.
 
-And if we disassemble `Sample.class` with the tool `javap` with option `-c`:
+With official releases of Java there comes another tool:
+* the disassebler tool `javap`.
+
+And if we disassemble `Sample.class` with the tool `javap` with option `-c`,
+we get:
 
 ```console
 > javap -c Sample.class
@@ -128,11 +138,13 @@ public class Sample {
 }
 ```
 
+
+
 ### another sample
 
 The sample 'Sample.java' above isn't however delivering much to inform us about the
 byte code instructions, as they mosly refer to invoking calls to procedures (or equivalent)
-in the native machine, and also referes to other classes.
+in the native machine, and also referes to other classes. (more on this below.)
 
 We could however use another sample to illustrate how two numbers can be added.
 
@@ -177,7 +189,7 @@ public class Add {
 }
 ```
 
-Especially the last part is instructive. If we combine descriptions of
+Especially the last part here is instructive. If we combine descriptions of
 the instructions,[^instrwiki] with the above we get a familiar picture:
 
 ```text
