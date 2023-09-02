@@ -25,10 +25,14 @@ implementation of Java, or even of a proper JVM (Java Virtual Machine).
 The aim here is to illustrate some aspects of the ideas that was introduced
 with the JVM, and hence Java back in 1995.[^copy]
 
-[^copy]: The prototype here will not even be called a 'JVM' as it is
+[^copy]: The prototype here will not even be called a 'JVM' because it is
 trademarked/copyrighted by Sun/Oracle.
-There are now adays also proper verifications for these machines to
-guarantee (or be as secure as you can) a proper use.
+There are now adays also proper verifications routines for
+these machines to guarantee (or be as secure as you can)
+for a proper use.
+The official machine HotSpot, now from Oracle, is highly optimized
+and requires in depth learning to get aquainted with.
+See e.g. https://docs.oracle.com/en/java/javase/20/vm/java-virtual-machine-guide.pdf
 
 To amend problems with different implementations of virtual machines,
 a *specification* will be helpful. On the other hand, for our purpose as
