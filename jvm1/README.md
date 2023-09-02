@@ -114,7 +114,7 @@ If we know about Java we can see other things such as the type of a return value
 native (library) methods called for printing, etc.
 
 With official releases of Java there comes another tool:
-* the disassebler tool `javap`.
+* the disassembler tool `javap`.
 
 And if we disassemble `Sample.class` with the tool `javap` with option `-c`,
 we get:
@@ -143,8 +143,9 @@ public class Sample {
 ### another sample
 
 The sample 'Sample.java' above isn't however delivering much to inform us about the
-byte code instructions, as they mosly refer to invoking calls to procedures (or equivalent)
-in the native machine, and also referes to other classes. (more on this below.)
+byte code executable instructions that are familiar to us from previously, as they
+mosly refer to invoking calls to procedures (or equivalent) in the native machine,
+and also referes to other classes. (More on this below.)
 
 We could however use another sample to illustrate how two numbers can be added.
 
