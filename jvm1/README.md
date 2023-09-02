@@ -82,6 +82,9 @@ public class Sample {
 }
 ```
 
+The sample should be rather straight forward: it prints "Hi to you!" at the prompt
+when it runs. The source should be familiar with C, from which it borrows a lot.
+
 We use tools for manipulating this by compiling it with `javac` and then
 running the compiled file with `java`. In this case an interaction with
 the tools might look like this:
