@@ -4,13 +4,12 @@
 of a virtual machine. I started with Java when it first came out as beta in 1995.
 You could then download Java and its tools, if you adhere to it from a educational
 viewpoint. I dived into Java, and wrote a simple introduction in 1997 to the language
-which was printed and reprinted in a total of 16.000 copies.[^progjava] I was invited as
-a journalist to JavaOne, San Fransisco, in 1999. Java was hot and exciting.
-But I wasn't the only one  absorbed with the apparent future.
-The web was growing quite fast, and Java promised to deliver a way to work with
-programs across the web we didn't see from elsewere.
-Today it's quite another story, and maybe Java will fade as things change.
-But that's another story ...
+which was printed and reprinted in a total of 16.000 copies.[^progjava] I was invited
+as a journalist to JavaOne, San Fransisco, in 1999. Java was hot and exciting.
+But I wasn't the only one  absorbed with the apparent future. The web was growing
+quite fast, and Java promised to deliver a way to work with programs across the web
+we didn't see from elsewere. Today it's quite another story, and maybe Java will
+fade as things change. But that's another story ...
 
 [^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
 and also https://libris.kb.se/bib/2324301.
@@ -138,8 +137,6 @@ public class Sample {
 }
 ```
 
-
-
 ### another sample
 
 The sample 'Sample.java' above isn't however delivering much to inform us about the
@@ -209,19 +206,18 @@ hexadecimal. The instruction 'iload_0' is '1A' and so on.
 ## jvm1
 
 
-
 ### reading class files
 
 Class files are structured in a certain way to ease reading and interpreting
 code. Each file starts with a "magic number" which is in hexadecimal 'CAFEBABE',
-cf. the hexdump above. This is a very common way for identifying files.
-E.g. PDF can start with 'PDF-1.3', where a version number follows.
-Or, for RTF (Rich Text Format) there is a start with '{\rtf1' or something like
-this, and then other instructions of the format for text follows.
-In this way a file can even be identified without an extension to the file.
+cf. the hexdump above. This is a very common way for identifying files. E.g.
+PDF can start with 'PDF-1.3', where a version number follows. Or, for RTF
+(Rich Text Format) there is a start with '{\rtf1' or something like this,
+and then other instructions of the format for text follows. In this way a
+file can even be identified without an extension to the file.
 
-Here is a small script to show the start of a class file, and
-hardcoded for reading 'Sample.class' to have it short.
+Here is a small script to show the start of a class file, and hardcoded
+for reading 'Sample.class' to have it short.
 
 ```python
 # reading sample Java class
