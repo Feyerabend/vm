@@ -26,13 +26,15 @@ The aim here is to illustrate some aspects of the ideas that was introduced
 with the JVM, and hence Java back in 1995.[^copy]
 
 [^copy]: The prototype here will not even be called a 'JVM' because it is
-trademarked/copyrighted by Sun/Oracle.
-There are now adays also proper verifications routines for
-these machines to guarantee (or be as secure as you can)
-for a proper use.
-The official machine HotSpot, now from Oracle, is highly optimized
+trademarked/copyrighted by Sun/Oracle. There are now adays also proper
+verifications routines for these machines to guarantee
+(or be as secure as you can) for a proper use.
+The official machine HotSpot is highly optimized
 and requires in depth learning to get aquainted with.
 See e.g. https://docs.oracle.com/en/java/javase/20/vm/java-virtual-machine-guide.pdf
+and also https://github.com/openjdk/jdk/tree/master/src/hotspot.
+(There is also OpenJDK: https://openjdk.org/, which is the open source
+version of Java.)
 
 To amend problems with different implementations of virtual machines,
 a *specification* will be helpful. On the other hand, for our purpose as
