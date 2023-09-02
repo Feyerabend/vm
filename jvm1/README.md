@@ -334,7 +334,13 @@ specification*, rather than having a description of a reference implementation,
 for memory or speed considerations.
 
 There is only one method in the class 'Mul', which is called 'mul'.
-... TBD
+The disassembly shows that there are two? Well, there is a 'hidden'
+constructor that can be called for the class. When you here construct
+a new object, the super class `Object` is called which can be seen by
+`invokedspecial`, with an array with value zero put on the stack.
+
+If there is an error, it is helful to have a message where
+the error occured through a line number of the source, for instance.
 
 The 'constant pool' have some similarities to a symbol table, but it is
 for the 'class'. The constant pool contains e.g. names of classes referenced,
@@ -342,6 +348,4 @@ initial values of strings/numeric constants, and other things. The class loader
 must e.g. identify other referenced classes for loading, which here are explicit
 names (paths) for them.
 
-If there is an error, it is helful to have a message where
-the error occured through a line number of the source, for instance.
-
+Much more information can be deduced, but we will stop at this.
