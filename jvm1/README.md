@@ -350,7 +350,8 @@ There is only one method in the class 'Mul', which is called 'mul'.
 The disassembly shows that there are two? Well, there is a 'hidden'
 constructor that can be called for the class. When you here construct
 a new object, the super class `Object` is called which can be seen by
-`invokedspecial`, with an array with value zero put on the stack.
+`invokedspecial` with an array with value zero put on the stack when
+the call is made.
 
 If there is an error, it is helful to have a message where
 the error occured through a line number of the source, for instance.
