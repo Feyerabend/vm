@@ -84,7 +84,7 @@ public class Sample {
 }
 ```
 
-This sample should be rather straight forward as it prints "Hi to you!" at the prompt
+This sample should be rather straightforward as it prints "Hi to you!" at the prompt
 when it runs. The source should be familiar from C, from which it borrows a lot, e.g.
 the 'main' entry starting point. What might be considered as the "new" thing
 that might be odd to the reader here is the object-oriented concept of 'class'.
@@ -340,7 +340,7 @@ SourceFile: "Mul.java"
 
 Starting at the end, we will leave some text unexplained,
 but under 'Code' we find the core of what the class
-does: *multiplies to integers and returns the resulting integer*. We can
+does: *multiplies two integers and returns the resulting integer*. We can
 see that primitive types, i.e. here integers, have direct representation
 in the instructions. Multiplications of integers have a special single instruction.
 We also find the number of arguments as '2' which should go in the method.
