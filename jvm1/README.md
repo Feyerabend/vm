@@ -84,10 +84,15 @@ public class Sample {
 }
 ```
 
-The sample should be rather straight forward: it prints "Hi to you!" at the prompt
-when it runs. The source should be familiar with C, from which it borrows a lot.
+This sample should be rather straight forward as it prints "Hi to you!" at the prompt
+when it runs. The source should be familiar from C, from which it borrows a lot, e.g.
+the 'main' entry starting point. What might be considered as the "new" thing
+that might be odd to the reader here is the object-oriented concept of 'class'.
+This aspect of object-orientation will really not be touched much futher here
+than elementary bits of object, class, superclass, etc. which the reader must
+certainly is already acquainted with.
 
-We use tools for manipulating this by compiling it with `javac` and then
+We use tools for manipulating this program by compiling it with `javac` and then
 running the compiled file with `java`. In this case an interaction with
 the tools might look like this:
 
