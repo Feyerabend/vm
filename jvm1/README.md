@@ -28,7 +28,8 @@ with the JVM, and hence Java back in 1995.[^copy]
 [^copy]: The prototype here will not even be called a 'JVM' because it is
 trademarked/copyrighted by Sun/Oracle. There are now adays also proper
 verifications routines for these machines to guarantee
-(or be as secure as you can) for a proper use.
+(or be as secure as you can) for a proper use, where it used to be only a
+"routine" in natural language.
 The official machine HotSpot is highly optimized
 and requires in depth learning to get aquainted with.
 See e.g. https://docs.oracle.com/en/java/javase/20/vm/java-virtual-machine-guide.pdf
@@ -264,8 +265,8 @@ We can compare this to what we can find in the specification:[^specmagic]
 
 > A Java Virtual Machine implementation can support a class file format of version v if and only if v lies in some contiguous range Mi.0 ≤ v ≤ Mj.m. The release level of the Java SE platform to which a Java Virtual Machine implementation conforms is responsible for determining the range.
 
-Thus we can build in similar ways upon the specification for reading, storing,
-and executing code.
+Thus we can build in similar ways upon the specification for
+reading, storing, and executing code.
 
 
 ### getting into some more detail
@@ -342,21 +343,24 @@ SourceFile: "Mul.java"
 ```
 
 Starting at the end, we will leave some text unexplained,
-but under 'Code' we find the core of what the class
-does: *multiplies two integers and returns the resulting integer*. We can
-see that primitive types, i.e. here integers, have direct representation
-in the instructions. Multiplications of integers have a special single instruction.
-We also find the number of arguments as '2' which should go in the method.
-Futher we can see something for the stack as '2' and also for 'locals' as '2'.
-What is up with that? This could be how to deal with the arguments, store them at
-the stack or set them into local registers (for the method). The primitive
-types can be dealt with more directly or indirect depending on hardware,
-adding not only integers, but also floats or doubles in floting point
-representations. This openess or fuzziness is actually not as bad as
-one might think. The specification for JVM is open to different
-implementations, e.g. both as a stack and/or as registers for these local
-variables/arguments. Special hardware could make use of these *conceptual
-specification*, rather than having a description of a reference implementation,
+but under 'Code' we find the core of what the class does:
+*multiplies two integers and returns the resulting integer*.
+We can see that primitive types, i.e. here integers, have
+direct representation in the instructions. Multiplications
+of integers have a special single instruction. We also find
+the number of arguments as '2' which should go in the method.
+Futher we can see something for the stack as '2' and also for
+'locals' as '2'. The machine can here pop a value from the
+stack and put it in a local variable when executing a 'load'
+instruction for the primitive type. The primitive types
+can be dealt with more directly or indirect depending on
+hardware, adding not only integers, but also floats or 
+doubles in floting point representations. This openess or fuzziness
+is actually not as bad as one might think. The specification
+for JVM is open to different implementations, e.g. both as a
+stack and/or as registers for these local variables/arguments.
+Special hardware could make use of this *conceptual specification*,
+rather than having a description of a reference implementation,
 for memory or speed considerations.
 
 There is only one method in the class 'Mul', which is called 'mul'.
@@ -369,10 +373,11 @@ from local variable 0.
 If there is an error, it is helful to have a message where
 the error occured through a line number of the source, for instance.
 
-The 'constant pool' have some similarities to a symbol table, but it is
-for the 'class'. The constant pool contains e.g. names of classes referenced,
-initial values of strings/numeric constants, and other things. The class loader
-must e.g. identify other referenced classes for loading, which here are explicit
-names (paths) for them.
+The 'constant pool' have some similarities to a symbol table, but
+it is for the 'class'. The constant pool contains e.g. names of
+classes referenced, initial values of strings/numeric constants,
+and other things. The class loader must e.g. identify other
+referenced classes for loading, which here are explicit names
+(paths) for them.
 
 Much more information can be deduced, but we will stop at this.
