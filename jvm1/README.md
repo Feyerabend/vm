@@ -133,6 +133,7 @@ And if we disassemble `Sample.class` with the tool `javap` with option `-c`,
 we get:
 
 ```console
+> javac Sample.java
 > javap -c Sample.class
 Compiled from "Sample.java"
 public class Sample {
@@ -174,7 +175,8 @@ public class Add {
 Disassembled code:
 
 ```console
-> javap -c Add.java
+> javac Add.java
+> javap -c Add.class
 Compiled from "Add.java"
 public class Add {
   public Add();
@@ -284,6 +286,7 @@ public class Mul {
 The disassembly might be easier to decode:
 
 ```console
+> javac Mul.java
 > javap -v Mul.class
 Classfile /Users/user/Documents/jdk/Mul.class
   Last modified 30 aug. 2023; size 236 bytes
