@@ -38,7 +38,7 @@ and also https://github.com/openjdk/jdk/tree/master/src/hotspot.
 version of Java.)
 Futher, there should be no need to install Java, if you do not desire
 to do so to e.g. experiment with your own classes. The classes discussed
-are compiled anc can be found in the directory [classes](/classes).
+are compiled anc can be found in the directory [classes](/jvm1/classes).
 
 To amend problems with different implementations of virtual machines,
 a *specification* will be helpful. On the other hand, for our purpose as
