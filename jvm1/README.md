@@ -368,9 +368,9 @@ There is only one method in the class 'Mul', which is called 'mul'.
 The disassembly shows that there are two? Well, there is a 'hidden'
 constructor that can be called for the class. The constructor of a
 class is included by the compiler and invoked as a call to &lt;init&gt;.
-The minimum required to call <init> is `aload_0` which instructs
+The minimum required to call &lt;init&gt; is `aload_0` which instructs
 the runtime to load the local reference at index 0 of the current frame.
-This contains a reference to <java/lang/Object.<init>.
+This contains a reference to &lt;java/lang/Object.&lt;init&gt;&gt;.
 The next instruction `invokespecial #1` is a 'special' instance
 call that calls referenced as #1. Then there is a return from
 the creation.
