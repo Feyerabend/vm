@@ -370,9 +370,6 @@ constructed, the super class `Object` is called which can be seen
 by `invokedspecial`, where it is loaded a reference onto the stack 
 from local variable 0.
 
-If there is an error, it is helful to have a message where
-the error occured through a line number of the source, for instance.
-
 The 'constant pool' have some similarities to a symbol table, but
 it is for the 'class'. The constant pool contains e.g. names of
 classes referenced, initial values of strings/numeric constants,
