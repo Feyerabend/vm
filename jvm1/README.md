@@ -369,16 +369,17 @@ The disassembly shows that there are two? Well, there is a 'hidden'
 constructor that can be called for the class. The constructor of a
 class is included by the compiler and invoked as a call to `<init>`.
 The minimum required to call `<init>` is `aload_0` which instructs
-the runtime to load the local reference at index 0 of the current frame.
-(A 'frame' have many similarities to what we have called 'activation
-records', previously. But 'frames' are more complex as it e.g. handle data
-for threads.)[^frames]
+the runtime to load the local reference at index 0 of the current
+frame.[^frames]
 The frame contains a reference to `<java/lang/Object.<init>>`.
 The next instruction `invokespecial #1` is a 'special' instance
 call that calls referenced as #1. Then there is at last a return from
 the creation.
 
-[^frames]: On more of this see e.g. https://www.artima.com/insidejvm/ed2/jvm8.html
+[^frames]: A 'frame' have many similarities to what we have called 'activation
+records' previously. But 'frames' here are more complex as it e.g.
+handle data for threads. On more of this see e.g.
+https://www.artima.com/insidejvm/ed2/jvm8.html
 
 The 'constant pool' have some similarities to a symbol table, but
 it is for the 'class'. The constant pool contains e.g. names of
