@@ -11,8 +11,8 @@ quite fast, and Java promised to deliver a way to work with programs across the 
 we didn't see from elsewere. Today it's quite another story, and maybe Java will
 fade as things change. But that's another story ...
 
-[^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma, 1997-,
-and also https://libris.kb.se/bib/2324301.
+[^progjava]: Lonnert, Set, *Programmering i JAVA*, 1. utg., KnowWare Publ., Bromma,
+1997-, and also https://libris.kb.se/bib/2324301.
 Unfortunately it is here spelled as 'JAVA' instead of the correct 'Java'.
 Why, I have no idea, but it is not an abbreviation, such as 'BASIC' for instance is
 Beginners' All-purpose Symbolic Instruction Code.
@@ -36,6 +36,9 @@ See e.g. https://docs.oracle.com/en/java/javase/20/vm/java-virtual-machine-guide
 and also https://github.com/openjdk/jdk/tree/master/src/hotspot.
 (There is also OpenJDK: https://openjdk.org/, which is the open source
 version of Java.)
+Futher, there should be no need to install Java, if you do not desire
+to do so to e.g. experiment with your own classes. The classes discussed
+are compiled anc can be found in the directory [classes](/classes).
 
 To amend problems with different implementations of virtual machines,
 a *specification* will be helpful. On the other hand, for our purpose as
