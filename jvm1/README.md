@@ -402,3 +402,27 @@ suffered from bad implementations at times. Therefore things such as automated
 verifications, extended control over the implementation or hardened
 editions from one vendor might also be parts of the actual software in
 production.
+
+The program 'classread-constant-pool.py' gives us a little more
+information than previously (cf. above with Javap):
+
+```console
+> classread-constant-pool.py -v -i Mul.class
+reading ..
+version: 0.62
+# 1 10: (2, 3)
+# 2  7: 4
+# 3 12: (5, 6)
+# 4  1: java/lang/Object
+# 5  1: <init>
+# 6  1: ()V
+# 7  7: 8
+# 8  1: Mul
+# 9  1: Code
+#10  1: LineNumberTable
+#11  1: mul
+#12  1: (II)I
+#13  1: SourceFile
+#14  1: Mul.java
+done.
+```
