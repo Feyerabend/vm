@@ -42,6 +42,7 @@ def parse_constant_pool(f):
     constant_pool_count = struct.unpack("!H", f.read(2))[0]
 
     for i in range(1, constant_pool_count):
+
         # read a tag
         tag = struct.unpack("!B", f.read(1))[0]
 
@@ -183,6 +184,8 @@ def readclass(inputfile, verbose):
 
     with open(inputfile, "rb") as cf:
 
+        # partial implementation of reading a class ..
+        #
         # ClassFile {
         #    u4             magic;                                  <--
         #    u2             minor_version;                          <--
@@ -200,7 +203,7 @@ def readclass(inputfile, verbose):
         #    method_info    methods[methods_count];
         #    u2             attributes_count;
         #    attribute_info attributes[attributes_count];
-        #}
+        # }
 
         h = parse_header(cf)
         cp = parse_constant_pool(cf)
@@ -210,7 +213,7 @@ def readclass(inputfile, verbose):
             for i, v1 in enumerate(h):
                 print(f"{v1}")
             for i, v2 in enumerate(cp):
-                print(f"#{i+1:>2} {v2}")
+                print(f"#{i+1:0>{2}} {v2}")
 
 # 
 def main(argv):
@@ -220,14 +223,14 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"vhi:",["ifile="])
     except getopt.GetoptError:
-        print('classread.py -i <inputfile>')
+        print('classread-constant-pool.py -i <inputfile>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-v':
             verbose = 1
         if opt == '-h':
-            print('usage: classread.py -i <inputfile> -o <outputfile>')
+            print('usage: classread-constant-pool.py -i <inputfile> -o <outputfile>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
