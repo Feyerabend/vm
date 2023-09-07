@@ -7,7 +7,6 @@ import sys
 
 # https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
 
-
 class Header():
     def __init__(self, magic, minor, major):
         self.magic = magic
@@ -184,7 +183,7 @@ def readclass(inputfile, verbose):
 
     with open(inputfile, "rb") as cf:
 
-        # partial implementation of reading a class ..
+        # partial implementation of reading a class .. <--
         #
         # ClassFile {
         #    u4             magic;                                  <--
@@ -230,7 +229,7 @@ def main(argv):
         if opt == '-v':
             verbose = 1
         if opt == '-h':
-            print('usage: classread-constant-pool.py -i <inputfile> -o <outputfile>')
+            print('usage: classread-constant-pool.py -i <inputfile>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
