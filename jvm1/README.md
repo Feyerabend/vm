@@ -392,3 +392,13 @@ referenced classes for loading, which here are explicit names
 (paths) for them.
 
 Much more information can be deduced, but we will stop at this.
+
+If we have a closer look at a simple *implementation*
+'classread-constant-pool.py' to the corresponding *specification*
+https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html (also noted
+with in comments in the code), we can see that they are close enough to
+give us insights of the benefits from good specifications. Java has though
+suffered from bad implementations at times. Therefore things such as automated
+verifications, extended control over the implementation or hardened
+editions from one vendor might also be parts of the actual software in
+production.
