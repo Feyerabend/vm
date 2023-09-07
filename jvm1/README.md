@@ -407,7 +407,7 @@ The program 'classread-constant-pool.py' gives us a little more
 information than previously (cf. above with `javap`):
 
 ```console
-> classread-constant-pool.py -v -i Mul.class
+> python3 classread-constant-pool.py -v -i Mul.class
 reading ..
 version: 0.62
 #01 10: (2, 3)
