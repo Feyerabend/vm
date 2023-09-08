@@ -5,6 +5,7 @@ import struct
 import getopt
 import sys
 
+# see the specification at e.g.
 # https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
 
 class Header():
@@ -41,7 +42,6 @@ def parse_constant_pool(f):
     constant_pool_count = struct.unpack("!H", f.read(2))[0]
 
     for i in range(1, constant_pool_count):
-
         # read a tag
         tag = struct.unpack("!B", f.read(1))[0]
 
@@ -161,7 +161,7 @@ def parse_constant_pool(f):
         #    u1 tag;
         #    u2 descriptor_index;
         # }
-        elif tag == 16:  # MethodType
+        elif tag == 16:
             descriptor_index = struct.unpack("!H", f.read(2))[0]
             constant_pool.append(ConstantPool(tag, descriptor_index))
 
@@ -183,8 +183,7 @@ def readclass(inputfile, verbose):
 
     with open(inputfile, "rb") as cf:
 
-        # partial implementation of reading a class .. <--
-        #
+        # partial impl. marked by <--
         # ClassFile {
         #    u4             magic;                                  <--
         #    u2             minor_version;                          <--
