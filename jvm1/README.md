@@ -426,3 +426,36 @@ version: 0.62
 #14  1: Mul.java
 done.
 ```
+
+If we try to convert even more with 'classread.py' we get:
+
+```console
+> python3 classread.py -v -i Mul.class
+reading ..
+version: 0.62
+#01 10: (2, 3)
+#02  7: 4
+#03 12: (5, 6)
+#04  1: java/lang/Object
+#05  1: <init>
+#06  1: ()V
+#07  7: 8
+#08  1: Mul
+#09  1: Code
+#10  1: LineNumberTable
+#11  1: mul
+#12  1: (II)I
+#13  1: SourceFile
+#14  1: Mul.java
+flags: 0x0021
+this class name: Mul
+super class name: java/lang/Object
+method: 0x0001 <init> ()V
+attribute: Code: b'\x00\x01\x00\x01\x00\x00\x00\x05*\xb7\x00\x01\xb1\x00\x00\x00\x01\x00\n\x00\x00\x00\x06\x00\x01\x00\x00\x00\x02'
+method: 0x0009 mul (II)I
+attribute: Code: b'\x00\x02\x00\x02\x00\x00\x00\x04\x1a\x1bh\xac\x00\x00\x00\x01\x00\n\x00\x00\x00\x06\x00\x01\x00\x00\x00\x04'
+attribute: SourceFile b'\x00\x0e'
+done.
+```
+
+For our purpose the 'Code' attribute seems to be the most interesting here.
