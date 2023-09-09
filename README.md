@@ -163,7 +163,9 @@ that they both implement.
 ### 12. [jvm1](/jvm1)
 
 We experiment with a simple, very simple, implementation of a kind of
-Java Virtual Machine, reading classes.
+[Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine),
+start with reading classes (in Python3). The parallel with the specification
+can be seen quite clearly in the implementation.
 
 
 ### 13. [jvm2](/jvm2)
