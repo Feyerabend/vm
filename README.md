@@ -160,11 +160,12 @@ been done in Python3. They are not really mirrors of each other, as
 they differ in behaviours. Thus a *specification* is needed of a vm
 that they both implement.
 
+
 ### 12. [jvm1](/jvm1)
 
 We experiment with a simple, very simple, implementation of a kind of
 [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine),
-start with reading classes (in Python3). The parallel with the specification
+start with reading Java-classes (in Python3). The parallel with the specification
 can be seen quite clearly in the implementation.
 
 
