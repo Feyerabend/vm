@@ -256,18 +256,18 @@ def parse_interfaces(f, constant_pool):
 
 # attributes -- not tested!
 class AttributeInfo():
-    def __init__(self, name_len, info):
-        self.name_len = name_len
+    def __init__(self, name, info):
+        self.name = name
         self.info = info
     def __str__(self) -> str:
-        return f"attribute: {self.name_len}: {self.info}"
+        return f"attribute: {self.name}: {self.info}"
 
 def parse_attribute_info(f, constant_pool):
     attribute_name_length = struct.unpack("!H", f.read(2))[0]
     length = struct.unpack("!I", f.read(4))[0]
     info = f.read(length)
-    name_len = constant_pool[attribute_name_length - 1].value
-    attr = AttributeInfo(name_len, info)
+    name = constant_pool[attribute_name_length - 1].value
+    attr = AttributeInfo(name, info)
     return attr
 
 
