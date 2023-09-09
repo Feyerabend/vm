@@ -395,13 +395,14 @@ Much more information can be deduced, but we will stop at this.
 
 If we have a closer look at a simple *implementation*
 'classread-constant-pool.py' to the corresponding *specification*
-https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html (also noted
-with in comments in the code), we can see that they are close enough to
-give us insights of the benefits from good specifications. Java has though
-suffered from bad implementations at times. Therefore things such as automated
+https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
+(also noted with in comments in the code), we can see that they are
+close enough to give us insights of the benefits from good specifications.
+Java has though suffered from bad implementations at times, included
+this time, but for good reasons. Therefore things such as automated
 verifications, extended control over the implementation or hardened
-editions from one vendor might also be parts of the actual software in
-production.
+editions from one vendor might also be parts of the actual software
+*in production*.
 
 The program 'classread-constant-pool.py' gives us a little more
 information than previously (cf. above with `javap`):
@@ -426,6 +427,35 @@ version: 0.62
 #14  1: Mul.java
 done.
 ```
+
+In this program *only* some of the first bytes are processed:
+'magic', 'minor_version', 'major_version', 'constant_pool_count' and
+'cp_info':
+
+```text
+ClassFile {
+    u4             magic;
+    u2             minor_version;
+    u2             major_version;
+    u2             constant_pool_count;
+    cp_info        constant_pool[constant_pool_count-1];
+    u2             access_flags;
+    u2             this_class;
+    u2             super_class;
+    u2             interfaces_count;
+    u2             interfaces[interfaces_count];
+    u2             fields_count;
+    field_info     fields[fields_count];
+    u2             methods_count;
+    method_info    methods[methods_count];
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+```
+
+
+
+
 
 If we try to convert even more with 'classread.py' we get:
 
@@ -457,5 +487,28 @@ attribute: Code: b'\x00\x02\x00\x02\x00\x00\x00\x04\x1a\x1bh\xac\x00\x00\x00\x01
 attribute: SourceFile b'\x00\x0e'
 done.
 ```
+
+Let's have a look at how to get the class name 'Mul':
+
+```python
+# this class name
+class This():
+    def __init__(self, class_name):
+        self.class_name = class_name
+    def __str__(self) -> str:
+        return f"this class name: {self.class_name}"
+
+def parse_this(f, constant_pool):
+    this_class = struct.unpack('!H', f.read(2))
+    ref = constant_pool[this_class[0] - 1].value
+    class_name = constant_pool[ref - 1].value
+    this = This(class_name)
+    return this
+```
+
+
+
+
+
 
 For our purpose the 'Code' attribute seems to be the most interesting here.
