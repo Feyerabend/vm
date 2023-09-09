@@ -83,8 +83,8 @@ and return through the use of "activation records".
 
 ### 4. [chip8](/chip8)
 
-We have a look at an early virtual machine used for games starting
-in the late 70's: CHIP-8. (*Not my code. Much better.*)
+We have a look at an early virtual machine used for games starting in the
+late 70's: CHIP-8. (*Not my code. Much better.*)
 
 
 ### 5. [cmp1](/cmp1)
@@ -170,6 +170,10 @@ can be seen quite clearly in the implementation.
 
 
 ### 13. [jvm2](/jvm2)
+
+
+
+### 14. [jvm3](/jvm3)
 
 
 
