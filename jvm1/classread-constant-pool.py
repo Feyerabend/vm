@@ -90,7 +90,7 @@ def parse_constant_pool(f):
         elif tag == 6:
             value = struct.unpack("!d", f.read(8))[0]
             constant_pool.append(ConstantPool(tag, value))
-            i += 1  # Doubles take up two entries in the constant pool
+            i += 1  # skip as "double" extend over 2 tags
 
         # Class
         #   u1 tag;
