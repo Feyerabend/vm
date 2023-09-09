@@ -429,7 +429,8 @@ done.
 ```
 
 In this program 'classread-constant-pool.py' *only* some of the first bytes are processed:
-'magic', 'minor_version', 'major_version', 'constant_pool_count' and 'cp_info':
+'magic', 'minor_version', 'major_version', 'constant_pool_count' and 'cp_info'. We ignore
+the rest for the moment.
 
 ```text
 ClassFile {
@@ -452,11 +453,9 @@ ClassFile {
 }
 ```
 
-
-
-
-
-If we try to convert even more with 'classread.py' we get:
+The 'constant pool' is used by other entries in the file. This becomes more clear as
+we parse the rest. If we try to convert even more with another reader 'classread.py'
+we get:
 
 ```console
 > python3 classread.py -v -i Mul.class
@@ -505,9 +504,11 @@ def parse_this(f, constant_pool):
     return this
 ```
 
+Reading from the file in sequence we get to where there is supposed to be "this class name".
+We can see that at '#07' there is a code '7' which means 'Class' (look at the source), which
+appears exactly at the place where the class name should be indicated. The reference then
+points to '#08' which says in its turn: 'Mul', hence the name.
 
-
-
-
-
+In similar ways the rest of the bytecode can be decoded.
 For our purpose the 'Code' attribute seems to be the most interesting here.
+
