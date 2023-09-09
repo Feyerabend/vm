@@ -428,9 +428,8 @@ version: 0.62
 done.
 ```
 
-In this program *only* some of the first bytes are processed:
-'magic', 'minor_version', 'major_version', 'constant_pool_count' and
-'cp_info':
+In this program 'classread-constant-pool.py' *only* some of the first bytes are processed:
+'magic', 'minor_version', 'major_version', 'constant_pool_count' and 'cp_info':
 
 ```text
 ClassFile {
