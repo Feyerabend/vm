@@ -534,3 +534,4 @@ Hence *Mul* is the name of the *class*.
 
 ...
 
+![Sample class read](../assets/images/jvm.png)
