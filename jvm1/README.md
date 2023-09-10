@@ -513,7 +513,7 @@ attribute: SourceFile b'\x00\x0e'
 done.
 ```
 
-First there is a hash table number (unique), then the previously mentioned tag, a colon, and the value.
+First there is a table number (unique entries), then the previously mentioned tag, a colon, and the value.
 If we extract some lines from above:
 
 ```text
