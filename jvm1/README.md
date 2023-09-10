@@ -401,8 +401,8 @@ If we have a closer look at a simple *implementation*
 https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
 (also noted with in comments in the code), we can see that they are
 close enough to give us insights of the benefits from good specifications.
-Java has though suffered from bad implementations at times, included
-this one, but now for good educational reasons. Therefore things such
+Java has though suffered from bad implementations at times (included
+this one, but now for good educational reasons). Therefore things such
 as automated verifications, extended control over the implementation
 or hardened editions from one vendor might also be parts of the actual
 software *in production*.
@@ -460,7 +460,7 @@ ClassFile {
 The 'constant pool' is used by other entries in the class. This becomes more clear as
 we parse the rest.
 
-The constant pool have an encoding, a tag indicate how the following value should be
+The constant pool have an encoding, a `tag` indicate how the following value should be
 interpreted. This table show the tags and the encoding.
 
 | Tag  | Encoded as |
@@ -512,7 +512,9 @@ attribute: Code: b'\x00\x02\x00\x02\x00\x00\x00\x04\x1a\x1bh\xac\x00\x00\x00\x01
 attribute: SourceFile b'\x00\x0e'
 done.
 ```
-Especially have a look at the lines:
+
+First there is a hash table number (unique), then the previously mentioned tag, a colon, and the value.
+If we extract some lines from above:
 
 ```text
 ..
@@ -527,7 +529,7 @@ this class name: Mul
 ..
 ```
 
-Let's have a look at how to get the class name 'Mul':
+Now, let's have a look at how to get the class name 'Mul':
 
 ```python
 # this class name
@@ -548,7 +550,7 @@ def parse_this(f, constant_pool):
 Reading from the file in sequence we get to where there is supposed to be "this class name".
 We can see that at '#07' there is a code '7' which means 'Class' (look at the source of 'classread.py').
 This appears exactly at the place where the class name should be indicated according to the specification.
-The reference then (8) points to '#08' of "type" '1' which is UTF8 and the value is 'Mul'.
+The reference then (8) points to '#08' of tag type '1' which is UTF8 and the value is 'Mul'.
 Hence *Mul* is the name of the *class*.
 
 
