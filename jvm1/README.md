@@ -497,8 +497,8 @@ Especially have a look at the lines:
 
 ```text
 ..
-#07  7: 8
-#08  1: Mul
+#07  7: 8           // Class    #8
+#08  1: Mul         // UTF8     Mul
 ..
 ```
 
@@ -527,9 +527,10 @@ def parse_this(f, constant_pool):
 ```
 
 Reading from the file in sequence we get to where there is supposed to be "this class name".
-We can see that at '#07' there is a code '7' which means 'Class' (look at the source of 'classread.py'),
-which appears exactly at the place where the class name should be indicated. The reference then
-points to '#08' of 'type' 1 which is UTF8 and the value 'Mul', hence the name of the class.
+We can see that at '#07' there is a code '7' which means 'Class' (look at the source of 'classread.py').
+This appears exactly at the place where the class name should be indicated according to the specification.
+The reference then (8) points to '#08' of "type" '1' which is UTF8 and the value is 'Mul'.
+Hence *Mul* is the name of the *class*.
 
 ...
 
