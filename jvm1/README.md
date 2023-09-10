@@ -509,6 +509,5 @@ We can see that at '#07' there is a code '7' which means 'Class' (look at the so
 appears exactly at the place where the class name should be indicated. The reference then
 points to '#08' which says in its turn: 'Mul', hence the name.
 
-In similar ways the rest of the bytecode can be decoded.
-For our purpose the 'Code' attribute seems to be the most interesting here.
+...
 
