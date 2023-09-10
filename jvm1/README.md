@@ -532,6 +532,5 @@ This appears exactly at the place where the class name should be indicated accor
 The reference then (8) points to '#08' of "type" '1' which is UTF8 and the value is 'Mul'.
 Hence *Mul* is the name of the *class*.
 
-...
 
 ![Sample class read](../assets/images/jvm.png)
