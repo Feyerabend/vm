@@ -393,16 +393,19 @@ referenced classes for loading, which here are explicit names
 
 Much more information can be deduced, but we will stop at this.
 
+
+### the constant pool
+
 If we have a closer look at a simple *implementation*
 'classread-constant-pool.py' to the corresponding *specification*
 https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
 (also noted with in comments in the code), we can see that they are
 close enough to give us insights of the benefits from good specifications.
 Java has though suffered from bad implementations at times, included
-this time, but for good reasons. Therefore things such as automated
-verifications, extended control over the implementation or hardened
-editions from one vendor might also be parts of the actual software
-*in production*.
+this one, but now for good educational reasons. Therefore things such
+as automated verifications, extended control over the implementation
+or hardened editions from one vendor might also be parts of the actual
+software *in production*.
 
 The program 'classread-constant-pool.py' gives us a little more
 information than previously (cf. above with `javap`):
@@ -428,9 +431,10 @@ version: 0.62
 done.
 ```
 
-In this program 'classread-constant-pool.py' *only* some of the first bytes are processed:
+In this program 'classread-constant-pool.py' only *some* of the first bytes are processed:
 'magic', 'minor_version', 'major_version', 'constant_pool_count' and 'cp_info'. We ignore
-the rest for the moment.
+the rest for the moment. If we glance at the specification there are lot of other information
+still there.
 
 ```text
 ClassFile {
@@ -453,9 +457,13 @@ ClassFile {
 }
 ```
 
-The 'constant pool' is used by other entries in the file. This becomes more clear as
-we parse the rest. If we try to convert even more with another reader 'classread.py'
-we get:
+The 'constant pool' is used by other entries in the class. This becomes more clear as
+we parse the rest.
+
+
+### more information
+
+If we try to convert even more with another reader 'classread.py' we get:
 
 ```console
 > python3 classread.py -v -i Mul.class
@@ -485,6 +493,20 @@ attribute: Code: b'\x00\x02\x00\x02\x00\x00\x00\x04\x1a\x1bh\xac\x00\x00\x00\x01
 attribute: SourceFile b'\x00\x0e'
 done.
 ```
+Especially have a look at the lines:
+
+```text
+..
+#07  7: 8
+#08  1: Mul
+..
+```
+
+```text
+..
+this class name: Mul
+..
+```
 
 Let's have a look at how to get the class name 'Mul':
 
@@ -505,9 +527,9 @@ def parse_this(f, constant_pool):
 ```
 
 Reading from the file in sequence we get to where there is supposed to be "this class name".
-We can see that at '#07' there is a code '7' which means 'Class' (look at the source), which
-appears exactly at the place where the class name should be indicated. The reference then
-points to '#08' which says in its turn: 'Mul', hence the name.
+We can see that at '#07' there is a code '7' which means 'Class' (look at the source of 'classread.py'),
+which appears exactly at the place where the class name should be indicated. The reference then
+points to '#08' of 'type' 1 which is UTF8 and the value 'Mul', hence the name of the class.
 
 ...
 
