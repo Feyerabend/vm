@@ -460,6 +460,25 @@ ClassFile {
 The 'constant pool' is used by other entries in the class. This becomes more clear as
 we parse the rest.
 
+The constant pool have an encoding, a tag indicate how the following value should be
+interpreted. This table show the tags and the encoding.
+
+| Tag  | Encoded as |
+| ------------- | ------------- |
+| CLASS  | 7  |
+| FIELDREF  | 9  |
+| METHODREF  | 10  |
+| INTERFACEMETHODREF  | 11  |
+| STRING  | 8  |
+| FLOAT  | 3  |
+| LONG  | 4  |
+| DOUBLE  | 5  |
+| NAMEANDTYPE  | 12  |
+| UTF8  | 1  |
+| METHODHANDLE  | 15  |
+| METHODTYPE  | 16  |
+| INVOKEDYNAMIC  | 18  |
+
 
 ### more information
 
