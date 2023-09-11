@@ -488,20 +488,20 @@ If we try to convert even more with another reader 'classread.py' we get:
 > python3 classread.py -v -i Mul.class
 reading ..
 version: 62.0
-#01 10: (2, 3)
-#02  7: 4
-#03 12: (5, 6)
-#04  1: java/lang/Object
-#05  1: <init>
-#06  1: ()V
-#07  7: 8
-#08  1: Mul
-#09  1: Code
-#10  1: LineNumberTable
-#11  1: mul
-#12  1: (II)I
-#13  1: SourceFile
-#14  1: Mul.java
+#01    METHODREF:  (2, 3)
+#02        CLASS:  4
+#03  NAMEANDTYPE:  (5, 6)
+#04         UTF8:  java/lang/Object
+#05         UTF8:  <init>
+#06         UTF8:  ()V
+#07        CLASS:  8
+#08         UTF8:  Mul
+#09         UTF8:  Code
+#10         UTF8:  LineNumberTable
+#11         UTF8:  mul
+#12         UTF8:  (II)I
+#13         UTF8:  SourceFile
+#14         UTF8:  Mul.java
 flags: 0x0021
 this class name: Mul
 super class name: java/lang/Object
@@ -518,8 +518,8 @@ If we extract some lines from above:
 
 ```text
 ..
-#07  7: 8           // Class    #8
-#08  1: Mul         // UTF8     Mul
+#07        CLASS:  8
+#08         UTF8:  Mul
 ..
 ```
 

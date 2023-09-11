@@ -25,6 +25,21 @@ def parse_header(f):
     header.append(Header(magic, minor, major))
     return header
 
+# constant pool tags
+TAG_TEXT = {7: 'CLASS',
+            9: 'FIELDREF',
+            10: 'METHODREF',
+            11: 'INTERFACEMETHODREF',
+            8: 'STRING',
+            3: 'INTEGER',
+            4: 'FLOAT',
+            5: 'LONG',
+            6: 'DOUBLE',
+            12: 'NAMEANDTYPE',
+            1: 'UTF8',
+            15: 'METHODHANDLE',
+            16: 'METHODTYPE',
+            18: 'INVOKEDYNAMIC'}
 
 # cp_info {
 #    u1 tag;
@@ -35,7 +50,8 @@ class ConstantPool():
         self.tag = tag
         self.value = value
     def __str__(self) -> str:
-        return f"{self.tag:>2}: {self.value}"
+        tag = TAG_TEXT[self.tag]
+        return f"{tag:>12}:  {self.value}"
 
 def parse_constant_pool(f):
     constant_pool = []
