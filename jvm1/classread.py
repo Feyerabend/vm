@@ -51,7 +51,7 @@ class ConstantPool():
         self.value = value
     def __str__(self) -> str:
         tag = TAG_TEXT[self.tag]
-        return f"{tag:>12}:  {self.value}"
+        return f"{tag:>20}:  {self.value}"
 
 def parse_constant_pool(f):
     constant_pool = []
