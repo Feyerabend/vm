@@ -521,10 +521,6 @@ If we extract some lines from above:
 #07        CLASS:  8
 #08         UTF8:  Mul
 ..
-```
-
-```text
-..
 this class name: Mul
 ..
 ```
