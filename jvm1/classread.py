@@ -22,7 +22,7 @@ def parse_header(f):
     header = []
     magic = struct.unpack('!I', f.read(4))
     minor, major = struct.unpack('!HH', f.read(4))
-    header.append(Header(magic, major, minor))
+    header.append(Header(magic, minor, major))
     return header
 
 
