@@ -413,7 +413,7 @@ information than previously (cf. above with `javap`):
 ```console
 > python3 classread-constant-pool.py -v -i Mul.class
 reading ..
-version: 0.62
+version: 62.0
 #01 10: (2, 3)
 #02  7: 4
 #03 12: (5, 6)
@@ -487,7 +487,7 @@ If we try to convert even more with another reader 'classread.py' we get:
 ```console
 > python3 classread.py -v -i Mul.class
 reading ..
-version: 0.62
+version: 62.0
 #01 10: (2, 3)
 #02  7: 4
 #03 12: (5, 6)
