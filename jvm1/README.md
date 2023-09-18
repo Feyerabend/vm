@@ -585,10 +585,12 @@ A well known method signature such as:
     (L[java/lang/String;)V
 ```
 
-Compare this with the above hexfile (picture above). This is, decoded, a call with the argument of a
-string array (and returning a void).
+Compare this with the above hexfile (picture above) where this can be seen. This is, decoded,
+a call with the argument of a string array (and returning a void).
 
 So far what we have seen is how to read class files. The discussion so far has been what can be
 illustrated with:
 
 ![Sample class read](../assets/images/jvm.png)
+
+Next we have a even deepr look into some details, esp. 'Code'.
