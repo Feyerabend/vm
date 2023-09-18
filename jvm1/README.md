@@ -564,7 +564,7 @@ Field types from the specification:
 | F	| float	| 	single-precision floating-point value |
 | I	| int	| 	integer |
 | J	| long	| 	long integer |
-| L | ClassName ;	| 	reference	an instance of class ClassName |
+| L | *ClassName* ;	| 	reference	an instance of class ClassName |
 | S	| short		| signed short |
 | Z	| boolean	| 	true or false |
 | [	| reference	| 	one array dimension |
