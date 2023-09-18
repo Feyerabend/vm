@@ -585,8 +585,9 @@ A well known method signature such as:
     (L[java/lang/String;)V
 ```
 
-Compare above the hexfile (picture). This is, decoded, a call with the argument of a string array
+Compare above the hexfile (picture above). This is, decoded, a call with the argument of a string array
 (returning a void).
 
+So far what we have seen is reading class files. The discussion so far has been what can be illustrated thus:
 
 ![Sample class read](../assets/images/jvm.png)
