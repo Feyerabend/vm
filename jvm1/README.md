@@ -556,7 +556,7 @@ One more explanation could clarify the disassembly a bit more. The signature of 
 be described in the declaration such as for 'mul' above it is '(II)I'. You might have already
 deciphered it as two integers in and one integer out. And that is exactly was is described. 
 
-Field types from the specification:
+Let's look at the 'field types' from the specification:
 
 | FieldType term |	Type |	Interpretation |
 | ------------- | ------------- | ------------- |
@@ -585,9 +585,10 @@ A well known method signature such as:
     (L[java/lang/String;)V
 ```
 
-Compare above the hexfile (picture above). This is, decoded, a call with the argument of a string array
-(returning a void).
+Compare this with the above hexfile (picture above). This is, decoded, a call with the argument of a
+string array (and returning a void).
 
-So far what we have seen is reading class files. The discussion so far has been what can be illustrated thus:
+So far what we have seen is how to read class files. The discussion so far has been what can be
+illustrated with:
 
 ![Sample class read](../assets/images/jvm.png)
