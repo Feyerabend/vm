@@ -577,7 +577,7 @@ A well known method signature such as:
     }
 ```
 
-Encoded as:
+.. can be encoded as ..
 
 ```text
     (L[java/lang/String;)V
