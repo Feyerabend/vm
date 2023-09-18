@@ -585,7 +585,8 @@ A well known method signature such as:
     (L[java/lang/String;)V
 ```
 
-Which is a call with the argument of a string array (returning a void).
+Compare above the hexfile (picture). This is, decoded, a call with the argument of a string array
+(returning a void).
 
 
 ![Sample class read](../assets/images/jvm.png)
