@@ -593,4 +593,5 @@ illustrated with:
 
 ![Sample class read](../assets/images/jvm.png)
 
-Next we have a even deepr look into some details, esp. 'Code'.
+Next we have a even deeper look into some details, especially 'Code' (but also neglect others
+for obvious reasons).
