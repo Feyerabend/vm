@@ -550,6 +550,8 @@ The reference then (8) points to '#08' of tag type 'UTF8' with the value is 'Mul
 
 Hence *Mul* is the name of the *class*.
 
+### even more information
+
 One more explanation could clarify the disassembly a bit more. The signature of a method can
 be described in the declaration such as for 'mul' above it is '(II)I'. You might have already
 deciphered it as two integers in and one integer out. And that is exactly was is described. 
@@ -564,7 +566,7 @@ Field types from the specification:
 | F	| float	| 	single-precision floating-point value |
 | I	| int	| 	integer |
 | J	| long	| 	long integer |
-| L | *ClassName* ;	| 	reference	an instance of class ClassName |
+| L | *ClassName* ;	| 	reference	an instance of class *ClassName* |
 | S	| short		| signed short |
 | Z	| boolean	| 	true or false |
 | [	| reference	| 	one array dimension |
