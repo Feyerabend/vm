@@ -569,6 +569,21 @@ Field types from the specification:
 | Z	| boolean	| 	true or false |
 | [	| reference	| 	one array dimension |
 
+A well known method signature such as:
+
+```java
+    public static void main(String[] args) {
+        // ...
+    }
+```
+
+Encoded as:
+
+```text
+    (L[java/lang/String;)V
+```
+
+Which is a call with the argument of a string array (returning a void).
 
 
 ![Sample class read](../assets/images/jvm.png)
