@@ -574,15 +574,15 @@ Let's look at the 'field types' from the specification:
 A well known method signature such as:
 
 ```java
-    public static void main(String[] args) {
-        // ...
-    }
+public static void main(String[] args) {
+    // ...
+}
 ```
 
 .. can be encoded as ..
 
 ```text
-    (L[java/lang/String;)V
+(L[java/lang/String;)V
 ```
 
 Compare this with the above hexfile (picture above) where this can be seen. This is, decoded,
