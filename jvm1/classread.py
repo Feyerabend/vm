@@ -425,29 +425,31 @@ def readclass(inputfile, verbose):
         f.close()
 
         if verbose == 1:
-            for i, v1 in enumerate(header):
+            for _, v1 in enumerate(header):
                 print(f"{v1}")
-            for i, v2 in enumerate(constant_pool):
-                print(f"#{i+1:0>{2}} {v2}")
+            constpool = list(enumerate(constant_pool, 1))
+            for i, v2 in constpool:
+                print(f"#{i:0>{2}} {v2}")
             print(f"{flags}")
             print(f"{this}")
             print(f"{super}")
             if interfaces:
-                for i, v3 in enumerate(interfaces):
+                for _, v3 in enumerate(interfaces):
                     print(f"{v3}")
             if fields:
-                for i, v4 in enumerate(fields):
+                for _, v4 in enumerate(fields):
                     print(f"{v4}")
-                    for i, v5 in enumerate(v4.attributes):
+                    for _, v5 in enumerate(v4.attributes):
                         print(f"{v5}")
             if methods:
-                for i, v6 in enumerate(methods):
+                for _, v6 in enumerate(methods):
                     print(f"{v6}")
-                    for i, v7 in enumerate(v6.attributes):
+                    for _, v7 in enumerate(v6.attributes):
                         print(f"{v7}")
             if attributes:
-                for i, v8 in enumerate(attributes):
+                for _, v8 in enumerate(attributes):
                     print(f"{v8}")
+
 
 # 
 def main(argv):
