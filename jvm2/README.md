@@ -105,8 +105,19 @@ public class Sample extends Object {
 }
 ```
 
-That is: many things are here implicit in Java that also could be explicit.
+That is: many things are here implicit in Java that also could be made explicit.
 The constructor 'super()' is calling the super class 'Object' as an initialisation.
 That is what the first code block is doing under 'Sample()' above.
 
 We are, to begin with, more interested in what the second block of code does.
+
+```console
+  public static void main(java.lang.String[]);
+    ..
+    Code:
+        ..
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #13                 // String Hi!
+         5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+```
