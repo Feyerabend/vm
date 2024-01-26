@@ -149,8 +149,8 @@ If we isolate the referenced parts from the constant pool, then we can split the
   #20 = Utf8               (Ljava/lang/String;)V
 ```
 
-The hierachical structure of referenced (native) classes, methods and fields thus can
-be illustrated as:
+The hierachical structure of some referenced (native) classes, methods and fields
+thus can be illustrated as:
 
 ```
 java
