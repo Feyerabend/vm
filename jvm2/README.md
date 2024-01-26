@@ -176,11 +176,13 @@ public class Sample extends java.lang.Object {
 }
 ```
 
-Table[] 
+### Table of some instructions[^table]
 
-| Instruction   |  Hex |  **Binary** |   Description |
-| ------------- | ----- | -------- | ------------- |
-| `getstatic``     | b2	| **1011 0010** |  get a static field value of a class, where the field is identified by field reference in the constant pool index (indexbyte1 << 8 | indexbyte2)  |
-| `ldc``           | 12	| **0001 0010** |   push a constant #index from a constant pool (String, int, float, Class, java.lang.invoke.MethodType, java.lang.invoke.MethodHandle, or a dynamically-computed constant) onto the stack  |
-| `invokevirtual`` | b6	| **1011 0110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 | indexbyte2) |
+[^table]: See https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
+
+| Instruction   |  Hex  |  **Binary**   |   Description |
+| ------------- | ----- | ------------- | ------------- |
+| `getstatic`     | b2	| **1011 0010** |  get a static field value of a class, where the field is identified by field reference in the constant pool index (indexbyte1 << 8 | indexbyte2)  |
+| `ldc`           | 12	| **0001 0010** |   push a constant #index from a constant pool (String, int, float, Class, java.lang.invoke.MethodType, java.lang.invoke.MethodHandle, or a dynamically-computed constant) onto the stack  |
+| `invokevirtual` | b6	| **1011 0110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 | indexbyte2) |
 
