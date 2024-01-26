@@ -15,7 +15,7 @@ public class Sample {
 Most of the parsing has been done by 'classread.py'. And if we recapitulate
 the main parts from running `javap -v`:
 
-1. A summary of ingredients of the class.
+#### 1. A summary of ingredients of the class.
 
 ```console
 class Sample
@@ -27,7 +27,7 @@ class Sample
   interfaces: 0, fields: 0, methods: 2, attributes: 1
 ```
 
-2. What the important 'constant pool' looks like.
+#### 2. What the important 'constant pool' looks like.
 
 ```console
 Constant pool:
@@ -61,7 +61,7 @@ Constant pool:
   #28 = Utf8               Sample.java
 ```
 
-3. What the contents of the instructions the program consists in.
+#### 3. What the contents of the instructions the program consists in.
 
 ```console
 {
@@ -92,3 +92,21 @@ Constant pool:
 SourceFile: "Sample.java"
 ```
 
+What we first can take notice of is that the program could in principle be written as:
+
+```java
+public class Sample extends Object {
+    Sample() {
+        super();
+    }
+    public static void main(String[] args) {
+        System.out.println("Hi!");
+    }
+}
+```
+
+That is: many things are here implicit in Java that also could be explicit.
+The constructor 'super()' is calling the super class 'Object' as an initialisation.
+That is what the first code block is doing under 'Sample()' above.
+
+We are to begin with more interested in the second block of code.
