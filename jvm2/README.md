@@ -109,4 +109,4 @@ That is: many things are here implicit in Java that also could be explicit.
 The constructor 'super()' is calling the super class 'Object' as an initialisation.
 That is what the first code block is doing under 'Sample()' above.
 
-We are to begin with more interested in the second block of code.
+We are, to begin with, more interested in what the second block of code does.
