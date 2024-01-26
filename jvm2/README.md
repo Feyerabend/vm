@@ -61,7 +61,7 @@ Constant pool:
   #28 = Utf8               Sample.java
 ```
 
-#### 3. What the contents of the instructions the program consists in.
+#### 3. The contents of he program: code.
 
 ```console
 {
