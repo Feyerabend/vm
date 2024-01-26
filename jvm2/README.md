@@ -15,7 +15,7 @@ public class Sample {
 Most of the parsing has been done by 'classread.py'. And if we recapitulate
 the main parts from running `javap -v`:
 
-#### 1. A summary of ingredients of the class.
+#### 1. a summary of ingredients of the class.
 
 ```console
 class Sample
@@ -27,7 +27,7 @@ class Sample
   interfaces: 0, fields: 0, methods: 2, attributes: 1
 ```
 
-#### 2. What the important 'constant pool' looks like.
+#### 2. what the important 'constant pool' looks like.
 
 ```console
 Constant pool:
@@ -61,7 +61,7 @@ Constant pool:
   #28 = Utf8               Sample.java
 ```
 
-#### 3. The contents of he program: code.
+#### 3. the contents of the program: code.
 
 ```console
 {
