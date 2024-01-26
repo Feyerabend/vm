@@ -122,7 +122,7 @@ We are, to begin with, more interested in what the second block of code do.
          8: return
 ```
 
-If we isolate the referenced parts from the constant pool. We can split into the relevant parts.
+If we isolate the referenced parts from the constant pool, then we can split them into relevant parts.
 
 #### a. get static
 ```console
@@ -148,3 +148,17 @@ If we isolate the referenced parts from the constant pool. We can split into the
   #19 = Utf8               println
   #20 = Utf8               (Ljava/lang/String;)V
 ```
+
+The hierachical structure of referenced (native) classes, methods and fields thus can
+be illustrated as:
+
+```
+java
+    io
+        PrintStream
+            println
+    lang
+        System
+            out = Printstream
+```
+
