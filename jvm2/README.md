@@ -109,7 +109,7 @@ That is: many things are here implicit in Java that also could be made explicit.
 The constructor 'super()' is calling the super class 'Object' as an initialisation.
 That is what the first code block is doing under 'Sample()' above.
 
-We are, to begin with, more interested in what the second block of code does.
+We are, to begin with, more interested in what the second block of code do.
 
 ```console
   public static void main(java.lang.String[]);
@@ -120,4 +120,31 @@ We are, to begin with, more interested in what the second block of code does.
          3: ldc           #13                 // String Hi!
          5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
          8: return
+```
+
+If we isolate the referenced parts from the constant pool. We can split into the relevant parts.
+
+#### a. get static
+```console
+   #7 = Fieldref           #8.#9          // java/lang/System.out:Ljava/io/PrintStream;
+   #8 = Class              #10            // java/lang/System
+   #9 = NameAndType        #11:#12        // out:Ljava/io/PrintStream;
+  #10 = Utf8               java/lang/System
+  #11 = Utf8               out
+  #12 = Utf8               Ljava/io/PrintStream;
+```
+
+#### b. ldc
+```console
+  #13 = String             #14            // Hi!
+```
+
+#### c. invoke virtual
+```console
+  #15 = Methodref          #16.#17        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #16 = Class              #18            // java/io/PrintStream
+  #17 = NameAndType        #19:#20        // println:(Ljava/lang/String;)V
+  #18 = Utf8               java/io/PrintStream
+  #19 = Utf8               println
+  #20 = Utf8               (Ljava/lang/String;)V
 ```
