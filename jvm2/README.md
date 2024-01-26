@@ -137,6 +137,7 @@ If we isolate the referenced parts from the constant pool, then we can split the
 #### b. ldc
 ```console
   #13 = String             #14            // Hi!
+  #14 = Utf8               Hi!
 ```
 
 #### c. invoke virtual
