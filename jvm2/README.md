@@ -162,3 +162,16 @@ java
             out = Printstream
 ```
 
+Looking at the dependency of classes we could also write 'Sample.java' even more explicit
+in the following way:
+
+```java
+public class Sample extends java.lang.Object {
+    Sample() {
+        super();
+    }
+    public static void main(java.lang.String[] args) {
+        java.lang.System.out.println("Hi!");
+    }
+}
+```
