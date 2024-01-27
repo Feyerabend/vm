@@ -317,3 +317,4 @@ class Interpret():
 
 ```
 
+![Sample interpreted](../assets/images/jvm2.png)
