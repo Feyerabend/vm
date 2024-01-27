@@ -230,6 +230,11 @@ The previous sequence:
     return
 ```
 
+```text
+    #13 = String  #14   // Hi!
+    #14 = Utf8    Hi!
+```
+
 ```python
 class Interpret():
     ..
