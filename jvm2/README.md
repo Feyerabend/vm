@@ -180,7 +180,10 @@ public class Sample extends java.lang.Object {
 ## simplest implementation
 
 A Python implementation running *only* the simplest of Java programs (above) shows
-how the principles works.
+how the principles works.[^jvmimpl]
+
+[^jvmimpl]: I'm most grateful for the implementation given at: https://github.com/phoro3/python_jvm,
+from which I have borrowed heavely.
 
 The hierachical structure of some referenced (native) classes, methods and fields
 thus can be illustrated as:
