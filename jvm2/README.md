@@ -39,7 +39,6 @@ public class Sample extends Object {
 
 That is: many things are here implicit in Java that also could be made explicit.
 The constructor 'super()' is calling the super class 'Object' as an initialisation.
-That is what the first code block is doing under 'Sample()' above.
 
 Looking at the dependency of classes we could also write 'Sample.java' even more explicit
 in the following way:
@@ -55,8 +54,8 @@ public class Sample extends java.lang.Object {
 }
 ```
 
-All these variations compiles to the same class files. In essence
-they are the *same* Java program.
+All these variations compiles to the same class files. In essence they are the
+*same* Java program.
 
 
 
