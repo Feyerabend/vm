@@ -150,19 +150,6 @@ If we isolate the referenced parts from the constant pool, then we can split the
   #20 = Utf8               (Ljava/lang/String;)V
 ```
 
-The hierachical structure of some referenced (native) classes, methods and fields
-thus can be illustrated as:
-
-```
-java
-    io
-        PrintStream
-            println
-    lang
-        System
-            out = Printstream
-```
-
 Looking at the dependency of classes we could also write 'Sample.java' even more explicit
 in the following way:
 
@@ -186,4 +173,21 @@ public class Sample extends java.lang.Object {
 | `getstatic`     |   178   | b2	| **10110010** |  get a static field value of a class, where the field is identified by field reference in the constant pool index (indexbyte1 << 8 \| indexbyte2)  |
 | `ldc`           |   18    | 12    | **00010010** |   push a constant #index from a constant pool (String, int, float, Class, java.lang.invoke.MethodType, java.lang.invoke.MethodHandle, or a dynamically-computed constant) onto the stack  |
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
+
+
+## implementation
+
+The hierachical structure of some referenced (native) classes, methods and fields
+thus can be illustrated as:
+
+```
+java
+    io
+        PrintStream
+            println
+    lang
+        System
+            out = PrintStream
+```
+
 

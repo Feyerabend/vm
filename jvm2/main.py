@@ -1,3 +1,7 @@
+# a very, very, very limited interpreter
+# that shows the ideas of a Java interpreter
+# it can not parse and run more than a simple
+# "hello world" program
 # mostly inspired from https://github.com/phoro3/python_jvm
 
 import io
