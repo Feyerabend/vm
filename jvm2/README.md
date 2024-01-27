@@ -236,3 +236,11 @@ class Interpret():
             178:    self.instr_getstatic,
             182:    self.instr_invokevirtual
         }
+    ..
+    def instr_ldc(self):
+        index = self.advance()
+        string_ref = self.pool[index - 1].value
+        string = self.pool[string_ref - 1].value
+        self.callstack.append(string)
+
+```
