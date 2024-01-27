@@ -12,6 +12,18 @@ public class Sample {
 }
 ```
 
+### run
+
+Move (or copy or reference) the class file 'Sample.class' to where the 'main.py' program is.
+Test the sample with:
+
+```shell
+> python3 main.py -i Sample.class
+> Hi!
+```
+
+## more parsing
+
 Most of the parsing has been done by 'classread.py'. And if we recapitulate
 the main parts from running `javap -v`:
 
@@ -152,6 +164,8 @@ If we isolate the referenced parts from the constant pool, then we can split the
 
 Return only returns from the calling method.
 
+## interpret
+
 Looking at the dependency of classes we could also write 'Sample.java' even more explicit
 in the following way:
 
@@ -177,7 +191,7 @@ public class Sample extends java.lang.Object {
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
 
 
-## the simplest of implementations
+### the simplest of implementations
 
 A Python implementation running *only* the simplest of Java programs (above) shows
 how the principles works.[^jvmimpl]
