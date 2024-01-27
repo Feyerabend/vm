@@ -22,6 +22,45 @@ Test the sample.
 > Hi!
 ```
 
+### source
+
+What we first can take notice of is that the program could in principle be written as:
+
+```java
+public class Sample extends Object {
+    Sample() {
+        super();
+    }
+    public static void main(String[] args) {
+        System.out.println("Hi!");
+    }
+}
+```
+
+That is: many things are here implicit in Java that also could be made explicit.
+The constructor 'super()' is calling the super class 'Object' as an initialisation.
+That is what the first code block is doing under 'Sample()' above.
+
+Looking at the dependency of classes we could also write 'Sample.java' even more explicit
+in the following way:
+
+```java
+public class Sample extends java.lang.Object {
+    Sample() {
+        super();
+    }
+    public static void main(java.lang.String[] args) {
+        java.lang.System.out.println("Hi!");
+    }
+}
+```
+
+All these variations compiles to the same class files. In essence
+they are the *same* Java program.
+
+
+
+
 ## more parsing
 
 Most of the parsing has been done by 'classread.py'. And if we recapitulate
@@ -104,39 +143,6 @@ Constant pool:
 SourceFile: "Sample.java"
 ```
 
-What we first can take notice of is that the program could in principle be written as:
-
-```java
-public class Sample extends Object {
-    Sample() {
-        super();
-    }
-    public static void main(String[] args) {
-        System.out.println("Hi!");
-    }
-}
-```
-
-That is: many things are here implicit in Java that also could be made explicit.
-The constructor 'super()' is calling the super class 'Object' as an initialisation.
-That is what the first code block is doing under 'Sample()' above.
-
-Looking at the dependency of classes we could also write 'Sample.java' even more explicit
-in the following way:
-
-```java
-public class Sample extends java.lang.Object {
-    Sample() {
-        super();
-    }
-    public static void main(java.lang.String[] args) {
-        java.lang.System.out.println("Hi!");
-    }
-}
-```
-
-All these variations compiles to the same class files. In principal
-they are the same Java program.
 
 
 ## interpret
@@ -155,6 +161,31 @@ We are more interested in what the second block of code does above.
          5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
          8: return
 ```
+
+If running 'main.py' with the option '-v' there will be a small list of numbers that corresponds
+with this code.
+
+```shell
+> python3 main.py -v -i Sample.class
+> reading ..
+> search for 'main' ..
+> code list = [178, 0, 7, 18, 13, 182, 0, 15, 177]
+> interpret ..
+> Hi!
+>done.
+```
+
+If we split the code into small sections and add some comments it becomes more clear how the code is
+intended to be read (used by the machine).
+
+```text
+[178, 0, 7]     // getstatic 7
+[18, 13]        // ldc 13
+[182, 0, 15]    // invokevirtual 15
+[177]           // return
+```
+
+## pool
 
 If we isolate the referenced parts from the __constant pool__, then we can split them into relevant parts.
 
@@ -287,11 +318,3 @@ class Interpret():
 
 ```
 
-```text
-code list = [178, 0, 7, 18, 13, 182, 0, 15, 177]
-
-[178, 0, 7]     // getstatic 7
-[18, 13]        // ldc 13
-[182, 0, 15]    // invokevirtual 15
-[177]           // return
-```
