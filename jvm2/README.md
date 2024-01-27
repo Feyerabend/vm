@@ -228,10 +228,11 @@ The previous sequence:
 ```
 
 ```python
+class Interpret():
+    ..
         self.instructions = {
             18:     self.instr_ldc,
             177:    self.instr_return,
             178:    self.instr_getstatic,
             182:    self.instr_invokevirtual
         }
-```
