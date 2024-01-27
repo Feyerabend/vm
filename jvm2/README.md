@@ -253,6 +253,6 @@ class Interpret():
         index = self.advance()
         string_ref = self.pool[index - 1].value
         string = self.pool[string_ref - 1].value
-        self.callstack.append(string)
+        self.stack.append(string)
 
 ```

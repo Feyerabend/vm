@@ -85,7 +85,7 @@ class Interpret():
             182:    self.instr_invokevirtual
         }
         self.pc = 0
-        self.callstack = []
+        self.stack = []
 
         # tuple decode
         self.max_stack = int(codes[0])
@@ -123,7 +123,7 @@ class Interpret():
 
         target_class = importlib.import_module(class_name)
         target_field = getattr(target_class, name)
-        self.callstack.append(target_field)
+        self.stack.append(target_field)
 
     def instr_invokevirtual(self):
         index = self.advance() << 8 | self.advance()
@@ -138,17 +138,17 @@ class Interpret():
         typee = self.pool[type_ref - 1].value
 
         arg_num = len(typee.split(';')) - 1
-        args = [self.callstack.pop() for _ in range(arg_num)]
+        args = [self.stack.pop() for _ in range(arg_num)]
         args.reverse()
 
-        target_method = getattr(self.callstack.pop(), name)
+        target_method = getattr(self.stack.pop(), name)
         target_method(*args)
 
     def instr_ldc(self):
         index = self.advance()
         string_ref = self.pool[index - 1].value
         string = self.pool[string_ref - 1].value
-        self.callstack.append(string)
+        self.stack.append(string)
 
     def instr_return(self):
         return
