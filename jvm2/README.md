@@ -177,7 +177,7 @@ public class Sample extends java.lang.Object {
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
 
 
-## simplest implementation
+## the simplest of implementations
 
 A Python implementation running *only* the simplest of Java programs (above) shows
 how the principles works.[^jvmimpl]
@@ -224,6 +224,8 @@ for implementation especially in languages where allocation/eallocation is handl
 The previous sequence:
 
 ```text
+  Code:
+    ..
     getstatic     #7
     ldc           #13   // String Hi!
     invokevirtual #15
@@ -231,6 +233,8 @@ The previous sequence:
 ```
 
 ```text
+Constant pool:
+    ..
     #13 = String  #14   // Hi!
     #14 = Utf8    Hi!
 ```
