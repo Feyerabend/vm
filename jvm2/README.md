@@ -150,6 +150,8 @@ If we isolate the referenced parts from the constant pool, then we can split the
   #20 = Utf8               (Ljava/lang/String;)V
 ```
 
+Return only returns from the calling method.
+
 Looking at the dependency of classes we could also write 'Sample.java' even more explicit
 in the following way:
 
@@ -175,7 +177,10 @@ public class Sample extends java.lang.Object {
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
 
 
-## implementation
+## simplest implementation
+
+A Python implementation running *only* the simplest of Java programs (above) shows
+how the principles works.
 
 The hierachical structure of some referenced (native) classes, methods and fields
 thus can be illustrated as:
@@ -190,4 +195,40 @@ java
             out = PrintStream
 ```
 
+This lends itself to an easier task in Python. To load a 'native' class from the structure
+one could use `importlib.import_module(class_name)`. Other Python constructions of 'reflection'
+of `getattr(object, name)` and dynamically calling methods helps.
 
+Extending previous parsing of a class, the code attribute was left untouched.
+
+```python
+    # code attr
+    def get_code_of_method(self, method_name):
+        codeattr = self.get_attr_of_method(method_name, 'Code')
+        if codeattr:
+            t = io.BytesIO(codeattr)
+            max_stack = struct.unpack('!H', t.read(2))[0]
+            max_locals = struct.unpack('!H', t.read(2))[0]
+            code_len = struct.unpack('!I', t.read(4))[0]
+            code = t.read(code_len)
+            return (max_stack, max_locals, code)
+        return None
+```
+
+Besides the instructions in `code` limits of local variables and the local stack comes to the aid
+for implementation especially in languages where allocation/eallocation is handled manually.
+
+The previous sequence:
+
+```text
+    getstatic     #7
+    ldc           #13   // String Hi!
+    invokevirtual #15
+    return
+```
+
+corresponds to the code:
+
+```text
+   178, 0, 7, 16, 23, 16, 45, 184, 0, 13, 182, 0, 19, 177
+```
