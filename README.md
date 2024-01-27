@@ -171,13 +171,12 @@ can be seen quite clearly in the implementation.
 
 ### 13. [jvm2](/jvm2)
 
+Next is a implementation of also running some code from the reading of the file.
+It keeps to the absolute minimum and can only cope with a 'hello world' program
+for illustration.
 
 
-### 14. [jvm3](/jvm3)
-
-
-
-### 15? [pitiful](/pitiful)
+### 14. [pitiful](/pitiful)
 
 A small JVM written in C.
 
