@@ -135,7 +135,7 @@ public class Sample extends java.lang.Object {
 }
 ```
 
-All these variations compiles to (almost) the same class files. In principal
+All these variations compiles to the same class files. In principal
 they are the same Java program.
 
 
@@ -285,4 +285,13 @@ class Interpret():
         string = self.pool[string_ref - 1].value
         self.stack.append(string)
 
+```
+
+```text
+[178, 0, 7, 18, 13, 182, 0, 15, 177]
+
+[178, 0, 7]     // getstatic 7
+[18, 13]        // ldc 13
+[182, 0, 15]    // invokevirtual 15
+[177]           // return
 ```
