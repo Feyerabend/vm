@@ -200,10 +200,11 @@ details of what the instructions are.
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
 
 A can be deduced an interpretation of a program here is collecting items
-from the pool and manipulating them in different ways.
+from the pool and manipulating them in different ways. This behaviour becomes
+the significant part of 'main.py'.
 
-There are naturally other operations such as aritmetic that works more
-directly from the code itself, and not so much using the pool.
+There are naturally other operations in Java such as aritmetic that works more
+directly on and from the code itself, but not so much using the pool.
 
 
 ### the simplest of implementations
@@ -231,7 +232,7 @@ This lends itself to an easier task in Python. To load a 'native' class from the
 one could use `importlib.import_module(class_name)`. Other Python constructions of 'reflection'
 of `getattr(object, name)` and dynamically calling methods helps.
 
-Extending previous parsing of a class, the code attribute was left untouched.
+Extending previous parsing of a class, the code attribute was then left untouched.
 
 ```python
     # code attr
