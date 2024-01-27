@@ -181,6 +181,8 @@ def main(argv):
     if verbose == 1:
         print("search for 'main' ..")
     codes = parser.get_code_of_method('main')
+    if verbose == 1:
+        print("code list =", list(codes[2]))
     pool = parser.constant_pool
 
     if verbose == 1:
