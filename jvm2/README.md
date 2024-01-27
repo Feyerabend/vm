@@ -227,8 +227,11 @@ The previous sequence:
     return
 ```
 
-corresponds to the code:
-
-```text
-   178, 0, 7, 16, 23, 16, 45, 184, 0, 13, 182, 0, 19, 177
+```python
+        self.instructions = {
+            18:     self.instr_ldc,
+            177:    self.instr_return,
+            178:    self.instr_getstatic,
+            182:    self.instr_invokevirtual
+        }
 ```
