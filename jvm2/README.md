@@ -15,7 +15,7 @@ public class Sample {
 ### run
 
 Move (or copy or reference) the class file 'Sample.class' to where the 'main.py' program is.
-Test the sample with:
+Test the sample.
 
 ```shell
 > python3 main.py -i Sample.class
@@ -121,7 +121,29 @@ That is: many things are here implicit in Java that also could be made explicit.
 The constructor 'super()' is calling the super class 'Object' as an initialisation.
 That is what the first code block is doing under 'Sample()' above.
 
-We are, to begin with, more interested in what the second block of code do.
+Looking at the dependency of classes we could also write 'Sample.java' even more explicit
+in the following way:
+
+```java
+public class Sample extends java.lang.Object {
+    Sample() {
+        super();
+    }
+    public static void main(java.lang.String[] args) {
+        java.lang.System.out.println("Hi!");
+    }
+}
+```
+
+All these variations compiles to (almost) the same class files. In principal
+they are the same Java program.
+
+
+## interpret
+
+### code
+
+We are more interested in what the second block of code does above.
 
 ```console
   public static void main(java.lang.String[]);
@@ -134,7 +156,7 @@ We are, to begin with, more interested in what the second block of code do.
          8: return
 ```
 
-If we isolate the referenced parts from the constant pool, then we can split them into relevant parts.
+If we isolate the referenced parts from the __constant pool__, then we can split them into relevant parts.
 
 #### a. get static
 ```console
@@ -164,23 +186,10 @@ If we isolate the referenced parts from the constant pool, then we can split the
 
 Return only returns from the calling method.
 
-## interpret
-
-Looking at the dependency of classes we could also write 'Sample.java' even more explicit
-in the following way:
-
-```java
-public class Sample extends java.lang.Object {
-    Sample() {
-        super();
-    }
-    public static void main(java.lang.String[] args) {
-        java.lang.System.out.println("Hi!");
-    }
-}
-```
-
 ### table of some instructions[^table]
+
+Looking at what the specification (or a simplification of specification) we get more
+details of what the instructions are.
 
 [^table]: See https://en.wikipedia.org/wiki/List_of_Java_bytecode_instructions
 
@@ -190,14 +199,20 @@ public class Sample extends java.lang.Object {
 | `ldc`           |   18    | 12    | **00010010** |   push a constant #index from a constant pool (String, int, float, Class, java.lang.invoke.MethodType, java.lang.invoke.MethodHandle, or a dynamically-computed constant) onto the stack  |
 | `invokevirtual` |   177   | b6    | **10110110** |  invoke virtual method on object objectref and puts the result on the stack (might be void); the method is identified by method reference index in constant pool (indexbyte1 << 8 \| indexbyte2) |
 
+A can be deduced an interpretation of a program here is collecting items
+from the pool and manipulating them in different ways.
+
+There are naturally other operations such as aritmetic that works more
+directly from the code itself, and not so much using the pool.
+
 
 ### the simplest of implementations
 
-A Python implementation running *only* the simplest of Java programs (above) shows
+A Python implementation 'main.py' running *only* the simplest of Java programs (above) shows
 how the principles works.[^jvmimpl]
 
 [^jvmimpl]: I'm most grateful for the implementation given at: https://github.com/phoro3/python_jvm,
-from which I have borrowed heavely.
+from which I have borrowed heavily.
 
 The hierachical structure of some referenced (native) classes, methods and fields
 thus can be illustrated as:
