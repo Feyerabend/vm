@@ -271,7 +271,6 @@ def parse_interfaces(f, constant_pool):
 #    u1 info[attribute_length];
 # }
 
-# attributes -- not tested!
 class AttributeInfo():
     def __init__(self, name, info):
         self.name = name
