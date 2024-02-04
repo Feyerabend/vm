@@ -216,7 +216,9 @@ intended to be read (used by the machine).
 
 ## pool
 
-If we isolate the referenced parts from the __constant pool__, then we can split them into relevant parts.
+If we isolate the referenced parts from the __constant pool__, then we can split them into relevant parts
+where the second part is the relevant Python code from `main.py`.
+
 
 #### a. get static
 ```console
@@ -228,10 +230,39 @@ If we isolate the referenced parts from the __constant pool__, then we can split
   #12 = Utf8               Ljava/io/PrintStream;
 ```
 
+```python
+    def instr_getstatic(self):
+        index = self.advance() << 8 | self.advance()
+
+        field_ref = self.pool[index - 1]
+
+        class_index = field_ref.value[0]
+        class_pointer = self.pool[class_index - 1]
+        class_name = self.pool[class_pointer.value - 1].value
+        class_name = class_name.replace('/', '.')
+
+        name_and_type_index = field_ref.value[1]
+        name_and_type = self.pool[name_and_type_index - 1].value
+        name_index = name_and_type[0]
+        name = self.pool[name_index - 1].value
+
+        target_class = importlib.import_module(class_name)
+        target_field = getattr(target_class, name)
+        self.stack.append(target_field)
+```
+
 #### b. ldc
 ```console
   #13 = String             #14            // Hi!
   #14 = Utf8               Hi!
+```
+
+```python
+    def instr_ldc(self):
+        index = self.advance()
+        string_ref = self.pool[index - 1].value
+        string = self.pool[string_ref - 1].value
+        self.stack.append(string)
 ```
 
 #### c. invoke virtual
@@ -242,6 +273,27 @@ If we isolate the referenced parts from the __constant pool__, then we can split
   #18 = Utf8               java/io/PrintStream
   #19 = Utf8               println
   #20 = Utf8               (Ljava/lang/String;)V
+```
+
+```python
+    def instr_invokevirtual(self):
+        index = self.advance() << 8 | self.advance()
+
+        method_ref = self.pool[index - 1]
+
+        name_and_type = method_ref.value[1]
+        name_ref = self.pool[name_and_type - 1].value[0]
+        type_ref = self.pool[name_and_type - 1].value[1]
+
+        name = self.pool[name_ref - 1].value
+        typee = self.pool[type_ref - 1].value
+
+        arg_num = len(typee.split(';')) - 1
+        args = [self.stack.pop() for _ in range(arg_num)]
+        args.reverse()
+
+        target_method = getattr(self.stack.pop(), name)
+        target_method(*args)
 ```
 
 Return only returns from the calling method.
