@@ -194,13 +194,12 @@ with this code.
 
 ```shell
 > python3 main.py -v -i Sample.class
-  reading ..
-  search for 'main' ..
-  code list = [178, 0, 7, 18, 13, 182, 0, 15, 177]
-  interpret ..
-  Hi!
-  done.
->
+reading ..
+search for 'main' ..
+code list = [178, 0, 7, 18, 13, 182, 0, 15, 177]
+interpret ..
+Hi!
+done.
 ```
 
 If we split the code into small sections and add some comments it becomes more clear how the code is
