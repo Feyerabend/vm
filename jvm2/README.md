@@ -19,7 +19,7 @@ Test the sample.
 
 ```shell
 > python3 main.py -i Sample.class
-> Hi!
+Hi!
 ```
 
 ### source
