@@ -53,7 +53,7 @@ class Parser():
                     return m
         return None
 
-    # attr
+    # attr of method
     def get_attr_of_method(self, method_name, attr_name):
         method = self.get_method(method_name)
         if method:
@@ -62,13 +62,13 @@ class Parser():
                     return m.info
         return None
 
-    # code attr
+    # code attr of method
     def get_code_of_method(self, method_name):
         codeattr = self.get_attr_of_method(method_name, 'Code')
         if codeattr:
             t = io.BytesIO(codeattr)
-            max_stack = struct.unpack('!H', t.read(2))[0]
-            max_locals = struct.unpack('!H', t.read(2))[0]
+            max_stack = struct.unpack('!H', t.read(2))[0] # not used
+            max_locals = struct.unpack('!H', t.read(2))[0] # not used
             code_len = struct.unpack('!I', t.read(4))[0]
             code = t.read(code_len)
             return (max_stack, max_locals, code)
@@ -88,18 +88,21 @@ class Interpret():
         self.stack = []
 
         # tuple decode
-        self.max_stack = int(codes[0])
-        self.max_locals = int(codes[1])
+        self.max_stack = int(codes[0]) # not used
+        self.max_locals = int(codes[1]) # not used
         self.code = list(codes[2])
 
         # need the pool
         self.pool = constant_pool
 
+    # get the code, advance one step in pc,
+    # then return the code value
     def advance(self):
         data = self.code[self.pc]
         self.pc += 1
         return data
 
+    # loop until end of code
     def run(self):
         clen = len(self.code)
         while self.pc < clen:
@@ -161,14 +164,14 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"vhi:",["ifile="])
     except getopt.GetoptError:
-        print('classread.py -i <inputfile>')
+        print('main.py -i <inputfile>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-v':
             verbose = 1
         if opt == '-h':
-            print('usage: classread.py -i <inputfile>')
+            print('usage: main.py -i <inputfile>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg

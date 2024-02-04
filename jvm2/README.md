@@ -148,7 +148,35 @@ SourceFile: "Sample.java"
 
 ### code
 
-We are more interested in what the second block of code does above.
+There are only two core programs: `main.py` and `classread.py`. Then there are complementary files
+which are used as the 'native' class files. In `main.py` first it reads a classfile and parse it,
+as previously. Then it has a lookup for the 'main' method, where all Java program starts. Then
+is uses the code associated with 'main'. As returned from parsing, we get maximum of stack and
+maximum of local variables -- very useful when implementing in small spaces such as in embedded
+programming. They are however not used futher here.
+
+When examining the code it behaves as it would for an interpreter in a virtual machine, as expected.
+We have a stack pointer, and we advance in steps through the code, until it remains no more code.
+We execute the instructions, and each instruction gets optional following codes as data.
+
+```python
+    # get the code, advance one step in pc,
+    # then return the code value
+    def advance(self):
+        data = self.code[self.pc]
+        self.pc += 1
+        return data
+
+    # loop until end of code
+    def run(self):
+        clen = len(self.code)
+        while self.pc < clen:
+            op = self.advance()
+            self.instructions[op]()
+```
+
+
+We are interested in what the second block of code in number 3 does above from the 'main' method.
 
 ```console
   public static void main(java.lang.String[]);
@@ -161,7 +189,7 @@ We are more interested in what the second block of code does above.
          8: return
 ```
 
-If running 'main.py' with the option '-v' there will be a small list of numbers that corresponds
+If running `main.py` with the option `-v` there will be a small list of numbers that corresponds
 with this code.
 
 ```shell
@@ -183,6 +211,8 @@ intended to be read (used by the machine).
 [182, 0, 15]    // invokevirtual 15
 [177]           // return
 ```
+
+
 
 ## pool
 
