@@ -65,11 +65,11 @@ concise grammar definitions.)
 Key Components of *EBNF*:
 
 1. Rules/Productions:
-- EBNF grammars are made up of rules (also called productions).
-  Each rule defines how a particular syntax element can be constructed.
-- The left side of a rule is the name of the element being defined.
-  The right side specifies how this element can be composed using other
-  elements.
+ - EBNF grammars are made up of rules (also called productions).
+   Each rule defines how a particular syntax element can be constructed.
+ - The left side of a rule is the name of the element being defined.
+   The right side specifies how this element can be composed using other
+   elements.
 2. Terminals and Non-terminals:
 - Terminals: The basic symbols from which strings are formed.
   These are usually the actual characters or tokens of the language
@@ -110,7 +110,7 @@ factor		= number | ( expression )
    multiple factors multiplied or divided together.
 
 *factor*
-A factor can be one of the following:
+a factor can be one of the following:
  * `number`: A numeric value.
  * `( expression )`: A complete expression enclosed in
    parentheses, allowing for nested expressions.
