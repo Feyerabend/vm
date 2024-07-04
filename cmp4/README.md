@@ -80,8 +80,11 @@ A factor can be one of the following:
 ```
 
 i.) 2 is a factor.
+
 ii.) (3 + 4) is an expression enclosed in parentheses, acting as a factor.
+
 iii.) 5 is a factor.
+
 iv.) This entire structure is a term due to the * and / operators between the factors
 
 
@@ -90,9 +93,11 @@ iv.) This entire structure is a term due to the * and / operators between the fa
 A.) Identify Factors:
 * Atomic units like numbers (3, 5, 2, 4).
 * Parenthesized expressions like (2 * 3) or (3 + 4).
+
 B.) Build Terms:
 * Combine factors using * or /.
 * For example, 2 * (3 + 4) is a term.
+
 C.) Construct Expressions:
 * Combine terms using + or -.
 * For instance, 2 * (3 + 4) / 5 can be part of a larger expression.
