@@ -11,11 +11,13 @@ calculator that take as input expressions with multiplication, addition
 etc. and delivers an 'assembly code' as 'MUL' and 'ADD' etc. preparing
 for the stack oriented vitual machine. The compiler uses a scanner
 `scan.c` (`scan.h`) to recognize what is an operator like '*' or '+',
-and what is a number (integer) like '982' (also called a 'toknizer').
-It will take as input 'sample.p' (program) and output 'sample.a' (assembly).
+and what is a number (integer) like '982' (also called a 'tokenizer').
+It will take as input 'sample.p' (program) and output 'sample.a'
+(assembly).
 
-After compiling expressions to assembly, an assembler `asm.py` puts together
-relevant virtual machine code to an output as 'sample.b' (binary).
+After compiling expressions to assembly, an assembler `asm.py` (in Python)
+puts together relevant virtual machine code to an output as 'sample.b'
+('binary', or really a string of 'integers').
 
 At last the virtual machine `vm4.c` (and `vm4.h`) can run the code with
 `runvmc.c`, and the desired output will print.
@@ -45,9 +47,9 @@ compile it, and assemble the output 'sample.a' from compilation to
 a 'sample.b'. And then run the 'sample.b' in the virtual machine.
 
 There are thus 3 steps:
-1. compile program (sample.p)
-2. assemble output from compilation (sample.a) to code (sample.b)
-3. run the code (sample.b)
+1. compile program ('sample.p')
+2. assemble output from compilation ('sample.a') to code ('sample.b')
+3. run the code ('sample.b')
 
 
 ## syntax of expressions, enbf
