@@ -160,10 +160,10 @@ as a value (by the function `atoi` in C). If there is a expression of say '2 + 4
 then a new node connects whatever is on the left ('2' as a node) to whatever is on
 the right ('4' as a node) in a node which is qualified by a "type" 'ADD'.
 This ultimate (recursive) tree of nodes, are then used in generating the assembled
-variant of the program. The tree is new used directly.[^onepass]
+variant of the program.[^onepass]
 
-The converter takes the nodes, bit by bit, and transform them into the assembled
-variation. The write that result to a file.
+The latter converter takes the nodes, bit by bit, and transform them into the
+assembled variation. Then it writes that result to a file.
 
 [^onepass]: Not to get the program to long, the parsed tree (also called AST),
 is *not* explicitly stored as a file, although this could be more clear.
