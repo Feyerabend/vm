@@ -1,7 +1,8 @@
 # Virtual Machines
 
 A compiler, assembler and a virtual machine working to get out
-the result from an expression written in plain text, like '(98 - 6767 + 7987)'.
+the result (2) from an expression written in plain text, like
+'2 * (3 + 4) / 5'.
 
 ## cmp4
 
