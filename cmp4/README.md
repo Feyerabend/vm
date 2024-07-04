@@ -53,7 +53,6 @@ factor		= ident | number | ( expression )
 
 *factor*
 A factor can be one of the following:
-* `ident`: An identifier, typically representing a variable name.
 * `number`: A numeric value.
 * `( expression )`: A complete expression enclosed in
   parentheses, allowing for nested expressions.
@@ -79,25 +78,25 @@ A factor can be one of the following:
 2 * (3 + 4) / 5
 ```
 
-i.) 2 is a factor.
+1. `2` is a *factor*.
 
-ii.) (3 + 4) is an expression enclosed in parentheses, acting as a factor.
+2. `(3 + 4)` is an expression enclosed in parentheses, acting as a *factor*.
 
-iii.) 5 is a factor.
+3. `5` is a *factor*.
 
-iv.) This entire structure is a term due to the * and / operators between the factors
+4. This entire structure is a *term* due to the `*` and `/` operators between the factors.
 
 
 ### parsing steps
 
-A.) Identify Factors:
-* Atomic units like numbers (3, 5, 2, 4).
-* Parenthesized expressions like (2 * 3) or (3 + 4).
+A.) Identify *factors*:
+* Atomic units like *numbers* (`3`, `5`, `2`, `4`).
+* Parenthesized *expressions* like `(2 * 3)` or `(3 + 4)`.
 
-B.) Build Terms:
-* Combine factors using * or /.
-* For example, 2 * (3 + 4) is a term.
+B.) Build *terms*:
+* Combine *factors* using `*` or `/`.
+* For example, `2 * (3 + 4)` is a term.
 
-C.) Construct Expressions:
-* Combine terms using + or -.
-* For instance, 2 * (3 + 4) / 5 can be part of a larger expression.
+C.) Construct *expressions*:
+* Combine *terms* using `+` or `-`.
+* For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
