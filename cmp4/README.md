@@ -45,7 +45,7 @@ a 'sample.b'. And then run the 'sample.b' in the virtual machine.
 
 There are thus 3 steps:
 1. compile program (sample.p)
-2. assemble output from compilation (sample.a) to code
+2. assemble output from compilation (sample.a) to code (sample.b)
 3. run the code (sample.b)
 
 
