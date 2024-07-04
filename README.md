@@ -125,7 +125,9 @@ and division by zero as an example of runtime error.
 ### 9. [cmp4](/cmp4)
 
 A compiler and vm for a simple calculator with no memory. No way to store
-or fetch numbers through some mechanics for variables.
+or fetch numbers through some mechanics for variables. The program (expression)
+is compiled to a assembly variant, and from that assembled to code, which
+runs on a virtual machine.
 
 
 ### 10. [enkel/0](/enkel0)
