@@ -158,12 +158,90 @@ In the parsing process of `cmp4.c`, `cmp4.h`, `scan.c` and `scan.h` a tree of no
 are built. Recognizing a number (a factor), implies a node representing that number
 as a value (by the function `atoi` in C). If there is a expression of say '2 + 4'
 then a new node connects whatever is on the left ('2' as a node) to whatever is on
-the right ('4' as a node) in a node which is qualified by a "type" 'ADD'.
-This ultimate (recursive) tree of nodes, are then used in generating the assembled
+the right ('4' as a node) in a node which is qualified by a "type" 'ADD'. This
+ultimate (recursive) tree of nodes, are then used in generating the assembled
 variant of the program.[^onepass]
 
-The latter converter takes the nodes, bit by bit, and transform them into the
-assembled variation. Then it writes that result to a file.
+To get into some details, first we have something like:
+
+```c
+    node* n = program();
+    compile(n);
+```
+
+From `program()` we get nodes in n. Then we transfer them to `compile(n)`.
+Looking at the program, we go down into the details.
+
+```c
+    node *n = nnode(PROG);
+    nextsym();
+    n->node1 = expression();
+    expect(PERIOD);
+```
+
+So we start with a root node made of type `PROG` and an expected end with `PERIOD`.
+We analyze the from the top an assumption of an expression.
+
+Then we check for the inner workings of the expression. We assume that we can find
+types `PLUS` or `MINUS`. If we find those, we can att them to the tree of nodes.
+
+```c
+    node *m, *n;
+    n = term();
+    while (sym == PLUS || sym == MINUS) {
+        m = n;
+        if (sym == PLUS)
+            h = ADD;
+        else if (sym == MINUS)
+            h = SUB;
+        else {
+            ..
+        }
+        n = nnode(h);
+        nextsym();
+        n->node1 = m;
+        n->node2 = term();
+    }
+```
+
+After building a tree of nodes (also called AST, abstract syxtax tree) we
+construct a assembly version of the program. The latter converter takes the
+nodes, bit by bit, and transform them. Then it writes that result to a file.
+
+From the built tree, we choose which transformation to apply in each case.
+
+```c
+        case ADD:
+            compile(n->node1);
+            compile(n->node2);
+            fprintf(file, "\tADD\n");
+            break;
+
+        case MULTIPLY:
+            compile(n->node1);
+            compile(n->node2);
+            fprintf(file, "\tMUL\n");
+            break;
+
+        case INUMBER:
+            fprintf(file, "\tSET %d\n", n->value);
+            break;
+```
+
+As a result we get somthing like what we find in 'sample.a' from
+the compiler.
+
+```assembly
+	SET 2
+	SET 3
+	SET 4
+	ADD
+	MUL
+	SET 5
+	DIV
+	PRINT
+	HALT
+```
 
 [^onepass]: Not to get the program to long, the parsed tree (also called AST),
 is *not* explicitly stored as a file, although this could be more clear.
@@ -173,7 +251,14 @@ an exercise to work that two part compiler out.
 
 ## 2. from the assembled program to the program as code
 
+From the above assembly program we translate this into our virtual machine
+code through a simple assembler `asm.py`.
 
+```text
+5,2,5,3,5,4,0,3,5,5,1,4,2
+```
 
 ## 3. running the code
 
+At last we can run the program with i principal the same virtual machine
+we have gone through before with `vm.c`, `vm.h` and `runvmc.c`.
