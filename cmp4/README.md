@@ -71,21 +71,21 @@ Key Components of *EBNF*:
    The right side specifies how this element can be composed using other
    elements.
 2. Terminals and Non-terminals:
-- Terminals: The basic symbols from which strings are formed.
+  - Terminals: The basic symbols from which strings are formed.
   These are usually the actual characters or tokens of the language
   (like numbers, operators, keywords).
-- Non-terminals: Abstract symbols representing a set of strings.
+  - Non-terminals: Abstract symbols representing a set of strings.
   They are defined by other rules in the grammar.
 3. Operators and Constructs:
-- Concatenation: A sequence of elements written one after the other,
+  - Concatenation: A sequence of elements written one after the other,
   implying they occur in that order.
-- Alternation `|`: Indicates a choice between alternatives.
+  - Alternation `|`: Indicates a choice between alternatives.
   For example, `A | B` means either `A` or `B`.
-- Repetition `{ }`: Indicates zero or more repetitions of an element.
+  - Repetition `{ }`: Indicates zero or more repetitions of an element.
   For example, `{ A }` means zero or more instances of `A`.
-- Optional `[ ]`: Indicates that an element may or may not be present.
+  - Optional `[ ]`: Indicates that an element may or may not be present.
   For example, `[ A ]` means `A` is optional.
-- Grouping `( )`: Groups elements together to control the application
+  - Grouping `( )`: Groups elements together to control the application
   of operators. For example, `(A | B) C` means either `A` or `B`,
   followed by `C`.
 
