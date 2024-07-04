@@ -4,23 +4,25 @@ A compiler, assembler and a virtual machine working to get out
 the result (2) from an expression written in plain text, like
 '2 * (3 + 4) / 5'.
 
+
 ## cmp4
 
-In the compiler `cmp4.c` (and `cmp4.h`) you can find steps to a small
-calculator that take as input expressions with multiplication, addition
-etc. and delivers an 'assembly code' as 'MUL' and 'ADD' etc. preparing
-for the stack oriented vitual machine. The compiler uses a scanner
-`scan.c` (`scan.h`) to recognize what is an operator like '*' or '+',
-and what is a number (integer) like '982' (also called a 'tokenizer').
-It will take as input 'sample.p' (program) and output 'sample.a'
-(assembly).
+In the compiler `cmp4.c` (and `cmp4.h`) you can find steps to a
+small calculator that take as input expressions with multiplication,
+addition etc. and delivers an 'assembly code' as 'MUL' and 'ADD'
+etc. preparing for the stack oriented vitual machine. The compiler
+uses a scanner `scan.c` (`scan.h`) to recognize what is an operator
+like '*' or '+', and what is a number (integer) like '982' (also
+called a 'tokenizer'). It will take as input 'sample.p' (program)
+and output 'sample.a' (assembly).
 
-After compiling expressions to assembly, an assembler `asm.py` (in Python)
-puts together relevant virtual machine code to an output as 'sample.b'
-('binary', or really a string of 'integers').
+After compiling expressions to assembly, an assembler `asm.py` (in
+Python) puts together relevant virtual machine code to an output
+as 'sample.b' ('binary', or really a string of 'integers').
 
-At last the virtual machine `vm4.c` (and `vm4.h`) can run the code with
-`runvmc.c`, and the desired output will print.
+At last the virtual machine `vm4.c` (and `vm4.h`) can run the code
+with `runvmc.c`, and the desired output will print.
+
 
 ## run
 
@@ -47,9 +49,9 @@ compile it, and assemble the output 'sample.a' from compilation to
 a 'sample.b'. And then run the 'sample.b' in the virtual machine.
 
 There are thus 3 steps:
-1. compile program ('sample.p')
-2. assemble output from compilation ('sample.a') to code ('sample.b')
-3. run the code ('sample.b')
+1. compile program ('sample.p'): `./cmp4 sample.p`
+2. assemble output from compilation ('sample.a') to code ('sample.b'): `python3 ./asm.py -v -i sample.a -o sample.b`
+3. run the code ('sample.b'): `./runvm sample.b`
 
 
 ## syntax of expressions, enbf
@@ -139,17 +141,17 @@ We can also look at parsing from the other way, intead of breaking
 down expression to pieces of fators, they can be built from the
 factors, up:
 
-A.) Identify *factors*:
- * Atomic units like *numbers* (`3`, `5`, `2`, `4`).
- * Parenthesized *expressions* like `(2 * 3)` or `(3 + 4)`.
+A. Identify *factors*:
+    * Atomic units like *numbers* (`3`, `5`, `2`, `4`).
+    * Parenthesized *expressions* like `(2 * 3)` or `(3 + 4)`.
 
-B.) Build *terms*:
- * Combine *factors* using `*` or `/`.
- * For example, `2 * (3 + 4)` is a *term*.
+B. Build *terms*:
+    * Combine *factors* using `*` or `/`.
+    * For example, `2 * (3 + 4)` is a *term*.
 
-C.) Construct *expressions*:
- * Combine *terms* using `+` or `-`.
- * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
+C. Construct *expressions*:
+    * Combine *terms* using `+` or `-`.
+    * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
 
 
 ## 1. compiling the parsed expressions
@@ -258,5 +260,5 @@ code through a simple assembler `asm.py`.
 
 ## 3. running the code
 
-At last we can run the program with i principal the same virtual machine
+At last we can run the program with in principal the same virtual machine
 we have gone through before with `vm.c`, `vm.h` and `runvmc.c`.
