@@ -70,12 +70,14 @@ Key Components of *EBNF*:
    - The left side of a rule is the name of the element being defined.
    The right side specifies how this element can be composed using other
    elements.
+
 2. Terminals and Non-terminals:
   - Terminals: The basic symbols from which strings are formed.
   These are usually the actual characters or tokens of the language
   (like numbers, operators, keywords).
   - Non-terminals: Abstract symbols representing a set of strings.
   They are defined by other rules in the grammar.
+
 3. Operators and Constructs:
   - Concatenation: A sequence of elements written one after the other,
   implying they occur in that order.
