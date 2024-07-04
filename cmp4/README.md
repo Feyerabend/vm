@@ -98,25 +98,22 @@ factor		= number | ( expression )
 ```
 
 *expression*
-
-* An expression consists of a *term* followed by zero or more
-  instances of a term prefixed by either a `+` or `-` operator.
-* In simpler terms, an expression can be a single term or
-  multiple terms added or subtracted together.
+ * An expression consists of a *term* followed by zero or more
+   instances of a term prefixed by either a `+` or `-` operator.
+ * In simpler terms, an expression can be a single term or
+   multiple terms added or subtracted together.
 
 *term*
-
-* A term consists of a *factor* followed by zero or more
-  instances of a factor prefixed by either a `*` or `/` operator.
-* In simpler terms, a term can be a single factor or
-  multiple factors multiplied or divided together.
+ * A term consists of a *factor* followed by zero or more
+   instances of a factor prefixed by either a `*` or `/` operator.
+ * In simpler terms, a term can be a single factor or
+   multiple factors multiplied or divided together.
 
 *factor*
-
 A factor can be one of the following:
-* `number`: A numeric value.
-* `( expression )`: A complete expression enclosed in
-  parentheses, allowing for nested expressions.
+ * `number`: A numeric value.
+ * `( expression )`: A complete expression enclosed in
+   parentheses, allowing for nested expressions.
 
 
 ### sample
@@ -135,16 +132,16 @@ How does this work in practice?
 ### parsing steps
 
 A.) Identify *factors*:
-* Atomic units like *numbers* (`3`, `5`, `2`, `4`).
-* Parenthesized *expressions* like `(2 * 3)` or `(3 + 4)`.
+ * Atomic units like *numbers* (`3`, `5`, `2`, `4`).
+ * Parenthesized *expressions* like `(2 * 3)` or `(3 + 4)`.
 
 B.) Build *terms*:
-* Combine *factors* using `*` or `/`.
-* For example, `2 * (3 + 4)` is a *term*.
+ * Combine *factors* using `*` or `/`.
+ * For example, `2 * (3 + 4)` is a *term*.
 
 C.) Construct *expressions*:
-* Combine *terms* using `+` or `-`.
-* For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
+ * Combine *terms* using `+` or `-`.
+ * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
 
 
 ## compiling the parsed expressions
