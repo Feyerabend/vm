@@ -165,18 +165,18 @@ variant of the program.[^onepass]
 To get into some details, first we have something like:
 
 ```c
-    node* n = program();
-    compile(n);
+node* n = program();
+compile(n);
 ```
 
 From `program()` we get nodes in n. Then we transfer them to `compile(n)`.
 Looking at the program, we go down into the details.
 
 ```c
-    node *n = nnode(PROG);
-    nextsym();
-    n->node1 = expression();
-    expect(PERIOD);
+node *n = nnode(PROG);
+nextsym();
+n->node1 = expression();
+expect(PERIOD);
 ```
 
 So we start with a root node made of type `PROG` and an expected end with `PERIOD`.
@@ -186,22 +186,22 @@ Then we check for the inner workings of the expression. We assume that we can fi
 types `PLUS` or `MINUS`. If we find those, we can att them to the tree of nodes.
 
 ```c
-    node *m, *n;
-    n = term();
-    while (sym == PLUS || sym == MINUS) {
-        m = n;
-        if (sym == PLUS)
-            h = ADD;
-        else if (sym == MINUS)
-            h = SUB;
-        else {
-            ..
-        }
-        n = nnode(h);
-        nextsym();
-        n->node1 = m;
-        n->node2 = term();
-    }
+node *m, *n;
+n = term();
+while (sym == PLUS || sym == MINUS) {
+  m = n;
+  if (sym == PLUS)
+    h = ADD;
+  else if (sym == MINUS)
+    h = SUB;
+  else {
+    ..
+  }
+  n = nnode(h);
+  nextsym();
+  n->node1 = m;
+  n->node2 = term();
+}
 ```
 
 After building a tree of nodes (also called AST, abstract syxtax tree) we
@@ -211,36 +211,34 @@ nodes, bit by bit, and transform them. Then it writes that result to a file.
 From the built tree, we choose which transformation to apply in each case.
 
 ```c
-        case ADD:
-            compile(n->node1);
-            compile(n->node2);
-            fprintf(file, "\tADD\n");
-            break;
-
-        case MULTIPLY:
-            compile(n->node1);
-            compile(n->node2);
-            fprintf(file, "\tMUL\n");
-            break;
-
-        case INUMBER:
-            fprintf(file, "\tSET %d\n", n->value);
-            break;
+case ADD:
+  compile(n->node1);
+  compile(n->node2);
+  fprintf(file, "\tADD\n");
+  break;
+case MULTIPLY:
+  compile(n->node1);
+  compile(n->node2);
+  fprintf(file, "\tMUL\n");
+  break;
+case INUMBER:
+  fprintf(file, "\tSET %d\n", n->value);
+  break;
 ```
 
 As a result we get somthing like what we find in 'sample.a' from
 the compiler.
 
 ```assembly
-	SET 2
-	SET 3
-	SET 4
-	ADD
-	MUL
-	SET 5
-	DIV
-	PRINT
-	HALT
+  SET 2
+  SET 3
+  SET 4
+  ADD
+  MUL
+  SET 5
+  DIV
+  PRINT
+  HALT
 ```
 
 [^onepass]: Not to get the program to long, the parsed tree (also called AST),
