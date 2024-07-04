@@ -65,9 +65,9 @@ concise grammar definitions.)
 Key Components of *EBNF*:
 
 1. Rules/Productions:
- - EBNF grammars are made up of rules (also called productions).
+   - EBNF grammars are made up of rules (also called productions).
    Each rule defines how a particular syntax element can be constructed.
- - The left side of a rule is the name of the element being defined.
+   - The left side of a rule is the name of the element being defined.
    The right side specifies how this element can be composed using other
    elements.
 2. Terminals and Non-terminals:
