@@ -33,22 +33,20 @@ Test the sample with:
 
 ```ebnf
 expression	= term { (+|-) term }
-
 term		= factor { (*|/) factor }
-
-factor		= ident | number | ( expression )
+factor		= number | ( expression )
 ```
 
 *expression*
 
-* An expression consists of a term followed by zero or more
+* An expression consists of a *term* followed by zero or more
   instances of a term prefixed by either a `+` or `-` operator.
 * In simpler terms, an expression can be a single term or
   multiple terms added or subtracted together.
 
 *term*
 
-* A term consists of a factor followed by zero or more
+* A term consists of a *factor* followed by zero or more
   instances of a factor prefixed by either a `*` or `/` operator.
 * In simpler terms, a term can be a single factor or
   multiple factors multiplied or divided together.
@@ -84,7 +82,7 @@ A.) Identify *factors*:
 
 B.) Build *terms*:
 * Combine *factors* using `*` or `/`.
-* For example, `2 * (3 + 4)` is a term.
+* For example, `2 * (3 + 4)` is a *term*.
 
 C.) Construct *expressions*:
 * Combine *terms* using `+` or `-`.
