@@ -39,17 +39,15 @@ term		= factor { (*|/) factor }
 factor		= ident | number | ( expression )
 ```
 
-### explanations of the syntax
-
 *expression*
 * An expression consists of a term followed by zero or more
-  instances of a term prefixed by either a + or - operator.
+  instances of a term prefixed by either a `+` or `-` operator.
 * In simpler terms, an expression can be a single term or
   multiple terms added or subtracted together.
 
 *term*
 * A term consists of a factor followed by zero or more
-  instances of a factor prefixed by either a * or / operator.
+  instances of a factor prefixed by either a `*` or `/` operator.
 * In simpler terms, a term can be a single factor or
   multiple factors multiplied or divided together.
 
@@ -77,22 +75,24 @@ A factor can be one of the following:
 
 ### sample
 
-`2 * (3 + 4) / 5`
+```text
+2 * (3 + 4) / 5
+```
 
-i. 2 is a factor.
-ii. (3 + 4) is an expression enclosed in parentheses, acting as a factor.
-iii. 5 is a factor.
-iv. This entire structure is a term due to the * and / operators between the factors
+i.) 2 is a factor.
+ii.) (3 + 4) is an expression enclosed in parentheses, acting as a factor.
+iii.) 5 is a factor.
+iv.) This entire structure is a term due to the * and / operators between the factors
 
 
 ### parsing steps
 
-A.	Identify Factors:
+A.) Identify Factors:
 * Atomic units like numbers (3, 5, 2, 4).
 * Parenthesized expressions like (2 * 3) or (3 + 4).
-B.	Build Terms:
+B.) Build Terms:
 * Combine factors using * or /.
 * For example, 2 * (3 + 4) is a term.
-C.	Construct Expressions:
+C.) Construct Expressions:
 * Combine terms using + or -.
 * For instance, 2 * (3 + 4) / 5 can be part of a larger expression.
