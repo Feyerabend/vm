@@ -59,6 +59,42 @@ A factor can be one of the following:
   parentheses, allowing for nested expressions.
 
 
+### ENBF
+
+The above forumlation of the syntax (the text) parsed by the program
+is what is called the Extended Backus-Naur Form (EBNF). ENBF is a
+notation used to formally describe the syntax of languages, particularly
+programming languages and data formats. (It extends the basic BNF
+syntax to provide more expressive and concise grammar definitions.)
+
+Key Components of *EBNF*:
+
+1. Rules/Productions:
+- EBNF grammars are made up of rules (also called productions).
+  Each rule defines how a particular syntax element can be constructed.
+- The left side of a rule is the name of the element being defined.
+  The right side specifies how this element can be composed using other
+  elements.
+2. Terminals and Non-terminals:
+- Terminals: The basic symbols from which strings are formed.
+  These are usually the actual characters or tokens of the language
+  (like numbers, operators, keywords).
+- Non-terminals: Abstract symbols representing a set of strings.
+  They are defined by other rules in the grammar.
+3. Operators and Constructs:
+- Concatenation: A sequence of elements written one after the other,
+  implying they occur in that order.
+- Alternation `|`: Indicates a choice between alternatives.
+  For example, `A | B` means either `A` or `B`.
+- Repetition `{ }`: Indicates zero or more repetitions of an element.
+  For example, `{ A }` means zero or more instances of `A`.
+- Optional `[ ]`: Indicates that an element may or may not be present.
+  For example, `[ A ]` means `A` is optional.
+- Grouping `( )`: Groups elements together to control the application
+  of operators. For example, `(A | B) C` means either `A` or `B`,
+  followed by `C`.
+
+
 ### sample
 
 ```text
@@ -66,12 +102,20 @@ A factor can be one of the following:
 ```
 
 1. `2` is a *factor*.
-
 2. `(3 + 4)` is an expression enclosed in parentheses, acting as a *factor*.
-
 3. `5` is a *factor*.
-
 4. This entire structure is a *term* due to the `*` and `/` operators between the factors.
+
+#### step by step calculation
+1. Look inside the parentheses first: (3 + 4)
+2. Think of (3 + 4) as a single number, which is 7.
+3. Now multiply and divide the outside:
+4. Take 2 and multiply by 7 (which was inside the parentheses), making it 14.
+5. Then take that result (14) and divide by 5.
+6. Result: The expression evaluates to 14 / 5 which is the integer 2
+   (really 2.8 if we had considered floting point calculation).
+
+
 
 
 ### parsing steps
@@ -89,7 +133,7 @@ C.) Construct *expressions*:
 * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
 
 
-### graphical representations[^novars]
+### graphical representations
 
 #### Expression:
 ![expression ..](https://user-images.githubusercontent.com/271797/188278982-1ff42147-4e27-490e-ad9f-1b465ed131be.svg)
@@ -97,7 +141,7 @@ C.) Construct *expressions*:
 #### Term:
 ![term](https://user-images.githubusercontent.com/271797/188279089-32abec43-650d-4acb-9d3c-37bb86bd49fe.svg)
 
-#### Factor:
+#### Factor:[^novars]
 ![factor](https://user-images.githubusercontent.com/271797/188279057-9cc5ec8d-0c7e-4af0-a579-10491d51caf2.svg)
 
 [^novars]: __NOTE: we do not have any identifiers yet, so the "IDENT" in the diagram is not relevant for now.__
