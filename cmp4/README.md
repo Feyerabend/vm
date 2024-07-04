@@ -21,12 +21,32 @@ At last the virtual machine `vm4.c` (and `vm4.h`) can run the code with
 
 ## run
 
-Test the sample with:
+Compile the compiler:
 
 ```shell
 > make clean
 > make cmp4
 ```
+
+Then test the sample by running or follow the steps in `compile.sh`:
+
+```shell
+#!/bin/sh
+rm -f sample.a
+rm -f sample.b
+./cmp4 sample.p
+python3 ./asm.py -v -i sample.a -o sample.b
+./runvm sample.b
+```
+
+This will first remove any previous compiled pieces from 'sample.p',
+compile it, and assemble the output 'sample.a' from compilation to
+a 'sample.b'. And then run the 'sample.b' in the virtual machine.
+
+There are thus 3 steps:
+1. compile program (sample.p)
+2. assemble output from compilation (sample.a) to code
+3. run the code (sample.b)
 
 
 ## syntax of expressions, enbf
@@ -126,15 +146,11 @@ C.) Construct *expressions*:
 * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
 
 
-### graphical representations
+## compiling the parsed expressions
 
-#### Expression:
-![expression ..](https://user-images.githubusercontent.com/271797/188278982-1ff42147-4e27-490e-ad9f-1b465ed131be.svg)
 
-#### Term:
-![term](https://user-images.githubusercontent.com/271797/188279089-32abec43-650d-4acb-9d3c-37bb86bd49fe.svg)
 
-#### Factor:[^novars]
-![factor](https://user-images.githubusercontent.com/271797/188279057-9cc5ec8d-0c7e-4af0-a579-10491d51caf2.svg)
+## from assembly to code
 
-[^novars]: __NOTE: we do not have any identifiers yet, so the "IDENT" in the diagram is not relevant for now.__
+## running code
+
