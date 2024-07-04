@@ -40,18 +40,21 @@ factor		= ident | number | ( expression )
 ```
 
 *expression*
+
 * An expression consists of a term followed by zero or more
   instances of a term prefixed by either a `+` or `-` operator.
 * In simpler terms, an expression can be a single term or
   multiple terms added or subtracted together.
 
 *term*
+
 * A term consists of a factor followed by zero or more
   instances of a factor prefixed by either a `*` or `/` operator.
 * In simpler terms, a term can be a single factor or
   multiple factors multiplied or divided together.
 
 *factor*
+
 A factor can be one of the following:
 * `number`: A numeric value.
 * `( expression )`: A complete expression enclosed in
