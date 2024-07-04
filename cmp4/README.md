@@ -133,7 +133,11 @@ How does this work in practice?
 4. This entire structure is a *term* due to the `*` and `/` operators between the factors.
 
 
-### parsing steps
+### parsing steps (production rules)
+
+We can also look at parsing from the other way, intead of breaking
+down expression to pieces of fators, they can be built from the
+factors, up:
 
 A.) Identify *factors*:
  * Atomic units like *numbers* (`3`, `5`, `2`, `4`).
@@ -148,11 +152,28 @@ C.) Construct *expressions*:
  * For instance, `2 * (3 + 4) / 5` can be part of a larger *expression*.
 
 
-## compiling the parsed expressions
+## 1. compiling the parsed expressions
+
+In the parsing process of `cmp4.c`, `cmp4.h`, `scan.c` and `scan.h` a tree of nodes
+are built. Recognizing a number (a factor), implies a node representing that number
+as a value (by the function `atoi` in C). If there is a expression of say '2 + 4'
+then a new node connects whatever is on the left ('2' as a node) to whatever is on
+the right ('4' as a node) in a node which is qualified by a "type" 'ADD'.
+This ultimate (recursive) tree of nodes, are then used in generating the assembled
+variant of the program. The tree is new used directly.[^onepass]
+
+The converter takes the nodes, bit by bit, and transform them into the assembled
+variation. The write that result to a file.
+
+[^onepass]: Not to get the program to long, the parsed tree (also called AST),
+is *not* explicitly stored as a file, although this could be more clear.
+Then a second pass could take that file to build the assembly. It is left as
+an exercise to work that two part compiler out.
+
+
+## 2. from the assembled program to the program as code
 
 
 
-## from assembly to code
-
-## running code
+## 3. running the code
 
