@@ -12,7 +12,10 @@ Bartosz Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
 from whom I derived basically the main code, even though some bugs
 were corrected and many more additions have been made along the way.
 You also might have a look at the Wikipedia page on VMs:
-https://en.wikipedia.org/wiki/Virtual_machine
+https://en.wikipedia.org/wiki/Virtual_machine. Also a comprehensive
+guide to many variations af abstract machines:
+https://www.rw.cdl.uni-saarland.de/people/diehl/private/pubs/articleDiehlHartelSestoft.pdf
+
 
 These samples assume some understanding of elementary computer science,
 as you would get from an introductory course in e.g. programming. They are
