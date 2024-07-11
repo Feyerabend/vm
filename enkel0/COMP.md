@@ -23,8 +23,6 @@ to handle it.)
 Now from text, as we see the program, the compiler *enkel/0*
 converts the progamming ideas to code in the form of assembly.
 
-### overview
-
 This compiler `enkel.c` and `enkel.h` processes a the language
 through the following stages:
 
@@ -67,8 +65,6 @@ through the following stages:
 When compiling we need something to select the "words" in
 the program (programming language). Here is where the "scanner" or
 "tokenizer" comes in.
-
-### overview
 
 The code provided is a part of a compiler's lexical analyzer,
 responsible for reading the input source code and converting
@@ -139,8 +135,6 @@ stages of the compiler. Here's a simplified breakdown:
 
 As we are more used to remembering names or at least it is
 easier to connect parts in the program.
-
-### overview
 
 This code handles various operations related to symbol
 management in a compiler, such as packing/unpacking numbers,
@@ -243,9 +237,6 @@ Here's a simplified breakdown:
 ## error
 
 A separate handling of errors does not too much clutter the compiler.
-
-
-### overview
 
 This code handles error reporting and symbol printing for a hypothetical
 compiler or interpreter. It includes functions for mapping error codes
