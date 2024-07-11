@@ -311,6 +311,6 @@ Result from compiling, assembling and running:
 
 Here, we have chosen to start with the implementation rather than the specification
 because code provides something very concrete and practical. We follow a “bottom-up”
-approach in this idea-of-spec-enkel0.pdf, blending both aspects. Eventually, we will
-address the more realistic specification process, which follows a “top-down” approach:
-*from idea to code*.
+approach in this [idea-of-spec-enkel0.pdf](idea-of-spec-enkel0.pdf), blending both
+aspects. Eventually, we will address the more realistic specification process,
+which follows a “top-down” approach: *from idea to code*.
