@@ -400,3 +400,8 @@ class Interpret():
 ```
 
 ![Sample interpreted](../assets/images/jvm2.png)
+
+## Back to enkel/0
+
+Given the understanding of the usefulness of a specification, we can revisit
+enkel/0 to enhance its specification.
