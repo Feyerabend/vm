@@ -42,15 +42,16 @@ the way for software like the ubiquitous Microsoft Word.
 ### Laser printers
 
 While PARC was pioneering these revolutionary computing technologies,
-Gary Starkweather was working on adapting laser technology for printing.
-Transferring from Xerox’s Rochester facility to PARC in 1971, Starkweather
-began developing what would become the laser printer. By 1972, he
-had created a working prototype, and this breakthrough led to the
-commercialization of laser printing technology. In 1977, Xerox released
-the 9700 Electronic Printing System, capable of printing at a remarkable
-speed of 120 pages per minute with the resolution of 300 dpi. This
-innovation transformed the printing industry, making high-speed,
-high-quality printing accessible for office automation and desktop
+Gary Starkweather was working on adapting laser technology for
+printing. Transferring from Xerox’s Rochester facility to PARC
+in 1971, Starkweather began developing what would become the
+laser printer. By 1972, he had created a working prototype, and
+this breakthrough led to the commercialization of laser printing
+technology. In 1977, Xerox released the 9700 Electronic Printing
+System, capable of printing at a remarkable speed of 120 pages
+per minute with the resolution of 300 dpi. This innovation
+transformed the printing industry, making high-speed, high-quality
+printing accessible for office automation and desktop
 publishing.[^printer]
 
 [^printer]: https://www.historyofinformation.com/detail.php?entryid=1112
@@ -137,7 +138,7 @@ design changes on-screen and print high-quality proofs rapidly
 increased productivity. Iterations could be completed much faster
 than with traditional methods.
 
-*Desktop Publishing*: Much of the synergy between PageMaker,
+*Desktop Publishing (DTP)*: Much of the synergy between PageMaker,
 PostScript, laser printers, and the Macintosh gave rise to
 the desktop publishing industry. This revolutionized how
 printed materials were produced and led to the development
