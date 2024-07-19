@@ -7,14 +7,16 @@ laser printers, programs where you could layout pictures, text and graphics
 such as PageMaker, but also PostScript which could transfer what you saw on
 the screen to what got printed in relatively high detail as 300 dpi.
 
-PostScript produced crisp, scalable fonts (not easy to copy) and detailed graphics,
-crucial for required clear, readable text and precise illustrations. This ensured
-that printed materials looked excellent regardless of the printer used:
-*device-independent*.
+PostScript enabled the production of crisp, scalable fonts and detailed
+graphics, which were difficult for other implementors to replicate. This
+capability was essential for ensuring clear, readable text and precise
+illustrations. The *device-independent* nature of PostScript meant that
+printed materials maintained high quality regardless of the printer used,
+consistently producing (relatively) excellent results.
 
-Apple’s LaserWriter printer, one of the first to incorporate PostScript, played
-a key role. Combined with the Macintosh’s *graphical user interface*, it allowed
-seamless production, blending text and graphics smoothly.
+Apple’s LaserWriter printer, one of the first to incorporate PostScript,
+played a key role. Combined with the Macintosh’s *graphical user interface*,
+it allowed seamless production, blending text and graphics smoothly.
 
 Using PostScript was part of Apple’s larger initiative in the *desktop publishing
 revolution* (DTP). Along with software like Aldus PageMaker, it enabled users to
