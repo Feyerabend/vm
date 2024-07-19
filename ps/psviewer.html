@@ -17,10 +17,13 @@
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
+
+        // different coordination systems in canvas vs. postscript
+        // so rotate
         ctx.translate(canvas.width, canvas.height)    
         ctx.rotate(Math.PI);
 
-        // Stack to hold graphics states
+        // stack to hold graphics states
         const graphicsStateStack = [];
 
         function interpretPostScript(script) {
