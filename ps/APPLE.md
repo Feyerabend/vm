@@ -75,12 +75,14 @@ equally well for on-screen display, printing, and document exchange.
 
 ### PDF in Apple's GUI
 
-**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework, known as
-*Quartz 2D,*[^quartz2ddoc]
-is the cornerstone of their graphics rendering engine in macOS. Quartz 2D is based
-on the same *imaging model* as *PDF*. This allows the operating system to render text
-and graphics with high precision and consistency, using the same techniques for
-both screen display and printing.
+**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework[^coredoc],
+known as *Quartz 2D,*[^quartz2ddoc] is the cornerstone of their graphics
+rendering engine in macOS. Quartz 2D is based on the same *imaging model*
+as *PDF*. This allows the operating system to render text and graphics
+with high precision and consistency, using the same techniques for both
+screen display and printing.
+
+[^coredoc]: https://developer.apple.com/documentation/coregraphics
 
 [^quartz2ddoc]: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html
 
