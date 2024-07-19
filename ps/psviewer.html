@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostScript Viewer</title>
+    <style>
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <div>
+        <textarea id="input" rows="10" cols="50" placeholder="Enter your code here..."></textarea><br />
+        <button onclick="interpret()">Interpret</button>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Stack to hold graphics states
+        const graphicsStateStack = [];
+
+        function interpretPostScript(script) {
+            const stack = [];
+            const commands = script.split('\n').flatMap(line => line.trim().split(/\s+/));
+
+            commands.forEach(command => {
+                if (!isNaN(command)) {
+                    stack.push(parseFloat(command)); // push number
+                } else {
+                    switch (command) {
+                        case 'newpath':
+                            ctx.beginPath(); // new path
+                            break;
+                        case 'moveto':
+                            const yMove = stack.pop();
+                            const xMove = stack.pop();
+                            ctx.moveTo(xMove, yMove); // move to new point
+                            break;
+                        case 'lineto':
+                            const yLine = stack.pop();
+                            const xLine = stack.pop();
+                            ctx.lineTo(xLine, yLine); // draw line to new point
+                            break;
+                        case 'rect':
+                            const height = stack.pop();
+                            const width = stack.pop();
+                            const yRect = stack.pop();
+                            const xRect = stack.pop();
+                            ctx.rect(xRect, yRect, width, height); // draw rectangle
+                            break;
+                        case 'arc':
+                            const endAngle = stack.pop() * (Math.PI / 180); // ..to radians
+                            const startAngle = stack.pop() * (Math.PI / 180); // ..to radians
+                            const radi = stack.pop();
+                            const yArc = stack.pop();
+                            const xArc = stack.pop();
+                            ctx.arc(xArc, yArc, radi, startAngle, endAngle); // draw arc
+                            break;
+                        case 'closepath':
+                            ctx.closePath(); // close current path
+                            break;
+                        case 'gsave':
+                            // save current state (transformations, line width, color)
+                            graphicsStateStack.push({
+                                lineWidth: ctx.lineWidth,
+                                fillStyle: ctx.fillStyle,
+                                strokeStyle: ctx.strokeStyle
+                            });
+                            break;
+                        case 'grestore':
+                            // restore most recent state
+                            if (graphicsStateStack.length > 0) {
+                                const state = graphicsStateStack.pop();
+                                ctx.lineWidth = state.lineWidth;
+                                ctx.fillStyle = state.fillStyle;
+                                ctx.strokeStyle = state.strokeStyle;
+                            }
+                            break;
+                        case 'setlinewidth':
+                            const linewidth = stack.pop();
+                            ctx.lineWidth = linewidth; // set line width
+                            break;
+                        case 'setgray':
+                            const grayValue = stack.pop();
+                            ctx.fillStyle = `rgba(${grayValue * 255}, ${grayValue * 255}, ${grayValue * 255}, 1)`;
+                            ctx.strokeStyle = ctx.fillStyle; // set stroke color to same gray
+                            break;
+                        case 'fill':
+                            ctx.fill(); // fill current path
+                            break;
+                        case 'stroke':
+                            ctx.stroke(); // render path
+                            break;
+                        case 'showpage':
+                            // no-op for this impl.
+                            break;
+                        case '#!PS': // maybe something needs here ...
+                            // no-op for this
+                            break;
+                    }
+                }
+            });
+        }
+
+        function interpret() {
+            const postScript = document.getElementById('input').value;
+            interpretPostScript(postScript);
+            console.log(variable);
+        }
+    </script>
+</body>
+</html>

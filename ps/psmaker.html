@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Maker</title>
+    <style>
+        #canvas { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div>
+        <button onclick="setTool('line')">Line</button>
+        <button onclick="setTool('rectangle')">Rectangle</button>
+        <button onclick="setTool('circle')">Circle</button>
+        <button onclick="generatePostScript()">Generate PostScript</button>
+    </div>
+    <!-- <pre id="postscript-output"></pre> -->
+    <textarea id="postscript-output" rows="10" cols="50"></textarea>
+    <script src="psmaker.js"></script>
+</body>
+</html>
