@@ -153,26 +153,12 @@ While Apple has not completely abandoned PDF-based rendering, especially for doc
 
 **Purpose**: Metal is a low-level graphics API designed for high-performance rendering and computation. It provides direct access to the GPU, allowing developers to achieve maximum efficiency and control over rendering tasks.
 
-#### Key Features:
+#### Features:
 1. **Low-Level Access**: Metal provides direct access to the GPU, enabling developers to write highly optimized code for rendering and computation tasks.
 2. **High Performance**: Metal is designed for performance-critical applications, such as games, professional graphics software, and real-time rendering.
 3. **Compute Shaders**: Besides graphics rendering, Metal supports general-purpose computing on the GPU, which can be used for tasks like image processing and machine learning.
 4. **Explicit Control**: Developers have explicit control over resource management, rendering pipelines, and synchronization, allowing for fine-tuned performance optimizations.
 
-#### API Components:
-- **MTLDevice**: Represents a GPU and is used to create other Metal objects.
-- **MTLCommandQueue**: Manages a queue of command buffers for execution.
-- **MTLCommandBuffer**: Encapsulates a list of rendering and computing commands.
-- **MTLRenderPipelineDescriptor**: Describes the configuration of a rendering pipeline.
-- **MTLBuffer**: Represents a memory allocation used for vertex data, uniform data, etc.
-- **MTLTexture**: Represents an image resource used in rendering.
-
-#### Workflow:
-1. **Initialize Metal Device**: Create an instance of `MTLDevice`.
-2. **Set Up Command Queue**: Create a `MTLCommandQueue` to manage command buffers.
-3. **Create Resources**: Allocate buffers and textures.
-4. **Configure Render Pipeline**: Set up pipeline descriptors and shaders.
-5. **Render Loop**: Continuously create command buffers, encode rendering commands, and commit them for execution.
 
 ### PDF Rendering (Core Graphics/Quartz 2D)
 
@@ -181,7 +167,7 @@ rendering API designed for drawing and rendering vector graphics,
 including PDF content. It is well-suited for applications involving
 document rendering, vector graphics, and text rendering.
 
-#### Key Features:
+#### Features:
 1. **High-Level Drawing**: Core Graphics provides high-level functions
 for drawing shapes, text, and images.
 2. **PDF Support**: Built-in support for rendering PDF documents,
@@ -191,25 +177,6 @@ vector graphics.
 4. **Integration with UIKit/AppKit**: Seamless integration with
 higher-level frameworks for UI rendering.
 
-#### API Components:
-- **CGContext**: Central to all drawing operations, it represents
-a drawing destination.
-- **CGPath**: Represents a vector-based path, used for drawing shapes.
-- **CGImage**: Represents bitmap images.
-- **CGPDFDocument**: Represents a PDF document and provides access to its pages.
-- **CGColorSpace**: Manages color spaces for drawing operations.
-
-#### Workflow:
-1. **Create Graphics Context**: Obtain a `CGContext` for the target
-drawing surface (e.g., a view or a PDF page).
-2. **Set Up Drawing Attributes**: Configure attributes such as stroke
-color, fill color, and line width.
-3. **Draw Shapes and Text**: Use high-level drawing functions to draw
-paths, images, and text.
-4. **Render PDF**: Load a `CGPDFDocument`, navigate its pages, and
-render content to the graphics context.
-5. **Display or Save**: Display the rendered content on the screen
-or save it to a file.
 
 
 ### Differences in API Usage

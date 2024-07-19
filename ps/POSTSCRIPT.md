@@ -132,12 +132,12 @@ documents, businesses could significantly cut costs associated
 with outsourcing prepress and printing tasks. This was especially
 beneficial for small publishers and corporate marketing departments.
 
-*Increased Productivity*: The ability to see immediate results of
+*Productivity*: The ability to see immediate results of
 design changes on-screen and print high-quality proofs rapidly
 increased productivity. Iterations could be completed much faster
 than with traditional methods.
 
-*Desktop Publishing Industry*: Much of the synergy between PageMaker,
+*Desktop Publishing*: Much of the synergy between PageMaker,
 PostScript, laser printers, and the Macintosh gave rise to
 the desktop publishing industry. This revolutionized how
 printed materials were produced and led to the development
