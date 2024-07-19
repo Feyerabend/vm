@@ -12,10 +12,6 @@ crucial for required clear, readable text and precise illustrations. This ensure
 that printed materials looked excellent regardless of the printer used:
 *device-independent*.
 
-WYSIWYG (What You See Is What You Get) as PostScript maintained the fidelity of
-on-screen displays to printed outputs, allowing users to see exactly how the
-printed manual would look, ensuring accuracy and detail.
-
 Apple’s LaserWriter printer, one of the first to incorporate PostScript, played
 a key role. Combined with the Macintosh’s graphical user interface, it allowed
 seamless production, blending text and graphics smoothly.
@@ -25,53 +21,87 @@ revolution. Along with software like Aldus PageMaker, it enabled users to create
 professional-quality documents in-house, showcasing the capabilities of the
 Macintosh in producing high-quality printed materials.
 
-PostScript allowed the OS guide to be consistently reproduced at any size and
+PostScript allowed to consistently documents to be reproduced at any size and
 on any compatible printer without losing quality. This was beneficial for
-producing various editions and updates, maintaining high standards across all copies.
+producing various editions and updates, maintaining high standards across
+all copies.
 
-Macintosh didn't make a great start when it launched, but DTP and such
-things as calculating sheets (Visicalc, Multiplan etc.) made it into a
-much more attractive product in crucial markets.
+WYSIWYG (What You See Is What You Get) as PostScript maintained the fidelity of
+on-screen displays to printed outputs, allowing users to see exactly how the
+printed manual would look, ensuring accuracy and detail.
 
-Much later on PostScript was succeeded by PDF (Portable Document Format), to which it
-can easily be "distilled", or converted. PDF actually inherits much from PostScript.
+Macintosh didn't make a great start when it launched. But DTP and some other
+software made it into a much more attractive product in crucial markets,
+at the right time.
 
-Here comes the interesting part: *PDF played a significant role in screen rendering
-and display within Apple's operating systems, particularly starting from Mac OS X.*
+Much later on PostScript was succeeded by PDF (Portable Document Format),
+to which it can easily be "distilled", or converted.
+PDF actually inherits much of ideas from PostScript, although the format
+has changed a lot.
 
+But here comes the interesting part: *PDF played a significant role in
+screen rendering and display within Apple's operating systems, particularly
+starting from Mac OS X, which arrived in 2001.*
 
-### PDF in Apple's GUI
-
-**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework, also known as Quartz 2D,
-is the cornerstone of their graphics rendering engine in macOS. Quartz 2D is based on the same
-imaging model as PDF. This allows the operating system to render text and graphics with high
-precision and consistency, using the same techniques for both screen display and printing.
-
-**Resolution Independence**: PDF's scalable nature means that graphics and text can be rendered at any resolution without loss of quality. This was a critical feature for Apple's GUI, ensuring that elements would look sharp and clear on displays with varying resolutions, including the high-resolution Retina displays introduced later.
-
-**Consistent Output**: Using PDF as a basis for on-screen rendering ensures that the visual output is consistent across different devices. This is similar to the WYSIWYG (What You See Is What You Get) principle that PostScript brought to desktop publishing. What users see on their screen is a faithful representation of what will be printed or displayed on another device.
-
-**Advanced Graphics Features**: PDF supports advanced graphics features such as transparency, gradients, and complex vector shapes. By utilizing PDF for rendering, Apple's GUI could incorporate these advanced graphics features seamlessly, enhancing the visual appeal and functionality of the user interface.
-
-**Performance Optimization**: Apple's implementation of PDF for rendering is optimized for performance, ensuring smooth and responsive interactions within the GUI. The efficient handling of vector graphics and text rendering helps maintain a high frame rate and responsiveness, even with complex visuals.
-
-**Compatibility and Integration**: PDF is a widely used standard for document exchange, and by using it as a basis for their rendering engine, Apple ensured that documents created or viewed on macOS would be highly compatible with other systems and applications. This integration makes it easier for users to work with PDF documents directly within the operating system, including previewing, annotating, and printing.
 
 
 ### Historical Context
 
-- **PostScript to PDF Transition**: While PostScript was integral to the early days of desktop publishing and printing, PDF emerged as a more versatile and portable format for document exchange and display. Adobe developed PDF to extend the capabilities of PostScript, making it better suited for a range of devices and platforms, including on-screen viewing.
+- **PostScript to PDF Transition**: While PostScript was integral to the
+early days of desktop publishing and printing, PDF emerged as a more versatile
+and portable format for document exchange and display. Adobe developed PDF
+to extend the capabilities of PostScript, making it better suited for a range
+of devices and platforms, including on-screen viewing. In fact PDF wasn't
+an immediate success at all when it lauched. The success it has today took
+a long time to arrive at.
 
-- **PDF as a Universal Format**: As PDF became the de facto standard for document exchange, its use in on-screen rendering became more prevalent. Apple's adoption of PDF for its rendering engine in macOS leveraged the strengths of PDF, providing a unified approach to rendering that worked equally well for on-screen display, printing, and document exchange.
+- **PDF as a Universal Format**: As PDF became the de facto standard for
+document exchange, its use in on-screen rendering became more prevalent.
+Apple's adoption of PDF for its rendering engine in macOS leveraged the
+strengths of PDF, providing a unified approach to rendering that worked
+equally well for on-screen display, printing, and document exchange.
 
-### Practical Implications
 
-- **User Experience**: The integration of PDF in the rendering engine enhances the user experience by ensuring that documents and graphical elements are rendered with high fidelity. This is particularly important for professional applications where precise rendering of graphics and text is critical.
 
-- **Developer Tools**: Developers benefit from the use of PDF in Core Graphics, as it provides a powerful and flexible API for creating and manipulating graphics. This allows for the development of sophisticated applications that can take full advantage of the rendering capabilities built into the operating system.
+### PDF in Apple's GUI
 
-In summary, Apple's use of PDF for on-screen rendering in their GUI leverages the strengths of the PDF format to provide high-quality, consistent, and performant rendering of text and graphics. This approach enhances the visual experience for users and provides a robust platform for developers to create rich graphical applications.
+**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework, known as Quartz 2D,
+is the cornerstone of their graphics rendering engine in macOS. Quartz 2D is based
+on the same imaging model as *PDF*. This allows the operating system to render text
+and graphics with high precision and consistency, using the same techniques for
+both screen display and printing.
 
+**Resolution Independence**: PDF's scalable nature means that graphics and text can
+be rendered at (for the most part) any resolution without loss of quality. This was
+a critical feature for Apple's GUI, ensuring that elements would look sharp and clear
+on displays with varying resolutions, including the high-resolution Retina displays
+introduced later.
+
+**Consistent Output**: Using PDF as a basis for on-screen rendering ensures that the
+visual output is consistent across different devices. This is similar to the WYSIWYG
+(What You See Is What You Get) principle that PostScript brought to desktop publishing.
+What users see on their screen is a faithful representation of what will be printed
+or displayed on another device.
+
+**Advanced Graphics Features**: PDF supports advanced graphics features such as
+transparency, gradients, and complex vector shapes. By utilizing PDF for rendering,
+Apple's GUI could incorporate these advanced graphics features seamlessly, enhancing
+the visual appeal and functionality of the user interface.
+
+**Performance Optimization**: Apple's implementation of PDF for rendering is optimized
+for performance, ensuring smooth and responsive interactions within the GUI. The
+efficient handling of vector graphics and text rendering helps maintain a high frame
+rate and responsiveness, even with complex visuals.
+
+**Compatibility and Integration**: PDF is a widely used standard for document exchange,
+and by using it as a basis for their rendering engine, Apple ensured that documents
+created or viewed on macOS would be highly compatible with other systems and applications.
+This integration makes it easier for users to work with PDF documents directly within
+the operating system, including previewing, annotating, and printing.
+
+
+
+## Going Metal
 
 As of recent developments, Apple has indeed evolved its graphics rendering architecture, moving away from a strictly PDF-based approach for certain aspects of screen buffering and rendering. Here’s an overview of the current situation and how Apple’s graphics architecture has shifted:
 
