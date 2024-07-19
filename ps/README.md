@@ -1,8 +1,9 @@
 # Virtual Machines
 
-PostScript is a versatile and widely-used page description language
-and programming language specifically designed for creating graphics
-but also fancy text. It operates *as a* virtual machine, which allows
+[PostScript](POSTSCRIPT.md) is a versatile and widely-used page
+description language and programming language specifically designed
+for creating graphics but also fancy "typographical" text.
+It operates *as a* virtual machine, which allows
 for device-independent graphics rendering, meaning it can produce
 *consistent results across different printers and displays*.
 Although general APIs for graphics in languages like Python or C
@@ -24,17 +25,18 @@ Generate PostScript with the click of the button. Copy the result and ..
 
 ### psviewer
 
-.. Open the web browser with the HTML page `psviewer.html`, then paste
+.. open the web browser with the HTML page `psviewer.html`, then paste
 the result in the textbox. The result should look like the drawing you
 made in `psmaker.html`.
 
 
-### the 'vm' in psviewer
+### the vm in psviewer
 
 The `interpretPostScript` function in `psviewer.html` parses and interprets
 a simplified PostScript-like script to draw on an HTML canvas. The function
 reads commands from the script, manipulates a stack for operand storage,
 and issues drawing commands to the canvas context (`ctx`).
+
 
 #### Stack
 
@@ -72,7 +74,7 @@ a `switch` statement.
 
 
 
-#### `newpath`
+#### newpath
 
 ```javascript
   case 'newpath':
@@ -81,7 +83,7 @@ a `switch` statement.
 ```
 Starts a new path on the canvas.
 
-#### `moveto`
+#### moveto
 
 ```javascript
   case 'moveto':
@@ -93,7 +95,7 @@ Starts a new path on the canvas.
 Moves the drawing cursor to a new point without drawing a line.
 The coordinates are popped from the stack.
 
-#### `lineto`
+#### lineto
 
 ```javascript
   case 'lineto':
@@ -105,7 +107,7 @@ The coordinates are popped from the stack.
 Draws a line from the current position to a new point,
 with coordinates taken from the stack.
 
-#### `rect`
+#### rect
 
 ```javascript
   case 'rect':
@@ -119,7 +121,7 @@ with coordinates taken from the stack.
 Draws a rectangle with the specified width, height,
 and position.
 
-#### `arc`
+#### arc
 
 ```javascript
   case 'arc':
@@ -134,7 +136,7 @@ and position.
 Draws an arc with the given center, radius, and angles (converted
 from degrees to radians).
 
-#### `closepath`
+#### closepath
 
 ```javascript
   case 'closepath':
@@ -144,7 +146,7 @@ from degrees to radians).
 Closes the current path by drawing a straight line back to the
 starting point.
 
-#### `gsave` / `grestore`
+#### gsave / grestore
 
 ```javascript
   case 'gsave':
@@ -167,7 +169,7 @@ starting point.
 while `grestore` restores the most recently saved state.
 
 
-#### `setlinewidth`
+#### setlinewidth
 
 ```javascript
   case 'setlinewidth':
@@ -177,7 +179,8 @@ while `grestore` restores the most recently saved state.
 ```
 Sets the line width for subsequent drawing commands.
 
-#### `setgray`
+
+#### setgray
 
 ```javascript
   case 'setgray':
@@ -190,7 +193,7 @@ Sets the fill and stroke color to a shade of gray
 based on the given value (0 to 1).
 
 
-#### `fill` / `stroke`
+#### fill / stroke
 
 ```javascript
   case 'fill':
@@ -204,7 +207,7 @@ based on the given value (0 to 1).
 while `stroke` renders the path outline with the current stroke color.
 
 
-#### `showpage`
+#### showpage
 
 ```javascript
   case 'showpage':
