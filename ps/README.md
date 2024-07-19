@@ -1,7 +1,17 @@
 # Virtual Machines
 
-A sort of virtual machine, or machine independent programning language
-for graphics: *PostScript*.
+PostScript is a versatile and widely-used page description language
+and programming language specifically designed for creating graphics
+but also fancy text. It operates *as a* virtual machine, which allows
+for device-independent graphics rendering, meaning it can produce
+*consistent results across different printers and displays*.
+Although general APIs for graphics in languages like Python or C
+are hard to come by and not very common, JavaScript’s Canvas API
+offers a reasonable robust and accessible platform for rendering
+vector graphics similar to PostScript. Therefore, implementing a
+simple PostScript interpreter in JavaScript using the Canvas API
+is both practical and effective.
+
 
 ### psmaker
 
@@ -17,7 +27,6 @@ Generate PostScript with the click of the button. Copy the result and ..
 .. Open the web browser with the HTML page `psviewer.html`, then paste
 the result in the textbox. The result should look like the drawing you
 made in `psmaker.html`.
-
 
 
 ### the 'vm' in psviewer
