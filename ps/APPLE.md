@@ -75,11 +75,14 @@ equally well for on-screen display, printing, and document exchange.
 
 ### PDF in Apple's GUI
 
-**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework, known as *Quartz 2D*,
+**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework, known as
+*Quartz 2D,*[^quartz2ddoc]
 is the cornerstone of their graphics rendering engine in macOS. Quartz 2D is based
 on the same *imaging model* as *PDF*. This allows the operating system to render text
 and graphics with high precision and consistency, using the same techniques for
 both screen display and printing.
+
+[^quartz2ddoc]: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html
 
 **Resolution Independence**: PDF's scalable nature means that graphics and text can
 be rendered at (for the most part) any resolution without loss of quality. This was
@@ -111,12 +114,14 @@ the operating system, including previewing, annotating, and printing.
 
 
 
-## Going Metal ..
+## Going Metal[^metaldoc] ..
 
 As of recent developments, Apple has indeed evolved its graphics rendering
 architecture, moving away from a strictly PDF-based approach for certain
 aspects of screen buffering and rendering. Here’s an overview of the current
 situation and how Apple’s graphics architecture has shifted:
+
+[^metaldoc]: https://developer.apple.com/documentation/metal
 
 ### Changes and Evolution
 
