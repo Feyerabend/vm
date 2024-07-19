@@ -39,11 +39,11 @@ at the right time.
 
 ## PDF renders PostScript a bit obsolete ..
 
-Much later on PostScript was succeeded by PDF (Portable Document Format),
-to which it can easily be "distilled", or converted.
-PDF actually inherits much of ideas from PostScript, although the format
-has changed a lot. It has a different focus, which makes it suitable
-for not only printers but also screens.[^pdf]
+Later on, PostScript was succeeded by PDF (Portable Document Format),
+which can be easily “distilled” or converted from PostScript. PDF
+inherits many ideas from PostScript, but it has evolved significantly.
+It is designed with a different focus, making it suitable not only for
+printing but also for viewing on screens.[^pdf]
 
 But here comes the interesting part: *PDF played a significant role in
 screen rendering and display within Apple's operating systems, particularly
@@ -53,7 +53,9 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 
 [^dropped]: As a side note: Apple dropped support for converting PostScript to PDF
 recently, as you previously just had to click on a ".ps" file to get
-a ".pdf".
+a ".pdf". And, I was also a bit disappointed when I started programming
+in Objective-C for iOS, as there were more orientation towards "bitmaps"
+than "vector graphics" in the GUI at that time.
 
 
 ### Historical Context
