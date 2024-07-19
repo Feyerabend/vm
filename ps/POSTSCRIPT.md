@@ -90,13 +90,13 @@ it an ideal choice for professional publishing.
 ### Apple & Adobe
 
 The relationship between Xerox PARC's innovations and PostScript
-became even more significant through Adobe's partnership with Apple.
-In 1985, Apple launched the LaserWriter, the first PostScript-based
-laser printer, which worked seamlessly with the Macintosh computer.
-This collaboration was instrumental in the rise of desktop publishing
-(DTP), empowering individuals and small businesses to produce
-professional-quality printed materials without needing expensive
-typesetting equipment.
+became even more significant through Adobe's partnership with
+[Apple](APPLE.md). In 1985, Apple launched the LaserWriter, the
+first PostScript-based laser printer, which worked seamlessly
+with the Macintosh computer. This collaboration was instrumental
+in the rise of desktop publishing (DTP), empowering individuals
+and small businesses to produce professional-quality printed
+materials without needing expensive typesetting equipment.
 
 One more element was required for the DTP revolution to take off:
 *PageMaker*.[^pagemaker] PageMaker, developed by Aldus
