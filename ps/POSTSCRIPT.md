@@ -111,6 +111,7 @@ language were pivotal in making desktop publishing accessible
 to a wider audience.
 
 [^pagemaker]: https://en.wikipedia.org/wiki/Adobe_PageMaker
+https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/history/
 [^aldus]: https://en.wikipedia.org/wiki/Aldus_Corporation
 
 
