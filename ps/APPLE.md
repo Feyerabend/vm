@@ -55,7 +55,7 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 recently, as you previously just had to click on a ".ps" file to get
 a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
-than "vector graphics" in the GUI at that time.
+than "vector graphics" in the GUI at that time (2015).
 
 
 ### Historical Context
