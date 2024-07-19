@@ -17,6 +17,8 @@
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
+        ctx.translate(canvas.width, canvas.height)    
+        ctx.rotate(Math.PI);
 
         // Stack to hold graphics states
         const graphicsStateStack = [];
@@ -107,7 +109,6 @@
         function interpret() {
             const postScript = document.getElementById('input').value;
             interpretPostScript(postScript);
-            console.log(variable);
         }
     </script>
 </body>
