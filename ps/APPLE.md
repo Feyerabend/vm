@@ -7,31 +7,6 @@ laser printers, programs where you could layout pictures, text and graphics
 such as PageMaker, but also PostScript which could transfer what you saw on
 the screen to what got printed in relatively high detail as 300 dpi.
 
-PostScript enabled the production of crisp, scalable fonts and detailed
-graphics, which were difficult for other implementors to replicate. This
-capability was essential for ensuring clear, readable text and precise
-illustrations. The *device-independent* nature of PostScript meant that
-printed materials maintained high quality regardless of the printer used,
-consistently producing (relatively) excellent results.
-
-Apple’s LaserWriter printer, one of the first to incorporate PostScript,
-played a key role. Combined with the Macintosh’s *graphical user interface*,
-it allowed seamless production, blending text and graphics smoothly.
-
-Using PostScript was part of Apple’s larger initiative in the *desktop publishing
-revolution* (DTP). Along with software like Aldus PageMaker, it enabled users to
-create professional-quality documents in-house, showcasing the capabilities of the
-Macintosh in producing high-quality printed materials.
-
-PostScript allowed to consistently documents to be reproduced at any size and
-on any compatible printer without losing quality. This was beneficial for
-producing various editions and updates, maintaining high standards across
-all copies.
-
-WYSIWYG (What You See Is What You Get) as PostScript maintained the fidelity of
-on-screen displays to printed outputs, allowing users to see exactly how the
-printed manual would look, ensuring accuracy and detail.
-
 Macintosh didn't make a great start when it launched. But DTP and some other
 software made it into a much more attractive product in crucial markets,
 at the right time.
@@ -88,29 +63,29 @@ screen display and printing.
 
 [^quartz2ddoc]: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html
 
-**Resolution Independence**: PDF's scalable nature means that graphics and text can
+**Resolution independence**: PDF's scalable nature means that graphics and text can
 be rendered at (for the most part) any resolution without loss of quality. This was
 a critical feature for Apple's GUI, ensuring that elements would look sharp and clear
 on displays with varying resolutions, including the high-resolution *Retina displays*
 introduced later.
 
-**Consistent Output**: Using PDF as a basis for on-screen rendering ensures that the
+**Consistent output**: Using PDF as a basis for on-screen rendering ensures that the
 visual output is consistent across different devices. This is similar to the WYSIWYG
 (What You See Is What You Get) principle that PostScript brought to desktop publishing.
 What users see on their screen is a faithful representation of what will be printed
 or displayed on another device.
 
-**Advanced Graphics Features**: PDF supports advanced graphics features such as
+**Advanced graphics**: PDF supports advanced graphics features such as
 transparency, gradients, and complex vector shapes. By utilizing PDF for rendering,
 Apple's GUI could incorporate these advanced graphics features seamlessly, enhancing
 the visual appeal and functionality of the user interface.
 
-**Performance Optimization**: Apple's implementation of PDF for rendering is optimized
+**Performance optimization**: Apple's implementation of PDF for rendering is optimized
 for performance, ensuring smooth and responsive interactions within the GUI. The
 efficient handling of vector graphics and text rendering helps maintain a high frame
 rate and responsiveness, even with complex visuals.
 
-**Compatibility and Integration**: PDF is a widely used standard for document exchange,
+**Compatibility & integration**: PDF is a widely used standard for document exchange,
 and by using it as a basis for their rendering engine, Apple ensured that documents
 created or viewed on *macOS* would be highly compatible with other systems and applications.
 This integration makes it easier for users to work with PDF documents directly within
@@ -172,18 +147,22 @@ situation and how Apple’s graphics architecture has shifted:
     rendering, particularly on high-resolution displays and in graphics-intensive
     applications.
 
+
 ### Current Situation
 
 - **Performance Optimization**: The shift towards using Metal reflects Apple’s
 focus on optimizing performance, particularly for applications that require
 real-time graphics and complex visual effects.
+
 - **Consistency and Compatibility**: Despite these changes, Apple ensures that
 the visual output remains consistent and compatible with existing standards,
 including PDF. This is crucial for applications dealing with document rendering
 and ensures a seamless user experience.
+
 - **Developer Tools**: Apple continues to provide robust developer tools and
 frameworks that allow developers to take advantage of both PDF-based rendering
 for document-centric applications and Metal for performance-intensive tasks.
+
 
 ### Summary
 
@@ -204,14 +183,14 @@ rendering and computation. It provides direct access to the GPU, allowing
 developers to achieve maximum efficiency and control over rendering tasks.
 
 #### Features:
-1. **Low-Level Access**: Metal provides direct access to the GPU, enabling
+1. **Low-Level access**: Metal provides direct access to the GPU, enabling
 developers to write highly optimized code for rendering and computation tasks.
-2. **High Performance**: Metal is designed for performance-critical applications,
+2. **High performance**: Metal is designed for performance-critical applications,
 such as games, professional graphics software, and real-time rendering.
-3. **Compute Shaders**: Besides graphics rendering, Metal supports general-purpose
+3. **Compute shaders**: Besides graphics rendering, Metal supports general-purpose
 computing on the GPU, which can be used for tasks like image processing and
 machine learning.
-4. **Explicit Control**: Developers have explicit control over resource management,
+4. **Explicit control**: Developers have explicit control over resource management,
 rendering pipelines, and synchronization, allowing for fine-tuned performance
 optimizations.
 
@@ -224,11 +203,11 @@ including PDF content. It is well-suited for applications involving
 document rendering, vector graphics, and text rendering.
 
 #### Features:
-1. **High-Level Drawing**: Core Graphics provides high-level functions
+1. **High-Level drawing**: Core Graphics provides high-level functions
 for drawing shapes, text, and images.
-2. **PDF Support**: Built-in support for rendering PDF documents,
+2. **PDF support**: Built-in support for rendering PDF documents,
 including page navigation and content extraction.
-3. **Vector Graphics**: Ideal for drawing resolution-independent
+3. **Vector graphics**: Ideal for drawing resolution-independent
 vector graphics.
 4. **Integration with UIKit/AppKit**: Seamless integration with
 higher-level frameworks for UI rendering.
@@ -237,16 +216,16 @@ higher-level frameworks for UI rendering.
 
 ### Differences in API Usage
 
-- **Level of Abstraction**: Metal provides a lower-level API with more
+- **Level of abstraction**: Metal provides a lower-level API with more
 explicit control over rendering operations and resource management,
 while Core Graphics offers a higher-level, more abstracted API focused
 on ease of use for 2D graphics and PDF rendering.
-- **Performance and Use Cases**: Metal is designed for high-performance,
+- **Performance and use cases**: Metal is designed for high-performance,
 real-time applications requiring direct GPU access. In contrast, Core
 Graphics is tailored for applications involving vector graphics and
 document rendering, where ease of use and integration with the system’s
 UI framework are more important.
-- **Resource Management**: Metal requires explicit management of GPU
+- **Resource management**: Metal requires explicit management of GPU
 resources, synchronization, and command encoding, whereas Core Graphics
 handles many of these aspects automatically, providing a simpler but
 less flexible drawing model.
