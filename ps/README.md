@@ -1,10 +1,10 @@
 # Virtual Machines
 
-[PostScript](POSTSCRIPT.md) is a versatile and widely-used page
-description language and __programming language__ specifically designed
-for creating graphics but also fancy "typographical" text.
-As it is a programmming language, it is also Turing complete.
-It operates *as a* virtual machine, which allows
+[PostScript](POSTSCRIPT.md) is a versatile, widely-used page
+description language and __programming language__ specifically
+designed for creating graphics but also fancy "typographical"
+(or typeset) text. As it is a programmming language, it is also
+Turing complete. It operates *as a* virtual machine, which allows
 for device-independent graphics rendering, meaning it can produce
 *consistent results across different printers and displays*.
 Although general APIs for graphics in languages like Python or C
