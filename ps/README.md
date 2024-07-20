@@ -266,3 +266,13 @@ in numbers when calculating.
 
 [^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988, p.2.
 
+The interpreted nature of PostScript reminds us of how virtual machines have been introduced so far, but
+not having a binary (or something like bytecode) representing the language and executing upon that.
+Instead, the language is directly interpreted from the *source* in PostScript. The language as source code
+have the same function as bytecodes which we already are familiar with.
+
+You might also recognize the stack reference. There are actually several stacks that PostScript uses,
+a general one, one for graphics, one for the dictionary and so on. The dictionary might also remind us
+of 'procedures' we have had a look at earlier. We can call named things, and get results from them, broadly
+speaking.
+
