@@ -188,21 +188,6 @@ situation and how Apple’s graphics architecture has shifted:
     applications.
 
 
-### Current Situation
-
-- **Performance optimization**: The shift towards using Metal reflects Apple’s
-focus on optimizing performance, particularly for applications that require
-real-time graphics and complex visual effects.
-
-- **Consistency & compatibility**: Despite these changes, Apple ensures that
-the visual output remains consistent and compatible with existing standards,
-including PDF. This is crucial for applications dealing with document rendering.
-
-- **Developer tools**: Apple continues to provide robust developer tools and
-frameworks that allow developers to take advantage of both PDF-based rendering
-for document-centric applications, and Metal for performance-intensive tasks.
-
-
 ### Differences in API Usage
 
 - **Level of abstraction**: Metal provides a lower-level API with more
@@ -220,6 +205,7 @@ UI framework are more important.
 resources, synchronization, and command encoding, whereas Core Graphics
 handles many of these aspects automatically, providing a simpler but
 less flexible drawing model.
+
 
 ### Conclusion
 
