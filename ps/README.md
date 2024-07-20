@@ -237,6 +237,26 @@ This function reads the PostScript code from a textarea elemen
 with id `input`, and then calls `interpretPostScript` to render
 it on the canvas.
 
+### changing the coordinate system
+
+As PostScript has a different coordintate system than Canvas,
+some convertions has to be made. The initial coordinate system
+for PostScript has the x axis to the right and y axis upwards,
+the origin is located at the bottom left hand corner of the page. 
+Canvas on the other hand, has the upper-left corner of the 
+screen as origin, so x and y goes instead downwards increasing
+their values.
+
+So one way to handle this is to do what can be seen in
+`psmaker.html` where each point gets transformed easily
+through an 'arithmetical geometry' process, while in
+`psviewer.html` the whole canvas is transformed before
+drawing through rather standard rotations and flipping
+through 2D matrices. They may have different results
+partly due to such things as precision in numbers when
+calculating.
+
+
 ## postscript
 
 [the language ..]
