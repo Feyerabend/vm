@@ -151,21 +151,38 @@ situation and how Apple’s graphics architecture has shifted:
 
 ### Current Situation
 
-- **Performance Optimization**: The shift towards using Metal reflects Apple’s
+- **Performance optimization**: The shift towards using Metal reflects Apple’s
 focus on optimizing performance, particularly for applications that require
 real-time graphics and complex visual effects.
 
-- **Consistency and Compatibility**: Despite these changes, Apple ensures that
+- **Consistency & compatibility**: Despite these changes, Apple ensures that
 the visual output remains consistent and compatible with existing standards,
-including PDF. This is crucial for applications dealing with document rendering
-and ensures a seamless user experience.
+including PDF. This is crucial for applications dealing with document rendering.
 
-- **Developer Tools**: Apple continues to provide robust developer tools and
+- **Developer tools**: Apple continues to provide robust developer tools and
 frameworks that allow developers to take advantage of both PDF-based rendering
-for document-centric applications and Metal for performance-intensive tasks.
+for document-centric applications, and Metal for performance-intensive tasks.
 
 
-### Summary
+### Differences in API Usage
+
+- **Level of abstraction**: Metal provides a lower-level API with more
+explicit control over rendering operations and resource management,
+while Core Graphics offers a higher-level, more abstracted API focused
+on ease of use for 2D graphics and PDF rendering.
+
+- **Performance and use cases**: Metal is designed for high-performance,
+real-time applications requiring direct GPU access. In contrast, Core
+Graphics is tailored for applications involving vector graphics and
+document rendering, where ease of use and integration with the system’s
+UI framework are more important.
+
+- **Resource management**: Metal requires explicit management of GPU
+resources, synchronization, and command encoding, whereas Core Graphics
+handles many of these aspects automatically, providing a simpler but
+less flexible drawing model.
+
+### Conclusion
 
 While Apple has not completely abandoned PDF-based rendering, especially for
 document handling and certain UI elements, it has significantly expanded its
@@ -176,63 +193,6 @@ demand higher performance and efficiency. The result is a more flexible and
 powerful rendering infrastructure that can cater to a wide range of application
 needs.
 
-
-### Metal API
-
-**Purpose**: Metal is a low-level graphics API designed for high-performance
-rendering and computation. It provides direct access to the GPU, allowing
-developers to achieve maximum efficiency and control over rendering tasks.
-
-#### Features:
-1. **Low-Level access**: Metal provides direct access to the GPU, enabling
-developers to write highly optimized code for rendering and computation tasks.
-2. **High performance**: Metal is designed for performance-critical applications,
-such as games, professional graphics software, and real-time rendering.
-3. **Compute shaders**: Besides graphics rendering, Metal supports general-purpose
-computing on the GPU, which can be used for tasks like image processing and
-machine learning.
-4. **Explicit control**: Developers have explicit control over resource management,
-rendering pipelines, and synchronization, allowing for fine-tuned performance
-optimizations.
-
-
-### PDF Rendering (Core Graphics/Quartz 2D)
-
-**Purpose**: Core Graphics (also known as Quartz 2D) is a 2D graphics
-rendering API designed for drawing and rendering vector graphics,
-including PDF content. It is well-suited for applications involving
-document rendering, vector graphics, and text rendering.
-
-#### Features:
-1. **High-Level drawing**: Core Graphics provides high-level functions
-for drawing shapes, text, and images.
-2. **PDF support**: Built-in support for rendering PDF documents,
-including page navigation and content extraction.
-3. **Vector graphics**: Ideal for drawing resolution-independent
-vector graphics.
-4. **Integration with UIKit/AppKit**: Seamless integration with
-higher-level frameworks for UI rendering.
-
-
-
-### Differences in API Usage
-
-- **Level of abstraction**: Metal provides a lower-level API with more
-explicit control over rendering operations and resource management,
-while Core Graphics offers a higher-level, more abstracted API focused
-on ease of use for 2D graphics and PDF rendering.
-- **Performance and use cases**: Metal is designed for high-performance,
-real-time applications requiring direct GPU access. In contrast, Core
-Graphics is tailored for applications involving vector graphics and
-document rendering, where ease of use and integration with the system’s
-UI framework are more important.
-- **Resource management**: Metal requires explicit management of GPU
-resources, synchronization, and command encoding, whereas Core Graphics
-handles many of these aspects automatically, providing a simpler but
-less flexible drawing model.
-
-
-### Conclusion
 Metal and Core Graphics serve different purposes within Apple's graphics
 architecture. Metal is aimed at performance-intensive tasks requiring fine
 control over the GPU, while Core Graphics focuses on high-level 2D graphics
