@@ -71,6 +71,8 @@ didn't saw larger markets where it could be used.
 
 [^interpress]: https://en.wikipedia.org/wiki/Interpress
 
+![Print from LaTeX through PS](../assets/images/ps.png)
+
 ## Adobe Systems, PostScript and DTP
 
 In 1982, Warnock and Geschke, two researchers from PARC,
