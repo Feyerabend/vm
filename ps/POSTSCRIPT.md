@@ -120,11 +120,12 @@ to a wider audience.
 the option of writing an essay and obtaining a laser-printed
 version wasn’t exactly feasible. A cheap electronic typewriter
 was the norm back then. However, as the 1990s approached and
-I could get a printout on a laser printer, a LaserWriter II,
+I could get a printout on a laser printer, a LaserWriter II
 using a Macintosh Plus, I discovered that when the printout
 went wrong, some strange characters were generated on the
 paper: this was actually PostScript. Remarkable! I actually
-understood something about this ..
+understood something about this .. But far from owning a
+printer, at least I could borrow it for a few hours.
 [^pagemaker]: https://en.wikipedia.org/wiki/Adobe_PageMaker
 https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/history/
 [^aldus]: https://en.wikipedia.org/wiki/Aldus_Corporation
