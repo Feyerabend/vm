@@ -222,7 +222,7 @@ the rest of the document (if there is) obsolete as the rest
 is not rendered.
 
 
-### Integration with HTML
+### integration with HTML
 
 The function `interpret` is designed to be triggered by a button
 to process the input PostScript code from a textarea:
@@ -236,6 +236,7 @@ function interpret() {
 This function reads the PostScript code from a textarea elemen
 with id `input`, and then calls `interpretPostScript` to render
 it on the canvas.
+
 
 ### changing the coordinate system
 
