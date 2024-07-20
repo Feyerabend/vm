@@ -1,8 +1,9 @@
 # Virtual Machines
 
 [PostScript](POSTSCRIPT.md) is a versatile and widely-used page
-description language and programming language specifically designed
+description language and __programming language__ specifically designed
 for creating graphics but also fancy "typographical" text.
+As it is a programmming language, it is also Turing complete.
 It operates *as a* virtual machine, which allows
 for device-independent graphics rendering, meaning it can produce
 *consistent results across different printers and displays*.
@@ -11,7 +12,7 @@ are hard to come by and not very common, JavaScript’s Canvas API
 offers a reasonable robust and accessible platform for rendering
 vector graphics similar to PostScript. Therefore, implementing a
 simple PostScript interpreter in JavaScript using the Canvas API
-is both practical and effective.
+is both practical and "effective".
 
 
 ### psmaker
