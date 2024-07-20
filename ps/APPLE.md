@@ -19,7 +19,8 @@ Later on, PostScript was succeeded by PDF (Portable Document Format),
 which can be easily “distilled” or converted from PostScript. PDF
 inherits many ideas from PostScript, but it has evolved significantly.
 It is designed with a different focus, making it suitable not only for
-printing but also for viewing on screens.[^pdf]
+printing but also for viewing on screens.[^pdf] Yes, it converted
+from a programming langauge to a portable document format.
 
 But here comes the interesting part: *PDF played a significant role in
 screen rendering and display within Apple's operating systems, particularly
