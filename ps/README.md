@@ -236,3 +236,7 @@ function interpret() {
 This function reads the PostScript code from a textarea elemen
 with id `input`, and then calls `interpretPostScript` to render
 it on the canvas.
+
+## postscript
+
+[the language ..]
