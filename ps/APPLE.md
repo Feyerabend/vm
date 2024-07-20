@@ -36,19 +36,21 @@ than "vector graphics" in the GUI at that time (2015).
 
 ### Historical Context
 
-- **PostScript to PDF Transition**: While PostScript was integral to the
-early days of desktop publishing and printing, PDF emerged as a more versatile
-and portable format for document exchange and display. Adobe developed its
-implementation of PDF to extend the capabilities of PostScript, making it better
-suited for a range of devices and platforms, including *on-screen viewing*.
-In fact PDF wasn't an immediate success at all when it lauched in the early
-90s. The success it has today took a long time to arrive at.
+The transition from PostScript to PDF marked a significant evolution
+in document formats. PostScript played a crucial role in the early stages
+of desktop publishing and printing. However, PDF emerged as a more versatile
+and portable format for document exchange and display. Adobe developed PDF
+to expand upon the capabilities of PostScript, adapting it to a broader
+range of devices and platforms, including on-screen viewing. Initially,
+PDF faced challenges and did not achieve immediate success upon its
+launch in the early 1990s. It took considerable time for PDF to gain
+widespread acceptance and recognition.
 
-- **PDF as a Universal Format**: As PDF became the de facto standard for
-*document exchange*, its use in on-screen rendering became more prevalent.
-Apple's adoption of PDF for its rendering engine in *macOS* leveraged the
-strengths of PDF, providing a unified approach to rendering that worked
-equally well for on-screen display, printing, and document exchange.
+As PDF became the dominant format for document exchange, its usage
+expanded significantly in on-screen rendering. Apple’s adoption of
+PDF for its rendering engine in macOS highlighted PDF’s strengths,
+providing a unified approach to rendering that served equally well
+for on-screen display, printing, and document exchange.
 
 
 ### PDF in Apple's GUI
