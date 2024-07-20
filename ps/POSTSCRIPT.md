@@ -116,7 +116,7 @@ with Apple Macintosh and its use of the PostScript page description
 language were pivotal in making desktop publishing accessible
 to a wider audience.
 
-[¨sidenote]: When I was a student, sometime in the 1980s,
+[^sidenote]: When I was a student, sometime in the 1980s,
 the option of writing an essay and obtaining a laser-printed
 version wasn’t exactly feasible. A cheap electronic typewriter
 was the norm back then. However, as the 1990s approached and
