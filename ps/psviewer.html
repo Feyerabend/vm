@@ -24,6 +24,9 @@
         ctx.rotate(Math.PI);
         ctx.translate(canvas.width, 0);
         ctx.scale(-1, 1);
+        // or .. vertically
+        // ctx.translate(0, canvas.height);
+        // ctx.scale(1, -1);
 
         // stack to hold graphics states
         const graphicsStateStack = [];
