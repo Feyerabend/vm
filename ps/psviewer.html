@@ -18,8 +18,8 @@
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
 
-        // different coordination systems in canvas vs. postscript
-        // so rotate and flip
+        // different coordinate systems in canvas vs. postscript
+        // so rotate and flip horisontally
         ctx.translate(canvas.width, canvas.height)    
         ctx.rotate(Math.PI);
         ctx.translate(canvas.width, 0);
