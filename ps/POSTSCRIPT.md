@@ -69,7 +69,7 @@ didn't saw larger markets where it could be used.
 
 [^interpress]: https://en.wikipedia.org/wiki/Interpress
 
-### Adobe Systems, PostScript and DTP
+## Adobe Systems, PostScript and DTP
 
 In 1982, Warnock and Geschke, two researchers from PARC,
 left Xerox to found Adobe Systems. Recognizing the need for
@@ -115,7 +115,7 @@ https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/
 [^aldus]: https://en.wikipedia.org/wiki/Aldus_Corporation
 
 
-#### Consequences
+### Consequences
 
 *"Democratization" of publishing*: These technologies lowered the
 barriers to entry in the publishing industry. Small businesses,
