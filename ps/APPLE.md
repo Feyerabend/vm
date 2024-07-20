@@ -32,7 +32,9 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 to PDF recently, as you previously just had to click on a ".ps" file to get
 a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
-than "vector graphics" in the GUI at that time (2015).
+than "vector graphics" in the GUI at that time (2015). And from what I
+understand in simplified terms, Apple's graphical systems have much of
+faster cache solutions in bitmaps, than drawing procedural vector graphics.
 
 
 ### Display PostScript[^displayps]
@@ -47,10 +49,11 @@ based screen rendering on a computer.
 
 So *Display PostScript* (DPS) was a technology developed by
 Adobe Systems in collaboration with NeXT during
-the late 1980s and early 1990s. It aimed to extend the
-capabilities of traditional PostScript by adding support for
-interactive graphics and user interface elements, making it suitable
-for on-screen display and user interaction.
+the late 1980s and early 1990s, first lauched in 1987.
+It aimed to extend the capabilities of traditional PostScript
+by adding support for interactive graphics and user interface
+elements, making it suitable for on-screen display and user
+interaction.
 
 [^displayps]: https://en.wikipedia.org/wiki/Display_PostScript
 [^next]: https://en.wikipedia.org/wiki/NeXT
