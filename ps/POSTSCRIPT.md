@@ -99,6 +99,12 @@ in the rise of desktop publishing (DTP), empowering individuals
 and small businesses to produce professional-quality printed
 materials without needing expensive typesetting equipment.
 
+The LaserWriter was expensive, almost $20,000 USD today. But
+the investment could be balanced against much more expensive
+hire of labour, professional equipment and the cost of time
+for a final product. The lower the cost of the printer, the
+more attractive the alternative was.[^sidenote]
+
 One more element was required for the DTP revolution to take off:
 *PageMaker*.[^pagemaker] PageMaker, developed by Aldus
 Corporation[^aldus] and released in 1985, was one of the
@@ -110,6 +116,15 @@ with Apple Macintosh and its use of the PostScript page description
 language were pivotal in making desktop publishing accessible
 to a wider audience.
 
+[¨sidenote]: When I was a student, sometime in the 1980s,
+the option of writing an essay and obtaining a laser-printed
+version wasn’t exactly feasible. A cheap electronic typewriter
+was the norm back then. However, as the 1990s approached and
+I could get a printout on a laser printer, a LaserWriter II,
+using a Macintosh Plus, I discovered that when the printout
+went wrong, some strange characters were generated on the
+paper: this was actually PostScript. Remarkable! I actually
+understood something about this ..
 [^pagemaker]: https://en.wikipedia.org/wiki/Adobe_PageMaker
 https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/history/
 [^aldus]: https://en.wikipedia.org/wiki/Aldus_Corporation
