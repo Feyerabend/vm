@@ -39,13 +39,15 @@ than "vector graphics" in the GUI at that time (2015).
 ### Display PostScript[^displayps]
 
 This was no coincidence. Let's go back a bit in time. Steve Jobs
-was fired/quit from Apple, but then started NeXT Computer Inc.[^next]
-Steve was instrumental in getting PostScript to Apple, even at
-one point try to purchase Adobe, but with no success. At NeXT
-he realised the potential in having vector based screen rendering.
+was fired/quit from Apple in 1985, but then started NeXT Computer
+Inc.[^next] Thus he didn't really experience the growth of DTP
+when he was at Apple. Steve was instrumental in getting PostScript
+to Apple, even to the point of trying to purchase Adobe, but with
+no success. At NeXT he realised the potential in having vector
+based screen rendering on a computer.
 
 So *Display PostScript* (DPS) was a technology developed by
-Adobe Systems in collaboration with NeXT. during
+Adobe Systems in collaboration with NeXT during
 the late 1980s and early 1990s. It aimed to extend the
 capabilities of traditional PostScript by adding support for
 interactive graphics and user interface elements, making it suitable
@@ -61,7 +63,8 @@ known, MacOS inherits a lot from what it once was based on:
 NEXTSTEP.[^nextstep]
 
 DSP laid the foundation for Adobe’s later development of both
-Adobe Display PostScript (ADPS) and Portable Document Format (PDF).
+Adobe Display PostScript (ADPS) and Portable Document Format
+(PDF).
 
 [^nextstep]: https://en.wikipedia.org/wiki/NeXTSTEP
 
