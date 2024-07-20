@@ -1,15 +1,16 @@
 
 # Apple, PostScript, PDF and screen rendering
 
-As can be read from the background of [PostScript](POSTSCRIPT.md), in the
-mid 80s Apple had a great success early with the event of "affordable"
-laser printers, programs where you could layout pictures, text and graphics
-such as PageMaker, but also PostScript which could transfer what you saw on
-the screen to what got printed in relatively high detail as 300 dpi.
+Based on the background of [PostScript](POSTSCRIPT.md), in the mid-80s,
+Apple achieved significant success early with the introduction of “affordable”
+laser printers and software programs like PageMaker. These programs allowed
+users to layout pictures, text, and graphics. Additionally, PostScript
+enabled the transfer of what was seen on the screen to be printed in
+relatively high detail, such as 300 dpi.
 
-Macintosh didn't make a great start when it launched. But DTP and some other
-software made it into a much more attractive product in crucial markets,
-at the right time.
+Initially, the Macintosh did not have a strong start upon its launch.
+However, desktop publishing (DTP) and other software made it a much
+more appealing product in critical markets at the right time.
 
 
 ## PDF renders PostScript a bit obsolete ..
@@ -26,8 +27,8 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 
 [^pdf]: https://en.wikipedia.org/wiki/PDF
 
-[^dropped]: As a side note: Apple dropped support for converting PostScript to PDF
-recently, as you previously just had to click on a ".ps" file to get
+[^dropped]: As a side note: Apple dropped support for converting PostScript
+to PDF recently, as you previously just had to click on a ".ps" file to get
 a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
 than "vector graphics" in the GUI at that time (2015).
