@@ -266,7 +266,7 @@ in numbers when calculating.
 
 [^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988, p.2.
 
-The interpreted nature of PostScript reminds us of how virtual machines have been introduced so far, but
+The interpreted nature of PostScript reminds us of how virtual machines have been introduced so far, by
 not having a binary (or something like bytecode) representing the language and executing upon that.
 Instead, the language is directly interpreted from the *source* in PostScript. The language as source code
 have the same function as bytecodes which we already are familiar with.
