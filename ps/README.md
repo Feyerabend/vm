@@ -12,7 +12,7 @@ are hard to come by and not very common, JavaScript’s Canvas API
 offers a reasonable robust and accessible platform for rendering
 vector graphics similar to PostScript. Therefore, implementing a
 simple PostScript interpreter in JavaScript using the Canvas API
-is both practical and "effective".
+is both practical and straightforward.
 
 
 ### psmaker
