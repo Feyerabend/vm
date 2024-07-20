@@ -17,26 +17,28 @@ is both practical and straightforward.
 
 ### psmaker
 
-Your web browser may almost certainly support viewing local HTML pages.
-Open the `psmaker.html` with a browser and draw something, choosing between
-lines, rectangles and circles -- to make things easy. Nothing fancy
-here, to keep to simple code and clear aim.
+Your web browser may almost certainly support viewing local HTML
+pages. Open the `psmaker.html` with a browser and draw something,
+choosing between lines, rectangles and circles -- to make things
+easy. Nothing fancy here, to keep to simple code and clear aim.
 
-Generate PostScript with the click of the button. Copy the result and ..
+Generate PostScript with the click of the button. Copy the result
+and ..
 
 ### psviewer
 
-.. open the web browser with the HTML page `psviewer.html`, then paste
-the result in the textbox. The result should look like the drawing you
-made in `psmaker.html`.
+.. open the web browser with the HTML page `psviewer.html`, then
+paste the result in the textbox. The result should look like the
+drawing you made in `psmaker.html`.
 
 
 ### the vm in psviewer
 
-The `interpretPostScript` function in `psviewer.html` parses and interprets
-a simplified PostScript-like script to draw on an HTML canvas. The function
-reads commands from the script, manipulates a stack for operand storage,
-and issues drawing commands to the canvas context (`ctx`).
+The `interpretPostScript` function in `psviewer.html` parses and
+interprets a simplified PostScript-like script to draw on an HTML
+canvas. The function reads commands from the script, manipulates
+a stack for operand storage, and issues drawing commands to the
+canvas context (`ctx`).
 
 
 #### Stack
@@ -51,8 +53,8 @@ A stack is used to store operands (numbers) for PostScript commands.
 ```javascript
    const commands = script.split('\n').flatMap(line => line.trim().split(/\s+/));
 ```
-The input script is split into lines, and each line is further split into
-commands and operands, creating an array of tokens.
+The input script is split into lines, and each line is further
+split into commands and operands, creating an array of tokens.
 
 #### Interpretation
 
@@ -73,8 +75,6 @@ Each token is processed in turn:
 - If the token is a command, it is interpreted through
 a `switch` statement.
 
-
-
 #### newpath
 
 ```javascript
@@ -93,8 +93,9 @@ Starts a new path on the canvas.
       ctx.moveTo(xMove, yMove); // move to new point
       break;
 ```
-Moves the drawing cursor to a new point without drawing a line.
-The coordinates are popped from the stack.
+Moves the drawing cursor to a new point without
+drawing a line. The coordinates are popped from
+the stack.
 
 #### lineto
 
@@ -105,8 +106,8 @@ The coordinates are popped from the stack.
       ctx.lineTo(xLine, yLine); // draw line to new point
       break;
 ```
-Draws a line from the current position to a new point,
-with coordinates taken from the stack.
+Draws a line from the current position to a new
+point, with coordinates taken from the stack.
 
 #### rect
 
@@ -134,8 +135,8 @@ and position.
       ctx.arc(xArc, yArc, radi, startAngle, endAngle); // draw arc
       break;
 ```
-Draws an arc with the given center, radius, and angles (converted
-from degrees to radians).
+Draws an arc with the given center, radius, and
+angles (converted from degrees to radians).
 
 #### closepath
 
@@ -144,8 +145,8 @@ from degrees to radians).
       ctx.closePath(); // close current path
       break;
 ```
-Closes the current path by drawing a straight line back to the
-starting point.
+Closes the current path by drawing a straight line
+back to the starting point.
 
 #### gsave / grestore
 
@@ -166,9 +167,9 @@ starting point.
       }
       break;
 ```
-`gsave` saves the current graphics state onto a stack,
-while `grestore` restores the most recently saved state.
-
+`gsave` saves the current graphics state onto
+a stack, while `grestore` restores the most
+recently saved state.
 
 #### setlinewidth
 
@@ -179,7 +180,6 @@ while `grestore` restores the most recently saved state.
       break;
 ```
 Sets the line width for subsequent drawing commands.
-
 
 #### setgray
 
@@ -193,7 +193,6 @@ Sets the line width for subsequent drawing commands.
 Sets the fill and stroke color to a shade of gray
 based on the given value (0 to 1).
 
-
 #### fill / stroke
 
 ```javascript
@@ -204,9 +203,9 @@ based on the given value (0 to 1).
       ctx.stroke(); // render path
       break;
 ```
-`fill` fills the current path with the current fill color,
-while `stroke` renders the path outline with the current stroke color.
-
+`fill` fills the current path with the current
+fill color, while `stroke` renders the path
+outline with the current stroke color.
 
 #### showpage
 
@@ -215,17 +214,18 @@ while `stroke` renders the path outline with the current stroke color.
       // no-op for this impl.
       break;
 ```
-A no-op in this implementation, typically used to finalize and
-display the page in PostScript. It is also dropped in PDF when
-more documents are glued together, as it renders which makes
-the rest of the document (if there is) obsolete as the rest
-is not rendered.
-
+A no-op in this implementation, typically used
+to finalize and display the page in PostScript.
+It is also dropped in PDF when more documents
+are glued together, as it renders which makes
+the rest of the document (if there is) obsolete
+as the rest is not rendered.
 
 ### integration with HTML
 
-The function `interpret` is designed to be triggered by a button
-to process the input PostScript code from a textarea:
+The function `interpret` is designed to be
+triggered by a button to process the input
+PostScript code from a textarea:
 
 ```javascript
 function interpret() {
@@ -233,36 +233,36 @@ function interpret() {
     interpretPostScript(postScript);
 }
 ```
-This function reads the PostScript code from a textarea elemen
-with id `input`, and then calls `interpretPostScript` to render
-it on the canvas.
-
+This function reads the PostScript code from
+a textarea elemen with id `input`, and then
+calls `interpretPostScript` to render it on
+the canvas.
 
 ### changing the coordinate system
 
-As PostScript has a different coordintate system than Canvas,
-some convertions has to be made. The initial coordinate system
-for PostScript has the x axis to the right and y axis upwards,
-the origin is located at the bottom left hand corner of the page. 
-Canvas on the other hand, has the upper-left corner of the 
-screen as origin, so x and y goes instead downwards increasing
-their values.
+As PostScript has a different coordintate system
+than Canvas, some convertions has to be made.
+The initial coordinate system for PostScript has
+the x axis to the right and y axis upwards, the
+origin is located at the bottom left hand corner
+of the page. Canvas on the other hand, has the
+upper-left corner of the screen as origin, so x
+and y goes instead downwards increasing their
+values.
 
-So one way to handle this is to do what can be seen in
-`psmaker.html` where each point gets transformed easily
-through an 'arithmetical geometry' process, while in
-`psviewer.html` the whole canvas is transformed before
-drawing through rather standard rotations and flipping
-through 2D matrices. They may have different results
-partly due to such things as precision in numbers when
-calculating.
+So one way to handle this is to do what can be
+seen in `psmaker.html` where each point gets
+transformed easily through an 'arithmetical
+geometry' process, while in `psviewer.html`
+the whole canvas is transformed before drawing
+through rather standard rotations and flipping
+through 2D matrices. They may have different
+results partly due to such things as precision
+in numbers when calculating.
 
-
-## postscript
-
-[the language ..]
+## postscript: the language
 
 > The three most important aspects of the PostScript programming language are that it is *interpreted*, that it is *stack-based*, and that it uses a unique data structure called a *dictionary*.[^design]
 
-[^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988
+[^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988, p.2.
 
