@@ -28,8 +28,7 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 
 [^pdf]: https://en.wikipedia.org/wiki/PDF
 
-[^dropped]:
-As a side note: Apple dropped support for converting PostScript
+[^dropped]: As a side note: Apple dropped support for converting PostScript
 to PDF recently, as you previously just had to click on a ".ps" file to get
 a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
