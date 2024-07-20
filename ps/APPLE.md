@@ -20,7 +20,7 @@ which can be easily “distilled” or converted from PostScript. PDF
 inherits many ideas from PostScript, but it has evolved significantly.
 It is designed with a different focus, making it suitable not only for
 printing but also for viewing on screens.[^pdf] Yes, it converted
-from a programming language to a portable document format.
+from a __programming language__ to a __portable document format__.
 
 But here comes the interesting part: *PDF played a significant role in
 screen rendering and display within Apple's operating systems, particularly
@@ -28,11 +28,42 @@ starting from Mac OS X, which arrived in 2001.*[^dropped]
 
 [^pdf]: https://en.wikipedia.org/wiki/PDF
 
-[^dropped]: As a side note: Apple dropped support for converting PostScript
+[^dropped]:
+As a side note: Apple dropped support for converting PostScript
 to PDF recently, as you previously just had to click on a ".ps" file to get
 a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
 than "vector graphics" in the GUI at that time (2015).
+
+
+### Display PostScript[^displayps]
+
+This was no coincidence. Let's go back a bit in time. Steve Jobs
+was fired/quit from Apple, but then started NeXT Computer Inc.[^next]
+Steve was instrumental in getting PostScript to Apple, even at
+one point try to purchase Adobe, but with no success. At NeXT
+he realised the potential in having vector based screen rendering.
+
+So *Display PostScript* (DPS) was a technology developed by
+Adobe Systems in collaboration with NeXT. during
+the late 1980s and early 1990s. It aimed to extend the
+capabilities of traditional PostScript by adding support for
+interactive graphics and user interface elements, making it suitable
+for on-screen display and user interaction.
+
+[^displayps]: https://en.wikipedia.org/wiki/Display_PostScript
+[^next]: https://en.wikipedia.org/wiki/NeXT
+
+Display PostScript became integral to NeXT’s operating system,
+NEXTSTEP, which was renowned for its graphical user interface
+(GUI) and object-oriented development environment. And as is
+known, MacOS inherits a lot from what it once was based on:
+NEXTSTEP.[^nextstep]
+
+DSP laid the foundation for Adobe’s later development of both
+Adobe Display PostScript (ADPS) and Portable Document Format (PDF).
+
+[^nextstep]: https://en.wikipedia.org/wiki/NeXTSTEP
 
 
 ### Historical Context
