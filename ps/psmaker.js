@@ -79,6 +79,7 @@ function redrawShapes() {
     }
 }
 
+// lot of transformations as canvas and postscript differs in coordinate systems
 function generatePostScript() {
     let psCode = "%!PS-Adobe-3.0\n";
     for (const shape of shapes) {
@@ -94,7 +95,6 @@ function generatePostScript() {
             psCode += `newpath ${shape.centerX} ${canvas.height - shape.centerY} ${shape.radius} 0 360 arc closepath stroke\n`;
         }
     }
-    // document.getElementById('postscript-output').innerText = psCode;
     document.getElementById('postscript-output').value = psCode;
 }
 
