@@ -266,14 +266,26 @@ in numbers when calculating.
 
 [^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988, p.2.
 
-The interpreted nature of PostScript reminds us of how virtual machines have been introduced so far, by
-not having a binary (or something like bytecode) representing the language and executing upon that.
-Instead, the language is directly interpreted from the *source* in PostScript. The language as source code
-have the same function as bytecodes which we already are familiar with.
+PostScript’s interpreted nature parallels the concept of virtual
+machines introduced in computing, where execution doesn’t rely on
+binary or bytecode representations. Instead it directly interprets
+*source code*. In PostScript, the source code serves a role akin
+to our familiar *bytecodes* in other contexts.
 
-You might also recognize the stack reference. There are actually several stacks that PostScript uses,
-a general one, one for graphics, one for the dictionary and so on. The dictionary might also remind us
-of 'procedures' we have had a look at earlier. We can call named things, and get results from them, broadly
-speaking.
+PostScript employs multiple *stacks*—general, graphics, dictionary,
+etc.—alongside a dictionary reminiscent of *procedures* seen in other
+languages. This setup allows named entities to be invoked and yield
+results.
 
-
+When PostScript source code is transported and interpreted, or along
+the line rasterized, it’s notable that the program’s text isn’t manually
+crafted by a programmer. Instead, it’s typically *generated* by software
+like PageMaker. Indeed, while programmers can write in PostScript, it's
+not typically practical to manually create complex documents such as
+book layouts directly in PostScript unless the goal is to build a rasterizer,
+debugger, driver, or similar tool. For creating professional layouts
+efficiently, designers would use specialized software like InDesign,
+QuarkXPress, PageMaker, Illustrator, or similar tools tailored for graphic
+design and publishing. These applications provide user-friendly interfaces
+and powerful features that streamline the layout and design process,
+offering more efficient workflows compared to manually coding in PostScript.
