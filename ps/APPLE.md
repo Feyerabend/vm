@@ -8,6 +8,12 @@ users to layout pictures, text, and graphics. Additionally, PostScript
 enabled the transfer of what was seen on the screen to be printed in
 relatively high detail, such as 300 dpi.
 
+Interesting enough the LaserWriter had a Motorola 68000 at 12 MHz,
+and memory of 1.5 MB (at least initially), while a typical MacPlus
+had a Motorola 68000 at 8 Mhz with a memory starting at 1 MB RAM,
+but, to my experience, often was upgraded with 2 or 4 in the late
+80s.
+
 Initially, the Macintosh did not have a strong start upon its launch.
 However, desktop publishing (DTP) and other software made it a much
 more appealing product in critical markets at the right time.
