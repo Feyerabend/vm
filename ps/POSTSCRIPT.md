@@ -1,3 +1,5 @@
+![Sample of matrix printer output](../assets/images/matrixprint.png)
+
 # Background
 
 ## Xerox Parc[^parc]
