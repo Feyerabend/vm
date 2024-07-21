@@ -294,8 +294,9 @@ binary or bytecode representations. Instead it directly interprets
 to our familiar *bytecodes* in other contexts.
 
 PostScript employs multiple *stacks*—general, graphics, dictionary,
-etc.—alongside a dictionary reminiscent of *procedures* seen in other
-languages. This setup allows named entities to be invoked and yield
+etc.—alongside a dictionary reminiscent of *procedures* (or like *def*
+in Pyhton etc., a way to name and abstracts some routine that can be called)
+seen in other languages. This setup allows named entities to be invoked and yield
 results.
 
 When PostScript source code is transported and interpreted, or along
