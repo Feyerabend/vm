@@ -7,12 +7,18 @@ designed for creating graphics but also fancy "typographical"
 Turing complete. It operates *as a* virtual machine, which allows
 for device-independent graphics rendering, meaning it can produce
 *consistent results across different printers and displays*.
-Although general APIs for graphics in languages like Python or C
-are hard to come by and not very common, JavaScript’s Canvas API
-offers a reasonable robust and accessible platform for rendering
-vector graphics similar to PostScript. Therefore, implementing a
-simple PostScript interpreter in JavaScript using the Canvas API
-is both practical and straightforward.[^rip]
+Although finding general-purpose graphics APIs in languages like
+Python or C can be challenging and uncommon[^h], JavaScript’s
+Canvas API stands out as a robust and accessible platform for
+rendering vector graphics. This makes it an excellent choice for
+those seeking functionality similar to PostScript. Therefore,
+implementing a simple PostScript interpreter in JavaScript using
+the Canvas API is both practical and straightforward.[^rip]
+
+[^h]: This is especially relevant for our goal of being as
+universally applicable as possible, selecting programming
+languages that require minimal installations, additional
+tools, or dependencies.
 
 [^rip]: As most outputs are today based on dots or pixels,
 somewhere the vectors have to be translated. In a laser printer
