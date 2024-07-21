@@ -40,7 +40,7 @@ a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
 than "vector graphics" in the GUI at that time (2015). And from what I
 understand in simplified terms, Apple's graphical systems have much of
-faster cache solutions in bitmaps, than drawing procedural vector graphics.
+faster cache solutions in bitmaps, than drawing (procedural) vector graphics.
 
 
 ### Display PostScript[^displayps]
@@ -50,8 +50,8 @@ was fired/quit from Apple in 1985, but then started NeXT Computer
 Inc.[^next] Thus he didn't really experience the growth of DTP
 when he was at Apple. Steve was instrumental in getting PostScript
 to Apple, even to the point of trying to purchase Adobe, but with
-no success. At NeXT he realised the potential in having vector
-based screen rendering on a computer.
+no success. At NeXT he realised he could implement the potential
+of having vector based screen rendering on a computer.
 
 So *Display PostScript* (DPS) was a technology developed by
 Adobe Systems in collaboration with NeXT during
@@ -59,7 +59,7 @@ the late 1980s and early 1990s, first lauched in 1987.
 It aimed to extend the capabilities of traditional PostScript
 by adding support for interactive graphics and user interface
 elements, making it suitable for on-screen display and user
-interaction.
+interaction. That is, a little bit more complex than only rendering.
 
 [^displayps]: https://en.wikipedia.org/wiki/Display_PostScript
 [^next]: https://en.wikipedia.org/wiki/NeXT
@@ -79,21 +79,19 @@ Adobe Display PostScript (ADPS) and Portable Document Format
 
 ### Historical Context
 
-The transition from PostScript to PDF marked a significant evolution
-in document formats. PostScript played a crucial role in the early stages
-of desktop publishing and printing. However, PDF emerged as a more versatile
-and portable format for document exchange and display. Adobe developed PDF
-to expand upon the capabilities of PostScript, adapting it to a broader
-range of devices and platforms, including on-screen viewing. Initially,
-PDF faced challenges and did not achieve immediate success upon its
-launch in the early 1990s. It took considerable time for PDF to gain
-widespread acceptance and recognition.
+The transition from PostScript to PDF marked a significant
+evolution in document formats. PostScript played a crucial
+role in the early stages of desktop publishing and printing.
+However, PDF emerged as a more versatile and portable format
+for document exchange and display. Adobe developed PDF to
+expand upon the capabilities of PostScript, adapting it to a
+broader range of devices and platforms, including on-screen
+viewing.
 
-As PDF became the dominant format for document exchange, its usage
-expanded significantly in on-screen rendering. Apple’s adoption of
-PDF for its rendering engine in macOS highlighted PDF’s strengths,
-providing a unified approach to rendering that served equally well
-for on-screen display, printing, and document exchange.
+Apple’s adoption of PDF for its rendering engine in *macOS*
+highlighted PDF’s strengths, providing a unified approach
+to rendering that served equally well for on-screen display,
+printing, and document exchange. All in one.
 
 
 ### PDF in Apple's GUI
@@ -109,34 +107,38 @@ screen display and printing.
 
 [^quartz2ddoc]: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html
 
-**Resolution independence**: PDF's scalable nature means that graphics and text can
-be rendered at (for the most part) any resolution without loss of quality. This was
-a critical feature for Apple's GUI, ensuring that elements would look sharp and clear
-on displays with varying resolutions, including the high-resolution *Retina displays*
+**Resolution independence**: PDF's scalable nature means that graphics
+and text can be rendered at (for the most part) any reasonable resolution
+without loss of quality. This was a critical feature for Apple's GUI,
+ensuring that elements would look sharp and clear on displays with
+varying resolutions, including the high-resolution *Retina displays*
 introduced later.
 
-**Consistent output**: Using PDF as a basis for on-screen rendering ensures that the
-visual output is consistent across different devices. This is similar to the WYSIWYG
-(What You See Is What You Get) principle that PostScript brought to desktop publishing.
-What users see on their screen is a faithful representation of what will be printed
-or displayed on another device.
+**Consistent output**: Using PDF as a basis for on-screen rendering
+ensures that the visual output is consistent across *different devices*.
+This is similar to the WYSIWYG (What You See Is What You Get) principle
+that PostScript brought to desktop publishing. What users see on their
+screen is a faithful representation of what will be printed or displayed
+on another device.
 
 **Advanced graphics**: PDF supports advanced graphics features such as
-transparency, gradients, and complex vector shapes. By utilizing PDF for rendering,
-Apple's GUI could incorporate these advanced graphics features seamlessly, enhancing
-the visual appeal and functionality of the user interface.
+transparency, gradients, and complex vector shapes. By utilizing PDF
+for rendering, Apple's GUI could incorporate these advanced graphics
+features seamlessly, enhancing the visual appeal and functionality
+of the user interface.
 
-**Performance optimization**: Apple's implementation of PDF for rendering is optimized
-for performance, ensuring smooth and responsive interactions within the GUI. The
-efficient handling of vector graphics and text rendering helps maintain a high frame
-rate and responsiveness, even with complex visuals.
+**Performance optimization**: Apple's implementation of PDF for
+rendering is optimized for performance, ensuring smooth and responsive
+interactions within the GUI. The efficient handling of vector graphics
+and text rendering helps maintain a high frame rate and responsiveness,
+even with complex visuals. (But more on this later.)
 
-**Compatibility & integration**: PDF is a widely used standard for document exchange,
-and by using it as a basis for their rendering engine, Apple ensured that documents
-created or viewed on *macOS* would be highly compatible with other systems and applications.
-This integration makes it easier for users to work with PDF documents directly within
-the operating system, including previewing, annotating, and printing.
-
+**Compatibility & integration**: PDF is a widely used standard for
+document exchange, and by using it as a basis for their rendering engine,
+Apple ensured that documents created or viewed on *macOS* would be highly
+compatible with other systems and applications. This integration makes it
+easier for users to work with PDF documents directly within the operating
+system, including previewing, annotating, and printing.
 
 
 ## Going Metal[^metaldoc] ..
@@ -155,11 +157,11 @@ situation and how Apple’s graphics architecture has shifted:
     graphics API, in 2014 with iOS 8 and later expanded it to macOS. Metal
     provides direct access to the GPU, allowing for more efficient rendering
     and greater control over graphics performance.
-    - **Use Cases**: Metal is used extensively for rendering complex graphics
+    - **Use cases**: Metal is used extensively for rendering complex graphics
     and animations in games, professional applications, and system-level
-    rendering tasks where high performance is critical.
-    - **Screen Rendering**: For many modern applications, especially those
-    requiring intensive graphics, Metal is used instead of traditional PDF-based
+    rendering tasks where *high performance* is critical.
+    - **Screen rendering**: For many modern applications, especially those
+    requiring intensive graphics, Metal is used *instead* of traditional PDF-based
     rendering.
 
 2. **Core Animation and Core Graphics**:
@@ -174,21 +176,21 @@ situation and how Apple’s graphics architecture has shifted:
     rendering operations.
 
 3. **Hybrid Approach**:
-    - **PDF for Document Rendering**: PDF is still heavily used for document
+    - **PDF for document rendering**: PDF is still heavily used for document
     rendering and manipulation within macOS and iOS. Apps that handle
     documents, such as Preview and third-party PDF viewers, leverage the
     PDF capabilities of Core Graphics for accurate rendering and editing.
-    - **Metal for Performance-Critical Tasks**: For tasks that require high
+    - **Metal for performance-critical tasks**: For tasks that require high
     performance, such as real-time graphics, complex UI elements, and advanced
     animations, Metal is preferred due to its efficiency and direct access
     to GPU resources.
 
 4. **Layered Architecture**:
-    - **UI Rendering**: The UIKit and AppKit frameworks (for iOS and macOS,
+    - **UI rendering**: The UIKit and AppKit frameworks (for iOS and macOS,
     respectively) utilize a layered rendering architecture where higher-level
     abstractions may still use PDF-based rendering internally, but lower-level
     operations are often offloaded to Metal for performance.
-    - **Compositing and Effects**: Compositing and visual effects are areas
+    - **Compositing and effects**: Compositing and visual effects are areas
     where Metal’s capabilities are leveraged to provide smooth and efficient
     rendering, particularly on high-resolution displays and in graphics-intensive
     applications.
