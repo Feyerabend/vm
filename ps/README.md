@@ -12,7 +12,14 @@ are hard to come by and not very common, JavaScript’s Canvas API
 offers a reasonable robust and accessible platform for rendering
 vector graphics similar to PostScript. Therefore, implementing a
 simple PostScript interpreter in JavaScript using the Canvas API
-is both practical and straightforward.
+is both practical and straightforward.[^rip]
+
+[^rip]: As most outputs are today based on dots or pixels,
+somewhere the vectors have to be translated. In a laser printer
+this is traditionally done through a RIP, a raster image processor
+(https://en.wikipedia.org/wiki/Raster_image_processor).
+Finding out how to draw a line, it calculates where to draw the
+dot next looping through all the possible dots of the vector line.
 
 
 ### psmaker
@@ -216,10 +223,12 @@ outline with the current stroke color.
 ```
 A no-op in this implementation, typically used
 to finalize and display the page in PostScript.
-It is also dropped in PDF when more documents
+It is also dropped in ESP[^eps] when more documents
 are glued together, as it renders which makes
 the rest of the document (if there is) obsolete
 as the rest is not rendered.
+
+[^eps]: https://en.wikipedia.org/wiki/Encapsulated_PostScript
 
 ### integration with HTML
 
