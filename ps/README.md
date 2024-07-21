@@ -318,6 +318,7 @@ there are a lot to go through, but as this is not a reference
 manual,[^sref] we will though take some illustrative and simple examples.
 
 [^sref]: A small reference: https://personal.math.ubc.ca/~cass/courses/ps.html
+A reference to level 2: https://www.os2site.com/sw/dev/openwatcom/docs/postscript_level_2_reference_manual.pdf
 
 You might recognize how numbers are added or substracted for
 instance, leaving its result on the stack.
