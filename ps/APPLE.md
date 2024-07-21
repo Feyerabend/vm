@@ -1,3 +1,4 @@
+![Early Mac](../assets/images/mac.png)
 
 # Apple, PostScript, PDF and screen rendering
 
