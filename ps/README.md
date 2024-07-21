@@ -369,5 +369,8 @@ showpage
 
 This draws a triangle but with a slightly gray stroke which have
 a thickness of 3. It also ends all the 'legs' by connecting the
-with the start of `newpath` by `closepath`.
+with the start of `newpath` by `closepath`. In SVG the 'z' at
+the end of a path works the same way, as the command draws a
+straight line from the current position back to the first point
+of the path.
 
