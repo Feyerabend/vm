@@ -369,5 +369,5 @@ showpage
 
 This draws a triangle but with a slightly gray stroke which have
 a thickness of 3. It also ends all the 'legs' by connecting the
-last `lineto` with the start of `moveto` by `closepath`.
+with the start of `newpath` by `closepath`.
 
