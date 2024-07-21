@@ -316,7 +316,6 @@ offering more efficient workflows compared to manually coding in PostScript.
 As there are over 250 commands (instructions) in PostScript,
 there are a lot to go through, but as this is not a reference
 manual,[^sref] we will though take some illustrative and simple examples.
-Test the following with `psviewer.html`.
 
 [^sref]: A small reference: https://personal.math.ubc.ca/~cass/courses/ps.html
 
@@ -336,7 +335,8 @@ used previously, it is here called `exch` for 'exchange'.
 ````
 
 The stack would be '90 23' after the operation. But mostly
-it is naturally for graphics.
+it is naturally for graphics. Test the following with
+`psviewer.html`.
 
 ```postscript
 %!PS
