@@ -275,7 +275,8 @@ in numbers when calculating.
 
 > The three most important aspects of the PostScript programming language are that it is *interpreted*, that it is *stack-based*, and that it uses a unique data structure called a *dictionary*.[^design]
 
-[^design]: Reid, Glenn C., *PostScript language program design*, Addison-Wesley, Reading, Mass., 1988, p.2.
+[^design]: Reid, Glenn C., *PostScript language program design*,
+Addison-Wesley, Reading, Mass., 1988, p.2.
 
 PostScript’s interpreted nature parallels the concept of virtual
 machines introduced in computing, where execution doesn’t rely on
