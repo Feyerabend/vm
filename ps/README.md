@@ -310,3 +310,62 @@ QuarkXPress, PageMaker, Illustrator, or similar tools tailored for graphic
 design and publishing. These applications provide user-friendly interfaces
 and powerful features that streamline the layout and design process,
 offering more efficient workflows compared to manually coding in PostScript.
+
+### samples
+
+As there are over 250 commands (instructions) in PostScript,
+there are a lot to go through, but as this is not a reference
+manual, we will though take some illustrative and simple examples.
+Test the following with `psviewer.html`.
+
+You might recognize how numbers are added or substracted for
+instance, leaving its result on the stack.
+
+```postscript
+40 67 add
+90 543 sub
+```
+
+To swap the two top numbers on the stack, instead of `swap` we
+used previously, it is here called `exch` for 'exchange'.
+
+```postscript
+23 90 exch
+````
+
+The stack would be '90 23' after the operation. But mostly
+it is naturally for graphics.
+
+```postscript
+%!PS
+newpath
+100 200 moveto
+200 450 lineto
+stroke
+showpage
+```
+
+Draws a from left to right a steep line. It starts from where
+the point of deeparture is set with `moveto` which uses the
+two top numbers from the stack. Next two other numbers are put
+on the stack and the line is drawn starting from 
+`moveto` to where it ends with `lineto`. The line itself
+is determined by `stroke` (there can be other commands here).
+
+```postscript
+%!PS
+newpath
+100 200 moveto
+200 450 lineto
+100 400 lineto
+closepath
+3 setlinewidth
+0.5 setgray
+stroke
+showpage
+```
+
+This draws a triangle but with a slightly gray stroke which have
+a thickness of 3. It also ends all the 'legs' by connecting the
+last `lineto` with the start of `moveto` by `closepath`.
+
