@@ -315,8 +315,10 @@ offering more efficient workflows compared to manually coding in PostScript.
 
 As there are over 250 commands (instructions) in PostScript,
 there are a lot to go through, but as this is not a reference
-manual, we will though take some illustrative and simple examples.
+manual,[^sref] we will though take some illustrative and simple examples.
 Test the following with `psviewer.html`.
+
+[^sref]: A small reference: https://personal.math.ubc.ca/~cass/courses/ps.html
 
 You might recognize how numbers are added or substracted for
 instance, leaving its result on the stack.
