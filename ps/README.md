@@ -20,6 +20,8 @@ this is traditionally done through a RIP, a raster image processor
 (https://en.wikipedia.org/wiki/Raster_image_processor).
 Finding out how to draw a line, it calculates where to draw the
 dot next looping through all the possible dots of the vector line.
+A vector graphics display or a graphics plotter would on the other
+hand, would probably be an easier conversion.
 
 
 ### psmaker
