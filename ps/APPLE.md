@@ -76,18 +76,6 @@ Adobe Display PostScript (ADPS) and Portable Document Format
 
 [^nextstep]: https://en.wikipedia.org/wiki/NeXTSTEP
 
-
-### Historical Context
-
-The transition from PostScript to PDF marked a significant
-evolution in document formats. PostScript played a crucial
-role in the early stages of desktop publishing and printing.
-However, PDF emerged as a more versatile and portable format
-for document exchange and display. Adobe developed PDF to
-expand upon the capabilities of PostScript, adapting it to a
-broader range of devices and platforms, including on-screen
-viewing.
-
 Apple’s adoption of PDF for its rendering engine in *macOS*
 highlighted PDF’s strengths, providing a unified approach
 to rendering that served equally well for on-screen display,
