@@ -53,13 +53,6 @@
                             const xLine = stack.pop();
                             ctx.lineTo(xLine, yLine); // draw line to new point
                             break;
-                        case 'rect':
-                            const height = stack.pop();
-                            const width = stack.pop();
-                            const yRect = stack.pop();
-                            const xRect = stack.pop();
-                            ctx.rect(xRect, yRect, width, height); // draw rectangle
-                            break;
                         case 'arc':
                             const endAngle = stack.pop() * (Math.PI / 180); // ..to radians
                             const startAngle = stack.pop() * (Math.PI / 180); // ..to radians

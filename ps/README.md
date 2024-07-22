@@ -125,20 +125,6 @@ the stack.
 Draws a line from the current position to a new
 point, with coordinates taken from the stack.
 
-#### rect
-
-```javascript
-  case 'rect':
-      const height = stack.pop();
-      const width = stack.pop();
-      const yRect = stack.pop();
-      const xRect = stack.pop();
-      ctx.rect(xRect, yRect, width, height); // draw rectangle
-      break;
-```
-Draws a rectangle with the specified width, height,
-and position.
-
 #### arc
 
 ```javascript
