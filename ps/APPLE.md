@@ -67,7 +67,7 @@ interaction. That is, a little bit more complex than only rendering.
 Display PostScript became integral to NeXT’s operating system,
 NEXTSTEP, which was renowned for its graphical user interface
 (GUI) and object-oriented development environment. And as is
-known, MacOS X inherited *a lot* from what it once was based on:
+known, *MacOS X* inherited *a lot* from what it once was based on:
 NEXTSTEP.[^nextstep]
 
 DSP laid the foundation for Adobe’s later development of both
@@ -91,7 +91,7 @@ the real handling was done elsewhere in the operating system.
 However, PostScript was not an open standard; it was
 *proprietary*. Thus it might have too limiting for many developers,
 or implementations might have very been costly. That in contrast
-to the SGML standard that much of HTML stems from. The browser
+to the markup SGML[^sgml] standard that much of HTML stems from. The browser
 also featured many other capabilities such as (locally) editable
 pages and bidirectional links, among other advanced features.
 To make the web more appealing and easier to implement, many
@@ -100,7 +100,7 @@ omissions may have been regrettable.
 
 [^www]: About: https://www.w3.org/People/Berners-Lee/WorldWideWeb.html
 Source code: https://www.w3.org/History/1991-WWW-NeXT/Implementation/
-
+[^sgml]: https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language
 
 ### PDF in Apple's GUI
 
