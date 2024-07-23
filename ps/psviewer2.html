@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Viewer 2</title>
+    <style>
+        #canvas { border: 1px solid black; }
+        #log {
+            width: 30%;
+            height: 150px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <textarea id="input" rows="10" cols="50" placeholder="Enter your PostScript code here..."></textarea>
+        <textarea id="log" readonly placeholder="Log output will appear here..."></textarea><br />
+        <button onclick="interpret()">Interpret</button>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="psviewer2.js"></script>
+</body>
+</html>

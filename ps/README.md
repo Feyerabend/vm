@@ -358,7 +358,18 @@ showpage
 
 This draws a triangle but with a slightly gray stroke which have
 a thickness of 3. It also ends all the 'legs' by connecting the
-with the start from the `moveto` of `newpath` by ending in `closepath`.
-In SVG the 'z' at the end of a path works the same way, as the
-command draws a straight line from the current position back to
-the first point of the path.
+with the start from the `moveto` of `newpath` by ending in 
+`closepath`. In SVG the 'z' at the end of a path works the same
+way, as the command draws a straight line from the current
+position back to the first point of the path.
+
+## psviewer2
+
+A small upgrade is `psviewer2.html` with the accompanying
+`psviewer2.js`. The essential difference is inclusion of the
+user defined dictionaries. It take two pass on the input, the
+first stacks the user defined commands, adn the second pass
+executes on the script. It is not fully tested, but illustrates
+the included samples `sample2a.ps` and `sample2b.ps`.[^ps2]
+
+[^ps2]: The samples are from: https://paulbourke.net/dataformats/postscript/
