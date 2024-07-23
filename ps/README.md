@@ -385,4 +385,17 @@ When defining a new addition to the dictionary:
 
 where *name* is the name of the addition and *body* has the
 commands that can be executed when invoking the name in the
-script.
+script. Definitions are collected in `collectDefinitions`
+that parses the input script to identify and store named
+definitions. In the next pass `executeScript` executes the
+input script by processing each command and updating the
+stack accordingly.
+
+The latter pass have `interpretDefined` which interprets
+and executes defined PostScript commands, and
+`executeGraphicsCommand` which handles various PostScript
+graphics commands like newpath, moveto, lineto, arc, etc.
+with some additions to the previous above.
+The `saveGraphicsState` and `restoreGraphicsState` are
+just separated commands saving and restoring the graphics
+state from the graphics state stack.
