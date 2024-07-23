@@ -87,14 +87,13 @@ first web server, also developed the first web browser called
 WorldWideWeb on a NeXT computer. Interestingly, in the early
 versions of the browser, PostScript was included as a part of
 it. Or, maybe rather, the browser could handle PostScript and
-the handling was done elsewhere.
-However, PostScript was not an open standard at the time;
-it was proprietary. The browser also featured many other
-capabilities such as (locally) editable pages and bidirectional
-links, among other advanced features. To make the web an
-attractive formula, a lot of features were cut out to make
-implementation easier. Some may have been in hindsight
-regrettable.
+the handling was done elsewhere. However, PostScript was not
+an open standard at the time; it was proprietary. The browser
+also featured many other capabilities such as (locally) editable
+pages and bidirectional links, among other advanced features.
+To make the web more appealing and easier to implement, many
+features were initially omitted. In hindsight, some of these
+omissions may have been regrettable.
 
 ### PDF in Apple's GUI
 
