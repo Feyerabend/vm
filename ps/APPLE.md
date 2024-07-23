@@ -91,16 +91,17 @@ the real handling was done elsewhere in the operating system.
 However, PostScript was not an open standard; it was
 *proprietary*. Thus it might have too limiting for many developers,
 or implementations might have very been costly. That in contrast
-to the markup SGML[^sgml] standard that much of HTML stems from. The browser
-also featured many other capabilities such as (locally) editable
-pages and bidirectional links, among other advanced features.
-To make the web more appealing and easier to implement, many
-features were initially omitted. In hindsight, some of these
+to the markup SGML[^sgml] standard that much of HTML stems from.
+The browser also featured many other capabilities such as (locally)
+editable pages and bidirectional links, among other advanced
+features. To make the web more appealing and easier to implement,
+many features were initially omitted. In hindsight, some of these
 omissions may have been regrettable.
 
 [^www]: About: https://www.w3.org/People/Berners-Lee/WorldWideWeb.html
 Source code: https://www.w3.org/History/1991-WWW-NeXT/Implementation/
 [^sgml]: https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language
+
 
 ### PDF in Apple's GUI
 
