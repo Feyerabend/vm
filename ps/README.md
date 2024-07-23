@@ -339,9 +339,9 @@ showpage
 Draws a from left to right a steep line. It starts from where
 the point of deeparture is set with `moveto` which uses the
 two top numbers from the stack. Next two other numbers are put
-on the stack and the line is drawn starting from 
-`moveto` to where it ends with `lineto`. The line itself
-is determined by `stroke` (there can be other commands here).
+on the stack and the line is drawn starting from  `moveto` to
+where it ends with `lineto`. The line itself is determined by
+`stroke` (there can be other commands here).
 
 ```postscript
 %!PS
@@ -368,7 +368,7 @@ position back to the first point of the path.
 A small upgrade is `psviewer2.html` with the accompanying
 `psviewer2.js`. The essential difference is inclusion of the
 user defined dictionaries. It take two pass on the input, the
-first stacks the user defined commands, adn the second pass
+first stacks the user defined commands, and the second pass
 executes on the script. It is not fully tested, but illustrates
 the included samples `sample2a.ps` and `sample2b.ps`.[^ps2]
 
@@ -395,7 +395,7 @@ The latter pass have `interpretDefined` which interprets
 and executes defined PostScript commands, and
 `executeGraphicsCommand` which handles various PostScript
 graphics commands like newpath, moveto, lineto, arc, etc.
-with some additions to the previous above.
+with some additions to the previous `psviewer.html` above.
 The `saveGraphicsState` and `restoreGraphicsState` are
 just separated commands saving and restoring the graphics
-state from the graphics state stack.
+state to/from the graphics state stack.
