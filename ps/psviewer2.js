@@ -134,10 +134,10 @@ function executeGraphicsCommand(command, stack) {
         case 'arc':
             const endAngle = stack.pop() * (Math.PI / 180);
             const startAngle = stack.pop() * (Math.PI / 180);
-            const radi = stack.pop();
+            const radius = stack.pop();
             const yArc = stack.pop();
             const xArc = stack.pop();
-            ctx.arc(xArc, yArc, radi, startAngle, endAngle);
+            ctx.arc(xArc, yArc, radius, startAngle, endAngle);
             log(`Arc with center: (${xArc}, ${yArc}), radius: ${radius}, startAngle: ${startAngle}, endAngle: ${endAngle}`);
             break;
 
