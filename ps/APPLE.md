@@ -89,8 +89,8 @@ versions of the browser, PostScript was included as a part of
 it. Or, maybe rather, the browser could handle PostScript but
 the real handling was done elsewhere in the operating system.
 However, PostScript was not an open standard; it was
-*proprietary*. Thus it might have limiting many developers,
-or implementations might have been costly. That in contrast
+*proprietary*. Thus it might have too limiting for many developers,
+or implementations might have very been costly. That in contrast
 to the SGML standard that much of HTML stems from. The browser
 also featured many other capabilities such as (locally) editable
 pages and bidirectional links, among other advanced features.
