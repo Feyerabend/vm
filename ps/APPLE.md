@@ -1,5 +1,6 @@
 ![Early Mac](../assets/images/mac.png)
 
+
 # Apple, PostScript, PDF and screen rendering
 
 Based on the background of [PostScript](POSTSCRIPT.md), in the mid-80s,
