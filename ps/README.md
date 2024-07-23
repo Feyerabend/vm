@@ -372,4 +372,12 @@ first stacks the user defined commands, adn the second pass
 executes on the script. It is not fully tested, but illustrates
 the included samples `sample2a.ps` and `sample2b.ps`.[^ps2]
 
-[^ps2]: The samples are from: https://paulbourke.net/dataformats/postscript/
+[^ps2]: The samples are from:
+https://paulbourke.net/dataformats/postscript/
+
+When defining a new addition to the dictionary:
+
+```postscript
+/<name> { <body> } def
+```
+
