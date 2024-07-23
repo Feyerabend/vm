@@ -86,7 +86,8 @@ Tim Berners-Lee, known for inventing the web, programming the
 first web server, also developed the first web browser called
 WorldWideWeb on a NeXT computer. Interestingly, in the early
 versions of the browser, PostScript was included as a part of
-it. Or, maybe rather, the browser could handle PostScript.
+it. Or, maybe rather, the browser could handle PostScript and
+the handling was done elsewhere.
 However, PostScript was not an open standard at the time;
 it was proprietary. The browser also featured many other
 capabilities such as (locally) editable pages and bidirectional
