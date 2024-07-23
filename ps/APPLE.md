@@ -29,8 +29,8 @@ printing but also for viewing on screens.[^pdf] Yes, it converted
 from a __programming language__ to a __portable document format__.
 
 But here comes the interesting part: *PDF played a significant role in
-screen rendering and display within Apple's operating systems, particularly
-starting from Mac OS X, which arrived in 2001.*[^dropped]
+screen rendering and display within Apple's operating systems,
+particularly starting from Mac OS X, which arrived in 2001.*[^dropped]
 
 [^pdf]: https://en.wikipedia.org/wiki/PDF
 
@@ -67,7 +67,7 @@ interaction. That is, a little bit more complex than only rendering.
 Display PostScript became integral to NeXT’s operating system,
 NEXTSTEP, which was renowned for its graphical user interface
 (GUI) and object-oriented development environment. And as is
-known, MacOS inherits a lot from what it once was based on:
+known, MacOS X inherited *a lot* from what it once was based on:
 NEXTSTEP.[^nextstep]
 
 DSP laid the foundation for Adobe’s later development of both
