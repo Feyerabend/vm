@@ -378,6 +378,11 @@ https://paulbourke.net/dataformats/postscript/
 When defining a new addition to the dictionary:
 
 ```postscript
-/<name> { <body> } def
+/name {
+    body
+} def
 ```
 
+where *name* is the name of the addition and *body* has the
+commands that can be executed when invoking the name in the
+script.
