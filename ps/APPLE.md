@@ -84,19 +84,23 @@ printing, and document exchange. All in one.
 #### Side note: The early web
 Tim Berners-Lee, known for inventing the web, programming the
 first web server, also developed the first web browser called
-WorldWideWeb on a NeXT computer. Interestingly, in the early
+WorldWideWeb[^www] on a NeXT computer. Interestingly, in the early
 versions of the browser, PostScript was included as a part of
 it. Or, maybe rather, the browser could handle PostScript but
 the real handling was done elsewhere in the operating system.
 However, PostScript was not an open standard; it was
-*proprietary*. Thus it might have limited many developments,
-or implementations in contrast to the SGML standard that much
-och HTML stems from. The browser also featured many other
-capabilities such as (locally) editable pages and bidirectional
-links, among other advanced features. To make the web more
-appealing and easier to implement, many features were initially
-omitted. In hindsight, some of these omissions may have been
-regrettable.
+*proprietary*. Thus it might have limiting many developers,
+or implementations might have been costly. That in contrast
+to the SGML standard that much of HTML stems from. The browser
+also featured many other capabilities such as (locally) editable
+pages and bidirectional links, among other advanced features.
+To make the web more appealing and easier to implement, many
+features were initially omitted. In hindsight, some of these
+omissions may have been regrettable.
+
+[^www]: About: https://www.w3.org/People/Berners-Lee/WorldWideWeb.html
+Source code: https://www.w3.org/History/1991-WWW-NeXT/Implementation/
+
 
 ### PDF in Apple's GUI
 
