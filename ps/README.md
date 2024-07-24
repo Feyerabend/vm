@@ -399,3 +399,11 @@ with some additions to the previous `psviewer.html` above.
 The `saveGraphicsState` and `restoreGraphicsState` are
 just separated commands saving and restoring the graphics
 state to/from the graphics state stack.
+
+### samples
+
+..
+
+### logging
+
+..

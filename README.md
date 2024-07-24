@@ -192,6 +192,14 @@ Incorporating graphic capabilities into a virtual machine by integrating
 concepts from *PostScript*.
 
 
+### 16. [debug](/debug)
+
+
+
+
+
+
+
 ## License
 
 Every folder with code should be in the main self-contained, and few if any
