@@ -496,4 +496,21 @@ are 0. And so on.
 
 ### logging
 
-..
+Next, we will explore tools designed for traditional
+programming tasks. These tools are versatile but also
+support the various virtual machine environments we
+use. A particularly valuable tool for both debugging
+(identifying and fixing code issues) and tracking the
+history of executed commands is *logging*.
+
+Logging provides a way to record events, errors, and
+other significant occurrences within a system. System
+logs, for instance, are an essential feature of
+conventional operating systems. They detail what the
+system is doing, when it’s doing it, and how it’s being
+done. This information is crucial for diagnosing issues
+such as performance bottlenecks or problems with the
+execution of system components. By analyzing these logs,
+developers and system administrators can gain insights
+into the system’s behavior and identify areas that
+need improvement or repair.
