@@ -403,7 +403,48 @@ state to/from the graphics state stack.
 
 ### samples
 
+```postscript
+%!PS
+newpath
+100 100 moveto
+0 100 rlineto
+100 0 rlineto
+0 -100 rlineto
+-100 0 rlineto
+closepath
+gsave
+0.5 1 0.5 setrgbcolor
+fill
+grestore
+1 0 0 setrgbcolor
+4 setlinewidth
+stroke
+showpage
+```
+
 ..
+
+```postscript
+%!PS
+/csquare {
+newpath
+0 0 moveto
+0 1 rlineto
+1 0 rlineto
+0 -1 rlineto
+closepath
+setrgbcolor
+fill
+} def
+20 20 scale
+5 5 translate
+1 0 0 csquare
+1 0 translate
+0 1 0 csquare
+1 0 translate
+0 0 1 csquare
+showpage
+```
 
 ### logging
 
