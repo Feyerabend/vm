@@ -401,7 +401,11 @@ The `saveGraphicsState` and `restoreGraphicsState` are
 just separated commands saving and restoring the graphics
 state to/from the graphics state stack.
 
-### samples
+
+#### sample2a.ps
+
+To draw something slightly more interesting, a script that
+can show colors.
 
 ```postscript
 %!PS
@@ -422,20 +426,48 @@ stroke
 showpage
 ```
 
-..
+The script draws a filled light green square with a thick
+red border on a PostScript page. The square is 100x100 units,
+with its bottom-left corner at (100, 100). The fill color is
+set to light green (0.5, 1, 0.5), and the stroke (outline)
+color is set to red with a line width of 4 units. The `gsave`
+and `grestore` commands are used to isolate the fill color
+change so it does not affect the stroke color. Experiment
+with changing parts in the script.
+
+
+#### sample2b.ps
+
+Another script uses the definition in the dictionary.
 
 ```postscript
-%!PS
 /csquare {
-newpath
-0 0 moveto
-0 1 rlineto
-1 0 rlineto
-0 -1 rlineto
-closepath
-setrgbcolor
-fill
+  newpath
+  0 0 moveto
+  0 1 rlineto
+  1 0 rlineto
+  0 -1 rlineto
+  closepath
+  setrgbcolor
+  fill
 } def
+```
+
+This section defines a dictionary entry (procedure) called 'csquare'.
+When called, it:
+- initializes a new path with `newpath`,
+- moves to the origin (0, 0) using `moveto`,
+- draws (relative) lines to form a square of size 1x1 unit:
+    - 0 1 `rlineto` draws a line from the current point to (0, 1),
+    - 1 0 `rlineto` draws a line from the current point to (1, 1),
+    - 0 -1 `rlineto` draws a line from the current point to (1, 0),
+- closes the path with `closepath`, creating a square,
+- sets the RGB color using `setrgbcolor`, and
+- fills the square with the current color using `fill`.
+
+The rest of the script:
+
+```postscript
 20 20 scale
 5 5 translate
 1 0 0 csquare
@@ -445,6 +477,22 @@ fill
 0 0 1 csquare
 showpage
 ```
+
+This first line scales the coordinate system
+by 20 in both x and y directions. This means
+that subsequent drawing operations are magnified
+by a factor of 20.
+
+Second line translates (moves) the origin
+of the coordinate system to the point (5, 5)
+in the *new scaled coordinates*.
+
+Then some lines are alomst the same, some
+numbers are pushed as 1 0 0 *uses* the 'csquare'
+drawing a red sqare with the colors from the
+stack,  in this case red for 1, green and blue
+are 0. And so on.
+
 
 ### logging
 
