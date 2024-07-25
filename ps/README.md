@@ -514,3 +514,7 @@ execution of system components. By analyzing these logs,
 developers and system administrators can gain insights
 into the system’s behavior and identify areas that
 need improvement or repair.
+
+In `psviewer2.js` there are logging statments inserted
+in several places, which are displayed in a separate
+window to browse.
