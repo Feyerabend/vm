@@ -3,12 +3,34 @@
 
 ## Logging
 
-### ed.py
+As previously stated, logging is a tool with many aspects and uses.
+Here, we demonstrate this by using a *line editor*. A line editor was
+once very common in the past. It was easy to implement and versatile,
+making it effective for editing text files. As long as the files
+weren’t too large, it wasn’t too difficult to use. We will not delve
+into the specifics of line editors, as that is not our aim here.
+Instead, we want to illustrate how logging can benefit even editors.
+In this case, you can have the entire history of edits saved. From
+the saved file, you can, in principle, work backwards in steps, undo
+edits, or even choose not to save the file at all. The log would
+contain enough information to restore the session and continue from
+where you left off, even if you just quit the editor.
+
+
+
 ![Line editor](../assets/images/ed.png)
+
+### ed.py
+
+We start off with a very simple line editor 'ed.py'. It can load text
+files, view them, insert a line, delete a line, edit a line, save the
+file. The bare necessities.
+
+
+![Line editor](../assets/images/ed2.png)
 
 ### ed2.py
 
-![Line editor](../assets/images/ed2.png)
 
 ```log
 2024-07-26 19:57:36 | LOAD | NAME = trad.txt
