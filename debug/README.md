@@ -30,12 +30,10 @@ file. The bare necessities.
 
 In short `load_file` loads the content of the file into `self.lines`,
 while `save_file` saves the current lines to the current file.
-
 The `view` displays the content of the file with line numbers. The
 functions take a more closer approach `edit` replaces a specific line
 with new content, `insert` inserts new content at a specific line, and
 `delete` deletes a specific line.
-
 Next `run` is the main loop to handle user commands "(view, edit, insert,
 delete, load, save, exit)".
 
