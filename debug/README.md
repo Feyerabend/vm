@@ -19,7 +19,6 @@ computer may be fast enough to not corrupt saving the log, so in
 principal it can work.
 
 
-
 ![Line editor](../assets/images/ed.png)
 
 ### Line editor: ed.py
@@ -68,25 +67,25 @@ follows:
 ```
 
 
-### viewlog.html
+### A log viewer
 
 Long logs can be challenging to navigate. A dedicated viewer
-with filtering or sorting options can make this process easier.
-While text files may not present many obstacles, programming
-languages or machine code often benefit significantly from such
-specialized tools.
+`viewlog.html` with filtering or sorting options can make
+this process easier. While text files may not present many
+obstacles, programming languages or machine code often
+benefit significantly from such specialized tools.
 
 ![Log viewer](../assets/images/logviewer.png)
 
 
-
-### playlog.html
+### Playback viewer
 
 In this case with a line editor that have a *recording log*,
-a *playback viewer* will illustrate how a textfile gets created.
-As can be understood from this, versioning, alternate copies,
-and other reconizable properties from e.g. versioning software
-could in principle also be added.
+a *playback viewer* `playlog.html` will illustrate how a
+textfile gets created. As can be understood from this,
+versioning, alternate copies, and other reconizable
+properties from e.g. versioning software could in
+principle also be added.
 
 ![Log viewer](../assets/images/playlog.png)
 
