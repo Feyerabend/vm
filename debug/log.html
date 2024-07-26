@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text File Viewer</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            cursor: pointer;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Log Viewer</h3>
+    <textarea id="textInput" placeholder="Paste your log here..."></textarea>
+    <button onclick="loadData()">Load Data</button>
+    <input type="text" id="filterInput" placeholder="Filter by keyword...">
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Timestamp</th>
+                <th onclick="sortTable(1)">Category</th>
+                <th onclick="sortTable(3)">Key</th>
+                <th onclick="sortTable(4)">Value</th>
+                <!-- <th onclick="sortTable(2)">Message</th> -->
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+            <!-- data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        function loadData() {
+            const data = document.getElementById('textInput').value;
+            const rows = data.split('\n').map(line => line.trim()).filter(line => line);
+            const tbody = document.getElementById('dataBody');
+            tbody.innerHTML = ''; // clear data
+            
+            rows.forEach(row => {
+                const [timestamp, level, message] = row.split(' | ').map(part => part.trim());
+                let key = '';
+                let value = '';
+
+                if (message.includes('=')) {
+                    [key, value] = message.split('=').map(part => part.trim());
+                } else {
+                    key = message
+                }
+
+                const tr = document.createElement('tr');
+                
+                const tdTimestamp = document.createElement('td');
+                tdTimestamp.textContent = timestamp;
+                tr.appendChild(tdTimestamp);
+
+                const tdLevel = document.createElement('td');
+                tdLevel.textContent = level;
+                tr.appendChild(tdLevel);
+
+                const tdKey = document.createElement('td');
+                tdKey.textContent = key;
+                tr.appendChild(tdKey);
+
+                const tdValue = document.createElement('td');
+                tdValue.textContent = value;
+                tr.appendChild(tdValue);
+
+                //const tdMessage = document.createElement('td');
+                //tdMessage.textContent = message;
+                //tr.appendChild(tdMessage);
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.getElementById('filterInput').addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#dataTable tbody tr');
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                const text = Array.from(cells).map(cell => cell.textContent).join(' ');
+                row.style.display = text.toLowerCase().includes(filter) ? '' : 'none';
+            });
+        });
+
+        function sortTable(n) {
+            const table = document.getElementById('dataTable');
+            let rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+            switching = true;
+            dir = 'asc'; 
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName('td')[n];
+                    y = rows[i + 1].getElementsByTagName('td')[n];
+                    if (dir == 'asc') {
+                        if (x.textContent.toLowerCase() > y.textContent.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == 'desc') {
+                        if (x.textContent.toLowerCase() < y.textContent.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchCount++;
+                } else {
+                    if (switchCount == 0 && dir == 'asc') {
+                        dir = 'desc';
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
