@@ -46,14 +46,15 @@ The second editor 'ed2.py' have a built in logger. Otherwise it is
 almost the same as 'ed.py'. There are always room for improvement,
 but cut off with regards to pegagogical values.
 
-The second editor, 'ed2.py', includes a built-in logger, which
+Futher it includes a built-in logger, which
 distinguishes it from 'ed.py'. Despite this improvement, the
 functionality remains largely similar to the previous version.
 The 'log.txt' is hardcoded for every text that runs through
 the editor. (This could be made more dynamic as an option at
 the command line, e.g. connecting a log to only one text file.)
 
-Logs can look like:
+Logs are custom-built and may vary in format. They can appear as
+follows:
 
 ```log
 2024-07-26 19:57:36 | LOAD | NAME = trad.txt
@@ -69,8 +70,11 @@ Logs can look like:
 
 ### viewlog.html
 
-Very long logs can be difficult to sieve through. Therefore
-some kind of 'viewer' with filtering or sorting may help.
+Long logs can be challenging to navigate. A dedicated viewer
+with filtering or sorting options can make this process easier.
+While text files may not present many obstacles, programming
+languages or machine code often benefit significantly from such
+specialized tools.
 
 ![Log viewer](../assets/images/logviewer.png)
 
