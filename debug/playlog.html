@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Parser</title>
+<style>
+  body { font-family: 'Courier New', Courier, monospace; margin: 20px; }
+  textarea { width: 100%; height: 200px; margin-bottom: 10px; }
+  pre { background-color: #f0f0f0; padding: 10px; white-space: pre-wrap; }
+  button { margin-top: 10px; }
+</style>
+</head>
+<body>
+<h3>Parse log</h3>
+<textarea id="log-input" placeholder="Paste log file here..."></textarea>
+<button id="start-button">Start Parsing</button>
+<button id="next-button" style="display:none;">Next Step</button>
+<div id="current-step" style="margin-top: 10px;">Current Step: None</div>
+<pre id="text-content"></pre>
+
+<script>
+let logActions = [];
+let currentStep = 0;
+let textContent = [];
+let inBlock = false;
+let blockType = '';
+
+function updateDisplay() {
+  document.getElementById('text-content').textContent = textContent.map((line, index) => `${index}: ${line}`).join('\n');
+  const currentLog = logActions[currentStep];
+  const currentLogLine = currentLog ? `${currentStep + 1}: ${currentLog.raw}` : "None";
+  document.getElementById('current-step').textContent = `[${currentStep + 1}/${logActions.length}] Entry ${currentLogLine}`;
+}
+
+function processNextStep() {
+  if (currentStep >= logActions.length) {
+    document.getElementById('next-button').disabled = true;
+    return;
+  }
+
+  const { action, details } = logActions[currentStep];
+
+  if (action === 'LOAD' || action === 'SAVE') {
+    if (!inBlock) {
+      inBlock = true;
+      blockType = action;
+      textContent = action === 'LOAD' ? [] : textContent;
+    }
+
+    const [lineNumber, content] = details.split(' = ');
+    if (!isNaN(lineNumber)) {
+      textContent[parseInt(lineNumber, 10)] = content;
+    }
+    
+    if (currentStep + 1 >= logActions.length || logActions[currentStep + 1].action !== blockType) {
+      inBlock = false;
+      blockType = '';
+    }
+  } else {
+    inBlock = false;
+    blockType = '';
+    switch (action) {
+      case 'INSERT':
+        const [insertLine, insertContent] = details.split(' = ');
+        textContent.splice(insertLine, 0, insertContent);
+        console.log('IN='+insertLine+' C='+insertContent)
+        break;
+      case 'DELETE':
+        const deleteLine = parseInt(details, 10);
+        textContent.splice(deleteLine, 1);
+        console.log('DEL='+deleteLine+' d='+details)
+        break;
+      case 'EDIT':
+        const [editLine, editContent] = details.split(' = ');
+        console.log('E='+editLine+' C='+editContent)
+        // const editLine = parseInt(details, 10);
+        textContent.splice(editLine, 1, editContent);
+        // ..
+        break;
+    }
+  }
+
+  updateDisplay();
+  currentStep++;
+}
+
+function startParsing() {
+  const logData = document.getElementById('log-input').value.trim();
+  const lines = logData.split('\n');
+  logActions = lines.map((line, index) => {
+    const [timestamp, action, details] = line.split(' | ');
+    return { action, details, raw: line };
+  });
+
+  currentStep = 0;
+  textContent = [];
+  inBlock = false;
+  blockType = '';
+  document.getElementById('next-button').style.display = 'inline';
+  document.getElementById('next-button').disabled = false;
+  updateDisplay();
+  processNextStep();
+}
+
+document.getElementById('start-button').addEventListener('click', startParsing);
+document.getElementById('next-button').addEventListener('click', processNextStep);
+</script>
+</body>
+</html>

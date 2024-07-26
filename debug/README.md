@@ -10,7 +10,7 @@ making it effective for editing text files. As long as the files
 weren’t too large, it wasn’t too difficult to use. We will not delve
 into the specifics of line editors, as that is not our aim here.
 Instead, we want to illustrate how logging can benefit even editors.
-In this case, you can have the entire history of edits saved. From
+In this case, you can have the *entire history of edits* saved. From
 the saved file, you can, in principle, work backwards in steps, undo
 edits, or even choose not to save the file at all. The log would
 contain enough information to restore the session and continue from
@@ -31,6 +31,9 @@ file. The bare necessities.
 
 ### ed2.py
 
+The second editor 'ed2.py' have a built in logger.
+Hardcoded 'log.txt'.
+
 
 ```log
 2024-07-26 19:57:36 | LOAD | NAME = trad.txt
@@ -43,9 +46,13 @@ file. The bare necessities.
 2024-07-26 19:59:18 | SAVE | 1 = .. is the question
 ```
 
-### log.html
 
 ![Log viewer](../assets/images/logviewer.png)
+
+### viewlog.html
+
+
+### playlog.html
 
 
 ## Assembling & disassembling
