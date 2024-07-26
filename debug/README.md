@@ -20,7 +20,7 @@ where you left off, even if you just quit the editor.
 
 ![Line editor](../assets/images/ed.png)
 
-### ed.py
+### Line editor: ed.py
 
 We start off with a very simple line editor 'ed.py'. It can load text
 files, view them, insert a line, delete a line, edit a line, save the
@@ -29,7 +29,7 @@ file. The bare necessities.
 
 ![Line editor](../assets/images/ed2.png)
 
-### ed2.py
+### Line editor with logger: ed2.py
 
 The second editor 'ed2.py' have a built in logger.
 Hardcoded 'log.txt'.
@@ -60,3 +60,6 @@ Hardcoded 'log.txt'.
 ## Assembling & disassembling
 
 
+### Assembler: asm.py
+
+### Disassembler: disasm.py
