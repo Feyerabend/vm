@@ -82,6 +82,12 @@ specialized tools.
 
 ### playlog.html
 
+In this case with a line editor that have a *recording log*,
+a *playback viewer* will illustrate how a textfile gets created.
+As can be understood from this, versioning, alternate copies,
+and other reconizable properties from e.g. versioning software
+could in principle also be added.
+
 ![Log viewer](../assets/images/playlog.png)
 
 
