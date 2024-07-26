@@ -51,11 +51,10 @@ Hardcoded 'log.txt'.
 
 ### viewlog.html
 
-![Log viewer](../assets/images/viewlog.png)
+![Log viewer](../assets/images/playlog.png)
 
 ### playlog.html
 
-![Log viewer](../assets/images/playlog.png)
 
 
 ## Assembling & disassembling
