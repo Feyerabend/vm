@@ -3,7 +3,10 @@
 
 ## Logging
 
+### ed.py
 ![Line editor](../assets/images/ed.png)
+
+### ed2.py
 
 ![Line editor](../assets/images/ed2.png)
 
@@ -17,6 +20,8 @@
 2024-07-26 19:59:18 | SAVE | 0 = To be or not to be ..
 2024-07-26 19:59:18 | SAVE | 1 = .. is the question
 ```
+
+### log.html
 
 ![Log viewer](../assets/images/logviewer.png)
 
