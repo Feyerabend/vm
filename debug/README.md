@@ -28,32 +28,29 @@ files, view them, insert a line, delete a line, edit a line, save the
 file. The bare necessities.
 
 In short `load_file` loads the content of the file into `self.lines`,
-while `save_file` saves the current lines to the current file.
-The `view` displays the content of the file with line numbers. The
+while `save_file` saves the current lines to the current file. The
+`view` displays the content of the file with line numbers. The
 functions take a more closer approach `edit` replaces a specific line
 with new content, `insert` inserts new content at a specific line, and
-`delete` deletes a specific line.
-Next `run` is the main loop to handle user commands "(view, edit, insert,
-delete, load, save, exit)".
+`delete` deletes a specific line. Next `run` is the main loop to handle
+user commands "view, edit, insert, delete, load, save, exit".
 
 
 ![Line editor](../assets/images/ed2.png)
 
 ### Line editor with logger: ed2.py
 
-The second editor 'ed2.py' have a built in logger. Otherwise it is
-almost the same as 'ed.py'. There are always room for improvement,
-but cut off with regards to pegagogical values.
+The second editor 'ed2.py' have a built in logger. Otherwise it is almost
+the same as 'ed.py'. There are always room for improvement, but cut off
+with regards to pegagogical values.
 
-Futher it includes a built-in logger, which
-distinguishes it from 'ed.py'. Despite this improvement, the
-functionality remains largely similar to the previous version.
-The 'log.txt' is hardcoded for every text that runs through
-the editor. (This could be made more dynamic as an option at
-the command line, e.g. connecting a log to only one text file.)
+Futher it includes a built-in logger, which distinguishes it from 'ed.py'.
+Despite this improvement, the functionality remains largely similar to
+the previous version. The 'log.txt' is hardcoded for every text that runs
+through the editor. (This could be made more dynamic as an option at the
+command line, e.g. connecting a log to only one text file.)
 
-Logs are custom-built and may vary in format. They can appear as
-follows:
+Logs are custom-built and may vary in format. They can appear as follows:
 
 ```log
 2024-07-26 19:57:36 | LOAD | NAME = trad.txt
@@ -69,23 +66,20 @@ follows:
 
 ### A log viewer
 
-Long logs can be challenging to navigate. A dedicated viewer
-`viewlog.html` with filtering or sorting options can make
-this process easier. While text files may not present many
-obstacles, programming languages or machine code often
-benefit significantly from such specialized tools.
+Long logs can be challenging to navigate. A dedicated viewer `viewlog.html`
+with filtering or sorting options can make this process easier. While text
+files may not present many obstacles, programming languages or machine code
+often benefit significantly from such specialized tools.
 
 ![Log viewer](../assets/images/logviewer.png)
 
 
 ### Playback viewer
 
-In this case with a line editor that have a *recording log*,
-a *playback viewer* `playlog.html` will illustrate how a
-textfile gets created. As can be understood from this,
-versioning, alternate copies, and other reconizable
-properties from e.g. versioning software could in
-principle also be added.
+In this case with a line editor that have a *recording log*, a *playback
+viewer* `playlog.html` will illustrate how a textfile gets created. As can
+be understood from this, versioning, alternate copies, and other reconizable
+properties from e.g. versioning software could in principle also be added.
 
 ![Log viewer](../assets/images/playlog.png)
 
