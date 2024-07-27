@@ -46,20 +46,17 @@ user commands "view, edit, insert, delete, load, save, exit".
 
 ### Line editor with logger
 
-The second editor 'ed2.py' have a built in logger. Otherwise it is almost
-the same as 'ed.py'. There are always room for improvement, but cut off
-with regards to pegagogical values.[^flawed]
+The second editor includes a built-in logger, which distinguishes it
+from 'ed.py'. Despite this improvement, the functionality remains largely
+similar to the previous version. There are always room for improvement,
+but cut off with regards to pegagogical values.[^flawed] The 'log.txt'
+is hardcoded for every text that runs through the editor. Logs are usually
+custom-built and may vary in format. Here they appear as follows:
 
 [^flawed]: The logs are significantly flawed and redundant. The log file
 can grow immensely in proportion to the files they track. For example,
 a saved file is fully represented in the log file both when it is
 loaded and saved.
-
-Futher it includes a built-in logger, which distinguishes it from 'ed.py'.
-Despite this improvement, the functionality remains largely similar to
-the previous version. The 'log.txt' is hardcoded for every text that runs
-through the editor. Logs are usually custom-built and may vary in format.
-Here they appear as follows:
 
 ```log
 2024-07-27 09:47:12 | LOAD | NAME = trad.txt
