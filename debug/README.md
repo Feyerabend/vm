@@ -3,12 +3,11 @@
 
 ## Logging
 
-*What I want to convey in this section, is not the code itself,
-rather what is said above, that working with applications and
-systems should not be divided. A tool such as a logger is often
-used in systems, but could very well have other applications, 
-also. The idea of using a logger in an editor e.g. can be
-very useful*
+*This section is intended to highlight that the principles of
+application and system development should not be compartmentalized.
+Tools like loggers, commonly used in systems, can also be highly
+beneficial in other applications. For example, integrating a logger
+into an editor can be very useful.*
 
 As previously stated, logging is a tool with many aspects and uses.
 Here, we demonstrate this by using a *line editor*. A line editor was
