@@ -18,11 +18,11 @@ into the specifics of line editors, as that is not our aim here.
 Instead, we want to illustrate how logging can benefit even editors.
 In this case, you can have the *entire history of edits* saved. From
 the saved file, you can, in principle, work backwards in steps, undo
-edits, or even choose not to save the file at all. The log would
-contain enough information to restore the session and continue from
-where you left off, even if you just quit the editor. Todays 
-computer may be fast enough to not corrupt saving the log, so in
-principal it should work ok.
+or redo edits. The log would contain enough information to restore
+the session and continue from where you left off, even if you just
+quit the editor. Todays computer may be fast enough to not corrupt
+saving the log, so in principal it should work ok. That is just
+one idea that could be implemented even in editors of today.
 
 ### run
 
