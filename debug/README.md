@@ -92,7 +92,7 @@ with filtering or sorting options can make this process easier. While text
 files may not present many obstacles, programming languages or machine code
 often benefit significantly from such specialized tools.
 
-![Log viewer](../assets/images/logviewer.png)
+![Log viewer](../assets/images/viewlog.png)
 
 
 ### A playback viewer
