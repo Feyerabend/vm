@@ -61,7 +61,7 @@ from 'ed.py'. Despite this improvement, the functionality remains largely
 similar to the previous version. There are always room for improvement,
 but cut off with regards to pegagogical values.[^flawed] The 'log.txt'
 is hardcoded for every text that runs through the editor. Logs are usually
-custom-built and may vary in format. Here they appear as follows:
+custom-built and may vary in format.
 
 [^flawed]: The logs are significantly flawed and redundant. The log file
 can grow immensely in proportion to the files they track. For example,
