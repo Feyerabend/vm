@@ -46,7 +46,7 @@ user commands "view, edit, insert, delete, load, save, exit".
 
 ### Line editor with logger
 
-The second editor includes a built-in logger, which distinguishes it
+The second editor 'ed2.py' includes a built-in *logger*, which distinguishes it
 from 'ed.py'. Despite this improvement, the functionality remains largely
 similar to the previous version. There are always room for improvement,
 but cut off with regards to pegagogical values.[^flawed] The 'log.txt'
