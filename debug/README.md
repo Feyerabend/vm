@@ -3,6 +3,13 @@
 
 ## Logging
 
+*What I want to convey in this section, is not the code itself,
+rather what is said above, that working with applications and
+systems should not be divided. A tool such as a logger is often
+used in systems, but could very well have other applications, 
+also. The idea of using a logger in an editor e.g. can be
+very useful*
+
 As previously stated, logging is a tool with many aspects and uses.
 Here, we demonstrate this by using a *line editor*. A line editor was
 once very common in the past. It was easy to implement and versatile,
@@ -16,12 +23,12 @@ edits, or even choose not to save the file at all. The log would
 contain enough information to restore the session and continue from
 where you left off, even if you just quit the editor. Todays 
 computer may be fast enough to not corrupt saving the log, so in
-principal it can work.
+principal it should work ok.
 
 
 ![Line editor](../assets/images/ed.png)
 
-### Line editor: ed.py
+### Line editor
 
 We start off with a very simple line editor 'ed.py'. It can load text
 files, view them, insert a line, delete a line, edit a line, save the
@@ -38,19 +45,22 @@ user commands "view, edit, insert, delete, load, save, exit".
 
 ![Line editor](../assets/images/ed2.png)
 
-### Line editor with logger: ed2.py
+### Line editor with logger
 
 The second editor 'ed2.py' have a built in logger. Otherwise it is almost
 the same as 'ed.py'. There are always room for improvement, but cut off
-with regards to pegagogical values.
+with regards to pegagogical values.[^flawed]
+
+[^flawed]: The logs are significantly flawed and redundant. The log file
+can grow immensely in proportion to the files they track. For example,
+a saved file is fully represented in the log file both when it is
+loaded and saved.
 
 Futher it includes a built-in logger, which distinguishes it from 'ed.py'.
 Despite this improvement, the functionality remains largely similar to
 the previous version. The 'log.txt' is hardcoded for every text that runs
-through the editor. (This could be made more dynamic as an option at the
-command line, e.g. connecting a log to only one text file.)
-
-Logs are custom-built and may vary in format. They can appear as follows:
+through the editor. Logs are usually custom-built and may vary in format.
+Here they appear as follows:
 
 ```log
 2024-07-26 19:57:36 | LOAD | NAME = trad.txt
@@ -74,7 +84,7 @@ often benefit significantly from such specialized tools.
 ![Log viewer](../assets/images/logviewer.png)
 
 
-### Playback viewer
+### A playback viewer
 
 In this case with a line editor that have a *recording log*, a *playback
 viewer* `playlog.html` will illustrate how a textfile gets created. As can
@@ -82,6 +92,10 @@ be understood from this, versioning, alternate copies, and other reconizable
 properties from e.g. versioning software could in principle also be added.
 
 ![Log viewer](../assets/images/playlog.png)
+
+Thus logging is often a system tool, but it capture ideas that can be use
+in many other ways.
+
 
 
 ## Assembling & disassembling
