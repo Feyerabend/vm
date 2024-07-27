@@ -1,7 +1,7 @@
 # Virtual Machines
 
 
-## Logging
+## logging
 
 *This section is intended to highlight that the principles of
 application and system development should not be compartmentalized.
@@ -24,10 +24,15 @@ where you left off, even if you just quit the editor. Todays
 computer may be fast enough to not corrupt saving the log, so in
 principal it should work ok.
 
+### run
+
+```shell
+> python3 ed.py -i trad.txt
+```
 
 ![Line editor](../assets/images/ed.png)
 
-### Line editor
+### line editor
 
 We start off with a very simple line editor 'ed.py'. It can load text
 files, view them, insert a line, delete a line, edit a line, save the
@@ -41,10 +46,15 @@ with new content, `insert` inserts new content at a specific line, and
 `delete` deletes a specific line. Next `run` is the main loop to handle
 user commands "view, edit, insert, delete, load, save, exit".
 
+### run
+
+```shell
+> python3 ed2.py -i trad.txt
+```
 
 ![Line editor](../assets/images/ed2.png)
 
-### Line editor with logger
+### line editor with logger
 
 The second editor 'ed2.py' includes a built-in *logger*, which distinguishes it
 from 'ed.py'. Despite this improvement, the functionality remains largely
@@ -57,6 +67,12 @@ custom-built and may vary in format. Here they appear as follows:
 can grow immensely in proportion to the files they track. For example,
 a saved file is fully represented in the log file both when it is
 loaded and saved.
+
+### view log
+
+```shell
+> cat log.txt
+```
 
 ```log
 2024-07-27 09:47:12 | LOAD | NAME = trad.txt
