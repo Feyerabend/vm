@@ -165,10 +165,10 @@ L16:
 	RET         # 024
 	RET         # 024
 START:
-	SET 10		# 027 010
-	STARG 0		# 029 000
-	CALL :L0	# 002 000
-	LOAD 0		# 014 000
-	PRINT		# 022
-	HALT		# 008
+	SET 10      # 027 010
+	STARG 0     # 029 000
+	CALL :L0    # 002 000
+	LOAD 0      # 014 000
+	PRINT       # 022
+	HALT        # 008
 ```
