@@ -29,11 +29,11 @@ It is designed with a different focus, making it suitable not only for
 printing but also for viewing on screens.[^pdf] Yes, it converted
 from a __programming language__ to a __portable document format__.
 
+[^pdf]: https://en.wikipedia.org/wiki/PDF
+
 But here comes the interesting part: *PDF played a significant role in
 screen rendering and display within Apple's operating systems,
 particularly starting from Mac OS X, which arrived in 2001.*[^dropped]
-
-[^pdf]: https://en.wikipedia.org/wiki/PDF
 
 [^dropped]: As a side note: Apple dropped support for converting PostScript
 to PDF recently, as you previously just had to click on a ".ps" file to get
@@ -41,7 +41,8 @@ a ".pdf". And, I was also a bit disappointed when I started programming
 in Objective-C for iOS, as there were more orientation towards "bitmaps"
 than "vector graphics" in the GUI at that time (2015). And from what I
 understand in simplified terms, Apple's graphical systems have much of
-faster cache solutions in bitmaps, than drawing (procedural) vector graphics.
+faster cache solutions in bitmaps, than drawing (procedural) vector
+graphics.
 
 
 ### Display PostScript[^displayps]
@@ -63,6 +64,15 @@ elements, making it suitable for on-screen display and user
 interaction. That is, a little bit more complex than only rendering.
 
 [^displayps]: https://en.wikipedia.org/wiki/Display_PostScript
+A different but still common that they used both PostScript
+as the departure was *NeWS*: (Network extensible Window System)
+https://en.wikipedia.org/wiki/NeWS by *Sun Microsystems*.
+NeWS extended PostScript significantly to support window management,
+event handling, and network capabilities. The development environment
+for NeWS required a more extensive setup, involving the creation of
+applications that could manage windows, handle events, and operate
+over a network. NeWS was used as an alternative to the X Window System.
+
 [^next]: https://en.wikipedia.org/wiki/NeXT
 
 Display PostScript became integral to NeXT’s operating system,
