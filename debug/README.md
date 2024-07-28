@@ -41,7 +41,7 @@ leading up to a particular point in the code, especially where
 issues are suspected to occur.
 
 
-### workflow in principal
+### simple debugging workflow
 
 1. setting breakpoints: set breakpoints at critical sections or
    where one suspect a bug might be,
