@@ -1,6 +1,7 @@
 # Virtual Machines
 
 
+
 ## logging
 
 *This section is intended to highlight that the principles of
@@ -172,3 +173,31 @@ START:
 	PRINT       # 022
 	HALT        # 008
 ```
+
+
+[single step, breakpoints, trace]
+
+### tracing
+
+Tracing involves inserting print statements or logging calls
+into the code to output the program’s state and the values of
+variables or in this case mostly the stack at various points
+during execution. This helps to follow the program’s flow and
+understand where things might be going wrong.
+
+### single step
+
+Single-stepping allows the programmer to execute the program
+one line or instruction at a time. This lets you closely examine
+the program’s behavior at each step and observe how the stack
+(or in case: variables) and the system state change with each
+executed line of code.
+
+### breakpoints
+
+Breakpoints are markers set in the code where the execution
+will pause, allowing the developer to inspect the program state
+at specific points. This is useful for examining the conditions
+leading up to a particular point in the code, especially where
+issues are suspected to occur.
+
