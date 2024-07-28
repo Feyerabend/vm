@@ -43,15 +43,20 @@ issues are suspected to occur.
 
 ### workflow in principal
 
-1. setting breakpoints: set breakpoints at critical sections or where one suspect a bug might be.
-2. run to breakpoint: the program runs normally until it hits a breakpoint.
-3. inspect: once paused, inspect stack, variables, other memory, to understand the program’s condition at that moment.
-4. single step: after inspection, single-step through subsequent lines to observe changes and further diagnose issues.
-or just let the program continue,
-5. trace: supplementary to breakpoints and stepping, trace logs provide a broader picture of program flow, stack and
-variable states throughout the execution.
+1. setting breakpoints: set breakpoints at critical sections or
+   where one suspect a bug might be,
+2. run to breakpoint: the program runs normally until it hits a
+   breakpoint,
+3. inspect: once paused, inspect stack, variables, other memory,
+   to understand the program’s condition at that moment,
+4. single step: after inspection, single-step through subsequent
+   lines to observe changes and further diagnose issues.
+   or just let the program continue,
+5. trace: supplementary to breakpoints and stepping, trace logs
+   provide a broader picture of program flow, stack and
+   variable states throughout the execution.
 
-But, we will return to these tolls in detail later on.
+But, we will return to these tools in detail later on.
 
 
 ## logging
