@@ -63,15 +63,16 @@ by adding support for interactive graphics and user interface
 elements, making it suitable for on-screen display and user
 interaction. That is, a little bit more complex than only rendering.
 
-[^displayps]: https://en.wikipedia.org/wiki/Display_PostScript
-A different but still common that they used both PostScript
-as the departure was *NeWS*: (Network extensible Window System)
+[^displayps]: https://en.wikipedia.org/wiki/Display_PostScript.
+A different system, but still common that they used both PostScript
+as the departure, was *NeWS*: (Network extensible Window System)
 https://en.wikipedia.org/wiki/NeWS by *Sun Microsystems*.
 NeWS extended PostScript significantly to support window management,
 event handling, and network capabilities. The development environment
 for NeWS required a more extensive setup, involving the creation of
 applications that could manage windows, handle events, and operate
-over a network. NeWS was used as an alternative to the X Window System.
+over a network. NeWS was used by Sun as an alternative to the
+X Window System. DSP used X as a point of integration.
 
 [^next]: https://en.wikipedia.org/wiki/NeXT
 
