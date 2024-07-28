@@ -36,7 +36,7 @@ issues are suspected to occur.
 
 ### workflow in pincipal
 
-1. setting breakpoints: set breakpoints at critical sections or where they suspect a bug might be.
+1. setting breakpoints: set breakpoints at critical sections or where one suspect a bug might be.
 2. run to breakpoint: the program runs normally until it hits a breakpoint.
 3. inspect: once paused, inspect stack, variables, other memory, to understand the program’s condition at that moment.
 4. single step: after inspection, single-step through subsequent lines to observe changes and further diagnose issues.
