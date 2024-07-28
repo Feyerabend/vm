@@ -1,10 +1,10 @@
 # Virtual Machines
 
-Debugging is old as computers are. Programming still is, to my mind,
-very much a craft. So is debugging. Early tools in debugging,
-finding problems or finding faults, is was helpful with logs,
-single step through programs, breakpoints where the program
-halted for closer inspection, and the like.
+Debugging is as old as computers are. Programming still is,
+to my mind, very much a craft. So is debugging. Early tools
+in debugging, finding problems or finding faults, is was
+helpful with logs, single step through programs, breakpoints
+where the program halted for closer inspection, and the like.
 
 We take a look at these simple but also very useful tools
 in working with a virtual mashine, or any programming.
