@@ -1,13 +1,20 @@
 # Virtual Machines
 
-Debugging is as old as computers are. Programming still is,
-to my mind, very much a craft. So is debugging. Early tools
-in debugging, finding problems or finding faults, is was
-helpful with logs, single step through programs, breakpoints
-where the program halted for closer inspection, and the like.
+Debugging has been an integral part of computing since
+the early days of programming. In many ways, programming
+remains a *craft*, and debugging is a critical aspect of
+that craft.
 
-We take a look at these simple but also very useful tools
-in working with a virtual mashine, or any programming.
+Early debugging tools were fundamental yet highly effective.
+Techniques such as logging, single-stepping through code,
+and setting breakpoints to halt execution for detailed
+inspection were very useful. These methods allowed developers
+to meticulously trace and resolve issues.
+
+In this exploration, we’ll revisit these simple but powerful
+debugging tools and see how they are still relevant when
+working with virtual machines, or really in any programming
+environment.
 
 ### tracing
 
@@ -44,7 +51,7 @@ or just let the program continue,
 5. trace: supplementary to breakpoints and stepping, trace logs provide a broader picture of program flow, stack and
 variable states throughout the execution.
 
-We will return to these later on.
+But, we will return to these tolls in detail later on.
 
 
 ## logging
