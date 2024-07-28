@@ -34,7 +34,7 @@ leading up to a particular point in the code, especially where
 issues are suspected to occur.
 
 
-### workflow in pincipal
+### workflow in principal
 
 1. setting breakpoints: set breakpoints at critical sections or where one suspect a bug might be.
 2. run to breakpoint: the program runs normally until it hits a breakpoint.
@@ -44,6 +44,7 @@ or just let the program continue,
 5. trace: supplementary to breakpoints and stepping, trace logs provide a broader picture of program flow, stack and
 variable states throughout the execution.
 
+We will return to these later on.
 
 
 ## logging
