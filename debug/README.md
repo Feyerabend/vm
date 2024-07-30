@@ -252,10 +252,10 @@ single step, a command 'continue' executes code without single stepping.
 
 A trace can show us what is on the current stack, the program counter,
 what operator and operand are executing, but also other options are
-available: arrays, arguments and variables. The options can be choosen
-on the fly. A choice of 'pos' whuld show program counter, operation /
-operand, and the stack. A choice of 'pv' would show program counter
-and variables.
+available: arrays, arguments and variables. The trace can be turned off
+and the options can be choosen on the fly. A choice of 'pos' would show
+the program counter, operation / operand, and the stack. A choice of
+'pv' would show program counter and variables.
 
 The breakpoints will halt the program and wait for futher instructions.
 
