@@ -56,7 +56,7 @@ issues are suspected to occur.
    provide a broader picture of program flow, stack and
    variable states throughout the execution.
 
-But, we will return to these tools in detail later on.
+But, we will return to these tools examplified below.
 
 
 ## logging
@@ -231,5 +231,27 @@ START:
 	HALT        # 008
 ```
 
+## debug vm
 
+A simple implementation of some debugging tools inside a previously
+seen vm, let you choose for 'singlestep', setting 'breakpoints' and an
+optional 'trace'.
+
+```shell
+python3 dvm.py --singlestep true --breakpoints 14,16 --trace true --input sample.b
+```
+
+![Debug VM](../assets/images/dvm.png)
+
+Inside the vm resides some parts which let you e.g. single step through
+code, if the option was choosen at the start. When no longer needed to
+single step, a command 'continue' executes code without singe stepping.
+
+A trace can show us what is on the current stack, the program counter,
+what operator and operand are executing, but also other options are
+available: arrays, arguments and variables. The options can be choosen
+on the fly. A choice of 'pos' whuld show program counter, operation /
+operand, and the stack.
+
+![Debug VM](../assets/images/dvm2.png)
 
