@@ -268,7 +268,8 @@ other options like arrays, arguments, and variables. The trace
 can be turned off, and the options can be selected dynamically.
 For example, choosing ‘pos’ would show the program counter,
 operation/operand, and the stack, while ‘pv’ would show the
-program counter and variables.
+program counter and variables. In this case the trace isn't
+a log in a file, but only displayed on the screen.
 
 Breakpoints will halt the program and wait for further instructions.
 
