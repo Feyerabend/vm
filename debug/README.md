@@ -248,13 +248,14 @@ python3 dvm.py --singlestep true --breakpoints 14,16 --trace true --input sample
 
 Inside the vm resides some parts which let you e.g. single step through
 code, if the option was choosen at the start. When no longer needed to
-single step, a command 'continue' executes code without singe stepping.
+single step, a command 'continue' executes code without single stepping.
 
 A trace can show us what is on the current stack, the program counter,
 what operator and operand are executing, but also other options are
 available: arrays, arguments and variables. The options can be choosen
 on the fly. A choice of 'pos' whuld show program counter, operation /
-operand, and the stack.
+operand, and the stack. A choice of 'pv' would show program counter
+and variables.
 
 ![Debug VM](../assets/images/dvm2.png)
 
