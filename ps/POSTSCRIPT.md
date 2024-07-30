@@ -81,18 +81,32 @@ In 1982, Warnock and Geschke, two researchers from PARC,
 left Xerox to found Adobe Systems. Recognizing the need for
 such a technology, they decided to develop a new, more versatile
 page description language, which they named *PostScript*.
-PostScript was designed to be beside device-independent
-it could describe text, images, and graphics on any printer or
-display device. It used much of the same concept of a
-stack-based programming language, enabling precise control
-over the rendering of documents.
+
+PostScript was designed to be beside device-independent it could
+describe text, images, and graphics on any printer or display
+device. It used much of the same concept of a stack-based
+programming language, enabling precise control over the
+rendering of documents.
 
 The introduction of PostScript in 1984 revolutionized the printing
 and publishing industries. It allowed for the creation of complex,
 high-quality documents with precise layouts that could be printed
-exactly as they appeared on the screen. PostScript's capabilities
-included advanced typography, graphics, and image handling, making
-it an ideal choice for professional publishing.
+exactly as they appeared on the screen.
+
+Prior to its development, printers required pre-defined typographic
+fonts, or in the case of cheap matrix printers: what was built in.
+PostScript enabled users to define text as graphic objects,
+described mathematically with straight and curved lines.
+Adobe introduced Type 1 fonts for PostScript. These fonts were
+scalable, used Bézier curves to describe the shapes of characters,
+allowing for high-quality scaling and rendering at any size and
+resolution. But Abode also kept a secret: the details of the
+implementation of type setting, especially with small size fonts,
+was (and still is) *not* public. Types are mostly copyrighted and
+owned by type foundries. Their use can be restricted and often
+involves certain costs. (However, an early exception here was Donald
+E. Knuths 'Metafont' in TeX.)
+
 
 ### Apple & Adobe
 
