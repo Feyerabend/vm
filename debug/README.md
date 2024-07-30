@@ -148,7 +148,9 @@ takes the integers and turn them into easier to understandable mnemonics,
 the "assembly language".
 
 
-### Disassembler: disasm.py
+### Disassembler
+
+If we take the following 'binary':
 
 ```code
 38,13,0,28,0,12,0,27,1,5,11,16,27,1,30,
@@ -156,6 +158,9 @@ the "assembly language".
 0,14,0,18,30,0,24,24,27,10,29,0,2,0,14,
 0,22,8
 ```
+
+we can convert it into what it previously was
+assembled from:
 
 ```assembly
 L0:
@@ -190,6 +195,10 @@ START:
 	PRINT       # 022
 	HALT        # 008
 ```
+
+Disassemblers can be useful, when e.g. the source isn't available
+or when you want to inspect the machine and the program in this
+context.
 
 
 ## debug vm
