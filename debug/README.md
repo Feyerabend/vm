@@ -162,6 +162,11 @@ If we take the following 'binary':
 we can convert it into what it previously was
 assembled from:
 
+```shell
+> python3 disasm.py -i sample.b -o sample.d
+> cat sample.d
+```
+
 ```assembly
 L0:
 	LDARG 0     # 013 000
@@ -250,7 +255,7 @@ seen vm, let you choose for 'singlestep', setting 'breakpoints' and an
 optional 'trace'.
 
 ```shell
-python3 dvm.py --singlestep true --breakpoints 14,16 --trace true --input sample.b
+> python3 dvm.py --singlestep true --breakpoints 14,16 --trace true --input sample.b
 ```
 
 ![Debug VM](../assets/images/dvm.png)
