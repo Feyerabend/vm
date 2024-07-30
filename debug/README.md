@@ -165,9 +165,6 @@ assembled from:
 ```shell
 > python3 disasm.py -i sample.b -o sample.d
 > cat sample.d
-```
-
-```assembly
 L0:
 	LDARG 0     # 013 000
 	ST 0        # 028 000
