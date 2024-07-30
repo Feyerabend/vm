@@ -16,46 +16,6 @@ debugging tools and see how they are still relevant when
 working with virtual machines, or really in any programming
 environment.
 
-### tracing
-
-Tracing involves inserting print statements or logging calls
-into the code to output the program’s state and the values of
-variables or in this case mostly the stack at various points
-during execution. This helps to follow the program’s flow and
-understand where things might be going wrong.
-
-### single step
-
-Single-stepping allows the programmer to execute the program
-one line or instruction at a time. This lets you closely examine
-the program’s behavior at each step and observe how the stack
-(or in case: variables) and the system state change with each
-executed line of code.
-
-### breakpoints
-
-Breakpoints are markers set in the code where the execution
-will pause, allowing the developer to inspect the program state
-at specific points. This is useful for examining the conditions
-leading up to a particular point in the code, especially where
-issues are suspected to occur.
-
-
-### simple debugging workflow
-
-1. setting breakpoints: set breakpoints at critical sections or
-   where one suspect a bug might be,
-2. run to breakpoint: the program runs normally until it hits a
-   breakpoint,
-3. inspect: once paused, inspect stack, variables, other memory,
-   to understand the program’s condition at that moment,
-4. single step: after inspection, single-step through subsequent
-   lines to observe changes and further diagnose issues.
-   or just let the program continue,
-5. trace: supplementary to breakpoints and stepping, trace logs
-   provide a broader picture of program flow, stack and
-   variable states throughout the execution.
-
 But, we will return to these tools examplified below.
 
 
@@ -231,7 +191,50 @@ START:
 	HALT        # 008
 ```
 
+
 ## debug vm
+
+### tracing
+
+Tracing involves inserting print statements or logging calls
+into the code to output the program’s state and the values of
+variables or in this case mostly the stack at various points
+during execution. This helps to follow the program’s flow and
+understand where things might be going wrong.
+
+### single step
+
+Single-stepping allows the programmer to execute the program
+one line or instruction at a time. This lets you closely examine
+the program’s behavior at each step and observe how the stack
+(or in case: variables) and the system state change with each
+executed line of code.
+
+### breakpoints
+
+Breakpoints are markers set in the code where the execution
+will pause, allowing the developer to inspect the program state
+at specific points. This is useful for examining the conditions
+leading up to a particular point in the code, especially where
+issues are suspected to occur.
+
+
+### simple debugging workflow
+
+1. setting breakpoints: set breakpoints at critical sections or
+   where one suspect a bug might be,
+2. run to breakpoint: the program runs normally until it hits a
+   breakpoint,
+3. inspect: once paused, inspect stack, variables, other memory,
+   to understand the program’s condition at that moment,
+4. single step: after inspection, single-step through subsequent
+   lines to observe changes and further diagnose issues.
+   or just let the program continue,
+5. trace: supplementary to breakpoints and stepping, trace logs
+   provide a broader picture of program flow, stack and
+   variable states throughout the execution.
+
+### dvm
 
 A simple implementation of some debugging tools inside a previously
 seen vm, let you choose for 'singlestep', setting 'breakpoints' and an
