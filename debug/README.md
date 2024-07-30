@@ -150,7 +150,7 @@ the "assembly language."
 
 ### Disassembler
 
-If we take the following 'binary':
+If we take the following 'binary' in 'sample.b':
 
 ```code
 38,13,0,28,0,12,0,27,1,5,11,16,27,1,30,
