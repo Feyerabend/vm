@@ -257,5 +257,7 @@ on the fly. A choice of 'pos' whuld show program counter, operation /
 operand, and the stack. A choice of 'pv' would show program counter
 and variables.
 
+The breakpoints will halt the program and wait for futher instructions.
+
 ![Debug VM](../assets/images/dvm2.png)
 
