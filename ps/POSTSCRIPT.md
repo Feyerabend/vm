@@ -69,7 +69,9 @@ high-quality printing by providing a detailed and
 Xerox did not fully capitalize on its potential, or maybe
 didn't saw larger markets where it could be used.
 
-[^interpress]: https://en.wikipedia.org/wiki/Interpress
+[^interpress]: https://en.wikipedia.org/wiki/Interpress.
+On both Postscript and InterPress:
+https://www.tech-insider.org/unix/research/1985/0301.html
 
 ![Print from LaTeX through PS](../assets/images/ps.png)
 
@@ -178,4 +180,13 @@ https://computerhistory.org/blog/postscript-a-digital-printing-press/
 “PostScript,” Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/PostScript (Accessed: 17 July 2024).
 
 Warnock, John, "Simple Ideas That Changed Printing and Publishing", *Proceedings of the American Philosophical Society*, no. 156, 2012, pp. 363-378. 
+
+---
+
+
+Reference manual 2nd ed. 
+https://www.os2site.com/sw/dev/openwatcom/docs/postscript_level_2_reference_manual.pdf
+
+PostScript and Forth
+https://dl.acm.org/doi/pdf/10.1145/122077.122083
 
