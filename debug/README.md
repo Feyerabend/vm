@@ -221,18 +221,18 @@ issues are suspected to occur.
 
 ### simple debugging workflow
 
-1. setting breakpoints: set breakpoints at critical sections or
+1. __setting breakpoints__: set breakpoints at critical sections or
    where one suspect a bug might be,
-2. run to breakpoint: the program runs normally until it hits a
+2. __run to breakpoint__: the program runs normally until it hits a
    breakpoint,
-3. inspect: once paused, inspect stack, variables, other memory,
+3. __inspect__: once paused, inspect stack, variables, other memory,
    to understand the program’s condition at that moment,
-4. single step: after inspection, single-step through subsequent
+4. __single step__: after inspection, single-step through subsequent
    lines to observe changes and further diagnose issues.
-   or just let the program continue,
-5. trace: supplementary to breakpoints and stepping, trace logs
-   provide a broader picture of program flow, stack and
-   variable states throughout the execution.
+   or just let the program *continue*,
+5. __trace__: supplementary to breakpoints and stepping, trace logs
+   provide a broader picture of program flow, stack and variable 
+   states throughout the execution.
 
 ### dvm
 
