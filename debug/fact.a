@@ -1,0 +1,25 @@
+# factorial
+START:
+    SET 15
+    ST 2
+    SET 1       # init. result to 1
+    ST 0        # store result in local register 0
+    SET 1       # init. loop counter i to 1
+    ST 1        # store i in local register 1
+
+LOOP:
+    LD 1        # load i
+    LD 0        # load result
+    MUL         # result = result * i
+    ST 0        # store result back in local register 0
+    LD 1        # load i
+    SET 1       # load constant 1
+    ADD         # i = i + 1
+    ST 1        # store i back in local register 1
+    LD 1        # load i
+    LD 2
+    GT          # check if i > n
+    JPZ :LOOP   # if i <= n, jump loop
+    LD 0        # final result
+    PRINT
+    HALT

@@ -170,6 +170,16 @@ class VM:
                 self.fp = self.sp
                 self.pc = addr
 
+
+#			case CALL:
+#				addr = nextcode(vm);
+#				push(vm, vm->fp);
+#				push(vm, vm->pc);
+#				vm->fp = vm->sp;
+#				vm->pc = addr;
+#				break;
+
+
             elif op == OP.DIV.value:
                 b = self.pop()
                 a = self.pop()
@@ -317,6 +327,12 @@ class VM:
                 self.pc = self.pop()
                 self.fp = self.pop()
 
+#			case RET:
+#				vm->sp = vm->fp;
+#				vm->pc = pop(vm);
+#				vm->fp = pop(vm);
+#				break;
+
             elif op == OP.RLOAD.value:
                 a = self.pop()
                 if a < 0 or a > len(self.arrs) - 1:
@@ -398,6 +414,8 @@ class VM:
                 string += f' op=\'{OP(op).name}\' '
         if 's' in self.param:
             string += f' stack={stack} '
+        if 'f' in self.param:
+            string += f' frame={self.fp} '
         if 'a' in self.param:
             string += f' arrs={self.truncatearr(self.arrs)} '
         if 'r' in self.param:

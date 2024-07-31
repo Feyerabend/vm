@@ -275,3 +275,6 @@ Breakpoints will halt the program and wait for further instructions.
 
 ![Debug VM](../assets/images/dvm2.png)
 
+Test with included samples such as 'fact.a' and 'callret.a'
+where they are easy to follow, and see what happends when
+they are executed through the debugger.
