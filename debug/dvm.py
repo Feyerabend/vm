@@ -2,7 +2,6 @@ import os
 import sys
 import csv
 import getopt
-import datetime
 from enum import Enum, unique
 
 TRUE = 1
@@ -170,16 +169,6 @@ class VM:
                 self.fp = self.sp
                 self.pc = addr
 
-
-#			case CALL:
-#				addr = nextcode(vm);
-#				push(vm, vm->fp);
-#				push(vm, vm->pc);
-#				vm->fp = vm->sp;
-#				vm->pc = addr;
-#				break;
-
-
             elif op == OP.DIV.value:
                 b = self.pop()
                 a = self.pop()
@@ -326,12 +315,6 @@ class VM:
                 self.sp = self.fp
                 self.pc = self.pop()
                 self.fp = self.pop()
-
-#			case RET:
-#				vm->sp = vm->fp;
-#				vm->pc = pop(vm);
-#				vm->fp = pop(vm);
-#				break;
 
             elif op == OP.RLOAD.value:
                 a = self.pop()
