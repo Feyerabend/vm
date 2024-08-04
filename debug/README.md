@@ -140,7 +140,7 @@ in many other ways.
 
 
 
-## Assembling & disassembling
+## assembling & disassembling
 
 Taking an assembler from previous, we can turn it into something which
 analyses our "machine code," a disassembler. It reverses the process,
@@ -148,7 +148,7 @@ takes the integers and turn them into easier to understandable mnemonics,
 the "assembly language."
 
 
-### Disassembler
+### disassembler
 
 If we take the following 'binary' in 'sample.b':
 
