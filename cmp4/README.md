@@ -262,3 +262,27 @@ code through a simple assembler `asm.py`.
 
 At last we can run the program with in principal the same virtual machine
 we have gone through before with `vm.c`, `vm.h` and `runvmc.c`.
+
+## check
+
+In the world of programming, a compiler does more than just translate code from
+a high-level language into machine code. It also plays a crucial role in assisting
+programmers by ensuring their code is syntactically correct before the actual
+compilation process begins. Syntax checking is a key step in this process, as
+it helps identify and correct errors early, saving time and effort later on.
+
+The syntax checking phase can involve substantial code and logic to thoroughly
+validate the input code. In this context, we’re providing a simplified approach
+to syntax checking, focusing on practical suggestions for how to verify your
+code. For a more detailed and effective syntax validation, use the `check.py`
+script. Running `check.py` will help you identify and address syntax issues
+*before* you proceed with compiling your code.
+
+By incorporating syntax checking into your workflow, you ensure that your code
+is not only correctly written but also well-prepared for the next stages of
+compilation. Running syntax checks before compiling allows you to catch and
+correct potential errors early in the development process.
+
+```shell
+> python3 ./check.py -i sample.p
+```
