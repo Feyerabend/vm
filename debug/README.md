@@ -278,3 +278,78 @@ Breakpoints will halt the program and wait for further instructions.
 Test with included samples such as 'fact.a' and 'callret.a'
 where they are easy to follow, and see what happends when
 they are executed through the debugger.
+
+The `dvm.py` file is essentially the previous `vm.py` and
+contains the implementation of the virtual machine.
+It defines the operations supported by the VM,
+such as arithmetic operations, logical operations, control
+flow operations, and more. Each operation is represented by
+an opcode, and the VM processes a sequence of these opcodes
+to perform computations.
+
+Key functionalities:
+- Arithmetic Operations: Supports addition, subtraction,
+  multiplication, division, and modulus operations.
+- Logical Operations: Includes AND, OR, XOR, and NOT operations.
+- Control Flow: Implements instructions for conditional
+  and unconditional jumps, function calls, and returns.
+- Data Handling: Supports loading and storing values in
+  variables, arrays, and the stack.
+
+
+## test of the dvm
+
+While debugging the programs that the VM executes is
+crucial, ensuring the VM itself functions correctly
+is equally important. Developing a suite of test programs
+not only helps in specifying the machine’s behavior
+but also aids in validating its consistency when the
+VM is ported to other platforms.
+
+1. Specification and Documentation:
+- A test suite serves as a living specification of the VM’s
+  expected behavior.
+- It provides clear examples of how the VM should handle
+  different operations, making it easier to understand and use.
+
+2.	Debugging and Validation:
+- Automated tests can quickly identify bugs and regressions
+  in the VM’s implementation.
+- They ensure that new changes or optimizations do not break
+  existing functionality.
+
+3.	Portability:
+- When the VM is ported to different platforms, the test
+  suite can be run to verify that the port behaves consistently
+  with the original implementation.
+- This helps in identifying platform-specific issues early
+  in the development process.
+
+
+To execute some illustrative tests and validate the
+functionality of the VM, run the `testdvm.py` script.
+
+```shell
+> python3 dvmtest.py
+```
+
+This script leverages many components from the `dvm.py`
+file to perform a series of operations and tests,
+ensuring the VM works correctly across various scenarios.
+*The tests are not exhaustive,
+but they illustrate the principal idea.*
+
+The `testdvm.py` file contains a suite of tests designed
+to validate the functionality of the VM. Each test focuses
+on specific operations or scenarios to ensure the VM
+handles them correctly. The tests include:
+- Arithmetic Operations Test: Verifies addition and
+  division operations.
+- Division by Zero Test: Checks the VM’s behavior
+  when attempting to divide by zero.
+- Logical and Comparison Operations Test: Validates
+  logical AND and comparison operations.
+- Array Operations Test: Tests loading and storing
+  values in arrays.
+- Function Call Test: Examines function calls and
+  returns, including argument handling.
