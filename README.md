@@ -194,10 +194,10 @@ concepts from *PostScript*.
 
 ### 16. [debug](/debug)
 
-
-
-
-
+Some traditional debugging tools, such as single step, trace, and logging,
+are introduced. Additionally, a small test suite is included to make the
+VM easier to manage and e.g. to minimize the risk of breaking functionality
+during porting.
 
 
 ## License
