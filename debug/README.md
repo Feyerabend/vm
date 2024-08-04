@@ -304,17 +304,17 @@ not only helps in specifying the machine’s behavior
 but also aids in validating its consistency when the
 VM is ported to other platforms.
 
-1. *Specification* and *Documentation*:
+*Specification* and *Documentation*:
 - A test suite serves as a living specification of the VM’s
   expected behavior.
 - It provides clear examples of how the VM should handle
   different operations, making it easier to understand and use.
-2. *Debugging* and *Validation*:
+*Debugging* and *Validation*:
 - Automated tests can quickly identify bugs and regressions
   in the VM’s implementation.
 - They ensure that new changes or optimizations do not break
   existing functionality.
-3. *Portability*:
+*Portability*:
 - When the VM is ported to different platforms, the test
   suite can be run to verify that the port behaves consistently
   with the original implementation.
