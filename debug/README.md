@@ -304,25 +304,15 @@ not only helps in specifying the machine’s behavior
 but also aids in validating its consistency when the
 VM is ported to other platforms.
 
-*Specification* and *Documentation*:
-- A test suite serves as a living specification of the VM’s
-  expected behavior.
-- It provides clear examples of how the VM should handle
-  different operations, making it easier to understand and use.
-
-*Debugging* and *Validation*:
-- Automated tests can quickly identify bugs and regressions
-  in the VM’s implementation.
-- They ensure that new changes or optimizations do not break
-  existing functionality.
-
-*Portability*:
-- When the VM is ported to different platforms, the test
-  suite can be run to verify that the port behaves consistently
-  with the original implementation.
-- This helps in identifying platform-specific issues early
-  in the development process.
-
+A test suite serves as both a specification and documentation
+for the VM, outlining its expected behavior and providing
+clear examples of its operation. It aids in debugging by
+quickly identifying bugs and regressions, ensuring that new
+changes or optimizations do not disrupt existing functionality.
+Additionally, when porting the VM to different platforms, the
+test suite helps verify that the port maintains consistency
+with the original implementation, allowing for early detection
+of platform-specific issues.
 To execute some illustrative tests and validate the
 functionality of the VM, run the `dvmtest.py` script.
 
