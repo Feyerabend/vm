@@ -324,7 +324,7 @@ VM is ported to other platforms.
   in the development process.
 
 To execute some illustrative tests and validate the
-functionality of the VM, run the `testdvm.py` script.
+functionality of the VM, run the `dvmtest.py` script.
 
 ```shell
 > python3 dvmtest.py
@@ -336,7 +336,7 @@ ensuring the VM works correctly across various scenarios.
 *The tests are not exhaustive,
 but they illustrate the principal idea.*
 
-The `testdvm.py` file contains a suite of tests designed
+The `dvmtest.py` file contains a suite of tests designed
 to validate the functionality of the VM. Each test focuses
 on specific operations or scenarios to ensure the VM
 handles them correctly. The tests include:
