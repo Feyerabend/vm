@@ -309,11 +309,13 @@ VM is ported to other platforms.
   expected behavior.
 - It provides clear examples of how the VM should handle
   different operations, making it easier to understand and use.
+
 *Debugging* and *Validation*:
 - Automated tests can quickly identify bugs and regressions
   in the VM’s implementation.
 - They ensure that new changes or optimizations do not break
   existing functionality.
+
 *Portability*:
 - When the VM is ported to different platforms, the test
   suite can be run to verify that the port behaves consistently
