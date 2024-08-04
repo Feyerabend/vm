@@ -114,7 +114,7 @@ loaded and saved.
 ```
 
 
-### A log viewer
+### log viewer
 
 Long logs can be challenging to navigate. A dedicated viewer `viewlog.html`
 with filtering or sorting options can make this process easier. While text
@@ -124,7 +124,7 @@ often benefit significantly from such specialized tools.
 ![Log viewer](../assets/images/viewlog.png)
 
 
-### A playback viewer
+### playback viewer
 
 In this case with a line editor that have a *recording log*, a *playback
 viewer* `playlog.html` will illustrate how a textfile gets created. As can
