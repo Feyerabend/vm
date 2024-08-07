@@ -1,6 +1,5 @@
 import re
 
-
 # combinator parsers
 
 def char(c):

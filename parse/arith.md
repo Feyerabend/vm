@@ -1,7 +1,86 @@
 # combinator parsers
 
+The fundamental components of combinator parsers and their operations
+can be formalized using concepts from category theory and formal grammar
+theory.
+
+### Mathematical Formalism for Combinator Parsers
+
+1. *Basics*:
+
+   - *Parser*: A parser is a function that, given an input string,
+     returns a *set of possible parses*. Each parse is typically a
+     pair consisting of the parsed result and the remaining unparsed
+     portion of the input (pointing at a position in the remaining
+     input).
+
+   - *Combinator*: A combinator is a higher-order function that takes
+     one or more parsers as arguments and returns *a new parser*.
+
+2. *Formally defined parsers*:
+
+   Let $$\( P \)$$ be a parser with the type signature:
+   $$\[
+   P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*)
+   \]$$
+   where \( \Sigma^* \) is the set of all possible input strings, \( \mathcal{R} \) is the set of parse results, and \( \mathcal{P} \) denotes the power set.
+
+   This means that a parser \( P \) takes an input string and returns a set of pairs. Each pair consists of a result and the remaining unparsed part of the input.
+
+3. *Combinators*:
+
+   - *Choice*:
+     The choice combinator \( \text{alt} \) tries two parsers and returns the result of the first successful parser.
+     \[
+     \text{alt}(P, Q) \text{ is defined as } \lambda s . \text{filter results from } (P(s) \cup Q(s))
+     \]
+
+   - *Sequence*:
+     The sequence combinator \( \text{seq} \) combines two parsers such that the second parser is applied to the remaining input after the first parser succeeds.
+     \[
+     \text{seq}(P, Q) \text{ is defined as } \lambda s . \{ (r_1 \oplus r_2, s'') \mid (r_1, s') \in P(s) \text{ and } (r_2, s'') \in Q(s') \}
+     \]
+     where \( \oplus \) denotes some combination of the results \( r_1 \) and \( r_2 \).
+
+   - *Many*:
+     The many combinator \( \text{many} \) applies a parser zero or more times.
+     \[
+     \text{many}(P) \text{ is defined as } \lambda s . \{ (\text{results}, s') \mid \text{results is a list of results from zero or more applications of } P \text{ and } s' \text{ is the remaining input} \}
+     \]
+
+   - *Many1*:
+     The many1 combinator \( \text{many1} \) applies a parser one or more times.
+     \[
+     \text{many1}(P) \text{ is defined as } \text{seq}(P, \text{many}(P))
+     \]
+
+   - *Option*:
+     The option combinator \( \text{opt} \) applies a parser and returns a default value if the parser fails.
+     \[
+     \text{opt}(P, d) \text{ is defined as } \lambda s . \{ (r, s) \mid (r, s) \in P(s) \} \cup \{ (d, s) \mid \text{if } P(s) \text{ fails} \}
+     \]
+
+4. *Formal definitions using Category Theory*:
+
+   In *category theory*, parsers can be modeled as functors between categories.
+   For instance:
+
+   - *Category of parsers*:
+     - Objects: Parsers.
+     - Morphisms: Combinators.
+
+   - *Functorial composition*:
+     - A parser combinator can be viewed as a functor that maps parsers to new
+       parsers. For example, the sequence combinator is a functor that maps a
+       pair of parsers to a new parser.
 
 
+
+The mathematical formalism of combinator parsers involves defining parsers as
+functions that map input strings to sets of parse results and remaining input
+(position). Combinators are higher-order functions that combine parsers in
+various ways. This formalism can be described using set theory, formal language
+theory, and category theory.
 
 
 
@@ -44,14 +123,14 @@ digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 ### description
 
-- **Prefix Notation EBNF**:
+- *Prefix Notation EBNF*:
   - `expression` can be either an operator followed by two expressions enclosed in parentheses, or it can be an operand.
   - `operator` includes the basic arithmetic operators: `+`, `-`, `*`, and `/`.
   - `operand` can be either a variable or a number.
   - `variable` is restricted to `x` and `y` for simplicity, but this can be extended.
   - `number` consists of one or more digits.
 
-- **Infix Notation EBNF**:
+- *Infix Notation EBNF*:
   - `expression` consists of `term` optionally followed by a sequence of `term`s separated by `+` or `-`.
   - `term` consists of `factor` optionally followed by a sequence of `factor`s separated by `*` or `/`.
   - `factor` can be an `expression` enclosed in parentheses or an `operand`.
