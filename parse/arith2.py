@@ -133,7 +133,6 @@ def parse_expression(expression_str):
 
 
 # back to infix
-
 def convert_expression(expr):
     # remove extra quotes and brackets
     expr = expr.replace("'", "").replace("[", "").replace("]", "")
@@ -151,27 +150,38 @@ def convert_expression(expr):
 
 def parse_prefix_expression(expr):
     if isinstance(expr, list):
+
+        # nothing
         if len(expr) == 0:
             return ''
+
+        # parse first
         if len(expr) == 1:
             return parse_prefix_expression(expr[0])
+
+        # empty lists
         if isinstance(expr[0], list) and len(expr[0]) == 0:
-            # empty lists
             return parse_prefix_expression(expr[1])
+
+        # make infix
         if len(expr) == 3 and expr[1] in ['+', '-', '*', '/']:
             operator = expr[1]
             left = parse_prefix_expression(expr[0])
             right = parse_prefix_expression(expr[2])
             return f'({left} {operator} {right})'
+
+        # nested parentheses, recursion
         if expr[0] == '(' and expr[-1] == ')':
-            # nested parentheses
             inner_expr = parse_prefix_expression(expr[1:-1])
             return f'({inner_expr})'
         return ' '.join(parse_prefix_expression(subexpr) for subexpr in expr)
+
     elif isinstance(expr, str):
         return expr
+
     return str(expr)
 
+# parse from prefix to infix
 def prefix_infix(expr):
     stack = []
     i = len(expr) - 1
@@ -186,7 +196,6 @@ def prefix_infix(expr):
 
 
 # evaluator
-
 def evaluate_expression(expression_str, variable_values):
     # replace variable names with values
     for var, value in variable_values.items():
@@ -198,10 +207,9 @@ def evaluate_expression(expression_str, variable_values):
     except Exception as e:
         return str(e)
 
-
+# sample run
 if __name__ == "__main__":
     expr = "3 + 2 * (x - 4) / y"
-
     try:
         result = parse_expression(expr)
         print("Parsed result:", result)
