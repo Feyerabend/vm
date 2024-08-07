@@ -39,9 +39,19 @@ and returns the result of the first successful parser.
 alt(P, Q) = λ s . filter results from (P(s) ∪ Q(s))
 ```
 
-\begin{equation*}
-x+1\over\sqrt{1-x^2}
-\end{equation*}
+```python
+def choice(*parsers):
+    def parse(text, pos):
+        for parser in parsers:
+            try:
+                results = parser(text, pos)
+                if results:
+                    return results
+            except ParseError:
+                continue
+        raise ParseError("No valid choice", text, pos)
+    return Parser(parse)
+```
 
 *Sequence*:
 The sequence combinator $\( \text{seq} \)$ combines two
