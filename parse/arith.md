@@ -36,8 +36,12 @@ The choice combinator $\( \text{alt} \)$ tries two parsers
 and returns the result of the first successful parser.
 
 ```
-$`alt(P, Q) = λ s . `$filter results from $`(P(s) ∪ Q(s))`$
+alt(P, Q) = λ s . filter results from (P(s) ∪ Q(s))
 ```
+
+\begin{equation*}
+x+1\over\sqrt{1-x^2}
+\end{equation*}
 
 *Sequence*:
 The sequence combinator $\( \text{seq} \)$ combines two
