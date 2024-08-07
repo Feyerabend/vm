@@ -4,7 +4,7 @@ The fundamental components of combinator parsers and their operations
 can be formalized using concepts from category theory and formal grammar
 theory.
 
-### Mathematical Formalism for Combinator Parsers
+### Mathematical formalism for 'Combinator Parsers'
 
 1. *Basics*:
 
