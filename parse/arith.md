@@ -1,12 +1,12 @@
 # combinator parsers
 
 The fundamental components of combinator parsers and their operations
-can be formalized using concepts from category theory and formal grammar
-theory.
+can be formalized using concepts from *category theory* and *formal grammar
+theory*.
 
 ### Mathematical formalism for 'Combinator Parsers'
 
-1. *Basics*:
+#### *Basics*:
 
    - *Parser*: A parser is a function that, given an input string,
      returns a *set of possible parses*. Each parse is typically a
@@ -17,7 +17,7 @@ theory.
    - *Combinator*: A combinator is a higher-order function that takes
      one or more parsers as arguments and returns *a new parser*.
 
-2. *Formally defined parsers*:
+#### *Formally defined parsers*:
 
    Let $\( P \)$ be a parser with the type signature:
    *P: Σ* → P(R × Σ*)*
@@ -29,7 +29,7 @@ theory.
    returns a set of pairs. Each pair consists of a result and the
    remaining unparsed part of the input.
 
-3. *Combinators*:
+#### *Combinators*:
 
    - *Choice*:
      The choice combinator $\( \text{alt} \)$ tries two parsers
@@ -48,13 +48,15 @@ theory.
     where $\( \oplus \)$ denotes some combination of the results $\( r_1 \)$ and $\( r_2 \)$.
 
    - *Many*:
-     The many combinator \( \text{many} \) applies a parser zero or more times.
-     \[
-     \text{many}(P) \text{ is defined as } \lambda s . \{ (\text{results}, s') \mid \text{results is a list of results from zero or more applications of } P \text{ and } s' \text{ is the remaining input} \}
-     \]
+     The many combinator $\( \text{many} \)$ applies a parser
+     zero or more times.
+     ```math
+     many(P) = λ s . { (results, s') | results is a list of results
+     from zero or more applications of P and s' is the remaining input }
+     ```
 
    - *Many1*:
-     The many1 combinator \( \text{many1} \) applies a parser one or more times.
+     The many1 combinator $\( \text{many1} \)$ applies a parser one or more times.
      \[
      \text{many1}(P) \text{ is defined as } \text{seq}(P, \text{many}(P))
      \]
