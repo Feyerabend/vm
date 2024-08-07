@@ -19,7 +19,7 @@ theory.
 
 2. *Formally defined parsers*:
 
-   Let $$\( P \)$$ be a parser with the type signature:
+   Let $\( P \)$ be a parser with the type signature:
    $$\[
    P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*)
    \]$$
