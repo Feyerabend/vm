@@ -20,7 +20,7 @@ theory.
 2. *Formally defined parsers*:
 
    Let $\( P \)$ be a parser with the type signature:
-   P: Σ* → P(R × Σ*)
+   *P: Σ* → P(R × Σ*)*
    where $\( \Sigma^* \)$ is the set of all possible input strings,
    $\( \mathcal{R} \)$ is the set of parse results, and $\( \mathcal{P} \)$
    denotes the power set.
@@ -32,10 +32,10 @@ theory.
 3. *Combinators*:
 
    - *Choice*:
-     The choice combinator \( \text{alt} \) tries two parsers and returns the result of the first successful parser.
-     \[
-     \text{alt}(P, Q) \text{ is defined as } \lambda s . \text{filter results from } (P(s) \cup Q(s))
-     \]
+     The choice combinator $\( \text{alt} \)$ tries two parsers and returns the result of the first successful parser.
+    ```math
+    alt(P, Q) = λ s . filter results from (P(s) ∪ Q(s))
+    ```
 
    - *Sequence*:
      The sequence combinator \( \text{seq} \) combines two parsers such that the second parser is applied to the remaining input after the first parser succeeds.
