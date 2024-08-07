@@ -16,11 +16,13 @@
 
 ## enbf
 
-We are already aquantied with some formalisation of language syntax
-in "Backus-Naur Form" or "Extended Backus-Naur Form" (ENBF).
-Both are used as notation to express context-free grammars.
-Here are the EBNF for both the *prefix expression*
-and the *infix expression* as described in the examples.
+We are already acquainted with some formalizations of
+language syntax in "Backus-Naur Form" (BNF) or
+"Extended Backus-Naur Form" (EBNF). Both are used as
+notations to express context-free grammars. Below are
+the EBNF notations for both the *prefix expression* and
+the *infix expression* as described in the examples.
+
 
 ### prefix
 
