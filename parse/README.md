@@ -1,4 +1,4 @@
-# Virtual machines
+# Virtual Machines
 
 ##
 
