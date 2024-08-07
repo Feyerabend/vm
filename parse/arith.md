@@ -38,22 +38,22 @@ theory*.
     alt(P, Q) = λ s . filter results from (P(s) ∪ Q(s))
     ```
 
-   - *Sequence*:
+*Sequence*:
      The sequence combinator $\( \text{seq} \)$ combines two
      parsers such that the second parser is applied to the
      remaining input after the first parser succeeds.
-    ```math
-    seq(P, Q) = λ s . { (r1 ∘ r2, s'') | (r1, s') ∈ P(s) and (r2, s'') ∈ Q(s') }
-    ```
+
+```math
+seq(P, Q) = λ s . { (r1 ∘ r2, s'') | (r1, s') ∈ P(s) and (r2, s'') ∈ Q(s') }
+```
     where $\( \oplus \)$ denotes some combination of the results $\( r_1 \)$ and $\( r_2 \)$.
 
-   - *Many*:
+*Many*:
      The many combinator $\( \text{many} \)$ applies a parser
      zero or more times.
-     ```math
-     many(P) = λ s . { (results, s') | results is a list of results
-     from zero or more applications of P and s' is the remaining input }
-     ```
+```math
+many(P) = λ s . { (results, s') | results is a list of results from zero or more applications of P and s' is the remaining input }
+```
 
    - *Many1*:
      The many1 combinator $\( \text{many1} \)$ applies a parser one or more times.
