@@ -20,12 +20,14 @@ theory.
 2. *Formally defined parsers*:
 
    Let $\( P \)$ be a parser with the type signature:
-   $$\[
-   P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*)
-   \]$$
-   where \( \Sigma^* \) is the set of all possible input strings, \( \mathcal{R} \) is the set of parse results, and \( \mathcal{P} \) denotes the power set.
+   $\[ P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*) \]$
+   where $\( \Sigma^* \)$ is the set of all possible input strings,
+   $\( \mathcal{R} \)$ is the set of parse results, and $\( \mathcal{P} \)$
+   denotes the power set.
 
-   This means that a parser \( P \) takes an input string and returns a set of pairs. Each pair consists of a result and the remaining unparsed part of the input.
+   This means that a parser $\( P \)$ takes an input string and
+   returns a set of pairs. Each pair consists of a result and the
+   remaining unparsed part of the input.
 
 3. *Combinators*:
 
