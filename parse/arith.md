@@ -20,7 +20,9 @@ theory.
 2. *Formally defined parsers*:
 
    Let $\( P \)$ be a parser with the type signature:
-   $$\[ P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*) \]$$
+   $$\[
+    P: \Sigma^* \to \mathcal{P}(\mathcal{R} \times \Sigma^*)
+   \]$$
    where $\( \Sigma^* \)$ is the set of all possible input strings,
    $\( \mathcal{R} \)$ is the set of parse results, and $\( \mathcal{P} \)$
    denotes the power set.
