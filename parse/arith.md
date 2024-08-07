@@ -35,8 +35,8 @@ theory*.
 The choice combinator $\( \text{alt} \)$ tries two parsers
 and returns the result of the first successful parser.
 
-```math
-alt(P, Q) = λ s . filter results from (P(s) ∪ Q(s))
+```
+$`alt(P, Q) = λ s . `$filter results from $`(P(s) ∪ Q(s))`$
 ```
 
 *Sequence*:
