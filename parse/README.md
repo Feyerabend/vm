@@ -197,16 +197,17 @@ these kind of parsing is ANTLR[^antlr]
 
 Combinator parsers are in contrast a type of parser built using higher-order
 functions, known as combinators, that combine simpler parsers to build more
-complex parsers.
+complex parsers. The combinator parsers have a very natural connection to
+mathematics: [Combinator Parsers](combpar.pdf).
 
-It has a functional approach and works very well with functional programmin
+It has a functional approach and works very well with functional programming
 languages (e.g. Haskell). They use functions to define how different parts
 of the language are parsed, combining these functions to handle more comple
 structures. They promote code reuse and modularity. You can build small,
 simple parsers and then combine them to create more complex parsers.
 This modularity makes it easy to understand, extend, and maintain the parser.
 
-The composability: implies that in various ways you create new parsers.
+The composability implies that in various ways you create new parsers.
 For example, you can sequence parsers to match patterns in a specific order
 or choose between parsers to handle alternatives. Combinator parsers can
 handle backtracking naturally, trying multiple parsing strategies and choosing
