@@ -2,16 +2,71 @@
 
 ## run
 
+Try running a script 'arith.py':
+
 ```shell
 > python3 arith.py
 ```
 
+The result will be ..
 
+Looking at the code we can e.g. see how parsing a character is done:
+
+```python
+def char(c):
+    def parser(text, pos):
+        if pos < len(text) and text[pos] == c:
+            return c, pos + 1
+        return None, pos
+    return parser
+```
+
+First to notice is that the 'def' returns another 'def'. That is, the
+assumed parser really returns another parser. The inner parser returned
+here test from the text, the first character. If it finds one, it
+returns the character and also advances the parser one step in the text.
+
+This is not so much different from what happends in a traditional 
+parser, e.g. recursive decent parser, we have seen before.
+
+If we take another parser for 'whitespace':
+
+```python
+def whitespace():
+    return many(choice(char(' '), char('\t'), char('\n')))
+```
+
+we can see that the most inner parser have a 'choice' between
+characters, a space, a tabulator mark, and a newline.
+
+Looking at 'choice':
+
+```python
+def choice(*parsers):
+    def parser(text, pos):
+        for p in parsers:
+            res, pos = p(text, pos)
+            if res is not None:
+                return res, pos
+        return None, pos
+    return parser
+```
+
+it looks for parsers inside, and with the first
+success for the returning parser, it accepts it
+as the choice and returns the resulting returned
+text, but also the position where the match was made.
+
+In a way this reflects how grammars work with
+choises, as we have seen before with '|'. The 'defs'
+works as definitions in the grammar.
+
+
+## 
 
 ```shell
 > python3 arith2.py
 ```
-
 
 
 ## enbf
