@@ -8,7 +8,15 @@ Try running a script 'arith.py':
 > python3 arith.py
 ```
 
-The result will be ..
+It will parse the arithmetical expression '3 + 2 * (x - 4) / y' and
+the result will be:
+
+```shell
+..
+```
+
+We will ignore this result for the moment, but focus on that is
+parsed the expression sucessfully.
 
 Looking at the code we can e.g. see how parsing a character is done:
 
@@ -60,13 +68,6 @@ text, but also the position where the match was made.
 In a way this reflects how grammars work with
 choises, as we have seen before with '|'. The 'defs'
 works as definitions in the grammar.
-
-
-## 
-
-```shell
-> python3 arith2.py
-```
 
 
 ## enbf
@@ -128,6 +129,14 @@ digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 These EBNF rules define the syntax of the prefix and infix expressions
 as used in the examples, ensuring the correct structure and order of operations.
+
+
+## 
+
+```shell
+> python3 arith2.py
+```
+
 
 
 ## combinator parsers
