@@ -67,7 +67,7 @@ text, but also the position where the match was made.
 
 In a way this reflects how grammars work with
 choises, as we have seen before with '|'. The 'defs'
-works as definitions in the grammar.
+works or corresponds to the definitions in the grammar.
 
 
 ## enbf
