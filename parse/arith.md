@@ -1,23 +1,25 @@
 # combinator parsers
 
+## formalism
+
 The fundamental components of combinator parsers and their operations
 can be formalized using concepts from *category theory* and *formal grammar
 theory*.
 
-### Formalism for 'Combinator Parsers'
 
-#### *Basics*
+#### Basics
 
-   - *Parser*: A parser is a function that, given an input string,
+   - *Parser*. A parser is a function that, given an input string,
      returns a *set of possible parses*. Each parse is typically a
      pair consisting of the parsed result and the remaining unparsed
      portion of the input (pointing at a position in the remaining
      input).
 
-   - *Combinator*: A combinator is a higher-order function that takes
+   - *Combinator*. A combinator is a higher-order function that takes
      one or more parsers as arguments and returns *a new parser*.
 
-#### *Formally defined parsers*
+
+#### Formally defined parsers
 
    Let $\( P \)$ be a parser with the type signature:
    *P: Σ* → P(R × Σ*)*
@@ -29,7 +31,8 @@ theory*.
    returns a set of pairs. Each pair consists of a result and the
    remaining unparsed part of the input.
 
-#### *Combinators*
+
+#### Combinators
 
 *Choice*:
 The choice combinator $\( \text{alt} \)$ tries two parsers
@@ -58,7 +61,7 @@ The sequence combinator $\( \text{seq} \)$ combines two
 parsers such that the second parser is applied to the
 remaining input after the first parser succeeds.
 
-```math
+```
 seq(P, Q) = λ s . { (r1 ∘ r2, s'') | (r1, s') ∈ P(s) and (r2, s'') ∈ Q(s') }
 ```
 where $\( \oplus \)$ denotes some combination of the results $\( r_1 \)$ and $\( r_2 \)$.
