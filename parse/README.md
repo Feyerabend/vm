@@ -12,11 +12,11 @@ It will parse the arithmetical expression '3 + 2 * (x - 4) / y' and
 the result will be:
 
 ```shell
-..
+Parsed result: ..
 ```
 
-We will ignore this result for the moment, but focus on that is
-parsed the expression sucessfully.
+We will ignore this result for the moment, but focus on that it
+(should have) parsed the expression sucessfully.
 
 Looking at the code we can e.g. see how parsing a character is done:
 
