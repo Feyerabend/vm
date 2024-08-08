@@ -177,7 +177,7 @@ which represents the arithmetic expression in a prefix fashion. Through
 some conversions, we end up back with the original infix.
 
 
-## combinator parsers
+## traditional & combinator parsers
 
 Traditional parsers, such as the hand crafted recursive descent parsers which
 we already are familiar with, have a simple and straightforward way to parse
