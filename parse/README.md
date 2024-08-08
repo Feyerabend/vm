@@ -74,10 +74,11 @@ works as definitions in the grammar.
 
 We are already acquainted with some formalizations of
 language syntax in "Backus-Naur Form" (BNF) or
-"Extended Backus-Naur Form" (EBNF). Both are used as
-notations to express context-free grammars. Below are
-the EBNF notations for both the *prefix expression* and
-the *infix expression* as described in the examples.
+"Extended Backus-Naur Form" (EBNF) or some versions
+of them. Both forms are used as notations to express
+context-free grammars. Below are the EBNF notations
+for both the *prefix expression* and the
+*infix expression* as described in the examples.
 
 
 ### prefix
