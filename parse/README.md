@@ -98,7 +98,7 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
-- *Infix EBNF*:
+- *Infix*:
   - `expression` consists of `term` optionally followed by a
      sequence of `term`s separated by `+` or `-`.
   - `term` consists of `factor` optionally followed by a
@@ -130,7 +130,7 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
-- *Prefix EBNF*:
+- *Prefix*:
   - `expression` can be either an operator followed by two
      expressions enclosed in parentheses, or it can  be an operand.
   - `operator` includes the basic arithmetic operators:
