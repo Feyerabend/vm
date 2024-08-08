@@ -81,20 +81,6 @@ for both the *prefix expression* and the
 *infix expression* as described in the examples.
 
 
-### prefix
-
-Prefix notation (Polish notation) is where operators precede their
-operands. The EBNF for the given prefix notation would look like this:
-
-```ebnf
-expression  ::= "(" operator expression expression ")" | operand
-operator    ::= "+" | "-" | "*" | "/"
-operand     ::= variable | number
-variable    ::= "x" | "y"  // extend this to include other variable names if needed
-number      ::= digit {digit}
-digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-```
-
 ### infix
 
 Infix notation is the more conventional form where operators are
@@ -110,6 +96,28 @@ variable    ::= "x" | "y"  // extend this to include other variable names if nee
 number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
+
+This corresponds to what the parsing in 'arith.py' do to arithmetical
+expressions, e.g. '3 + 2 * (x - 4) / y'.
+
+
+### prefix
+
+Prefix notation (Polish notation) is where operators precede their
+operands. The EBNF for the given prefix notation would look like this:
+
+```ebnf
+expression  ::= "(" operator expression expression ")" | operand
+operator    ::= "+" | "-" | "*" | "/"
+operand     ::= variable | number
+variable    ::= "x" | "y"  // extend this to include other variable names if needed
+number      ::= digit {digit}
+digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+```
+
+A sample of this could be '+ 3 / * 2 - x 4 y' which corresponds to
+the above infix '3 + 2 * (x - 4) / y'.
+
 
 ### description
 
