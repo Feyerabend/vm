@@ -202,7 +202,9 @@ during porting.
 
 ### 17. [parse](/parse)
 
-
+Parsers have a long tradition. Ordinary recursive decent parsers can be
+constructed by hand, but also be automated. An interesting more recent
+development is combinator parsers.
 
 
 ## License
