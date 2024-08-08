@@ -98,6 +98,18 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
+- *Infix EBNF*:
+  - `expression` consists of `term` optionally followed by a
+     sequence of `term`s separated by `+` or `-`.
+  - `term` consists of `factor` optionally followed by a
+    sequence of `factor`s separated by `*` or `/`.
+  - `factor` can be an `expression` enclosed in parentheses
+    or an `operand`.
+  - `operand` can be either a variable or a number.
+  - `variable` is restricted to `x` and `y` for simplicity
+    (can be extended with more variables).
+  - `number` consists of one or more digits.
+
 This corresponds to what the parsing in 'arith.py'
 do to arithmetical expressions,
 e.g. '3 + 2 * (x - 4) / y'.
@@ -118,6 +130,16 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
+- *Prefix EBNF*:
+  - `expression` can be either an operator followed by two
+     expressions enclosed in parentheses, or it can  be an operand.
+  - `operator` includes the basic arithmetic operators:
+    `+`, `-`, `*`, and `/`.
+  - `operand` can be either a variable or a number.
+  - `variable` is restricted to `x` and `y` for simplicity
+     (can be extended with more variables).
+  - `number` consists of one or more digits.
+
 A sample of this could be '+ 3 / * 2 - x 4 y' which
 corresponds to the above infix '3 + 2 * (x - 4) / y'.
 
@@ -131,36 +153,6 @@ This is how to do this infix to prefix conversion manually:
 6. Substitute / (* 2 (- x 4)) y back into the expression: 3 + (/ (* 2 (- x 4)) y)
 7. Convert to prefix: + 3 (/ (* 2 (- x 4)) y)
 
-
-### description
-
-A short description of the above syntax:
-
-- *Prefix EBNF*:
-  - `expression` can be either an operator followed by two
-     expressions enclosed in parentheses, or it can  be an operand.
-  - `operator` includes the basic arithmetic operators:
-    `+`, `-`, `*`, and `/`.
-  - `operand` can be either a variable or a number.
-  - `variable` is restricted to `x` and `y` for simplicity
-     (can be extended with more variables).
-  - `number` consists of one or more digits.
-
-- *Infix EBNF*:
-  - `expression` consists of `term` optionally followed by a
-     sequence of `term`s separated by `+` or `-`.
-  - `term` consists of `factor` optionally followed by a
-    sequence of `factor`s separated by `*` or `/`.
-  - `factor` can be an `expression` enclosed in parentheses
-    or an `operand`.
-  - `operand` can be either a variable or a number.
-  - `variable` is restricted to `x` and `y` for simplicity
-    (can be extended with more variables).
-  - `number` consists of one or more digits.
-
-These EBNF rules define the syntax of the prefix and infix
-expressions as used in the examples, ensuring structure and
-order of operations.
 
 ## run
 
