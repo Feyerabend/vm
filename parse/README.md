@@ -83,9 +83,10 @@ for both the *prefix expression* and the
 
 ### infix
 
-Infix notation is the more conventional form where operators are
-placed between operands. The EBNF for infix notation that corresponds
-to the previous prefix examples would look like this:
+Infix notation is the more conventional form where
+operators are placed between operands. The EBNF for
+infix notation that corresponds to the previous
+prefix examples would look like this:
 
 ```ebnf
 expression  ::= term {("+" | "-") term}
@@ -97,14 +98,16 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
-This corresponds to what the parsing in 'arith.py' do to arithmetical
-expressions, e.g. '3 + 2 * (x - 4) / y'.
+This corresponds to what the parsing in 'arith.py'
+do to arithmetical expressions,
+e.g. '3 + 2 * (x - 4) / y'.
 
 
 ### prefix
 
-Prefix notation (Polish notation) is where operators precede their
-operands. The EBNF for the given prefix notation would look like this:
+Prefix notation (Polish notation) is where operators
+precede their operands. The EBNF for the given prefix
+notation would look like this:
 
 ```ebnf
 expression  ::= "(" operator expression expression ")" | operand
@@ -115,10 +118,10 @@ number      ::= digit {digit}
 digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
-A sample of this could be '+ 3 / * 2 - x 4 y' which corresponds to
-the above infix '3 + 2 * (x - 4) / y'.
+A sample of this could be '+ 3 / * 2 - x 4 y' which
+corresponds to the above infix '3 + 2 * (x - 4) / y'.
 
-This is how to do this conversion manually:
+This is how to do this infix to prefix conversion manually:
 1. First convert x - 4 to prefix: - x 4
 2. Substitute - x 4 back into the expression: 2 * (- x 4)
 3. Convert to prefix: * 2 (- x 4), swap operator and first operand
@@ -134,21 +137,25 @@ This is how to do this conversion manually:
 A short description of the above syntax:
 
 - *Prefix EBNF*:
-  - `expression` can be either an operator followed by two expressions enclosed
-     in parentheses, or it can  be an operand.
-  - `operator` includes the basic arithmetic operators: `+`, `-`, `*`, and `/`.
+  - `expression` can be either an operator followed by two
+     expressions enclosed in parentheses, or it can  be an operand.
+  - `operator` includes the basic arithmetic operators:
+    `+`, `-`, `*`, and `/`.
   - `operand` can be either a variable or a number.
-  - `variable` is restricted to `x` and `y` for simplicity (can be extended).
+  - `variable` is restricted to `x` and `y` for simplicity
+     (can be extended with more variables).
   - `number` consists of one or more digits.
 
 - *Infix EBNF*:
-  - `expression` consists of `term` optionally followed by a sequence
-     of `term`s separated by `+` or `-`.
-  - `term` consists of `factor` optionally followed by a sequence of
-    `factor`s separated by `*` or `/`.
-  - `factor` can be an `expression` enclosed in parentheses or an `operand`.
+  - `expression` consists of `term` optionally followed by a
+     sequence of `term`s separated by `+` or `-`.
+  - `term` consists of `factor` optionally followed by a
+    sequence of `factor`s separated by `*` or `/`.
+  - `factor` can be an `expression` enclosed in parentheses
+    or an `operand`.
   - `operand` can be either a variable or a number.
-  - `variable` is restricted to `x` and `y` for simplicity (can be extended).
+  - `variable` is restricted to `x` and `y` for simplicity
+    (can be extended with more variables).
   - `number` consists of one or more digits.
 
 These EBNF rules define the syntax of the prefix and infix
@@ -167,15 +174,20 @@ A result from running should be:
 
 ```shell
 Parsed result: ..
-Reconstructed expression:
+Reconstructed expression: 3+2*(x-4)/y
 Evaluated result: 4.0  with x = 5 and y = 2"
 ```
 
 Besides the cryptic first parsed result, a reconstructed expression from this
-is shown, and also the expression is evaluated, with application of x as 5 and
-y as 2.
+result is shown below, and also the expression is evaluated, with application
+of `x` as 5 and `y` as 2.
+
+What is happening in 'arith2.py' is that the parsing results in a structure
+which represents the arithmetic expression in a prefix fashion. Through
+some conversions, we end up back to the original infix.
 
 
 ## combinator parsers
+
 
 ..
