@@ -193,7 +193,8 @@ Errors in parsing can be a bit difficult to handle, when the parser is suppose
 to report several problems in a parsed program. Example of a parser that automates
 these kind of parsing is ANTLR[^antlr]
 
-[^antlr]: ..
+[^antlr]: https://en.wikipedia.org/wiki/ANTLR, https://www.antlr.org/
+
 
 Combinator parsers are in contrast a type of parser built using higher-order
 functions, known as combinators, that combine simpler parsers to build more
@@ -214,4 +215,5 @@ handle backtracking naturally, trying multiple parsing strategies and choosing
 the one that works, that applies. Example of a parser of this type is Parsec[^parsec]
 in Haskell.
 
-[^parsec]: ..
+[^parsec]: https://wiki.haskell.org/Parsec,
+or in general: https://en.wikipedia.org/wiki/Parsec_(parser)
