@@ -18,7 +18,7 @@ It will parse the arithmetical expression '3 + 2 * (x - 4) / y' and
 the result will be:
 
 ```shell
-Parsed result: ..
+Parsed result: [[[[], 3, [' ']]], ([[], '+'], [[[' '], 2, [' ..
 ```
 
 We will ignore this result for the moment, but focus on that it
@@ -41,7 +41,9 @@ here test from the text, the first character. If it finds one, it
 returns the character and also advances the parser one step in the text.
 
 This is not so much different from what happends in a traditional 
-parser, e.g. recursive decent parser, we have seen before.
+parser, e.g. recursive decent parser, we have seen before. What is 
+different is the *use* of functions, and later (re)use of functions
+(lazily).
 
 If we take another parser for 'whitespace':
 
@@ -73,7 +75,7 @@ text, but also the position where the match was made.
 
 In a way this reflects how grammars work with
 choises, as we have seen before with '|'. The 'defs'
-works or corresponds to the definitions in the grammar.
+works as or corresponds to the definitions in the grammar.
 
 
 ## enbf
@@ -83,7 +85,7 @@ language syntax in "Backus-Naur Form" (BNF) or
 "Extended Backus-Naur Form" (EBNF) or some versions
 of them. Both forms are used as notations to express
 context-free grammars. Below are the EBNF notations
-for both the *prefix expression* and the
+for both the *prefix* and the
 *infix expression* as described in the examples.
 
 
@@ -169,21 +171,23 @@ Now, test the following program 'arith2.py':
 A result from running should be:
 
 ```shell
-Parsed result: ..
-Reconstructed expression: 3+2*(x-4)/y
-Evaluated result: 4.0  with x = 5 and y = 2"
+Parsed result: ([[], '+'], [[], 3, [' ']], ([[], '/'], ([[], ..
+Reconstructed expression: (3+((2*(x-4))/y))
+Evaluated result: 4.0   with x = 5 and y = 2
 ```
 
 Besides the cryptic first parsed result, a reconstructed expression from this
 result is shown below, and also the expression is evaluated, with application
-of `x` as 5 and `y` as 2.
+of x as 5 and y as 2.
 
 What is happening in 'arith2.py' is that the parsing results in a structure
 which represents the arithmetic expression in a prefix fashion. Through
-some conversions, we end up back with the original infix.
+some conversions, we end up back with the original infix. (We can do better,
+carefully considering the operators precendence, we can eliminate some of
+the parentheses.)
 
 
-## traditional & combinator parsers
+## traditional vs. combinator parsers
 
 Traditional parsers, such as the hand crafted recursive descent parsers which
 we already are familiar with, have a simple and straightforward way to parse
@@ -191,35 +195,37 @@ using very explicit functions or methods, recursively calling input reflecting
 the grammar. 
 
 It have often used the imperative approach in explicit control flow. Typically
-a function corresponds to a non-terminal from the grammar. it uses helpers in
-form of tokenizers or scanners, to pick token by token from input. A (token)
-look-ahead can see what comes next, for easier parsing.
+a function corresponds to a non-terminal from the grammar. These parsers uses
+helpers in form of tokenizers or scanners, to pick token by token from input.
+A (token) look-ahead read can see what comes next, for easier parsing.
 
 Errors in parsing can be a bit difficult to handle, when the parser is suppose
-to report several problems in a parsed program. Example of a parser that automates
-these kind of parsing is ANTLR[^antlr]
+to report *several* consecutive problems in a parsed program. Example of a
+parser that automates parsing through traditional means is ANTLR[^antlr].
 
-[^antlr]: https://en.wikipedia.org/wiki/ANTLR, https://www.antlr.org/
+[^antlr]: https://en.wikipedia.org/wiki/ANTLR, and https://www.antlr.org/
 
 
-Combinator parsers are in contrast a type of parser built using higher-order
-functions, known as combinators, that combine simpler parsers to build more
+Combinator parsers are, in contrast, a type of parser built using higher-order
+functions, known as *combinators*, that combine simpler parsers to build more
 complex parsers. The combinator parsers have a very natural connection to
 mathematics: [Combinator Parsers](combpar.pdf).
 
-It has a functional approach and works very well with functional programming
-languages (e.g. Haskell). They use functions to define how different parts
-of the language are parsed, combining these functions to handle more comple
-structures. They promote code reuse and modularity. You can build small,
+The combinator parsers has a functional approach and works very well with
+functional programming languages (e.g. Haskell), or a functional style.
+They use functions to define how different parts of the language are
+parsed, combining these functions to handle more complex structures.
+They promote code reuse and modularity. You can build small,
 simple parsers and then combine them to create more complex parsers.
-This modularity makes it easy to understand, extend, and maintain the parser.
+This modularity makes it easy to understand, extend, change, and maintain
+the parser.
 
 The composability implies that in various ways you create new parsers.
 For example, you can sequence parsers to match patterns in a specific order
 or choose between parsers to handle alternatives. Combinator parsers can
 handle backtracking naturally, trying multiple parsing strategies and choosing
-the one that works, that applies. Example of a parser of this type is Parsec[^parsec]
-in Haskell.
+the one that works, that applies. Example of a parser of this type is
+Parsec[^parsec] originally in Haskell, but also 'ported' to other languages.
 
 [^parsec]: https://wiki.haskell.org/Parsec,
 or in general: https://en.wikipedia.org/wiki/Parsec_(parser)
