@@ -189,15 +189,15 @@ using very explicit functions or methods, recursively calling input reflecting
 the grammar. 
 
 It have often used the imperative approach in explicit control flow. Typically
-a function corresponds to a non-terminal from the grammar. it uses helpers in
-form of tokenizers or scanners, to pick token by token from input. A (token)
-look-ahead can see what comes next, for easier parsing.
+a function corresponds to a non-terminal from the grammar. These parsers uses
+helpers in form of tokenizers or scanners, to pick token by token from input.
+A (token) look-ahead read can see what comes next, for easier parsing.
 
 Errors in parsing can be a bit difficult to handle, when the parser is suppose
 to report *several* consecutive problems in a parsed program. Example of a
 parser that automates parsing through traditional means is ANTLR[^antlr].
 
-[^antlr]: https://en.wikipedia.org/wiki/ANTLR, https://www.antlr.org/
+[^antlr]: https://en.wikipedia.org/wiki/ANTLR, and https://www.antlr.org/
 
 
 Combinator parsers are, in contrast, a type of parser built using higher-order
