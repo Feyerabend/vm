@@ -172,7 +172,7 @@ Evaluated result: 4.0   with x = 5 and y = 2
 
 Besides the cryptic first parsed result, a reconstructed expression from this
 result is shown below, and also the expression is evaluated, with application
-of `x` as 5 and `y` as 2.
+of x as 5 and y as 2.
 
 What is happening in 'arith2.py' is that the parsing results in a structure
 which represents the arithmetic expression in a prefix fashion. Through
