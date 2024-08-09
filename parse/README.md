@@ -194,14 +194,14 @@ form of tokenizers or scanners, to pick token by token from input. A (token)
 look-ahead can see what comes next, for easier parsing.
 
 Errors in parsing can be a bit difficult to handle, when the parser is suppose
-to report several problems in a parsed program. Example of a parser that automates
-these kind of parsing is ANTLR[^antlr]
+to report *several* consecutive problems in a parsed program. Example of a
+parser that automates parsing through traditional means is ANTLR[^antlr].
 
 [^antlr]: https://en.wikipedia.org/wiki/ANTLR, https://www.antlr.org/
 
 
-Combinator parsers are in contrast a type of parser built using higher-order
-functions, known as combinators, that combine simpler parsers to build more
+Combinator parsers are, in contrast, a type of parser built using higher-order
+functions, known as *combinators*, that combine simpler parsers to build more
 complex parsers. The combinator parsers have a very natural connection to
 mathematics: [Combinator Parsers](combpar.pdf).
 
@@ -216,8 +216,8 @@ The composability implies that in various ways you create new parsers.
 For example, you can sequence parsers to match patterns in a specific order
 or choose between parsers to handle alternatives. Combinator parsers can
 handle backtracking naturally, trying multiple parsing strategies and choosing
-the one that works, that applies. Example of a parser of this type is Parsec[^parsec]
-in Haskell.
+the one that works, that applies. Example of a parser of this type is
+Parsec[^parsec] originally in Haskell, but also 'ported' to other languages.
 
 [^parsec]: https://wiki.haskell.org/Parsec,
 or in general: https://en.wikipedia.org/wiki/Parsec_(parser)
