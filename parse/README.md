@@ -1,5 +1,11 @@
 # Virtual Machines
 
+*Combinator parsers*[^combpar] ..
+
+[^combpar]: More on combinator parsers:
+https://gdevanla.github.io/posts/write-a-parser-combinator-in-python.html,
+and https://en.wikipedia.org/wiki/Parser_combinator.
+
 ## run
 
 Try running a script 'arith.py':
@@ -217,3 +223,4 @@ in Haskell.
 
 [^parsec]: https://wiki.haskell.org/Parsec,
 or in general: https://en.wikipedia.org/wiki/Parsec_(parser)
+
