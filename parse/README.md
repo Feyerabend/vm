@@ -12,7 +12,7 @@ It will parse the arithmetical expression '3 + 2 * (x - 4) / y' and
 the result will be:
 
 ```shell
-Parsed result: ..
+Parsed result: [[[[], 3, [' ']]], ([[], '+'], [[[' '], 2, [' ..
 ```
 
 We will ignore this result for the moment, but focus on that it
@@ -69,7 +69,7 @@ text, but also the position where the match was made.
 
 In a way this reflects how grammars work with
 choises, as we have seen before with '|'. The 'defs'
-works or corresponds to the definitions in the grammar.
+works as or corresponds to the definitions in the grammar.
 
 
 ## enbf
@@ -165,9 +165,9 @@ Now, test the following program 'arith2.py':
 A result from running should be:
 
 ```shell
-Parsed result: ..
-Reconstructed expression: 3+2*(x-4)/y
-Evaluated result: 4.0  with x = 5 and y = 2"
+Parsed result: ([[], '+'], [[], 3, [' ']], ([[], '/'], ([[], ..
+Reconstructed expression: (3+((2*(x-4))/y))
+Evaluated result: 4.0   with x = 5 and y = 2
 ```
 
 Besides the cryptic first parsed result, a reconstructed expression from this
