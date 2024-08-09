@@ -176,7 +176,9 @@ of x as 5 and y as 2.
 
 What is happening in 'arith2.py' is that the parsing results in a structure
 which represents the arithmetic expression in a prefix fashion. Through
-some conversions, we end up back with the original infix.
+some conversions, we end up back with the original infix. (We can do better,
+carefully considering the operators precendence, we can eliminate some of
+the parentheses.)
 
 
 ## traditional & combinator parsers
