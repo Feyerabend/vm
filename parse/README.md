@@ -35,7 +35,9 @@ here test from the text, the first character. If it finds one, it
 returns the character and also advances the parser one step in the text.
 
 This is not so much different from what happends in a traditional 
-parser, e.g. recursive decent parser, we have seen before.
+parser, e.g. recursive decent parser, we have seen before. What is 
+different is the *use* of functions, and later (re)use of functions
+(lazily).
 
 If we take another parser for 'whitespace':
 
