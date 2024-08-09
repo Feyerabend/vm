@@ -5,7 +5,7 @@ It could be argued that traditional recursive decent parsers are close to
 combinator parsers. But there are some differences, such as the latter
 have very tight relationship with mathematics, and with functional languages.
 Traditional parsers rather have a more imperative and closeer relationship
-to the machine.
+to the (von Neumann) machine.
 
 First we take a look at simple combinator parsers that includes familiar
 parsing of expressions with an infix order of the operators.
