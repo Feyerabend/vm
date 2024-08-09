@@ -205,12 +205,14 @@ functions, known as *combinators*, that combine simpler parsers to build more
 complex parsers. The combinator parsers have a very natural connection to
 mathematics: [Combinator Parsers](combpar.pdf).
 
-It has a functional approach and works very well with functional programming
-languages (e.g. Haskell). They use functions to define how different parts
-of the language are parsed, combining these functions to handle more comple
-structures. They promote code reuse and modularity. You can build small,
+The combinator parsers has a functional approach and works very well with
+functional programming languages (e.g. Haskell), or a functional style.
+They use functions to define how different parts of the language are
+parsed, combining these functions to handle more complex structures.
+They promote code reuse and modularity. You can build small,
 simple parsers and then combine them to create more complex parsers.
-This modularity makes it easy to understand, extend, and maintain the parser.
+This modularity makes it easy to understand, extend, change, and maintain
+the parser.
 
 The composability implies that in various ways you create new parsers.
 For example, you can sequence parsers to match patterns in a specific order
