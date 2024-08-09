@@ -79,7 +79,7 @@ language syntax in "Backus-Naur Form" (BNF) or
 "Extended Backus-Naur Form" (EBNF) or some versions
 of them. Both forms are used as notations to express
 context-free grammars. Below are the EBNF notations
-for both the *prefix expression* and the
+for both the *prefix* and the
 *infix expression* as described in the examples.
 
 
