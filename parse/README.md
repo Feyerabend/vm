@@ -2,11 +2,13 @@
 
 *Combinator parsers*[^combpar] are a way to parse e.g. programming languages.
 It could be argued that traditional recursive decent parsers are close to
-combinator parsers. Though there are some differences, such as the latter
-have very close relationships with mathematics, and functional languages.
+combinator parsers. But there are some differences, such as the latter
+have very tight relationship with mathematics, and with functional languages.
+Traditional parsers rather have a more imperative and closeer relationship
+to the machine.
 
-First we take a look at a simple parser that includes familiar parsing
-of expressions with an infix order of the operators.
+First we take a look at simple combinator parsers that includes familiar
+parsing of expressions with an infix order of the operators.
 
 [^combpar]: More on combinator parsers:
 https://gdevanla.github.io/posts/write-a-parser-combinator-in-python.html,
