@@ -175,8 +175,9 @@ Then either an expression that sits in between
 parenthesis, or a variable or a constant, are assumed as
 input. In this case the function has not been split up in
 two functions, but as can be seen the "operand" in the
-grammar is included in arguments to the choice function
-in Python.
+grammar is included in arguments to the 'choice' function
+in Python. (Also "number" in grammar corresponds to
+'constant' in Python.)
 
 
 ## ebnf
