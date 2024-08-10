@@ -182,8 +182,8 @@ in Python. (Also "number" in grammar corresponds to
 ### sample: custom numbers
 
 In a slightly different fashion of Python coding, we have a
-custom parser for a sequence of numbers, but stop when there
-are no more numbers.
+custom parser for a sequence of many numbers, but stop when there
+are no more numbers: 'many(digit_parser())'.
 
 ```python
 class Parser:
