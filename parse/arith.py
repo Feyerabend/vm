@@ -84,7 +84,7 @@ constant = map_parser(many1(digit), lambda d: int(''.join(d)))
 variable = choice(string('x'), string('y'), string('z'))
 
 
-# main
+# main custom functions
 def factor():
     return sequence(
         whitespace(),

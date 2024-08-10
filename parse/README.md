@@ -113,7 +113,7 @@ These fundamental parsers reminds us of how grammars
 can be described. Take an aritmetical expression in
 the "Extended Backus-Naur Form" (EBNF):
 
-```enbf
+```ebnf
 expression  ::= term {("+" | "-") term}
 ```
 
@@ -146,8 +146,38 @@ a list of results from each successful application
 of the parser, along with the updated position
 in the input text.
 
+### a sample: factor
 
-## enbf
+If look at the main custom parser functions, we
+can see quite clearly how the relate to the 
+grammar. Take the example of 'factor':
+
+```python
+def factor():
+    return sequence(
+        whitespace(),
+        choice(between(char('('), char(')'), expression()),
+               variable,
+               constant),
+               whitespace())
+```
+
+This function reminds of:
+
+```ebnf
+factor      ::= "(" expression ")" | operand
+operand     ::= variable | number
+```
+
+In case there are some whitespace then consume them, move
+to a choice. Then either an expression that sits in between
+parenthesis, or a variable or a constant are assumed. In
+this case it has not been split up in two function, but as
+can be seen the 'operand' is included in arguments to
+the choice function.
+
+
+## ebnf
 
 We are already acquainted with some formalizations of
 language syntax in "Backus-Naur Form" (BNF) or
