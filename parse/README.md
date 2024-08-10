@@ -296,8 +296,7 @@ some conversions, we end up back with the original infix.[^note]
 
 [^note]: We can do better,
 carefully considering the operators precendence, we can eliminate some of
-the parentheses in this sample, and as the precendence of the operators
-should be there, the conversion should not be difficult.
+the parentheses in this sample.
 
 ### ..
 
