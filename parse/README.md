@@ -146,7 +146,7 @@ a list of results from each successful application
 of the parser, along with the updated position
 in the input text.
 
-### a sample: factor
+### sample: factor
 
 If look at the main custom parser functions, we
 can see quite clearly how they relate to the 
@@ -162,7 +162,7 @@ def factor():
                whitespace())
 ```
 
-This function reminds of:
+This function reminds us of:
 
 ```ebnf
 factor      ::= "(" expression ")" | operand
@@ -178,6 +178,60 @@ two functions, but as can be seen the "operand" in the
 grammar is included in arguments to the 'choice' function
 in Python. (Also "number" in grammar corresponds to
 'constant' in Python.)
+
+### sample: custom numbers
+
+In a slightly different fashion of Python coding, we have a
+custom parser for a sequence of numbers, but stop when there
+are no more numbers. Then another parser could follow up
+what to expect next, e.g.
+
+```python
+class Parser:
+    def __init__(self, parse_func):
+        self.parse_func = parse_func
+
+    def __call__(self, input):
+        return self.parse_func(input)
+
+    def parse(self, input):
+        result = self(input)
+        if result and result[1] == '':
+            return result[0]
+        else:
+            raise ValueError(f"Failed to parse input: {input}")
+
+# one of base parsers: many
+def many(parser):
+    def parse_many(input):
+        results = []
+        while True:
+            result = parser(input)
+            if result is None:
+                break
+            value, input = result
+            results.append(value)
+        return (results, input)
+    return Parser(parse_many)
+
+# parser for single digits
+def digit_parser():
+    def parse_digit(input):
+        if input and input[0].isdigit():
+            return (input[0], input[1:])
+        return None
+    return Parser(parse_digit)
+
+# test
+def test_many_parser():
+    many_parser = many(digit_parser())
+    input_string = '1234abc'
+    result = many_parser(input_string)
+    print(f"Many parser result: {result}")
+    print(f"Expected: (['1', '2', '3', '4'], 'abc')\n")
+
+test_many_parser()
+```
 
 
 ## ebnf
