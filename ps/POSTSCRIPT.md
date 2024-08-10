@@ -2,15 +2,16 @@
 
 # Background
 
-## Xerox Parc[^parc]
+## Xerox Parc
 
 In the early 1970s, Xerox Corporation embarked on an ambitious
 project to create a research center that would push the
 boundaries of technology far beyond their core copier business.
 This vision led to the establishment of the
-*Palo Alto Research Center*, commonly known as *PARC*, in 1970.
+*Palo Alto Research Center*, commonly known as *PARC*[^parc],
+in 1970.
 
-One of PARC’s most notable early achievements was the development
+One of PARC's most notable early achievements was the development
 of the *Alto* computer in 1973. It featured a graphical user 
 interface (GUI), which was a revolutionary concept at the time,
 allowing users to interact with the computer using *windows*,
@@ -41,11 +42,12 @@ the way for software like the ubiquitous Microsoft Word.
 
 [^parc]: https://en.wikipedia.org/wiki/Palo_Alto_Research_Center
 
+
 ### Laser printers
 
 While PARC was pioneering these revolutionary computing technologies,
 Gary Starkweather was working on adapting laser technology for
-printing. Transferring from Xerox’s Rochester facility to PARC
+printing. Transferring from Xerox's Rochester facility to PARC
 in 1971, Starkweather began developing what would become the
 laser printer. By 1972, he had created a working prototype, and
 this breakthrough led to the commercialization of laser printing
@@ -53,7 +55,7 @@ technology. In 1977, Xerox released the 9700 Electronic Printing
 System, capable of printing at a remarkable speed of 120 pages
 per minute with the resolution of 300 dpi. This innovation
 transformed the printing industry, making high-speed, high-quality
-printing accessible for office automation and desktop
+printing *accessible* for office automation and desktop
 publishing.[^printer]
 
 [^printer]: https://www.historyofinformation.com/detail.php?entryid=1112
@@ -80,13 +82,14 @@ https://www.tech-insider.org/unix/research/1985/0301.html
 In 1982, Warnock and Geschke, two researchers from PARC,
 left Xerox to found Adobe Systems. Recognizing the need for
 such a technology, they decided to develop a new, more versatile
-page description language, which they named *PostScript*.
+page description language, which they named *PostScript*[^ps].
+
+[^ps]: https://en.wikipedia.org/wiki/PostScript
 
 PostScript was designed to be beside device-independent it could
 describe text, images, and graphics on any printer or display
-device. It used much of the same concept of a stack-based
-programming language, enabling precise control over the
-rendering of documents.
+device. It used much many of the same concepts of contemporary
+stack-based programming languages.
 
 The introduction of PostScript in 1984 revolutionized the printing
 and publishing industries. It allowed for the creation of complex,
@@ -105,7 +108,10 @@ implementation of type setting, especially with small size fonts,
 was (and still is) *not* public. Types are mostly copyrighted and
 owned by type foundries. Their use can be restricted and often
 involves certain costs. (However, an early exception here was Donald
-E. Knuths 'Metafont' in TeX.)
+E. Knuths 'Metafont' in TeX[^tex].)
+
+[^tex]: https://en.wikipedia.org/wiki/TeX and
+https://en.wikipedia.org/wiki/Metafont.
 
 
 ### Apple & Adobe
@@ -113,14 +119,11 @@ E. Knuths 'Metafont' in TeX.)
 The relationship between Xerox PARC's innovations and PostScript
 became even more significant through Adobe's partnership with
 [Apple](APPLE.md). In 1985, Apple launched the LaserWriter, the
-first PostScript-based laser printer, which worked seamlessly
-with the Macintosh computer. This collaboration was instrumental
-in the rise of desktop publishing (DTP), empowering individuals
-and small businesses to produce professional-quality printed
-materials without needing expensive typesetting equipment.
+first PostScript-based laser printer. The collaboration was
+instrumental in the rise of desktop publishing (DTP).
 
-The LaserWriter was expensive, almost $20,000 USD today. But
-the investment could be balanced against much more expensive
+But the LaserWriter was expensive, almost $20,000 USD today.
+The investment could though be balanced against much more expensive
 hire of labour, professional equipment and the cost of time
 for a final product. The lower the cost of the printer, the
 more attractive the alternative was.[^sidenote]
@@ -128,13 +131,12 @@ more attractive the alternative was.[^sidenote]
 One more element was required for the DTP revolution to take off:
 *PageMaker*.[^pagemaker] PageMaker, developed by Aldus
 Corporation[^aldus] and released in 1985, was one of the
-first desktop publishing software applications.
-It revolutionized the publishing industry by enabling users to
-create professional-quality documents with flowing text, pictures
-and graphics integrated on the same page. PageMaker’s compatibility
-with Apple Macintosh and its use of the PostScript page description
-language were pivotal in making desktop publishing accessible
-to a wider audience.
+first desktop publishing software applications. It changed the
+publishing industry by enabling users to create professional-quality
+documents with flowing text, pictures and graphics integrated
+on the same page. PageMaker's compatibility with Apple Macintosh
+and its use of the PostScript page description language were
+pivotal in making desktop publishing accessible to a wider audience.
 
 [^sidenote]: When I was a student, sometime in the 1980s,
 the option of writing an essay and obtaining a laser-printed
@@ -152,6 +154,9 @@ https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/
 
 
 ### Consequences
+
+Thus the combination of Macintosh, laser printers and applications
+such as PageMaker changed the scene of small scale publishing.
 
 *"Democratization" of publishing*: These technologies lowered the
 barriers to entry in the publishing industry. Small businesses,
@@ -177,9 +182,7 @@ than with traditional methods.
 
 *Desktop Publishing (DTP)*: Much of the synergy between PageMaker,
 PostScript, laser printers, and the Macintosh gave rise to
-the desktop publishing industry. This revolutionized how
-printed materials were produced and led to the development
-of new software and hardware designed specifically for this purpose.
+the desktop publishing industry.
 
 
 ## References
@@ -187,20 +190,17 @@ of new software and hardware designed specifically for this purpose.
 Brock, David C., "PostScript: A Digital Printing Press"
 https://computerhistory.org/blog/postscript-a-digital-printing-press/
 
-“Laser printing,” Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/Laser_printing (Accessed: 17 July 2024).
+"Laser printing," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/Laser_printing (Accessed: 17 July 2024).
 
 "LaserWriter," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/LaserWriter  (Accessed: 17 July 2024).
 
-“PostScript,” Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/PostScript (Accessed: 17 July 2024).
+"PostScript," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/PostScript (Accessed: 17 July 2024).
 
-Warnock, John, "Simple Ideas That Changed Printing and Publishing", *Proceedings of the American Philosophical Society*, no. 156, 2012, pp. 363-378. 
+Warnock, John, "Simple Ideas That Changed Printing and Publishing", *Proceedings of the American Philosophical Society*, no. 156, 2012, pp. 363-378.
 
----
-
-
-Reference manual 2nd ed. 
+Reference manual 2nd ed:
 https://www.os2site.com/sw/dev/openwatcom/docs/postscript_level_2_reference_manual.pdf
 
-PostScript and Forth
+PostScript and Forth:
 https://dl.acm.org/doi/pdf/10.1145/122077.122083
 
