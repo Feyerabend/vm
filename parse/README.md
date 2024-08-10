@@ -121,18 +121,18 @@ of a *choice* of either '+' or '-' and then a 'term'.
 
 A short summary of what the base parsers do:
 - *sequence*:
-This combinator takes multiple parsers and applies
+Takes multiple parsers and applies
 them in sequence to the input text. It returns the
 combined result of all parsers if they all succeed,
 along with the position in the text after the last
 parser has been applied.
 - *choice*:
-This combinator tries multiple parsers in order,
+Tries multiple parsers in order,
 returning the result of the first parser that
 succeeds. If none of the parsers succeed, it
 returns a failure.
 - *many*:
-This combinator applies a single parser repeatedly,
+Applies a single parser repeatedly,
 as many times as possible (including *zero times*).
 It collects all the successful results into a
 list and returns it along with the final position
