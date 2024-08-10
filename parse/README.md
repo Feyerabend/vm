@@ -155,15 +155,13 @@ language syntax in "Backus-Naur Form" (BNF) or
 homebrew versions of them). Both forms are used as
 notations to express context-free grammars. Below
 are the EBNF notations for both the *prefix* and the
-*infix expression* as described in the examples.
+*infix expression*.
 
 
 ### infix
 
 Infix notation is the more conventional form where
-operators are placed between operands. The EBNF for
-infix notation that corresponds to the previous
-prefix examples would look like this:
+operators are placed between operands.
 
 ```ebnf
 expression  ::= term {("+" | "-") term}
@@ -194,8 +192,7 @@ e.g. '3 + 2 * (x - 4) / y'.
 ### prefix
 
 Prefix notation (Polish notation) is where operators
-precede their operands. The EBNF for the given prefix
-notation would look like this:
+precede their operands.
 
 ```ebnf
 expression  ::= "(" operator expression expression ")" | operand
@@ -215,7 +212,7 @@ digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
      (can be extended with more variables).
   - `number` consists of one or more digits.
 
-A sample of this could be '+ 3 / * 2 - x 4 y' which
+An example of this could be '+ 3 / * 2 - x 4 y' which
 corresponds to the above infix '3 + 2 * (x - 4) / y'.
 
 This is how to do this infix to prefix conversion manually:
