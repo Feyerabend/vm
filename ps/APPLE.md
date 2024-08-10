@@ -4,30 +4,36 @@
 # Apple, PostScript, PDF and screen rendering
 
 Based on the background of [PostScript](POSTSCRIPT.md), in the mid-80s,
-Apple achieved significant success early with the introduction of “affordable”
-laser printers and software programs like PageMaker. These programs allowed
-users to layout pictures, text, and graphics. Additionally, PostScript
-enabled the transfer of what was seen on the screen to be printed in
-relatively high detail, such as 300 dpi.
+Apple achieved significant success early with the introduction of
+"affordable" laser printers and software programs like PageMaker.
+These kind of programs allowed users to layout pictures, text, and
+graphics. Additionally, PostScript enabled the transfer of what was
+seen on the screen to be printed in relatively high detail, such as
+300 dpi. There really was nothing between high-quality matrix printers
+and more prefessional equipments before this, leaving a big
+market opportunity for what would become DTP or desktop publishing.
 
 Interesting enough the LaserWriter had a Motorola 68000 at 12 MHz,
 and memory of 1.5 MB, while a typical MacPlus had a Motorola 68000
 at 8 Mhz with a memory starting at 1 MB RAM, but, to my experience,
-often was upgraded with 2 or 4 in the late 80s.
+often was upgraded with 2 or 4 in the late 80s. Thus the printer
+was in fact more powerful than the computer, which was also reflected
+in the price.
 
 Initially, the Macintosh did not have a strong start upon its launch.
-However, desktop publishing (DTP) and other software made it a much
-more appealing product in critical markets at the right time.
+However, DTP made it a much more appealing product in critical markets
+at the right time.
 
 
 ## PDF renders PostScript a bit obsolete ..
 
 Later on, PostScript was succeeded by PDF (Portable Document Format),
-which can be easily “distilled” or converted from PostScript. PDF
-inherits many ideas from PostScript, but it has evolved significantly.
-It is designed with a different focus, making it suitable not only for
-printing but also for viewing on screens.[^pdf] Yes, it converted
-from a __programming language__ to a __portable document format__.
+which can be easily "distilled" or converted from PostScript (PDF can
+also be converted to PostScript). PDF inherits many ideas from
+PostScript, but it has evolved significantly. It is designed with a
+different focus, making it suitable not only for printing but also
+for viewing documents on screens.[^pdf] Yes, it converted from a
+__programming language__ to a __portable document format__.
 
 [^pdf]: https://en.wikipedia.org/wiki/PDF
 
@@ -76,20 +82,17 @@ X Window System. DSP used X as a point of integration.
 
 [^next]: https://en.wikipedia.org/wiki/NeXT
 
-Display PostScript became integral to NeXT’s operating system,
+Display PostScript became integral to NeXT's operating system,
 NEXTSTEP, which was renowned for its graphical user interface
 (GUI) and object-oriented development environment. And as is
 known, *MacOS X* inherited *a lot* from what it once was based on:
-NEXTSTEP.[^nextstep]
-
-DSP laid the foundation for Adobe’s later development of both
-Adobe Display PostScript (ADPS) and Portable Document Format
-(PDF).
+NEXTSTEP[^nextstep]. (Many programming API's were still some
+years ago prefixed by "ns" as from "NEXTSTEP".) 
 
 [^nextstep]: https://en.wikipedia.org/wiki/NeXTSTEP
 
-Apple’s adoption of PDF for its rendering engine in *macOS*
-highlighted PDF’s strengths, providing a unified approach
+Apple's adoption of PDF for its rendering engine in *macOS*
+highlighted PDF's strengths, providing a unified approach
 to rendering that served equally well for on-screen display,
 printing, and document exchange. All in one.
 
@@ -117,120 +120,123 @@ Source code: https://www.w3.org/History/1991-WWW-NeXT/Implementation/
 
 ### PDF in Apple's GUI
 
-**Core Graphics (Quartz 2D)**: Apple's Core Graphics framework[^coredoc],
+If we take a look at some influence vector graphics and
+typography have had on Apple's OS, here are a few remarks:
+
+*Core Graphics (Quartz 2D)*: Apple's Core Graphics framework[^coredoc],
 known as *Quartz 2D,*[^quartz2ddoc] is the cornerstone of their graphics
-rendering engine in macOS. Quartz 2D is based on the same *imaging model*
-as *PDF*. This allows the operating system to render text and graphics
-with high precision and consistency, using the same techniques for both
-screen display and printing.
+rendering engine in the modern macOS. Quartz 2D is based on the same
+*imaging model* as *PDF*. This allows the operating system to render
+text and graphics with high precision and consistency, using the same
+techniques for both *screen display* and *printing*.
 
 [^coredoc]: https://developer.apple.com/documentation/coregraphics
 
 [^quartz2ddoc]: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html
 
-**Resolution independence**: PDF's scalable nature means that graphics
+*Resolution independence*: PDF's scalable nature means that graphics
 and text can be rendered at (for the most part) any reasonable resolution
 without loss of quality. This was a critical feature for Apple's GUI,
 ensuring that elements would look sharp and clear on displays with
-varying resolutions, including the high-resolution *Retina displays*
+varying resolutions, including the high-resolution "Retina displays"
 introduced later.
 
-**Consistent output**: Using PDF as a basis for on-screen rendering
+*Consistent output*: Using PDF as a basis for on-screen rendering
 ensures that the visual output is consistent across *different devices*.
 This is similar to the WYSIWYG (What You See Is What You Get) principle
 that PostScript brought to desktop publishing. What users see on their
 screen is a faithful representation of what will be printed or displayed
-on another device.
+on another device. A connected new screen will probably look alright
+even if the dimansions and resolutions can be a bit off standard.
 
-**Advanced graphics**: PDF supports advanced graphics features such as
+*Advanced graphics*: PDF supports advanced graphics features such as
 transparency, gradients, and complex vector shapes. By utilizing PDF
-for rendering, Apple's GUI could incorporate these advanced graphics
-features seamlessly, enhancing the visual appeal and functionality
+for rendering, the GUI enhance the visual appeal and functionality
 of the user interface.
 
-**Performance optimization**: Apple's implementation of PDF for
+*Performance optimization*: The implementation of PDF for
 rendering is optimized for performance, ensuring smooth and responsive
 interactions within the GUI. The efficient handling of vector graphics
 and text rendering helps maintain a high frame rate and responsiveness,
-even with complex visuals. (But more on this later.)
+even with complex visuals. (But more on this later on.)
 
-**Compatibility & integration**: PDF is a widely used standard for
-document exchange, and by using it as a basis for their rendering engine,
-Apple ensured that documents created or viewed on *macOS* would be highly
-compatible with other systems and applications. This integration makes it
+*Compatibility & integration*: PDF is a widely used standard for
+document exchange. By using it as a basis for the rendering engine,
+the documents created or viewed on *macOS* will be highly compatible
+with other systems and applications. This integration makes it
 easier for users to work with PDF documents directly within the operating
-system, including previewing, annotating, and printing.
+system.
 
 
 ## Going Metal[^metaldoc] ..
 
 As of recent developments, Apple has indeed evolved its graphics rendering
 architecture, moving away from a strictly PDF-based approach for certain
-aspects of screen buffering and rendering. Here’s an overview of the current
-situation and how Apple’s graphics architecture has shifted:
+aspects of screen buffering and rendering. Here's an overview of the current
+situation and how the graphics architecture has shifted:
 
 [^metaldoc]: https://developer.apple.com/documentation/metal
 
 ### Changes and Evolution
 
-1. **Metal Framework**:
-    - **Introduction**: Apple introduced Metal, a low-level, high-performance
+1. *Metal Framework*:
+    - *Introduction*: Apple introduced Metal, a low-level, high-performance
     graphics API, in 2014 with iOS 8 and later expanded it to macOS. Metal
     provides direct access to the GPU, allowing for more efficient rendering
     and greater control over graphics performance.
-    - **Use cases**: Metal is used extensively for rendering complex graphics
+    - *Use cases*: Metal is used extensively for rendering complex graphics
     and animations in games, professional applications, and system-level
     rendering tasks where *high performance* is critical.
-    - **Screen rendering**: For many modern applications, especially those
+    - *Screen rendering*: For many modern applications, especially those
     requiring intensive graphics, Metal is used *instead* of traditional PDF-based
     rendering.
 
-2. **Core Animation and Core Graphics**:
-    - **Core Animation**: Core Animation remains a fundamental part of macOS
+2. *Core Animation and Core Graphics*:
+    - *Core Animation*: Core Animation remains a fundamental part of macOS
     and iOS for managing animations and smooth transitions. It interfaces
     with both Metal and Core Graphics to provide high-performance, visually
     appealing animations.
-    - **Core Graphics (Quartz 2D)**: While still integral for many 2D
+    - *Core Graphics (Quartz 2D)*: While still integral for many 2D
     rendering tasks, Core Graphics now often works in conjunction with
     Metal for improved performance and flexibility. The use of PDF for
     certain tasks persists, but it is not the sole method for all
     rendering operations.
 
-3. **Hybrid Approach**:
-    - **PDF for document rendering**: PDF is still heavily used for document
+3. *Hybrid Approach*:
+    - *PDF for document rendering*: PDF is still heavily used for document
     rendering and manipulation within macOS and iOS. Apps that handle
     documents, such as Preview and third-party PDF viewers, leverage the
     PDF capabilities of Core Graphics for accurate rendering and editing.
-    - **Metal for performance-critical tasks**: For tasks that require high
+    - *Metal for performance-critical tasks*: For tasks that require high
     performance, such as real-time graphics, complex UI elements, and advanced
     animations, Metal is preferred due to its efficiency and direct access
     to GPU resources.
 
-4. **Layered Architecture**:
-    - **UI rendering**: The UIKit and AppKit frameworks (for iOS and macOS,
+4. *Layered Architecture*:
+    - *UI rendering*: The UIKit and AppKit frameworks (for iOS and macOS,
     respectively) utilize a layered rendering architecture where higher-level
     abstractions may still use PDF-based rendering internally, but lower-level
     operations are often offloaded to Metal for performance.
-    - **Compositing and effects**: Compositing and visual effects are areas
-    where Metal’s capabilities are leveraged to provide smooth and efficient
+    - *Compositing and effects*: Compositing and visual effects are areas
+    where Metal's capabilities are leveraged to provide smooth and efficient
     rendering, particularly on high-resolution displays and in graphics-intensive
     applications.
 
 
 ### Differences in API Usage
 
-- **Level of abstraction**: Metal provides a lower-level API with more
+- *Level of abstraction*: Metal provides a lower-level API with more
 explicit control over rendering operations and resource management,
 while Core Graphics offers a higher-level, more abstracted API focused
 on ease of use for 2D graphics and PDF rendering.
 
-- **Performance and use cases**: Metal is designed for high-performance,
+- *Performance and use cases*: Metal is designed for high-performance,
 real-time applications requiring direct GPU access. In contrast, Core
 Graphics is tailored for applications involving vector graphics and
-document rendering, where ease of use and integration with the system’s
+document rendering, where ease of use and integration with the system's
 UI framework are more important.
 
-- **Resource management**: Metal requires explicit management of GPU
+- *Resource management*: Metal requires explicit management of GPU
 resources, synchronization, and command encoding, whereas Core Graphics
 handles many of these aspects automatically, providing a simpler but
 less flexible drawing model.
@@ -238,18 +244,11 @@ less flexible drawing model.
 
 ### Conclusion
 
-While Apple has not completely abandoned PDF-based rendering, especially for
-document handling and certain UI elements, it has significantly expanded its
-graphics architecture to incorporate Metal for high-performance rendering tasks.
-This hybrid approach allows Apple to maintain the strengths of PDF for certain
-applications while leveraging the advanced capabilities of Metal for tasks that
-demand higher performance and efficiency. The result is a more flexible and
-powerful rendering infrastructure that can cater to a wide range of application
-needs.
-
-Metal and Core Graphics serve different purposes within Apple's graphics
+While Apple has not completely abandoned PDF-based rendering, it has
+significantly expanded its graphics architecture.
+Metal and Core Graphics serve different purposes within the graphics
 architecture. Metal is aimed at performance-intensive tasks requiring fine
 control over the GPU, while Core Graphics focuses on high-level 2D graphics
 and PDF rendering. Developers choose between these APIs based on the
-specific needs of their applications, leveraging Metal for real-time
+specific needs of their applications, often leveraging Metal for real-time
 graphics and Core Graphics for document-centric tasks.
