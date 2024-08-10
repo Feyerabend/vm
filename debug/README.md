@@ -17,127 +17,6 @@ environment.
 But, we will return to these tools examplified below.
 
 
-## logging
-
-*This section is intended to highlight that the principles of
-application and system development should not be compartmentalized.
-Tools like loggers, commonly used in systems, can also be highly
-beneficial in other applications. For example, integrating a logger
-into an editor can be very useful.*
-
-As previously stated, logging is a tool with many aspects and uses.
-Here, we demonstrate this by using a *line editor*. A line editor was
-once very common in the past. It was easy to implement and versatile,
-making it effective for editing text files. As long as the files
-weren’t too large, it wasn’t too difficult to use. We will not delve
-into the specifics of line editors, as that is not our aim here.
-Instead, we want to illustrate how logging can benefit even editors.
-In this case, you can have the *entire history of edits* saved. From
-the saved file, you can, in principle, work backwards in steps, undo
-or redo edits. The log would contain enough information to restore
-the session and continue from where you left off, even if you just
-quit the editor. Todays computer may be fast enough to not corrupt
-saving the log, so in principal it should work ok. That is just
-one idea that could be implemented even in editors of today.
-
-### run
-
-```shell
-> python3 ed.py -i trad.txt
-```
-
-![Line editor](../assets/images/ed.png)
-
-### line editor
-
-We start off with a very simple line editor 'ed.py'. It can load text
-files, view them, insert a line, delete a line, edit a line, save the
-file. The bare necessities.
-
-In short `load_file` loads the content of the file into `self.lines`,
-while `save_file` saves the current lines to the current file. The
-`view` displays the content of the file with line numbers. The
-functions take a more closer approach `edit` replaces a specific line
-with new content, `insert` inserts new content at a specific line, and
-`delete` deletes a specific line. Next `run` is the main loop to handle
-user commands "view, edit, insert, delete, load, save, exit".
-
-### run
-
-```shell
-> python3 ed2.py -i trad.txt
-```
-
-![Line editor](../assets/images/ed2.png)
-
-### line editor with logger
-
-The second editor 'ed2.py' includes a built-in *logger*, which distinguishes it
-from 'ed.py'. Despite this improvement, the functionality remains largely
-similar to the previous version. There are always room for improvement,
-but cut off with regards to pegagogical values.[^flawed] The 'log.txt'
-is hardcoded for every text that runs through the editor. Logs are usually
-custom-built and may vary in format.
-
-[^flawed]: The logs are significantly flawed and redundant. The log file
-can grow immensely in proportion to the files they track. For example,
-a saved file is fully represented in the log file both when it is
-loaded and saved.
-
-### view log
-
-```shell
-> cat log.txt
-```
-
-```log
-2024-07-27 09:47:12 | LOAD | NAME = trad.txt
-2024-07-27 09:47:12 | LOAD | 0 = “True happiness is to enjoy the present,
-2024-07-27 09:47:12 | LOAD | 1 = without anxious dependence upon the future,
-2024-07-27 09:47:12 | LOAD | 2 = not to amuse ourselves with either hopes or fears
-2024-07-27 09:47:12 | LOAD | 3 = but to rest satisfied with what we have,
-2024-07-27 09:47:12 | LOAD | 4 = which is sufficient, for he that is so wants nothing.
-2024-07-27 09:47:12 | LOAD | 5 = The greatest blessings of mankind are within us
-2024-07-27 09:47:12 | LOAD | 6 = and within our reach. A wise man is content with his lot,
-2024-07-27 09:47:12 | LOAD | 7 = whatever it may be, without wishing for what he has not.”
-2024-07-27 09:48:31 | INSERT | 8 = Seneca, 'On Discursiveness in Reading'
-2024-07-27 09:48:39 | SAVE | NAME = trad.txt
-2024-07-27 09:48:39 | SAVE | 0 = “True happiness is to enjoy the present,
-2024-07-27 09:48:39 | SAVE | 1 = without anxious dependence upon the future,
-2024-07-27 09:48:39 | SAVE | 2 = not to amuse ourselves with either hopes or fears
-2024-07-27 09:48:39 | SAVE | 3 = but to rest satisfied with what we have,
-2024-07-27 09:48:39 | SAVE | 4 = which is sufficient, for he that is so wants nothing.
-2024-07-27 09:48:39 | SAVE | 5 = The greatest blessings of mankind are within us
-2024-07-27 09:48:39 | SAVE | 6 = and within our reach. A wise man is content with his lot,
-2024-07-27 09:48:39 | SAVE | 7 = whatever it may be, without wishing for what he has not.”
-2024-07-27 09:48:39 | SAVE | 8 = Seneca, 'On Discursiveness in Reading'
-```
-
-
-### log viewer
-
-Long logs can be challenging to navigate. A dedicated viewer `viewlog.html`
-with filtering or sorting options can make this process easier. While text
-files may not present many obstacles, programming languages or machine code
-often benefit significantly from such specialized tools.
-
-![Log viewer](../assets/images/viewlog.png)
-
-
-### playback viewer
-
-In this case with a line editor that have a *recording log*, a *playback
-viewer* `playlog.html` will illustrate how a textfile gets created. As can
-be understood from this, versioning, alternate copies, and other reconizable
-properties from e.g. versioning software could in principle also be added.
-
-![Log viewer](../assets/images/playlog.png)
-
-Thus logging is often a system tool, but it capture ideas that can be use
-in many other ways.
-
-
-
 ## assembling & disassembling
 
 Taking an assembler from previous, we can turn it into something which
@@ -206,16 +85,16 @@ context.
 ### tracing
 
 Tracing involves inserting print statements or logging calls
-into the code to output the program’s state and the values of
+into the code to output the program's state and the values of
 variables or in this case mostly the stack at various points
-during execution. This helps to follow the program’s flow and
+during execution. This helps to follow the program's flow and
 understand where things might be going wrong.
 
 ### single step
 
 Single-stepping allows the programmer to execute the program
 one line or instruction at a time. This lets you closely examine
-the program’s behavior at each step and observe how the stack
+the program's behavior at each step and observe how the stack
 (or in case: variables) and the system state change with each
 executed line of code.
 
@@ -235,7 +114,7 @@ issues are suspected to occur.
 2. __run to breakpoint__: the program runs normally until it hits a
    breakpoint,
 3. __inspect__: once paused, inspect stack, variables, other memory,
-   to understand the program’s condition at that moment,
+   to understand the program's condition at that moment,
 4. __single step__: after inspection, single-step through subsequent
    lines to observe changes and further diagnose issues.
    or just let the program *continue*,
@@ -257,16 +136,16 @@ optional 'trace'.
 
 Inside the vm, there are features that allow you to single-step
 through the code if selected at the start. When single-stepping
-is no longer needed, the ‘continue’ command can execute the code
+is no longer needed, the 'continue' command can execute the code
 without pausing at each step.
 
 A trace can display various elements, such as the current stack,
 the program counter, the executing operator and operand, and
 other options like arrays, arguments, and variables. The trace
 can be turned off, and the options can be selected dynamically.
-For example, choosing ‘pos’ would show the program counter,
-operation/operand, and the stack, while ‘pv’ would show the
-program counter and variables. In this case the trace isn't
+For example, choosing "pos" would show the *program counter*,
+*operation/operand*, and the *stack*, while "pv" would show the
+*program counter* and *variables*. In this case the trace isn't
 a log in a file, but only displayed on the screen.
 
 Breakpoints will halt the program and wait for further instructions.
@@ -300,7 +179,7 @@ Key functionalities:
 While debugging the programs that the VM executes is
 crucial, ensuring the VM itself functions correctly
 is equally important. Developing a suite of test programs
-not only helps in specifying the machine’s behavior
+not only helps in specifying the machine's behavior
 but also aids in validating its consistency when the
 VM is ported to other platforms.
 
@@ -332,7 +211,7 @@ on specific operations or scenarios to ensure the VM
 handles them correctly. The tests include:
 - *Arithmetic Test*: Verifies addition and
   division operations.
-- *Division by Zero Test*: Checks the VM’s behavior
+- *Division by Zero Test*: Checks the VM's behavior
   when attempting to divide by zero.
 - *Logical and Comparison Test*: Validates
   logical AND and comparison operations.
