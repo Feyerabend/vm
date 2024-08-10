@@ -164,15 +164,6 @@ flow operations, and more. Each operation is represented by
 an opcode, and the VM processes a sequence of these opcodes
 to perform computations.
 
-Key functionalities:
-- Arithmetic Operations: Supports addition, subtraction,
-  multiplication, division, and modulus operations.
-- Logical Operations: Includes AND, OR, XOR, and NOT operations.
-- Control Flow: Implements instructions for conditional
-  and unconditional jumps, function calls, and returns.
-- Data Handling: Supports loading and storing values in
-  variables, arrays, and the stack.
-
 
 ## test dvm
 
@@ -209,13 +200,13 @@ The `dvmtest.py` file contains a suite of tests designed
 to validate the functionality of the VM. Each test focuses
 on specific operations or scenarios to ensure the VM
 handles them correctly. The tests include:
-- *Arithmetic Test*: Verifies addition and
+- *Arithmetics*: Verifies addition and
   division operations.
-- *Division by Zero Test*: Checks the VM's behavior
+- *Division by zero*: Checks the VM's behavior
   when attempting to divide by zero.
-- *Logical and Comparison Test*: Validates
+- *Logical and Comparison*: Validates
   logical AND and comparison operations.
-- *Array Test*: Tests loading and storing
+- *Arrays*: Tests loading and storing
   values in arrays.
-- *Function Call Test*: Examines function calls and
+- *Function Calls*: Examines function calls and
   returns, including argument handling.
