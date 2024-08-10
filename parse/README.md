@@ -149,7 +149,7 @@ in the input text.
 ### a sample: factor
 
 If look at the main custom parser functions, we
-can see quite clearly how the relate to the 
+can see quite clearly how they relate to the 
 grammar. Take the example of 'factor':
 
 ```python
@@ -169,12 +169,13 @@ factor      ::= "(" expression ")" | operand
 operand     ::= variable | number
 ```
 
-In case there are some whitespace then consume them, move
-to a choice. Then either an expression that sits in between
-parenthesis, or a variable or a constant are assumed. In
-this case it has not been split up in two function, but as
-can be seen the 'operand' is included in arguments to
-the choice function.
+We start off with a sequence, and
+in case there are some whitespace then consume them, move
+to a *choice*. Then either an expression that sits in between
+parenthesis, or a variable or a constant, are assumed as
+input. In this case the function has not been split up in
+two functions, but as can be seen the 'operand' is included
+in arguments to the choice function.
 
 
 ## ebnf
@@ -293,6 +294,7 @@ carefully considering the operators precendence, we can eliminate some of
 the parentheses.)
 
 ### ..
+
 
 ## traditional vs. combinator parsers
 
