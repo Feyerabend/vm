@@ -211,7 +211,7 @@ def many(parser):
         return (results, input)
     return Parser(parse_many)
 
-# parser for single digits
+# parser for a single digit
 def digit_parser():
     def parse_digit(input):
         if input and input[0].isdigit():
