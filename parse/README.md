@@ -120,24 +120,24 @@ The definition of 'expression' is a *sequence* of
 of a *choice* of either '+' or '-' and then a 'term'.
 
 A short summary of what the base parsers do:
-- 'sequence':
+- *sequence*:
 This combinator takes multiple parsers and applies
 them in sequence to the input text. It returns the
 combined result of all parsers if they all succeed,
 along with the position in the text after the last
 parser has been applied.
-- 'choice':
+- *choice*:
 This combinator tries multiple parsers in order,
 returning the result of the first parser that
 succeeds. If none of the parsers succeed, it
 returns a failure.
-- 'many':
+- *many*:
 This combinator applies a single parser repeatedly,
 as many times as possible (including *zero times*).
 It collects all the successful results into a
 list and returns it along with the final position
 in the text.
-- 'many1':
+- *many1*:
 Similar to many, but ensures that the parser is
 applied at least once. It collects and returns
 a list of results from each successful application
