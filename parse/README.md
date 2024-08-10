@@ -183,8 +183,7 @@ in Python. (Also "number" in grammar corresponds to
 
 In a slightly different fashion of Python coding, we have a
 custom parser for a sequence of numbers, but stop when there
-are no more numbers. Then another parser could follow up
-what to expect next, e.g.
+are no more numbers.
 
 ```python
 class Parser:
