@@ -169,13 +169,14 @@ factor      ::= "(" expression ")" | operand
 operand     ::= variable | number
 ```
 
-We start off with a sequence, and
-in case there are some whitespace then consume them, move
-to a *choice*. Then either an expression that sits in between
+We start off with a *sequence*, and in case there are
+some whitespace then consume them, move to a *choice*.
+Then either an expression that sits in between
 parenthesis, or a variable or a constant, are assumed as
 input. In this case the function has not been split up in
-two functions, but as can be seen the 'operand' is included
-in arguments to the choice function.
+two functions, but as can be seen the "operand" in the
+grammar is included in arguments to the choice function
+in Python.
 
 
 ## ebnf
