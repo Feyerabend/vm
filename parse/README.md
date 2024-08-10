@@ -189,10 +189,8 @@ are no more numbers: 'many(digit_parser())'.
 class Parser:
     def __init__(self, parse_func):
         self.parse_func = parse_func
-
     def __call__(self, input):
         return self.parse_func(input)
-
     def parse(self, input):
         result = self(input)
         if result and result[1] == '':
