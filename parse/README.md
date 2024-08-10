@@ -80,7 +80,9 @@ def choice(*parsers):
 it looks for parsers inside, and with the first
 success for the returning parser, it accepts it
 as the choice and returns the resulting returned
-text, but also the position where the match was made.
+*text*, but also the *position* where the match
+was made, if successful. Otherwise no text, but
+only the postition.
 
 In a way this reflects how grammars work with
 choises, as we have seen before with '|'. The 'defs'
