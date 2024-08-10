@@ -179,7 +179,7 @@ grammar is included in arguments to the 'choice' function
 in Python. (Also "number" in grammar corresponds to
 'constant' in Python.)
 
-### sample: custom numbers
+### sample: sequence of digits
 
 In a slightly different fashion of Python coding, we have a
 custom parser for a sequence of many numbers, but stop when there
