@@ -298,7 +298,29 @@ some conversions, we end up back with the original infix.[^note]
 carefully considering the operators precendence, we can eliminate some of
 the parentheses in this sample.
 
-### ..
+### traditional parsing
+
+When converting from the output of the combinator parsers, we use 
+an ordinary way (among others) of converting from prefix to infix:
+
+```python
+# parse from prefix to infix
+def prefix_infix(expr):
+    stack = []
+    i = len(expr) - 1
+    while i >= 0:
+        s = expr[i]
+        if not s in ['+', '-', '*', '/', '(', ')']:
+            stack.append(s)
+        else:
+            stack.append('(' + stack.pop() + s + stack.pop() + ')')
+        i -= 1
+    return stack.pop()
+```
+
+This uncomplicated parsing takes an item at a time from 'expr',
+appending to the output 'stack' of operators and operands. There
+is no need for overcomplicated maneuvers.
 
 
 ## traditional vs. combinator parsers
