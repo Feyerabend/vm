@@ -228,7 +228,7 @@ postfix order from working with numbers and operators in a stack.
 A prefix notation or a Polish notation[^polish] is where operators
 precede their operands.
 
-[^]: For those who have studied formal logic and its history,
+[^polish]: For those who have studied formal logic and its history,
 the Polish logican Jan Łukasiewicz should be familiar and
 probably associated with this notation. See more at:
 https://en.wikipedia.org/wiki/Polish_notation, and
