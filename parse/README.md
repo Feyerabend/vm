@@ -221,8 +221,18 @@ e.g. '3 + 2 * (x - 4) / y'.
 
 ### prefix
 
-Prefix notation (Polish notation) is where operators
+Let us take a look at another grammar that places the operators
+and the operands in a different place: a prefix notation. We
+are already familiar with the reverse Polish order or
+postfix order from working with numbers and operators in a stack. 
+A prefix notation or a Polish notation[^polish] is where operators
 precede their operands.
+
+[^]: For those who have studied formal logic and its history,
+the Polish logican Jan Łukasiewicz should be familiar and
+probably associated with this notation. See more at:
+https://en.wikipedia.org/wiki/Polish_notation, and
+https://en.wikipedia.org/wiki/Jan_%C5%81ukasiewicz.
 
 ```ebnf
 expression  ::= "(" operator expression expression ")" | operand
