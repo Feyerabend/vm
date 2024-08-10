@@ -255,6 +255,9 @@ digit       ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 An example of this could be '+ 3 / * 2 - x 4 y' which
 corresponds to the above infix '3 + 2 * (x - 4) / y'.
+As can be seen parenthesis is no longer needed in the
+prefix version (as with postfix), and can therefore
+be elimiated. The precendence of operators become implicit.
 
 This is how to do this infix to prefix conversion manually:
 1. First convert x - 4 to prefix: - x 4
@@ -289,9 +292,12 @@ of x as 5 and y as 2.
 
 What is happening in 'arith2.py' is that the parsing results in a structure
 which represents the arithmetic expression in a prefix fashion. Through
-some conversions, we end up back with the original infix. (We can do better,
+some conversions, we end up back with the original infix.[^note]
+
+[^note]: We can do better,
 carefully considering the operators precendence, we can eliminate some of
-the parentheses.)
+the parentheses in this sample, and as the precendence of the operators
+should be there, the conversion should not be difficult.
 
 ### ..
 
