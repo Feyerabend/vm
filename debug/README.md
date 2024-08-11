@@ -199,14 +199,6 @@ but they illustrate the principal idea.*
 The `dvmtest.py` file contains a suite of tests designed
 to validate the functionality of the VM. Each test focuses
 on specific operations or scenarios to ensure the VM
-handles them correctly. The tests include:
-- *Arithmetics*: Verifies addition and
-  division operations.
-- *Division by zero*: Checks the VM's behavior
-  when attempting to divide by zero.
-- *Logical and Comparison*: Validates
-  logical AND and comparison operations.
-- *Arrays*: Tests loading and storing
-  values in arrays.
-- *Function Calls*: Examines function calls and
-  returns, including argument handling.
+handles them correctly. The tests include: arithmetics,
+division by zero, logical and comparison operators,
+arrays, function calls.
