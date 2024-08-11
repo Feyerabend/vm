@@ -24,6 +24,18 @@ analyses our "machine code," a disassembler. It reverses the process,
 takes the integers and turn them into easier to understandable mnemonics,
 the "assembly language."
 
+The assembler works as previously:
+
+```shell
+> python3 asm.py -i sample.a -o sample.b
+> python3 asm.py -i callret.a -o callret.b
+> python3 asm.py -i fact.a -o callret.b
+> ls
+..
+callret.a   fact.a      sample.a
+callret.b   fact.b      sample.b
+..
+```
 
 ### disassembler
 
