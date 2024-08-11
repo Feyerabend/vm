@@ -5,7 +5,7 @@ the early days of programming. In many ways, programming
 remains a *craft*, and debugging is a critical aspect of
 that craft.
 Early debugging tools were fundamental yet highly effective.
-Techniques such as logging, single-stepping through code,
+Techniques such as logging[^log], single-stepping through code,
 and setting breakpoints to halt execution for detailed
 inspection were very useful. These methods allowed developers
 to meticulously trace and resolve issues.
@@ -14,7 +14,8 @@ debugging tools and see how they are still relevant when
 working with virtual machines, or really in any programming
 environment.
 
-But, we will return to these tools examplified below.
+[^log]: A more in depth discussion of the usefulness is done
+in [ED.md](ED.md).
 
 
 ## assembling & disassembling
