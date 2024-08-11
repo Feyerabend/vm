@@ -15,7 +15,7 @@ working with virtual machines, or really in any programming
 environment.
 
 [^log]: A more in depth discussion of the usefulness is done
-in [ED.md](ED.md).
+in [ED.md](debug/ED.md).
 
 
 ## assembling & disassembling
