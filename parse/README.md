@@ -179,12 +179,13 @@ grammar is included in arguments to the 'choice' function
 in Python. (Also "number" in grammar corresponds to
 'constant' in Python.)
 
-### sample: sequence of digits
+### sample: many many digits
 
 In a slightly different fashion of Python coding, we have a
 custom parser for a sequence of many digits, but stop when there
 are no more digits: 'many(digit_parser())'. Then probably a number
-was parsed.
+was parsed. But it also could be a year? It depends on the
+parsers calling.
 
 ```python
 class Parser:
