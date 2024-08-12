@@ -137,6 +137,10 @@ documents with flowing text, pictures and graphics integrated
 on the same page. PageMaker's compatibility with Apple Macintosh
 and its use of the PostScript page description language were
 pivotal in making desktop publishing accessible to a wider audience.
+Naturally, IBM, Microsoft, and other companies wanted to be
+part of this change as well, and soon there were versions of
+LaserWriters, PageMaker, and Windows on top of a PC that
+were more or less competitive.
 
 [^sidenote]: When I was a student, sometime in the 1980s,
 the option of writing an essay and obtaining a laser-printed
