@@ -122,7 +122,7 @@ became even more significant through Adobe's partnership with
 first PostScript-based laser printer. The collaboration was
 instrumental in the rise of desktop publishing (DTP).
 
-But the LaserWriter was expensive, almost $20,000 USD today.
+But the LaserWriter was expensive, almost $7,000[^hist] USD today.
 The investment could though be balanced against much more expensive
 hire of labour, professional equipment and the cost of time
 for a final product. The lower the cost of the printer, the
@@ -148,6 +148,8 @@ went wrong, some strange characters were generated on the
 paper: this was actually PostScript. Remarkable! I actually
 understood something about this .. But far from owning a
 printer, at least I could borrow it for a few hours.
+
+[^hist]: https://rgbcmyk.com.ar/en/history-of-postscript/
 [^pagemaker]: https://en.wikipedia.org/wiki/Adobe_PageMaker
 https://web.archive.org/web/20070709042131/http://www.makingpages.org/pagemaker/history/
 [^aldus]: https://en.wikipedia.org/wiki/Aldus_Corporation

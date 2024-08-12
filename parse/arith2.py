@@ -1,6 +1,6 @@
 import re
 
-# combinator parser
+# combinator parsers
 
 def char(c):
     def parser(text, pos):
