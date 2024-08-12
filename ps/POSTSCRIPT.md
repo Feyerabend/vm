@@ -122,11 +122,11 @@ became even more significant through Adobe's partnership with
 first PostScript-based laser printer. The collaboration was
 instrumental in the rise of desktop publishing (DTP).
 
-But the LaserWriter was expensive, almost $7,000[^hist] USD today.
-The investment could though be balanced against much more expensive
-hire of labour, professional equipment and the cost of time
-for a final product. The lower the cost of the printer, the
-more attractive the alternative was.[^sidenote]
+But the LaserWriter was expensive, almost $7,000[^hist] USD at
+the time. The investment could though be balanced against
+much more expensive hire of labour, professional equipment
+and the cost of time for a final product. The lower the cost
+of the printer, the more attractive the alternative was.[^sidenote]
 
 One more element was required for the DTP revolution to take off:
 *PageMaker*.[^pagemaker] PageMaker, developed by Aldus
