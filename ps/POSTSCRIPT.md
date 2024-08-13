@@ -196,13 +196,17 @@ the desktop publishing industry.
 Brock, David C., "PostScript: A Digital Printing Press"
 https://computerhistory.org/blog/postscript-a-digital-printing-press/
 
-"Laser printing," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/Laser_printing (Accessed: 17 July 2024).
+"Laser printing," Wikipedia: The Free Encyclopedia, Wikimedia Foundation.
+Available at: https://en.wikipedia.org/wiki/Laser_printing (Accessed: 17 July 2024).
 
-"LaserWriter," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/LaserWriter  (Accessed: 17 July 2024).
+"LaserWriter," Wikipedia: The Free Encyclopedia, Wikimedia Foundation.
+Available at: https://en.wikipedia.org/wiki/LaserWriter  (Accessed: 17 July 2024).
 
-"PostScript," Wikipedia: The Free Encyclopedia, Wikimedia Foundation. Available at: https://en.wikipedia.org/wiki/PostScript (Accessed: 17 July 2024).
+"PostScript," Wikipedia: The Free Encyclopedia, Wikimedia Foundation.
+Available at: https://en.wikipedia.org/wiki/PostScript (Accessed: 17 July 2024).
 
-Warnock, John, "Simple Ideas That Changed Printing and Publishing", *Proceedings of the American Philosophical Society*, no. 156, 2012, pp. 363-378.
+Warnock, John, "Simple Ideas That Changed Printing and Publishing",
+*Proceedings of the American Philosophical Society*, no. 156, 2012, pp. 363-378.
 
 Reference manual 2nd ed:
 https://www.os2site.com/sw/dev/openwatcom/docs/postscript_level_2_reference_manual.pdf
