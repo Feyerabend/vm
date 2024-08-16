@@ -137,7 +137,7 @@ class VM:
                     pass
                 elif command == 't':
                     self.trace = True
-                    self.param = input(">> (p)c, (s)tack, (o)perand, (a)rrays, a(r)guments, (v)ariables: ")
+                    self.param = input(">> (p)c, (s)tack, (o)perand, (a)rrays, a(r)guments, (v)ariables: ").strip().lower()
                     if not self.param:
                         self.param = 'pos'
                 elif command == 'n':
