@@ -120,6 +120,8 @@ Source code: https://www.w3.org/History/1991-WWW-NeXT/Implementation/
 
 ### PDF in Apple's GUI
 
+Now we dig a bit deeper in the approach which Apple has taken
+regarding graphics for primarily the screen recently.
 If we take a look at some influence vector graphics and
 typography have had on Apple's OS, here are a few remarks:
 
