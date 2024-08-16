@@ -227,7 +227,7 @@ def test_many_parser():
     input_string = '1234abc'
     result = many_parser(input_string)
     print(f"Many parser result: {result}")
-    print(f"Expected: (['1', '2', '3', '4'], 'abc')\n")
+    print(f"Expected: (['1', '2', '3', '4'], 'abc')")
 
 test_many_parser()
 ```
