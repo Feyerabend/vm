@@ -55,7 +55,7 @@ run:
      | "(" expression ")" .
 ```
 
-The language is called *basal/0* /bɑˈsɑːl/ /nɔl/ which is Swedish for "basic/0"
+The language is called *basal/0* [bɑˈsɑːl nɔl] which is Swedish for "basic/0"
 in the spirit of *PL/0* and *enkel/0*. The language inherits and have similarities
 with BASIC in general, or specifically Tiny BASIC. The main point here is to
 illustrate how a compiler can address manipulation of tokens, in this case,
