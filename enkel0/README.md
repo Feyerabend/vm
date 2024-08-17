@@ -80,7 +80,7 @@ change the name to `sample.p`. Then no change of script `compile.sh` is needed.
      | number .
 ```
 
-The language is called *enkel/0* /ˈɛŋkəl nʊl/ which is Swedish for "simple/0"
+The language is called *enkel/0* [ˈɛŋkəl nʊl] which is Swedish for "simple/0"
 in the spirit of PL/0. The language inherits and have similarities with "PL/0".
 Let's make some preliminary observations of some features from *enkel/0*.
 A more detailed description can be found in [LANG.md](LANG.md).
