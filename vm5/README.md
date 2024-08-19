@@ -167,8 +167,8 @@ b.) *VM internals*
 ### gc2.c
 
 The `gc2.c`have some slight improvements over `gc.c`.
-Those are in *object management* 1) the *reference counting*,
-and 2) *pools*.
+Those are in object management thriugh the *reference counting*,
+and *pools*.
 
 Besides addition to mark-and-sweep, implementing reference
 counting can help manage objects (with circular references)
