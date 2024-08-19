@@ -70,6 +70,14 @@ b.) *Constraints and safety*
 
 ### gc.c
 
+Compile and run:
+
+```shell
+> make gc2
+> ./gc2
+```
+
+The internals:
 
    ```c
    typedef struct Object {
@@ -102,7 +110,7 @@ b.) *Constraints and safety*
 
 #### GC functions
 
-Allocates a new object and triggers garbage collection,
+Allocates a `new_object` and triggers garbage collection,
 if the heap is full:
 
    ```c
@@ -123,7 +131,7 @@ if the heap is full:
    }
    ```
 
-Recursively marks all reachable objects,
+Recursively marks with `make` all reachable objects,
 starting from the given `obj`:
 
    ```c
@@ -137,8 +145,8 @@ starting from the given `obj`:
    }
    ```
 
-Frees objects that are not marked as reachable
-and reorganizes the heap:
+It `sweep`and thus frees objects that are not marked
+as reachable and reorganizes the heap:
 
    ```c
    void sweep() {
@@ -155,7 +163,7 @@ and reorganizes the heap:
    }
    ```
 
-Main GC, marking and then sweeping:
+Main GC, `mark_and_sweep`:
 
    ```c
    void mark_and_sweep() {
@@ -186,6 +194,11 @@ b.) *VM internals*
 
 
 ### gc2.c
+
+```shell
+> make gc2
+> ./gc2
+```
 
 The `gc2.c`have some slight improvements over `gc.c`.
 Those are in object management thriugh the *reference counting*,
