@@ -29,20 +29,20 @@ from simple memory management to complex implementations.
 
 ### memory management considerations in C
 
-a. *Static vs. dynamic allocation:*
-   - *Static*: Memory is allocated at compile-time. While this
+a.) *Static vs. dynamic allocation:*
+   - *Static*. Memory is allocated at compile-time. While this
    is straightforward, it limits flexibility and can waste memory
    if the allocation size is not well-calibrated.
-   - *Dynamic*: Memory is allocated at runtime using functions
+   - *Dynamic*. Memory is allocated at runtime using functions
    like `malloc` and `free`. This is more flexible but requires
    careful management to avoid leaks and fragmentation.
 
-b. *Constraints and safety:*
-   - *Pre-allocated heap*: Allocating a fixed-size heap and crashing
+b.) *Constraints and safety:*
+   - *Pre-allocated heap*. Allocating a fixed-size heap and crashing
    when it is full, as in the previously provided example, is simple
    but not ideal. It does not handle scenarios where memory demands
    fluctuate or where memory can be reclaimed dynamically.
-   - *Garbage Collection (GC)*: Implementing garbage collection helps
+   - *Garbage Collection (GC)*. Implementing garbage collection helps
    automatically manage memory by reclaiming unused objects, but it
    introduces overhead and complexity.
 
