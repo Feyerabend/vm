@@ -22,14 +22,14 @@ This isn't ideal in a real scenario. One way of handling memory
 in C is also to use garbage collection, collected at suitable places,
 in the program.
 
-In C, functions like 'malloc' (memory allocation) and 'free'
+In C, functions like `malloc` (memory allocation) and `free`
 (deallocation) are used to manage memory on the heap. When you
-allocate memory using 'malloc', a block of memory is reserved
+allocate memory using `malloc`, a block of memory is reserved
 on the heap, and you receive a pointer to that memory. When
 you are done using that memory, you must manually release
-it using 'free' to avoid memory leaks.
+it using `free` to avoid memory leaks.
 Over time, as memory is allocated and deallocated, the heap can
-become very fragmented, which can lead to inefficient use of
+become very *fragmented*, which can lead to inefficient use of
 memory and, in some cases, allocation failures if there
 isn’t a large enough contiguous block available.
 
@@ -41,12 +41,11 @@ potential memory leaks and crashes if not managed correctly.
 
 A sample of a very simple illustration of this can be seen in
 `gc.c`. The provided code snippet demonstrates a basic implementation
-of a mark-and-sweep garbage collector. It manages a heap (a space
-for allocatable memory) of `Object` instances, performs garbage
-collection when necessary, and provides utility functions to
-create and list objects. This approach can be extended and
-adapted for various applications in a virtual machine, ranging
-from simple memory management to complex implementations.
+of a mark-and-sweep garbage collector. It manages a heap of
+`Object` instances, performs garbage collection when necessary,
+and provides utility functions to create and list objects.
+This approach can be extended and adapted for various
+applications in a virtual machine.
 
 
 ### memory management considerations in C
