@@ -49,7 +49,6 @@ b.) *Constraints and safety*
 
 ### gc.c sample
 
-#### data structures
 
    ```c
    typedef struct Object {
