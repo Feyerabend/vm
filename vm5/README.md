@@ -81,6 +81,9 @@ b.) *Constraints and safety*
 
 #### GC functions
 
+Allocates a new object and triggers garbage collection,
+if the heap is full:
+
    ```c
    Object* new_object() {
        if (num_objects >= MAX_OBJECTS) {
@@ -98,8 +101,9 @@ b.) *Constraints and safety*
        return obj;
    }
    ```
-   - Allocates a new object and triggers garbage
-     collection, if the heap is full.
+
+Recursively marks all reachable objects,
+starting from the given `obj`:
 
    ```c
    void mark(Object* obj) {
@@ -111,8 +115,9 @@ b.) *Constraints and safety*
        }
    }
    ```
-   - Recursively marks all reachable objects,
-     starting from the given `obj`.
+
+Frees objects that are not marked as reachable
+and reorganizes the heap:
 
    ```c
    void sweep() {
@@ -128,8 +133,8 @@ b.) *Constraints and safety*
        }
    }
    ```
-   - Frees objects that are not marked as reachable
-     and reorganizes the heap.
+
+Main GC, marking and then sweeping:
 
    ```c
    void mark_and_sweep() {
@@ -137,8 +142,6 @@ b.) *Constraints and safety*
        sweep();
    }
    ```
-   - Main GC, marking and then sweeping.
-
 
 
 ### examples of usage
