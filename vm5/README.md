@@ -51,7 +51,6 @@ b.) *Constraints and safety*
 
 #### data structures
 
-*Object:*
    ```c
    typedef struct Object {
        int marked;  // mark flag
@@ -63,7 +62,7 @@ b.) *Constraints and safety*
    - `next`: A pointer to the next object in a linked list
      (which simulates an object reference).
 
-*Heap (in C array):*
+
    ```c
    Object* heap[MAX_OBJECTS];
    int num_objects = 0;
@@ -72,7 +71,7 @@ b.) *Constraints and safety*
       representing the managed heap.
    - `num_objects`: The count of objects currently in the heap.
 
-*Root:*
+
    ```c
    Object* root = NULL;
    ```
