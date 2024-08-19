@@ -29,7 +29,7 @@ from simple memory management to complex implementations.
 
 ### memory management considerations in C
 
-a.) *Static vs. dynamic allocation:*
+a.) *Static vs. dynamic allocation*
    - *Static*. Memory is allocated at compile-time. While this
    is straightforward, it limits flexibility and can waste memory
    if the allocation size is not well-calibrated.
@@ -37,17 +37,19 @@ a.) *Static vs. dynamic allocation:*
    like `malloc` and `free`. This is more flexible but requires
    careful management to avoid leaks and fragmentation.
 
-b.) *Constraints and safety:*
+b.) *Constraints and safety*
    - *Pre-allocated heap*. Allocating a fixed-size heap and crashing
    when it is full, as in the previously provided example, is simple
    but not ideal. It does not handle scenarios where memory demands
    fluctuate or where memory can be reclaimed dynamically.
    - *Garbage Collection (GC)*. Implementing garbage collection helps
    automatically manage memory by reclaiming unused objects, but it
-   introduces overhead and complexity.
+   introduces overhead and some complexity.
 
 
-### `gc.c` data structures
+### gc.c sample
+
+#### data structures
 
 a. *Object:*
    ```c
@@ -150,13 +152,13 @@ d. *Mark and Sweep:*
 In a virtual machine (VM) context, the provided garbage collection
 implementation can be adapted to manage various types of objects.
 
-1. *Objects in a programming language:*
+a.) *Objects in a programming language*
    - *Data structures*: The `Object` structure could represent objects
    like strings, arrays, or user-defined types in a VM.
    - *Memory management*: The GC can automatically reclaim memory for
    objects that are no longer reachable, reducing the risk of memory leaks.
 
-2. *VM internals:*
+b.) *VM internals*
    - *Stack frames*: Objects could represent stack frames or other
    internal data structures.
    - *Instruction state*: The linked list could represent a sequence
