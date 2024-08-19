@@ -190,13 +190,13 @@ In a VM context, the provided garbage collection
 implementation can be adapted to manage various
 types of objects.
 
-a.) *Objects in a programming language*
+*Objects in a programming language*
    - *Data structures*: The `Object` structure could represent objects
    like *strings*, *arrays*, or *user-defined types* (in a VM).
    - *Memory management*: The GC can automatically reclaim memory for
    objects that are no longer reachable, reducing the risk of memory leaks.
 
-b.) *VM internals*
+*VM internals*
    - *Stack frames*: Objects could represent stack frames or other
    internal data structures.
    - *Instruction state*: The linked list could represent a sequence
@@ -229,13 +229,10 @@ Implementing some "debugging" features by printing statements
 to track memory usage and identify potential leaks or performance
 bottlenecks.
 
-
-
-..
-
 Future enhancements could involve implementing memory
 pools for common object sizes and adding profiling
 tools to monitor memory usage.
 
+..
 
 ..
