@@ -173,7 +173,7 @@ types of objects.
 
 a.) *Objects in a programming language*
    - *Data structures*: The `Object` structure could represent objects
-   like strings, arrays, or user-defined types (in a VM).
+   like *strings*, *arrays*, or *user-defined types* (in a VM).
    - *Memory management*: The GC can automatically reclaim memory for
    objects that are no longer reachable, reducing the risk of memory leaks.
 
