@@ -50,7 +50,7 @@ and provides utility functions to create and list objects.
 
 ### memory management considerations in C
 
-a.) *Static vs. dynamic allocation*
+*Static vs. dynamic allocation*
    - *Static*. Memory is allocated at compile-time. While this
    is straightforward, it limits flexibility and can waste memory
    if the allocation size is not well-calibrated.
@@ -58,7 +58,7 @@ a.) *Static vs. dynamic allocation*
    like `malloc` and `free`. This is more flexible but requires
    careful management to avoid leaks and fragmentation.
 
-b.) *Constraints and safety*
+*Constraints and safety*
    - *Pre-allocated heap*. Allocating a fixed-size heap and crashing
    when it is full, as in the previously provided example, is simple
    but not ideal. It does not handle scenarios where memory demands
