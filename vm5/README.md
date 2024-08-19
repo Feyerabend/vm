@@ -146,8 +146,9 @@ Main GC, marking and then sweeping:
 
 ### examples of usage
 
-In a virtual machine (VM) context, the provided garbage collection
-implementation can be adapted to manage various types of objects.
+In a VM context, the provided garbage collection
+implementation can be adapted to manage various
+types of objects.
 
 a.) *Objects in a programming language*
    - *Data structures*: The `Object` structure could represent objects
