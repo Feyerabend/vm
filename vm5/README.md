@@ -224,12 +224,11 @@ fragmentation and improve performance.
 Some improvements of providing *errors*, thus improving robustness
 by handling memory allocation failures gracefully and providing
 mechanisms for easier recovery or scaling.
-
 Implementing some "debugging" features by printing statements
 to track memory usage and identify potential leaks or performance
 bottlenecks.
 
-Future enhancements could involve implementing memory
+But future enhancements could involve implementing memory
 pools for common object sizes and adding profiling
 tools to monitor memory usage.
 
