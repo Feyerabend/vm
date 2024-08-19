@@ -2,7 +2,7 @@
 
 ## garbage collection
 
-So far we have ignored in principal how memory or memory management
+So far we have ignored in principal how *memory* or *memory management*
 for the VM should or could look like. Certainly the *stack* is a
 memory allocation of sort, but we keep it close to the stack machine,
 so it should not exceed either a predetermied size or too much allocated
@@ -212,25 +212,23 @@ types of objects.
 ```
 
 The `gc2.c`have some slight improvements over `gc.c`.
-Those are in object management through the *reference counting*,
-and *pools*.
-Besides addition to mark-and-sweep, implementing reference
-counting can help manage objects (with circular references)
-more effectively.
-For frequently allocated and deallocated objects of the same
-size (here examplified with '10'), using memory pools can reduce
+Those are in object management through the *reference
+counting*, and *pools*. Besides addition to mark-and-sweep,
+implementing reference counting can help manage objects
+(with circular references) more effectively. For frequently
+allocated and deallocated objects of the same size (here
+examplified with '10'), using memory pools can reduce
 fragmentation and improve performance.
 
 Some improvements of providing *errors*, thus improving robustness
 by handling memory allocation failures gracefully and providing
-mechanisms for easier recovery or scaling.
-Implementing some "debugging" features by printing statements
-to track memory usage and identify potential leaks or performance
-bottlenecks.
+mechanisms for easier recovery or scaling. Implementing some
+"debugging" features by printing statements to track memory
+usage and identify potential leaks or performance bottlenecks.
 
 But future enhancements could involve implementing memory
-pools for common object sizes and adding profiling
-tools to monitor memory usage.
+pools for *common object sizes* and adding *profiling
+tools* to monitor memory usage.
 
 ..
 

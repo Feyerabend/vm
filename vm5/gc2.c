@@ -20,7 +20,7 @@ Heap heap;  // global heap
 // root
 Object* root = NULL;
 
-// Initialize the heap
+// initialize the heap
 void initialize_heap() {
     heap.capacity = INITIAL_HEAP_SIZE;
     heap.size = 0;
