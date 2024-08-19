@@ -14,13 +14,15 @@ to determine at compile time how much of memory should be allocated.
 Thus the *heap* is used for objects whose lifetime and size cannot be
 determined at compile time.
 
-In Python the build-in garbage collector takes care of any
+In Python the build-in garbage collector[^gc] takes care of any
 memory concerns. But in C we have to check for ourselves
 the memory required. So far the easiest solution is to
 allocate memory at the start, and crash when there is nothing left.
 This isn't ideal in a real scenario. One way of handling memory
 in C is also to use garbage collection, collected at suitable places,
 in the program.
+
+[^gc]: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
 
 In C, functions like `malloc` (memory allocation) and `free`
 (deallocation) are used to manage memory on the heap. When you
@@ -44,8 +46,6 @@ A sample of a very simple illustration of this can be seen in
 of a mark-and-sweep garbage collector. It manages a heap of
 `Object` instances, performs garbage collection when necessary,
 and provides utility functions to create and list objects.
-This approach can be extended and adapted for various
-applications in a virtual machine.
 
 
 ### memory management considerations in C
