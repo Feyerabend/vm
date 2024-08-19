@@ -3,13 +3,35 @@
 ## garbage collection
 
 So far we have ignored in principal how memory or memory management
-for the VM should or could look like. In Python the build-in
-garbage collector takes care of much memory concerns. But in C
-we have to check for ourselves the memory required. So far
-the easiest solution is to allocate memory at the start, and
-crash when ther is no left. This isn't ideal in a real scenario.
-One way of handling memory in C is also to use garbage collection
-at suitable places, in the program.
+for the VM should or could look like. Certainly the *stack* is a
+memory allocation of sort, but we keep it close to the stack machine,
+so it should not exceed either a predetermied size or too much allocated
+space (no infinite memory) allocating or deallocating memory with
+function calls, calculations on the stack, etc.
+
+But there is a concern considering the 'heap'. It can be difficult
+to determine at compile time how much of memory should be allocated.
+Thus the *heap* is used for objects whose lifetime and size cannot be
+determined at compile time.
+
+In Python the build-in garbage collector takes care of any
+memory concerns. But in C we have to check for ourselves
+the memory required. So far the easiest solution is to
+allocate memory at the start, and crash when there is nothing left.
+This isn't ideal in a real scenario. One way of handling memory
+in C is also to use garbage collection, collected at suitable places,
+in the program.
+
+In C, functions like 'malloc' (memory allocation) and 'free'
+(deallocation) are used to manage memory on the heap. When you
+allocate memory using 'malloc', a block of memory is reserved
+on the heap, and you receive a pointer to that memory. When
+you are done using that memory, you must manually release
+it using 'free' to avoid memory leaks.
+Over time, as memory is allocated and deallocated, the heap can
+become very fragmented, which can lead to inefficient use of
+memory and, in some cases, allocation failures if there
+isn’t a large enough contiguous block available.
 
 Memory management in a VM can involve several critical aspects.
 They can including allocation, deallocation, and garbage collection.
