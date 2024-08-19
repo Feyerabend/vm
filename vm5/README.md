@@ -166,22 +166,26 @@ b.) *VM internals*
 
 ### gc2.c
 
-a. *Object management:*
-   - *Reference counting*: Besides addition to mark-and-sweep,
+The `gc2.c`have some slight improvements over `gc.c`.
+Those are:
+
+a.) *Object management*
+   - *Reference counting*. Besides addition to mark-and-sweep,
    implementing reference counting can help manage objects (with
    circular references) more effectively.
 
-   - *Pools*: For frequently allocated and deallocated
+   - *Pools*. For frequently allocated and deallocated
    objects of the same size, using memory pools can reduce
    fragmentation and improve performance.
 
-b. *Errors:*
-   - Improve robustness by handling memory allocation failures
+b.) *Errors*
+   - Improving robustness by handling memory allocation failures
    gracefully and providing mechanisms for recovery or scaling.
 
-c. *Debugging:*
-   - Implement debugging features to track memory usage and
-   identify potential leaks or performance bottlenecks.
+c.) *Primitive debugging*
+   - Implement some "debugging" features by printing statements
+   to track memory usage and identify potential leaks or performance
+   bottlenecks.
 
 
 
