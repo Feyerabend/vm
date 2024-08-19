@@ -212,7 +212,7 @@ types of objects.
 ```
 
 The `gc2.c`have some slight improvements over `gc.c`.
-Those are in object management thriugh the *reference counting*,
+Those are in object management through the *reference counting*,
 and *pools*.
 Besides addition to mark-and-sweep, implementing reference
 counting can help manage objects (with circular references)
