@@ -73,8 +73,8 @@ b.) *Constraints and safety*
 Compile and run:
 
 ```shell
-> make gc2
-> ./gc2
+> make gc
+> ./gc
 ```
 
 The internals:
