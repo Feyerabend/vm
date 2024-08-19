@@ -47,7 +47,7 @@ b.) *Constraints and safety*
    introduces overhead and some complexity.
 
 
-### gc.c sample
+### gc.c
 
 
    ```c
@@ -164,7 +164,7 @@ b.) *VM internals*
 
 
 
-### improved `gc2.c`
+### gc2.c
 
 a. *Object management:*
    - *Reference counting*: Besides addition to mark-and-sweep,
