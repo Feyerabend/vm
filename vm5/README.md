@@ -174,6 +174,14 @@ Main GC, `mark_and_sweep`:
 
 ![Mark and sweep](../assets/images/mark-sweep.png)
 
+In the picture, a root object in blue keeps three linked
+objects: 1, 2 and 3. There are two objects that
+are not linked to the root, 4 and 5 in blue.
+The garbage collector marks the three objects 1,2 and 3
+as "alive" in green, but decides that 4 and 5 are "not"
+alive, thus mark them for garbage collection.
+
+
 
 ### examples of usage
 
