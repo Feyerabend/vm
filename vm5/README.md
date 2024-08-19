@@ -172,6 +172,8 @@ Main GC, `mark_and_sweep`:
    }
    ```
 
+![Mark and sweep](../assets/images/mark-sweep.png)
+
 
 ### examples of usage
 
