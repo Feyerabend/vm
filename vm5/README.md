@@ -288,7 +288,34 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 ## vm5.c
 
 A very limited VM shows us the functionality of adding
-a new data structure, using the GC.
+a *new data structure*, a list, using the GC.
+
+Some things have changed from the latest GC above. The heap
+is still a dynamically allocated array of object pointers.
+It starts with a predefined size and can grow as needed.
+If the heap becomes full, the program triggers garbage collection
+and may also extend the heap. Initially, the heap is of a fixed size
+(`INITIAL_HEAP_SIZE`), and grows (`HEAP_INCREMENT`) if needed.
+
+In this VM numbers are *added* to a linked list structure
+(but *no addition* between numbers). Numbers can also be
+*removed* from specific indices in the list. After deletion,
+GC is invoked to clean up any freed memory. The list of
+numbers is *printed* to show current state.
+
+This happends when running a program:
+1. Set up the initial heap size and allocate memory.
+2. The VM executes a series of instructions:
+   - `ADD_NUM` add numbers to the list.
+   - `PRINT_LIST` show the contents of the list.
+   - `DELETE_NUM` Remove a number from the list.
+   - `HALT` stops execution.
+3. Periodically triggered GC when the heap is full,
+or when objects are deleted. Ensures that memory is
+properly managed and reclaimed.
+
+
+### sample
 
    ```c
    int program[] = {
@@ -307,7 +334,11 @@ a new data structure, using the GC.
    };
    ```
 
-### explanation
+- Numbers are added to the list until the heap is full.
+- Garbage collection is triggered to reclaim space, and
+  if necessary, the heap size is increased.
+- Additional numbers are added and deleted, demonstrating
+  how the VM manages memory and list operations.
 
 The first five instructions (`ADD_NUM, 10`, `ADD_NUM, 20`, etc.)
 add numbers 10, 20, 30, 40, and 50 to the list sequentially.
@@ -342,7 +373,8 @@ that any newly freed memory is properly reclaimed.
 The number 70 is added to the list after deletion. Since space has
 been freed by deleting an element, this addition should succeed
 without triggering additional heap extension at this point, and
-could thus in principle be reclaimed.
+could thus in principle also be reclaimed.
 
 At last `PRINT_LIST` shows final contents, and
 `HALT` stops the VM execution.
+
