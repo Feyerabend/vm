@@ -284,5 +284,65 @@ vulnerabilities. Developers must carefully track and manage memory usage,
 which can increase development time and complexity. Mistakes can lead
 to hard-to-debug issues, crashes, undefined behavior, etc.
 
-..
-..
+
+## vm5.c
+
+A very limited VM shows us the functionality of adding
+a new data structure, using the GC.
+
+   ```c
+   int program[] = {
+       ADD_NUM, 10,    // add number 10 to list
+       ADD_NUM, 20,    // add number 20 to list
+       ADD_NUM, 30,    // add number 30 to list
+       ADD_NUM, 40,    // add number 40 to list
+       ADD_NUM, 50,    // add number 50 to list
+       PRINT_LIST,     // print list: 10 20 30 40 50
+       ADD_NUM, 60,    // add 60 to list
+       PRINT_LIST,     // print list: 10 20 30 40 50 60
+       DELETE_NUM, 0,  // delete first element (index 0), which is 10
+       ADD_NUM, 70,    // add number 70 to list (should fit?)
+       PRINT_LIST,     // print list: 20 30 40 50 70
+       HALT            // stop
+   };
+   ```
+
+### explanation
+
+The first five instructions (`ADD_NUM, 10`, `ADD_NUM, 20`, etc.)
+add numbers 10, 20, 30, 40, and 50 to the list sequentially.
+As each number is added to the lisst, the `new_object` function
+is called to allocate memory for each new object.
+But if the heap becomes full, the `mark_and_sweep` function
+triggers garbage collection to free up space. Seems like a good
+place to do this.
+
+After adding five numbers, the `PRINT_LIST` is executed.
+This prints current list: `10 20 30 40 50`.
+
+When trying to add the sixth number (60), the `new_object` function
+checks if the heap is full. Since the heap is already at capacity of 5,
+the `new_object` triggers garbage collection through `mark_and_sweep`.
+If garbage collection is not enough to free up sufficient space, the
+heap is extended using `extend_heap`, which increases the heap capacity
+of another 5 elements and reallocates sufficient memory.
+
+After garbage collection and potential heap extension, the number 60
+is added to the list. The `PRINT_LIST` is executed again,
+showing updated list of: `10 20 30 40 50 60`.
+
+The `DELETE_NUM, 0` instruction deletes the element at index 0.
+This means removing the first element (10) from the list,
+adjusting the links in the list to bypass the removed element,
+and freeing the memory of the deleted object thus removing it
+from the heap list. After deletion, the heap may have space freed.
+But a garbage collection pass is executed after this to ensure
+that any newly freed memory is properly reclaimed.
+
+The number 70 is added to the list after deletion. Since space has
+been freed by deleting an element, this addition should succeed
+without triggering additional heap extension at this point, and
+could thus in principle be reclaimed.
+
+At last `PRINT_LIST` shows final contents, and
+`HALT` stops the VM execution.
