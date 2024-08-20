@@ -13,10 +13,11 @@ ensures that memory allocation and deallocation related to
 function calls, intermediate calculations, and other stack
 operations remain manageable and bounded within these constraints.
 
-However, if we introduce a language model to the VM,
-memory management can become more complex, particularly
-concerning the handling of more dynamic data structures within the
-language. The memory model in this context may benefit
+However, if we introduce a language model to the VM with
+a more flexible hold on data structures, memory management
+can become more complex, particularly concerning the handling
+of more dynamic data structures within the language.
+The memory model in this context may benefit
 from abstracting away manual memory management concerns,
 allowing the language to handle allocation and deallocation
 automatically.
@@ -255,6 +256,33 @@ the later automatic version[^arc] should have made this better.
 [^arc]: https://en.wikipedia.org/wiki/Automatic_Reference_Counting
 
 
-..
+### pros and cons
 
+An obvious and often lengthy discussion is about the benefits
+and problems of garbage colletion versus manual memory handling,
+which have consequences when designing virtual machines.
+
+On the plus side GC simplifies the development by automatically
+reclaiming memory that is no longer in use, reducing risk of memory
+leaks, errors related to manual memory management, and focus
+can go to the main task of the program itself instead.
+
+The cons are runtime overhead, as it somewhere and sometimes
+has to check for potential garbage collections. Developers have less
+control over when and how memory is freed. Garbage collectors
+themselves may require additional memory overhead.
+
+So, in the case of manual control the developers have full
+control over memory allocation and deallocation. Manual management
+can lead to lower runtime overhead and more predictable performance
+of the program. Without the overhead, applications may even
+have a smaller memory footprint.
+
+However manual memory management is error-prone and can lead to
+the above issues of memory leaks, buffer overflows, and other
+vulnerabilities. Developers must carefully track and manage memory usage,
+which can increase development time and complexity. Mistakes can lead
+to hard-to-debug issues, crashes, undefined behavior, etc.
+
+..
 ..
