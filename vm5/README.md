@@ -215,26 +215,26 @@ The `gc2.c`have some slight improvements over `gc.c`.
 
 But a better garbage collector can have improvements 
 in object management through the *reference counting*,
-and *pools*. Besides addition to mark-and-sweep,
+and deeper *pools*[^pool]. Besides addition to mark-and-sweep,
 implementing reference counting can help manage objects
 (with circular references) more effectively. For frequently
 allocated and deallocated objects of the same size,
 using memory pools can reduce fragmentation and improve
-performance. To my experience, maunal reference counting
-in Objective-C for iOS was hard to keep track of.
-The later automatic version should have made this better,
-though.
+performance. To my experience, manunal reference counting[^rc]
+in Objective-C for iOS was hard to keep track of. Though
+the later automatic version[^arc] should have made this better.
+
+[^pool]: https://en.wikipedia.org/wiki/Region-based_memory_management
+
+[^rc]: https://en.wikipedia.org/wiki/Reference_counting
+[^arc]: https://en.wikipedia.org/wiki/Automatic_Reference_Counting
 
 Also providing help with providing *errors*, thus the
 robustness by handling memory allocation failures gracefully
 and providing mechanisms for easier recovery or scaling.
-Implementing some stronger *debugging* features by printing
-statements to track memory usage and identify potential
-leaks or performance bottlenecks.
-
-Future enhancements could also involve implementing memory
-pools for *common object sizes* and adding *profiling
-tools* to monitor memory usage.
+Implementing some stronger *debugging* features to track
+memory usage and identify potential leaks or performance
+bottlenecks.
 
 ..
 
