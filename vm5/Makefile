@@ -18,3 +18,4 @@ vm5: vm5.o
 
 clean:
 	rm -f $(OBJFILES) $(TARGET) *~
+

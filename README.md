@@ -209,7 +209,9 @@ development is combinator parsers.
 
 ### 18. [vm5](/vm5)
 
-..
+Memory management in the form of a *garbage colletor* is introduced,
+and a sample is given of a virtual machine that manipulates a managed
+list as a dynamic data structure.
 
 
 ## License
