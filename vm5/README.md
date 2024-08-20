@@ -65,9 +65,11 @@ Memory management in a VM can involve several critical aspects.
 They can including allocation, deallocation, and garbage collection.
 A sample of a very simple illustration of this can be seen in
 `gc.c`. The provided code snippet demonstrates a basic implementation
-of a *mark-and-sweep garbage collector*. It manages a heap of
+of a *mark-and-sweep garbage collector*[^mas]. It manages a heap of
 `Object` instances, performs garbage collection when necessary,
 and provides utility functions to create and list objects.
+
+[^mas]: https://en.wikipedia.org/wiki/Tracing_garbage_collection
 
 
 ### memory management considerations in C
