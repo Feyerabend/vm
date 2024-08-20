@@ -290,13 +290,13 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 A very limited VM shows us the functionality of adding
 a *new data structure*, a list, using the GC.
 
-Some things have changed from the latest GC above. The heap
-is still a dynamically allocated array of object pointers.
+The heap is still a dynamically allocated array of object pointers.
 It starts with a predefined size and can grow as needed.
 If the heap becomes full, the program triggers garbage collection
 and may also extend the heap. Initially, the heap is of a fixed size
 (`INITIAL_HEAP_SIZE`), and grows (`HEAP_INCREMENT`) if needed.
 
+Some things have changed slightly from the latest GC above.
 In this VM numbers are *added* to a linked list structure
 (but *no addition* between numbers). Numbers can also be
 *removed* from specific indices in the list. After deletion,
