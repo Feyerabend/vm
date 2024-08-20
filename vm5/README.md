@@ -14,8 +14,8 @@ function calls, intermediate calculations, and other stack
 operations remain manageable and bounded within these constraints.
 
 However, if we introduce a language model to the VM,
-memory management becomes more complex, particularly
-concerning the handling of data structures within the
+memory management can become more complex, particularly
+concerning the handling of more dynamic data structures within the
 language. The memory model in this context may benefit
 from abstracting away manual memory management concerns,
 allowing the language to handle allocation and deallocation
