@@ -2,25 +2,50 @@
 
 ## garbage collection
 
-So far we have ignored in principal how *memory* or *memory management*
-for the VM should or could look like. Certainly the *stack* is a
-memory allocation of sort, but we keep it close to the stack machine,
-so it should not exceed either a predetermied size or too much allocated
-space (no infinite memory) allocating or deallocating memory with
-function calls, calculations on the stack, etc.
+To this point, we've deliberately avoided discussing the
+specifics of *memory* and *memory management* for the virtual
+machine (VM). While we've acknowledged that the *stack*
+represents a form of memory allocation, we've kept it tightly
+integrated with the stack machine's operations. As such, the
+stack should be constrained to a predetermined size to prevent
+excessive memory usage or potential overflow. This approach
+ensures that memory allocation and deallocation related to
+function calls, intermediate calculations, and other stack
+operations remain manageable and bounded within these constraints.
 
-But there is a concern considering the 'heap'. It can be difficult
-to determine at compile time how much of memory should be allocated.
-Thus the *heap* is used for objects whose lifetime and size cannot be
-determined at compile time.
+However, if we introduce a language model to the VM,
+memory management becomes more complex, particularly
+concerning the handling of data structures within the
+language. The memory model in this context may benefit
+from abstracting away manual memory management concerns,
+allowing the language to handle allocation and deallocation
+automatically.
 
-In Python the build-in garbage collector[^gc] takes care of any
-memory concerns. But in C we have to check for ourselves
-the memory required. So far the easiest solution is to
-allocate memory at the start, and crash when there is nothing left.
-This isn't ideal in a real scenario. One way of handling memory
-in C is also to use garbage collection, collected at suitable places,
-in the program.
+One of the primary challenges here lies with the *heap*,
+a memory region used for dynamic allocation. Unlike the stack,
+the size and lifetime of objects on the heap cannot typically be
+determined at compile time. As a result, managing heap memory
+efficiently is crucial, as improper handling can lead to memory
+leaks.
+
+For instance, in Python, memory management is largely abstracted
+away from the developer, thanks to the built-in garbage collector[^gc].
+This system automatically tracks and reclaims memory, alleviating
+the need for explicit memory management. In contrast, languages
+like C require the developer to manually manage memory, including
+determining how much memory to allocate and ensuring that it's
+properly freed when no longer needed. A common but suboptimal
+approach in C is to allocate a large block of memory at the start
+of the program and allow the application to crash if this memory
+is exhausted -- like we have done previously.
+
+This method, while simple, is far from ideal in a real-world scenario.
+A more sophisticated approach in C might involve implementing a form
+of garbage collection, where memory is periodically reclaimed at
+appropriate points in the program's execution. This can help prevent
+memory leaks and ensure that memory is used efficiently, although
+it requires careful design and consideration of when and how to
+trigger the garbage collection process.
 
 [^gc]: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
 
