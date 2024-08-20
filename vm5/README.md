@@ -229,12 +229,6 @@ the later automatic version[^arc] should have made this better.
 [^rc]: https://en.wikipedia.org/wiki/Reference_counting
 [^arc]: https://en.wikipedia.org/wiki/Automatic_Reference_Counting
 
-Also providing help with providing *errors*, thus the
-robustness by handling memory allocation failures gracefully
-and providing mechanisms for easier recovery or scaling.
-Implementing some stronger *debugging* features to track
-memory usage and identify potential leaks or performance
-bottlenecks.
 
 ..
 
