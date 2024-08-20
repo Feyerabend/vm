@@ -287,8 +287,9 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 
 ## vm5.c
 
-A very limited VM shows us the functionality of adding
-a *new data structure*, a (one) list, using the GC.
+A minimal virtual machine demonstrates how to implement a basic
+data structure, specifically a (but only one) *list*, while utilizing
+garbage collection for memory management.
 
 The heap is still a dynamically allocated array of object pointers.
 It starts with a predefined size and can grow as needed.
