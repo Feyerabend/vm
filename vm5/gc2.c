@@ -20,7 +20,7 @@ Heap heap;  // global heap
 // root
 Object* root = NULL;
 
-// initialize the heap
+// initialize the heap with detailed logging
 void initialize_heap() {
     heap.capacity = INITIAL_HEAP_SIZE;
     heap.size = 0;
@@ -29,41 +29,19 @@ void initialize_heap() {
         perror("Failed to initialize heap");
         exit(1);
     }
+    printf("Heap initialized with capacity: %d objects\n", heap.capacity);
 }
 
-// extend heap capacity
+// extend heap capacity with logging
 void extend_heap() {
+    printf("Extending heap from %d to %d objects...\n", heap.capacity, heap.capacity + HEAP_INCREMENT);
     heap.capacity += HEAP_INCREMENT;
     heap.objects = (Object**)realloc(heap.objects, heap.capacity * sizeof(Object*));
     if (heap.objects == NULL) {
         perror("Failed to extend heap");
         exit(1);
     }
-}
-
-// fwd decl.
-void mark_and_sweep();
-
-// allocate a new object, trigger GC if needed
-Object* new_object() {
-    if (heap.size >= heap.capacity) {
-        printf("Heap full, running garbage collection...\n");
-        mark_and_sweep();
-        if (heap.size >= heap.capacity) {
-            printf("Out of memory!\n");
-            exit(1);
-        }
-    }
-
-    Object* obj = (Object*)malloc(sizeof(Object));
-    if (obj == NULL) {
-        perror("Failed to allocate object");
-        exit(1);
-    }
-    obj->marked = 0;
-    obj->next = NULL;
-    heap.objects[heap.size++] = obj;
-    return obj;
+    printf("Heap successfully extended to %d objects\n", heap.capacity);
 }
 
 // mark all reachable objects
@@ -92,7 +70,7 @@ void sweep() {
             printf("Sweeping object at %p\n", (void*)heap.objects[i]);
             free(heap.objects[i]);
             heap.objects[i] = heap.objects[--heap.size];  // replace with last object
-            i--;  // index after removal
+            i--;  // adjust index after removal
         }
     }
 }
@@ -101,6 +79,31 @@ void sweep() {
 void mark_and_sweep() {
     mark_all();
     sweep();
+}
+
+// allocate a new object, trigger GC if needed, and extend heap if necessary
+Object* new_object() {
+    if (heap.size >= heap.capacity) {
+        printf("Heap full, running garbage collection...\n");
+        mark_and_sweep();
+        
+        // If the heap is still full after GC, attempt to extend it
+        if (heap.size >= heap.capacity) {
+            printf("Garbage collection did not free enough space. Attempting to extend heap...\n");
+            extend_heap();
+        }
+    }
+
+    Object* obj = (Object*)malloc(sizeof(Object));
+    if (obj == NULL) {
+        perror("Failed to allocate object");
+        exit(1);
+    }
+    obj->marked = 0;
+    obj->next = NULL;
+    heap.objects[heap.size++] = obj;
+    printf("Allocated new object at %p. Heap size: %d/%d\n", (void*)obj, heap.size, heap.capacity);
+    return obj;
 }
 
 // display/list objects
@@ -124,6 +127,15 @@ void create_object_chain(int length) {
     }
 }
 
+// create multiple chains of objects
+void create_large_object_chain(int num_chains, int chain_length) {
+    for (int i = 0; i < num_chains; i++) {
+        printf("Creating chain %d with %d objects...\n", i + 1, chain_length);
+        create_object_chain(chain_length);
+    }
+    printf("Created %d chains of %d objects each\n", num_chains, chain_length);
+}
+
 // remove root reference (simulate losing reference)
 void lose_root_reference() {
     printf("Lost root\n");
@@ -134,19 +146,21 @@ int main() {
     initialize_heap();
     printf("Start\n");
 
-    create_object_chain(3);  // chain of 3 objects
-    lose_root_reference();  // lose root
-    list_objects(); // some objects listed
-    mark_and_sweep(); // objects should be collected
-    printf("\n");
-
-    create_object_chain(9);  // chain of 9 objects
-    create_object_chain(1);  // "chain" of 1 object
+    create_large_object_chain(2, 5);  // create 2 chains of 5 objects each
     list_objects();
     printf("\n");
 
-    printf("One more ..\n");
-    new_object();  // trigger GC
+    lose_root_reference();  // lose root
+    mark_and_sweep(); // objects should be collected
+    list_objects();
+    printf("\n");
+
+    create_large_object_chain(3, 7);  // create 3 chains of 7 objects each
+    list_objects();
+    printf("\n");
+
+    printf("Adding one more object to trigger GC or heap extension...\n");
+    new_object();  // trigger GC or extend heap
     list_objects();
     printf("End\n");
 
