@@ -63,12 +63,9 @@ isn’t a large enough contiguous block available.
 
 Memory management in a VM can involve several critical aspects.
 They can including allocation, deallocation, and garbage collection.
-For C this poses additional challenges, as C
-does not automatically reclaim unused memory, leading to
-potential memory leaks and crashes if not managed correctly.
 A sample of a very simple illustration of this can be seen in
 `gc.c`. The provided code snippet demonstrates a basic implementation
-of a mark-and-sweep garbage collector. It manages a heap of
+of a *mark-and-sweep garbage collector*. It manages a heap of
 `Object` instances, performs garbage collection when necessary,
 and provides utility functions to create and list objects.
 
