@@ -65,7 +65,7 @@ Memory management in a VM can involve several critical aspects.
 They can including allocation, deallocation, and garbage collection.
 A sample of a very simple illustration of this can be seen in
 `gc.c`. The provided code snippet demonstrates a basic implementation
-of a *mark-and-sweep garbage collector*[^mas]. It manages a heap of
+of a naïve *mark-and-sweep garbage collector*[^mas]. It manages a heap of
 `Object` instances, performs garbage collection when necessary,
 and provides utility functions to create and list objects.
 
@@ -287,7 +287,12 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 
 A minimal virtual machine demonstrates how to implement a basic
 data structure, specifically a (but only one) *list*, while utilizing
-garbage collection for memory management.
+garbage collection for memory management.[^mas2]
+
+[^mas2]: You might want to extend this with a "set of roots" to handle
+more than one list. Also see "Naïve mark-and-sweep" in
+https://en.wikipedia.org/wiki/Tracing_garbage_collection.
+
 
 The heap is still a dynamically allocated array of object pointers.
 It starts with a predefined size and can grow as needed.
