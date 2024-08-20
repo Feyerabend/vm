@@ -204,14 +204,14 @@ during porting.
 
 Parsers have a long tradition. Ordinary recursive decent parsers can be
 constructed by hand, but also be automated. An interesting more recent
-development is combinator parsers.
+development is *combinator parsers*.
 
 
 ### 18. [vm5](/vm5)
 
-Memory management in the form of a *garbage colletor* is introduced,
-and a sample is given of a virtual machine that manipulates a managed
-list as a dynamic data structure.
+Memory management in the form of a simple *garbage collector* named
+*mark-and-sweep* is introduced, and a sample is given of a virtual machine
+that manipulates a managed list as a dynamic data structure.
 
 
 ## License
