@@ -288,7 +288,7 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 ## vm5.c
 
 A very limited VM shows us the functionality of adding
-a *new data structure*, a list, using the GC.
+a *new data structure*, a (one) list, using the GC.
 
 The heap is still a dynamically allocated array of object pointers.
 It starts with a predefined size and can grow as needed.
