@@ -89,7 +89,7 @@ and provides utility functions to create and list objects.
    fluctuate or where memory can be reclaimed dynamically.
    - *Garbage Collection (GC)*. Implementing garbage collection helps
    automatically manage memory by reclaiming unused objects, but it
-   introduces overhead and some complexity.
+   introduces overhead (time and memory) and some complexity.
 
 
 ### gc.c
