@@ -308,7 +308,7 @@ This happends when running a program:
 2. The VM executes a series of instructions:
    - `ADD_NUM` add numbers to the list.
    - `PRINT_LIST` show the contents of the list.
-   - `DELETE_NUM` Remove a number from the list.
+   - `DELETE_NUM` remove a number from the list.
    - `HALT` stops execution.
 3. Periodically triggered GC when the heap is full,
 or when objects are deleted. Ensures that memory is
