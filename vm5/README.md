@@ -66,7 +66,6 @@ They can including allocation, deallocation, and garbage collection.
 For C this poses additional challenges, as C
 does not automatically reclaim unused memory, leading to
 potential memory leaks and crashes if not managed correctly.
-
 A sample of a very simple illustration of this can be seen in
 `gc.c`. The provided code snippet demonstrates a basic implementation
 of a mark-and-sweep garbage collector. It manages a heap of
