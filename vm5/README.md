@@ -282,6 +282,19 @@ vulnerabilities. Developers must carefully track and manage memory usage,
 which can increase development time and complexity. Mistakes can lead
 to hard-to-debug issues, crashes, undefined behavior, etc.
 
+There are many variations of gabage colletors, and we have
+only touched one: *mark-and-sweep* which is reliable but
+can cause fragmentation and (unplanned) pauses.
+
+Others are e.g. *reference counting*: a simple approach
+that tracks object references to manage memory but
+have problems with *cycles*, where two or more objects
+reference each other, leading to memory leaks.
+Yet another, not to hard to implement, is *copying
+collection*: efficiently handles short-lived objects
+by copying live objects to a new memory space, though
+it requires more memory.
+
 
 ## vm5.c
 
