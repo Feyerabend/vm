@@ -45,9 +45,10 @@ def char(c):
 ```
 
 First to notice is that the 'def' returns another 'def'.
+We use what is called a *closure*.
 
 <details>
-<summary>Closures</summary>
+<summary>More on *closures*</summary>
 
 ### closures ###
 
