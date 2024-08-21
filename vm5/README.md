@@ -285,6 +285,11 @@ to hard-to-debug issues, crashes, undefined behavior, etc.
 
 ## vm5.c
 
+```shell
+> make vm5
+> ./vm5
+```
+
 A minimal virtual machine demonstrates how to implement a basic
 data structure, specifically a (but only one) *list*, while utilizing
 garbage collection for memory management.[^mas2]
