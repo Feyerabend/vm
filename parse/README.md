@@ -117,7 +117,7 @@ parser one step in the text.
 This is not so much different from what happends in a traditional 
 parser, e.g. recursive decent parser, we have seen before. What is 
 different is the *use* of functions, and later (re)use of functions
-(lazily).
+(optionally lazily).
 
 If we take another parser for 'whitespace':
 
