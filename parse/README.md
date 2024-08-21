@@ -44,10 +44,73 @@ def char(c):
     return parser
 ```
 
-First to notice is that the 'def' returns another 'def'. That is, the
-assumed parser really returns another parser. The inner parser returned
-here test from the text, the first character. If it finds one, it
-returns the character and also advances the parser one step in the text.
+First to notice is that the 'def' returns another 'def'.
+
+<details>
+<summary>Closures</summary>
+
+*Closure* is a concept in programming, particularly in languages
+like Python, JavaScript, and others. It's a way of keeping a
+function and the variables it needs together, even if those variables
+aren't in the same place in the code (anymore).
+
+### example
+
+```python
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
+
+# create closure
+closure = outer_function(10)
+
+# 'closure' remembers the value
+# of `x` from `outer_function`
+result = closure(5)  # will return 15
+```
+
+a. `outer_function`: takes a
+   value `x` and then defines another
+   function inside it, here called
+   `inner_function`.
+
+b. `inner_function`: uses the value of
+   `x` from `outer_function` and adds
+   it to `y`, which it receives as an
+   argument.
+
+c. When you call `outer_function(10)`,
+   it returns `inner_function` but with
+   the value of `x` stored inside it.
+   Now, wherever you use this returned
+   function (`closure`), it remembers
+   that `x` is `10`.
+
+d. When you call `closure(5)`, it uses
+   the remembered value of `x` (which is `10`)
+   and adds it to `5`, thus giving you `15`.
+
+Closures are helpful for:
+
+a. *encapsulation*: keeping certain variables and
+   values private inside a function.
+b. *callbacks*: functions that need to remember
+   some data when they're called later.
+c. *functional programming*: creating more complex
+   behaviors by combining simple functions with
+   remembered data.
+
+In summary, *closure* is when a function "remembers" the
+environment in which it was created, even after that
+environment has gone away.
+</details>
+
+
+That is, the assumed parser really returns another parser. The
+inner parser returned here test from the text, the first character.
+If it finds one, it returns the character and also advances the
+parser one step in the text.
 
 This is not so much different from what happends in a traditional 
 parser, e.g. recursive decent parser, we have seen before. What is 
