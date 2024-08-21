@@ -72,24 +72,24 @@ closure = outer_function(10)
 result = closure(5)  # will return 15
 ```
 
-a. `outer_function`: takes a
+1. `outer_function`: takes a
    value `x` and then defines another
    function inside it, here called
    `inner_function`.
 
-b. `inner_function`: uses the value of
+2. `inner_function`: uses the value of
    `x` from `outer_function` and adds
    it to `y`, which it receives as an
    argument.
 
-c. When you call `outer_function(10)`,
+3. When you call `outer_function(10)`,
    it returns `inner_function` but with
    the value of `x` stored inside it.
    Now, wherever you use this returned
    function (`closure`), it remembers
    that `x` is `10`.
 
-d. When you call `closure(5)`, it uses
+4. When you call `closure(5)`, it uses
    the remembered value of `x` (which is `10`)
    and adds it to `5`, thus giving you `15`.
 
