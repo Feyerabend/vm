@@ -49,6 +49,8 @@ First to notice is that the 'def' returns another 'def'.
 <details>
 <summary>Closures</summary>
 
+### closures ###
+
 *Closure* is a concept in programming, particularly in languages
 like Python, JavaScript, and others. It's a way of keeping a
 function and the variables it needs together, even if those variables
