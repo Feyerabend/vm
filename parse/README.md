@@ -95,13 +95,13 @@ result = closure(5)  # will return 15
 
 Closures are helpful for:
 
-a. *encapsulation*: keeping certain variables and
+-  *encapsulation*: keeping certain variables and
    values private inside a function.
-b. *callbacks*: functions that need to remember
+-  *callbacks*: functions that need to remember
    some data when they're called later.
-c. *functional programming*: creating more complex
+-  *functional programming*: creating more complex
    behaviors by combining simple functions with
-   remembered data.
+   remembered data. What we have here.
 
 In summary, *closure* is when a function "remembers" the
 environment in which it was created, even after that
