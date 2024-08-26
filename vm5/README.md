@@ -204,8 +204,10 @@ are not linked to the root, 4 and 5 in blue (orphans).
 The garbage collector marks the three objects 1,2 and 3
 as "alive" in green, but decides that 4 and 5 are "not"
 alive in red, thus mark them for garbage collection,
-which translates to a cross here.
+which translates to a cross here.[^another]
 
+[^another]: Another GC with explanations implemented in C, can be seen here:
+https://maplant.com/2020-04-25-Writing-a-Simple-Garbage-Collector-in-C.html.
 
 
 ### examples of usage
