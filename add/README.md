@@ -536,7 +536,7 @@ like Church numeral addition.
          self.stack.append(value)
      ```
 
-    - `LOAD`: This instruction loads a variable from the
+   - `LOAD`: This instruction loads a variable from the
       environment and pushes its value onto the stack.
 
 
