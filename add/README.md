@@ -320,8 +320,12 @@ endmodule
 
 - *simulation*: You can simulate this Verilog module using a tool like
   ModelSim (or Vivado) to verify that it correctly adds two 8-bit numbers.
-- *synthesis*: When synthesized onto an FPGA or ASIC, this Verilog code
-  describes how the hardware should be configured to perform the addition.
+- *synthesis*: When synthesized onto an FPGA[^fpga] or ASIC[^asic], this
+  Verilog code describes how the hardware should be configured to perform
+  the addition.
+
+[^fpga]: https://en.wikipedia.org/wiki/Field-programmable_gate_array
+[^asic]: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
 
 
 ### testing
@@ -647,7 +651,6 @@ like Church numeral addition.
              raise IndexError("Stack is empty during RET execution")
          return self.stack.pop()
 ```
-
 
    - `ADD`: This instruction adds two Church numerals.
      It expects two functions on the stack, applies
