@@ -296,26 +296,47 @@ module adder_8bit (
 endmodule
 ```
 
-- *module*: The `module` keyword defines a module named
+*module*: The `module` keyword defines a module named
   `adder_8bit`, which represents an 8-bit adder circuit.
   The inputs are `a` and `b` 8-bit wide (`[7:0]`), and `cin`
   is a single-bit carry-in. The outputs are `sum` (an 8-bit sum)
   and `cout` (the carry-out bit).
 
-- *internal carry*:
-  A wire array `c` is declared to hold the internal carry signals
-  between each bit addition.
+*internal carry*: A wire array `c` is declared to hold
+  the internal carry signals between each bit addition.
 
-- *full adder*:
-  Each line of the form `assign {c[N], sum[N]} = a[N] + b[N] + c[N-1];`
+*full adder*: Each line of the form `assign {c[N], sum[N]} = a[N] + b[N] + c[N-1];`
   implements a full adder for the *corresponding bit*.
   The `{carry, sum}` notation represents concatenation, where the most
   significant bit of the addition result is the carry (`c[N]`), and the
   least significant bit is the sum (`sum[N]`).
 
-- *carry-out*:
-  The final carry-out `cout` is taken from the carry of the last bit
-  (`c[7]`), which can be used to detect overflow.
+*carry-out*: The final carry-out `cout` is taken from
+  the carry of the last bit (`c[7]`), which can be used
+  to detect overflow.
+
+As with coding i C, an alternative to the above could be e.g:
+
+```verilog
+module full_adder(
+    input wire x,
+    input wire y,
+    input wire carry_in,
+    output wire s,
+    output wire carry_out
+);
+    // intermediate signals
+    wire xor_xy, and_xy, and_xor_carry;
+
+    // compute the sum and carry
+    assign xor_xy = x ^ y;
+    assign s = xor_xy ^ carry_in;
+    assign and_xy = x & y;
+    assign and_xor_carry = xor_xy & carry_in;
+    assign carry_out = and_xy | and_xor_carry;
+
+endmodule
+```
 
 
 ### simulation or synthesis
