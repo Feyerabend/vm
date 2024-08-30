@@ -673,21 +673,21 @@ like Church numeral addition.
 This function converts high-level expressions
 into a list of instructions for the VM:
 
-*variables*:
+*variables*
 
 ```python
    if isinstance(expr, str):
        return [f'LOAD {expr}']
 ```
 
-*integer literals*:
+*integer literals*
 
 ```python
    elif isinstance(expr, int):
        return [f'PUSH {expr}']
 ```
 
-*lambda abstractions*:
+*lambda abstractions*
 
 ```python
    elif isinstance(expr, tuple):
@@ -697,7 +697,7 @@ into a list of instructions for the VM:
            return [('CLOSURE', body_code, {})]
 ```
 
-*function applications*:
+*function applications*
 
 ```python
    elif expr[0] == 'apply':
@@ -705,7 +705,7 @@ into a list of instructions for the VM:
        return compile_expr(func) + compile_expr(arg) + ['APPLY']
 ```
 
-*addition*:
+*addition*
 
 ```python
    elif expr[0] == 'add':
