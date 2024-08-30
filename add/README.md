@@ -175,13 +175,13 @@ This full adder is used repeatedly to add corresponding bits
 from two binary numbers, taking into account the carry from
 the previous bit's addition.
 
-- *Logic gates*
+*Logic gates*
    - Functions for basic logic gates (`not`, `and`, `or`, and `xor`) 
      are defined using bitwise operations.
    - These functions mimic the behavior of physical logic gates in
      digital circuits.
 
-- *Full adder*
+*Full adder*
    - This function takes three inputs: two bits (`x`, `y`) and a
      carry bit from the previous lower bit (`carry`).
    - It computes the sum (`s`) and carry (`c`) for these bits.
@@ -189,7 +189,7 @@ the previous bit's addition.
      determined by OR-ing the results of specific AND operations.
      This mimics the logic of a *full adder* in digital circuits.
 
-- *Addition of two 8-bit numbers*
+*Addition of two 8-bit numbers*
    - The `add` function calls the `adder` function for each bit of
      the two 8-bit integers, starting from the least significant bit
      (LSB) to the most significant bit (MSB).
@@ -198,14 +198,14 @@ the previous bit's addition.
    - The function prints out the carry after each bit and the final
      sum in binary and decimal formats.
 
-- *Extra*
+*Extra*
    - `printbin`: Prints the binary representation of an 8-bit number.
    - `printcarry`: Displays the carry bits after each bit addition.
    - `printsum`: Shows the final sum in binary and checks for overflow.
    - `printadder`: 'Debugging' function that prints the result of a 
       single bit addition using the full adder.
 
-- *Testing*
+*Testing*
    - The `test` function demonstrates the functionality of the logic
      gates and the full adder by printing results for various input
      combinations.
@@ -376,7 +376,6 @@ at the level of digital circuits, allowing it to be synthesized into physical
 hardware on an FPGA or ASIC.
 
 
-
 ## lambda calculus and functional programming
 
 In our vertical quest deep into the machine but also high up into the
@@ -440,7 +439,6 @@ work.
 The virtual machine is designed to execute the compiled assembly code
 by simulating a stack-based machine.
 
-- *closure*:
   When the virtual machine encounters a closure, it pushes it onto the stack.
   The closure is later applied when the `APPLY` instruction is encountered.
   
@@ -448,7 +446,6 @@ by simulating a stack-based machine.
     self.stack.append(instr)
 ```
 
-- *application*:
   The `APPLY` instruction pops the function closure and its argument from the
   stack, creates a new virtual machine with the closure's environment, binds
   the argument to the function's parameter (in this case only `x`), and executes
@@ -461,7 +458,6 @@ by simulating a stack-based machine.
     result = new_vm.run(func_body)
 ```
 
-- *return*:
   The `RET` instruction is used to signal the end of a function's execution,
   allowing the virtual machine to return the result from the stack to the caller.
   
@@ -515,9 +511,9 @@ their sum.
 
 As we have seen `0` is represented as `λf.λx.x`, or in general
 `n` is represented as `λf.λx.f (f (...(f x)...))` with `n`
-applications of `f`.
-The idea now is to combine two Church numerals by applying the
-first numeral's function the second numeral's number of times.
+applications of `f`. The idea now is to combine two Church
+numerals by applying the first numeral's function the second
+numeral's number of times.
 
 Given two Church numerals `m` and `n`, their sum can be expressed as:
 
