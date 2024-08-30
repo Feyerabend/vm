@@ -490,35 +490,7 @@ function translates lambda calculus expressions into a sequence of
 instructions that the VM can execute, allowing computations
 like Church numeral addition.
 
-
-```python
-   def __init__(self):
-       self.stack = []
-       self.env = {}
-```
-
-*initialization*:
-   - `self.stack`: A stack used to store intermediate
-     values and functions during computation.
-   - `self.env`: An environment for variable bindings.
-
-```python
-   def run(self, instructions):
-       pc = 0
-       while pc < len(instructions):
-           instr = instructions[pc]
-           ...
-           pc += 1
-```
-
-*running*:
-   - `pc` (program counter) keeps track of the
-     current instruction.
-   - The loop iterates over the instructions,
-     executing them one by one.
-
-
-##### instructions
+*instructions*:
 
    - `PUSH`: This instruction pushes a value onto the stack.
       If the value is a number, it’s converted to a
