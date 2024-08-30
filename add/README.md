@@ -213,6 +213,7 @@ the previous bit's addition.
      combinations.
 
 
+![CPU](../assets/images/cpu.png)
 
 ### a von Neumann architecture
 
