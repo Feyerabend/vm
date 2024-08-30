@@ -535,12 +535,6 @@ Simplifying further:
 
 The result is `λf.λx.f (f (f x))`, which is the Church numeral for `3`.
 
-The lambda expression to add two Church numerals is:
-
-```lambda
-    λm. λn. λf. λx. m f (n f x)
-```
-
 
 
 #### VM
