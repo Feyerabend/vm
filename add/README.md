@@ -671,61 +671,7 @@ like Church numeral addition.
              raise TypeError("ADD operation expects Church numerals")
 ```
 
-#### compile
-
-This function converts high-level expressions
-into a list of instructions for the VM:
-
-*variables*
-
-```python
-   if isinstance(expr, str):
-       return [f'LOAD {expr}']
-```
-
-*integer literals*
-
-```python
-   elif isinstance(expr, int):
-       return [f'PUSH {expr}']
-```
-
-*lambda abstractions*
-
-```python
-   elif isinstance(expr, tuple):
-       if expr[0] == 'lambda':
-           _, var, body = expr
-           body_code = compile_expr(body) + ['RET']
-           return [('CLOSURE', body_code, {})]
-```
-
-*function applications*
-
-```python
-   elif expr[0] == 'apply':
-       _, func, arg = expr
-       return compile_expr(func) + compile_expr(arg) + ['APPLY']
-```
-
-*addition*
-
-```python
-   elif expr[0] == 'add':
-       _, num1, num2 = expr
-       return compile_expr(num1) + compile_expr(num2) + ['ADD']
-```
-
-Compiling ..
-
-```python
-    ('add', 1, 19)
-```
-
-.. to instructions ..
-
-```python
-    ['PUSH 1', 'PUSH 19', 'ADD']
-```
-
-.. are executed and results in '20'.
+The compilation from expressions to instructions for the vm are rather
+straitforward. An example is going from `('add', 1, 19)` to
+`['PUSH 1', 'PUSH 19', 'ADD']` and running it on the vm which gives `20`
+as a result.
