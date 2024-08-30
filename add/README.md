@@ -569,14 +569,17 @@ implementing it in programs can be highly beneficial. This knowledge
 can enhance your understanding when working with virtual machines that
 incorporate concepts from functional programming.
 
-
 ---
+
+*The same in mathematical or formal logic terms*
+
 A Church numeral $n$ is a function defined as:
 $n = \lambda f. \lambda x. f^n x$ where $f^n x$
 denotes the function $f$ applied $n$ times to
 the argument $x$.
 
-Given two Church numerals $m$ and $n$, their sum can be expressed as:
+Given two Church numerals $m$ and $n$, their sum
+can be expressed as:
 $\lambda m. \lambda n. \lambda f. \lambda x. m \; f \; (n \; f \; x)$
 This function works as follows:
 - $n \; f \; x$ applies the function $f$ to $x$, $n$ times.
@@ -584,7 +587,6 @@ This function works as follows:
 result of $n \; f \; x$, effectively adding $m$ and $n$.
 
 Let’s add the Church numerals for 1 and 2.
-
 - $1 = \lambda f. \lambda x. f \; x$
 - $2 = \lambda f. \lambda x. f \; (f \; x)$
 
@@ -602,7 +604,8 @@ Then: $(\lambda f. \lambda x. f \; x) \; (f \; (f \; x)) = f \; (f \; (f \; x))$
 The result is: $\lambda f. \lambda x. f \; (f \; (f \; x))$
 which is the Church numeral for 3.
 
-----
+---
+
 
 ### a second lambda vm
 
