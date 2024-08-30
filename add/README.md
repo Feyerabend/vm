@@ -285,7 +285,7 @@ module adder_8bit (
 endmodule
 ```
 
-- *Module declaration*: The `module` keyword defines a module named
+- *module*: The `module` keyword defines a module named
   `adder_8bit`, which represents an 8-bit adder circuit.
   The inputs are `a` and `b` 8-bit wide (`[7:0]`), and `cin`
   is a single-bit carry-in. The outputs are `sum` (an 8-bit sum)
@@ -364,6 +364,44 @@ similar to how C code simulates it in software. Verilog describes the addition
 at the level of digital circuits, allowing it to be synthesized into physical
 hardware on an FPGA or ASIC.
 
+
+
+## lambda calculus and basis for functional programming
+
+In our vertical quest deep into the machine but also high up into the
+abstrations, we will have a look at how what is called 'lambda calculus'
+can be represented in this case: Python.
+
+
+### 'lambda1.py' and lambda calculus
+
+The provided code consists of two primary components: a *compiler* that
+converts lambda calculus expressions into a simplified assembly language
+and a *virtual machine* that interprets and executes this assembly code.
+The assembly language is specifically designed to model the computational
+behavior of lambda calculus, which is a foundational concept in functional
+programming and theoretical computer science.
+
+
+#### lambda expressions and the compilation
+
+In lambda calculus, a lambda expression represents an *anonymous function*
+(no name). For example, the expression $\(\lambda x. x\)$ defines a function
+that simply returns its argument. In this code, lambda expressions are
+represented as tuples in Python. The compiler (`compile_expr`) translates
+these tuples into a sequence of assembly instructions that the virtual
+machine can execute.
+
+- *abstraction*:
+  The expression `('lambda', 'x', 'x')` is a lambda abstraction that
+  corresponds to $\(\lambda x. x\)$. When the compiler encounters this
+  expression, it generates a closure: a pair consisting of the compiled
+  body of the lambda (in this case, `['LOAD x', 'RET']`) and an environment
+  that will store variable bindings.
+ 
+    ```python
+    return [('CLOSURE', <body_code>, {})]
+    ```
 
 
 ..
