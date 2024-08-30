@@ -701,6 +701,16 @@ into a list of instructions for the VM:
        return compile_expr(num1) + compile_expr(num2) + ['ADD']
 ```
 
-..
+Compiling ..
 
+```python
+    expr = ('add', 1, 19)
+```
 
+.. to instructions ..
+
+```python
+    ['PUSH 1', 'PUSH 19', 'ADD']
+```
+
+That are executed and result in '20'.
