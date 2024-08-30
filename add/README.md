@@ -581,12 +581,22 @@ like Church numeral addition.
       *Church numeral* representation.
 
 ```python
-     if opcode == 'PUSH':
-         value = parts[1]
-         if value.isdigit():
-             value = int(value)
-             ...
-         self.stack.append(value)
+    if opcode == 'PUSH':
+        value = parts[1]
+        if value.isdigit():
+            value = int(value)
+            if value == 0:
+                self.stack.append(lambda f: lambda x: x)
+            elif value == 1:
+                self.stack.append(lambda f: lambda x: f(x))
+            elif value == 2:
+                self.stack.append(lambda f: lambda x: f(f(x)))
+            else:
+                def church_numeral(n):
+                    return lambda f: lambda x: f(church_numeral(n - 1)(f)(x)) if n > 0 else x
+                self.stack.append(church_numeral(value))
+        else:
+            self.stack.append(value)
 ```
 
    - `LOAD`: This instruction loads a variable from the
@@ -608,22 +618,24 @@ like Church numeral addition.
      to `x`.
 
 ```python
-     elif opcode == 'APPLY':
-         arg = self.stack.pop()
-         func = self.stack.pop()
-         if isinstance(func, tuple) and func[0] == 'CLOSURE':
-             func_body, closure_env = func[1], func[2]
-             new_vm = VirtualMachine()
-             new_vm.env = closure_env.copy()
-             new_vm.env.update({'x': arg})
-             result = new_vm.run(func_body)
-             self.stack.append(result)
-             return result
-         elif callable(func):
-             result = func(arg)
-             self.stack.append(result)
-         else:
-             raise ValueError("Expected a function or closure during APPLY")
+    elif opcode == 'APPLY':
+        arg = self.stack.pop()
+        func = self.stack.pop()
+        if isinstance(func, tuple) and func[0] == 'CLOSURE':
+            func_body, closure_env = func[1], func[2]
+            new_env = closure_env.copy()
+            var_name = self.get_closure_arg(func_body)                        
+            new_env.update(self.env)
+            new_env[var_name] = arg                        
+            new_vm = VirtualMachine()
+            new_vm.env = new_env                        
+            result = new_vm.run(func_body)
+            self.stack.append(result)
+        elif callable(func):
+            result = func(arg)
+            self.stack.append(result)
+        else:
+            raise ValueError("Expected a function or closure during APPLY")
 ```
 
    - `RET`: The instruction returns the top value from the
@@ -661,21 +673,21 @@ like Church numeral addition.
 This function converts high-level expressions
 into a list of instructions for the VM:
 
-1. *variables*:
+*variables*:
 
 ```python
    if isinstance(expr, str):
        return [f'LOAD {expr}']
 ```
 
-2. *integer literals*:
+*integer literals*:
 
 ```python
    elif isinstance(expr, int):
        return [f'PUSH {expr}']
 ```
 
-3. *lambda abstractions*:
+*lambda abstractions*:
 
 ```python
    elif isinstance(expr, tuple):
@@ -685,7 +697,7 @@ into a list of instructions for the VM:
            return [('CLOSURE', body_code, {})]
 ```
 
-4. *function applications*:
+*function applications*:
 
 ```python
    elif expr[0] == 'apply':
@@ -693,7 +705,7 @@ into a list of instructions for the VM:
        return compile_expr(func) + compile_expr(arg) + ['APPLY']
 ```
 
-5. *addition*:
+*addition*:
 
 ```python
    elif expr[0] == 'add':
