@@ -507,12 +507,9 @@ Given two Church numerals `m` and `n`, their sum can be expressed as:
     λm. λn. λf. λx. m f (n f x)
 ```
 
-This can be understood as mthe function `m f` applies `f` `m` times.
+This can be understood as the function `m f` applies `f` `m` times.
 The function `n f x` applies `f` to `x` `n` times. Then `m f` applies
 `f` `m` times to the result of `n f x`, thus adding the two numbers.
-
-
-### Example:
 
 Let's see how this works with `1` and `2`:
 
@@ -522,13 +519,13 @@ Let's see how this works with `1` and `2`:
 To add `1` and `2`:
 
 ```lambda
-(λm. λn. λf. λx. m f (n f x)) (λf.λx.f x) (λf.λx.f (f x))
+    (λm. λn. λf. λx. m f (n f x)) (λf.λx.f x) (λf.λx.f (f x))
 ```
 
 Substituting `m` with `1` and `n` with `2`:
 
 ```lambda
-λf.λx. (λf.λx.f x) f ((λf.λx.f (f x)) f x)
+    λf.λx. (λf.λx.f x) f ((λf.λx.f (f x)) f x)
 ```
 
 Simplifying further:
@@ -538,17 +535,11 @@ Simplifying further:
 
 The result is `λf.λx.f (f (f x))`, which is the Church numeral for `3`.
 
-### Summary:
-
 The lambda expression to add two Church numerals is:
 
 ```lambda
-λm. λn. λf. λx. m f (n f x)
+    λm. λn. λf. λx. m f (n f x)
 ```
-
-This expression correctly combines two Church numerals by applying the function `f` a total of `m + n` times, effectively adding the two numbers.
-
-
 
 
 
