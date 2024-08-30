@@ -162,13 +162,13 @@ This full adder is used repeatedly to add corresponding bits
 from two binary numbers, taking into account the carry from
 the previous bit's addition.
 
-1. *Logic gates*:
+- *Logic gates*:
    - Functions for basic logic gates (`not`, `and`, `or`, and `xor`) 
      are defined using bitwise operations.
    - These functions mimic the behavior of physical logic gates in
      digital circuits.
 
-2. *Full adder*:
+- *Full adder*:
    - This function takes three inputs: two bits (`x`, `y`) and a
      carry bit from the previous lower bit (`carry`).
    - It computes the sum (`s`) and carry (`c`) for these bits.
@@ -176,7 +176,7 @@ the previous bit's addition.
      determined by OR-ing the results of specific AND operations.
      This mimics the logic of a *full adder* in digital circuits.
 
-3. *Addition of two 8-bit numbers*:
+- *Addition of two 8-bit numbers*:
    - The `add` function calls the `adder` function for each bit of
      the two 8-bit integers, starting from the least significant bit
      (LSB) to the most significant bit (MSB).
@@ -185,14 +185,14 @@ the previous bit's addition.
    - The function prints out the carry after each bit and the final
      sum in binary and decimal formats.
 
-4. *Extra*:
+- *Extra*:
    - `printbin`: Prints the binary representation of an 8-bit number.
    - `printcarry`: Displays the carry bits after each bit addition.
    - `printsum`: Shows the final sum in binary and checks for overflow.
    - `printadder`: 'Debugging' function that prints the result of a 
       single bit addition using the full adder.
 
-5. *Testing*:
+- *Testing*:
    - The `test` function demonstrates the functionality of the logic
      gates and the full adder by printing results for various input
      combinations.
@@ -311,7 +311,7 @@ endmodule
   describes how the hardware should be configured to perform the addition.
 
 
-### test
+### testing
 
 ```verilog
 module testbench;
