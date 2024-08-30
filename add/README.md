@@ -2,15 +2,15 @@
 # Virtual Machines
 
 
-*So far we have been working with the primitives in our
-VMs as abstractions, implemented in another programming
-language, in Python, C (or JavaScript). We will now take
-a deeper dive into how things works beneath the machine
-when e.g. here adding two numbers. What does
-`add(170, 108)` implies in principal in hardware?
-But we will also have look at a higher level abstration
-of what addition of two numbers really means in the context
-of computing and computers.*
+So far, we’ve explored the primitives in our virtual machines
+as abstract operations, implemented using programming languages
+like Python, C, or JavaScript. Now, let’s take a deeper dive into
+what happens under the hood when, for instance, we add two numbers
+like 170 and 108. We’ll explore what this operation fundamentally
+entails at the hardware level. Additionally, we’ll examine the
+higher-level abstraction of what it means to add two numbers in
+the broader context of computing and how computers perform this
+operation.
 
 
 ## adding numbers by hand
@@ -252,8 +252,10 @@ hardware-level addition.
 
 Adding two numbers in *Verilog* (a hardware description language)
 involves describing the behavior of a digital circuit that performs
-the addition. Below is an example of a Verilog module that implements
-an 8-bit binary adder, very similar to the C code:
+the addition. Below is an example of a Verilog[^verilog] module that
+implements an 8-bit binary adder, very similar to the C code:
+
+[^verilog]: https://en.wikipedia.org/wiki/Verilog
 
 ### 8-bit adder
 
@@ -367,18 +369,20 @@ hardware on an FPGA or ASIC.
 ## lambda calculus and basis for functional programming
 
 In our vertical quest deep into the machine but also high up into the
-abstrations, we will have a look at how what is called 'lambda calculus'
+abstrations, we will have a look at how what is called 'lambda calculus'[^calculus]
 can be represented in this case: Python.
+
+[^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
 
 
 ### 'lambda1.py' and lambda calculus
 
-The provided code consists of two primary components: a *compiler* that
-converts lambda calculus expressions into a simplified assembly language
-and a *virtual machine* that interprets and executes this assembly code.
-The assembly language is specifically designed to model the computational
-behavior of lambda calculus, which is a foundational concept in functional
-programming and theoretical computer science.
+The provided code `lambda1.py` consists of two primary components:
+a *compiler* that converts lambda calculus expressions into a simplified
+assembly language and a *virtual machine* that interprets and executes
+this assembly code. The assembly language is specifically designed to
+model the computational behavior of lambda calculus, which is a foundational
+concept in functional programming and theoretical computer science.
 
 
 #### lambda expressions and the compilation
@@ -390,16 +394,35 @@ represented as tuples in Python. The compiler (`compile_expr`) translates
 these tuples into a sequence of assembly instructions that the virtual
 machine can execute.
 
+What is called an 'environment'[^env] keep tracks of variables and their values
+when running the program. When the variable occurs somewhere e.g. a value
+will be set, the variable binds to the value (at a certian level).
+Previously we have delt with frames (arrays and stacks) to do this kind of
+work.
+
+[^env]: https://en.wikipedia.org/wiki/Variable_(computer_science)
+
+
 - *abstraction*:
   The expression `('lambda', 'x', 'x')` is a lambda abstraction that
   corresponds to $\(\lambda x. x\)$. When the compiler encounters this
-  expression, it generates a closure: a pair consisting of the compiled
+  expression, it generates a *closure*: a pair consisting of the compiled
   body of the lambda (in this case, `['LOAD x', 'RET']`) and an environment
-  that will store variable bindings.
+  that will store the variable bindings.
  
     ```python
     return [('CLOSURE', <body_code>, {})]
     ```
 
+- *application*:
+  The expression `('apply', ('lambda', 'x', 'x'), 2)` represents the
+  application of the lambda function $\(\lambda x. x\)$ to the argument
+  $\(2\)$. The compiler translates this into an instruction sequence that
+  pushes the closure onto the stack, then pushes the argument, and
+  finally applies the function.
+  
+    ```python
+    return compile_expr(func) + compile_expr(arg) + ['APPLY']
+    ```
 
 ..
