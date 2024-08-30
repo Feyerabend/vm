@@ -498,10 +498,19 @@ a certain number of times. For example:
    - *In general*, the Church numeral for `n` is `λf. λx. f (f ( .. (f x) .. ))`
      where `f` is applied `n` times.
 
+
 A Church numeral $n$ is a function defined as:
 $n = \lambda f. \lambda x. f^n x$ where $f^n x$
 denotes the function $f$ applied $n$ times to
 the argument $x$.
+
+Given two Church numerals $m$ and $n$, their sum can be expressed as:
+$\lambda m. \lambda n. \lambda f. \lambda x. m \; f \; (n \; f \; x)$
+This function works as follows:
+- $n \; f \; x$ applies the function $f$ to $x$, $n$ times.
+- $m \; f \; (n \; f \; x)$ then applies $f$ $m$ times to the
+result of $n \; f \; x$, effectively adding $m$ and $n$.
+
 
 We can illustrate the substitution with an example:
 - Suppose you have a function `λx. x + 2`. Here:
