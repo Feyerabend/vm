@@ -98,9 +98,10 @@ Let's add these two binary numbers:
 Adding these up:
 
 ```
+  00011000    (carry bits)
    00100010   (34 in decimal)
 +  00010011   (19 in decimal)
------------
+------------
    00110101   (53 in decimal)
 ```
 
@@ -135,10 +136,11 @@ and `01101100` 108 in decimal.
 This gives us:
 
 ```
+  11111110   (carry bits)
    10101010
 +  01101100
 -----------
-   00010110 (sum) and a carry of 1 to the next bit
+   00010110  (sum) and a carry of 1 to the next bit
 ```
 
 Because this is an 8-bit addition, the final carry out
@@ -162,7 +164,7 @@ The correct full binary sum is `100010110` when you include the carry,
    10101010
 +  01101100
 -----------
-  100010110 (sum) and a carry of 1 to the next bit
+  100010110  (sum) and a carry of 1 to the next bit
 ```
 
 
