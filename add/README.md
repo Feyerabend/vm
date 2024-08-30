@@ -363,11 +363,12 @@ hardware on an FPGA or ASIC.
 
 
 
-## lambda calculus and basis for functional programming
+## lambda calculus and some functional programming
 
 In our vertical quest deep into the machine but also high up into the
 abstrations, we will have a look at how what is called 'lambda calculus'[^calculus]
-can be represented in this case: Python.
+can be represented in this case: Python. THe lambda calculus is often
+considered a abstract (and mathematical) basis for functional programming.
 
 [^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
 
@@ -425,7 +426,7 @@ work.
 The virtual machine is designed to execute the compiled assembly code
 by simulating a stack-based machine.
 
-- *Closure*:
+- *closure*:
   When the virtual machine encounters a closure, it pushes it onto the stack.
   The closure is later applied when the `APPLY` instruction is encountered.
   
@@ -433,7 +434,7 @@ by simulating a stack-based machine.
     self.stack.append(instr)
     ```
 
-- *Application*:
+- *application*:
   The `APPLY` instruction pops the function closure and its argument from the
   stack, creates a new virtual machine with the closure's environment, binds
   the argument to the function's parameter (in this case only `x`), and executes
@@ -446,7 +447,7 @@ by simulating a stack-based machine.
     result = new_vm.run(func_body)
     ```
 
-- *Return*:
+- *return*:
   The `RET` instruction is used to signal the end of a function's execution,
   allowing the virtual machine to return the result from the stack to the caller.
   
