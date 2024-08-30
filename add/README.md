@@ -457,7 +457,8 @@ by simulating a stack-based machine.
 logic and computer science for expressing computation based on
 function *abstraction* and *application*. It uses functions as its
 fundamental building blocks and provides a framework for defining
-and manipulating functions.
+and manipulating functions. We limit ourselves here to some aspects
+of the calculus.
 
 1. *Lambda Abstraction*: This is used to define anonymous functions.
 In lambda calculus, a function is defined as `λx. E`, where `λx` is
@@ -478,6 +479,77 @@ a certain number of times. For example:
    - *2* is `λf. λx. f (f x)`
    - *In general*, the Church numeral for `n` is `λf. λx. f (f ( .. (f x) .. ))`
      where `f` is applied `n` times.
+
+We can illustrate the substitution with an example:
+- Suppose you have a function `λx. x + 2`. Here:
+- `x` is the parameter.
+- `x + 2` is the expression E.
+- Now, apply this function to the argument of `5`:
+- The function application is `(λx. x + 2) 5`.
+- Substitution: According to the substitution principle,
+  you replace `x` in the expression `x + 2` with `5`:
+- `x + 2` becomes `5 + 2`.
+- The result of the application is `7`.
+
+To give an example how to add two Church numerals, you can define
+a lambda expression that takes two Church numerals and returns
+their sum.
+
+As we have seen `0` is represented as `λf.λx.x`, or in general
+`n` is represented as `λf.λx.f (f (...(f x)...))` with `n`
+applications of `f`.
+The idea now is to combine two Church numerals by applying the
+first numeral's function the second numeral's number of times.
+
+Given two Church numerals `m` and `n`, their sum can be expressed as:
+
+```lambda
+    λm. λn. λf. λx. m f (n f x)
+```
+
+This can be understood as mthe function `m f` applies `f` `m` times.
+The function `n f x` applies `f` to `x` `n` times. Then `m f` applies
+`f` `m` times to the result of `n f x`, thus adding the two numbers.
+
+
+### Example:
+
+Let's see how this works with `1` and `2`:
+
+- `1` is `λf.λx.f x`
+- `2` is `λf.λx.f (f x)`
+
+To add `1` and `2`:
+
+```lambda
+(λm. λn. λf. λx. m f (n f x)) (λf.λx.f x) (λf.λx.f (f x))
+```
+
+Substituting `m` with `1` and `n` with `2`:
+
+```lambda
+λf.λx. (λf.λx.f x) f ((λf.λx.f (f x)) f x)
+```
+
+Simplifying further:
+
+- Apply `(λf.λx.f (f x))` to `f` and `x`: `f (f x)`.
+- Then, apply `λf.λx.f x` to `f (f x)`: `f (f (f x))`.
+
+The result is `λf.λx.f (f (f x))`, which is the Church numeral for `3`.
+
+### Summary:
+
+The lambda expression to add two Church numerals is:
+
+```lambda
+λm. λn. λf. λx. m f (n f x)
+```
+
+This expression correctly combines two Church numerals by applying the function `f` a total of `m + n` times, effectively adding the two numbers.
+
+
+
 
 
 #### VM
@@ -618,3 +690,5 @@ into a list of instructions for the VM:
 ```
 
 ..
+
+
