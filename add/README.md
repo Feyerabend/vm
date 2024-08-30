@@ -136,7 +136,7 @@ and `01101100` 108 in decimal.
 This gives us:
 
 ```
-  01011111   (carry bits)
+  11111000   (carry bits)
    10101010
 +  01101100
 -----------
