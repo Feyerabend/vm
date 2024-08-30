@@ -575,8 +575,6 @@ function translates lambda calculus expressions into a sequence of
 instructions that the VM can execute, allowing computations
 like Church numeral addition.
 
-*instructions*:
-
    - `PUSH`: This instruction pushes a value onto the stack.
       If the value is a number, it’s converted to a
       *Church numeral* representation.
