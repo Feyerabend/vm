@@ -538,7 +538,7 @@ like Church numeral addition.
   If the value is a number, it’s converted to a
   *Church numeral* representation.
 
-   - `LOAD`:
+- `LOAD`:
      ```python
      elif opcode == 'LOAD':
          var = parts[1]
