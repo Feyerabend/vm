@@ -571,7 +571,7 @@ incorporate concepts from functional programming.
 
 ---
 
-*The same in mathematical or formal logic terms*
+__*The same in mathematical or formal logic terms*__
 
 A Church numeral $n$ is a function defined as:
 $n = \lambda f. \lambda x. f^n x$ where $f^n x$
