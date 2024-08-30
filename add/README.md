@@ -11,6 +11,19 @@ entails at the hardware level. Additionally, we’ll examine the
 higher-level abstraction of what it means to add two numbers in
 the broader context of computing and computers.
 
+First, we delve into the basics by manually adding binary numbers,
+aided by a C program that demonstrates how binary addition works.
+This is followed by an implementation in Verilog, showing how you
+could theoretically program an ASIC or FPGA to perform addition
+directly in hardware.
+
+Next, we shift towards a more abstract level. Two implementations,
+modeled as virtual machines, illustrate how addition is carried out
+using lambda calculus. While this approach might not be optimal
+for the most common computers, it offers valuable insights into
+functional programming concepts, which can be useful when working
+with virtual machines.
+
 
 ## adding numbers by hand
 
