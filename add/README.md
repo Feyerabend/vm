@@ -496,7 +496,7 @@ instructions that the VM can execute, allowing computations
 like Church numeral addition.
 
 
-1. *initialization*:
+*initialization*:
 
    ```python
    def __init__(self):
@@ -507,7 +507,7 @@ like Church numeral addition.
      values and functions during computation.
    - `self.env`: An environment for variable bindings.
 
-2. *running*:
+*running*:
 
    ```python
    def run(self, instructions):
@@ -522,7 +522,7 @@ like Church numeral addition.
    - The loop iterates over the instructions,
      executing them one by one.
 
-3. *instructions*:
+*instructions*:
 
    - `PUSH`:
      ```python
@@ -534,9 +534,9 @@ like Church numeral addition.
          self.stack.append(value)
      ```
 
-This instruction pushes a value onto the stack.
-If the value is a number, it’s converted to a
-*Church numeral* representation.
+- This instruction pushes a value onto the stack.
+  If the value is a number, it’s converted to a
+  *Church numeral* representation.
 
    - `LOAD`:
      ```python
@@ -548,8 +548,8 @@ If the value is a number, it’s converted to a
              raise ValueError(f"Variable '{var}' not found in environment")
      ```
 
-This instruction loads a variable from the
-environment and pushes its value onto the stack.
+- This instruction loads a variable from the
+  environment and pushes its value onto the stack.
 
    - `APPLY`:
      ```python
