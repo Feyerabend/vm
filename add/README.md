@@ -585,8 +585,8 @@ result of $n \; f \; x$, effectively adding $m$ and $n$.
 
 Let’s add the Church numerals for 1 and 2.
 
-- $1 &= \lambda f. \lambda x. f \; x$
-- $2 &= \lambda f. \lambda x. f \; (f \; x)$
+- $1 = \lambda f. \lambda x. f \; x$
+- $2 = \lambda f. \lambda x. f \; (f \; x)$
 
 To add 1 and 2:
 $(\lambda m. \lambda n. \lambda f. \lambda x. m \; f \; (n \; f \; x)) \; (\lambda f. \lambda x. f \; x) \; (\lambda f. \lambda x. f \; (f \; x))$
