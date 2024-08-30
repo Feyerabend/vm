@@ -713,4 +713,4 @@ Compiling ..
     ['PUSH 1', 'PUSH 19', 'ADD']
 ```
 
-That are executed and result in '20'.
+.. are executed and results in '20'.
