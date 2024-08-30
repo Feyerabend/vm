@@ -175,13 +175,13 @@ This full adder is used repeatedly to add corresponding bits
 from two binary numbers, taking into account the carry from
 the previous bit's addition.
 
-- *Logic gates*:
+- *Logic gates*
    - Functions for basic logic gates (`not`, `and`, `or`, and `xor`) 
      are defined using bitwise operations.
    - These functions mimic the behavior of physical logic gates in
      digital circuits.
 
-- *Full adder*:
+- *Full adder*
    - This function takes three inputs: two bits (`x`, `y`) and a
      carry bit from the previous lower bit (`carry`).
    - It computes the sum (`s`) and carry (`c`) for these bits.
@@ -189,7 +189,7 @@ the previous bit's addition.
      determined by OR-ing the results of specific AND operations.
      This mimics the logic of a *full adder* in digital circuits.
 
-- *Addition of two 8-bit numbers*:
+- *Addition of two 8-bit numbers*
    - The `add` function calls the `adder` function for each bit of
      the two 8-bit integers, starting from the least significant bit
      (LSB) to the most significant bit (MSB).
@@ -198,14 +198,14 @@ the previous bit's addition.
    - The function prints out the carry after each bit and the final
      sum in binary and decimal formats.
 
-- *Extra*:
+- *Extra*
    - `printbin`: Prints the binary representation of an 8-bit number.
    - `printcarry`: Displays the carry bits after each bit addition.
    - `printsum`: Shows the final sum in binary and checks for overflow.
    - `printadder`: 'Debugging' function that prints the result of a 
       single bit addition using the full adder.
 
-- *Testing*:
+- *Testing*
    - The `test` function demonstrates the functionality of the logic
      gates and the full adder by printing results for various input
      combinations.
@@ -219,30 +219,30 @@ executing instructions sequentially, which are stored along with data in
 the same memory. Here's how the program's operation fits within this
 architecture:
 
-1. *fetch and decode*:
+1. *fetch and decode*
    - The CPU fetches the instructions for the logic gates, the *full adder*,
      and the addition operations from memory.
    - It decodes these instructions to determine the operations to perform
      (e.g., bitwise operations, function calls).
 
-2. *execution*:
+2. *execution*
    - The CPU executes the instructions step by step.
    - For each bit of the integers being added, the CPU calls the `adder`
      function, computes the sum and carry, and stores the results.
 
-3. *memory*:
+3. *memory*
    - The integers to be added (`i` and `j`) and the intermediate results
      (e.g., carries) are stored in memory.
    - The final sum and any overflows are printed out, with the output
      likely written to memory before being displayed.
 
-4. *data path (bus)*:
+4. *data path (bus)*
    - The arithmetic operations (e.g., bitwise AND, OR, XOR) are carried
      out in the ALU (Arithmetic Logic Unit) of the CPU.
    - Data (the bits of the numbers being added) is passed between the
      ALU and memory as the addition proceeds.
 
-5. *control*:
+5. *control*
    - The control unit manages the sequence of operations, ensuring that
      each instruction is carried out in the correct order and that data
      flows properly between the CPU's components.
