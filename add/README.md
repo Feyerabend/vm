@@ -484,4 +484,167 @@ a certain number of times. For example:
 In general, the Church numeral for `n` is `λf. λx. f (f ( ... (f x) ... ))`
 where `f` is applied `n` times.
 
+
+#### VM
+
+The code in `lambda2.py` implements a virtual machine that supports
+lambda calculus with Church numerals and basic arithmetic operations.
+It uses a stack-based execution model where instructions manipulate
+the stack and environment to evaluate expressions. The `compile_expr`
+function translates lambda calculus expressions into a sequence of
+instructions that the VM can execute, allowing computations
+like Church numeral addition.
+
+
+1. *initialization*:
+
+   ```python
+   def __init__(self):
+       self.stack = []
+       self.env = {}
+   ```
+   - `self.stack`: A stack used to store intermediate
+     values and functions during computation.
+   - `self.env`: An environment for variable bindings.
+
+2. *running*:
+
+   ```python
+   def run(self, instructions):
+       pc = 0
+       while pc < len(instructions):
+           instr = instructions[pc]
+           ...
+           pc += 1
+   ```
+   - `pc` (program counter) keeps track of the
+     current instruction.
+   - The loop iterates over the instructions,
+     executing them one by one.
+
+3. *instructions*:
+
+   - `PUSH`:
+     ```python
+     if opcode == 'PUSH':
+         value = parts[1]
+         if value.isdigit():
+             value = int(value)
+             ...
+         self.stack.append(value)
+     ```
+
+This instruction pushes a value onto the stack.
+If the value is a number, it’s converted to a
+*Church numeral* representation.
+
+   - `LOAD`:
+     ```python
+     elif opcode == 'LOAD':
+         var = parts[1]
+         if var in self.env:
+             self.stack.append(self.env[var])
+         else:
+             raise ValueError(f"Variable '{var}' not found in environment")
+     ```
+
+This instruction loads a variable from the
+environment and pushes its value onto the stack.
+
+   - `APPLY`:
+     ```python
+     elif opcode == 'APPLY':
+         arg = self.stack.pop()
+         func = self.stack.pop()
+         if isinstance(func, tuple) and func[0] == 'CLOSURE':
+             func_body, closure_env = func[1], func[2]
+             new_vm = VirtualMachine()
+             new_vm.env = closure_env.copy()
+             new_vm.env.update({'x': arg})
+             result = new_vm.run(func_body)
+             self.stack.append(result)
+             return result
+         elif callable(func):
+             result = func(arg)
+             self.stack.append(result)
+         else:
+             raise ValueError("Expected a function or closure during APPLY")
+     ```
+
+This instruction applies a function to an argument.
+If the function is a closure, it creates a new VM
+to run the function's body with the argument bound
+to `x`.
+
+   - `RET`:
+     ```python
+     elif opcode == 'RET':
+         if not self.stack:
+             raise IndexError("Stack is empty during RET execution")
+         return self.stack.pop()
+     ```
+
+The instruction returns the top value from the
+stack as the result of the function.
+
+   - `ADD`:
+     ```python
+     elif opcode == 'ADD':
+         if len(self.stack) < 2:
+             raise IndexError("Not enough values on the stack to perform ADD")
+         b = self.stack.pop()
+         a = self.stack.pop()
+         if callable(a) and callable(b):
+             def add_church(m, n):
+                 return lambda f: lambda x: m(f)(n(f)(x))
+             self.stack.append(add_church(a, b))
+         else:
+             raise TypeError("ADD operation expects Church numerals")
+     ```
+This instruction adds two Church numerals.
+It expects two functions on the stack, applies
+Church numeral addition, and pushes the result
+back onto the stack.
+
+
+#### Compile
+
+This function converts high-level expressions
+into a list of instructions for the VM:
+
+1. *variables*:
+   ```python
+   if isinstance(expr, str):
+       return [f'LOAD {expr}']
+   ```
+
+2. *integer literals*:
+   ```python
+   elif isinstance(expr, int):
+       return [f'PUSH {expr}']
+   ```
+
+3. *lambda abstractions*:
+   ```python
+   elif isinstance(expr, tuple):
+       if expr[0] == 'lambda':
+           _, var, body = expr
+           body_code = compile_expr(body) + ['RET']
+           return [('CLOSURE', body_code, {})]
+   ```
+
+4. *function applications*:
+   ```python
+   elif expr[0] == 'apply':
+       _, func, arg = expr
+       return compile_expr(func) + compile_expr(arg) + ['APPLY']
+   ```
+
+5. *addition*:
+   ```python
+   elif expr[0] == 'add':
+       _, num1, num2 = expr
+       return compile_expr(num1) + compile_expr(num2) + ['ADD']
+   ```
+
 ..
