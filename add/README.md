@@ -9,33 +9,31 @@ what happens under the hood when, for instance, we add two numbers
 like 170 and 108. We’ll explore what this operation fundamentally
 entails at the hardware level. Additionally, we’ll examine the
 higher-level abstraction of what it means to add two numbers in
-the broader context of computing and how computers.
+the broader context of computing and computers.
 
 
 ## adding numbers by hand
 
-Much of this should be elementary to the reader as assumed
-familiar with basic computer science, or already have
-some knowledge of binary numbers, adding, programming,
-or programming languages. But as a background for
-hardware abstraction, we start with as at first, with
-an example of adding two numbers, two (small) integers.
-Adding two 8-bit binary integers is similar to the way you
-would add two decimal numbers by hand. But they follow
-a slightly different set of rules for *binary arithmetic*.
+This material should be familiar to readers with a basic
+understanding of computer science, including binary numbers,
+addition, and programming concepts. However, as a foundation
+for discussing hardware abstraction, we'll start with an
+example of adding two small integers.
 
-Each 8-bit binary number is made up of 8 digits (bits),
-where each bit can be either 0 or 1. Say for instance,
-the binary number `01100101` is an 8-bit number that
-represents the decimal number 101. Another 8-bit number
-is `10101010` that is 170 in decimal.
+Adding two 8-bit binary integers is analogous to adding
+decimal numbers by hand, but it follows the rules o
+ *binary arithmetic*.
 
-You add the numbers starting from the rightmost bit
-what is also called 'least significant bit' (LSB).
-Then move to the leftmost bit, the most significant bit
-(MSB). For each pair of corresponding bits in the two
-numbers, you add them together along with any carry from
-the previous bit's addition.
+Each 8-bit binary number consists of 8 digits (bits), each
+of which can be either 0 or 1. For example, the binary
+number `01101100` represents the decimal number 108,
+and `10101010` represents the decimal number 170.
+
+The addition process begins with the rightmost bit, known as
+the 'least significant bit' (LSB), and moves towards the leftmost
+bit, the 'most significant bit' (MSB). For each pair of
+corresponding bits in the two numbers, you add them together,
+including any carry from the previous bit's addition.
 
 The binary addition rules are:
 - `0 + 0 = 0` (sum = 0, no carry)
@@ -94,7 +92,7 @@ Adding these up:
 ```
 
 Thus `00110101`, is the 8-bit binary of the number 53.
-No carry from the last (7th) bit, so no overflow.
+No carry from the last (7th) bit, so *no overflow*.
 The sum fits perfectly within 8 bits (or a byte), and the
 final binary result `00110101` correctly represents 53 in
 decimal. Since the sum is within the 8-bit range (0 to 255),
@@ -135,7 +133,8 @@ of the most significant bit (MSB) must be accounted for.
 This carry indicates that the result is larger than what
 can be represented by 8 bits alone.
 
-If you consider the carry and extend the result to accommodate this:
+If you consider the carry and extend the result to accommodate
+this:
 
 *carry out*: `1`  
 *result*: `100010110` (which is in total 278 in decimal).
@@ -152,8 +151,6 @@ The correct full binary sum is `100010110` when you include the carry,
 -----------
   100010110 (sum) and a carry of 1 to the next bit
 ```
-
-
 
 
 ### adder in C
@@ -363,12 +360,12 @@ hardware on an FPGA or ASIC.
 
 
 
-## lambda calculus and some functional programming
+## lambda calculus and functional programming
 
 In our vertical quest deep into the machine but also high up into the
 abstrations, we will have a look at how what is called 'lambda calculus'[^calculus]
 can be represented in this case: Python. THe lambda calculus is often
-considered a abstract (and mathematical) basis for functional programming.
+considered an abstract (and mathematical) basis for functional programming.
 
 [^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
 
@@ -379,8 +376,7 @@ The provided code `lambda1.py` consists of two primary components:
 a *compiler* that converts lambda calculus expressions into a simplified
 assembly language and a *virtual machine* that interprets and executes
 this assembly code. The assembly language is specifically designed to
-model the computational behavior of lambda calculus, which is a foundational
-concept in functional programming and theoretical computer science.
+model the computational behavior of lambda calculus.
 
 
 #### lambda expressions and the compilation
@@ -408,9 +404,9 @@ work.
   body of the lambda (in this case, `['LOAD x', 'RET']`) and an environment
   that will store the variable bindings.
  
-    ```python
-    return [('CLOSURE', <body_code>, {})]
-    ```
+```python
+    return [('CLOSURE', body_code, {})]
+```
 
 - *application*:
   The expression `('apply', ('lambda', 'x', 'x'), 2)` represents the
@@ -419,9 +415,9 @@ work.
   pushes the closure onto the stack, then pushes the argument, and
   finally applies the function.
   
-    ```python
+```python
     return compile_expr(func) + compile_expr(arg) + ['APPLY']
-    ```
+```
 
 The virtual machine is designed to execute the compiled assembly code
 by simulating a stack-based machine.
@@ -430,9 +426,9 @@ by simulating a stack-based machine.
   When the virtual machine encounters a closure, it pushes it onto the stack.
   The closure is later applied when the `APPLY` instruction is encountered.
   
-    ```python
+```python
     self.stack.append(instr)
-    ```
+```
 
 - *application*:
   The `APPLY` instruction pops the function closure and its argument from the
@@ -440,20 +436,20 @@ by simulating a stack-based machine.
   the argument to the function's parameter (in this case only `x`), and executes
   the function body.
 
-    ```python
+```python
     new_vm = VirtualMachine()
     new_vm.env = closure_env.copy()
     new_vm.env.update({'x': arg}) # special 'x'
     result = new_vm.run(func_body)
-    ```
+```
 
 - *return*:
   The `RET` instruction is used to signal the end of a function's execution,
   allowing the virtual machine to return the result from the stack to the caller.
   
-    ```python
+```python
     return self.stack.pop()
-    ```
+```
 
 ### lambda calculus
 
@@ -480,7 +476,7 @@ a certain number of times. For example:
    - *0* is `λf. λx. x`
    - *1* is `λf. λx. f x`
    - *2* is `λf. λx. f (f x)`
-   - *In general*, the Church numeral for `n` is `λf. λx. f (f ( ... (f x) ... ))`
+   - *In general*, the Church numeral for `n` is `λf. λx. f (f ( .. (f x) .. ))`
      where `f` is applied `n` times.
 
 
@@ -495,25 +491,26 @@ instructions that the VM can execute, allowing computations
 like Church numeral addition.
 
 
-   ```python
+```python
    def __init__(self):
        self.stack = []
        self.env = {}
-   ```
+```
 
 *initialization*:
    - `self.stack`: A stack used to store intermediate
      values and functions during computation.
    - `self.env`: An environment for variable bindings.
 
-   ```python
+```python
    def run(self, instructions):
        pc = 0
        while pc < len(instructions):
            instr = instructions[pc]
            ...
            pc += 1
-   ```
+```
+
 *running*:
    - `pc` (program counter) keeps track of the
      current instruction.
@@ -527,34 +524,34 @@ like Church numeral addition.
       If the value is a number, it’s converted to a
       *Church numeral* representation.
 
-     ```python
+```python
      if opcode == 'PUSH':
          value = parts[1]
          if value.isdigit():
              value = int(value)
              ...
          self.stack.append(value)
-     ```
+```
 
    - `LOAD`: This instruction loads a variable from the
       environment and pushes its value onto the stack.
 
 
-     ```python
+```python
      elif opcode == 'LOAD':
          var = parts[1]
          if var in self.env:
              self.stack.append(self.env[var])
          else:
              raise ValueError(f"Variable '{var}' not found in environment")
-     ```
+```
 
    - `APPLY`: This instruction applies a function to an argument.
      If the function is a closure, it creates a new VM
      to run the function's body with the argument bound
      to `x`.
 
-     ```python
+```python
      elif opcode == 'APPLY':
          arg = self.stack.pop()
          func = self.stack.pop()
@@ -571,17 +568,17 @@ like Church numeral addition.
              self.stack.append(result)
          else:
              raise ValueError("Expected a function or closure during APPLY")
-     ```
+```
 
    - `RET`: The instruction returns the top value from the
      stack as the result of the function.
 
-     ```python
+```python
      elif opcode == 'RET':
          if not self.stack:
              raise IndexError("Stack is empty during RET execution")
          return self.stack.pop()
-     ```
+```
 
 
    - `ADD`: This instruction adds two Church numerals.
@@ -589,7 +586,7 @@ like Church numeral addition.
      Church numeral addition, and pushes the result
      back onto the stack.
 
-     ```python
+```python
      elif opcode == 'ADD':
          if len(self.stack) < 2:
              raise IndexError("Not enough values on the stack to perform ADD")
@@ -601,7 +598,7 @@ like Church numeral addition.
              self.stack.append(add_church(a, b))
          else:
              raise TypeError("ADD operation expects Church numerals")
-     ```
+```
 
 #### Compile
 
@@ -610,42 +607,42 @@ into a list of instructions for the VM:
 
 1. *variables*:
 
-   ```python
+```python
    if isinstance(expr, str):
        return [f'LOAD {expr}']
-   ```
+```
 
 2. *integer literals*:
 
-   ```python
+```python
    elif isinstance(expr, int):
        return [f'PUSH {expr}']
-   ```
+```
 
 3. *lambda abstractions*:
 
-   ```python
+```python
    elif isinstance(expr, tuple):
        if expr[0] == 'lambda':
            _, var, body = expr
            body_code = compile_expr(body) + ['RET']
            return [('CLOSURE', body_code, {})]
-   ```
+```
 
 4. *function applications*:
 
-   ```python
+```python
    elif expr[0] == 'apply':
        _, func, arg = expr
        return compile_expr(func) + compile_expr(arg) + ['APPLY']
-   ```
+```
 
 5. *addition*:
 
-   ```python
+```python
    elif expr[0] == 'add':
        _, num1, num2 = expr
        return compile_expr(num1) + compile_expr(num2) + ['ADD']
-   ```
+```
 
 ..
