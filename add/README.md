@@ -524,7 +524,10 @@ like Church numeral addition.
 
 *instructions*:
 
-   - `PUSH`:
+   - `PUSH`: This instruction pushes a value onto the stack.
+      If the value is a number, it’s converted to a
+      *Church numeral* representation.
+
      ```python
      if opcode == 'PUSH':
          value = parts[1]
@@ -534,11 +537,9 @@ like Church numeral addition.
          self.stack.append(value)
      ```
 
-- This instruction pushes a value onto the stack.
-  If the value is a number, it’s converted to a
-  *Church numeral* representation.
+    - `LOAD`: This instruction loads a variable from the
+      environment and pushes its value onto the stack.
 
-- `LOAD`:
      ```python
      elif opcode == 'LOAD':
          var = parts[1]
@@ -548,8 +549,6 @@ like Church numeral addition.
              raise ValueError(f"Variable '{var}' not found in environment")
      ```
 
-- This instruction loads a variable from the
-  environment and pushes its value onto the stack.
 
    - `APPLY`:
      ```python
