@@ -498,6 +498,11 @@ a certain number of times. For example:
    - *In general*, the Church numeral for `n` is `λf. λx. f (f ( .. (f x) .. ))`
      where `f` is applied `n` times.
 
+A Church numeral $n$ is a function defined as:
+$n = \lambda f. \lambda x. f^n x$ where $f^n x$
+denotes the function $f$ applied $n$ times to
+the argument $x$.
+
 We can illustrate the substitution with an example:
 - Suppose you have a function `λx. x + 2`. Here:
 - `x` is the parameter.
