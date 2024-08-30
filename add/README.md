@@ -580,28 +580,28 @@ the argument $x$.
 
 Given two Church numerals $m$ and $n$, their sum
 can be expressed as:
-$\lambda m. \lambda n. \lambda f. \lambda x. m \; f \; (n \; f \; x)$
+$\lambda m. \lambda n. \lambda f. \lambda x. m  f  (n  f  x)$.
 This function works as follows:
-- $n \; f \; x$ applies the function $f$ to $x$, $n$ times.
-- $m \; f \; (n \; f \; x)$ then applies $f$ $m$ times to the
-result of $n \; f \; x$, effectively adding $m$ and $n$.
+- $n  f  x$ applies the function $f$ to $x$, $n$ times.
+- $m  f  (n  f  x)$ then applies $f$ $m$ times to the
+result of $n  f  x$, effectively adding $m$ and $n$.
 
 Let’s add the Church numerals for 1 and 2.
-- $1 = \lambda f. \lambda x. f \; x$
-- $2 = \lambda f. \lambda x. f \; (f \; x)$
+- $1 = \lambda f. \lambda x. f  x$
+- $2 = \lambda f. \lambda x. f  (f  x)$
 
 To add 1 and 2:
-$(\lambda m. \lambda n. \lambda f. \lambda x. m \; f \; (n \; f \; x)) \; (\lambda f. \lambda x. f \; x) \; (\lambda f. \lambda x. f \; (f \; x))$
+$(\lambda m. \lambda n. \lambda f. \lambda x. m  f  (n  f  x))  (\lambda f. \lambda x. f  x)  (\lambda f. \lambda x. f  (f  x))$
 
 Substituting $m$ with 1 and $n$ with 2:
-$\lambda f. \lambda x. (\lambda f. \lambda x. f \; x) \; f \; ((\lambda f. \lambda x. f \; (f \; x)) \; f \; x)$
+$\lambda f. \lambda x. (\lambda f. \lambda x. f  x)  f  ((\lambda f. \lambda x. f  (f  x))  f  x)$
 
 First, simplify the inner expressions:
-$(\lambda f. \lambda x. f \; (f \; x)) \; f \; x = f \; (f \; x)$
+$(\lambda f. \lambda x. f  (f  x))  f  x = f  (f  x)$
 
-Then: $(\lambda f. \lambda x. f \; x) \; (f \; (f \; x)) = f \; (f \; (f \; x))$
+Then: $(\lambda f. \lambda x. f  x)  (f  (f  x)) = f  (f  (f  x))$
 
-The result is: $\lambda f. \lambda x. f \; (f \; (f \; x))$
+The result is: $\lambda f. \lambda x. f  (f  (f  x))$
 which is the Church numeral for 3.
 
 ---
