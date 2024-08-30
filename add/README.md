@@ -9,8 +9,7 @@ what happens under the hood when, for instance, we add two numbers
 like 170 and 108. We’ll explore what this operation fundamentally
 entails at the hardware level. Additionally, we’ll examine the
 higher-level abstraction of what it means to add two numbers in
-the broader context of computing and how computers perform this
-operation.
+the broader context of computing and how computers.
 
 
 ## adding numbers by hand
@@ -423,6 +422,38 @@ work.
   
     ```python
     return compile_expr(func) + compile_expr(arg) + ['APPLY']
+    ```
+
+The virtual machine is designed to execute the compiled assembly code
+by simulating a stack-based machine.
+
+- *Closure*:
+  When the virtual machine encounters a closure, it pushes it onto the stack.
+  The closure is later applied when the `APPLY` instruction is encountered.
+  
+    ```python
+    self.stack.append(instr)
+    ```
+
+- *Application*:
+  The `APPLY` instruction pops the function closure and its argument from the
+  stack, creates a new virtual machine with the closure's environment, binds
+  the argument to the function's parameter (in this case only `x`), and executes
+  the function body.
+
+    ```python
+    new_vm = VirtualMachine()
+    new_vm.env = closure_env.copy()
+    new_vm.env.update({'x': arg}) # special 'x'
+    result = new_vm.run(func_body)
+    ```
+
+- *Return*:
+  The `RET` instruction is used to signal the end of a function's execution,
+  allowing the virtual machine to return the result from the stack to the caller.
+  
+    ```python
+    return self.stack.pop()
     ```
 
 ..
