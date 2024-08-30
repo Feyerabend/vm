@@ -704,7 +704,7 @@ into a list of instructions for the VM:
 Compiling ..
 
 ```python
-    expr = ('add', 1, 19)
+    ('add', 1, 19)
 ```
 
 .. to instructions ..
