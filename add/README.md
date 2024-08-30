@@ -370,7 +370,7 @@ considered an abstract (and mathematical) basis for functional programming.
 [^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
 
 
-### 'lambda1.py' and lambda calculus
+### first lambda vm, and lambda calculus
 
 The provided code `lambda1.py` consists of two primary components:
 a *compiler* that converts lambda calculus expressions into a simplified
@@ -552,7 +552,7 @@ can enhance your understanding when working with virtual machines that
 incorporate concepts from functional programming.
 
 
-#### VM
+### a second lambda vm
 
 The code in `lambda2.py` implements a virtual machine that supports
 lambda calculus with Church numerals and basic arithmetic operations.
@@ -644,7 +644,7 @@ like Church numeral addition.
              raise TypeError("ADD operation expects Church numerals")
 ```
 
-#### Compile
+#### compile
 
 This function converts high-level expressions
 into a list of instructions for the VM:
