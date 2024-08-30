@@ -57,7 +57,7 @@ Read it (alound) as 'one plus one plus one is one-one',
 so you don't easily confuse it with decimal numbers.
 
 
-### Sample of adding two 8-bit binary numbers
+### adding two 8-bit binary numbers
 
 First let's take an example where adding two 8-bit binary
 numbers results in a sum that does *not overflow*, meaning
@@ -139,7 +139,7 @@ can be represented by 8 bits alone.
 If you consider the carry and extend the result to accommodate this:
 
 *carry out*: `1`  
-*result*: `100010110` (which is 278 in decimal).
+*result*: `100010110` (which is in total 278 in decimal).
 
 If you only look at the sum without regarding the carry,
 it becomes 8-bit result (`00010110`) which by itself
@@ -153,8 +153,6 @@ The correct full binary sum is `100010110` when you include the carry,
 -----------
   100010110 (sum) and a carry of 1 to the next bit
 ```
-
-
 
 
 
