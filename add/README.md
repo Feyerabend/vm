@@ -511,7 +511,15 @@ This can be understood as the function `m f` applies `f` `m` times.
 The function `n f x` applies `f` to `x` `n` times. Then `m f` applies
 `f` `m` times to the result of `n f x`, thus adding the two numbers.
 
-Let's see how this works with `1` and `2`:
+We will later see a bit of cheating as we use the built-in
+lambda in Python.
+
+```python
+    def add_church(m, n):
+        return lambda f: lambda x: m(f)(n(f)(x))
+```
+
+But let's see how adding works with `1` and `2`:
 
 - `1` is `λf.λx.f x`
 - `2` is `λf.λx.f (f x)`
@@ -535,6 +543,13 @@ Simplifying further:
 
 The result is `λf.λx.f (f (f x))`, which is the Church numeral for `3`.
 
+As can be deduced from this exploration of lambda calculus, building
+a computer based on the von Neumann architecture with similar abstractions
+of numerals might be somewhat impractical or overly complex. However,
+becoming familiar with functional thinking through lambda calculus and
+implementing it in programs can be highly beneficial. This knowledge
+can enhance your understanding when working with virtual machines that
+incorporate concepts from functional programming.
 
 
 #### VM
