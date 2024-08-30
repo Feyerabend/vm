@@ -455,4 +455,33 @@ by simulating a stack-based machine.
     return self.stack.pop()
     ```
 
+### lambda calculus
+
+*Lambda calculus* (λ-calculus) is a formal system in mathematical
+logic and computer science for expressing computation based on
+function *abstraction* and *application*. It uses functions as its
+fundamental building blocks and provides a framework for defining
+and manipulating functions.
+
+1. *Lambda Abstraction*: This is used to define anonymous functions.
+In lambda calculus, a function is defined as `λx. E`, where `λx` is
+the lambda symbol and `E` is the expression that uses the variable
+`x`.
+
+2. *Function Application*: This is the process of applying a function
+to an argument. If you have a function `λx. E` and you apply it to
+an argument `A`, you get `E[x := A]`, which means substituting `A`
+for `x` in `E` (also by notation `E[A/x]`).
+
+3. *Church Numerals*: These are a way of representing natural numbers
+using lambda calculus. Each number is represented as a function that
+takes a function `f` and returns another function that applies `f`
+a certain number of times. For example:
+   - *0* is `λf. λx. x`
+   - *1* is `λf. λx. f x`
+   - *2* is `λf. λx. f (f x)`
+
+In general, the Church numeral for `n` is `λf. λx. f (f ( ... (f x) ... ))`
+where `f` is applied `n` times.
+
 ..
