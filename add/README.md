@@ -316,8 +316,6 @@ endmodule
 
 ### test
 
-To test:
-
 ```verilog
 module testbench;
     reg [7:0] a, b;
