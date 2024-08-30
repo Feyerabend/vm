@@ -217,12 +217,12 @@ that manipulates a managed list as a dynamic data structure.
 ### 19. [add](/add)
 
 This comparison explores addition from two perspectives: a low-level
-hardware using a full adder in Verilog, and a high-level
-abstract using lambda calculus. The hardware approach focuses
-on implementing binary addition in circuits, while the abstract approach
-uses mathematical functions to represent and manipulate numbers in a more
-formal, logical sense. Together, they show the spectrum of abstraction
-in computer science, from physical hardware to theoretical computation.
+hardware using a full adder in Verilog, and a high-level abstract using
+lambda calculus. The hardware approach focuses on implementing binary
+addition in circuits, while the abstract approach uses mathematical
+functions to represent and manipulate numbers in a more formal, logical
+sense. Together, they show the spectrum of abstraction in computer
+science, from physical hardware to theoretical computation.
 
 
 ## License
