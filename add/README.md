@@ -496,18 +496,16 @@ instructions that the VM can execute, allowing computations
 like Church numeral addition.
 
 
-*initialization*:
-
    ```python
    def __init__(self):
        self.stack = []
        self.env = {}
    ```
+
+*initialization*:
    - `self.stack`: A stack used to store intermediate
      values and functions during computation.
    - `self.env`: An environment for variable bindings.
-
-*running*:
 
    ```python
    def run(self, instructions):
@@ -517,12 +515,14 @@ like Church numeral addition.
            ...
            pc += 1
    ```
+*running*:
    - `pc` (program counter) keeps track of the
      current instruction.
    - The loop iterates over the instructions,
      executing them one by one.
 
-*instructions*:
+
+##### instructions
 
    - `PUSH`: This instruction pushes a value onto the stack.
       If the value is a number, it’s converted to a
@@ -540,6 +540,7 @@ like Church numeral addition.
     - `LOAD`: This instruction loads a variable from the
       environment and pushes its value onto the stack.
 
+
      ```python
      elif opcode == 'LOAD':
          var = parts[1]
@@ -549,8 +550,11 @@ like Church numeral addition.
              raise ValueError(f"Variable '{var}' not found in environment")
      ```
 
+   - `APPLY`: This instruction applies a function to an argument.
+     If the function is a closure, it creates a new VM
+     to run the function's body with the argument bound
+     to `x`.
 
-   - `APPLY`:
      ```python
      elif opcode == 'APPLY':
          arg = self.stack.pop()
@@ -570,12 +574,9 @@ like Church numeral addition.
              raise ValueError("Expected a function or closure during APPLY")
      ```
 
-This instruction applies a function to an argument.
-If the function is a closure, it creates a new VM
-to run the function's body with the argument bound
-to `x`.
+   - `RET`: The instruction returns the top value from the
+     stack as the result of the function.
 
-   - `RET`:
      ```python
      elif opcode == 'RET':
          if not self.stack:
@@ -583,10 +584,12 @@ to `x`.
          return self.stack.pop()
      ```
 
-The instruction returns the top value from the
-stack as the result of the function.
 
-   - `ADD`:
+   - `ADD`: This instruction adds two Church numerals.
+     It expects two functions on the stack, applies
+     Church numeral addition, and pushes the result
+     back onto the stack.
+
      ```python
      elif opcode == 'ADD':
          if len(self.stack) < 2:
@@ -600,11 +603,6 @@ stack as the result of the function.
          else:
              raise TypeError("ADD operation expects Church numerals")
      ```
-This instruction adds two Church numerals.
-It expects two functions on the stack, applies
-Church numeral addition, and pushes the result
-back onto the stack.
-
 
 #### Compile
 
@@ -612,18 +610,21 @@ This function converts high-level expressions
 into a list of instructions for the VM:
 
 1. *variables*:
+
    ```python
    if isinstance(expr, str):
        return [f'LOAD {expr}']
    ```
 
 2. *integer literals*:
+
    ```python
    elif isinstance(expr, int):
        return [f'PUSH {expr}']
    ```
 
 3. *lambda abstractions*:
+
    ```python
    elif isinstance(expr, tuple):
        if expr[0] == 'lambda':
@@ -633,6 +634,7 @@ into a list of instructions for the VM:
    ```
 
 4. *function applications*:
+
    ```python
    elif expr[0] == 'apply':
        _, func, arg = expr
@@ -640,6 +642,7 @@ into a list of instructions for the VM:
    ```
 
 5. *addition*:
+
    ```python
    elif expr[0] == 'add':
        _, num1, num2 = expr
