@@ -480,8 +480,8 @@ a certain number of times. For example:
    - *0* is `λf. λx. x`
    - *1* is `λf. λx. f x`
    - *2* is `λf. λx. f (f x)`
-In general, the Church numeral for `n` is `λf. λx. f (f ( ... (f x) ... ))`
-where `f` is applied `n` times.
+   - *In general*, the Church numeral for `n` is `λf. λx. f (f ( ... (f x) ... ))`
+     where `f` is applied `n` times.
 
 
 #### VM
