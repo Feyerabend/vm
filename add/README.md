@@ -705,9 +705,11 @@ like Church numeral addition.
 ```
 
    - `APPLY`: This instruction applies a function to an argument.
-     If the function is a closure, it creates a *new VM*
-     to run the function's body with the arguments bound
-     in the environment.
+     It distinguishes between closures (which have their own environment)
+     and regular callable functions. For closures, it sets up a new environment
+     and runs the function in a *new instance* of the virtual machine.
+     For regular callables, it simply applies the function and stores the result
+     on the stack.
 
 ```python
     elif opcode == 'APPLY':
