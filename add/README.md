@@ -173,6 +173,10 @@ The correct full binary sum is `100010110` when you include the carry,
 
 ### adder in C
 
+```shell
+> make adder
+```
+
 The code of `adder.c` is a binary adder that simulates the
 addition of two 8-bit integers. The core of this program
 is the implementation of a *full adder* using bitwise operations.
