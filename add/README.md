@@ -19,10 +19,13 @@ directly in hardware.
 
 Next, we shift towards a more abstract level. Two implementations,
 modeled as virtual machines, illustrate how addition is carried out
-using lambda calculus. While this approach might not be optimal
-for the most common computers, it offers valuable insights into
-functional programming concepts, which can be useful when working
-with virtual machines.
+using lambda calculus. Actually if you look carefully, there are
+no numbers for the machine to calculate. There are expressions
+that go through substitutions  and other operations, resulting
+e.g. adding two numbers. While this approach might not be optimal
+for the most common computers of today, it offers valuable insights
+into functional programming concepts, which can be useful when
+working with virtual machines.
 
 
 ## adding numbers by hand
