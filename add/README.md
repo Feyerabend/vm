@@ -228,8 +228,8 @@ account the carry from the previous bit's addition.
 
 In the context of a *von Neumann architecture*[^vN], this program operates by
 executing instructions sequentially, which are stored along with data in
-the same memory. Here's how the program's operation fits within this
-architecture:
+the same memory. Here's how the program's operation or ideas (not the program
+itself) fits within this architecture:
 
 [^vN]: https://en.wikipedia.org/wiki/Von_Neumann_architecture
 
