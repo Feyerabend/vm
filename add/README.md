@@ -220,35 +220,37 @@ the previous bit's addition.
 
 ### a von Neumann architecture
 
-In the context of a *von Neumann architecture*, this program operates by
+In the context of a *von Neumann architecture*[^vN], this program operates by
 executing instructions sequentially, which are stored along with data in
 the same memory. Here's how the program's operation fits within this
 architecture:
 
-1. *fetch and decode*
+[^vN]: https://en.wikipedia.org/wiki/Von_Neumann_architecture
+
+*fetch and decode*
    - The CPU fetches the instructions for the logic gates, the *full adder*,
      and the addition operations from memory.
    - It decodes these instructions to determine the operations to perform
      (e.g., bitwise operations, function calls).
 
-2. *execution*
+*execution*
    - The CPU executes the instructions step by step.
    - For each bit of the integers being added, the CPU calls the `adder`
      function, computes the sum and carry, and stores the results.
 
-3. *memory*
+*memory*
    - The integers to be added (`i` and `j`) and the intermediate results
      (e.g., carries) are stored in memory.
    - The final sum and any overflows are printed out, with the output
      likely written to memory before being displayed.
 
-4. *data path (bus)*
+*data path (bus)*
    - The arithmetic operations (e.g., bitwise AND, OR, XOR) are carried
      out in the ALU (Arithmetic Logic Unit) of the CPU.
    - Data (the bits of the numbers being added) is passed between the
      ALU and memory as the addition proceeds.
 
-5. *control*
+*control*
    - The control unit manages the sequence of operations, ensuring that
      each instruction is carried out in the correct order and that data
      flows properly between the CPU's components.
@@ -407,7 +409,7 @@ hardware on an FPGA or ASIC.
 
 In our vertical quest deep into the machine but also high up into the
 abstrations, we will have a look at how what is called 'lambda calculus'[^calculus]
-can be represented in this case: Python. THe lambda calculus is often
+can be represented in this case: Python. The lambda calculus is often
 considered an abstract (and mathematical) basis for functional programming.
 
 [^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
