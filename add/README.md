@@ -524,15 +524,15 @@ a certain number of times. For example:
      where `f` is applied `n` times.
 
 We can illustrate the substitution with an example:
-- Suppose you have a function `λx. x + 2`. Here:
-- `x` is the parameter.
-- `x + 2` is the expression E.
-- Now, apply this function to the argument of `5`:
-- The function application is `(λx. x + 2) 5`.
-- Substitution: According to the substitution principle,
-  you replace `x` in the expression `x + 2` with `5`:
-- `x + 2` becomes `5 + 2`.
-- The result of the application is `7`.
+1. Suppose you have a function `λx. x + 2`. Here:
+2. `x` is the parameter.
+3. `x + 2` is the expression E.
+4. Now, *apply* this function to the argument of `5`:
+5. The function *application* is `(λx. x + 2) 5`.
+6. Substitution: According to the substitution principle,
+   you replace `x` in the expression `x + 2` with `5`:
+7. `x + 2` becomes `5 + 2`.
+8. The result of the application is `7`.
 
 To give an example how to add two Church numerals, you can define
 a lambda expression that takes two Church numerals and returns
