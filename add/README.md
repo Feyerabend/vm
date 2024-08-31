@@ -413,10 +413,14 @@ hardware on an FPGA or ASIC.
 
 ## lambda calculus and functional programming
 
+We have often heard that binary numbers are essential in computers.
+In a sense they really are as computers usually work today. But as we will
+soon see, numbers and calculation can be done in other ways.
 In our vertical quest deep into the machine but also high up into the
 abstrations, we will have a look at how what is called 'lambda calculus'[^calculus]
-can be represented in this case: Python. The lambda calculus is often
-considered an abstract (and mathematical) basis for functional programming.
+can be represented in this case on the computer through Python.
+The lambda calculus is often considered an abstract (and mathematical)
+basis for functional programming.
 
 [^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
 
