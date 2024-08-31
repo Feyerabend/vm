@@ -592,7 +592,18 @@ of numerals might be somewhat impractical or overly complex. However,
 becoming familiar with functional thinking through lambda calculus and
 implementing it in programs can be highly beneficial. This knowledge
 can enhance your understanding when working with virtual machines that
-incorporate concepts from functional programming.
+incorporate concepts from functional programming. To be fair,
+there also have been machines that was built more for symbolic
+computation that those which spings from the more common von
+Neumann architecture of today.[^symb]
+
+[^symb]: There are e.g. Lisp machines, Prolog machines, but also
+dataflow architectures. The latter for instance can be event driven
+from streams of data running by, executing code through recognizing
+patterns from the data. One such exploration can be found in:
+Luckham, David *The Power of Events: An Introduction to Complex Event
+Processing in Distributed Enterprise Systems*, United Kingdom,
+Addison-Wesley, 2002.
 
 ---
 
