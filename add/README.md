@@ -179,10 +179,12 @@ The correct full binary sum is `100010110` when you include the carry,
 
 The code of `adder.c` is a binary adder that simulates the
 addition of two 8-bit integers. The core of this program
-is the implementation of a *full adder* using bitwise operations.
-This full adder is used repeatedly to add corresponding bits
-from two binary numbers, taking into account the carry from
-the previous bit's addition.
+is the implementation of a *full adder*[^adder] using bitwise
+operations. This full adder is used repeatedly to add
+corresponding bits from two binary numbers, taking into
+account the carry from the previous bit's addition.
+
+[^adder]: https://en.wikipedia.org/wiki/Adder_(electronics)
 
 *Logic gates*
    - Functions for basic logic gates (`not`, `and`, `or`, and `xor`) 
