@@ -705,9 +705,9 @@ like Church numeral addition.
 ```
 
    - `APPLY`: This instruction applies a function to an argument.
-     If the function is a closure, it creates a new VM
-     to run the function's body with the argument bound
-     to `x`.
+     If the function is a closure, it creates a *new VM*
+     to run the function's body with the arguments bound
+     in the environment.
 
 ```python
     elif opcode == 'APPLY':
