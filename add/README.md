@@ -447,8 +447,8 @@ work.
   corresponds to $\(\lambda x. x\)$. When the compiler encounters this
   expression, it generates a *closure*: a pair consisting of the compiled
   body of the lambda (in this case, `['LOAD x', 'RET']`) and an environment
-  that will store the variable bindings. In this case there is no environment
-  to store `{}`.
+  that will store the variable bindings. In this case the environment is
+  not yet set `{}`.
  
 ```python
     return [('CLOSURE', body_code, {})]
