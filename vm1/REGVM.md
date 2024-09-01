@@ -97,10 +97,12 @@ and also program. Here is a description of the assembly language used:
 Factorial of `5` as a sample of what the machines can do.
 
 *START*:
+
 1. *MOV A 1*: Register `A` with `1`. `A` will hold the result of the factorial calculation.
 2. *MOV B 5*: Register `B` with `5`. `B` holds the current number to multiply.
 
 *LOOP*:
+
 3. *CMP B 0*: Compares the value in register `B` with `0`.
 4. *JZ 7*: Jumps to `8` (`PRINT`) if `B` is `0`, ending the loop.
 
@@ -109,4 +111,5 @@ Factorial of `5` as a sample of what the machines can do.
 7. *JMP 3*: Jumps back to `4` (the `CMP`) to continue the loop.
 
 *END*:
+
 8. *PRINT A*: Prints value in register `A`, which holds the result.
