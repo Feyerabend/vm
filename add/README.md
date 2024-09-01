@@ -60,11 +60,11 @@ The binary addition rules are:
 a 1 to the next higher bit.
 
 ```text
-                      1      (carry)
-    0     1     0      1
-    0     0     1      1
-  + -     -     -      -
-    0     1     1      0     (sum)
+                     1      (carry)
+    0     1     0     1
+    0     0     1     1
+  + -     -     -     -
+    0     1     1     0     (sum)
 ```
 
 But what is the 'carry'? The carry is similar to what
