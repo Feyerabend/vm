@@ -1,10 +1,12 @@
 # Virtual Machines
 
-You might be more familiar with register-based machines if you have
+You might be more familiar with register-based machines, if you have
 experience with assembly language on a typical PC. The assembly code
 for register machines and stack machines will naturally differ. In
 practice, many machines combine elements of both architectures,
 allowing programs to leverage the strengths of each approach.
+
+Later on we will only deal with stack machines for simplicity.
 
 
 ## assembly instructions
@@ -15,7 +17,7 @@ simple virutal register machines work.
 Registers often implies a more complex structure of the machine
 and also program. Here is a description of the assembly language used:
 
-1. *MOV <reg> <val>*
+- *MOV <reg> <val>*
    - *Description*: Moves a value into a register.
    - *Arguments*:
      - `<reg>`: The register to receive the value (e.g., `A`, `B`).
@@ -24,7 +26,7 @@ and also program. Here is a description of the assembly language used:
    - *Flags*: None.
    - *Example*: `MOV A 1` sets register `A` to `1`.
 
-2. *ADD <reg> <val>*
+- *ADD <reg> <val>*
    - *Description*: Adds a value to the specified register.
    - *Arguments*:
      - `<reg>`: The register to which the value will be added.
@@ -34,7 +36,7 @@ and also program. Here is a description of the assembly language used:
      are updated based on the result of the addition.
    - *Example*: `ADD A B` adds the value in register `B` to register `A`.
 
-3. *SUB <reg> <val>*
+- *SUB <reg> <val>*
    - *Description*: Subtracts a value from the specified register.
    - *Arguments*:
      - `<reg>`: The register from which the value will be subtracted.
@@ -44,7 +46,7 @@ and also program. Here is a description of the assembly language used:
      updated based on the result of the subtraction.
    - *Example*: `SUB A 1` subtracts `1` from the value in register `A`.
 
-4. *MUL <reg> <val>*
+- *MUL <reg> <val>*
    - *Description*: Multiplies the specified register by a value.
    - *Arguments*:
      - `<reg>`: The register to be multiplied.
@@ -55,7 +57,7 @@ and also program. Here is a description of the assembly language used:
    - *Example*: `MUL A B` multiplies the value in register `A` by the
      value in register `B`.
 
-5. *CMP <reg> <val>*
+- *CMP <reg> <val>*
    - *Description*: Compares a register value to a value.
    - *Arguments*:
      - `<reg>`: The register to compare.
@@ -65,7 +67,7 @@ and also program. Here is a description of the assembly language used:
    - *Example*: `CMP B 0` sets the `Z` flag if the value in register
      `B` is `0`.
 
-6. *JMP <addr>*
+- *JMP <addr>*
    - *Description*: Unconditionally jumps to a specified address in
      the program.
    - *Arguments*:
@@ -74,7 +76,7 @@ and also program. Here is a description of the assembly language used:
    - *Example*: `JMP 4` sets the program counter (`pc`) to `4`,
      causing the VM to execute the instruction at address `4`.
 
-7. *JZ <addr>*
+- *JZ <addr>*
    - *Description*: Conditionally jumps to a specified address if
      the zero flag (`Z`) is set.
    - *Arguments*:
@@ -82,7 +84,7 @@ and also program. Here is a description of the assembly language used:
    - *Flags*: None.
    - *Example*: `JZ 8` jumps to address `8` if the `Z` flag is set.
 
-8. *PRINT <reg>*
+- *PRINT <reg>*
    - *Description*: Prints the value of the specified register.
    - *Arguments*:
      - `<reg>`: The register whose value will be printed.
