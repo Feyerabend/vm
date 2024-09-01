@@ -59,6 +59,14 @@ The binary addition rules are:
 - If both bits are 1, the sum is 0, and you carry over
 a 1 to the next higher bit.
 
+```text
+                      1      (carry)
+    0     1     0      1
+    0     0     1      1
+  + -     -     -      -
+    0     1     1      0     (sum)
+```
+
 But what is the 'carry'? The carry is similar to what
 happens when adding in decimal when a column adds up to
 10 or more, when you do it by hand. If a *bit addition*
@@ -616,13 +624,13 @@ Neumann architecture of today.[^symb]
 
 [^symb]: There are e.g. Lisp machines, and Prolog machines that takes
 such approach. The former Lisp Machine from the 80s:
-https://en.wikipedia.org/wiki/Lisp_machine,
+https://en.wikipedia.org/wiki/Lisp_machine, or
 https://lisp-machine.org/.
 But there are more non-von Neumann machines that maybe not be
 symbolic such as dataflow architectures. The latter for instance
 can be event driven from streams of data running by, executing code
-through recognizing patterns from the data. One such exploration can
-be found in:
+through recognizing patterns from the flowing data. One such
+interesting exploration can be found in:
 Luckham, David *The Power of Events: An Introduction to Complex Event
 Processing in Distributed Enterprise Systems*, United Kingdom,
 Addison-Wesley, 2002.
