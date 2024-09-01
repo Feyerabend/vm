@@ -559,65 +559,15 @@ This can be understood as the function `m f` applies `f` `m` times.
 The function `n f x` applies `f` to `x` `n` times. Then `m f` applies
 `f` `m` times to the result of `n f x`, thus adding the two numbers.
 
-We will later see a bit of cheating as we use the built-in
-lambda in Python.
+We will later see a bit of "cheating" as we use the built-in
+lambda in Python for representing/calculation of Church numerals.
 
 ```python
     def add_church(m, n):
         return lambda f: lambda x: m(f)(n(f)(x))
 ```
 
-But let's see how adding works with `1` and `2`:
-
-- `1` is `λf.λx.f x`
-- `2` is `λf.λx.f (f x)`
-
-To add `1` and `2`:
-
-```lambda
-    (λm. λn. λf. λx. m f (n f x)) (λf.λx.f x) (λf.λx.f (f x))
-```
-
-Substituting `m` with `1` and `n` with `2`:
-
-```lambda
-    λf.λx. (λf.λx.f x) f ((λf.λx.f (f x)) f x)
-```
-
-Simplifying further:
-
-- Apply `(λf.λx.f (f x))` to `f` and `x`: `f (f x)`.
-- Then, apply `λf.λx.f x` to `f (f x)`: `f (f (f x))`.
-
-The result is `λf.λx.f (f (f x))`, which is the Church numeral for `3`.
-
-As can be deduced from this exploration of lambda calculus, building
-a computer based on the von Neumann architecture with similar abstractions
-of numerals might be somewhat impractical or overly complex. However,
-becoming familiar with functional thinking through lambda calculus and
-implementing it in programs can be highly beneficial. This knowledge
-can enhance your understanding when working with virtual machines that
-incorporate concepts from functional programming. To be fair,
-there also have been machines that was built more for symbolic
-computation that those which spings from the more common von
-Neumann architecture of today.[^symb]
-
-[^symb]: There are e.g. Lisp machines, and Prolog machines that takes
-such approach. The former Lisp Machine from the 80s:
-https://en.wikipedia.org/wiki/Lisp_machine,
-https://lisp-machine.org/.
-But there are more non-von Neumann machines that maybe not be
-symbolic such as dataflow architectures. The latter for instance
-can be event driven from streams of data running by, executing code
-through recognizing patterns from the data. One such exploration can
-be found in:
-Luckham, David *The Power of Events: An Introduction to Complex Event
-Processing in Distributed Enterprise Systems*, United Kingdom,
-Addison-Wesley, 2002.
-
----
-
-__*The same in mathematical or formal logic terms*__
+#### adding numbers without numbers
 
 A Church numeral $n$ is a function defined as:
 $n = \lambda f. \lambda x. f^n x$ where $f^n x$
@@ -650,7 +600,32 @@ Then: $(\lambda f. \lambda x. f  x)  (f  (f  x)) = f  (f  (f  x))$
 The result is: $\lambda f. \lambda x. f  (f  (f  x))$
 which is the Church numeral for 3.
 
----
+As can be understood from the above, '1', '2', and '3' could be
+seen as only symbols not taking part of the adding.
+
+As can be deduced from this exploration of lambda calculus, building
+a computer based on the von Neumann architecture with similar abstractions
+of numerals might be somewhat impractical or overly complex. However,
+becoming familiar with functional thinking through lambda calculus and
+implementing it in programs can be highly beneficial. This knowledge
+can enhance your understanding when working with virtual machines that
+incorporate concepts from functional programming. To be fair,
+there also have been machines that was built more for symbolic
+computation that those which spings from the more common von
+Neumann architecture of today.[^symb]
+
+[^symb]: There are e.g. Lisp machines, and Prolog machines that takes
+such approach. The former Lisp Machine from the 80s:
+https://en.wikipedia.org/wiki/Lisp_machine,
+https://lisp-machine.org/.
+But there are more non-von Neumann machines that maybe not be
+symbolic such as dataflow architectures. The latter for instance
+can be event driven from streams of data running by, executing code
+through recognizing patterns from the data. One such exploration can
+be found in:
+Luckham, David *The Power of Events: An Introduction to Complex Event
+Processing in Distributed Enterprise Systems*, United Kingdom,
+Addison-Wesley, 2002.
 
 
 ### a second lambda vm
