@@ -116,11 +116,11 @@ Factorial of `5` as a sample of what the machines can do.
 *LOOP*:
 
 3. *CMP B 0*: Compares the value in register `B` with `0`.
-4. *JZ 7*: Jumps to `8` (`PRINT`) if `B` is `0`, ending the loop.
+4. *JZ 7*: Jumps to `7` (`PRINT`) if `B` is `0`, ending the loop.
 
 5. *MUL A B*: Multiplies value in register `A` with value in register `B`, and stores in register `A`.
 6. *SUB B 1*: Subtracts `1` from value in register `B`.
-7. *JMP 3*: Jumps back to `4` (the `CMP`) to continue the loop.
+7. *JMP 3*: Jumps back to `3` (the `CMP`) to continue the loop.
 
 *END*:
 
