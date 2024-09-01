@@ -107,3 +107,7 @@ and Technology and Their Application*, Vol. 4, ed. Richard Goodman, The Macmilla
 Company, New York, 1964. Reprinted Pergamon Press, 2014.
 Also see Mick Farmer, *Compiler physiology for beginners*, Chartwell-Bratt,
 Bromley, 1985.
+Another source which I find relevant is:
+Hopcroft, John E., Motwani, Rajeev & Ullman, Jeffrey D., *Introduction to automata
+theory, languages, and computation*, 3. ed., New international ed., Pearson
+Addison-Wesley, Harlow, 2014.
