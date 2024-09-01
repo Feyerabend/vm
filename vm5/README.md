@@ -48,7 +48,7 @@ memory leaks and ensure that memory is used efficiently, although
 it requires careful design and consideration of when and how to
 trigger the garbage collection process.
 
-[^gc]: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
+[^gc]: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science).
 
 In C, functions like `malloc` (memory allocation) and `free`
 (deallocation) are used to manage memory on the heap. When you
