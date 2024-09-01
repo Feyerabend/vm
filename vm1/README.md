@@ -1,6 +1,7 @@
 # Virtual Machines
 
-*A very simple virtual machine implemented as a stack machine.*[^stackmachine]
+*A very simple virtual machine implemented as a stack machine.[^stackmachine]
+See also [REGVM.md](REGVM.md)*
 
 > As an example: Push two numbers on the stack. Each at a time.
 Then add the two numbers. Place the result back on the stack. Take
@@ -11,8 +12,8 @@ or (at present not very well organized) https://en.wikipedia.org/wiki/Stack_mach
 There are other ways of building virtual machines, one such
 is the register machine. Instead of a stack it relies in
 main on registers: https://en.wikipedia.org/wiki/Register_machine.
-See also [REGVM.md](/REGVM.md). In the following we will not focus
-further on register machines, but keep to stack machines for simplicity.
+In the following we will not focus further on register machines,
+but keep to stack machines for simplicity.
 
 It might look odd with first pushing two numbers on stack then
 have an operation on them after. Instead of "5 + 9" most of us
