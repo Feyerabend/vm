@@ -96,6 +96,18 @@ and also program. Here is a description of the assembly language used:
 
 Factorial of `5` as a sample of what the machines can do.
 
+```assembly
+    MOV A 1
+    MOV B 5
+    CMP B 0
+    JZ 7
+    MUL A B
+    SUB B 1
+    JMP 3
+    PRINT A
+```
+
+
 *START*:
 
 1. *MOV A 1*: Register `A` with `1`. `A` will hold the result of the factorial calculation.
