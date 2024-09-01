@@ -746,4 +746,5 @@ as a result.
 
 ## references
 
+* Barendregt, H. P., *The lambda calculus: its syntax and semantics*, College Publications, London, 2012
 * Kogge, Peter M., *The architecture of symbolic computers*, McGraw-Hill, New York, 1991.
