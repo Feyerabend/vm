@@ -351,19 +351,6 @@ module full_adder(
 endmodule
 ```
 
-
-### simulation or synthesis
-
-- *simulation*: You can simulate this Verilog module using a tool like
-  ModelSim (or Vivado) to verify that it correctly adds two 8-bit numbers.
-- *synthesis*: When synthesized onto an FPGA[^fpga] or ASIC[^asic], this
-  Verilog code describes how the hardware should be configured to perform
-  the addition.
-
-[^fpga]: https://en.wikipedia.org/wiki/Field-programmable_gate_array
-[^asic]: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
-
-
 ### testing
 
 ```verilog
@@ -405,6 +392,15 @@ endmodule
   are applied, and the resulting `sum` and `cout` are observed.
 - *Simulation control*: The simulation runs for a brief
   period for each test case (`#10` time units), then stops.
+
+You can *simulate* this kind of Verilog module using a tool like
+ModelSim (or Vivado) to verify that it correctly adds two 8-bit
+numbers. When *synthesized* onto an FPGA[^fpga] or ASIC[^asic], this
+Verilog code describes how the hardware should be configured to perform
+the addition.
+
+[^fpga]: https://en.wikipedia.org/wiki/Field-programmable_gate_array
+[^asic]: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
 
 This Verilog code models the behavior of an 8-bit binary adder in hardware,
 similar to how C code simulates it in software. Verilog describes the addition
