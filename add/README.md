@@ -308,22 +308,22 @@ module adder_8bit (
 endmodule
 ```
 
-*module*: The `module` keyword defines a module named
+  The `module` keyword defines a module named
   `adder_8bit`, which represents an 8-bit adder circuit.
   The inputs are `a` and `b` 8-bit wide (`[7:0]`), and `cin`
   is a single-bit carry-in. The outputs are `sum` (an 8-bit sum
   in this case) and `cout` (the carry-out bit).
 
-*internal carry*: A wire array `c` is declared to hold
+  A wire array `c` is declared to hold
   the internal carry signals between each bit addition.
 
-*full adder*: Each line of the form `assign {c[N], sum[N]} = a[N] + b[N] + c[N-1];`
+  Each line of the form `assign {c[N], sum[N]} = a[N] + b[N] + c[N-1];`
   implements a full adder for the *corresponding bit*.
   The `{carry, sum}` notation represents concatenation, where the most
   significant bit of the addition result is the carry (`c[N]`), and the
   least significant bit is the sum (`sum[N]`).
 
-*carry-out*: The final carry-out `cout` is taken from
+  The final carry-out `cout` is taken from
   the carry of the last bit (`c[7]`), which can be used
   to detect overflow.
 
@@ -386,12 +386,10 @@ module testbench;
 endmodule
 ```
 
-- *Module instantiation*: The `adder_8bit` module is
-  instantiated as `uut` (Unit Under Test).
-- *Stimulus*: Different values of `a`, `b`, and `cin`
-  are applied, and the resulting `sum` and `cout` are observed.
-- *Simulation control*: The simulation runs for a brief
-  period for each test case (`#10` time units), then stops.
+The `adder_8bit` module is instantiated as `uut` (Unit Under Test).
+Different values of `a`, `b`, and `cin` are applied, and the resulting
+`sum` and `cout` are observed. The simulation runs for a brief
+period for each test case (`#10` time units), then stops.
 
 You can *simulate* this kind of Verilog module using a tool like
 ModelSim (or Vivado) to verify that it correctly adds two 8-bit
