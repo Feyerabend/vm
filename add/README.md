@@ -275,8 +275,8 @@ hardware-level addition.
 
 Adding two numbers in *Verilog* (a hardware description language)
 involves describing the behavior of a digital circuit that performs
-the addition. Below is an example of a Verilog[^verilog] module that
-implements an 8-bit binary adder, very similar to the C code:
+the addition. Below is a non tested example of a Verilog[^verilog]
+module that implements an 8-bit binary adder (cf. C code):
 
 [^verilog]: https://en.wikipedia.org/wiki/Verilog
 
@@ -311,8 +311,8 @@ endmodule
 *module*: The `module` keyword defines a module named
   `adder_8bit`, which represents an 8-bit adder circuit.
   The inputs are `a` and `b` 8-bit wide (`[7:0]`), and `cin`
-  is a single-bit carry-in. The outputs are `sum` (an 8-bit sum)
-  and `cout` (the carry-out bit).
+  is a single-bit carry-in. The outputs are `sum` (an 8-bit sum
+  in this case) and `cout` (the carry-out bit).
 
 *internal carry*: A wire array `c` is declared to hold
   the internal carry signals between each bit addition.
@@ -327,7 +327,8 @@ endmodule
   the carry of the last bit (`c[7]`), which can be used
   to detect overflow.
 
-As with coding i C, an alternative to the above could be e.g:
+As with coding i C, an alternative to the above could be e.g
+(as well not tested):
 
 ```verilog
 module full_adder(
