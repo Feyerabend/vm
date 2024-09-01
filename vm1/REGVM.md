@@ -97,14 +97,14 @@ and also program. Here is a description of the assembly language used:
 Factorial of `5` as a sample of what the machines can do.
 
 ```assembly
-    MOV A 1
-    MOV B 5
-    CMP B 0
-    JZ 7
-    MUL A B
-    SUB B 1
-    JMP 3
-    PRINT A
+    MOV A 1         <- 1
+    MOV B 5         <- 2
+    CMP B 0         <- 3  loop
+    JZ 7            <- 4
+    MUL A B         <- 5
+    SUB B 1         <- 6
+    JMP 3           <- 7
+    PRINT A         <- 8  end
 ```
 
 
