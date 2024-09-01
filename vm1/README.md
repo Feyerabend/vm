@@ -8,6 +8,11 @@ the value of the top of stack. Then print this sum. Halt.
 
 [^stackmachine]: See e.g. https://www.cp.eng.chula.ac.th/~prabhas//teaching/ca/stack.htm
 or (at present not very well organized) https://en.wikipedia.org/wiki/Stack_machine.
+There are other ways of building virtual machines, one such
+is the register machine. Instead of a stack it relies in
+main on registers: https://en.wikipedia.org/wiki/Register_machine.
+See also [REGVM.md](REGVM.md). In the following we will not focus
+further on register machines, but keep to stack machines for simplicity.
 
 It might look odd with first pushing two numbers on stack then
 have an operation on them after. Instead of "5 + 9" most of us
