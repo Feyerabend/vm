@@ -11,7 +11,7 @@ or (at present not very well organized) https://en.wikipedia.org/wiki/Stack_mach
 There are other ways of building virtual machines, one such
 is the register machine. Instead of a stack it relies in
 main on registers: https://en.wikipedia.org/wiki/Register_machine.
-See also [REGVM.md](REGVM.md). In the following we will not focus
+See also [REGVM.md](/REGVM.md). In the following we will not focus
 further on register machines, but keep to stack machines for simplicity.
 
 It might look odd with first pushing two numbers on stack then
