@@ -14,6 +14,19 @@ Later on we will only deal with stack machines for simplicity.
 In the programs `regvm.c` and `regvm.py` you will see how 
 simple virutal register machines work.
 
+Compiling and running the C-program:
+
+```shell
+> gcc -o regvm regvm.c
+> ./regvm
+```
+
+Running the Python-program:
+
+```shell
+> python3 regvm.py
+```
+
 Registers often implies a more complex structure of the machine
 and also program. Here is a description of the assembly language used:
 
