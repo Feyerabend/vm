@@ -271,7 +271,7 @@ memory) could make such a simulation slower compared to a
 hardware-level addition.
 
 
-## verilog
+## verilog (*alhpa*)
 
 Adding two numbers in *Verilog* (a hardware description language)
 involves describing the behavior of a digital circuit that performs
