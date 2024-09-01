@@ -425,7 +425,7 @@ can be represented in this case on the computer through Python.
 The lambda calculus is often considered an abstract (and mathematical)
 basis for functional programming.
 
-[^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus
+[^calculus]: https://en.wikipedia.org/wiki/Lambda_calculus.
 
 
 ### first lambda vm, and lambda calculus
@@ -743,3 +743,7 @@ The compilation from expressions to instructions for the vm are rather
 straitforward. An example is going from `('add', 1, 19)` to
 `['PUSH 1', 'PUSH 19', 'ADD']` and running it on the vm which gives `20`
 as a result.
+
+## references
+
+* Kogge, Peter M., *The architecture of symbolic computers*, McGraw-Hill, New York, 1991.
