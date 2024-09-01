@@ -1,7 +1,7 @@
 # Virtual Machines
 
 *A very simple virtual machine implemented as a stack machine.[^stackmachine]
-(See also [REGVM.md](REGVM.md))*
+(See also [REGVM.md](REGVM.md).)*
 
 > As an example: Push two numbers on the stack. Each at a time.
 Then add the two numbers. Place the result back on the stack. Take
