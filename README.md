@@ -1,52 +1,65 @@
+
 # Virtual Machines
 
-Virtual machine samples.[^1] A collection of virtual machines to teach
-or understand some ideas and inner workings of virtual machines. They are
-solely intended for show of principles, and not for uses in any other way.
-The second objective is to downplay the separation between system programmers
-and application programmers. Or even in some cases down to the hardware level,
-programming of FPGA. More on this later on.
+This collection of virtual machine examples[^1] is designed to help you
+grasp some of the fundamental ideas and inner workings of virtual machines.
+We’ll start with experimental implementations and gradually move toward
+more advanced concepts like parsing, compiling, garbage collection, and
+beyond. These examples are meant primarily for educational purposes and
+are not intended for practical, real-world applications.
 
-[^1]: My best inspiration for the code of simple machines *here* comes from
-Bartosz Sypytowski: https://bartoszsypytkowski.com/simple-virtual-machine/
-from whom I derived basically the main code, even though some bugs
-were corrected and many more additions have been made along the way.
-You also might have a look at the Wikipedia page on VMs:
-https://en.wikipedia.org/wiki/Virtual_machine. Also a comprehensive
-guide to many variations of abstract machines:
-https://www.rw.cdl.uni-saarland.de/people/diehl/private/pubs/articleDiehlHartelSestoft.pdf
+[^1]: My inspiration for the basic code of these simple machines comes
+from Bartosz Sypytkowski: https://bartoszsypytkowski.com/simple-virtual-machine/.
+While I derived much of the main code from his work, I have corrected bugs
+and made numerous additions along the way. For further reading, you may also
+want to check out the Wikipedia page on virtual machines:
+https://en.wikipedia.org/wiki/Virtual_machine, or a comprehensive guide to
+various abstract machines:
+https://www.rw.cdl.uni-saarland.de/people/diehl/private/pubs/articleDiehlHartelSestoft.pdf.
+
+These examples assume you have some basic knowledge of computer science,
+like what you might gain from an introductory programming course. However,
+they are also intended to be interesting for those who want to delve deeper
+into the subject of virtual machines.
+
+In this collection, we will explore a wide range of virtual machines, from
+simple stack-based machines to more complex systems like a simplified JVM.
+Along the way, we've delved into the principles of compilers, parsers, and
+memory management, showing how these concepts interact with and build upon
+each other. Whether you’re just beginning to explore virtual machines or
+looking to deepen your understanding, these examples provide a foundation
+for further study.
+
+My journey into virtual machines began years ago with UCSD Pascal on
+the Apple II around 1980 or 1981. But enough about that—-let’s dive
+into the world of VMs together!
 
 
-These samples assume some understanding of elementary computer science,
-as you would get from an introductory course in e.g. programming. They are
-also presumed to be interesting for those who want to go further than the
-elementary.
+### A Note on Concepts
 
-My interest in virtual machines started long time ago, first with
-*UCSD Pascal* on the *Apple II* sometime around 1980 or 1981 ...
+The term "virtual machine" can often be interchanged with "emulator,"
+"interpreter," and similar terms. It’s important not to get too caught
+up in the definitions here. The key idea is the abstraction that separates
+the underlying mechanics from the levels above. We should focus on
+understanding this abstraction rather than getting lost in the many
+overlapping and sometimes ambiguous definitions.
 
+The terms "virtual machine" and "interpreter" have been used in various
+fields, from the Apollo Guidance Computer[^2] to the code from Busicom
+that was interpreted[^3] to run on the Intel 4004, and even Steve Wozniak's
+routines in SWEET16.[^4]
 
-### A note on concepts
+[^2]: For more information on the Apollo Guidance Computer,
+visit: https://en.wikipedia.org/wiki/Apollo_Guidance_Computer.
+The assembly language manual can be found at:
+https://www.ibiblio.org/apollo/assembly_language_manual.html.
 
-The term "virtual machine" can often be replaced by "emulator",
-"interpreter" etc. and perhaps should not be restricted or qualified too much
-right here. The idea of an abstraction that separates the underlying mechanics
-from the levels above is what should be observed, not a deepend confusion of
-concepts which already are often ambiguous.
+[^3]: For more on the Intel 4004, see: https://en.wikipedia.org/wiki/Intel_4004.
 
-The term "virtual machine" and also "interpreter" has been used for such diverse
-fields as from the Apollo Guidance Computer,[^2] code from Busicom interpreted[^3]
-to run on Intel 4004, and Steve Wozniack routines in SWEET16.[^4]
-
-[^2]: This does not verify the reference, but gives general info on AGC,
-https://en.wikipedia.org/wiki/Apollo_Guidance_Computer.
-Also see manual https://www.ibiblio.org/apollo/assembly_language_manual.html.
-
-[^3]: Nor this verify reference to VM, but general info on Intel 4004,
-https://en.wikipedia.org/wiki/Intel_4004.
-
-[^4]: SWEET16, https://en.wikipedia.org/wiki/SWEET16 but also in Byte no 11, 1977:
+[^4]: For details on SWEET16, check: https://en.wikipedia.org/wiki/SWEET16.
+You might also want to read the November 1977 issue of Byte:
 https://archive.org/details/BYTE_Vol_02-11_1977-11_Sweet_16/page/n151/mode/2up.
+
 
 __WARNING: The machines and additives shown here are not complete
 in any way. There are many missing necessary features and code that
