@@ -114,7 +114,7 @@ factorial = [
     
     "MUL A B",   # multiply A by B and store in A
     "SUB B 1",   # subtract 1 from B
-    "JMP 3",     # jump to loop
+    "JMP 2",     # jump to loop
     
     # end:
     "PRINT A",   # Print the result in register A
