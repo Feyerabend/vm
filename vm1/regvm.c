@@ -134,7 +134,7 @@ int main() {
         "JZ 7",
         "MUL A B",
         "SUB B 1",
-        "JMP 3",
+        "JMP 2",
         "PRINT A"
     };
 
