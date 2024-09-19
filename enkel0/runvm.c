@@ -9,6 +9,7 @@
 int VARS = 8192;
 int ARGS = 2048;
 int ARRAYS = 4096;
+int LOCALS = 400;
 int MAXPROGLEN = 32768;
 int* program;
 
@@ -34,7 +35,7 @@ char* read(char *path) {
 }
 
 void exec(int* code, int start) {
-	VM* vm = newVM(code, start, VARS, ARGS, ARRAYS);
+	VM* vm = newVM(code, start, VARS, ARGS, ARRAYS, LOCALS);
 	if (vm != NULL) {
 		run(vm);
 		freeVM(vm);
