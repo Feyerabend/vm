@@ -18,6 +18,9 @@ VM* newVM(int* code, int pc, int datasize) {
 	vm->args = (int*) malloc(sizeof(int) * datasize);
 	if (vm->args == NULL)
 		return NULL;
+	vm->locals = (int*) malloc(sizeof(int) * datasize);
+	if (vm->locals == NULL)
+		return NULL;
 
 	// init
 	vm->code = code;
@@ -30,6 +33,7 @@ VM* newVM(int* code, int pc, int datasize) {
 
 void freeVM(VM* vm){
 	if (vm != NULL) {
+		free(vm->locals);
 		free(vm->args);
 		free(vm->vars);
 		free(vm->stack);
@@ -185,14 +189,14 @@ void run(VM* vm){
 
 			case LD:
 				offset = nextcode(vm);
-				v = vm->vars[vm->fp + offset];
+                v = vm->locals[vm->fp + (offset * OFF + OFF)];
 				push(vm, v);
 				break;
 
 			case ST:
 				v = pop(vm);
 				offset = nextcode(vm);
-				vm->vars[vm->fp + offset] = v;
+                vm->locals[vm->fp + (offset * OFF + OFF)] = v;
 				break;
 
 			case LOAD:

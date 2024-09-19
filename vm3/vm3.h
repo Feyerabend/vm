@@ -2,12 +2,14 @@
 #include <stdlib.h>
 
 #define STACK_SIZE 200
+#define OFF 10
 #define TRUE 1
 #define FALSE 0
 
 typedef struct {
 	int* vars;
 	int* args;
+    int* locals;
 	int* code;
 	int* stack;
 	int pc;
