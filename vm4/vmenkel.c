@@ -4,7 +4,7 @@
 #include "vmenkel.h"
 
 
-VM* newVM(int* code, int pc, int vars, int args, int arrs) {
+VM* newVM(int* code, int pc, int vars, int args, int arrs, int locals) {
 
 	// allocate
 	VM* vm = (VM*) malloc(sizeof(VM));
@@ -22,6 +22,9 @@ VM* newVM(int* code, int pc, int vars, int args, int arrs) {
 	vm->arrs = (int*) malloc(sizeof(int) * arrs);
 	if (vm->arrs == NULL)
 		return NULL;
+	vm->locals = (int*) malloc(sizeof(int) * locals);
+	if (vm->locals == NULL)
+		return NULL;
 
 	// init
 	vm->code = code;
@@ -34,6 +37,7 @@ VM* newVM(int* code, int pc, int vars, int args, int arrs) {
 
 void freeVM(VM* vm){
 	if (vm != NULL) {
+		free(vm->locals);
 		free(vm->arrs);
 		free(vm->args);
 		free(vm->vars);
@@ -92,7 +96,8 @@ void run(VM* vm){
 					fprintf(stderr, "Runtime error: division by zero.\n");
 					exit(EXIT_FAILURE);
 				}
-				push(vm, a / b);
+				div_t c = div(a, b);
+				push(vm, (int) c.quot);
 				break;
 
 			case EMIT:
@@ -143,7 +148,7 @@ void run(VM* vm){
 
 			case LD:
 				offset = nextcode(vm);
-				v = vm->vars[vm->fp + offset];
+                v = vm->locals[vm->fp + (offset * OFF + OFF)];
 				push(vm, v);
 				break;
 
@@ -234,7 +239,7 @@ void run(VM* vm){
 			case ST:
 				v = pop(vm);
 				offset = nextcode(vm);
-				vm->vars[vm->fp + offset] = v;
+                vm->locals[vm->fp + (offset * OFF + OFF)] = v;
 				break;
 
 			case STARG:
