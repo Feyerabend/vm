@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #define STACK_SIZE 32768
+#define OFF 10
 #define TRUE 1
 #define FALSE 0
 
@@ -12,6 +13,7 @@ typedef struct {
 	int* vars;
 	int* args;
 	int* arrs;
+    int* locals;
 	int* code;
 	int* stack;
 	int pc;
@@ -57,7 +59,7 @@ enum {
 	XOR	// 34
 };
 
-VM* newVM(int* code, int pc, int vars, int args, int arrs);
+VM* newVM(int* code, int pc, int vars, int args, int arrs, int locals);
 void freeVM(VM* vm);
 void run(VM* vm);
 
