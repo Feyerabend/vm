@@ -1,0 +1,12 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tools for chapters 21 and 22
+        run: sudo apt-get update && sudo apt-get install -y lld iverilog
+      - run: make test
