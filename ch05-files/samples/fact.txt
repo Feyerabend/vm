@@ -1,0 +1,18 @@
+# Factorial, recursively (as in chapter 3).
+
+PUSH 5              #  0
+CALL 13 1           #  2  fact(5)
+PRINT               #  5
+PUSH 10             #  6
+CALL 13 1           #  8  fact(10)
+PRINT               # 11
+HALT                # 12
+
+LOAD 0              # 13  fact: n
+PUSH 2 LT           # 15  n < 2 ?
+JZ 23               # 18  no: recurse
+PUSH 1 RET          # 20  yes: return 1
+LOAD 0              # 23  recurse: n
+LOAD 0 PUSH 1 SUB   # 25  n - 1
+CALL 13 1           # 30  fact(n - 1)
+MUL RET             # 33  n * fact(n - 1)

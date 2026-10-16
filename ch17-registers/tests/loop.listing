@@ -1,0 +1,12 @@
+S0:
+        MOVI r0, 20000000           ; from 0
+        MOVI r1, 0                  ; from 2
+S4:
+        JZ r0, S27                  ; from 6
+        ANDI r3, r0, 7              ; from 14
+        ADD r1, r1, r3              ; from 15
+        SUBI r0, r0, 1              ; from 22
+        JMP S4                      ; from 25
+S27:
+        PRINT r1                    ; from 29
+        HALT                        ; from 30

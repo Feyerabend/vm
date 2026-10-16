@@ -1,0 +1,3 @@
+# A function is not a number.
+let id x = x in
+print id

@@ -1,0 +1,10 @@
+tests/errors.asm:5: PUSH takes 1 operand, found 0
+tests/errors.asm:6: PUSH takes 1 operand, found 2
+tests/errors.asm:7: expected a number, found 'ten'
+tests/errors.asm:8: unknown instruction 'JUMP'
+tests/errors.asm:9: undefined label 'nowhere'
+tests/errors.asm:10: a local number cannot be negative: -1
+tests/errors.asm:11: CALL takes 2 operands, found 1
+tests/errors.asm:12: label 'start' is defined twice
+tests/errors.asm:13: .word takes one number
+tests/errors.asm:14: number out of range: 99999999999

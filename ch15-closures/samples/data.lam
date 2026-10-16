@@ -1,0 +1,23 @@
+# Data made of nothing but functions.
+#
+# A pair is a function that hands its two parts to whatever function
+# it is given. A list is a function that folds: given f and a start
+# value z, it combines its elements with f, from the right.
+# (Alonzo Church showed in the 1930s that this is enough for anything.)
+
+let pair a b = fun f -> f a b in
+let first p = p (fun a b -> a) in
+let second p = p (fun a b -> b) in
+let p = pair 3 4 in
+print (first p * 10 + second p);                  # 34
+
+let nil = fun f z -> z in
+let cons h t = fun f z -> f h (t f z) in
+let rec range n = if n = 0 then nil else cons n (range (n - 1)) in
+let sum list = list (fun h acc -> h + acc) 0 in
+let length list = list (fun h acc -> acc + 1) 0 in
+let map g list = fun f z -> list (fun h acc -> f (g h) acc) z in
+let numbers = range 20 in
+print (sum numbers);                              # 210
+print (length numbers);                           # 20
+print (sum (map (fun x -> x * x) (range 10)))     # 385

@@ -1,0 +1,28 @@
+# The primes below 50, by trial division.
+#
+# main keeps n as local 0 and counts it from 2 up to 49.
+# prime(n) returns 1 if n is prime, otherwise 0. Its locals are
+# n (local 0, the argument) and d (local 1, made by pushing 2).
+
+PUSH 2              #  0  n = 2
+LOAD 0 PUSH 50 LT   #  2  loop: n < 50 ?
+JZ 28               #  7  no: stop
+LOAD 0 CALL 29 1    #  9  prime(n)
+JZ 19               # 14  not prime: skip printing
+LOAD 0 PRINT        # 16  print n
+LOAD 0 PUSH 1 ADD   # 19  n + 1
+STORE 0             # 24  n = n + 1
+JMP 2               # 26
+HALT                # 28  end
+
+PUSH 2              # 29  prime: d = 2
+LOAD 1 LOAD 1 MUL   # 31  test: d * d
+LOAD 0 SWAP LT      # 36  n < d * d ?
+JZ 45               # 40  no: try dividing
+PUSH 1 RET          # 42  yes: n is prime
+LOAD 0 LOAD 1 MOD   # 45  n mod d
+JZ 61               # 50  d divides n: not prime
+LOAD 1 PUSH 1 ADD   # 52  d + 1
+STORE 1             # 57  d = d + 1
+JMP 31              # 59  test again
+PUSH 0 RET          # 61  not prime

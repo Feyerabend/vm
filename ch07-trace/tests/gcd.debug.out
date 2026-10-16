@@ -1,0 +1,19 @@
+    0  PUSH 1071
+(vm)     0   PUSH 1071
+    2   PUSH 462
+    4   CALL 17 2
+    7   PRINT
+(vm) (vm)    32  LOAD 0
+(vm) stack: | 1071 462 | 462 147 | 147 21 | 21 0
+frame 4: returns to 31, locals start at 6
+frame 3: returns to 31, locals start at 4
+frame 2: returns to 31, locals start at 2
+frame 1: returns to 7, locals start at 0
+(vm)    34  RET
+(vm)    31  RET
+(vm) stack: | 1071 462 21
+frame 1: returns to 7, locals start at 0
+(vm) (vm) 21
+1
+halted
+(vm) 

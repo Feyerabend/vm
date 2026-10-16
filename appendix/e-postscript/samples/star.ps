@@ -1,0 +1,24 @@
+%!PS
+%%BoundingBox: 0 0 240 240
+% Twelve petals: one shape, drawn twelve times, each time in a
+% coordinate system turned a little further. The program never works
+% out where a point is; the transformation does.
+
+/petal {
+    newpath
+    0 0 moveto
+    40 25 lineto
+    100 0 lineto
+    40 -25 lineto
+    closepath
+} def
+
+120 120 translate
+0 1 11 {
+    12 div setgray              % from black towards light gray
+    petal fill
+    30 rotate
+} for
+1 setgray
+newpath 0 0 14 0 360 arc fill
+showpage

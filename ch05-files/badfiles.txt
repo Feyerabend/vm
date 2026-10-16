@@ -1,0 +1,9 @@
+tests/empty.vm: too short to be a program
+tests/huge.vm: bad code length
+tests/magic.vm: not a program (wrong magic number)
+tests/negative.vm: bad code length
+tests/short.vm: too short to be a program
+tests/trailing.vm: extra bytes after the code
+tests/truncated.vm: code ends early
+tests/version.vm: unknown format version
+tests/zero.vm: bad code length

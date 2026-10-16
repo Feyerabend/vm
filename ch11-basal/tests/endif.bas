@@ -1,0 +1,2 @@
+IF X > 1 THEN
+  PRINT X

@@ -1,0 +1,17 @@
+# Euclid's algorithm (as in chapter 4).
+
+PUSH 1071 PUSH 462  #  0
+CALL 17 2           #  4  gcd(1071, 462)
+PRINT               #  7
+PUSH 17 PUSH 5      #  8
+CALL 17 2           # 12  gcd(17, 5)
+PRINT               # 15
+HALT                # 16
+
+LOAD 1              # 17  gcd: b
+JZ 32               # 19  b = 0: return a
+LOAD 1              # 21  b
+LOAD 0 LOAD 1 MOD   # 23  a mod b
+CALL 17 2           # 28  gcd(b, a mod b)
+RET                 # 31
+LOAD 0 RET          # 32  return a

@@ -1,0 +1,25 @@
+; Six times seven, by adding, shown in decimal on the screen.
+; CHIP-8 has no multiplication, and no way to print a number: the
+; program splits it into decimal digits, and draws each digit with
+; the machine's own font.
+
+6000    ; 200  V0 := 0
+6107    ; 202  V1 := 7              count seven times
+7006    ; 204  V0 += 6              loop:
+71FF    ; 206  V1 += 255            that is, V1 -= 1
+3100    ; 208  skip if V1 = 0
+1204    ; 20A  jump to the loop
+A300    ; 20C  I := 300
+F033    ; 20E  the digits of V0 at 300, 301, 302
+F265    ; 210  V0, V1, V2 := the three digits
+6314    ; 212  V3 := 20             x
+640C    ; 214  V4 := 12             y
+F029    ; 216  I := the font's picture of digit V0
+D345    ; 218  draw it: 5 rows at V3, V4
+7305    ; 21A  V3 += 5
+F129    ; 21C  the same for V1
+D345    ; 21E
+7305    ; 220
+F229    ; 222  and for V2
+D345    ; 224
+1226    ; 226  jump here: the end

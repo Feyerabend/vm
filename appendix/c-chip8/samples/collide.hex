@@ -1,0 +1,21 @@
+; Drawing is XOR. Draw a block, then the same block overlapping it:
+; where they overlap, the pixels go dark, and VF says the two met.
+; Games find collisions this way, and move a sprite by drawing it
+; twice: once to erase it, once in its new place.
+
+A218    ; 200  I := 218             the block, below
+6008    ; 202  V0 := 8              x
+6108    ; 204  V1 := 8              y
+D018    ; 206  draw 8 rows at V0, V1
+600C    ; 208  V0 := 12
+610C    ; 20A  V1 := 12
+D018    ; 20C  draw again: VF := 1, since they overlap
+6228    ; 20E  V2 := 40
+630C    ; 210  V3 := 12
+FF29    ; 212  I := the font's picture of digit VF
+D235    ; 214  draw it
+1216    ; 216  the end
+FFFF    ; 218  the block: eight rows of eight pixels
+FFFF
+FFFF
+FFFF

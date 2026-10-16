@@ -1,0 +1,2 @@
+let f x = x + y in
+print (f 1)

@@ -1,0 +1,12 @@
+#!/bin/sh
+# Translate a stack-machine program and run it on the register
+# machine, so that the two together can be tested like one machine.
+# A program the translator refuses exits with status 3.
+#
+#     rvm-run program.vm
+
+dir=$(dirname "$0")
+out=$(mktemp)
+trap 'rm -f "$out"' EXIT
+python3 "$dir/translate.py" "$1" "$out" || exit $?
+"$dir/rvm" "$out"

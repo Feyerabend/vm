@@ -1,0 +1,3 @@
+# A number is not a function.
+let five = 5 in
+print (five 3)

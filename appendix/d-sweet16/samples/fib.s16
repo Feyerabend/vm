@@ -1,0 +1,17 @@
+; A table of Fibonacci numbers, as 16-bit words, for as long as they
+; fit: the carry from ADD says when a sum has grown past 16 bits.
+
+        SET R1, $0900   ; the table
+        SET R2, 0       ; a
+        SET R3, 1       ; b
+loop:   LD R2
+        STD @R1         ; the word at R1 := a, and move R1 on by 2
+        ADD R3          ; R0 := a + b
+        BC done         ; too big for 16 bits
+        ST R4
+        LD R3
+        ST R2           ; a := b
+        LD R4
+        ST R3           ; b := a + b
+        BR loop
+done:   RTN

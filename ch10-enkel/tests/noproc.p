@@ -1,0 +1,3 @@
+begin
+    call nothing[]
+end.

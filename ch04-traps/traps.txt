@@ -1,0 +1,9 @@
+divzero: trap: division by zero at 4
+underflow: trap: stack underflow at 2
+deep: trap: stack overflow at 7
+forever: trap: too many nested calls at 3
+badop: trap: unknown instruction at 2
+runoff: 1
+runoff: trap: ran off the end of the program at 3
+badjump: trap: jump out of program at 0
+badret: trap: return without call at 2

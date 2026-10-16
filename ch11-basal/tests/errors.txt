@@ -1,0 +1,30 @@
+tests/label.bas:2:6: there is no label 'NOWHERE'
+    GOTO NOWHERE
+         ^
+tests/twice.bas:3:3: label 'TOP' is defined twice
+    ! TOP
+      ^
+tests/fornext.bas:1:1: FOR without NEXT
+    FOR I = 1 TO 3
+    ^
+tests/nextfor.bas:2:1: NEXT without FOR
+    NEXT I
+    ^
+tests/nextvar.bas:2:1: expected NEXT I
+    NEXT J
+    ^
+tests/step.bas:1:21: STEP cannot be 0
+    FOR I = 1 TO 3 STEP 0
+                        ^
+tests/then.bas:1:9: expected 'THEN', found the end of the line
+    IF X > 1
+            ^
+tests/endif.bas:3:1: expected 'ENDIF', found the end of the file
+    
+    ^
+tests/string.bas:1:7: string is never closed
+    PRINT "hello
+          ^
+tests/endwhile.bas:2:1: expected a statement, found 'ENDWHILE'
+    ENDWHILE
+    ^

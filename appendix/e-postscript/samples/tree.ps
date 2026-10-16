@@ -1,0 +1,25 @@
+%!PS
+%%BoundingBox: 0 0 320 260
+% A tree is a branch with two smaller trees at its end. Each smaller
+% tree is drawn in a turned and shrunken coordinate system: gsave
+% keeps the old one, and grestore brings it back. The line width
+% shrinks with the scale, so the twigs come out thinner.
+
+/branch {                       % depth branch -
+    dup 0 gt {
+        0 0 moveto 0 55 lineto stroke
+        0 55 translate
+        gsave 24 rotate 0.75 0.75 scale dup 1 sub branch grestore
+        gsave -32 rotate 0.68 0.68 scale dup 1 sub branch grestore
+    } {
+        0.25 0.55 0.2 setrgbcolor
+        newpath 0 0 40 0 360 arc fill  % 40, in a much shrunken space
+    } ifelse
+    pop
+} def
+
+0.35 0.25 0.15 setrgbcolor
+7 setlinewidth
+165 8 translate
+8 branch
+showpage

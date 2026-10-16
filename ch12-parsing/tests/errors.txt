@@ -1,0 +1,12 @@
+-descent: tests/operand.expr:1:5: expected a number or '(', found ';'
+-pratt: tests/operand.expr:1:5: expected a number or '(', found ';'
+-combinators: tests/operand.expr:1:5: expected '(' or '-' or a number, found ';'
+-descent: tests/paren.expr:1:7: expected ')', found ';'
+-pratt: tests/paren.expr:1:7: expected ')', found ';'
+-combinators: tests/paren.expr:1:7: expected '%' or ')' or '*' or '+' or '-' or '/' or '<' or '=', found ';'
+-descent: tests/two.expr:1:3: expected ';', found '2'
+-pratt: tests/two.expr:1:3: expected ';', found '2'
+-combinators: tests/two.expr:1:3: expected '%' or '*' or '+' or '-' or '/' or ';' or '<' or '=', found '2'
+-descent: tests/semicolon.expr:2:1: expected ';', found the end of the program
+-pratt: tests/semicolon.expr:2:1: expected ';', found the end of the program
+-combinators: tests/semicolon.expr:2:1: expected '%' or '*' or '+' or '-' or '/' or ';' or '<' or '=', found the end of the program

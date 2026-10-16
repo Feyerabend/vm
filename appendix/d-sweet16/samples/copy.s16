@@ -1,0 +1,21 @@
+; Copying bytes, the job SWEET16 was made for. On the 6502, moving a
+; block of memory with 16-bit addresses takes a page of code; here
+; the loop is four instructions. It is a subroutine, called twice.
+
+        SET R1, hello   ; from
+        SET R2, $0900   ; to
+        SET R3, 7       ; how many
+        BS copy
+        SET R1, sweet
+        SET R3, 7
+        BS copy         ; R2 carries on where it stopped
+        RTN
+
+copy:   LD @R1          ; R0 := the byte at R1, and move R1 on
+        ST @R2          ; the byte at R2 := R0, and move R2 on
+        DCR R3
+        BNZ copy        ; tests R3, the register DCR changed
+        RS
+
+hello:  DB "HELLO, "
+sweet:  DB "SWEET16"

@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  Sources for the logos in assets/. Each logo is one element with an
+  id; render.mjs takes a picture of each at twice the size, so they
+  stay sharp on high-resolution screens. Open this file in a browser
+  to see them all. Fonts: IBM Plex Mono and Fira Sans (SIL Open Font
+  License), from Google Fonts.
+-->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Fira+Sans:ital,wght@0,400;0,500;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; padding: 24px; background: #888; display: grid; gap: 24px; justify-content: start; }
+.logo { position: relative; overflow: hidden; border-radius: 14px; }
+
+/* The repository */
+#logo-vm { width: 800px; height: 220px; background: #16202e; font-family: 'IBM Plex Mono', monospace; }
+#logo-vm .stack { position: absolute; left: 58px; top: 38px; width: 132px; }
+#logo-vm .cell { height: 34px; margin-bottom: 8px; border: 2px solid #4a5a72; border-radius: 6px;
+  color: #c6d0de; font-size: 20px; line-height: 34px; text-align: center; }
+#logo-vm .cell.top { background: #f2b134; border-color: #f2b134; color: #16202e; font-weight: 700; }
+#logo-vm .sp { position: absolute; left: 20px; top: 41px; color: #f2b134; font-size: 22px; font-weight: 700; }
+#logo-vm .base { position: absolute; left: 50px; top: 182px; width: 148px; height: 4px; background: #4a5a72; border-radius: 2px; }
+#logo-vm .name { position: absolute; left: 250px; top: 14px; color: #f4f1ea; font-size: 124px; font-weight: 700; letter-spacing: -4px; }
+#logo-vm .name span { color: #f2b134; }
+#logo-vm .line { position: absolute; left: 256px; top: 160px; color: #8e9bb0; font-size: 19px; }
+#logo-vm .code { position: absolute; right: 44px; top: 40px; color: #56667f; font-size: 18px; line-height: 30px; white-space: pre; }
+#logo-vm .code b { color: #f2b134; font-weight: 600; }
+
+/* enkel/0 */
+#logo-enkel { width: 800px; height: 220px; background: #2b5fd9; font-family: 'IBM Plex Mono', monospace; }
+#logo-enkel .name { position: absolute; left: 52px; top: 30px; color: #fff; font-size: 104px; font-weight: 600; letter-spacing: -2px; }
+#logo-enkel .name span { color: #9fc0ff; }
+#logo-enkel .line { position: absolute; left: 58px; top: 160px; color: #cfdcfb; font-size: 19px; }
+#logo-enkel .code { position: absolute; right: 44px; top: 30px; color: rgba(255,255,255,0.42); font-size: 17px; line-height: 27px; white-space: pre; }
+
+/* basal/0 */
+#logo-basal { width: 800px; height: 220px; background: #ff3b14; font-family: 'Fira Sans', sans-serif; }
+#logo-basal .name { position: absolute; left: 46px; top: 8px; color: #141414; font-size: 132px; font-weight: 900; font-style: italic; letter-spacing: -3px; }
+#logo-basal .name sup { font-size: 56px; position: relative; top: -12px; margin-left: -10px; font-weight: 800; }
+#logo-basal .line { position: absolute; left: 56px; top: 162px; color: #3a0d03; font-size: 20px; font-weight: 500; }
+#logo-basal .code { position: absolute; right: 44px; top: 40px; color: rgba(20,20,20,0.45); font-family: 'IBM Plex Mono', monospace; font-size: 17px; line-height: 27px; white-space: pre; }
+
+/* lambda/0 */
+#logo-lambda { width: 800px; height: 220px; background: #5a3fc0; font-family: 'IBM Plex Mono', monospace; }
+#logo-lambda .glyph { position: absolute; left: 46px; top: 14px; color: #f2b134; font-family: 'Fira Sans Lambda', 'Fira Sans', sans-serif; font-weight: 700; font-size: 150px; line-height: 1; }
+#logo-lambda .name { position: absolute; left: 168px; top: 30px; color: #fff; font-size: 80px; font-weight: 600; letter-spacing: -2px; }
+#logo-lambda .name span { color: #c9bcf5; }
+#logo-lambda .line { position: absolute; left: 174px; top: 150px; color: #ddd4fb; font-size: 19px; }
+#logo-lambda .code { position: absolute; right: 40px; top: 120px; color: rgba(255,255,255,0.45); font-size: 17px; line-height: 27px; white-space: pre; }
+</style></head>
+<body>
+
+<div class="logo" id="logo-vm">
+  <div class="sp">sp&#9656;</div>
+  <div class="stack">
+    <div class="cell top">5</div>
+    <div class="cell">3</div>
+    <div class="cell">2</div>
+  </div>
+  <div class="base"></div>
+  <div class="name">vm<span>.</span></div>
+  <div class="line">one machine, built up chapter by chapter</div>
+  <div class="code">  PUSH 2
+  PUSH 3
+<b>&#9656; PUSH 5</b></div>
+</div>
+
+<div class="logo" id="logo-enkel">
+  <div class="name">enkel<span>/0</span></div>
+  <div class="line">a small Pascal-like language</div>
+  <div class="code">var i;
+begin
+  i is 0;
+  while i &lt; 3 do
+    i is i + 1
+end.</div>
+</div>
+
+<div class="logo" id="logo-basal">
+  <div class="name">BaSaL<sup>0</sup></div>
+  <div class="line">a small BASIC, on the same machine</div>
+  <div class="code">LET X = 3
+WHILE X &gt; 0 DO
+PRINT X
+LET X = X - 1
+ENDWHILE</div>
+</div>
+
+
+<div class="logo" id="logo-lambda">
+  <div class="glyph">&#955;</div>
+  <div class="name">lambda<span>/0</span></div>
+  <div class="line">functions as values</div>
+  <div class="code">let add x y = x + y in
+let add5 = add 5 in
+print (add5 10)</div>
+</div>
+
+</body></html>

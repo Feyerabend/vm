@@ -1,0 +1,8 @@
+35
+144
+3628800
+1 4 9 16 25 36 49 64 
+31
+81
+0
+{dup 2 lt {pop 1} {dup 1 sub fact mul} ifelse}

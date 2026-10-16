@@ -1,0 +1,11 @@
+# Each expression is printed on a line of its own.
+
+1 + 2;
+(2 + 3) * 7 - 5;
+2 + 3 * 7 - 5;          # * binds tighter than + and -
+100 - 10 - 1;           # left to right: (100 - 10) - 1
+2 * (3 + 4) * 5;
+-7 / 2;                 # rounds towards zero
+-7 % 2;
+--5;                    # minus minus five
+-(2 + 3) * -(4 - 6);

@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vm playground</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Three columns, as the machine is seen: the program, the code it
+   became, and the machine's state. One column on a phone. */
+:root {
+    --ink: #16202e;
+    --paper: #fbfaf6;
+    --panel: #ffffff;
+    --line: #d5dbe4;
+    --muted: #6b778a;
+    --amber: #f2b134;
+    --amber-soft: #fff6e0;
+    --amber-text: #9a6510;
+    --red: #c0392b;
+    --red-soft: #fdecea;
+    --on-amber: #16202e;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ink: #e6e9ef;
+        --paper: #11161e;
+        --panel: #171e29;
+        --line: #2b3545;
+        --muted: #8c97a8;
+        --amber-soft: #2e2615;
+        --amber-text: #f2b134;
+        --red: #ff7b6b;
+        --red-soft: #3a1f1c;
+        color-scheme: dark;
+    }
+}
+:root[data-theme="dark"] {
+    --ink: #e6e9ef;
+    --paper: #11161e;
+    --panel: #171e29;
+    --line: #2b3545;
+    --muted: #8c97a8;
+    --amber-soft: #2e2615;
+    --amber-text: #f2b134;
+    --red: #ff7b6b;
+    --red-soft: #3a1f1c;
+    color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.45 var(--sans);
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { padding-block: 16px 8px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+header h1 { margin: 0; font: 700 24px var(--mono); letter-spacing: -0.5px; }
+header h1 span { color: var(--amber); }
+header p { margin: 0; color: var(--muted); }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 6px 12px; }
+button, select { font: 14px var(--sans); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); cursor: pointer; }
+button.primary { background: var(--amber); border-color: var(--amber); color: var(--on-amber); font-weight: 600; }
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+label { color: var(--muted); font-size: 14px; display: inline-flex; align-items: center; gap: 4px; }
+main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .7fr); gap: 14px; padding-block: 0 20px; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+section h2 { margin: 0; padding: 8px 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--line); }
+textarea { flex: 1; min-height: 420px; border: 0; resize: vertical; padding: 10px 12px; font: 13.5px/1.5 var(--mono);
+    background: transparent; color: var(--ink); outline: none; }
+#listing { flex: 1; overflow: auto; max-height: 470px; font: 13px/1.5 var(--mono); padding: 6px 0; }
+#listing div { padding: 0 12px; white-space: pre; }
+#listing .addr { color: var(--muted); display: inline-block; width: 4ch; text-align: right; margin-right: 1.5ch; }
+#listing .here { background: var(--amber-soft); box-shadow: inset 3px 0 var(--amber); }
+#listing .trapped { background: var(--red-soft); box-shadow: inset 3px 0 var(--red); }
+#stack { padding: 10px 12px; display: flex; flex-direction: column-reverse; gap: 4px; overflow: auto; max-height: 300px; font: 14px var(--mono); }
+.cell { border: 1.5px solid var(--line); border-radius: 5px; padding: 3px 8px; text-align: center; }
+.cell.ref { border-color: var(--amber); color: var(--amber-text); background: var(--amber-soft); font-weight: 600; }
+.frame { font-size: 11px; color: var(--muted); border-top: 1.5px dashed var(--muted); padding-top: 2px; }
+.empty { color: var(--muted); font: 13px var(--sans); }
+#output { margin: 0; padding: 10px 12px; font: 13.5px/1.45 var(--mono); white-space: pre-wrap; overflow: auto; max-height: 220px; flex: 1; }
+#status { padding: 8px 12px; border-top: 1px solid var(--line); font-size: 14px; min-height: 2.4em; }
+#status.error { color: var(--red); }
+.side { display: flex; flex-direction: column; gap: 14px; }
+footer { padding-block: 0 24px; color: var(--muted); font-size: 13px; max-width: 75ch; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>vm<span>.</span> playground</h1>
+  <p>The machine of chapter 21, compiled to WebAssembly, running in this page.</p>
+</header>
+<div class="bar">
+  <select id="examples" aria-label="Example programs"></select>
+  <button id="assemble" class="primary">Assemble</button>
+  <button id="step" disabled>Step</button>
+  <button id="run" disabled>Run</button>
+  <button id="stop" disabled>Stop</button>
+  <label><input type="checkbox" id="copying"> copying collector</label>
+  <label><input type="checkbox" id="stress"> stress</label>
+</div>
+<main>
+  <section>
+    <h2>Assembly</h2>
+    <textarea id="source" spellcheck="false" aria-label="Assembly source"></textarea>
+  </section>
+  <section>
+    <h2>Listing</h2>
+    <div id="listing"><div class="empty">Assemble a program to see it here.</div></div>
+  </section>
+  <div class="side">
+    <section>
+      <h2>Stack</h2>
+      <div id="stack"><div class="empty">empty</div></div>
+    </section>
+    <section>
+      <h2>Output</h2>
+      <pre id="output"></pre>
+      <div id="status">Ready.</div>
+    </section>
+  </div>
+</main>
+<footer>
+  Instructions are those of <code>ISA.md</code>; labels end with <code>:</code>, comments start with <code>;</code> or <code>#</code>.
+  The top of the stack is at the top. A dashed line marks where a call's locals begin; <code>@n</code> is a reference to block n.
+</footer>
+<script type="module">
+const WASM = "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AAtBrYiAgAAQh4CAgAAAC0GjiYCAABCHgICAAAALQaOJgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQaOJgIAAEIeAgIAAAAtBo4mAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBo4mAgAAQh4CAgAAAC0GjiYCAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GjiYCAABCHgICAAAALQaOJgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQaOJgIAAEIeAgIAAAAtBo4mAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBo4mAgAAQh4CAgAAAC0GjiYCAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQaOJgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBnoiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GeiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBnoiAgAAQh4CAgAAAC0GeiICAABCHgICAAAALQa2IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBnoiAgAAQh4CAgAAAC0GeiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0HNioCAABCHgICAAAALQb2IgIAAEIeAgIAAAAtB6YiAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQaOJgIAAEIeAgIAAAAtB7ImAgAAQh4CAgAAAC0G9iICAABCHgICAAAALQemIgIAAEIeAgIAAAAtBuYqAgAAQh4CAgAAAC0GtiICAABCHgICAAAALQZ6IgIAAEIeAgIAAAAtBrYiAgAAQh4CAgAAAC0GjiYCAABCHgICAAAALQdKIgIAAEIeAgIAAAAtBnoiAgAAQh4CAgAAAC0Gt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b3ZlcmZsb3cAc3RhY2sgdW5kZXJmbG93AG5vdCBlbm91Z2ggYXJndW1lbnRzAG5vIHN1Y2ggbWVtb3J5IGFkZHJlc3MAdG9vIG1hbnkgbmVzdGVkIGNhbGxzAGluZGV4IG91dCBvZiBib3VuZHMAbm90IGEgY2hhcmFjdGVyAG5vdCBhIG51bWJlcgBkaXZpc2lvbiBieSB6ZXJvAHVua25vd24gaW5zdHJ1Y3Rpb24AdW5rbm93biBmb3JtYXQgdmVyc2lvbgBqdW1wIG91dCBvZiBwcm9ncmFtAHJhbiBvZmYgdGhlIGVuZCBvZiB0aGUgcHJvZ3JhbQB0b28gc2hvcnQgdG8gYmUgYSBwcm9ncmFtAHJldHVybiB3aXRob3V0IGNhbGwAbm8gc3VjaCBsb2NhbABiYWQgY29kZSBsZW5ndGgAYmFkIHNpemUAZXh0cmEgYnl0ZXMgYWZ0ZXIgdGhlIGNvZGUAbm90IGEgcmVmZXJlbmNlAG1pc3Npbmcgb3BlcmFuZABub3QgYSBwcm9ncmFtICh3cm9uZyBtYWdpYyBudW1iZXIpAABB1AsLCBCWCAD/////AOYCBG5hbWUACAd2bS53YXNtAa0CHQAKaG9zdF93cml0ZQEJaG9zdF90cmFwAgZtZW1jcHkDBm1lbXNldAQHdm1fc3RlcAUHb3BlcmFuZAYIcHVzaF9pbnQHBHRyYXAIDHdyaXRlX251bWJlcgkHYWRkcmVzcwoFbG9jYWwLCGFsbG9jYXRlDAdjb2xsZWN0DQZ2bV9ydW4OCHZtX2lucHV0Dw12bV9pbnB1dF9zaXplEAd2bV9sb2FkEQh2bV9yZXNldBIQdm1fc2V0X2NvbGxlY3RvchMFdm1fcGMUCHZtX3N0YXJ0FQl2bV9oYWx0ZWQWBXZtX3NwFwl2bV9mcmFtZXMYB3ZtX2NvZGUZDnZtX2NvZGVfbGVuZ3RoGg52bV9mcmFtZV9zdGFydBsJdm1faXNfcmVmHAh2bV92YWx1ZQcSAQAPX19zdGFja19wb2ludGVyCRECAAcucm9kYXRhAQUuZGF0YQA4CXByb2R1Y2VycwEMcHJvY2Vzc2VkLWJ5AQxVYnVudHUgY2xhbmcRMTguMS4zICgxdWJ1bnR1MSkALA90YXJnZXRfZmVhdHVyZXMCKw9tdXRhYmxlLWdsb2JhbHMrCHNpZ24tZXh0";
+// The assembler of chapter 6 (asm.py), in JavaScript, so that the web
+// page can turn assembly language into a program without a server.
+// test-asm.mjs checks that it makes exactly the same bytes as asm.py
+// for every program in the conformance suite.
+
+const INSTRUCTIONS = [
+    [0, "HALT", []],
+    [1, "PUSH", ["n"]],
+    [2, "ADD", []],
+    [3, "SUB", []],
+    [4, "MUL", []],
+    [5, "PRINT", []],
+    [6, "JMP", ["addr"]],
+    [7, "JZ", ["addr"]],
+    [8, "DUP", []],
+    [9, "DROP", []],
+    [10, "SWAP", []],
+    [11, "OVER", []],
+    [12, "ROT", []],
+    [13, "LT", []],
+    [14, "EQ", []],
+    [15, "LOAD", ["k"]],
+    [16, "STORE", ["k"]],
+    [17, "CALL", ["addr", "n"]],
+    [18, "RET", []],
+    [19, "DIV", []],
+    [20, "MOD", []],
+    [21, "AND", []],
+    [22, "OR", []],
+    [23, "XOR", []],
+    [24, "LOADM", []],
+    [25, "STOREM", []],
+    [26, "EMIT", []],
+    [27, "NEW", []],
+    [28, "GETF", []],
+    [29, "SETF", []],
+    [30, "LEN", []],
+    [31, "CALLI", ["n"]],
+];
+
+const BY_NAME = new Map(INSTRUCTIONS.map(([code, name, kinds]) => [name, { code, kinds }]));
+const BY_CODE = new Map(INSTRUCTIONS.map(([code, name, kinds]) => [code, { name, kinds }]));
+
+const LABEL = /^([A-Za-z_][A-Za-z0-9_]*):/;
+const NAME = /^[A-Za-z_][A-Za-z0-9_]*$/;
+
+// A number written in decimal, or in hex as 0x1f, as Python's int(word, 0) reads it.
+function number(word) {
+    if (/^[+-]?(0|[1-9][0-9]*)$/.test(word)) return Number(word);
+    if (/^[+-]?0[xX][0-9a-fA-F]+$/.test(word)) {
+        const negative = word.startsWith("-");
+        const n = parseInt(word.replace(/^[+-]/, ""), 16);
+        return negative ? -n : n;
+    }
+    return null;
+}
+
+function parseLine(text) {
+    let rest = text.split(/[#;]/, 1)[0].trim();
+    const labels = [];
+    for (let m; (m = LABEL.exec(rest)); rest = rest.slice(m[0].length).trim())
+        labels.push(m[1]);
+    const words = rest.split(/\s+/).filter((w) => w);
+    return { labels, op: words[0] ?? null, operands: words.slice(1) };
+}
+
+function size(line) {
+    if (line.op === null) return 0;
+    if (line.op.toLowerCase() === ".word") return 1;
+    const entry = BY_NAME.get(line.op.toUpperCase());
+    return entry ? 1 + entry.kinds.length : 1;
+}
+
+// Assemble source text. Returns { code, lines, errors }: the code as an
+// array of numbers; for each source line, its address and how many
+// words it became; and every mistake found, with its line number.
+function assemble(source) {
+    const lines = source.split("\n").map(parseLine);
+    const labels = new Map();
+    const errors = [];
+    const error = (k, message) => errors.push({ line: k + 1, message });
+
+    let address = 0;
+    lines.forEach((line, k) => {
+        for (const label of line.labels) {
+            if (labels.has(label)) error(k, `label '${label}' is defined twice`);
+            else labels.set(label, address);
+        }
+        line.address = address;
+        line.size = size(line);
+        address += line.size;
+    });
+
+    const operand = (k, kind, word) => {
+        const n = number(word);
+        if ((kind === "addr" || kind === "n") && n === null && NAME.test(word)) {
+            if (!labels.has(word)) { error(k, `undefined label '${word}'`); return 0; }
+            return labels.get(word);
+        }
+        if (n === null) { error(k, `expected a number, found '${word}'`); return 0; }
+        if (n < -(2 ** 31) || n >= 2 ** 31) { error(k, `number out of range: ${word}`); return 0; }
+        if (kind === "k" && n < 0) error(k, `a local number cannot be negative: ${n}`);
+        return n;
+    };
+
+    const code = [];
+    lines.forEach((line, k) => {
+        if (line.op === null) return;
+        if (line.op.toLowerCase() === ".word") {
+            if (line.operands.length !== 1) { error(k, ".word takes one number"); code.push(0); }
+            else code.push(operand(k, "n", line.operands[0]));
+            return;
+        }
+        const entry = BY_NAME.get(line.op.toUpperCase());
+        if (!entry) { error(k, `unknown instruction '${line.op}'`); code.push(0); return; }
+        const { code: op, kinds } = entry;
+        if (line.operands.length !== kinds.length) {
+            const s = kinds.length === 1 ? "" : "s";
+            error(k, `${line.op.toUpperCase()} takes ${kinds.length} operand${s}, found ${line.operands.length}`);
+            code.push(op, ...kinds.map(() => 0));
+            return;
+        }
+        code.push(op);
+        kinds.forEach((kind, i) => code.push(operand(k, kind, line.operands[i])));
+    });
+    if (code.length === 0 && errors.length === 0) errors.push({ line: 0, message: "no code" });
+    errors.sort((a, b) => a.line - b.line);
+    return { code, lines, errors };
+}
+
+// The bytes of a .vm file holding the code: the format of chapter 5.
+function toFile(code) {
+    const bytes = new Uint8Array(8 + 4 * code.length);
+    const view = new DataView(bytes.buffer);
+    bytes.set([83, 86, 77, 1]);             // "SVM", version 1
+    view.setInt32(4, code.length, true);
+    code.forEach((w, i) => view.setInt32(8 + 4 * i, w, true));
+    return bytes;
+}
+
+// The machine, compiled to WebAssembly from core.c, and the little
+// JavaScript it needs around it. Used both by the web page and by
+// run.mjs under Node.js.
+//
+// The WebAssembly module imports two functions, and this file provides
+// them: host_write, for every byte the program prints, and host_trap,
+// which stops the machine. A trap is turned into a JavaScript
+// exception, Trap, which unwinds out of the WebAssembly code.
+
+class Trap extends Error {
+    constructor(reason, address) {
+        super(`trap: ${reason} at ${address}`);
+        this.reason = reason;
+        this.address = address;
+    }
+}
+
+class Machine {
+    // wasmBytes: the contents of vm.wasm. write: called with each byte
+    // the program prints.
+    static async create(wasmBytes, write) {
+        const m = new Machine();
+        const imports = {
+            env: {
+                host_write: (c) => write(c),
+                host_trap: (why, at) => { throw new Trap(m.string(why), at); },
+            },
+        };
+        const { instance } = await WebAssembly.instantiate(wasmBytes, imports);
+        m.vm = instance.exports;
+        return m;
+    }
+
+    // A C string in the module's memory.
+    string(address) {
+        const bytes = new Uint8Array(this.vm.memory.buffer);
+        let end = address;
+        while (bytes[end] !== 0) end++;
+        return new TextDecoder().decode(bytes.subarray(address, end));
+    }
+
+    // Load a program from the bytes of a .vm file. Returns null, or the
+    // reason the file was refused, in the words of chapter 5.
+    load(fileBytes, { copying = false, stress = false } = {}) {
+        const size = Math.min(fileBytes.length, this.vm.vm_input_size());
+        new Uint8Array(this.vm.memory.buffer, this.vm.vm_input(), size)
+            .set(fileBytes.subarray(0, size));
+        const why = this.vm.vm_load(size);
+        if (why !== 0) return this.string(why);
+        this.vm.vm_set_collector(copying ? 1 : 0, stress ? 1 : 0);
+        this.vm.vm_reset();
+        return null;
+    }
+
+    run() { this.vm.vm_run(); }
+    step() { return this.vm.vm_step() !== 0; }
+
+    // Everything a debugger shows: where the machine is, and the stack,
+    // with the place where each frame's locals begin.
+    state() {
+        const v = this.vm;
+        const stack = [];
+        for (let i = 0; i < v.vm_sp(); i++)
+            stack.push(v.vm_is_ref(i) ? `@${v.vm_value(i)}` : String(v.vm_value(i)));
+        const frames = [];
+        for (let f = 1; f <= v.vm_frames(); f++) frames.push(v.vm_frame_start(f));
+        return { pc: v.vm_pc(), start: v.vm_start(), halted: v.vm_halted() !== 0, stack, frames };
+    }
+
+    code() {
+        const out = [];
+        for (let a = 0; a < this.vm.vm_code_length(); a++) out.push(this.vm.vm_code(a));
+        return out;
+    }
+}
+
+// The playground: an editor, the assembler of asm.js, and the machine
+// of machine.js, which is core.c compiled to WebAssembly.
+
+
+const EXAMPLES = {
+    "Fibonacci": `; The first ten Fibonacci numbers (chapter 2).
+; The stack holds a b n, where n counts down to zero.
+
+        PUSH 0          ; a
+        PUSH 1          ; b
+        PUSH 10         ; n
+loop:   DUP
+        JZ end
+        PUSH 1
+        SUB
+        ROT
+        ROT             ; n a b
+        OVER
+        PRINT           ; print a
+        SWAP
+        OVER
+        ADD             ; n b (a + b)
+        ROT             ; b (a + b) n
+        JMP loop
+end:    HALT
+`,
+    "Factorial, recursively": `; Each call to fact gets a frame of its own (chapter 3).
+; Step through it and watch the frames pile up, and come down.
+
+main:   PUSH 6
+        CALL fact 1
+        PRINT
+        HALT
+
+fact:   LOAD 0
+        PUSH 2
+        LT
+        JZ recurse
+        PUSH 1
+        RET
+recurse:
+        LOAD 0
+        LOAD 0
+        PUSH 1
+        SUB
+        CALL fact 1
+        MUL
+        RET
+`,
+    "A linked list": `; A list of cells on the heap (chapter 13), built and summed.
+; References are shown as @n: block number n.
+
+main:   PUSH 0          ; local 0: the list
+        PUSH 5          ; local 1: n
+build:  LOAD 1
+        JZ sum
+        PUSH 2
+        NEW
+        DUP
+        PUSH 0
+        LOAD 1
+        SETF            ; cell.value = n
+        DUP
+        PUSH 1
+        LOAD 0
+        SETF            ; cell.next = list
+        STORE 0
+        LOAD 1
+        PUSH 1
+        SUB
+        STORE 1
+        JMP build
+sum:    PUSH 0          ; local 2: total
+walk:   LOAD 0
+        PUSH 0
+        EQ
+        JZ add
+        LOAD 2
+        PRINT
+        HALT
+add:    LOAD 2
+        LOAD 0
+        PUSH 0
+        GETF
+        ADD
+        STORE 2
+        LOAD 0
+        PUSH 1
+        GETF
+        STORE 0
+        JMP walk
+`,
+    "Hello, world": `; EMIT writes one character (chapter 10).
+
+        PUSH 72
+        EMIT
+        PUSH 101
+        EMIT
+        PUSH 108
+        EMIT
+        PUSH 108
+        EMIT
+        PUSH 111
+        EMIT
+        PUSH 44
+        EMIT
+        PUSH 32
+        EMIT
+        PUSH 119
+        EMIT
+        PUSH 111
+        EMIT
+        PUSH 114
+        EMIT
+        PUSH 108
+        EMIT
+        PUSH 100
+        EMIT
+        PUSH 10
+        EMIT
+        HALT
+`,
+    "A trap": `; Dividing by zero, three calls deep: the machine stops,
+; and says where (chapter 4).
+
+main:   PUSH 3
+        CALL down 1
+        HALT
+
+down:   PUSH 100
+        LOAD 0
+        DIV
+        PRINT
+        LOAD 0
+        PUSH 1
+        SUB
+        CALL down 1
+        RET
+`,
+};
+
+const $ = (id) => document.getElementById(id);
+const source = $("source"), listing = $("listing"), stackView = $("stack");
+const output = $("output"), status = $("status");
+
+let machine = null;
+let lines = [];
+let ready = false;
+let running = false;
+
+function write(c) {
+    output.textContent += String.fromCharCode(c);
+}
+
+function setStatus(text, error = false) {
+    status.textContent = text;
+    status.className = error ? "error" : "";
+}
+
+function enable() {
+    $("step").disabled = !ready || running;
+    $("run").disabled = !ready || running;
+    $("stop").disabled = !running;
+    $("assemble").disabled = running;
+}
+
+function showListing(code) {
+    listing.innerHTML = "";
+    const text = source.value.split("\n");
+    lines.forEach((line, k) => {
+        if (line.op === null && line.labels.length === 0) return;
+        const div = document.createElement("div");
+        div.dataset.address = line.size > 0 ? line.address : "";
+        const addr = document.createElement("span");
+        addr.className = "addr";
+        addr.textContent = line.size > 0 ? line.address : "";
+        div.append(addr, text[k].replace(/\s*[;#].*$/, "").trimEnd() || text[k].trim());
+        listing.append(div);
+    });
+}
+
+function show(trapAt = null) {
+    const s = machine.state();
+    for (const div of listing.children) {
+        const a = div.dataset.address === "" ? null : Number(div.dataset.address);
+        div.classList.toggle("here", !s.halted && trapAt === null && a === s.pc);
+        div.classList.toggle("trapped", trapAt !== null && a === trapAt);
+        if (a === (trapAt ?? s.pc) && div.scrollIntoView) div.scrollIntoView({ block: "nearest" });
+    }
+    stackView.innerHTML = "";
+    if (s.stack.length === 0 && s.frames.length === 0) {
+        stackView.innerHTML = '<div class="empty">empty</div>';
+        return;
+    }
+    for (let i = 0; i <= s.stack.length; i++) {
+        s.frames.forEach((start, f) => {
+            if (start === i) {
+                const bar = document.createElement("div");
+                bar.className = "frame";
+                bar.textContent = `call ${f + 1}`;
+                stackView.append(bar);
+            }
+        });
+        if (i < s.stack.length) {
+            const cell = document.createElement("div");
+            cell.className = "cell" + (s.stack[i].startsWith("@") ? " ref" : "");
+            cell.textContent = s.stack[i];
+            stackView.append(cell);
+        }
+    }
+}
+
+function load() {
+    const result = assemble(source.value);
+    lines = result.lines;
+    output.textContent = "";
+    if (result.errors.length) {
+        ready = false;
+        const e = result.errors[0];
+        setStatus(`line ${e.line}: ${e.message}` + (result.errors.length > 1 ? ` (and ${result.errors.length - 1} more)` : ""), true);
+        listing.innerHTML = '<div class="empty">Fix the mistake, and assemble again.</div>';
+        enable();
+        return false;
+    }
+    const why = machine.load(toFile(result.code), {
+        copying: $("copying").checked,
+        stress: $("stress").checked,
+    });
+    if (why) {
+        ready = false;
+        setStatus(why, true);
+        enable();
+        return false;
+    }
+    ready = true;
+    showListing(result.code);
+    show();
+    setStatus(`${result.code.length} words. Step, or run.`);
+    enable();
+    return true;
+}
+
+function trapped(e) {
+    if (!(e instanceof Trap)) throw e;
+    ready = false;
+    running = false;
+    setStatus(e.message, true);
+    show(e.address);
+    enable();
+}
+
+function step() {
+    try {
+        if (!machine.step()) {
+            ready = false;
+            setStatus("Halted.");
+        }
+        show();
+    } catch (e) {
+        trapped(e);
+    }
+    enable();
+}
+
+// Run in slices, so that a program that never ends does not freeze
+// the page, and Stop can be pressed.
+function run() {
+    running = true;
+    enable();
+    const slice = () => {
+        if (!running) return;
+        try {
+            for (let i = 0; i < 200000; i++) {
+                if (!machine.step()) {
+                    running = false;
+                    ready = false;
+                    setStatus("Halted.");
+                    show();
+                    enable();
+                    return;
+                }
+            }
+            setStatus("Running...");
+            requestAnimationFrame(slice);
+        } catch (e) {
+            trapped(e);
+        }
+    };
+    slice();
+}
+
+async function start() {
+    const examples = $("examples");
+    for (const name of Object.keys(EXAMPLES)) examples.add(new Option(name, name));
+    examples.onchange = () => {
+        source.value = EXAMPLES[examples.value];
+        load();
+    };
+    source.value = EXAMPLES[examples.value];
+    const bytes = Uint8Array.from(atob(WASM), (c) => c.charCodeAt(0));
+    machine = await Machine.create(bytes, write);
+    $("assemble").onclick = load;
+    $("step").onclick = step;
+    $("run").onclick = run;
+    $("stop").onclick = () => { running = false; setStatus("Stopped."); show(); enable(); };
+    $("copying").onchange = $("stress").onchange = load;
+    load();
+}
+
+start().catch((e) => setStatus(`Could not start the machine: ${e.message}`, true));
+
+</script>
+</body>
+</html>

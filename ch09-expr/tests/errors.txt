@@ -1,0 +1,15 @@
+tests/semicolon.expr:3:1: expected ';', found '5'
+    5;
+    ^
+tests/paren.expr:2:7: expected ')', found ';'
+    (3 + 4;
+          ^
+tests/char.expr:1:3: unexpected character '$'
+    7 $ 2;
+      ^
+tests/large.expr:1:1: number too large: 2147483648
+    2147483648;
+    ^
+tests/operand.expr:1:5: expected a number or '(', found ';'
+    1 + ;
+        ^

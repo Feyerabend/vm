@@ -1,0 +1,21 @@
+#!/bin/sh
+# Compile a program for the machine to native code, and run it: the
+# compiler, the C compiler and the result, tested together as one
+# machine.
+#
+#     vmc [-g mark | -g copy] [-S] program.vm
+
+dir=$(cd "$(dirname "$0")" && pwd)
+for last; do :; done
+work=$(mktemp -d)
+trap 'rm -rf "$work"' EXIT
+python3 "$dir/vm2c.py" "$last" > "$work/p.c" || exit $?
+${CC:-cc} ${NATIVE_CFLAGS:--O1} -w -I"$dir" "$work/p.c" -o "$work/p" || exit 4
+n=$#
+i=1
+for arg; do
+    if [ $i -lt $n ]; then set -- "$@" "$arg"; fi
+    i=$((i + 1))
+done
+shift $n
+"$work/p" "$@"

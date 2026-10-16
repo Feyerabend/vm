@@ -1,0 +1,8 @@
+100 shared by 3, 2, 1 and 0:
+33
+50
+100
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Divide.share(Divide.java:4)
+	at Divide.main(Divide.java:10)
+status 1

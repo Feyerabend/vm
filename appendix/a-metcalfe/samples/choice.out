@@ -1,0 +1,5 @@
+a d  =>  a d
+a c d  =>  ac d
+a c c b  =>  ac cb
+a c b  =>  not accepted
+a  =>  not accepted

@@ -1,0 +1,62 @@
+arith: verified
+bitwise: verified
+calli: at 6: CALLI, whose target is not known before running
+calls: verified
+compare: verified
+division: verified
+emit: verified
+garbage: verified
+heap-fields: verified
+heap-identity: verified
+heap-list: verified
+heap-places: verified
+jumps: verified
+limit-frames: verified
+limit-stack: verified
+memory: verified
+nolocals: verified
+stackops: verified
+trap-args-frame: at 8: a call with more arguments than the frame holds
+trap-args-negative: at 0: a call with a negative number of arguments
+trap-args: at 2: a call with more arguments than the frame holds
+trap-bad-size: at 3: the program can run off its end
+trap-bounds-negative: at 8: the program can run off its end
+trap-bounds: at 6: the program can run off its end
+trap-call-address: at 0: a jump outside the program
+trap-calli-address: at 2: CALLI, whose target is not known before running
+trap-calli-args: at 2: CALLI, whose target is not known before running
+trap-calli-operand: at 2: an instruction without all its operands
+trap-calli-reference: at 3: CALLI, whose target is not known before running
+trap-divzero: at 5: the program can run off its end
+trap-emit-negative: at 9: the program can run off its end
+trap-emit: at 3: the program can run off its end
+trap-jump-negative: at 0: a jump outside the program
+trap-jump-order: at 0: a jump outside the program
+trap-len: at 3: the program can run off its end
+trap-load-negative: at 2: LOAD of a local the frame does not have
+trap-load: at 0: LOAD of a local the frame does not have
+trap-memory-load: at 3: the program can run off its end
+trap-memory-negative: at 3: the program can run off its end
+trap-memory-store: at 5: the program can run off its end
+trap-missing-operand: at 2: an instruction without all its operands
+trap-modzero: at 5: the program can run off its end
+trap-number-add: at 6: the program can run off its end
+trap-number-index: at 5: the program can run off its end
+trap-number-loadm: at 4: the program can run off its end
+trap-number-lt: at 6: the program can run off its end
+trap-number-print: at 4: the program can run off its end
+trap-out-of-memory: verified
+trap-reference-order: at 6: the program can run off its end
+trap-reference: at 5: the program can run off its end
+trap-ret: at 2: RET outside a function
+trap-runoff: at 3: the program can run off its end
+trap-stack-overflow: at 257: more values than the stack has room for
+trap-store-empty: at 0: a pop from a frame with too few values
+trap-store-pops-first: at 2: STORE to a local the frame does not have
+trap-storem-underflow: at 2: a pop from a frame with too few values
+trap-too-deep: verified
+trap-underflow-frame: at 6: a pop from a frame with too few values
+trap-underflow: at 2: a pop from a frame with too few values
+trap-unknown-negative: at 2: an unknown instruction
+trap-unknown: at 0: an unknown instruction
+wrap: verified

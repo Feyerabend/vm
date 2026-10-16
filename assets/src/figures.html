@@ -1,0 +1,180 @@
+<!doctype html>
+<!--
+  Sources for the figures in assets/. Rendered by render.mjs, like
+  the logos.
+-->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Fira+Sans:ital,wght@0,400;0,500;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; padding: 24px; background: #888; display: grid; gap: 24px; justify-content: start; }
+.fig { background: #fbfaf6; border-radius: 14px; padding: 28px 30px; font-family: 'IBM Plex Mono', monospace; color: #16202e; }
+
+#fig-pipeline { width: 900px; box-sizing: border-box; }
+#fig-pipeline .row { display: grid; grid-template-columns: 1fr 92px 1fr 92px 1fr; align-items: stretch; }
+#fig-pipeline .row + .turn { height: 46px; position: relative; }
+#fig-pipeline .card { border: 2px solid #c9d1dc; border-radius: 10px; background: #fff; padding: 12px 14px; }
+#fig-pipeline .card h4 { margin: 0 0 8px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6b778a; font-weight: 600; }
+#fig-pipeline .card pre { margin: 0; font-family: inherit; font-size: 14.5px; line-height: 1.45; white-space: pre; }
+#fig-pipeline .card.ends { border-color: #f2b134; background: #fff8e8; }
+#fig-pipeline .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #16202e; }
+#fig-pipeline .arrow b { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+#fig-pipeline .arrow span { font-size: 26px; line-height: 1; color: #f2b134; }
+#fig-pipeline .arrow i { font-style: normal; font-size: 11px; color: #6b778a; margin-top: 4px; }
+#fig-pipeline .turn svg { position: absolute; left: 0; top: 0; }
+#fig-pipeline .turn b { position: absolute; left: 50%; top: 13px; transform: translateX(-50%); font-size: 13px; font-weight: 600; background: #fbfaf6; padding: 0 8px; }
+#fig-pipeline .tok { display: inline-block; border: 1px solid #c9d1dc; border-radius: 4px; padding: 0 5px; margin: 0 3px 5px 0; font-size: 14px; }
+#fig-pipeline .tok.n { background: #eef3fb; }
+#fig-pipeline .hl { color: #b7791f; font-weight: 600; }
+
+#fig-heap { width: 900px; box-sizing: border-box; position: relative; height: 330px; }
+#fig-heap .lbl { position: absolute; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #6b778a; font-weight: 600; }
+#fig-heap .cell { position: absolute; width: 52px; height: 40px; border: 2px solid #16202e; background: #fff; box-sizing: border-box;
+  display: flex; align-items: center; justify-content: center; font-size: 16px; }
+#fig-heap .cell.hd { background: #e9edf3; color: #6b778a; font-size: 14px; border-color: #9aa6b8; }
+#fig-heap .cell.ref { background: #fff8e8; color: #b7791f; font-weight: 600; border-color: #f2b134; }
+#fig-heap .addr { position: absolute; font-size: 11px; color: #9aa6b8; width: 52px; text-align: center; }
+#fig-heap .note { position: absolute; font-size: 13px; color: #16202e; }
+#fig-heap svg { position: absolute; left: 0; top: 0; }
+
+#fig-gc { width: 900px; box-sizing: border-box; }
+#fig-gc h5 { margin: 0 0 10px; font-size: 13px; font-weight: 700; color: #16202e; }
+#fig-gc .row { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+#fig-gc .tag { width: 92px; font-size: 12px; color: #6b778a; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+#fig-gc .heap { display: flex; border: 2px solid #16202e; border-radius: 6px; overflow: hidden; height: 40px; width: 640px; background: #fff; }
+#fig-gc .b { display: flex; align-items: center; justify-content: center; font-size: 15px; border-right: 2px solid #16202e; box-sizing: border-box; }
+#fig-gc .live { background: #fff8e8; color: #b7791f; font-weight: 600; }
+#fig-gc .dead { background: #e9edf3; color: #9aa6b8; text-decoration: line-through; }
+#fig-gc .free { background: repeating-linear-gradient(45deg, #fff, #fff 6px, #f1f3f7 6px, #f1f3f7 12px); color: #6b778a; font-size: 13px; }
+#fig-gc .unused { background: #fff; color: #9aa6b8; font-size: 13px; }
+#fig-gc .gap { height: 22px; }
+#fig-gc .cap { font-size: 13px; color: #6b778a; margin: 2px 0 0 106px; }
+
+#fig-cpu { width: 900px; height: 456px; box-sizing: border-box; position: relative; }
+#fig-cpu .box { position: absolute; border: 2px solid #16202e; border-radius: 8px; background: #fff; padding: 8px 10px; font-size: 13px; line-height: 1.35; }
+#fig-cpu .box b { display: block; font-size: 14px; margin-bottom: 3px; }
+#fig-cpu .box i { font-style: normal; color: #6b778a; font-size: 12px; }
+#fig-cpu .box.core { background: #fff8e8; border-color: #f2b134; }
+#fig-cpu .box.io { border-style: dashed; }
+#fig-cpu .reg { display: inline-block; border: 1.5px solid #9aa6b8; border-radius: 4px; padding: 1px 6px; margin: 3px 4px 0 0; font-size: 12.5px; background: #f6f7f9; }
+#fig-cpu svg { position: absolute; left: 0; top: 0; }
+#fig-cpu .lbl { position: absolute; font-size: 12px; color: #6b778a; }
+</style></head>
+<body>
+
+<div class="fig" id="fig-pipeline">
+  <div class="row">
+    <div class="card ends"><h4>source</h4><pre>(2 + 3) * 7;</pre></div>
+    <div class="arrow"><b>scan</b><span>&#10230;</span></div>
+    <div class="card"><h4>tokens</h4>
+      <span class="tok">(</span><span class="tok n">2</span><span class="tok">+</span><span class="tok n">3</span><span class="tok">)</span><span class="tok">*</span><span class="tok n">7</span><span class="tok">;</span>
+    </div>
+    <div class="arrow"><b>parse</b><span>&#10230;</span></div>
+    <div class="card"><h4>syntax tree</h4><pre>*
+├── +
+│   ├── 2
+│   └── 3
+└── 7</pre></div>
+  </div>
+  <div class="turn">
+    <svg width="840" height="46" viewBox="0 0 840 46"><path d="M 745 2 V 23 H 95 V 44" fill="none" stroke="#f2b134" stroke-width="2.5"/><path d="M 89 36 L 95 45 L 101 36" fill="none" stroke="#f2b134" stroke-width="2.5"/></svg>
+    <b>generate</b>
+  </div>
+  <div class="row">
+    <div class="card"><h4>assembly</h4><pre>PUSH 2
+PUSH 3
+ADD
+PUSH 7
+MUL
+PRINT
+HALT</pre></div>
+    <div class="arrow"><b>asm.py</b><span>&#10230;</span></div>
+    <div class="card"><h4>program file</h4><pre><span class="hl">SVM</span> 1  length 10
+
+1 2   1 3   2
+1 7   4
+5
+0</pre></div>
+    <div class="arrow"><b>vm</b><span>&#10230;</span><i>runs</i></div>
+    <div class="card ends"><h4>output</h4><pre>35</pre></div>
+  </div>
+</div>
+
+<div class="fig" id="fig-heap">
+<svg width="900" height="330" viewBox="0 0 900 330">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f2b134"/></marker></defs>
+<path d="M 82 206 C 140 206, 140 90, 400 90 S 680 120, 680 184" fill="none" stroke="#f2b134" stroke-width="2.5" marker-end="url(#ah)"/>
+<path d="M 842 184 C 842 130, 448 130, 448 184" fill="none" stroke="#f2b134" stroke-width="2.5" marker-end="url(#ah)"/>
+<path d="M 610 184 C 610 140, 216 140, 216 184" fill="none" stroke="#f2b134" stroke-width="2.5" marker-end="url(#ah)"/>
+</svg>
+<div class="lbl" style="left:30px; top:28px">stack</div>
+<div class="cell" style="left:30px; top:226px">10</div>
+<div class="cell ref" style="left:30px; top:186px">@3</div>
+<div class="note" style="left:30px; top:272px; width:120px">a reference,<br>on top</div>
+<div class="lbl" style="left:190px; top:28px">heap</div>
+<div class="cell hd" style="left:190px; top:186px">2</div>
+<div class="addr" style="left:190px; top:230px">0</div>
+<div class="cell hd" style="left:244px; top:186px">#1</div>
+<div class="addr" style="left:244px; top:230px">1</div>
+<div class="cell " style="left:298px; top:186px">1</div>
+<div class="addr" style="left:298px; top:230px">2</div>
+<div class="cell " style="left:352px; top:186px">0</div>
+<div class="addr" style="left:352px; top:230px">3</div>
+<div class="cell hd" style="left:422px; top:186px">2</div>
+<div class="addr" style="left:422px; top:230px">4</div>
+<div class="cell hd" style="left:476px; top:186px">#2</div>
+<div class="addr" style="left:476px; top:230px">5</div>
+<div class="cell " style="left:530px; top:186px">2</div>
+<div class="addr" style="left:530px; top:230px">6</div>
+<div class="cell ref" style="left:584px; top:186px">@1</div>
+<div class="addr" style="left:584px; top:230px">7</div>
+<div class="cell hd" style="left:654px; top:186px">2</div>
+<div class="addr" style="left:654px; top:230px">8</div>
+<div class="cell hd" style="left:708px; top:186px">#3</div>
+<div class="addr" style="left:708px; top:230px">9</div>
+<div class="cell " style="left:762px; top:186px">3</div>
+<div class="addr" style="left:762px; top:230px">10</div>
+<div class="cell ref" style="left:816px; top:186px">@2</div>
+<div class="addr" style="left:816px; top:230px">11</div>
+<div class="addr" style="left:180px; width:72px; top:258px; color:#16202e; font-size:12px">length</div><div class="addr" style="left:234px; width:72px; top:258px; color:#16202e; font-size:12px">number</div><div class="addr" style="left:288px; width:72px; top:258px; color:#16202e; font-size:12px">value</div><div class="addr" style="left:342px; width:72px; top:258px; color:#16202e; font-size:12px">next</div>
+<div class="note" style="left:190px; top:290px; color:#6b778a">block #1: the header (grey) and its two fields</div>
+<div class="note" style="left:520px; top:24px; width:340px; color:#6b778a">The list 3, 2, 1, made by three NEWs. The last cell holds 0: the end.</div>
+</div>
+
+<div class="fig" id="fig-gc">
+<h5>Mark and sweep: one heap; the dead blocks become free chunks where they lie</h5>
+<div class="row"><div class="tag">before</div><div class="heap"><div class="b live" style="width:110px">@1</div><div class="b dead" style="width:150px">@2</div><div class="b live" style="width:80px">@3</div><div class="b dead" style="width:120px">@4</div><div class="b live" style="width:90px">@5</div><div class="b free" style="width:90px">free</div></div></div>
+<div class="row"><div class="tag">after</div><div class="heap"><div class="b live" style="width:110px">@1</div><div class="b free" style="width:150px">free</div><div class="b live" style="width:80px">@3</div><div class="b free" style="width:120px">free</div><div class="b live" style="width:90px">@5</div><div class="b free" style="width:90px">free</div></div></div>
+<div class="cap">The live blocks stay put. Free space is in pieces between them.</div>
+<div class="gap"></div>
+<h5>Copying: two heaps; only the live blocks are copied, packed together</h5>
+<div class="row"><div class="tag">from-space</div><div class="heap"><div class="b live" style="width:110px">@1</div><div class="b dead" style="width:150px">@2</div><div class="b live" style="width:80px">@3</div><div class="b dead" style="width:120px">@4</div><div class="b live" style="width:90px">@5</div><div class="b free" style="width:90px">free</div></div></div>
+<div class="row"><div class="tag">to-space</div><div class="heap"><div class="b live" style="width:110px">@1</div><div class="b live" style="width:80px">@3</div><div class="b live" style="width:90px">@5</div><div class="b unused" style="width:360px">free: one piece</div></div></div>
+<div class="cap">The dead blocks are never touched. Then the two heaps swap roles.</div>
+</div>
+
+<div class="fig" id="fig-cpu">
+<svg width="900" height="456" viewBox="0 0 900 456">
+<defs><marker id="ca" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16202e"/></marker></defs>
+<g stroke="#16202e" stroke-width="2" fill="none">
+<path d="M 216 90 L 316 90" marker-end="url(#ca)"/>
+<path d="M 462 132 L 462 196" marker-end="url(#ca)"/>
+<path d="M 606 228 L 666 228" marker-end="url(#ca)"/>
+<path d="M 666 258 L 608 258" marker-end="url(#ca)"/>
+<path d="M 318 236 L 250 236" marker-end="url(#ca)"/>
+<path d="M 250 262 L 316 262" marker-end="url(#ca)"/>
+<path d="M 440 318 L 440 362" marker-end="url(#ca)"/>
+<path d="M 484 362 L 484 320" marker-end="url(#ca)"/>
+<path d="M 606 90 L 666 90" marker-end="url(#ca)"/>
+</g>
+</svg>
+<div class="box" style="left:28px; top:46px; width:162px"><b>code</b>65536 words<br><i>loaded by the testbench</i></div>
+<div class="lbl" style="left:224px; top:68px">op, operands</div>
+<div class="box core" style="left:320px; top:30px; width:260px"><b>control</b>one instruction per clock:<br>check, then compute, then write<br><span class="reg">pc</span><span class="reg">sp</span><span class="reg">fp</span><span class="reg">fsp</span></div>
+<div class="box" style="left:320px; top:200px; width:260px; height:90px"><b>stack</b>256 values<br><i>a, b, c: the three on top, read at once</i></div>
+<div class="box" style="left:670px; top:200px; width:200px"><b>arithmetic</b>+ − × ÷ mod<br>and or xor &lt; =<br><i>32 bits, wrapping</i></div>
+<div class="box" style="left:28px; top:220px; width:194px"><b>frames</b>256 × (return, fp)<br><i>CALL pushes, RET pops</i></div>
+<div class="box" style="left:320px; top:366px; width:260px"><b>memory</b>4096 values<br><i>LOADM, STOREM</i></div>
+<div class="box io" style="left:670px; top:46px; width:200px"><b>outside</b>print_valid, print_value<br>emit_valid, emit_char<br>halted, trapped, trap_at</div>
+</div>
+
+</body></html>

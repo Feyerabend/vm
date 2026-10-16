@@ -1,0 +1,15 @@
+tests/undefined.lam:1:15: 'y' is not defined
+    let f x = x + y in
+                  ^
+tests/rec.lam:1:9: only a function can be 'let rec'
+    let rec n = 5 in
+            ^
+tests/in.lam:2:1: expected 'in', found 'print'
+    print x
+    ^
+tests/value.lam:1:12: expected a value, found ')'
+    print (1 + )
+               ^
+tests/char.lam:1:10: unexpected character '$'
+    print (2 $ 3)
+             ^

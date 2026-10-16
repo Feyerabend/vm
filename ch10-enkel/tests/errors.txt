@@ -1,0 +1,36 @@
+tests/undeclared.p:2:5: 'x' is not declared
+        x is 1
+        ^
+tests/args.p:5:10: 'add' takes 2 arguments, given 1
+        call add[1]
+             ^
+tests/const.p:3:5: 'limit' is a constant and cannot be changed
+        limit is 11
+        ^
+tests/index.p:3:7: 'A' has elements 0 to 9, not 10
+        A.10 is 1
+          ^
+tests/noindex.p:3:11: 'A' is an array: say which element, as in A.0
+        print A
+              ^
+tests/nested.p:2:5: procedures cannot be declared inside procedures
+        procedure inner[];
+        ^
+tests/twice.p:1:11: 'x' is declared twice
+    var x, y, x;
+              ^
+tests/then.p:4:9: expected 'then', found 'print'
+            print x
+            ^
+tests/comment.p:1:1: comment is never closed
+    { this comment
+    ^
+tests/noproc.p:2:10: there is no procedure 'nothing'
+        call nothing[]
+             ^
+tests/period.p:3:4: expected '.', found the end of the file
+    end
+       ^
+tests/procvalue.p:4:11: 'f' is a procedure, not a value
+        print f
+              ^

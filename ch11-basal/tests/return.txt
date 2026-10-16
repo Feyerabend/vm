@@ -1,0 +1,2 @@
+before
+trap: return without call at 23

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vm playground</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Three columns, as the machine is seen: the program, the code it
+   became, and the machine's state. One column on a phone. */
+:root {
+    --ink: #16202e;
+    --paper: #fbfaf6;
+    --panel: #ffffff;
+    --line: #d5dbe4;
+    --muted: #6b778a;
+    --amber: #f2b134;
+    --amber-soft: #fff6e0;
+    --amber-text: #9a6510;
+    --red: #c0392b;
+    --red-soft: #fdecea;
+    --on-amber: #16202e;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ink: #e6e9ef;
+        --paper: #11161e;
+        --panel: #171e29;
+        --line: #2b3545;
+        --muted: #8c97a8;
+        --amber-soft: #2e2615;
+        --amber-text: #f2b134;
+        --red: #ff7b6b;
+        --red-soft: #3a1f1c;
+        color-scheme: dark;
+    }
+}
+:root[data-theme="dark"] {
+    --ink: #e6e9ef;
+    --paper: #11161e;
+    --panel: #171e29;
+    --line: #2b3545;
+    --muted: #8c97a8;
+    --amber-soft: #2e2615;
+    --amber-text: #f2b134;
+    --red: #ff7b6b;
+    --red-soft: #3a1f1c;
+    color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.45 var(--sans);
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { padding-block: 16px 8px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+header h1 { margin: 0; font: 700 24px var(--mono); letter-spacing: -0.5px; }
+header h1 span { color: var(--amber); }
+header p { margin: 0; color: var(--muted); }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 6px 12px; }
+button, select { font: 14px var(--sans); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); cursor: pointer; }
+button.primary { background: var(--amber); border-color: var(--amber); color: var(--on-amber); font-weight: 600; }
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+label { color: var(--muted); font-size: 14px; display: inline-flex; align-items: center; gap: 4px; }
+main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .7fr); gap: 14px; padding-block: 0 20px; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+section h2 { margin: 0; padding: 8px 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--line); }
+textarea { flex: 1; min-height: 420px; border: 0; resize: vertical; padding: 10px 12px; font: 13.5px/1.5 var(--mono);
+    background: transparent; color: var(--ink); outline: none; }
+#listing { flex: 1; overflow: auto; max-height: 470px; font: 13px/1.5 var(--mono); padding: 6px 0; }
+#listing div { padding: 0 12px; white-space: pre; }
+#listing .addr { color: var(--muted); display: inline-block; width: 4ch; text-align: right; margin-right: 1.5ch; }
+#listing .here { background: var(--amber-soft); box-shadow: inset 3px 0 var(--amber); }
+#listing .trapped { background: var(--red-soft); box-shadow: inset 3px 0 var(--red); }
+#stack { padding: 10px 12px; display: flex; flex-direction: column-reverse; gap: 4px; overflow: auto; max-height: 300px; font: 14px var(--mono); }
+.cell { border: 1.5px solid var(--line); border-radius: 5px; padding: 3px 8px; text-align: center; }
+.cell.ref { border-color: var(--amber); color: var(--amber-text); background: var(--amber-soft); font-weight: 600; }
+.frame { font-size: 11px; color: var(--muted); border-top: 1.5px dashed var(--muted); padding-top: 2px; }
+.empty { color: var(--muted); font: 13px var(--sans); }
+#output { margin: 0; padding: 10px 12px; font: 13.5px/1.45 var(--mono); white-space: pre-wrap; overflow: auto; max-height: 220px; flex: 1; }
+#status { padding: 8px 12px; border-top: 1px solid var(--line); font-size: 14px; min-height: 2.4em; }
+#status.error { color: var(--red); }
+.side { display: flex; flex-direction: column; gap: 14px; }
+footer { padding-block: 0 24px; color: var(--muted); font-size: 13px; max-width: 75ch; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>vm<span>.</span> playground</h1>
+  <p>The machine of chapter 21, compiled to WebAssembly, running in this page.</p>
+</header>
+<div class="bar">
+  <select id="examples" aria-label="Example programs"></select>
+  <button id="assemble" class="primary">Assemble</button>
+  <button id="step" disabled>Step</button>
+  <button id="run" disabled>Run</button>
+  <button id="stop" disabled>Stop</button>
+  <label><input type="checkbox" id="copying"> copying collector</label>
+  <label><input type="checkbox" id="stress"> stress</label>
+</div>
+<main>
+  <section>
+    <h2>Assembly</h2>
+    <textarea id="source" spellcheck="false" aria-label="Assembly source"></textarea>
+  </section>
+  <section>
+    <h2>Listing</h2>
+    <div id="listing"><div class="empty">Assemble a program to see it here.</div></div>
+  </section>
+  <div class="side">
+    <section>
+      <h2>Stack</h2>
+      <div id="stack"><div class="empty">empty</div></div>
+    </section>
+    <section>
+      <h2>Output</h2>
+      <pre id="output"></pre>
+      <div id="status">Ready.</div>
+    </section>
+  </div>
+</main>
+<footer>
+  Instructions are those of <code>ISA.md</code>; labels end with <code>:</code>, comments start with <code>;</code> or <code>#</code>.
+  The top of the stack is at the top. A dashed line marks where a call's locals begin; <code>@n</code> is a reference to block n.
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

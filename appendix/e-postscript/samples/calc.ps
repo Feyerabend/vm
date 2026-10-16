@@ -1,0 +1,35 @@
+%!PS
+% PostScript as a programming language, with nothing painted at all.
+% Every word is postfix: the operands come first, then what to do.
+
+3 4 add 5 mul =
+
+% A function is a procedure, given a name in a dictionary.
+/square { dup mul } def
+12 square =
+
+% Recursion: n fact is n times (n - 1) fact, and 1 when n < 2.
+/fact {
+    dup 2 lt
+    { pop 1 }
+    { dup 1 sub fact mul }
+    ifelse
+} def
+10 fact =
+
+% Loops take a procedure. for pushes the counter each time round.
+1 1 8 { square 10 string cvs print ( ) print } for
+(\n) print
+
+% An array, and forall: the sum of its elements.
+0 [3 1 4 1 5 9 2 6] { add } forall =
+
+% Names are looked up when a procedure runs, not when it is made.
+% So redefining square changes fourth, which uses it.
+/fourth { square square } def
+3 fourth =
+/square { pop 0 } def
+3 fourth =
+
+% A procedure is data until it is run: here it is printed instead.
+/fact load ==

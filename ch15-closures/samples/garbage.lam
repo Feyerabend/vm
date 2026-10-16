@@ -1,0 +1,14 @@
+# Closures are made all the time, and most are needed only for a
+# moment: every partial application, every 'fun', makes a block on the
+# heap. This program makes about 65,000 of them, a quarter of a million
+# places in all, in a heap of 65536, and keeps hardly any.
+#
+# Without loops, and with only 256 frames, a program cannot count to
+# a large number one step at a time. But it can double: power k f is
+# f applied 2^k times, and it never goes more than k calls deep.
+
+let pair a b = fun f -> f a b in
+let inc x = pair x 1 (fun a b -> a + b) in      # makes a pair, uses it, drops it
+let twice f x = f (f x) in
+let rec power k f = if k = 0 then f else twice (power (k - 1) f) in
+print (power 14 inc 0)                          # 16384

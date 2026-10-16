@@ -1,0 +1,2 @@
+LET X = 1
+GOTO NOWHERE

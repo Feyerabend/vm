@@ -1,0 +1,3 @@
+    0  PUSH 3
+(vm) trap: division by zero at 10
+stack: | 3 | 2 | 1 | 0

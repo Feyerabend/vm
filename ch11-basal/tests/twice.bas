@@ -1,0 +1,3 @@
+! TOP
+PRINT 1
+! TOP

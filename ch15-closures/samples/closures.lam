@@ -1,0 +1,19 @@
+# Functions are values: they can be made, passed, returned and kept.
+
+let add x y = x + y in
+let add5 = add 5 in               # add, waiting for its second argument
+print (add5 10);                  # 15
+
+let twice f x = f (f x) in
+print (twice add5 0);             # 10
+
+let compose f g x = f (g x) in
+let times3 x = 3 * x in
+print (compose add5 times3 2);    # 5 + 3 * 2 = 11
+print (compose times3 add5 2);    # 3 * (5 + 2) = 21
+
+# A closure remembers the value a variable had when it was made.
+let n = 100 in
+let addn = fun x -> x + n in
+let n = 0 in                      # a new n; addn still has the old one
+print (addn 1)                    # 101
