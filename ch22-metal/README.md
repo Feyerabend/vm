@@ -103,7 +103,7 @@ instruction (plus one, at the end, to see that it stopped):
 
 A simulator is slow: about 150,000 cycles a second here. On an FPGA
 running at, say, 50 MHz, `fib(20)` would take 4.4 milliseconds. But
-that is arithmetic, not a measurement: this design has not been built
+that is arithmetic, not a measurement: this design has **not** been built
 for a real chip, and its single-cycle structure, with a whole divider
 in one cycle, would limit how fast its clock could go.
 
