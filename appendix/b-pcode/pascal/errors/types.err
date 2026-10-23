@@ -1,0 +1,4 @@
+pascal/errors/types.pas:4:10: an integer cannot be given a boolean
+        x := 3 < 4
+             ^
+status 1
