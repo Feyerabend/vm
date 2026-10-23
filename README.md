@@ -18,6 +18,18 @@ there.
 make test        # build and test every chapter, and the appendix
 ```
 
+## The book
+
+The repository is also a book:
+[`book/virtual-machines.pdf`](book/virtual-machines.pdf), *Virtual
+Machines: one machine, built up chapter by chapter*. Every listing,
+every difference between two chapters, and every line a program prints
+in it is taken from this repository, so the book and the code say the
+same thing. Like the code, it is in the public domain: read it, print
+it, share it, translate it, as you like.
+
+A book about virtual machines is, fittingly, distributed virtually.
+
 All you need is a C compiler, `make` and, from chapter 5 onward,
 Python 3. The last two chapters need a little more: chapter 21 needs
 `clang` with `wasm-ld` (the `lld` package) and Node.js, and chapter 22
