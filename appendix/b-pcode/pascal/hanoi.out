@@ -1,0 +1,8 @@
+disc 1 from A to C
+disc 2 from A to B
+disc 1 from C to B
+disc 3 from A to C
+disc 1 from B to A
+disc 2 from B to C
+disc 1 from A to C
+status 0

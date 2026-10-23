@@ -1,0 +1,4 @@
+pascal/errors/undeclared.pas:4:10: 'y' is not declared
+        x := y + 1
+             ^
+status 1

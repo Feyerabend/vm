@@ -22,8 +22,10 @@ All you need is a C compiler, `make` and, from chapter 5 onward,
 Python 3. The last two chapters need a little more: chapter 21 needs
 `clang` with `wasm-ld` (the `lld` package) and Node.js, and chapter 22
 needs Icarus Verilog (`iverilog`). The appendix needs only Python;
-if Java is installed, its last study also checks itself against the
-real JVM (GitHub). Nothing is downloaded while building.
+if Free Pascal (`fpc`) is installed, the Pascal programs of the p-code
+study are also checked against it, and if Java is installed, the last
+study checks itself against the real JVM (GitHub). Nothing is
+downloaded while building.
 
 ## Background
 

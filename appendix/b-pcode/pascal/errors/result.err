@@ -1,0 +1,4 @@
+pascal/errors/result.pas:10:5: 'f' can be given a value only inside it
+        f := 2
+        ^
+status 1

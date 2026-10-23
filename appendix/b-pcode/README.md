@@ -105,18 +105,133 @@ made it. `opr write`, which pops and prints a number, is ours; PL/0
 had no output, and Wirth's interpreter printed every value as it
 was stored instead.
 
+## P4: the machine Pascal travelled on
+
+The P-machine is the idea. The machine that carried Pascal to new
+computers was bigger: the P4 machine of Pascal-P4, from Zurich in
+1976, the last of the Pascal-P compilers. (UCSD Pascal had grown from
+the one before it, P2.) [`p4.py`](p4.py) is our own implementation of
+it, written from the description of what each instruction does, and
+it reads P4 code in the text form the original P4 interpreter read.
+
+P4 keeps the P-machine's levels and static links, and adds what Pascal
+needs that PL/0 did not:
+
+- **Types.** Most instructions carry a letter: `lodi` loads an
+  integer, `lodc` a character, `lodb` a boolean; `equs` compares two
+  sets, `equm 8` two blocks of eight words. The machine itself does
+  not need the letters, since every word can hold a value of any type,
+  but a real implementation does: a real took two words on some
+  computers, and a set four.
+- **A frame with a mark.** `mst` begins a frame before the arguments
+  are pushed: five words, for a function's result, the static link,
+  the dynamic link, the caller's stack limit, and the return address.
+  The arguments follow, so the called procedure finds them as its
+  first variables, at 5, 6 and so on. `cup` jumps, and `ret` returns.
+- **Addresses.** `lda` and `lao` push the address of a variable, `ind`
+  loads through an address, `sto` stores through one, and `ixa`
+  indexes an array: `ixa 3` multiplies the index by 3, the size of an
+  element, and adds it to the address below. A `var` parameter is an
+  address, and arrays are reached the same way.
+- **Two limits for each frame.** `ent 1 l5` makes room for the
+  variables, and `ent 2 l6` reserves the most the stack will need
+  above them. Both sizes are labels, given values only after the code
+  (`l5=7`): the compiler works in one pass, and knows them only at the
+  end. The machine checks both, so a frame can never run into the heap,
+  which `new` grows from the other end of the store.
+- **Standard procedures.** `csp wri` writes an integer, `csp rdc`
+  reads a character, and so on: input and output are not instructions,
+  but calls into the machine.
+- **case by table.** `xjp` jumps to the table entry for the value on
+  the stack, and the entry jumps to its branch.
+
+Two P4 programs written by hand are in [`samples`](samples):
+[`hello.p4`](samples/hello.p4), and [`nested.p4`](samples/nested.p4),
+the program above, in P4.
+
+## pascal/0
+
+The P4 machine was made for a compiler, and here is one:
+[`pascal.py`](pascal.py) compiles pascal/0, a small part of Pascal
+described in [`LANG.md`](LANG.md), to P4 code. It has integers,
+booleans and characters, arrays, `for`, `case`, `repeat`, and
+procedures and functions nested in each other with value and `var`
+parameters. It works as Wirth's compilers did, in one pass: where
+chapter 10's compiler first reads the whole program into a tree, this
+one writes the code for each statement as soon as it has read it. The
+function in this program
+
+```pascal
+function square(x: integer): integer;
+begin
+    square := x * x
+end;
+```
+
+becomes
+
+```
+l 2
+ ent 1 l 3
+ ent 2 l 4
+ lodi 0 5
+ lodi 0 5
+ mpi
+ stri 0 0
+ reti
+l 3=6
+l 4=2
+```
+
+`x` is at 5, after the mark, and the result goes in word 0 of the frame,
+where `reti` leaves it on the stack for the caller. The frame needs 6
+words, and the stack at most 2 more.
+
+The [`pascal`](pascal) folder holds thirteen programs, among them
+Wirth's eight queens, the sieve of Eratosthenes, and the towers of
+Hanoi, each with its P4 code and its output. Those in
+[`pascal/traps`](pascal/traps) break a rule that only shows when the
+program runs, and the machine stops them: an index out of range, a
+division by zero, a `case` value with no label, and a variable used
+before it has a value. Those in [`pascal/errors`](pascal/errors) are
+refused by the compiler.
+
+Every program in `pascal` is real Pascal. If Free Pascal is installed,
+`make test` compiles each one with it too, in its ISO mode, and checks
+that it prints exactly what the P4 machine printed.
+
+## Run it
+
+```
+make test
+python3 pmachine.py samples/nested.p
+python3 pmachine.py -t samples/nested.p
+python3 p4.py -t samples/nested.p4
+python3 pascal.py pascal/queens.pas > queens.p4
+python3 p4.py queens.p4
+```
+
 ## Exercises
 
-1. Write the compiler. PL/0 is small enough that Wirth's compiler, in
-   Pascal, is a few hundred lines, and chapter 10's enkel/0 compiler is a
-   good start. Most of the new work is the levels: each name must
-   remember where it was declared.
-2. Add parameters. The caller pushes the arguments before `cal`; where
-   are they, then, as seen from the new frame?
+1. Write the PL/0 compiler. PL/0 is small enough that Wirth's
+   compiler, in Pascal, is a few hundred lines, and chapter 10's enkel/0
+   compiler is a good start. Most of the new work is the levels: each
+   name must remember where it was declared. Then compare it with
+   `pascal.py`.
+2. Where are a procedure's parameters on the P-machine, if the caller
+   pushes them before `cal`? Compare with P4's `mst`, which is there to
+   make room for the mark *before* the arguments.
 3. Following `l` static links costs `l` steps on every use. A
    *display* is an array that holds, for each level, the frame in use
    now. What must `cal` and the return do to keep it right? (Many
    Pascal compilers did this.)
-4. Write a p-code interpreter in C, and compare its speed with
-   `pmachine.py` on a long loop. What did the p-System gain by
-   interpreting a compact code, on computers with 64 KB of memory?
+4. Write a P4 interpreter in C, and compare its speed with `p4.py` on
+   `queens.pas`. What did the p-System gain by interpreting a compact
+   code, on computers with 64 KB of memory?
+5. Add `forward` to pascal/0, so two procedures can call each other.
+   What must the compiler know about a procedure before it can write
+   the call?
+6. Add records. The machine needs nothing new: a field is an offset,
+   added to the record's address with `inc`.
+7. Add real numbers. The machine has them already (`adr`, `flt`,
+   `csp wrr`); the compiler must decide when an integer becomes a real.

@@ -1,0 +1,4 @@
+pascal/errors/arguments.pas:9:5: 'p' takes 2 arguments, not 1
+        p(1)
+        ^
+status 1
