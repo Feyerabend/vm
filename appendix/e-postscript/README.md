@@ -125,3 +125,13 @@ subset, in JavaScript, which paints on a canvas in the browser.
 4. Write a small PostScript program that prints a table of the
    squares and cubes of 1 to 10, right-aligned, using only `=`,
    `print`, `cvs` and `string`.
+
+## Notice
+
+The list of operators of the PostScript language is copyright 1985-1999
+Adobe Systems Incorporated. Adobe permits anyone to write software that
+interprets the language, and to copy the list as far as that needs, on
+condition of a notice like this one (*PostScript Language Reference*,
+third edition, section 1.5). So the list is not part of what this
+repository releases into the public domain. PostScript is a trademark of
+Adobe, and `ps.py` is not a product of Adobe, nor licensed by it.

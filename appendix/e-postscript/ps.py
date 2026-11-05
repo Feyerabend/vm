@@ -1,5 +1,10 @@
 """
-A small PostScript: the stack machine inside a printer (Adobe, 1984).
+A small interpreter for the PostScript language: the stack machine inside
+a printer (Adobe, 1984). Not a product of Adobe, nor licensed by it.
+
+The list of operators of the PostScript language is copyright 1985-1999
+Adobe Systems Incorporated, and is used under the permission in section 1.5
+of the PostScript Language Reference, third edition. See README.md.
 
 A PostScript program is a stream of tokens. Numbers, strings, literal
 names (/name) and procedures ({ ... }) are pushed on the operand

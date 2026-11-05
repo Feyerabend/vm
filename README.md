@@ -164,4 +164,9 @@ chapter is about, and each chapter says what it leaves out.
 ## License
 
 [Unlicense](UNLICENSE), except where a folder carries its own
-licence.
+licence. The list of PostScript's operators, in
+[`appendix/e-postscript`](appendix/e-postscript) and `archive/ps`, is
+Adobe's, and its
+[notice](appendix/e-postscript/README.md#notice) says on what terms it is
+used. Names of other people's products are theirs, and are used only to
+name those products.
