@@ -36,4 +36,9 @@
         PUSH 4
         GETF
         PRINT           ; 0: fields start as 0
-        HALT
+        PUSH 2
+        NEW
+        PUSH 0
+        GETF
+        PRINT           ; 0: field 0 too, though a machine may keep
+        HALT            ;    something of its own next to it

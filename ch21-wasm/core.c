@@ -499,8 +499,24 @@ static void write_number(int n) {
 #define NEXT        return 1
 #define UNKNOWN     default:
 
-/* Run one instruction. Returns 0 once the machine has halted. */
-EXPORT(vm_step) int vm_step(void) {
+/*
+ * Run one instruction. Returns 0 once the machine has halted.
+ *
+ * Both vm_step() and vm_run() use it. Left to itself, the C compiler
+ * does not inline it into vm_run()'s loop, and every instruction pays
+ * for a call and a return: built with the C host, the machine was more
+ * than twice as slow as chapter 16's. So the C build forces it in. The
+ * WebAssembly build does not: there, inlining made no difference that
+ * could be measured, and it makes vm.wasm 60 per cent larger, since
+ * the whole switch is then in it twice.
+ */
+#if defined __wasm__
+#define STEP static int
+#else
+#define STEP static inline __attribute__((always_inline)) int
+#endif
+
+STEP step(void) {
     int op;
 
     if (halted)
@@ -515,8 +531,12 @@ EXPORT(vm_step) int vm_step(void) {
     return 1;
 }
 
+EXPORT(vm_step) int vm_step(void) {
+    return step();
+}
+
 EXPORT(vm_run) void vm_run(void) {
-    while (vm_step())
+    while (step())
         ;
 }
 
